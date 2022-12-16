@@ -1,0 +1,741 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-representations>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-7" ww-id="webwork-7">
+    <static seed="7" source="webwork-open-problem-library/OpenProblemLibrary/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/16_Line_and_Surface_Integrals/16.1_Vector_Fields/16.1.3.pg">
+      <statement><p>Compute and sketch the vector assigned to the points <m>P = (0,6,4)</m> and
+<m>Q = (8,1,0)</m> by the vector field <m>\mathbf{F} =\left\lt xy,z^2,x\right&gt;</m>.</p>
+<p><m>\mathbf{F}(P)=</m> <fillin name="AnSwEr0001" characters="20"/></p>
+<p><m>\mathbf{F}(Q)=</m> <fillin name="AnSwEr0002" characters="20"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>\left&lt;0,16,0\right&gt;</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\left&lt;8,0,8\right&gt;</m>
+        </p>
+      </answer>
+      <solution><m>P=( 0,6,4 )</m>, we substitute <m>x=0</m>, <m>y=6</m>, <m>z=4</m> in <m>\mathbf{F} = \left\lt  xy, z^2,x \right&gt;</m>. We get
+<me>\mathbf{F} (P)= \left\lt  0 \cdot 6, (4)^2,0 \right&gt; = \left\lt  0,16,0 \right&gt;</me>
+Similarly, <m>\mathbf{F} (Q)</m> is obtained by substituting <m>x=8</m>, <m>y=1</m>, <m>z=0</m> in <m>\mathbf{F}</m> . That is,
+<me>\mathbf{F} (Q)= \left\lt  8\cdot 1, 0^2,8 \right&gt; = \left\lt 8,0,8 \right&gt;</me>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" width="42.8333333333333%" pi:generated="webwork/images/webwork-7-image-1.png"/> 
+With <m>a=8</m>
+
+
+
+
+
+</solution>
+    </static>
+    <server-data sourceFilePath="webwork-open-problem-library/OpenProblemLibrary/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/16_Line_and_Surface_Integrals/16.1_Vector_Fields/16.1.3.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="webwork-open-problem-library/OpenProblemLibrary/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/16_Line_and_Surface_Integrals/16.1_Vector_Fields/16.1.3.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-8" ww-id="webwork-8">
+    <static seed="8" source="Library/Hope/Multi2/12-01-Vector-fields/Vector-fields-01a.pg">
+      <statement><p>Suppose <m>\vec{F} = \left\lt 5y,-5x\right&gt;</m>.  Complete the following table of values of <m>\vec{F}</m>.</p>
+<p>Values of <m>\vec{F}</m></p>
+<tabular top="0" bottom="0" left="0" right="0">
+<row halign="left" valign="middle">
+<cell><m>y=1</m></cell>
+<cell><fillin name="AnSwEr0001" characters="10"/></cell>
+<cell><fillin name="MuLtIaNsWeR_AnSwEr0001_1" characters="10"/></cell>
+<cell><fillin name="MuLtIaNsWeR_AnSwEr0001_2" characters="10"/></cell>
+</row>
+<row halign="left" valign="middle">
+<cell><m>y=0</m></cell>
+<cell><fillin name="MuLtIaNsWeR_AnSwEr0001_3" characters="10"/></cell>
+<cell><fillin name="MuLtIaNsWeR_AnSwEr0001_4" characters="10"/></cell>
+<cell><fillin name="MuLtIaNsWeR_AnSwEr0001_5" characters="10"/></cell>
+</row>
+<row halign="left" valign="middle">
+<cell><m>y=-1</m></cell>
+<cell><fillin name="MuLtIaNsWeR_AnSwEr0001_6" characters="10"/></cell>
+<cell><fillin name="MuLtIaNsWeR_AnSwEr0001_7" characters="10"/></cell>
+<cell><fillin name="MuLtIaNsWeR_AnSwEr0001_8" characters="10"/></cell>
+</row>
+<row halign="center" valign="middle">
+<cell> </cell>
+<cell><m>x=-1</m></cell>
+<cell><m>x=0</m></cell>
+<cell><m>x=1</m></cell>
+</row>
+</tabular>
+<p>Using your table of values as a starting point, sketch this vector field on a piece of paper for <m>-2 \leq x \leq 2</m> and <m>-2 \leq y \leq 2</m>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>\begin{array}{rrr} \left&lt;5,5\right&gt; &amp; \left&lt;5,0\right&gt; &amp; \left&lt;5,-5\right&gt; \\ \left&lt;0,5\right&gt; &amp; \left&lt;0,0\right&gt; &amp; \left&lt;0,-5\right&gt; \\ \left&lt;-5,5\right&gt; &amp; \left&lt;-5,0\right&gt; &amp; \left&lt;-5,-5\right&gt; \end{array}</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/Hope/Multi2/12-01-Vector-fields/Vector-fields-01a.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Hope/Multi2/12-01-Vector-fields/Vector-fields-01a.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-9" ww-id="webwork-9">
+    <static seed="9" source="webwork-open-problem-library/OpenProblemLibrary/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/16_Line_and_Surface_Integrals/16.1_Vector_Fields/16.1.15.pg">
+      <statement><p>Match the planar vector field <m>\mathbf{F} = \left\lt  8 x + 8, y\right&gt;</m> with
+the corresponding plot in the Figures below.</p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" width="32.3333333333333%" pi:generated="webwork/images/webwork-9-image-1.png"/>
+<p><m>\Leftarrow</m> <alert>Plot 1</alert> <m>\quad</m></p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" width="32.3333333333333%" pi:generated="webwork/images/webwork-9-image-2.png"/>
+<p><m>\Leftarrow</m> <alert>Plot 2</alert></p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" width="32.3333333333333%" pi:generated="webwork/images/webwork-9-image-3.png"/>
+<p><m>\Leftarrow</m> <alert>Plot 3</alert> <m>\quad</m></p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" width="32.3333333333333%" pi:generated="webwork/images/webwork-9-image-4.png"/>
+<p><m>\Leftarrow</m> <alert>Plot 4</alert></p>
+<p>With <m>a=8</m></p>
+<p>Answer : <var form="buttons">
+<li>
+<p>Plot 4</p>
+</li>
+<li>
+<p>Plot 2</p>
+</li>
+<li>
+<p>Plot 3</p>
+</li>
+<li>
+<p>Plot 1</p>
+</li>
+</var></p>
+</statement>
+      <solution><m>( 0,8 )</m>, for instance, and identify the corresponding graph accordingly:
+<me>\mathbf{F} ( x,y )= \left\lt  8 x+8,y \right&gt; \quad\Rightarrow\quad \mathbf{F} ( 0,8 )= \left\lt  8,8 \right&gt;\quad\Rightarrow\quad \text{Plot(2)}</me>
+
+
+
+</solution>
+    </static>
+    <server-data sourceFilePath="webwork-open-problem-library/OpenProblemLibrary/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/16_Line_and_Surface_Integrals/16.1_Vector_Fields/16.1.15.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="webwork-open-problem-library/OpenProblemLibrary/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/16_Line_and_Surface_Integrals/16.1_Vector_Fields/16.1.15.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-10" ww-id="webwork-10">
+    <static seed="10" source="webwork-open-problem-library/OpenProblemLibrary/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/16_Line_and_Surface_Integrals/16.2_Line_Integrals/16.2.41.pg">
+      <statement><p>The three figures below show three vector fields. In
+each case,</p>
+<p>determine whether the line integral around the circle
+(oriented counterclockwise) is positive, negative, or zero.</p>
+<p>Note: Use "0" for zero, "P" for positive, and "N" for negative.</p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" width="27.8333333333333%" pi:generated="webwork/images/webwork-10-image-1.png"/>
+<p><alert> (A)</alert> <fillin name="AnSwEr0001" characters="2"/></p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" width="27.8333333333333%" pi:generated="webwork/images/webwork-10-image-2.png"/>
+<p><alert> (B) </alert><fillin name="AnSwEr0002" characters="2"/></p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" width="27.8333333333333%" pi:generated="webwork/images/webwork-10-image-3.png"/>
+<p><alert> (C) </alert><fillin name="AnSwEr0003" characters="2"/></p>
+</statement>
+      <answer>
+        <p>0</p>
+      </answer>
+      <answer>
+        <p>0</p>
+      </answer>
+      <answer>
+        <p>0</p>
+      </answer>
+      <solution><p>The vector line integral of <m>F</m> is the integral of the tangential component of <m>F</m> along the curve.  The positive direction of a curve is counterclockwise.</p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" width="29.3333333333333%" pi:generated="webwork/images/webwork-10-image-4.png"/>
+<p>For the vector field below, the line integral around the circle is zero because the contribution of the negative tangential components from the upper part of the circle is the same as the contribution of the positive tangential components from the lower part.</p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" width="27.8333333333333%" pi:generated="webwork/images/webwork-10-image-1.png"/>
+<p>The vector field below appears to take the form <m>f(x) i + g(y) j</m> 
+for some continuous functions <m>f(x)</m> and <m>g(y)</m>.  
+As such, it is the gradiant of a function, and any integral around 
+a closed loop is zero.</p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" width="27.8333333333333%" pi:generated="webwork/images/webwork-10-image-3.png"/>
+<p>In the vector field below, the vector field is orthogonal to the unit tangent vector at each point, hence the line integral is zero.</p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" width="27.8333333333333%" pi:generated="webwork/images/webwork-10-image-2.png"/>
+</solution>
+    </static>
+    <server-data sourceFilePath="webwork-open-problem-library/OpenProblemLibrary/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/16_Line_and_Surface_Integrals/16.2_Line_Integrals/16.2.41.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="webwork-open-problem-library/OpenProblemLibrary/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/16_Line_and_Surface_Integrals/16.2_Line_Integrals/16.2.41.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-11" ww-id="webwork-11">
+    <static seed="11" source="Library/Rochester/setVectorCalculus1/UR_VC_11_7.pg">
+      <statement><p>Let C be the counter-clockwise planar circle with center at the origin and radius
+r <m>&gt;</m> 0.  Without computing them, determine for the following vector fields <m>\bf
+F</m> whether the line integrals <m>\displaystyle \int_C \mathbf F \cdot \, d\mathbf{r}</m> are
+positive, negative, or zero and type P, N, or Z as appropriate.</p>
+<p>A. <m>\bf F</m> = the radial vector field = <m>x\mathbf i + y\mathbf j</m>: <fillin name="AnSwEr0001" characters="10"/></p>
+<p>B. <m>\bf F</m> = the circulating vector field = <m>-y\mathbf i + x\mathbf j</m>:
+<fillin name="AnSwEr0002" characters="10"/></p>
+<p>C. <m>\bf F</m> = the circulating vector field = <m>y\mathbf i - x\mathbf j</m>:
+<fillin name="AnSwEr0003" characters="10"/></p>
+<p>D. <m>\bf F</m> = the constant vector field = <m>\bf i + j</m>: <fillin name="AnSwEr0004" characters="10"/></p>
+</statement>
+      <answer>
+        <p>z</p>
+      </answer>
+      <answer>
+        <p>p</p>
+      </answer>
+      <answer>
+        <p>n</p>
+      </answer>
+      <answer>
+        <p>z</p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/Rochester/setVectorCalculus1/UR_VC_11_7.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Rochester/setVectorCalculus1/UR_VC_11_7.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-12" ww-id="webwork-12">
+    <static seed="12" source="Library/Michigan/Chap18Sec1/Q21.pg">
+      <statement><p>Consider the vector field <m>\vec{F}</m> shown in the figure below
+together with the paths <m>C_1</m>, <m>C_2</m>, and <m>C_3</m>.</p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" width="41.6666666666667%" pi:generated="webwork/images/webwork-12-image-1.png"/>
+<p><em>(<alert>Note:</alert> For the vector field, vectors are shown with a
+dot at the <alert>tail</alert> of the vector.)</em></p>
+<p>Arrange the line integrals <m>\int_{C_1} \vec{F} \cdot d\vec{r}</m>,
+<m>\int_{C_2} \vec{F} \cdot d\vec{r}</m> and
+<m>\int_{C_3} \vec{F} \cdot d\vec{r}</m> in ascending
+order:</p>
+<p><var form="popup" name="AnSwEr0001">
+<li>
+<p>?</p>
+</li>
+<li>
+<p>integral on C1</p>
+</li>
+<li>
+<p>integral on C2</p>
+</li>
+<li>
+<p>integral on C3</p>
+</li>
+</var> <m>\lt </m>
+<var form="popup" name="AnSwEr0002">
+<li>
+<p>?</p>
+</li>
+<li>
+<p>integral on C1</p>
+</li>
+<li>
+<p>integral on C2</p>
+</li>
+<li>
+<p>integral on C3</p>
+</li>
+</var> <m>\lt </m>
+<var form="popup" name="AnSwEr0003">
+<li>
+<p>?</p>
+</li>
+<li>
+<p>integral on C1</p>
+</li>
+<li>
+<p>integral on C2</p>
+</li>
+<li>
+<p>integral on C3</p>
+</li>
+</var>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>\text{integral on C1}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\text{integral on C3}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\text{integral on C2}</m>
+        </p>
+      </answer>
+      <solution><m>\int_{C_1}\vec F\cdot d\vec r \lt  0</m>, because the curve moves from larger to smaller <m>x</m>-values, and the vector field points from right to left.
+
+
+
+
+By similar logic, we note that both of <m>\int_{C2}\vec F\cdot d\vec r</m> and <m>\int_{C3}\vec F\cdot d\vec r</m> are positive.  However, because <m>C_2</m> has a smaller component pointing in the same direction as the vector field, the integral on <m>C_2</m> is larger than that on <m>C_3</m>.
+
+
+
+Applying this logic to each of the curves, we find that
+<me>\int_{C_{1}}\vec F\cdot\vec r \lt 
+   \int_{C_{3}}\vec F\cdot\vec r \lt 
+   \int_{C_{2}}\vec F\cdot\vec r.</me>
+
+
+
+</solution>
+    </static>
+    <server-data sourceFilePath="Library/Michigan/Chap18Sec1/Q21.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Michigan/Chap18Sec1/Q21.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-13" ww-id="webwork-13">
+    <static seed="13" source="webwork-open-problem-library/OpenProblemLibrary/FortLewis/Calc3/18-1-Idea-of-line-integrals/HGM4-18-1-02-Line-integrals.pg">
+      <statement><p>Determine whether the line integral of each 
+vector field (in blue) along the  
+oriented path (in red) is positive, negative, or zero.</p>
+<tabular xmlns:pi="http://pretextbook.org/2020/pretext/internal" top="0" bottom="0" left="0" right="0">
+<row halign="center" valign="middle">
+<cell><image width="33.3333333333333%" pi:generated="webwork/images/webwork-13-image-1.png"/></cell>
+<cell><image width="33.3333333333333%" pi:generated="webwork/images/webwork-13-image-2.png"/></cell>
+<cell><image width="33.3333333333333%" pi:generated="webwork/images/webwork-13-image-3.png"/></cell>
+</row>
+<row halign="center" valign="middle">
+<cell><var form="popup">
+<li>
+<p>?</p>
+</li>
+<li>
+<p>Positive</p>
+</li>
+<li>
+<p>Negative</p>
+</li>
+<li>
+<p>Zero</p>
+</li>
+</var></cell>
+<cell><var form="popup">
+<li>
+<p>?</p>
+</li>
+<li>
+<p>Positive</p>
+</li>
+<li>
+<p>Negative</p>
+</li>
+<li>
+<p>Zero</p>
+</li>
+</var></cell>
+<cell><var form="popup">
+<li>
+<p>?</p>
+</li>
+<li>
+<p>Positive</p>
+</li>
+<li>
+<p>Negative</p>
+</li>
+<li>
+<p>Zero</p>
+</li>
+</var></cell>
+</row>
+<row halign="center" valign="middle">
+<cell><image width="33.3333333333333%" pi:generated="webwork/images/webwork-13-image-4.png"/></cell>
+<cell><image width="33.3333333333333%" pi:generated="webwork/images/webwork-13-image-5.png"/></cell>
+<cell><image width="33.3333333333333%" pi:generated="webwork/images/webwork-13-image-6.png"/></cell>
+</row>
+<row halign="center" valign="middle">
+<cell><var form="popup">
+<li>
+<p>?</p>
+</li>
+<li>
+<p>Positive</p>
+</li>
+<li>
+<p>Negative</p>
+</li>
+<li>
+<p>Zero</p>
+</li>
+</var></cell>
+<cell><var form="popup">
+<li>
+<p>?</p>
+</li>
+<li>
+<p>Positive</p>
+</li>
+<li>
+<p>Negative</p>
+</li>
+<li>
+<p>Zero</p>
+</li>
+</var></cell>
+<cell><var form="popup">
+<li>
+<p>?</p>
+</li>
+<li>
+<p>Positive</p>
+</li>
+<li>
+<p>Negative</p>
+</li>
+<li>
+<p>Zero</p>
+</li>
+</var></cell>
+</row>
+</tabular>
+<p>(Click on a graph to enlarge it)</p>
+</statement>
+      <solution><p>SOLUTION</p>
+<p>1. The line integral is zero along the vertical and horizontal segments, since the
+vectors are perpendicular to the segments. The vectors along the slanted segment generally 
+point in opposite direction of the curve. Thus the line integral is negative.</p>
+<p>2. The vectors are perpendicular to the line segments of the curve. Thus the line integral is zero .</p>
+<p>3. The line integral along the curve in the first quadrant is counterbalanced by
+the line integral in the third quadrant. Similarly for the line integrals in the second
+and fourth quadrant. Thus the total line integral is zero.</p>
+<p>4. Vectors with larger magnitude generally point in the opposite 
+direction of the curve. Thus the line integral is negative .</p>
+<p>5. The vectors are perpendicular to the circles, thus the line integral
+along the circles is zero. The line integrals along the orizontal and vertical segments counterbalance one another since they have opposite signs. Thus the total line integral is zero .</p>
+<p>6. The line integral is zero along the vertical and horizontal segments, 
+since the vectors are perpendicular to the segments. The vectors along the larger circle
+(with larger magnitude than the vectors along the smaller circle) generally point in same direction of the curve. Thus the line integral is positive .</p>
+</solution>
+    </static>
+    <server-data sourceFilePath="webwork-open-problem-library/OpenProblemLibrary/FortLewis/Calc3/18-1-Idea-of-line-integrals/HGM4-18-1-02-Line-integrals.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="webwork-open-problem-library/OpenProblemLibrary/FortLewis/Calc3/18-1-Idea-of-line-integrals/HGM4-18-1-02-Line-integrals.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-14" ww-id="webwork-14">
+    <static seed="14" source="webwork-open-problem-library/OpenProblemLibrary/FortLewis/Calc3/18-1-Idea-of-line-integrals/HGM4-18-1-01-Line-integrals.pg">
+      <statement><p>Determine whether the line integral of each 
+vector field (in blue) along the semicircular, 
+oriented path (in red) is positive, negative, or zero.</p>
+<tabular xmlns:pi="http://pretextbook.org/2020/pretext/internal" top="0" bottom="0" left="0" right="0">
+<row halign="center" valign="middle">
+<cell><image width="33.3333333333333%" pi:generated="webwork/images/webwork-14-image-1.png"/></cell>
+<cell><image width="33.3333333333333%" pi:generated="webwork/images/webwork-14-image-2.png"/></cell>
+<cell><image width="33.3333333333333%" pi:generated="webwork/images/webwork-14-image-3.png"/></cell>
+</row>
+<row halign="center" valign="middle">
+<cell><var form="popup">
+<li>
+<p>Choose</p>
+</li>
+<li>
+<p>Positive</p>
+</li>
+<li>
+<p>Negative</p>
+</li>
+<li>
+<p>Zero</p>
+</li>
+</var></cell>
+<cell><var form="popup">
+<li>
+<p>Choose</p>
+</li>
+<li>
+<p>Positive</p>
+</li>
+<li>
+<p>Negative</p>
+</li>
+<li>
+<p>Zero</p>
+</li>
+</var></cell>
+<cell><var form="popup">
+<li>
+<p>Choose</p>
+</li>
+<li>
+<p>Positive</p>
+</li>
+<li>
+<p>Negative</p>
+</li>
+<li>
+<p>Zero</p>
+</li>
+</var></cell>
+</row>
+<row halign="center" valign="middle">
+<cell><image width="33.3333333333333%" pi:generated="webwork/images/webwork-14-image-4.png"/></cell>
+<cell><image width="33.3333333333333%" pi:generated="webwork/images/webwork-14-image-5.png"/></cell>
+<cell><image width="33.3333333333333%" pi:generated="webwork/images/webwork-14-image-6.png"/></cell>
+</row>
+<row halign="center" valign="middle">
+<cell><var form="popup">
+<li>
+<p>Choose</p>
+</li>
+<li>
+<p>Positive</p>
+</li>
+<li>
+<p>Negative</p>
+</li>
+<li>
+<p>Zero</p>
+</li>
+</var></cell>
+<cell><var form="popup">
+<li>
+<p>Choose</p>
+</li>
+<li>
+<p>Positive</p>
+</li>
+<li>
+<p>Negative</p>
+</li>
+<li>
+<p>Zero</p>
+</li>
+</var></cell>
+<cell><var form="popup">
+<li>
+<p>Choose</p>
+</li>
+<li>
+<p>Positive</p>
+</li>
+<li>
+<p>Negative</p>
+</li>
+<li>
+<p>Zero</p>
+</li>
+</var></cell>
+</row>
+</tabular>
+<p>(Click on a graph to enlarge it)</p>
+</statement>
+      <solution><p>SOLUTION</p>
+<p>1. The vectors of the radial vector field are perpendicular to the curve. Thus the line integral is zero.</p>
+<p>2. The vector field points in the opposite direction as the curve. Thus the line integral is negative.</p>
+<p>3. The vector field points in the same direction as the curve. Thus the line integral is positive.</p>
+<p>4. The line integral in the first quadrant counterbalances the line integral in the second quadrant. 
+Thus the line integral along the semicircle is zero.</p>
+<p>5. The line integral in the first quadrant counterbalances the line integral in the second quadrant. 
+Thus the line integral along the semicircle is zero.</p>
+<p>6. The vectors point generally in the same direction as the curve. Thus the line integral is positive.</p>
+</solution>
+    </static>
+    <server-data sourceFilePath="webwork-open-problem-library/OpenProblemLibrary/FortLewis/Calc3/18-1-Idea-of-line-integrals/HGM4-18-1-01-Line-integrals.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="webwork-open-problem-library/OpenProblemLibrary/FortLewis/Calc3/18-1-Idea-of-line-integrals/HGM4-18-1-01-Line-integrals.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-15" ww-id="webwork-15">
+    <static seed="15" source="Library/Hope/Multi2/11-06-Scalar-line-integrals/Scalar-line-integral-04.pg">
+      <statement><p>Find the line integral with respect to arc length 
+<m>\displaystyle \int_C (2 x + 7 y) ds</m>, where <m>C</m> is
+the line segment in the <m>xy</m>-plane with endpoints <m>P = \left(6,0\right)</m> 
+and <m>Q = \left(0,9\right)</m>.</p>
+<p>(a) Find a vector parametric equation <m>\vec{r}(t)</m> for the line 
+segment <m>C</m> so that points <m>P</m> and <m>Q</m> correspond
+to <m>t = 0</m> and <m>t = 1</m>, respectively.</p>
+<p><m>\vec{r}(t) =</m> <fillin name="AnSwEr0001" characters="30"/></p>
+<p>(b) Using the parametrization in part (a), the line
+integral with respect to arc length is</p>
+<p><m>\displaystyle \int_C (2 x + 7 y) ds = \int_a^b</m>
+<fillin name="AnSwEr0002" characters="40"/>
+<m>dt</m></p>
+<p>with limits of integration 
+<m>a =</m> <fillin name="AnSwEr0003" characters="10"/> and
+<m>b =</m> <fillin name="AnSwEr0004" characters="10"/></p>
+<p>(c) Evaluate the line integral with respect to arc length in part (b).</p>
+<p><m>\displaystyle \int_C (2 x + 7 y) ds =</m> 
+<fillin name="AnSwEr0005" characters="40"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>\left(6,0\right)+t\!\left&lt;-6,9\right&gt;</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\left(2\!\left(6-6t\right)+7\cdot 9t\right)\sqrt{6^{2}+9^{2}}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>0</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>1</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>405.625</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/Hope/Multi2/11-06-Scalar-line-integrals/Scalar-line-integral-04.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Hope/Multi2/11-06-Scalar-line-integrals/Scalar-line-integral-04.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-16" ww-id="webwork-16">
+    <static seed="16" source="Library/FortLewis/Calc3/18-2-Line-integrals-parametrized/HGM4-18-2-11a-Line-integrals-parametrized.pg">
+      <statement><p>Suppose <m>\vec{F}(x,y) = \langle e^x, e^y \rangle</m> 
+and <m>C</m> is the portion of the ellipse centered at 
+the origin from the point <m>(0,1)</m> to the point
+<m>(8,0)</m> centered at
+the origin oriented clockwise.</p>
+<p>(a) Find a vector parametric equation <m>\vec{r}(t)</m> for the 
+portion of the ellipse described above for 
+<m>0 \leq t \leq \pi/2</m>.</p>
+<p><m>\vec{r}(t) =</m> <fillin name="AnSwEr0001" characters="40"/></p>
+<p>(b) Using your parametrization in part (a), set up an 
+integral for calculating the circulation of <m>\vec{F}</m> 
+around <m>C</m>.</p>
+<p><m>\displaystyle \int_C \vec{F} \cdot d \vec{r} = \int_a^b \vec{F}(\vec{r}(t)) \cdot \vec{r}\,'(t) \, dt = \int_a^b</m>
+<fillin name="AnSwEr0002" characters="40"/>
+<m>dt</m></p>
+<p>with limits of integration 
+<m>a =</m> <fillin name="AnSwEr0003" characters="10"/> and
+<m>b =</m> <fillin name="AnSwEr0004" characters="10"/></p>
+<p>(c) Find the circulation of <m>\vec{F}</m> around <m>C</m>.</p>
+<p>Circulation = <fillin name="AnSwEr0005" characters="20"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>\left&lt;8\sin\!\left(t\right),\cos\!\left(t\right)\right&gt;</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>8e^{8\sin\!\left(t\right)}\cos\!\left(t\right)-e^{\cos\!\left(t\right)}\sin\!\left(t\right)</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>0</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{\pi }{2}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>e^{8}-e^{1}</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/FortLewis/Calc3/18-2-Line-integrals-parametrized/HGM4-18-2-11a-Line-integrals-parametrized.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/FortLewis/Calc3/18-2-Line-integrals-parametrized/HGM4-18-2-11a-Line-integrals-parametrized.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-17" ww-id="webwork-17">
+    <static seed="17" source="Library/ASU-topics/setCalculus/stef16_2p1.pg">
+      <statement><p>Evaluate the line integral <m>\int_C \mathbf{F}\cdot d\mathbf{r}</m>, where
+    <m>\mathbf{F}(x,y,z) = 4x\mathbf{i}  - 3y\mathbf{j} + 4z\mathbf{k}</m> and C
+is given by the  vector function 
+<m>\mathbf{r}(t) = \langle \sin t, \cos t, t \rangle, \quad \ 0\le t \le 3\pi/2.</m></p>
+</statement>
+      <answer>
+        <p>
+          <m>47.9132198049021</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/ASU-topics/setCalculus/stef16_2p1.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/ASU-topics/setCalculus/stef16_2p1.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-18" ww-id="webwork-18">
+    <static seed="18" source="Library/UBC/calculusStewart/lineIntegrals21.pg">
+      <statement><p>Evaluate the line integral <m>\int_{\mathcal{C}} \mathbf{F} \cdot \,d\ \mathbf{r}</m> where <m>\mathbf{F}=\left\lt  5 \sin x, -2 \cos y, 10 xz \right&gt;</m> and <m>\mathcal{C}</m> is the path given by <m>\mathbf{r}(t) = (3 t^3, -3 t^2, 2 t)</m> for <m>0 \le t \le 1</m></p>
+<p><m>\int_{\mathcal{C}} \mathbf{F} \cdot \,d\ \mathbf{r}=</m> <fillin name="AnSwEr0001" characters="20"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>34.2322</m>
+        </p>
+      </answer>
+      <solution><me>\mathbf{F}(\mathbf{r}(t)) = \left\lt  5 \sin (3 t^3), -2 \cos (-3 t^2), 60 t^4 \right&gt;</me>
+<me>\mathbf{r} '(t) = \left\lt  9 t^2, -6 t, 2 \right &gt;</me>
+<me>\mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r} '(t)
+= \left\lt  5 \sin (3 t^3), -2 \cos (-3 t^2), 60 t^4 \right&gt; \cdot \left\lt  9 t^2, -6 t, 2 \right &gt;</me>
+<me>=45 t^2 \sin (3 t^3) + 12 t \cos (-3 t^2) + 120 t^4</me>
+
+
+
+The line integral is then:
+<me>\int_{\mathcal{C}} \mathbf{F} \cdot \,d\ \mathbf{r}
+= \int^1_0 \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r} '(t) \ dt
+= \int^1_0 45 t^2 \sin (3 t^3) + 12 t \cos (-3 t^2) + 120 t^4\ dt</me>
+<me>= \left [ -5 \cos (3 t^3)  - 2 \sin (-3 t^2) + 24 t^5 \right ]^1_0</me>
+<me>= -5 \cos (3)  - 2 \sin (-3) + 29</me>
+
+
+
+</solution>
+    </static>
+    <server-data sourceFilePath="Library/UBC/calculusStewart/lineIntegrals21.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/UBC/calculusStewart/lineIntegrals21.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-19" ww-id="webwork-19">
+    <static seed="19" source="Library/Hope/Multi2/11-06-Scalar-line-integrals/Scalar-line-integral-04.pg">
+      <statement><p>Find the line integral with respect to arc length 
+<m>\displaystyle \int_C (7 x + 9 y) ds</m>, where <m>C</m> is
+the line segment in the <m>xy</m>-plane with endpoints <m>P = \left(2,0\right)</m> 
+and <m>Q = \left(0,6\right)</m>.</p>
+<p>(a) Find a vector parametric equation <m>\vec{r}(t)</m> for the line 
+segment <m>C</m> so that points <m>P</m> and <m>Q</m> correspond
+to <m>t = 0</m> and <m>t = 1</m>, respectively.</p>
+<p><m>\vec{r}(t) =</m> <fillin name="AnSwEr0001" characters="30"/></p>
+<p>(b) Using the parametrization in part (a), the line
+integral with respect to arc length is</p>
+<p><m>\displaystyle \int_C (7 x + 9 y) ds = \int_a^b</m>
+<fillin name="AnSwEr0002" characters="40"/>
+<m>dt</m></p>
+<p>with limits of integration 
+<m>a =</m> <fillin name="AnSwEr0003" characters="10"/> and
+<m>b =</m> <fillin name="AnSwEr0004" characters="10"/></p>
+<p>(c) Evaluate the line integral with respect to arc length in part (b).</p>
+<p><m>\displaystyle \int_C (7 x + 9 y) ds =</m> 
+<fillin name="AnSwEr0005" characters="40"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>\left(2,0\right)+t\!\left&lt;-2,6\right&gt;</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\left(7\!\left(2-2t\right)+9\cdot 6t\right)\sqrt{2^{2}+6^{2}}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>0</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>1</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>215.035</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/Hope/Multi2/11-06-Scalar-line-integrals/Scalar-line-integral-04.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Hope/Multi2/11-06-Scalar-line-integrals/Scalar-line-integral-04.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="17" xml:id="extracted-webwork-20" ww-id="webwork-20">
+    <static seed="20" source="Library/Hope/Multi2/11-06-Scalar-line-integrals/Scalar-line-integral-05.pg">
+      <statement><p>If <m>C</m> is the
+part of the circle <m>\displaystyle \left( \frac{x}{3} \right)^2 + 
+\left( \frac{y}{3} \right)^2 = 1</m> in the first
+quadrant, find the following line integral with respect to arc length.</p>
+<p><m>\displaystyle \int_C (2x-7y) ds =</m>
+<fillin name="AnSwEr0001" characters="20"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>2\cdot 3^{2}-7\cdot 3^{2}</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/Hope/Multi2/11-06-Scalar-line-integrals/Scalar-line-integral-05.pg" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Hope/Multi2/11-06-Scalar-line-integrals/Scalar-line-integral-05.pg"/>
+  </webwork-reps>
+</webwork-representations>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Using Parametrizations to Calculate Line Integrals</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Active Calculus - Multivariable + Vector">
+<meta property="book:author" content="Steve Schlicker">
+<meta property="book:author" content="Mitchel T. Keller">
+<meta property="book:author" content="Nicholas Long">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.13/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.13/pretext_search.js"></script><link href="https://pretextbook.org/css/0.4/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_grey.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb{R}}
+\newcommand{\va}{\mathbf{a}}
+\newcommand{\vb}{\mathbf{b}}
+\newcommand{\vc}{\mathbf{c}}
+\newcommand{\vC}{\mathbf{C}}
+\newcommand{\vd}{\mathbf{d}}
+\newcommand{\ve}{\mathbf{e}}
+\newcommand{\vi}{\mathbf{i}}
+\newcommand{\vj}{\mathbf{j}}
+\newcommand{\vk}{\mathbf{k}}
+\newcommand{\vn}{\mathbf{n}}
+\newcommand{\vm}{\mathbf{m}}
+\newcommand{\vr}{\mathbf{r}}
+\newcommand{\vs}{\mathbf{s}}
+\newcommand{\vu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\vw}{\mathbf{w}}
+\newcommand{\vx}{\mathbf{x}}
+\newcommand{\vy}{\mathbf{y}}
+\newcommand{\vz}{\mathbf{z}}
+\newcommand{\vzero}{\mathbf{0}}
+\newcommand{\vF}{\mathbf{F}}
+\newcommand{\vG}{\mathbf{G}}
+\newcommand{\vH}{\mathbf{H}}
+\newcommand{\vR}{\mathbf{R}}
+\newcommand{\vT}{\mathbf{T}}
+\newcommand{\vN}{\mathbf{N}}
+\newcommand{\vL}{\mathbf{L}}
+\newcommand{\vB}{\mathbf{B}}
+\newcommand{\vS}{\mathbf{S}}
+\newcommand{\proj}{\text{proj}}
+\newcommand{\comp}{\text{comp}}
+\newcommand{\nin}{}
+\newcommand{\vecmag}[1]{|#1|}
+\newcommand{\grad}{\nabla}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\divg}{div}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="book-1.html"><span class="title">Active Calculus - Multivariable + Vector</span></a></h1>
+<p class="byline">Steve Schlicker, Mitchel T. Keller, Nicholas Long</p>
+</div>
+<div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
+<div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="S_Vector_IdeaLineIntegral.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="C_Vector.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="S_Vector_ScalarLineIntegral.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="S_Vector_IdeaLineIntegral.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="C_Vector.html" title="Up">Up</a><a class="next-button button toolbar-item" href="S_Vector_ScalarLineIntegral.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1" class="internal">Features of the Text</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2" class="internal">Vector Calculus Preface</a></li>
+<li><a href="preface-3.html" data-scroll="preface-3" class="internal">Acknowledgments</a></li>
+<li><a href="preface-4.html" data-scroll="preface-4" class="internal">Active Calculus - Multivariable: our goals</a></li>
+<li><a href="preface-5.html" data-scroll="preface-5" class="internal">How to Use this Text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="C_Vector.html" data-scroll="C_Vector" class="internal"><span class="codenumber">9</span> <span class="title">Vector Calculus</span></a><ul>
+<li><a href="S_Vector_VectorFields.html" data-scroll="S_Vector_VectorFields" class="internal">Vector Fields</a></li>
+<li><a href="S_Vector_IdeaLineIntegral.html" data-scroll="S_Vector_IdeaLineIntegral" class="internal">The Idea of a Line Integral</a></li>
+<li><a href="S_Vector_ParamLineIntegrals.html" data-scroll="S_Vector_ParamLineIntegrals" class="active">Using Parametrizations to Calculate Line Integrals</a></li>
+<li><a href="S_Vector_ScalarLineIntegral.html" data-scroll="S_Vector_ScalarLineIntegral" class="internal">Line Integrals of Scalar Functions</a></li>
+<li><a href="S_Vector_FTCLI.html" data-scroll="S_Vector_FTCLI" class="internal">Path-Independent Vector Fields and the Fundamental Theorem of Calculus for Line Integrals</a></li>
+<li><a href="S_Vector_Div.html" data-scroll="S_Vector_Div" class="internal">The Divergence of a Vector Field</a></li>
+<li><a href="S_Vector_Curl.html" data-scroll="S_Vector_Curl" class="internal">The Curl of a Vector Field</a></li>
+<li><a href="S_Vector_GreensTheorem.html" data-scroll="S_Vector_GreensTheorem" class="internal">Green's Theorem</a></li>
+<li><a href="S_Vector_FluxInt.html" data-scroll="S_Vector_FluxInt" class="internal">Flux Integrals</a></li>
+<li><a href="S_ScalarSurfaceIntegral.html" data-scroll="S_ScalarSurfaceIntegral" class="internal">Surface Integrals of Scalar Valued Functions</a></li>
+<li><a href="S_Vector_StokesThm.html" data-scroll="S_Vector_StokesThm" class="internal">Stokes' Theorem</a></li>
+<li><a href="S_Vector_DivThm.html" data-scroll="S_Vector_DivThm" class="internal">The Divergence Theorem</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1" class="internal"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="S_Vector_ParamLineIntegrals"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">9.3</span> <span class="title">Using Parametrizations to Calculate Line Integrals</span>
+</h2>
+<article class="objectives goal-like" id="objectives-3"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
+<ul class="disc">
+<li id="li-109"><p id="p-289">How can we use a parametrization of an oriented curve <span class="process-math">\(C\)</span> to calculate <span class="process-math">\(\int_C\vF\cdot d\vr\text{?}\)</span></p></li>
+<li id="li-110"><p id="p-290">How does the parametrization chosen for an oriented curve <span class="process-math">\(C\)</span> alter the value of the line integral <span class="process-math">\(\int_C\vF\cdot d\vr\text{?}\)</span></p></li>
+<li id="li-111"><p id="p-291">What can be said about the line integral of a vector field along two different oriented curves when the curves have the same starting point and same ending point?</p></li>
+</ul></article><section class="introduction" id="introduction-9"><p id="p-292">We begin this section by taking a look at how we can calculate a line integral of a vector field along some line segments and use this calculation as inspiration to see how treating oriented curves as vector-valued functions will allow us to quickly turn a line integral of a vector field into a single variable integral.</p> <article class="exploration project-like" id="PA_Vector_ParamLineIntegrals"><h3 class="heading">
+<span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">9.3.1</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-10">
+<p id="p-293">Let <span class="process-math">\(\vF=\langle xy,y^2\rangle\text{,}\)</span> let <span class="process-math">\(C_1\)</span> be the line segment from <span class="process-math">\((1,1)\)</span> to <span class="process-math">\((4,1)\text{,}\)</span> let <span class="process-math">\(C_2\)</span> be the line segment from <span class="process-math">\((4,1)\)</span> to <span class="process-math">\((4,3)\text{,}\)</span> and let <span class="process-math">\(C_3\)</span> be the line segment from <span class="process-math">\((1,1)\)</span> to <span class="process-math">\((4,3)\text{.}\)</span> Also let <span class="process-math">\(C = C_1 +
+C_2\text{.}\)</span> This vector field and the curves are shown in <a href="" class="xref" data-knowl="./knowl/fig_Vector_ParamLineIntegrals_FieldSegments.html" title="Figure 9.3.1">Figure 9.3.1</a>.</p> <figure class="figure figure-like" id="fig_Vector_ParamLineIntegrals_FieldSegments"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="external//fig_12_3_preview_field_segments_rev.svg" role="img" class="contained" alt="The vector field \(\vF=\langle xy,y^2\rangle\) plotted for \(0\leq x\leq 5\) and \(0\leq y\leq
+4\text{.}\) This vector field radiates from the origin with vector length increasing as distance from the origin increases. The graph includes the line segment \(C_1\) from \((1,1)\) to \((4,1)\text{,}\) the line segment \(C_2\) from \((4,1)\) to \((4,3)\text{,}\) and the line segment \(C_3\) from \((1,1)\) to \((4,3)\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.1<span class="period">.</span></span><span class="space"> </span>A vector field <span class="process-math">\(\vF\)</span> and three oriented curves</figcaption></figure>
+</div>
+<article class="task exercise-like" id="PA_Vector_ParamLineIntegrals_C2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-294">Every point along <span class="process-math">\(C_1\)</span> has <span class="process-math">\(y=1\text{.}\)</span> Therefore, along <span class="process-math">\(C_1\text{,}\)</span> the vector field <span class="process-math">\(\vF\)</span> can be viewed purely as a function of <span class="process-math">\(x\text{.}\)</span> In particular, along <span class="process-math">\(C_1\text{,}\)</span> we have <span class="process-math">\(\vF(x,1) = \langle
+x,1\rangle\text{.}\)</span> Since every point along <span class="process-math">\(C_2\)</span> has the same <span class="process-math">\(x\)</span>-value, what (in terms of <span class="process-math">\(y\)</span> only) is <span class="process-math">\(\vF\)</span> along <span class="process-math">\(C_2\text{?}\)</span></p></article><article class="task exercise-like" id="PA_Vector_ParamLineIntegrals_C1"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="introduction" id="introduction-11"><p id="p-297">Recall that <span class="process-math">\(d\vr \approx \Delta \vr\text{,}\)</span> and along <span class="process-math">\(C_1\text{,}\)</span> we have that <span class="process-math">\(\Delta\vr = \Delta x\vi
+\approx dx\vi\text{.}\)</span> Thus, <span class="process-math">\(d\vr = \langle
+dx,0\rangle\text{.}\)</span> We know that along <span class="process-math">\(C_1\text{,}\)</span> <span class="process-math">\(\vF =
+\langle x,1\rangle\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-33"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-298">Write <span class="process-math">\(\vF\cdot d\vr\)</span> along <span class="process-math">\(C_1\)</span> without using a dot product.</p></article><article class="task exercise-like" id="task-34"><h5 class="heading"><span class="codenumber">(ii)</span></h5>
+<p id="p-301">What interval of <span class="process-math">\(x\)</span>-values describes <span class="process-math">\(C_1\text{?}\)</span></p></article><article class="task exercise-like" id="task-35"><h5 class="heading"><span class="codenumber">(iii)</span></h5>
+<p id="p-304">Write <span class="process-math">\(\int_{C_1} \vF\cdot d\vr\)</span> as an integral of the form <span class="process-math">\(\int_a^b f(x)\, dx\)</span> and evaluate the integral.</p></article></article><article class="task exercise-like" id="PA_Vector_ParamLineIntegrals_C2Int"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-307">Use an analogous approach to write <span class="process-math">\(\int_{C_2} \vF\cdot
+d\vr\)</span> as an integral of the form <span class="process-math">\(\int_c^d g(y)\,
+dy\)</span> and evaluate the integral.</p></article><article class="task exercise-like" id="PA_Vector_ParamLineIntegrals_C"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-310">Use the previous parts and a property of line integrals to calculate <span class="process-math">\(\int_C\vF\cdot d\vr\)</span> without having to evaluate any additional integrals.</p></article><article class="task exercise-like" id="PA_Vector_ParamLineIntegrals_C3"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<div class="introduction" id="introduction-12"><p id="p-313">Evaluating <span class="process-math">\(\int_{C_3}\vF\cdot d\vr\)</span> takes more work at this stage, so let's break the process into smaller pieces.</p></div>
+<article class="task exercise-like" id="task-39"><h5 class="heading"><span class="codenumber">(i)</span></h5>
+<p id="p-314">Find the slope-intercept (<span class="process-math">\(y=mx+b\)</span>) form of the equation of the line cnotaining the line segment <span class="process-math">\(C_3\text{.}\)</span></p></article><article class="task exercise-like" id="task-40"><h5 class="heading"><span class="codenumber">(ii)</span></h5>
+<p id="p-317">Just as we noticed that along <span class="process-math">\(C_1\)</span> we always had <span class="process-math">\(y=1\text{,}\)</span> we now know how to express <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(x\)</span> for all points along <span class="process-math">\(C_3\text{.}\)</span> Use this to to express <span class="process-math">\(\vF\)</span> as a vector purely in terms of <span class="process-math">\(x\)</span> for the points along <span class="process-math">\(C_3\text{.}\)</span></p></article><article class="task exercise-like" id="task-41"><h5 class="heading"><span class="codenumber">(iii)</span></h5>
+<p id="p-320">We often think of the slope of a line as being <span class="process-math">\(\Delta
+y/\Delta x\text{.}\)</span> Use this fact and the slope of the line cnotaining <span class="process-math">\(C_3\)</span> to express <span class="process-math">\(\Delta y\)</span> as a multiple of <span class="process-math">\(\Delta x\text{.}\)</span></p></article><article class="task exercise-like" id="task-42"><h5 class="heading"><span class="codenumber">(iv)</span></h5>
+<p id="p-323">We may view <span class="process-math">\(\Delta\vr\)</span> as <span class="process-math">\(\langle \Delta
+x,\Delta y\rangle\text{.}\)</span> Since <span class="process-math">\(\Delta x\approx dx\)</span> and <span class="process-math">\(\Delta y\approx dy\text{,}\)</span> write <span class="process-math">\(d\vr\)</span> as a vector in terms of <span class="process-math">\(dx\text{.}\)</span> You should be able to factor out <span class="process-math">\(dx\)</span> from your result and write your answer in the form <span class="process-math">\(\langle a_1,a_2 \rangle\, dx\text{.}\)</span></p></article><article class="task exercise-like" id="task-43"><h5 class="heading"><span class="codenumber">(v)</span></h5>
+<p id="p-326">Use the range of <span class="process-math">\(x\)</span>-values covered by the line segment <span class="process-math">\(C_3\)</span> to write <span class="process-math">\(\int_{C_3}\vF\cdot
+d\vr\)</span> as a single-variable integral of the form <span class="process-math">\(\int_a^b f(x)\, dx\)</span> and evaluate the integral.</p></article></article><article class="task exercise-like" id="PA_Vector_ParamLineIntegrals_Compare"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-329">Notice that <span class="process-math">\(C\)</span> and <span class="process-math">\(C_3\)</span> both start at <span class="process-math">\((1,1)\)</span> and end at <span class="process-math">\((4,3)\text{.}\)</span> How do the values of <span class="process-math">\(\int_C\vF\cdot d\vr\)</span> and <span class="process-math">\(\int_{C_3}\vF\cdot
+d\vr\)</span> compare?</p></article><article class="task exercise-like" id="PA_Vector_ParamLineIntegrals_Gradient"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<p id="p-332">Is <span class="process-math">\(\vF\)</span> a gradient vector field? Why or why not?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><p id="p-333">What would <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "Clairaut" missing or not unique]</code> tell you about a potential function <span class="process-math">\(f\)</span> such that <span class="process-math">\(\vF = \grad{f}\text{?}\)</span></p></div></div>
+</div></article></article></section><section class="subsection" id="SS_Vector_ParamLineIntegrals_Evaluation"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.3.1</span> <span class="title">Parametrizations in the Definition of <span class="process-math">\(\int_C\vF\cdot d\vr\)</span></span>
+</h3>
+<p id="p-336"><a href="" class="xref" data-knowl="./knowl/PA_Vector_ParamLineIntegrals.html" title="Preview Activity 9.3.1">Preview Activity 9.3.1</a> has shown us that it is possible to evaluate line integrals without needing to resort to working with Riemann sums directly. However, the approaches taken there seem rather cumbersome to use for oriented curves that are not line segments. It was not critical that the paths in <a href="" class="xref" data-knowl="./knowl/PA_Vector_ParamLineIntegrals.html" title="Preview Activity 9.3.1">Preview Activity 9.3.1</a> were straight lines, but rather that the paths had a description where both <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> could be expressed in terms of one variable. Fortunately, parametrizing the oriented curve along which a line integral is calculated provides a powerful tool for evaluating line integrals.</p>
+<p id="p-337">Suppose that <span class="process-math">\(C\)</span> is an oriented curve traced out by the vector-valued function <span class="process-math">\(\vr(t)\)</span> for <span class="process-math">\(a\leq t\leq b\text{,}\)</span> and let <span class="process-math">\(\vF\)</span> be a cnotinuous vector field defined on a region cnotaining <span class="process-math">\(C\text{.}\)</span> We can divide the interval <span class="process-math">\([a,b]\)</span> into <span class="process-math">\(n\)</span> sub-intervals, each of length <span class="process-math">\(\Delta t = (b-a)/n\text{,}\)</span> by letting <span class="process-math">\(t_i = a + i\Delta t\)</span> for <span class="process-math">\(i = 0,1,\dots,n\text{.}\)</span> This subdivision of <span class="process-math">\([a,b]\)</span> then can be used to break <span class="process-math">\(C\)</span> up into <span class="process-math">\(n\)</span> pieces by letting <span class="process-math">\(\Delta \vr_i = \vr(t_{i+1}) - \vr(t_{i})\)</span> for <span class="process-math">\(i=0,1,\dots,n-1\)</span> as we did in <a href="" class="xref" data-knowl="./knowl/fig_Vector_IdeaLineIntegral_CurveVectors.html" title="Figure 9.2.2">Figure 9.2.2</a>. Now notice that</p>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig_Vector_IdeaLineIntegral_CurveVectors.html">
+\begin{equation*}
+\Delta \vr_i = \vr(t_{i+1}) - \vr(t_{i}) = \vr(t_{i} +
+\Delta t) - \vr(t_{i}) = \left(\frac{\vr(t_{i} + \Delta t) -
+\vr(t_{i})}{\Delta t}\right) \Delta t \text{.}
+\end{equation*}
+</div>
+<p id="p-338"> Looking at the definition of the line integral and substituting this new expression for <span class="process-math">\(\Delta \vr_i \)</span> gives</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_C \vF\cdot d\vr = \lim_{|\Delta\vr_i|\to 0}
+\sum_{i=0}^{n-1}\vF(\vr_i)\cdot\Delta\vr_i =
+\lim_{|\Delta\vr_i|\to 0} \sum_{i=0}^{n-1}\vF(\vr_i)\cdot
+\left(\frac{\vr(t_{i} + \Delta t) - \vr(t_{i})}{\Delta
+t}\right) \Delta t \text{.}
+\end{equation*}
+</div>
+<p class="continuation">When evaluating the limit as <span class="process-math">\(\Delta t\to 0\text{,}\)</span> the expression in the parentheses will is <span class="process-math">\(\vr'(t_i)\text{.}\)</span> We then have a Riemann sum that reduces the evaluation of a line integral of a vector-valued function along an oriented curve to a definite integral of a function of one variable. Note that after evaluating the dot product, <span class="process-math">\(\vF(\vr(t))\cdot \vr'(t)\)</span> is (scalar) function of <span class="process-math">\(t\text{.}\)</span> We restate this result below for easy reference.</p>
+<article class="theorem theorem-like" id="thm_LineIntParam"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">9.3.2</span><span class="period">.</span>
+</h4>
+<p id="p-339">Let <span class="process-math">\(C\)</span> be a smooth, oriented curve traced out by the vector-valued function <span class="process-math">\(\vr(t)\)</span> for <span class="process-math">\(a\leq t\leq
+b\text{.}\)</span> If <span class="process-math">\(\vF\)</span> is a cnotinuous vector field defined near <span class="process-math">\(C\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int\limits_C \vF\cdot d\vr = \int\limits_a^b
+\vF(\vr(t))\cdot \vr'(t)\, dt\text{.}
+\end{equation*}
+</div></article><article class="example example-like" id="ex_Vector_ParamLineIntegrals_QuarterCircle"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.3</span><span class="period">.</span>
+</h4>
+<p id="p-340">Let <span class="process-math">\(\vF(x,y) = x\vi + y^2\vj\)</span> and let <span class="process-math">\(C\)</span> be the quarter of the circle of radius <span class="process-math">\(3\)</span> from <span class="process-math">\((0,3)\)</span> to <span class="process-math">\((3,0)\text{.}\)</span> This vector field and curve are shown in <a href="" class="xref" data-knowl="./knowl/fig_Vector_ParamLineIntegrals_FieldQuarterCircle.html" title="Figure 9.3.4">Figure 9.3.4</a>. By properties of line integrals, we know that <span class="process-math">\(\int_C
+\vF\cdot d\vr = -\int_{-C}\vF\cdot d\vr\text{,}\)</span> and we will use this property since <span class="process-math">\(-C\)</span> is the usual clockwise orientation of a circle, meaning we can parametrize <span class="process-math">\(-C\)</span> by <span class="process-math">\(\vr(t) = \langle
+3\cos(t),3\sin(t)\rangle\)</span> for <span class="process-math">\(0\leq t\leq \pi/2\text{.}\)</span></p> <figure class="figure figure-like" id="fig_Vector_ParamLineIntegrals_FieldQuarterCircle"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external//fig_12_3_vf_quarter_circle.svg" role="img" class="contained" alt="The region in the \(xy\)-plane with \(0\leq x\leq
+4\) and \(0\leq y\leq 4\text{.}\) The quarter circle of radius \(3\) centered at the origin and oriented clockwise is shown along with the vector field \(x\vi +
+y^2\vj\text{,}\) which cnotains vectors whose magnitudes increase more as \(y\) increases than as \(x\) increases. Also vectors farther from the \(x\)-axis have steeper positive slope than those close to the \(x\)-axis, which are close to horiznotal."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.4<span class="period">.</span></span><span class="space"> </span>The vector field <span class="process-math">\(\vF = x\vi + y^2\vj\)</span> and an oriented curve <span class="process-math">\(C\)</span></figcaption></figure> <p id="p-341">To evaluate <span class="process-math">\(\int_{-C}\vF\cdot d\vr\)</span> using this parametrization, we need to note that</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\vF(\vr(t)) = \langle 3\cos(t) , 9\sin^2(t)\rangle\qquad\text{ and } \qquad \vr'(t) = \langle -3\sin(t),3\cos(t)\rangle\text{.}
+\end{equation*}
+</div> <p id="p-342">Thus, we have</p>
+<div class="displaymath process-math" data-contains-math-knowls="" id="md-1">
+\begin{align*}
+\int_C\vF\cdot d\vr \amp = -\int_{-C}\vF\cdot d\vr = -\int_0^{\pi/2} \langle 3\cos(t),9\sin^2(t)\rangle\cdot\langle-3\sin(t),3\cos(t)\rangle\, dt\\
+\amp = -\int_0^{\pi/2} \left(-9\sin(t)\cos(t) + 27\sin^2(t)\cos(t)\right)\, dt \quad \text{where } u =\sin(t) \\
+\amp  = -\int_0^1 (-9 u + 27u^2)\, du = -\left[ -\frac{9}{2}u^2 + 9u^3\right]_0^1 = -\left(-\frac{9}{2} + 9\right) = -\frac{9}{2}\text{.}
+\end{align*}
+</div></article><p id="p-343">As the example above shows, <a href="" class="xref" data-knowl="./knowl/thm_LineIntParam.html" title="Theorem 9.3.2">Theorem 9.3.2</a> allows us to reduce the problem of calculating a line integral of a vector-valued function along an oriented curve to one of finding a suitable parametrization for the curve. Once we have such a parametrization, evaluating the line integral becomes evaluating a single-variable integral, which is something you have done many times before. The example also illustrates that using the properties of line integrals can allow us to use a more “natural” parametrization. You may find it interesting to use the parametrization <span class="process-math">\(\langle 3\sin(t),3\cos(t)\rangle\)</span> for <span class="process-math">\(0\leq t\leq \pi/2\)</span> to evaluate the line integral. Do you get the same result?</p>
+<article class="activity project-like" id="act_Vector_ParamLineIntegrals_CalculateTwoFields"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.3.2</span><span class="period">.</span>
+</h4>
+<article class="task exercise-like" id="task_Vector_ParamLineIntegrals_CalculateTwoFields_3D"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-344">Find the work done by the vector field <span class="process-math">\(\vF(x,y,z) =
+6x^2z\vi + 3y^2\vj + x\vk\)</span> on a particle that moves from the point <span class="process-math">\((3,0,0)\)</span> to the point <span class="process-math">\((3,0,6\pi)\)</span> along the helix given by <span class="process-math">\(\vr(t) =
+\langle 3\cos(t),3\sin(t),t\rangle\text{.}\)</span></p></article><article class="task exercise-like" id="task_Vector_ParamLineIntegrals_CalculateTwoFields_2D"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-347">Let <span class="process-math">\(\vF(x,y) = \langle 0,x\rangle\text{.}\)</span> Let <span class="process-math">\(C\)</span> be the closed curve consisting of the top half of the circle of radius <span class="process-math">\(2\)</span> centered at the origin and the portion of the <span class="process-math">\(x\)</span>-axis from <span class="process-math">\((2,0)\)</span> to <span class="process-math">\((-2,0)\text{,}\)</span> oriented clockwise. Find the circulation of <span class="process-math">\(\vF\)</span> around <span class="process-math">\(C\text{.}\)</span></p></article></article><p id="p-352">The next activity has you investigate the line integrals of a fixed vector field along different curves. This will be an important, recurring theme as we study a variety of different integrals and vector fields in this chapter.</p>
+<article class="activity project-like" id="act_Vector_ParamLineIntegrals_DifferentPaths"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.3.3</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-13"><p id="p-353">Let <span class="process-math">\(\vF(x,y) = \langle y^2,2xy+3\rangle\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task_Vector_ParamLineIntegrals_DifferentPaths_Cubic"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-354">Let <span class="process-math">\(C_1\)</span> be the portion of the graph of <span class="process-math">\(y=2x^3+3x^2-12x-15\)</span> from <span class="process-math">\((-2,5)\)</span> to <span class="process-math">\((3,30)\text{.}\)</span> Calculate <span class="process-math">\(\int_{C_1}\vF\cdot d\vr\text{.}\)</span></p></article><article class="task exercise-like" id="task_Vector_ParamLineIntegrals_DifferentPaths_Segment"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-357">Let <span class="process-math">\(C_2\)</span> be the line segment from <span class="process-math">\((-2,5)\)</span> to <span class="process-math">\((3,30)\text{.}\)</span> Calculate <span class="process-math">\(\int_{C_2}\vF\cdot d\vr\text{.}\)</span></p></article><article class="task exercise-like" id="task_Vector_ParamLineIntegrals_DifferentPaths_Circle"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-360">Let <span class="process-math">\(C_3\)</span> be the circle of radius <span class="process-math">\(3\)</span> centered at the origin, oriented counterclockwise. Calculate <span class="process-math">\(\oint_{C_3} \vF\cdot d\vr\text{.}\)</span></p></article><article class="task exercise-like" id="task_Vector_ParamLineIntegrals_DifferentPaths_Connect"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="introduction" id="introduction-14"><p id="p-363">To connect the previous parts of this activity, use a graphing utility to plot the curves <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> on the same axes.</p></div>
+<article class="task exercise-like" id="task-52"><h6 class="heading"><span class="codenumber">(i)</span></h6>
+<p id="p-364">What type of curve is <span class="process-math">\(C_1 - C_2\text{?}\)</span></p></article><article class="task exercise-like" id="task-53"><h6 class="heading"><span class="codenumber">(ii)</span></h6>
+<p id="p-367">What is the value of <span class="process-math">\(\oint_{C_1-C_2}\vF\cdot
+d\vr\text{?}\)</span></p></article><article class="task exercise-like" id="task-54"><h6 class="heading"><span class="codenumber">(iii)</span></h6>
+<p id="p-370">What does your answer to <a href="" class="xref" data-knowl="./knowl/task_Vector_ParamLineIntegrals_DifferentPaths_Circle.html" title="Task 9.3.3.c">part c</a> allow you to say about the value of the line integral of <span class="process-math">\(\vF\)</span> along the top half of <span class="process-math">\(C_3\)</span> compared to the line integral of <span class="process-math">\(\vF\)</span> from <span class="process-math">\((3,0)\)</span> to <span class="process-math">\((-3,0)\)</span> along the bottom half of the circle of radius <span class="process-math">\(3\)</span> centered at the origin?</p></article></article></article></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.3.2</span> <span class="title">Alternative Notation for Line Integrals</span>
+</h3>
+<p id="p-373">In cnotexts where the fact that the quantity we are measuring via a line integral is best measured via a dot product (such as calculating work), the notation we have used thus far for line integrals is fairly common. However, sometimes the vector field is such that the units on <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> are not distances. In this case, a dot product may not have a physical meaning, and an alternative notation using differentials can be common. Specifically, if <span class="process-math">\(\vF(x,y,z) =
+F_1(x,y,z)\vi + F_2(x,y,z)\vj + F_3(x,y,z)\vk\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_C\vF\cdot d\vr = \int_C \langle F_1, F_2, F_3 \rangle \cdot \langle dx, dy, dz \rangle= \int_C F_1\, dx + F_2\, dy + F_3\, dz\text{.}
+\end{equation*}
+</div>
+<p class="continuation">A line integral in the form of <span class="process-math">\(\int_C F_1\, dx + F_2\, dy +
+F_3\, dz\)</span> is called the <dfn class="terminology">differential form of a line integral</dfn>.</p>
+<p id="p-374">(If <span class="process-math">\(\vF\)</span> is a vector field in <span class="process-math">\(\R^2\text{,}\)</span> the <span class="process-math">\(F_3\,
+dz\)</span> term is omitted.) As a concrete example, if <span class="process-math">\(\vF(x,y,z)
+= \langle x^2y,z^3,x\cos(z)\rangle\)</span> and <span class="process-math">\(C\)</span> is some oriented curve in <span class="process-math">\(\R^3\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_C\vF\cdot d\vr = \int_C x^2y\, dx + z^3\, dy + x\cos(z)\,
+dz \text{.}
+\end{equation*}
+</div>
+<p id="p-375">It is important to recognize that the integral on the right-hand side is <em class="emphasis">still a line integral</em> and must be evaluated using techniques for evaluating line integrals. We cannot simply try to treat it as if it were a definite integral of a function of one variable. Because the notation <span class="process-math">\(\int_C\vF\cdot d\vr\)</span> provides a reminder that this is a line integral and <em class="emphasis">not</em> a definite integral of the types calculated earlier in your study of calculus, we will only use the vector notation for line integrals in the body of the text. However, some exercises may require use of the differential form.</p></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.3.3</span> <span class="title">Independence of Parametrization for a Fixed Curve</span>
+</h3>
+<p id="p-376">Up to this point, we have chosen whatever parametrization of an oriented curve <span class="process-math">\(C\)</span> came to mind, and our argument for how we can use parametrizations to calculate line integrals did not depend on the specific choice of parametrization. However, it is not immediately obvious that different parametrizations don't result in different values of the line integral. Our next example explores this question.</p>
+<article class="example example-like" id="ex_Vector_ParamLineIntegrals_ParamIndep"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.5</span><span class="period">.</span>
+</h4>
+<p id="p-377">Let <span class="process-math">\(\vF = x\vi\text{.}\)</span> We consider two different oriented curves from <span class="process-math">\((0,1)\)</span> to <span class="process-math">\((3,3)\text{.}\)</span> The first oriented curve <span class="process-math">\(C\)</span> travels horiznotally to <span class="process-math">\((3,1)\)</span> and then proceeds vertically to <span class="process-math">\((3,3)\text{.}\)</span> The second oriented curve <span class="process-math">\(C_3\)</span> is the line segment from <span class="process-math">\((0,1)\)</span> to <span class="process-math">\((3,3)\text{.}\)</span> Notice that, as depicted in <a href="" class="xref" data-knowl="./knowl/fig_Vector_ParamLineIntegrals_xFieldTriangle.html" title="Figure 9.3.6">Figure 9.3.6</a>, we can break <span class="process-math">\(C\)</span> up into two oriented curves <span class="process-math">\(C_1\)</span> (the horiznotal portion) and <span class="process-math">\(C_2\)</span> (the vertical portion) so that <span class="process-math">\(C = C_1 + C_2\text{.}\)</span></p> <figure class="figure figure-like" id="fig_Vector_ParamLineIntegrals_xFieldTriangle"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="external//fig_12_3_field_triangle_rev.svg" role="img" class="contained" alt="The vector field \(x\vi\text{,}\) which consists of horiznotal vectors that increase in length as distance from the \(y\)-axis increases. Three oriented line segments are also depicted. The line segment \(C_1\) is from \((0,1)\) to \((3,1)\text{.}\) The line segment \(C_2\) is from \((3,1)\) to \((3,3)\text{.}\) The line segment \(C_3\) is from \((0,1)\) to \((3,3)\text{.}\)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.3.6<span class="period">.</span></span><span class="space"> </span>The vector field <span class="process-math">\(\vF = x\vi\)</span> and some oriented curves.</figcaption></figure> <p id="p-378">We first note that since <span class="process-math">\(\vF\)</span> is orthogonal to <span class="process-math">\(C_2\text{,}\)</span> <span class="process-math">\(\int_{C_2}\vF\cdot d\vr=0\text{;}\)</span> therefore <span class="process-math">\(\int_C\vF\cdot d\vr =\int_{C_1}\vF\cdot d\vr\text{.}\)</span> We can parametrize <span class="process-math">\(C_1\)</span> as <span class="process-math">\(t\vi+\vj\)</span> for <span class="process-math">\(0\leq
+t\leq 3\)</span> (<span class="process-math">\(t\)</span> is treated like the coordinate <span class="process-math">\(x\)</span>), which leads to</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{C_1}\vF\cdot d\vr = \int_0^3\langle t,0\rangle\cdot \langle 1,0\rangle\, dt = \int_0^3 t\, dt = \frac{9}{2}\text{.}
+\end{equation*}
+</div> <p id="p-379">Thus, <span class="process-math">\(\int_C\vF\cdot d\vr = 9/2\text{.}\)</span></p> <p id="p-380">Now we look at <span class="process-math">\(\int_{C_3}\vF\cdot d\vr\text{,}\)</span> but we parametrize <span class="process-math">\(C_3\)</span> in a nonstandard way by letting <span class="process-math">\(\vr(t) = \langle 3\sin(t),1+2\sin(t)\rangle\)</span> for <span class="process-math">\(0\leq t\leq \frac{\pi}{2}\text{.}\)</span> (You should use a graphing utility to plot this parametrization to help convince yourself that it really does give <span class="process-math">\(C_3\text{.}\)</span>) This gives <span class="process-math">\(\vr'(t) =
+\langle 3\cos(t),2\cos(t)\rangle\text{,}\)</span> and</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int_{C_3}\vF\cdot d\vr = \int_0^{\pi/2}\langle 3\sin(t),0\rangle\cdot\langle 3\cos(t),2\cos(t)\rangle\, dt = \int_0^{\pi/2} 9\sin(t)\cos(t)\, dt = \frac{9}{2}
+\end{equation*}
+</div> <p id="p-381">In the next activity, you are asked to consider the more typical parametrization of <span class="process-math">\(C_3\)</span> and verify that using it gives the same value for the line integral.</p> <p id="p-382">It's also worth observing here that <span class="process-math">\(\int_C\vF\cdot d\vr =
+\int_{C_3}\vF\cdot d\vr\text{,}\)</span> so at least two (very different) paths from <span class="process-math">\((0,1)\)</span> to <span class="process-math">\((3,3)\)</span> give the same value of the line integral here. The next section will further investigate when line integrals over different paths (with the same initial point and final point) will evaluate to the same value.</p></article><p id="p-383">As promised, the final activity of this section asks you to look at another parametrization of the curve <span class="process-math">\(C_3\)</span> from the previous example. It also asks you to look at two different oriented curves between a pair of points, similarly to what you did in <a href="" class="xref" data-knowl="./knowl/act_Vector_ParamLineIntegrals_DifferentPaths.html" title="Activity 9.3.3">Activity 9.3.3</a>.</p>
+<article class="activity project-like" id="act_Vector_ParamLineIntegrals_ParamIndep"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.3.4</span><span class="period">.</span>
+</h4>
+<article class="task exercise-like" id="task_Vector_ParamLineIntegrals_ParamIndep_FinishEx"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-384">The typical parametrization of the line segment from <span class="process-math">\((0,1)\)</span> to <span class="process-math">\((3,3)\)</span> (the oriented curve <span class="process-math">\(C_3\)</span> in <a href="" class="xref" data-knowl="./knowl/ex_Vector_ParamLineIntegrals_ParamIndep.html" title="Example 9.3.5">Example 9.3.5</a>) is <span class="process-math">\(\vr(t) = \langle 3t,1+2t\rangle\)</span> where <span class="process-math">\(0 \leq
+t\leq 1\text{.}\)</span> Use this parametrization to calculate <span class="process-math">\(\int_{C_3}\vF\cdot d\vr\)</span> for the vector field <span class="process-math">\(\vF
+= x\vi\)</span> and compare your answer to the result of <a href="" class="xref" data-knowl="./knowl/ex_Vector_ParamLineIntegrals_ParamIndep.html" title="Example 9.3.5">Example 9.3.5</a>.</p></article><article class="task exercise-like" id="task_Vector_ParamLineIntegrals_ParamIndep_TwoSegs"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-387">Calculate <span class="process-math">\(\int_C \langle (3xy+e^z), x^2,
+(4z+xe^z)\rangle\cdot d\vr\)</span> where <span class="process-math">\(C\)</span> is the oriented curve consisting of the line segment from the origin to <span class="process-math">\((1,1,1)\)</span> followed by the line segment from <span class="process-math">\((1,1,1)\)</span> to <span class="process-math">\((0,0,2)\text{.}\)</span></p></article><article class="task exercise-like" id="task_Vector_ParamLineIntegrals_ParamIndep_OneSeg"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-390">Calculate <span class="process-math">\(\int_{C'} \langle 3xy+e^z, x^2,
+4z+xe^z\rangle\cdot d\vr\)</span> where <span class="process-math">\(C'\)</span> is the line segment from <span class="process-math">\((0,0,0)\)</span> to <span class="process-math">\((0,0,2)\text{.}\)</span></p></article><article class="task exercise-like" id="task-58"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<p id="p-393">Is the vector field you considered in the previous two parts a gradient vector field? Why or why not? How does this compare to the vector field <span class="process-math">\(\vF\)</span> of <a href="" class="xref" data-knowl="./knowl/act_Vector_ParamLineIntegrals_DifferentPaths.html" title="Activity 9.3.3">Activity 9.3.3</a>?</p></article></article><p id="p-396">Although we have not given a proof or even an intuitive argument, the phenomenon you observed in <a href="" class="xref" data-knowl="./knowl/task_Vector_ParamLineIntegrals_ParamIndep_FinishEx.html" title="Task 9.3.4.a">part a</a> of <a href="" class="xref" data-knowl="./knowl/act_Vector_ParamLineIntegrals_ParamIndep.html" title="Activity 9.3.4">Activity 9.3.4</a> is not particular to this curve or this vector field. The value of <span class="process-math">\(\int_C\vF\cdot d\vr\)</span> does not depend on the parametrization of <span class="process-math">\(C\)</span> used to calculate the line integral when using <a href="" class="xref" data-knowl="./knowl/thm_LineIntParam.html" title="Theorem 9.3.2">Theorem 9.3.2</a>. We will take this for granted in the remainder of the chapter. The next section will engage in a serious exploration of when a vector field has the property that the line integral from a point <span class="process-math">\(P\)</span> to a point <span class="process-math">\(Q\)</span> does not depend not he choice of oriented path between them.</p></section><section class="subsection" id="subsection-14"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">9.3.4</span> <span class="title">Summary</span>
+</h3>
+<ul id="p-397" class="disc">
+<li id="li-112"><p id="p-398">Line integrals of vector fields along oriented curves can be evaluated by parametrizing the curve in terms of <span class="process-math">\(t\)</span> and then calculating the integral of <span class="process-math">\(\vF(\vr(t))\cdot \vr'(t)\)</span> on the interval <span class="process-math">\([a,b]\text{.}\)</span></p></li>
+<li id="li-113"><p id="p-399">The parametrization chosen for an oriented curve <span class="process-math">\(C\)</span> when calculating the line integral <span class="process-math">\(\int_C\vF\cdot d\vr\)</span> using the formula <span class="process-math">\(\int_a^b
+\vF(\vr(t))\cdot \vr'(t)\, dt\)</span> does not impact the value of the line integral.</p></li>
+<li id="li-114"><p id="p-400">If <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> are different paths from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\text{,}\)</span> it is possible for <span class="process-math">\(\int_{C_1}\vF\cdot d\vr\)</span> to have a different value to <span class="process-math">\(\int_{C_2}\vF\cdot d\vr\text{.}\)</span></p></li>
+</ul></section><section class="exercises" id="exercises-4"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">9.3.5</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-9"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div id="webwork-15" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="15" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Hope/Multi2/11-06-Scalar-line-integrals/Scalar-line-integral-04.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-401">Find the line integral with respect to arc length <span class="process-math">\(\displaystyle \int_C (2 x + 7 y) ds\text{,}\)</span> where <span class="process-math">\(C\)</span> is the line segment in the <span class="process-math">\(xy\)</span>-plane with endpoints <span class="process-math">\(P = \left(6,0\right)\)</span> and <span class="process-math">\(Q = \left(0,9\right)\text{.}\)</span></p> <p id="p-402">(a) Find a vector parametric equation <span class="process-math">\(\vec{r}(t)\)</span> for the line segment <span class="process-math">\(C\)</span> so that points <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> correspond to <span class="process-math">\(t = 0\)</span> and <span class="process-math">\(t = 1\text{,}\)</span> respectively.</p> <p id="p-403"><span class="process-math">\(\vec{r}(t) =\)</span> <span class="fillin underline" role="img" aria-label="30-character blank" style="width: 13.6363636363636em;"></span></p> <p id="p-404">(b) Using the parametrization in part (a), the line integral with respect to arc length is</p> <p id="p-405"><span class="process-math">\(\displaystyle \int_C (2 x + 7 y) ds = \int_a^b\)</span> <span class="fillin underline" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span> <span class="process-math">\(dt\)</span></p> <p id="p-406">with limits of integration <span class="process-math">\(a =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> and <span class="process-math">\(b =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p> <p id="p-407">(c) Evaluate the line integral with respect to arc length in part (b).</p> <p id="p-408"><span class="process-math">\(\displaystyle \int_C (2 x + 7 y) ds =\)</span> <span class="fillin underline" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-15')">Activate</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-10"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div id="webwork-16" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="16" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/FortLewis/Calc3/18-2-Line-integrals-parametrized/HGM4-18-2-11a-Line-integrals-parametrized.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-414">Suppose <span class="process-math">\(\vec{F}(x,y) = \langle e^x, e^y \rangle\)</span> and <span class="process-math">\(C\)</span> is the portion of the ellipse centered at the origin from the point <span class="process-math">\((0,1)\)</span> to the point <span class="process-math">\((8,0)\)</span> centered at the origin oriented clockwise.</p> <p id="p-415">(a) Find a vector parametric equation <span class="process-math">\(\vec{r}(t)\)</span> for the portion of the ellipse described above for <span class="process-math">\(0 \leq t \leq \pi/2\text{.}\)</span></p> <p id="p-416"><span class="process-math">\(\vec{r}(t) =\)</span> <span class="fillin underline" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span></p> <p id="p-417">(b) Using your parametrization in part (a), set up an integral for calculating the circulation of <span class="process-math">\(\vec{F}\)</span> around <span class="process-math">\(C\text{.}\)</span></p> <p id="p-418"><span class="process-math">\(\displaystyle \int_C \vec{F} \cdot d \vec{r} = \int_a^b \vec{F}(\vec{r}(t)) \cdot \vec{r}\,'(t) \, dt = \int_a^b\)</span> <span class="fillin underline" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span> <span class="process-math">\(dt\)</span></p> <p id="p-419">with limits of integration <span class="process-math">\(a =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> and <span class="process-math">\(b =\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span></p> <p id="p-420">(c) Find the circulation of <span class="process-math">\(\vec{F}\)</span> around <span class="process-math">\(C\text{.}\)</span></p> <p id="p-421">Circulation = <span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-16')">Activate</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-11"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div id="webwork-17" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="17" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/ASU-topics/setCalculus/stef16_2p1.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents"><p id="p-427">Evaluate the line integral <span class="process-math">\(\int_C \mathbf{F}\cdot d\mathbf{r}\text{,}\)</span> where <span class="process-math">\(\mathbf{F}(x,y,z) = 4x\mathbf{i}  - 3y\mathbf{j} + 4z\mathbf{k}\)</span> and C is given by the  vector function <span class="process-math">\(\mathbf{r}(t) = \langle \sin t, \cos t, t \rangle, \quad \ 0\le t \le 3\pi/2.\)</span></p></div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-17')">Activate</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-12"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div id="webwork-18" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="18" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/UBC/calculusStewart/lineIntegrals21.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<p id="p-429">Evaluate the line integral <span class="process-math">\(\int_{\mathcal{C}} \mathbf{F} \cdot \,d\ \mathbf{r}\)</span> where <span class="process-math">\(\mathbf{F}=\left\lt  5 \sin x, -2 \cos y, 10 xz \right&gt;\)</span> and <span class="process-math">\(\mathcal{C}\)</span> is the path given by <span class="process-math">\(\mathbf{r}(t) = (3 t^3, -3 t^2, 2 t)\)</span> for <span class="process-math">\(0 \le t \le 1\)</span></p> <p id="p-430"><span class="process-math">\(\int_{\mathcal{C}} \mathbf{F} \cdot \,d\ \mathbf{r}=\)</span> <span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span></p>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-18')">Activate</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-13"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<article class="task exercise-like" id="Exercise_Vector_ParamLineIntegrals_1_part1"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-432">Compute <span class="process-math">\(\int_{C_1} \vF\cdot d\vr\)</span> when <span class="process-math">\(\vF=\langle x^2,xy\rangle \)</span> and <span class="process-math">\(C_1\)</span> is the line segment from <span class="process-math">\((0,0)\)</span> to <span class="process-math">\((2,2)\text{.}\)</span></p></article><article class="task exercise-like" id="Exercise_Vector_ParamLineIntegrals_1_part2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-435">Compute <span class="process-math">\(\int_{C_2} \vF\cdot d\vr\)</span> when <span class="process-math">\(\vF=\langle x^2,xy\rangle \)</span> and <span class="process-math">\(C_2\)</span> is the line segment from <span class="process-math">\((2,2)\)</span> to <span class="process-math">\((0,0)\text{.}\)</span></p></article></article><article class="exercise exercise-like" id="exercise-14"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<p id="p-438">If the wind in a region of space is given by <span class="process-math">\(\vF=\langle y+z,z-x,-z \rangle\)</span> and a helicopter flies along the path given by <span class="process-math">\(\vr(t) = \langle 10 \sin(t),10\cos(t),(10-t)^2 \rangle\)</span> as <span class="process-math">\(0\leq t\leq4\pi\text{.}\)</span> Calculate the work done by the wind on the helicopter.</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-2" id="hint-2"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><p id="p-439">Set up your integral carefully and then use either integration by parts or an algebraic solver to compute the definite integral.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-15"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="introduction" id="introduction-15"><p id="p-442">Let <span class="process-math">\(C_3\)</span> be the circle of radius <span class="process-math">\(7\)</span> centered at the origin traveled counterclockwise. Compute <span class="process-math">\(\int_{C_3}
+\langle M, N\rangle\cdot d\vr\)</span> when:</p></div>
+<article class="task exercise-like" id="Exercise_Vector_ParamLineIntegrals_3_part1"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p id="p-443"><span class="process-math">\(\langle M,N\rangle = \langle x,y \rangle\)</span></p></article><article class="task exercise-like" id="Exercise_Vector_ParamLineIntegrals_3_part2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p id="p-446"><span class="process-math">\(\langle M,N\rangle = \langle -y,x \rangle\)</span></p></article><article class="task exercise-like" id="Exercise_Vector_ParamLineIntegrals_3_part3"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p id="p-449"><span class="process-math">\(\langle M,N\rangle = \langle 3,x \rangle\)</span></p></article></article><article class="exercise exercise-like" id="exercise-16"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<p id="p-452">Let <span class="process-math">\(C_4\)</span> be the curve given by traveling along the path given by <span class="process-math">\(y=x^3-x\)</span> on the surface given by <span class="process-math">\(z=xy\)</span> as <span class="process-math">\(x\)</span> goes from <span class="process-math">\(-1\)</span> to <span class="process-math">\(2\text{.}\)</span> What is the work done by <span class="process-math">\(\langle x,z,x+y\rangle\text{?}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><p id="p-453">Parametrize y in terms of x first, then use that relationship to give z as a function x.</p></div></div>
+</div></article></section></section></div></main>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJKN634F7R"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QJKN634F7R');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>
