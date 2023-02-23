@@ -11,19 +11,26 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/eqn_ez_Vector_GreensTheorem_region_hole_add.html ./knowl/thm_Green.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/S-9-3-Dot-Product.html">
 \begin{align*}
-\oint_C\vF\cdot d\vr &amp;= \iint_{R_1}
-\left(\frac{\partial F_2}{\partial x}
-- \frac{\partial F_1}{\partial y}\right)\, dA +
-\iint_{R_2}
-\left(\frac{\partial F_2}{\partial x}
-- \frac{\partial F_1}{\partial y}\right)\, dA\\
-&amp;= \iint_{R} \left(\frac{\partial
-F_2}{\partial x} - \frac{\partial F_1}{\partial
-y}\right)\, dA
+|\vu\times\vv|^2=\mathstrut \amp  (u_2v_3-u_3v_2)^2 + (u_1v_3-u_3v_1)^2 +
+(u_1v_2-u_2v_1)^2\\
+=\mathstrut \amp  u_2^2 v_3^2- 2u_2u_3v_2v_3 +u_3^2v_2^2 +
+u_1^2 v_3^2 -2u_1u_3v_1v_3 +u_3^2v_1^2 \\
+\mathstrut \amp + u_1^2 v_2^2 -2u_1u_2v_1v_2 +u_2^2v_1^2\\
+=\mathstrut \amp  u_1^2(v_2^2+v_3^2) + u_2^2(v_1^2+v_3^2) + u_3^2(v_1^2+v_2^2) \\
+\mathstrut \amp - 2(u_1u_2v_1v_2 + u_1u_3v_1v_3 + u_2u_3v_2v_3)\\
+=\mathstrut \amp  u_1^2(v_1^2+v_2^2+v_3^2) + u_2^2(v_1^2+v_2^2+v_3^2) +
+u_3^2(v_1^2+v_2^2+v_3^2) \\
+\mathstrut \amp -
+(u_1^2v_1^2 + u_2^2v_2^2 + u_3^2v_3^2  + 
+2(u_1u_2v_1v_2 + u_1u_3v_1v_3 + u_2u_3v_2v_3))\\
+=\mathstrut \amp  (u_1^2+u_2^2+u_3^2)(v_1^2+v_2^2+v_3^2)-(u_1v_1+u_2v_2+u_3v_3)^2\\
+=\mathstrut \amp  |\vu|^2|\vv|^2-(\vu\cdot\vv)^2\\
+=\mathstrut \amp  |\vu|^2|\vv|^2(1-\cos^2(\theta))\\
+=\mathstrut \amp  |\vu|^2|\vv|^2\sin^2(\theta).
 \end{align*}
 </div>
-<span class="incontext"><a href="S_Vector_GreensTheorem.html#md-13" class="internal">in-context</a></span>
+<span class="incontext"><a href="S-9-4-Cross-Product.html#md-9" class="internal">in-context</a></span>
 </body>
 </html>

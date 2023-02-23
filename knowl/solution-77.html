@@ -13,12 +13,24 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">9.5.1.h.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">11.8.6.7.1</span><span class="period">.</span>
 </h4>
-<p>We find that <span class="process-math">\(\frac{\partial g}{\partial y} =
-6xye^{y^2}+\frac{\partial C_1}{\partial y}\)</span> and <span class="process-math">\(\frac{\partial h}{\partial y}=x^3+\frac{\partial
-C_2}{\partial y}\text{.}\)</span> This means that we need to add terms to <span class="process-math">\(g\)</span> and <span class="process-math">\(h\)</span> in <span class="process-math">\(y\)</span> and <span class="process-math">\(z\)</span> such that the partial with respect to <span class="process-math">\(y\)</span> will correspond to the second component of <span class="process-math">\(\vG\)</span> and <span class="process-math">\(\vH\text{.}\)</span></p>
+<div class="para">SOLUTION</div> <div class="para">
+<span class="process-math">\(z =- \sqrt{9-x^2 - y^2}\)</span> and <span class="process-math">\(z = \sqrt{9-x^2 - y^2}\)</span>  represent, respectively,  the lower and upper part of the sphere <span class="process-math">\(x^2 + y^2 + z^2 = 9\text{.}\)</span>
+</div> <div class="para">In spherical coordinates, the sphere has equation <span class="process-math">\(\rho = 3\text{.}\)</span>
+</div> <div class="para">
+<span class="process-math">\(y =- \sqrt{9-x^2}\)</span> and <span class="process-math">\(y = \sqrt{9-x^2 }\)</span>  represent, respectively,  the lower and upper part of the circle <span class="process-math">\(x^2 + y^2 = 9\text{,}\)</span> which is the intersection of the sphere  <span class="process-math">\(\rho = 3\)</span> with  the <span class="process-math">\(xy\)</span>-plane.</div> <div class="para">Since <span class="process-math">\(0 \le x \le 3\text{,}\)</span> the region of integration consists of the hemisphere  <span class="process-math">\(\rho = 3\)</span>  with <span class="process-math">\(x &gt; 0\text{.}\)</span>
+</div> <div class="para">Thus, in spherical coordintes, the integral becomes</div> <div class="para"><span class="process-math">\(\begin{array}{lcl}
+\displaystyle\int_{-\pi/2}^{\pi/2} \int_0^{\pi} \int_0^{3} \frac{1}{(\rho^2)^{1/2}} \rho^2 \sin \phi
+d\rho \, d\phi \, d\theta
+\amp =\amp  \displaystyle\int_{-\pi/2}^{\pi/2} \int_0^{\pi} \int_0^{3} \rho \sin \phi
+d\rho \, d\phi \, d\theta
+\\ \amp =\amp  \displaystyle \left[\theta\right]_{-\pi/2}^{\pi/2}
+\left[ \frac{\rho^2}{2} \right]_0^{3}
+\left[ -\cos \phi\right]_0^{\pi}
+\\ \amp =\amp  \displaystyle \pi  \frac{3^2}{2} (2) = 9 \pi
+\end{array}\)</span></div>
 </div>
-<span class="incontext"><a href="S_Vector_FTCLI.html#solution-77" class="internal">in-context</a></span>
+<span class="incontext"><a href="S-11-8-Triple-Integrals-Cylindrical-Spherical.html#solution-77" class="internal">in-context</a></span>
 </body>
 </html>

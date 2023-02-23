@@ -11,18 +11,26 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{gather*}
-\overline{x} = \frac{1}{ab}\int_0^1
-a^2b(1-t)^2\, dt =
-\frac{a^2b}{ab}\left[-\frac{(1-t)^3}{3}\right]_0^1 =
-\frac{a}{3} \\
-\overline{y} = \frac{1}{ab}\int_0^1
-ab^2t^2\, dt =
-\frac{ab^2}{ab}\left[\frac{t^3}{3}\right]_0^1 =
-\frac{b}{3} 
-\end{gather*}
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/S-9-3-Dot-Product.html">
+\begin{align*}
+|\vu\times\vv|^2=\mathstrut \amp  (u_2v_3-u_3v_2)^2 + (u_1v_3-u_3v_1)^2 +
+(u_1v_2-u_2v_1)^2\\
+=\mathstrut \amp  u_2^2 v_3^2- 2u_2u_3v_2v_3 +u_3^2v_2^2 +
+u_1^2 v_3^2 -2u_1u_3v_1v_3 +u_3^2v_1^2 \\
+\mathstrut \amp + u_1^2 v_2^2 -2u_1u_2v_1v_2 +u_2^2v_1^2\\
+=\mathstrut \amp  u_1^2(v_2^2+v_3^2) + u_2^2(v_1^2+v_3^2) + u_3^2(v_1^2+v_2^2) \\
+\mathstrut \amp - 2(u_1u_2v_1v_2 + u_1u_3v_1v_3 + u_2u_3v_2v_3)\\
+=\mathstrut \amp  u_1^2(v_1^2+v_2^2+v_3^2) + u_2^2(v_1^2+v_2^2+v_3^2) +
+u_3^2(v_1^2+v_2^2+v_3^2) \\
+\mathstrut \amp -
+(u_1^2v_1^2 + u_2^2v_2^2 + u_3^2v_3^2  + 
+2(u_1u_2v_1v_2 + u_1u_3v_1v_3 + u_2u_3v_2v_3))\\
+=\mathstrut \amp  (u_1^2+u_2^2+u_3^2)(v_1^2+v_2^2+v_3^2)-(u_1v_1+u_2v_2+u_3v_3)^2\\
+=\mathstrut \amp  |\vu|^2|\vv|^2-(\vu\cdot\vv)^2\\
+=\mathstrut \amp  |\vu|^2|\vv|^2(1-\cos^2(\theta))\\
+=\mathstrut \amp  |\vu|^2|\vv|^2\sin^2(\theta).
+\end{align*}
 </div>
-<span class="incontext"><a href="S_Vector_GreensTheorem.html#md-14" class="internal">in-context</a></span>
+<span class="incontext"><a href="S-9-4-Cross-Product.html#md-9" class="internal">in-context</a></span>
 </body>
 </html>

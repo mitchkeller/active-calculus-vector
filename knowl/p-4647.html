@@ -12,13 +12,7 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>We can approximate the accumulation of <span class="process-math">\(f\)</span> over <span class="process-math">\(C\)</span> with the following sum:</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\sum_{i=0}^{k-1} f(r_i^{*}) \Vert{r_{i+1}-r_{i}}\Vert
-\end{equation*}
-</div>
-<p class="continuation">where <span class="process-math">\(f(r_i^{*})\)</span> is the output of <span class="process-math">\(f\)</span> for some <span class="process-math">\(r_i^{*} \in [r_i,r_{i+1}]\text{.}\)</span> As this sum is made with more pieces and all of the lengths of the pieces goes to zero (i.e. <span class="process-math">\(\Vert{r_{i+1}-r_{i}}\Vert \rightarrow 0\)</span>), we would expect that the sum will approach the actual acculumation of <span class="process-math">\(f\)</span> over <span class="process-math">\(C\text{.}\)</span> Notice that it won't matter how we select the point <span class="process-math">\(r_i^*\)</span> that used in each piece to evaluate the output of <span class="process-math">\(f\)</span> since evaluating the limit as the pieces gets smaller will ensure that the output value will be within a shrinking error from the average value on each piece. Evaluating the limit as the size of all of the pieces goes to zero will transform our Riemann sum into an integral that will measure the accumulation of the output of <span class="process-math">\(f\)</span> over <span class="process-math">\(C\text{.}\)</span></p>
-<span class="incontext"><a href="S_ScalarLineIntegral.html#p-4647" class="internal">in-context</a></span>
+<div class="para">Up to this point, we have chosen whatever parametrization of an oriented curve <span class="process-math">\(C\)</span> came to mind, and our argument for how we can use parametrizations to calculate line integrals did not depend on the specific choice of parametrization. However, it is not immediately obvious that different parametrizations don't result in different values of the line integral. Our next example explores this question.</div>
+<span class="incontext"><a href="S_Vector_ParamLineIntegrals.html#p-4647" class="internal">in-context</a></span>
 </body>
 </html>

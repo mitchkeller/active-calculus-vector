@@ -11,18 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Notice that <span class="process-math">\(\displaystyle\int_{C_4}\vF\cdot d\vr\)</span> is the only one of the six line integrals that is positive, so it is the largest. Since <span class="process-math">\(\vF\)</span> is orthogonal to <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_3\text{,}\)</span> <span class="process-math">\(\displaystyle\int_{C_1}\vF\cdot d\vr = \int_{C_3}\vF\cdot
-d\vr = 0\text{.}\)</span> Note that while <span class="process-math">\(C_6\)</span> is twice as long as <span class="process-math">\(C_2\text{,}\)</span> the vectors in the vector field that are hindering <span class="process-math">\(C_2\)</span> are more than twice as long as those hindering <span class="process-math">\(C_6\)</span> Thus, <span class="process-math">\(\displaystyle\int_{C_2}\vF\cdot d\vr \lt
-\displaystyle\int_{C_6}\vF\cdot d\vr\text{.}\)</span> We do not yet have all the tools necessary to calculate the exact value of <span class="process-math">\(\displaystyle\int_{C_5}\vF\cdot d\vr\text{.}\)</span> However, it is greater than <span class="process-math">\(\displaystyle\int_{C_6}\vF\cdot
-d\vr\text{.}\)</span> Thus, the ordering is</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(C\)</span> be an oriented curve and <span class="process-math">\(\vF\)</span> a vector field defined in a region containing <span class="process-math">\(C\text{.}\)</span>  The <dfn class="terminology">line integral</dfn> of <span class="process-math">\(\vF\)</span> along <span class="process-math">\(C\)</span> is</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\int_{C_4}\vF\cdot d\vr
-&gt; \int_{C_1}\vF\cdot d\vr = \int_{C_3}\vF\cdot d\vr &gt;
-\int_{C_5}\vF\cdot d\vr &gt; \int_{C_6}\vF\cdot d\vr &gt;
-\int_{C_2}\vF\cdot d\vr\text{.}
+\int_C \vF\cdot d\vr = \lim_{|\Delta\vr_i|\to 0}
+\sum_{i=0}^{n-1}\vF(\vr_i)\cdot\Delta\vr_i\text{,}
 \end{equation*}
+</div>
+<div class="para">provided the limit exists.</div>
 </div>
 <span class="incontext"><a href="S_Vector_IdeaLineIntegral.html#p-4454" class="internal">in-context</a></span>
 </body>

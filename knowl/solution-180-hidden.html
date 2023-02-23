@@ -11,22 +11,7 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like">
-<p>Proceeding as above, we find that</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{align*}
-f(x,y) \amp= f(x_0,y_0) + \int_{C_1}\vF\cdot d\vr +
-\int_{L_x} \vF\cdot d\vr + \int_{L_y}\vF\cdot d\vr\\
-\amp = f(x_0,y_0) + \int_{C_1}\vF\cdot d\vr + \int_a^x
-F_1(t,b)\, dt + \int_b^y F_2(x,t)\, dt\text{.}
-\end{align*}
-</div>
-<p class="continuation">Only the last term of this expression depends on <span class="process-math">\(y\text{,}\)</span> so the first three terms vanish when calculating <span class="process-math">\(f_y(x,y)\text{.}\)</span> By the Second Fundamental Theorem of Calculus,</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
-\begin{equation*}
-\frac{\partial}{\partial y}\int_b^y F_2(x,t)\,
-dt = F_2(x,y)\text{.}
-\end{equation*}
-</div>
-<p class="continuation">Therefore, <span class="process-math">\(f_y(x,y) = F_2(x,y)\text{.}\)</span></p>
+<div class="para">In <span class="process-math">\(\vF\text{,}\)</span> we consider the square with lower-left corner <span class="process-math">\((-1,-1)\)</span> and upper-right corner <span class="process-math">\((1,1)\text{,}\)</span> oriented clockwise, to be <span class="process-math">\(C\text{.}\)</span> Notice that <span class="process-math">\(\oint_C\vF\cdot d\vr &gt;
+0\)</span> because the line integrals along the horizontal edges of the square are both positive and the line integrals along the vertical sides are zero because <span class="process-math">\(\vF\)</span> is orthogonal to those sides. Because the line integral along this closed curve is not <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(\vF\)</span> is not path-independent.</div> <div class="para">In <span class="process-math">\(\vG\text{,}\)</span> consider the circle <span class="process-math">\(C\)</span> of radius <span class="process-math">\(2\)</span> centered at the point <span class="process-math">\((3,0)\text{.}\)</span> It appears that <span class="process-math">\(\vG\)</span> is tangent to <span class="process-math">\(C\text{,}\)</span> but we can confidently say that <span class="process-math">\(\vG\cdot d\vr &gt; 0\)</span> along <span class="process-math">\(C\text{,}\)</span> which makes <span class="process-math">\(\oint_C\vG\cdot d\vr\text{,}\)</span> and thus <span class="process-math">\(\vG\)</span> is not path-independent.</div>
 </div></body>
 </html>

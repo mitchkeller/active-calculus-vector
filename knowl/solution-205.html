@@ -12,11 +12,12 @@
 </head>
 <body class="ignore-math">
 <div class="solution solution-like">
-<h5 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.8.4.f.1</span><span class="period">.</span>
-</h5>
-<p>We have already shown that <span class="process-math">\(\vG\)</span> is path-independent, and therefore <span class="process-math">\(\oint_C \vG\cdot d\vr =
-0\)</span> since <span class="process-math">\(C\)</span> is a closed curve. Because <span class="process-math">\(\vG\)</span> is not defined at the origin, <a href="" class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 12.8.3: Green's Theorem">Green's Theorem</a> does not apply to this line integral.</p>
+<h4 class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.8.1.a.1</span><span class="period">.</span>
+</h4>
+<div class="para">If we parametrize <span class="process-math">\(C\)</span> as <span class="process-math">\(\vr(t) = \langle
+2\cos(t),2\sin(t)\rangle\text{,}\)</span> then <span class="process-math">\(\oint_C \vF\cdot
+d\vr = -8\pi\text{.}\)</span> To use the SageMath cell to do this, make line 3 read <code class="code-inline tex2jax_ignore">C = vector([2*cos(t),2*sin(t)])</code> and execute. Because the circulation around <span class="process-math">\(C\)</span> is not <span class="process-math">\(0\text{,}\)</span> we know that <span class="process-math">\(\vF\)</span> is not path-independent.</div>
 </div>
 <span class="incontext"><a href="S_Vector_GreensTheorem.html#solution-205" class="internal">in-context</a></span>
 </body>
