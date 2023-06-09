@@ -10,15 +10,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like">
-<em class="alert">(a)</em> Since <span class="process-math">\(\vec F = 10 x e^{y}\,\vec i + 5 x^2 e^{y}\,\vec j\)</span> is a gradient vector field and <span class="process-math">\(C\)</span> is a closed curve, <span class="process-math">\(\int_C \vec F\cdot d\vec r = 0\text{.}\)</span> <em class="alert">(b)</em> Since<div class="displaymath process-math">
+<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
+<div class="para">Here we find that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_Green.html">
 \begin{equation*}
-\frac{\partial}{\partial x}(5(x + y)) - \frac{\partial}{\partial y}(10(x - y)) = 15,
-\end{equation*}
-</div>by Green's Theorem,<div class="displaymath process-math">
-\begin{equation*}
-\int_C\vec G\cdot d\vec r = \int_R\left(15\right)\,dA = 15(\mbox{Area of triangle}) = 120.
+\frac{\partial F_2}{\partial x} -
+\frac{\partial F_1}{\partial y} = (5+2y)-2y =
+5\text{.}
 \end{equation*}
 </div>
-</div></body>
+<div class="para">Therefore, the integrand in <a href="" class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 12.8.3: Green’s Theorem">Green’s Theorem</a> is the constant <span class="process-math">\(5\text{.}\)</span> Thus, the circulation of <span class="process-math">\(\vF\)</span> around <span class="process-math">\(C\)</span> is <span class="process-math">\(5\)</span> times the area of the region inside <span class="process-math">\(C\text{.}\)</span> That area is <span class="process-math">\(\pi\cdot 3^2 = 9\pi\text{,}\)</span> which means that the circulation is <span class="process-math">\(45\pi\text{.}\)</span>
+</div>
+</div></div></body>
 </html>

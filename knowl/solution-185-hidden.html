@@ -11,14 +11,12 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">The first three terms in our expression for <span class="process-math">\(f(x,y)\)</span> do not depend on <span class="process-math">\(x\text{,}\)</span> and thus when taking the partial derivative with respect to <span class="process-math">\(x\text{,}\)</span> they vanish. By the Second Fundamental Theorem of Calculus (treating <span class="process-math">\(a,y\)</span> as constants),</div>
+<div class="para">Combining the previous parts, we have</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\frac{\partial}{\partial x}\int_a^x F_1(t,y)\, dt =
-F_1(x,y)\text{.}
-\end{equation*}
-</div>
-<div class="para">Therefore, <span class="process-math">\(f_x(x,y) = F_1(x,y)\text{.}\)</span>
+\begin{align*}
+f(x,y)\amp= f(x_0,y_0)+\int_{C_1} \vF \cdot d\vr+\int_{C_y} \vF \cdot d\vr+\int_{C_x} \vF \cdot d\vr\\
+\amp= f(x_0,y_0)+\int_{C_1} \vF \cdot d\vr+\int_b^y F_2(a,t)\,dt+ \int_a^x F_1(t,y)\, dt\text{.}
+\end{align*}
 </div>
 </div></div></body>
 </html>

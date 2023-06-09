@@ -12,7 +12,15 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Before stating some useful properties of line integrals, we will establish some convenient notation. If <span class="process-math">\(C_1\)</span> and <span class="process-math">\(C_2\)</span> are oriented curves, with <span class="process-math">\(C_1\)</span> from a point <span class="process-math">\(P\)</span> to a point <span class="process-math">\(Q\)</span> and <span class="process-math">\(C_2\)</span> from <span class="process-math">\(Q\)</span> to a point <span class="process-math">\(R\text{,}\)</span> we denote by <span class="process-math">\(C_1+C_2\)</span> the oriented curve from <span class="process-math">\(P\)</span> to <span class="process-math">\(R\)</span> that follows <span class="process-math">\(C_1\)</span> to <span class="process-math">\(Q\)</span> and then continues along <span class="process-math">\(C_2\)</span> to <span class="process-math">\(R\text{.}\)</span>  Also, if <span class="process-math">\(C\)</span> is an oriented curve, <span class="process-math">\(-C\)</span> denotes the same curve but with the opposite orientation. The list below summarizes some other properties of line integrals, each of which has a familiar analogue amongst the properties of definite integrals.</div>
+<div class="para logical">
+<div class="para">As we increase <span class="process-math">\(n\)</span> (the number of pieces of <span class="process-math">\(C\)</span> in our approximation) and make sure the length of each <span class="process-math">\(C_i\)</span> goes to zero, the vector field <span class="process-math">\(\vF\)</span> will be nearly constant on each piece and <span class="process-math">\(\Delta \mathbf{r}_i \)</span> will be a better approximation of <span class="process-math">\(C_i\text{.}\)</span> This means that our approximation with <span class="process-math">\(n\)</span> pieces of <span class="process-math">\(C\)</span> would be</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i=1}^{n} \vF(\mathbf{r}_i)\cdot \Delta \mathbf{r}_i 
+\end{equation*}
+</div>
+<div class="para">and the exact amount of work done by <span class="process-math">\(\vF\)</span> over <span class="process-math">\(C\)</span> could be calculated by taking the limit of this approximation as the number of pieces increases and the size of each piece goes to zero. This should be a familiar Riemann sum argument from earlier definitions involving integration.</div>
+</div>
 <span class="incontext"><a href="S_Vector_IdeaLineIntegral.html#p-4477" class="internal">in-context</a></span>
 </body>
 </html>

@@ -10,25 +10,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para logical"><ol class="lower-alpha">
-<li><div class="para">For <span class="process-math">\(\overline{x}\text{,}\)</span> we need <span class="process-math">\(\partial
-F_2/\partial x - \partial F_1/\partial y = x/A\text{.}\)</span> It works nicely to let <span class="process-math">\(F_1 = 0\text{,}\)</span> in which case taking <span class="process-math">\(\vF = \frac{1}{2A}x^2\vj\)</span> gives what we need. For <span class="process-math">\(\overline{y}\text{,}\)</span> we need <span class="process-math">\(\partial
-F_2/\partial x - \partial F_1/\partial y = y/A\text{.}\)</span> It works nicely to let <span class="process-math">\(F_2 = 0\text{,}\)</span> in which case taking <span class="process-math">\(\vG = -\frac{1}{2A}y^2\vi\)</span> gives what we need.</div></li>
-<li><div class="para logical">
-<div class="para">Using the vector fields from above, note that the line integrals along the legs of the triangle are <span class="process-math">\(0\)</span> for both <span class="process-math">\(\vF\)</span> and <span class="process-math">\(\vG\text{.}\)</span> Thus, we parametrize the hypotenuse as <span class="process-math">\(\vr(t) = \langle
-a(1-t),bt\rangle\)</span> with <span class="process-math">\(0\leq t\leq 1\text{.}\)</span> The area of the triangle is <span class="process-math">\(ab/2\text{,}\)</span> so we find</div>
-<div class="displaymath process-math">
-\begin{gather*}
-\overline{x} = \frac{1}{ab}\int_0^1
-a^2b(1-t)^2\, dt =
-\frac{a^2b}{ab}\left[-\frac{(1-t)^3}{3}\right]_0^1 =
-\frac{a}{3} \\
-\overline{y} = \frac{1}{ab}\int_0^1
-ab^2t^2\, dt =
-\frac{ab^2}{ab}\left[\frac{t^3}{3}\right]_0^1 =
-\frac{b}{3} \text{.}
-\end{gather*}
-</div>
-</div></li>
-</ol></div></div></body>
+<body class="ignore-math"><div class="solution solution-like"><div class="para">There is no contradiction because <a href="" class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 12.8.3: Green’s Theorem">Green’s Theorem</a> does not apply here. The region <span class="process-math">\(R\)</span> inside the curve <span class="process-math">\(C\)</span> includes the point <span class="process-math">\((0,0)\text{,}\)</span> and <span class="process-math">\(\vF\)</span> is not defined at that point. Green’s Theorem requires that the vector field be smooth at every point of <span class="process-math">\(R\text{.}\)</span>
+</div></div></body>
 </html>

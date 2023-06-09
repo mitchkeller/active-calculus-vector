@@ -10,55 +10,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like">
-<div class="displaymath process-math">
-\begin{equation*}
-\mbox{div}\,{\vec{F}} = 4\cdot 2x + 5\cdot 2y + 4\cdot 2z.
-\end{equation*}
-</div>So, if <span class="process-math">\(W\)</span> is the interior of the box, we have<div class="displaymath process-math">
-\begin{equation*}
-\int_{S}\vec{F} \cdot d\vec{A} = \int_{W}(4\cdot 2x + 5\cdot 2y + 4\cdot 2z)dV
-= \int_{2}^{4}\int_{0}^{2}\int_{0}^{3}(4\cdot 2x + 5\cdot 2y + 4\cdot 2z)dz\,dy\,dx.
-\end{equation*}
-</div>Integrating through each of the integrals in turn, we have<div class="displaymath process-math">
-\begin{equation*}
-\int_{S}\vec{F} \cdot d\vec{A} =
-\int_{2}^{4}\int_{0}^{2} 4\cdot 2x\,z + 5\cdot 2y\,z + 4z^{2}\bigg|_{z=0}^{z=3}\,
-dy\,dx
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-= \int_{2}^{4}\int_{0}^{2} 24 x + 30 y + 36\,dy\,dx
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-= \int_{2}^{4} 24 x y + 15 y^2 + 36 y\bigg|_{y=0}^{y=2}\,dx
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-= \int_{2}^{4} 48 x + 60 + 72\, dx
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-= 24 x^2 + 60 x + 72 x\bigg|_{x=2}^{x=4}
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-= 552.
-\end{equation*}
-</div>Finding flux directly, note that on the faces <span class="process-math">\(x=4\)</span> and <span class="process-math">\(x=2\)</span> the normal vectors to the surfaces are <span class="process-math">\(\vec i\)</span> and <span class="process-math">\(-\vec i\)</span> respectively, so that <span class="process-math">\(\vec F\cdot d\vec A = \pm 4x^{2}\,dy\,dz\)</span> (where <span class="process-math">\(x\)</span> is evaluated at 4 or 2), and similarly on <span class="process-math">\(y = 2\)</span> and <span class="process-math">\(y = 0\text{,}\)</span> and <span class="process-math">\(z = 3\)</span> and <span class="process-math">\(z = 0\text{,}\)</span> <span class="process-math">\(\vec F\cdot d\vec A = \pm 5y^{2}\,dx\,dz\)</span> and <span class="process-math">\(\vec F\cdot d\vec A = \pm 4z^{2}\,dx\,dy\text{,}\)</span> respectively.  Thus on <span class="process-math">\(y = 0\)</span> and <span class="process-math">\(z = 0\)</span> the flux is zero.  On the remaining faces, we have (1) On <span class="process-math">\(x = 4\text{,}\)</span> <span class="process-math">\(\vec F\cdot d\vec A =
-\int_{0}^{2}\int_{0}^{3}\,64\,dz\,dy =
-384\text{;}\)</span> (2) On <span class="process-math">\(x = 2\text{,}\)</span> <span class="process-math">\(\vec F\cdot d\vec A =
-\int_{0}^{2}\int_{0}^{3}\,16\,dz\,dy =
--96\text{;}\)</span> (3) On <span class="process-math">\(y = 2\text{,}\)</span> <span class="process-math">\(\vec F\cdot d\vec A =
-\int_{2}^{4}\int_{0}^{3}\,20\,dz\,dx =
-120\text{;}\)</span> and (4) On <span class="process-math">\(z = 3\text{,}\)</span> <span class="process-math">\(\vec F\cdot d\vec A =
-\int_{2}^{4}\int_{0}^{2}\,36\,dy\,dx =
-144\text{.}\)</span> Thus the total flux is the sum of these, <span class="process-math">\(\vec F\cdot d\vec A = 552\text{.}\)</span>
-</div></body>
+<body class="ignore-math"><div class="solution solution-like">The scalar surface integral <span class="process-math">\(\iint_{S_1} f \enspace dS\)</span> would calculate the accumulation of toxic fungus on the Sugar Mountain part of your plot. In particular, <span class="process-math">\(\iint_{S_1} f \enspace dS\)</span> measures the total amount of toxic fungus on your Sugar Mountain land.</div></body>
 </html>
