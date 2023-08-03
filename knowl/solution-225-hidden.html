@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -10,5 +10,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para">Notice that <span class="process-math">\(\vF\)</span> is tangent to <span class="process-math">\(C\text{.}\)</span> Thus, <span class="process-math">\(\oint_C \vF\cdot d \vr\)</span> must be positive. (In fact, the circulation of <span class="process-math">\(\vF\)</span> along <span class="process-math">\(C\)</span> is the length of <span class="process-math">\(C\)</span> or <span class="process-math">\(2\pi\)</span> because <span class="process-math">\(\vF\)</span> consists of unit vectors and the vector field is is tangent to <span class="process-math">\(C\text{.}\)</span>) Since there is a closed curve with nonzero circulation, <span class="process-math">\(\vF\)</span> is not path independent.</div></div></body>
+<body class="ignore-math"><div class="solution solution-like">
+<em class="alert">(a)</em> We use Green’s Theorem. Let <span class="process-math">\(R\)</span> be the region enclosed by the circle <span class="process-math">\(C\text{.}\)</span> Then<div class="displaymath process-math">
+\begin{equation*}
+\int_C \vec F\cdot d\vec r =
+\int_R\left( \frac{\partial}{\partial x}(2 e^{y^2} + 216 x) -
+\frac{\partial}{\partial y}(6 x^2 y + 2 y^3 + 7 e^x)\right)\,dA =
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_R 216 - 6(x^2 + y^2)\, dA.
+\end{equation*}
+</div>Converting to polar coordinates, we have<div class="displaymath process-math">
+\begin{equation*}
+\int_C \vec F\cdot d\vec r =
+\int_0^{2\pi}\int_0^1 (216 - 6 r^2)r\,dr\,d\theta =
+2\pi\left(108 r^2 - \frac{3}{2} r^4\right)\bigg|_0^1 = 213\pi.
+\end{equation*}
+</div>
+<em class="alert">(b)</em> The integrand of the integral over the disk <span class="process-math">\(R\)</span> is <span class="process-math">\(216 - 6(x^2+y^2)\text{.}\)</span> Since the integrand is positive for <span class="process-math">\(x^2 + y^2 \lt  \frac{216}{6} = 36\)</span> and negative for <span class="process-math">\(x^2 + y^2 &gt; 36\text{,}\)</span> the integrand is positive inside the circle of radius 6 and negative outside that circle. Thus, the integral over <span class="process-math">\(R\)</span> increases with <span class="process-math">\(a\)</span> until <span class="process-math">\(a=6\)</span> and then decreases. The maximum value of the line integral occurs when <span class="process-math">\(a = 6\text{.}\)</span>
+</div></body>
 </html>

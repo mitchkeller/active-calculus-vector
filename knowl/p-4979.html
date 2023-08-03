@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,8 +11,15 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">The notation for a scalar line integral (<span class="process-math">\(\int_C f \enspace ds \)</span>) may not immediately make sense. As with the other types of integration we have done (double integrals, line integrals of vector fields, single variable integration, etc.), the subscript of the integral symbol denotes the region of integration. In the case of a scalar line integral, the region of integration is a collection of points given by a curve in space. The function we are integrating is <span class="process-math">\(f\text{,}\)</span> a scalar-valued functiton of multiple variables. The differential <span class="process-math">\(ds\)</span> probably looks suspicious to you. If you remember from <a href="S-9-8-Arc-Length-Curvature.html" class="internal" title="Section 9.8: Arc Length and Curvature">Section 9.8</a>, <span class="process-math">\(s\)</span> is the arc length of a curve in space. So the differential <span class="process-math">\(ds\)</span> in the scalar line integral notation means that we are adding up the output of <span class="process-math">\(f\)</span> over steps in arc length. This should make sense in terms of how we set up our Riemann sums. We did not set up the pieces of our curve as steps in <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> or <span class="process-math">\(z\text{,}\)</span> but rather as steps in arc length (estimated by <span class="process-math">\(\Vert{r_{i+1}-r_{i}}\Vert\)</span>).</div>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="para logical">
+<div class="para">Let us return to some of the problems from <a href="" class="xref" data-knowl="./knowl/Act_ScalarLI1.html" title="Activity 12.5.2">Activity 12.5.2</a>. Specifically, let <span class="process-math">\(C_1\)</span> be part of the unit circle on the <span class="process-math">\(xy\)</span>-plane that is centered at the origin and is above the line given by <span class="process-math">\(y=-x\text{.}\)</span> We will also consider <span class="process-math">\(f_1(x,y,z)=y\text{.}\)</span> We can parameterize <span class="process-math">\(C_1\)</span> by <span class="process-math">\(\vr(t)=\langle \cos(t), \sin(t), 0 \rangle\)</span> with <span class="process-math">\(-\frac{\pi}{4} \leq t\leq \frac{3\pi}{4}\text{.}\)</span> Note here that <span class="process-math">\(|{\vr'(t)}| =|{\langle -\sin(t),\cos(t),0\rangle}|=1\text{.}\)</span> We can rewrite the value of <span class="process-math">\(f_1\)</span> along <span class="process-math">\(C_1\)</span> using the parameterization as <span class="process-math">\(f_1(x(t),y(t),z(t))=f_1(\cos(t),\sin(t),0)=\sin(t)\text{.}\)</span> Applying <a href="" class="xref" data-knowl="./knowl/scalarlineint_param_thm.html" title="Theorem 12.5.11: Calculating Scalar Line Integrals with Parameterizations">Theorem 12.5.11</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Act_ScalarLI1.html ./knowl/scalarlineint_param_thm.html">
+\begin{equation*}
+\int_{C_1} f_1 \, ds = \int_{-\frac{\pi}{4}}^{\frac{3\pi}{4}} \sin(t) (1) \, dt = -\cos\left(\frac{3\pi}{4}\right) - \left(-\cos\left(-\frac{\pi}{4}\right))\right)=\sqrt{2}\text{.}
+\end{equation*}
+</div>
+</div>
 <span class="incontext"><a href="S_Vector_ScalarLineIntegral.html#p-4979" class="internal">in-context</a></span>
 </body>
 </html>

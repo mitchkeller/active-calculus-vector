@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,9 +12,25 @@
 </head>
 <body class="ignore-math">
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<div class="para">Because the limits of integration for the <span class="process-math">\(dx\)</span> integrals match and the limits of integration for the <span class="process-math">\(dy\)</span> integrals match, we can add and obtain <span class="process-math">\(\displaystyle\oint_C\vF\cdot d\vr = \int_b^d
-\left(F_2(c,y) - F_2(a,y)\right)\, dy +
-\int_a^c\left(F_1(x,b)-F_1(x,d)\right)\, dx\text{.}\)</span>
+<div class="para logical">
+<div class="para">For <span class="process-math">\((x,y)\neq (0,0)\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\frac{\partial F_2}{\partial x} &amp; =
+-\frac{2x^{2}}{{\left(x^{2} + y^{2}\right)}^{2}}
++ \frac{1}{{x^{2} + y^{2}}} = \frac{y^2-x^2}{{\left(x^{2} + y^{2}\right)}^{2}}\\
+\frac{\partial F_1}{\partial y} &amp; =
+\frac{2y^{2}}{{\left(x^{2} + y^{2}\right)}^{2}} -
+\frac{1}{{x^{2} + y^{2}}} = \frac{y^2-x^2}{{\left(x^{2} + y^{2}\right)}^{2}}\text{.}
+\end{align*}
+</div>
+<div class="para">Thus,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial F_2}{\partial x} - \frac{\partial
+F_1}{\partial y} = 0\text{.}
+\end{equation*}
+</div>
 </div>
 <span class="incontext"><a href="S_Vector_GreensTheorem.html#p-5345" class="internal">in-context</a></span>
 </body>

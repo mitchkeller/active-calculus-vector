@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -13,21 +13,22 @@
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
 <div class="para logical">
-<div class="para">For this example, we will compute the answer to <a href="" class="xref" data-knowl="./knowl/task_SSIS_4.html" title="Task 12.10.1.d">Task 12.10.1.d</a>. We will compute <span class="process-math">\(\iint_{S_3} x+z \enspace dS\)</span> where <span class="process-math">\(S_3\)</span> is the disc of radius one centered at <span class="process-math">\((1,0,0)\)</span> on the <span class="process-math">\(x=1\)</span> fundamental plane. Our surface can be parameterized by <span class="process-math">\(\vr(s,t)=\langle 1,s\cos(t),s\sin(t)\rangle\)</span> where <span class="process-math">\(s \in [0,1]\)</span> and <span class="process-math">\(t \in [0,2\pi]\text{.}\)</span> Using  <a href="" class="xref" data-knowl="./knowl/ScalarSurfaceIntDef.html" title="Theorem 12.10.2">Theorem 12.10.2</a>, we need to compute the partial derivatives of <span class="process-math">\(\vr\)</span> with respect to <span class="process-math">\(s\)</span> and <span class="process-math">\(t\text{,}\)</span> then compute <span class="process-math">\(\Vert{\vr_s \times \vr_t}\Vert \text{.}\)</span> For our parameterization, we get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/task_SSIS_4.html ./knowl/ScalarSurfaceIntDef.html">
-\begin{gather*}
-\vr_s = \langle 0, \cos(t), \sin(t) \rangle \\
-\vr_t = \langle 0, -s\sin(t), s\cos(t) \rangle \\
-\vr_s \times \vr_t = \langle 0, 0, s (\cos(t))^2+s (\sin(t))^2 \rangle 
-\end{gather*}
+<div class="para">Let us return to one of the problems from <a href="" class="xref" data-knowl="./knowl/ScalarSurfaceInt_Sensemaking.html" title="Activity 12.10.2">Activity 12.10.2</a>. Specifically, we will compute the answer to <a href="" class="xref" data-knowl="./knowl/task_SSIS_2.html" title="part 12.10.2.a">part a</a> of that activity. We will compute <span class="process-math">\(\iint_{S_1} x \, dS\)</span> where <span class="process-math">\(S_1\)</span> is the top half (<span class="process-math">\(z \geq 0\)</span>) of the sphere of radius one centered at the origin. Thinking in terms of spherical coordinates is helpul for determining a parameterization of <span class="process-math">\(S_1\text{.}\)</span> Here we can use <span class="process-math">\(\vr(s,t)=\langle \cos(s)\sin(t),\sin(s)\sin(t),\cos(t)\rangle\)</span> where <span class="process-math">\(0 \leq s\leq 2\pi\)</span> and <span class="process-math">\(0\leq t\leq \pi/2\text{,}\)</span> which comes from thinking of <span class="process-math">\(s=\theta\)</span> and <span class="process-math">\(t=\phi\)</span> in spherical coordinates (and <span class="process-math">\(\rho=1\)</span>). Using <a href="" class="xref" data-knowl="./knowl/ScalarSurfaceIntDef.html" title="Theorem 12.10.4">Theorem 12.10.4</a>, we need to compute the partial derivatives of <span class="process-math">\(\vr\)</span> with respect to <span class="process-math">\(s\)</span> and <span class="process-math">\(t\text{,}\)</span> then compute <span class="process-math">\(|{\vr_s \times \vr_t}| \text{.}\)</span> For our parameterization, we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ScalarSurfaceInt_Sensemaking.html ./knowl/task_SSIS_2.html ./knowl/ScalarSurfaceIntDef.html">
+\begin{align*}
+\vr_s \amp = \langle -\sin(s)\sin(t),\cos(s)\sin(t),0\rangle \\
+\vr_t \amp = \langle \cos(s)\cos(t),\sin(s)\cos(t),-\sin(t)\rangle \\
+\vr_s \times \vr_t \amp = -\sin(t) \langle \cos(s)\sin(t),\sin(s)\sin(t),\cos(t) \rangle
+\end{align*}
 </div>
-<div class="para">Simplifying <span class="process-math">\(\vr_s \times \vr_t\)</span> we get</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/task_SSIS_4.html ./knowl/ScalarSurfaceIntDef.html">
-\begin{equation*}
-\vr_s \times \vr_t =s \langle 0, 0, 1 \rangle 
-\end{equation*}
+<div class="para">The form given for <span class="process-math">\(\vr_s \times \vr_t\)</span> is simplified. Before simplifying, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/ScalarSurfaceInt_Sensemaking.html ./knowl/task_SSIS_2.html ./knowl/ScalarSurfaceIntDef.html">
+\begin{align*}
+\langle \amp -(\sin(t))^2 \cos(s), -(\sin(t))^2 \sin(s),\\
+\amp -(\cos(s))^2 \cos(t) \sin(t) -(\sin(s))^2 \cos(t) \sin(t) \rangle\text{.}
+\end{align*}
 </div>
-<div class="para">and thus <span class="process-math">\(\Vert{\vr_s \times \vr_t}\Vert = s\text{.}\)</span> This may be a familiar result from a change of coordinates between rectangular coordinates and polar coordinates, <span class="process-math">\(dA = dx dy = r dr d\theta\text{.}\)</span>
+<div class="para">Note that <span class="process-math">\(\vr_s \times \vr_t = -\sin(t) \vr(s,t)\text{,}\)</span> which means that <span class="process-math">\(\vecmag{\vr_s \times \vr_t} = \sin(t)\)</span> because <span class="process-math">\(\vecmag{\vr(s,t)} = 1\)</span> for any <span class="process-math">\(s\)</span> or <span class="process-math">\(t\)</span> and <span class="process-math">\(\sin(t)\geq 0\)</span> for <span class="process-math">\(0\leq t\leq \pi/2\text{.}\)</span>
 </div>
 </div>
 <span class="incontext"><a href="S_Vector_ScalarSurfaceIntegral.html#p-5644" class="internal">in-context</a></span>

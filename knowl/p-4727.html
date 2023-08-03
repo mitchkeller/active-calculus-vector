@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,17 +11,22 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
 <div class="para logical">
-<div class="para">The vector field <span class="process-math">\(\vF(t)\)</span> is <span class="process-math">\(\langle 10\cos(t)+(10-t)^2,(10-t)^2-10\sin(t),-(10-t)^2 \rangle\)</span> along the path given (which we will call <span class="process-math">\(C\)</span>) and <span class="process-math">\(d\vr=\langle 10\cos(t),-10\sin9t),-(10-t) \rangle dt\text{.}\)</span> So,</div>
+<div class="para">Fortunately, one familiar class of vector fields can be shown to be path-independent. Let <span class="process-math">\(f\colon \R^3\to \R\)</span> be a function for which <span class="process-math">\(\nabla f\)</span> is continuous on a region <span class="process-math">\(D\text{.}\)</span> Suppose that <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> are points in <span class="process-math">\(D\)</span> and let <span class="process-math">\(C\)</span> be a smooth oriented path from <span class="process-math">\(P\)</span> to <span class="process-math">\(Q\)</span> that is also contained in our region <span class="process-math">\(D\text{.}\)</span> We consider <span class="process-math">\(\int_C\nabla f \cdot d\vr\)</span> by fixing an arbitrary parametrization <span class="process-math">\(\vr(t)\)</span> of <span class="process-math">\(C\text{,}\)</span> <span class="process-math">\(a\leq t \leq b\text{.}\)</span> Since we can write <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(z\)</span> in terms of <span class="process-math">\(t\text{,}\)</span> along <span class="process-math">\(C\text{,}\)</span> the gradient of <span class="process-math">\(f\)</span> is given by</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\int_{C} \vF \cdot d\vr=\int_0^{4\pi} \langle 10\cos(t)+(10-t)^2,(10-t)^2-10\sin(t),-(10-t)^2 \rangle \\
-\qquad \cdot \langle 10\cos(t),-10\sin9t),-(10-t) \rangle \enspace dt \\
-= 3680\pi-64\pi^2+640\pi^3-2240\pi^4
+\nabla f(\vr(t)) = \langle f_x(\vr(t)),f_y(\vr(t)),f_z(\vr(t))\rangle\text{.}
 \end{equation*}
 </div>
+<div class="para">Hence, we can write the line integral of the vector field <span class="process-math">\(\vF = \nabla f\)</span> over <span class="process-math">\(C\)</span> in the following way:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\int_C\nabla f\cdot d\vr  \amp = \int_a^b \nabla f(\vr(t))\cdot \vr'(t)\, dt\\
+\amp = \int_a^b \langle f_x(\vr(t)), f_y(\vr(t)), f_z(\vr(t))\rangle \cdot \vr'(t)\, dt
+\end{align*}
 </div>
-<span class="incontext"><a href="S_Vector_ParamLineIntegrals.html#p-4727" class="internal">in-context</a></span>
+</div>
+<span class="incontext"><a href="S_Vector_FTCLI.html#p-4727" class="internal">in-context</a></span>
 </body>
 </html>

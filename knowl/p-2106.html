@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,45 +12,28 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">The Heat Index, <span class="process-math">\(I\text{,}\)</span> (measured in apparent degrees F) is a function of the actual temperature <span class="process-math">\(T\)</span> outside (in degrees F) and the relative humidity <span class="process-math">\(H\)</span> (measured as a percentage).  A portion of the table which gives values for this function, <span class="process-math">\(I=I(T,H)\text{,}\)</span> is provided in <a href="" class="xref" data-knowl="./knowl/T_10_4_heat_index.html" title="Table 10.4.13: Heat index.">Table 10.4.13</a>. <figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">10.4.13<span class="period">.</span></span><span class="space"> </span>Heat index.</figcaption><div class="tabular-box natural-width"><table class="tabular">
-<tr>
-<td class="c m b2 r0 l0 t1 lines">
-<em class="emphasis">T</em> <span class="process-math">\(\downarrow \backslash\)</span> <em class="emphasis">H</em> <span class="process-math">\(\rightarrow\)</span>
-</td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(70\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(75\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(80\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(85\)</span></td>
-</tr>
-<tr>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(90\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(106\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(109\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(112\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(115\)</span></td>
-</tr>
-<tr>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(92\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(112\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(115\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(119\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(123\)</span></td>
-</tr>
-<tr>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(94\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(118\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(122\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(127\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(132\)</span></td>
-</tr>
-<tr>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(96\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(125\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(130\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(135\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(141\)</span></td>
-</tr>
-</table></div></figure> Suppose you are given that <span class="process-math">\(I_T(94,75) = 3.75\)</span> and <span class="process-math">\(I_H(94,75) = 0.9\text{.}\)</span>  Use this given information and one other value from the table to estimate the value of <span class="process-math">\(I(93.1,77)\)</span> using the linearization at <span class="process-math">\((94,75)\text{.}\)</span>  Using proper terminology and notation, explain your work and thinking.</div>
+<div class="para logical">
+<div class="para">Recall that if a function <span class="process-math">\(f = f(x)\)</span> of a single variable is differentiable at <span class="process-math">\(x=x_0\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f'(x_0) = \lim_{h \to 0} \frac{f(x_0+h)-f(x_0)}{h}
+\end{equation*}
+</div>
+<div class="para">exists. We saw in single variable calculus that the existence of <span class="process-math">\(f'(x_0)\)</span> means that the graph of <span class="process-math">\(f\)</span> is locally linear at <span class="process-math">\(x=x_0\text{.}\)</span> In other words, the graph of <span class="process-math">\(f\)</span> looks like its linearization <span class="process-math">\(L(x) = f(x_0)+f'(x_0)(x-x_0)\)</span> for <span class="process-math">\(x\)</span> close to <span class="process-math">\(x_0\text{.}\)</span> That is, the values of <span class="process-math">\(f(x)\)</span> can be closely approximated by <span class="process-math">\(L(x)\)</span> as long as <span class="process-math">\(x\)</span> is close to <span class="process-math">\(x_0\text{.}\)</span> We can measure how good the approximation of <span class="process-math">\(L(x)\)</span> is to <span class="process-math">\(f(x)\)</span> with the error function</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E(x) = L(x) - f(x) = f(x_0)+f'(x_0)(x-x_0) - f(x).
+\end{equation*}
+</div>
+<div class="para">As <span class="process-math">\(x\)</span> approaches <span class="process-math">\(x_0\text{,}\)</span> <span class="process-math">\(E(x)\)</span> approaches <span class="process-math">\(f(x_0)+f'(x_0)(0) - f(x_0) = 0\text{,}\)</span> and so <span class="process-math">\(L(x)\)</span> provides increasingly better approximations to <span class="process-math">\(f(x)\)</span> as <span class="process-math">\(x\)</span> gets closer to <span class="process-math">\(x_0\text{.}\)</span> Show that, even though <span class="process-math">\(g(x,y) = \sqrt{|xy|}\)</span> is not locally linear at <span class="process-math">\((0,0)\text{,}\)</span> its error term</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E(x,y) = L(x,y) - g(x,y)
+\end{equation*}
+</div>
+<div class="para">at <span class="process-math">\((0,0)\)</span> has a limit of <span class="process-math">\(0\)</span> as <span class="process-math">\((x,y)\)</span> approaches <span class="process-math">\((0,0)\text{.}\)</span> (Use the linearization you found in part (b).) This shows that just because an error term goes to <span class="process-math">\(0\)</span> as <span class="process-math">\((x,y)\)</span> approaches <span class="process-math">\((x_0,y_0)\text{,}\)</span> we cannot conclude that a function is locally linear at <span class="process-math">\((x_0,y_0)\text{.}\)</span>
+</div>
+</div>
 <span class="incontext"><a href="S-10-4-Linearization.html#p-2106" class="internal">in-context</a></span>
 </body>
 </html>

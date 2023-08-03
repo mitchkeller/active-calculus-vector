@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -13,49 +13,58 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.10.3.2.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.12.4.4.1</span><span class="period">.</span>
 </h4>
-<span class="process-math">\(y=g( x,z )\text{:}\)</span><div class="displaymath process-math">
+<div class="displaymath process-math">
 \begin{equation*}
-\iint_S  f( x,y,z ) \,dS=
+\mbox{div}\,{\vec{F}} = 4\cdot 2x + 3\cdot 2y + 2\cdot 2z.
+\end{equation*}
+</div>So, if <span class="process-math">\(W\)</span> is the interior of the box, we have<div class="displaymath process-math">
+\begin{equation*}
+\int_{S}\vec{F} \cdot d\vec{A} = \int_{W}(4\cdot 2x + 3\cdot 2y + 2\cdot 2z)dV
+= \int_{3}^{4}\int_{0}^{1}\int_{0}^{1}(4\cdot 2x + 3\cdot 2y + 2\cdot 2z)dz\,dy\,dx.
+\end{equation*}
+</div>Integrating through each of the integrals in turn, we have<div class="displaymath process-math">
+\begin{equation*}
+\int_{S}\vec{F} \cdot d\vec{A} =
+\int_{3}^{4}\int_{0}^{1} 4\cdot 2x\,z + 3\cdot 2y\,z + 2z^{2}\bigg|_{z=0}^{z=1}\,
+dy\,dx
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\iint_{\mathcal{D}} f\left(x,g( x,z ),z\right)\sqrt{1+ g_x^2+ g_z^2} \,dx \,dz 
-\quad \mathbf{(1)}
-\end{equation*}
-</div>Since <span class="process-math">\(y=g( x,z )=7- z^2\text{,}\)</span> we have <span class="process-math">\(g_x =0\text{,}\)</span> <span class="process-math">\(g_z =-2z\text{,}\)</span> hence:<div class="displaymath process-math">
-\begin{equation*}
-\sqrt{1+ g_x^2+ g_z^2}=\sqrt{1+4 z^2}
+= \int_{3}^{4}\int_{0}^{1} 8 x + 6 y + 2\,dy\,dx
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-f\left(x,g( x,z ),z\right)=z
-\end{equation*}
-</div>The domain of integration is the square <span class="process-math">\(\left[0,9\right]\times \left[0,9\right]\)</span> in the <span class="process-math">\(xz\)</span>-plane. By <span class="process-math">\(\mathbf{(1)}\)</span> we get:<div class="displaymath process-math">
-\begin{equation*}
-\iint_S  f( x,y,z ) \,dS =
-\int_0^{9} \int_0^{9} z\sqrt{1+4 z^2} \,dz \,dx=
+= \int_{3}^{4} 8 x y + 3 y^2 + 2 y\bigg|_{y=0}^{y=1}\,dx
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\left(\int_0^{9} 1 \,dx\right)\left(\int_0^{9} z \sqrt{1+4 z^2} \,dz\right)=9\int_0^{9} z \sqrt{1+4 z^2} \,dz
-\end{equation*}
-</div>We use the substitution <span class="process-math">\(u={1+4 z^2}, \,du= 8z \,dz\)</span> to compute the integral. This gives:<div class="displaymath process-math">
-\begin{equation*}
-\iint_S  f( x,y,z ) \,dS =
-9\int_0^{9} z\sqrt{1+4 z^2} \,dz=
+= \int_{3}^{4} 8 x + 3 + 2\, dx
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-9\int_1^{325} \frac{u^{1/2}}{8} \,du = \frac{18}3\cdot\left(\frac{{325}^{3/2}-1}{8}\right)\approx 4393.52
+= 4 x^2 + 3 x + 2 x\bigg|_{x=3}^{x=4}
 \end{equation*}
 </div>
+<div class="displaymath process-math">
+\begin{equation*}
+= 33.
+\end{equation*}
+</div>Finding flux directly, note that on the faces <span class="process-math">\(x=4\)</span> and <span class="process-math">\(x=3\)</span> the normal vectors to the surfaces are <span class="process-math">\(\vec i\)</span> and <span class="process-math">\(-\vec i\)</span> respectively, so that <span class="process-math">\(\vec F\cdot d\vec A = \pm 4x^{2}\,dy\,dz\)</span> (where <span class="process-math">\(x\)</span> is evaluated at 4 or 3), and similarly on <span class="process-math">\(y = 1\)</span> and <span class="process-math">\(y = 0\text{,}\)</span> and <span class="process-math">\(z = 1\)</span> and <span class="process-math">\(z = 0\text{,}\)</span> <span class="process-math">\(\vec F\cdot d\vec A = \pm 3y^{2}\,dx\,dz\)</span> and <span class="process-math">\(\vec F\cdot d\vec A = \pm 2z^{2}\,dx\,dy\text{,}\)</span> respectively.  Thus on <span class="process-math">\(y = 0\)</span> and <span class="process-math">\(z = 0\)</span> the flux is zero.  On the remaining faces, we have (1) On <span class="process-math">\(x = 4\text{,}\)</span> <span class="process-math">\(\vec F\cdot d\vec A =
+\int_{0}^{1}\int_{0}^{1}\,64\,dz\,dy =
+64\text{;}\)</span> (2) On <span class="process-math">\(x = 3\text{,}\)</span> <span class="process-math">\(\vec F\cdot d\vec A =
+\int_{0}^{1}\int_{0}^{1}\,36\,dz\,dy =
+-36\text{;}\)</span> (3) On <span class="process-math">\(y = 1\text{,}\)</span> <span class="process-math">\(\vec F\cdot d\vec A =
+\int_{3}^{4}\int_{0}^{1}\,3\,dz\,dx =
+3\text{;}\)</span> and (4) On <span class="process-math">\(z = 1\text{,}\)</span> <span class="process-math">\(\vec F\cdot d\vec A =
+\int_{3}^{4}\int_{0}^{1}\,2\,dy\,dx =
+2\text{.}\)</span> Thus the total flux is the sum of these, <span class="process-math">\(\vec F\cdot d\vec A = 33\text{.}\)</span>
 </div>
-<span class="incontext"><a href="S_Vector_ScalarSurfaceIntegral.html#solution-252" class="internal">in-context</a></span>
+<span class="incontext"><a href="S_Vector_DivThm.html#solution-252" class="internal">in-context</a></span>
 </body>
 </html>

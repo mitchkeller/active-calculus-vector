@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,7 +12,19 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Partition the interval <span class="process-math">\([a,b]\)</span> into <span class="process-math">\(m\)</span> subintervals of equal length <span class="process-math">\(\Delta x = \frac{b-a}{m}\text{.}\)</span> Let <span class="process-math">\(x_0\text{,}\)</span> <span class="process-math">\(x_1\text{,}\)</span> <span class="process-math">\(\ldots\text{,}\)</span> <span class="process-math">\(x_m\)</span> be the endpoints of these subintervals, where <span class="process-math">\(a = x_0\lt x_1\lt x_2 \lt  \cdots \lt  x_m = b\text{.}\)</span> Do likewise with the interval <span class="process-math">\([c,d]\)</span> using <span class="process-math">\(n\)</span> subintervals of equal length <span class="process-math">\(\Delta y = \frac{d-c}{n}\)</span> to generate <span class="process-math">\(c = y_0\lt y_1\lt y_2 \lt  \cdots \lt  y_n = d\text{,}\)</span> and with the interval <span class="process-math">\([r,s]\)</span> using <span class="process-math">\(\ell\)</span> subintervals of equal length <span class="process-math">\(\Delta z = \frac{s-r}{\ell}\)</span> to have <span class="process-math">\(r = z_0\lt z_1\lt z_2 \lt  \cdots \lt  z_l = s\text{.}\)</span>
+<div class="para logical">
+<div class="para">Evaluating the triple integral gives us</div>
+<div class="displaymath process-math">
+\begin{align*}
+M \amp  = \int_{0}^{6} \int_{0}^{3-(1/2)x} \int_{0}^{(1/3)(6-x-2y)} x+y+z \, dz \, dy \, dx\\
+\amp = \int_{0}^{6} \int_{0}^{3-(1/2)x} \left[xz+yz+\frac{z}{2}\right]\biggm|_{0}^{(1/3)(6-x-2y)} \, dy \, dx\\
+\amp = \int_{0}^{6} \int_{0}^{3-(1/2)x} \frac{4}{3}x - \frac{5}{18}x^2 - \frac{}{9}xy + \frac{2}{3}y - \frac{4}{9}y^2 + 2 \, dy \, dx\\
+\amp = \int_{0}^{6} \left[\frac{4}{3}xy - \frac{5}{18}x^2y - \frac{7}{18}xy^2 + \frac{1}{3}y^2 - \frac{4}{27}y^3 + 2y \right]\biggm|_{0}^{3-(1/2)x}  \, dx\\
+\amp = \int_{0}^{6} 5 + \frac{1}{2}x - \frac{7}{12}x^2 + \frac{13}{216}x^3 \, dx\\
+\amp =  \left[5x + \frac{1}{4}x^2 - \frac{7}{36}x^3 + \frac{13}{864}x^4 \right] \biggm|_{0}^{6}\\
+\amp = \frac{33}{2}.
+\end{align*}
+</div>
 </div>
 <span class="incontext"><a href="S-11-7-Triple-Integrals.html#p-3855" class="internal">in-context</a></span>
 </body>

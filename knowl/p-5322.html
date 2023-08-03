@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -11,10 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">If we parametrize <span class="process-math">\(C\)</span> as <span class="process-math">\(\vr(t) = \langle
-2\cos(t),2\sin(t)\rangle\text{,}\)</span> then <span class="process-math">\(\oint_C \vF\cdot
-d\vr = -8\pi\text{.}\)</span> To use the SageMath cell to do this, make line 3 read <code class="code-inline tex2jax_ignore">C = vector([2*cos(t),2*sin(t)])</code> and execute. Because the circulation around <span class="process-math">\(C\)</span> is not <span class="process-math">\(0\text{,}\)</span> we know that <span class="process-math">\(\vF\)</span> is not path-independent.</div>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">We orient the boundary <span class="process-math">\(C_i\)</span> of square region <span class="process-math">\(R_i\)</span> in the manner suggested by the circular arrows. This means that the vertical boundary in common between <span class="process-math">\(R_1\)</span> and <span class="process-math">\(R_2\)</span> is oriented <em class="emphasis">up</em> when we calculate the line integral <span class="process-math">\(\oint_{C_1}\vF\cdot d\vr\)</span> and oriented <em class="emphasis">down</em> when we evaluate <span class="process-math">\(\oint_{C_2}\vF\cdot d\vr\text{.}\)</span> Thus, this line  segment does not contribute to the sum <span class="process-math">\(\oint_{C_1}\vF\cdot d\vr + \oint_{C_2}\vF\cdot d\vr\text{.}\)</span> Therefore,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\oint_{C_1}\vF\cdot d\vr + \oint_{C_2}\vF\cdot d\vr 
+\end{equation*}
+</div>
+<div class="para">is equal to the line integral of <span class="process-math">\(\vF\)</span> along the boundary of the large square.</div>
+</div>
 <span class="incontext"><a href="S_Vector_GreensTheorem.html#p-5322" class="internal">in-context</a></span>
 </body>
 </html>

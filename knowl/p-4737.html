@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -13,13 +13,16 @@
 <body class="ignore-math">
 <h6 class="heading"><span class="type">Paragraph</span></h6>
 <div class="para logical">
-<div class="para">We will parametrize <span class="process-math">\(C_3\)</span> by <span class="process-math">\(\vr(t) = \langle 7\cos(t),7\sin(t) \rangle\)</span> as <span class="process-math">\(0\leq t\leq 2\pi \text{.}\)</span> So,</div>
+<div class="para">If we changed the path in our line integral to be some path <span class="process-math">\(C_1\)</span> from <span class="process-math">\((1,-1)\)</span> to <span class="process-math">\((-1,4)\)</span> but did not change the vector field being used, then we would only need to evaluate <span class="process-math">\(f(-1,4)- f(1,-1)\text{.}\)</span> So for our new path <span class="process-math">\(C_1\text{,}\)</span>
+</div>
 <div class="displaymath process-math">
-\begin{equation*}
-\int_{C_3} M\enspace x+N\enspace dy=\int_0^{2\pi} \langle3,7\cos(t)\rangle\cdot \langle-7\sin(t),7\cos(t)\rangle \enspace dt= 49\pi \text{.}
-\end{equation*}
+\begin{align*}
+\int_{C_1} \vF \cdot d\vr \amp = f(-1,4)- f(1,-1)\\
+\amp = (4-(-2)+3e^4)-(-1-2+3e^{-1})\\
+\amp =9+3(e^4+e^{-1})\text{.}
+\end{align*}
 </div>
 </div>
-<span class="incontext"><a href="S_Vector_ParamLineIntegrals.html#p-4737" class="internal">in-context</a></span>
+<span class="incontext"><a href="S_Vector_FTCLI.html#p-4737" class="internal">in-context</a></span>
 </body>
 </html>

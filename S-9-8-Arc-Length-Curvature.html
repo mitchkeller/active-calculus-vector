@@ -5,31 +5,49 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Arc Length and Curvature</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="Active Calculus - Multivariable + Vector">
+<meta property="book:title" content="Active Calculus - Multivariable">
 <meta property="book:author" content="Steve Schlicker">
 <meta property="book:author" content="Mitchel T. Keller">
 <meta property="book:author" content="Nicholas Long">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -39,25 +57,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
 <script src="https://pretextbook.org/js/0.3/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
@@ -82,7 +111,7 @@ window.MathJax = {
 <body id="acmulti" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="book-1.html"><span class="title">Active Calculus - Multivariable + Vector</span></a></h1>
+<h1 class="heading"><a href="book-1.html"><span class="title">Active Calculus - Multivariable</span></a></h1>
 <p class="byline">Steve Schlicker, Mitchel T. Keller, Nicholas Long</p>
 </div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
@@ -550,7 +579,7 @@ window.MathJax = {
 <div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Using Parametrizations to Calculate Line Integrals</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html#SS_Vector_ParamLineIntegrals_Evaluation" class="internal"><span class="codenumber">12.3.1</span> <span class="title">Parametrizations in the Definition of <span class="process-math">\(\int_C\vF\cdot d\vr\)</span></span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html#subsection-116" class="internal"><span class="codenumber">12.3.2</span> <span class="title">Alternative Notation for Line Integrals</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html#alt_li_notation" class="internal"><span class="codenumber">12.3.2</span> <span class="title">Alternative Notation for Line Integrals</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html#subsection-117" class="internal"><span class="codenumber">12.3.3</span> <span class="title">Independence of Parametrization for a Fixed Curve</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html#subsection-118" class="internal"><span class="codenumber">12.3.4</span> <span class="title">Summary</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html#exercises-28" class="internal"><span class="codenumber">12.3.5</span> <span class="title">Exercises</span></a></div></li>
@@ -565,17 +594,18 @@ window.MathJax = {
 <li><div class="toc-item"><a href="S_Vector_FTCLI.html#SS_Vector_FTCLI_Other" class="internal"><span class="codenumber">12.4.3</span> <span class="title">What other vector fields are path-independent?</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_FTCLI.html#subsection-123" class="internal"><span class="codenumber">12.4.4</span> <span class="title">Summary</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_FTCLI.html#exercises-29" class="internal"><span class="codenumber">12.4.5</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_FTCLI.html#subsection-124" class="internal"><span class="codenumber">12.4.6</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html" class="internal"><span class="codenumber">12.5</span> <span class="title">Line Integrals of Scalar Functions</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-124" class="internal"><span class="codenumber">12.5.1</span> <span class="title">Defining line integrals of scalar functions</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-125" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Using Parameterizations to Calculate Scalar Line Integrals</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-126" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Properties of Scalar Line Integrals</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-127" class="internal"><span class="codenumber">12.5.4</span> <span class="title">Visualizations of Scalar Line Integrals as Area Under a Curve</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-128" class="internal"><span class="codenumber">12.5.5</span> <span class="title">Summary</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#exercises-30" class="internal"><span class="codenumber">12.5.6</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-125" class="internal"><span class="codenumber">12.5.1</span> <span class="title">Defining line integrals of scalar functions</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-126" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Using Parameterizations to Calculate Scalar Line Integrals</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-127" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Properties of Scalar Line Integrals</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#SS_Vector_ScalarLineIntegral_Visualizations" class="internal"><span class="codenumber">12.5.4</span> <span class="title">Visualizations of Scalar Line Integrals as Area Under a Curve</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-129" class="internal"><span class="codenumber">12.5.5</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#ez_Vector_ScalarLineIntegral" class="internal"><span class="codenumber">12.5.6</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -583,9 +613,9 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="S_Vector_Div.html#SS_Vector_Div_Defn" class="internal"><span class="codenumber">12.6.1</span> <span class="title">Definition of the Divergence of a Vector Field</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_Div.html#SS_Vector_Div_Development" class="internal"><span class="codenumber">12.6.2</span> <span class="title">Measuring the Change in Strength of a Vector Field</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_Div.html#subsection-131" class="internal"><span class="codenumber">12.6.3</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_Div.html#subsection-132" class="internal"><span class="codenumber">12.6.3</span> <span class="title">Summary</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_Div.html#exercises-31" class="internal"><span class="codenumber">12.6.4</span> <span class="title">Exercises</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_Div.html#subsection-132" class="internal"><span class="codenumber">12.6.5</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_Div.html#subsection-133" class="internal"><span class="codenumber">12.6.5</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -595,37 +625,40 @@ window.MathJax = {
 <li><div class="toc-item"><a href="S_Vector_Curl.html#SS_Vector_Curl_Development3D" class="internal"><span class="codenumber">12.7.2</span> <span class="title">Measuring Rotation in Three Dimensions</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_Curl.html#Curl_defn" class="internal"><span class="codenumber">12.7.3</span> <span class="title">Circulation Density in Three Dimensions</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_Curl.html#SS_Vector_Curl_Interpretation" class="internal"><span class="codenumber">12.7.4</span> <span class="title">Interpretation and Usage of Curl</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_Curl.html#subsection-137" class="internal"><span class="codenumber">12.7.5</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_Curl.html#subsection-138" class="internal"><span class="codenumber">12.7.5</span> <span class="title">Summary</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_Curl.html#exercises-32" class="internal"><span class="codenumber">12.7.6</span> <span class="title">Exercises</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_Curl.html#subsection-138" class="internal"><span class="codenumber">12.7.7</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_Curl.html#subsection-139" class="internal"><span class="codenumber">12.7.7</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="S_Vector_GreensTheorem.html" class="internal"><span class="codenumber">12.8</span> <span class="title">Green’s Theorem</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#SS_Vector_GreensTheorem_Circulation" class="internal"><span class="codenumber">12.8.1</span> <span class="title">Circulation</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-140" class="internal"><span class="codenumber">12.8.2</span> <span class="title">Green’s Theorem</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-141" class="internal"><span class="codenumber">12.8.3</span> <span class="title">What happens when vector fields are not smooth?</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-142" class="internal"><span class="codenumber">12.8.4</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-141" class="internal"><span class="codenumber">12.8.2</span> <span class="title">Green’s Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-142" class="internal"><span class="codenumber">12.8.3</span> <span class="title">What happens when vector fields are not smooth?</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-143" class="internal"><span class="codenumber">12.8.4</span> <span class="title">Summary</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#exercises-33" class="internal"><span class="codenumber">12.8.5</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-144" class="internal"><span class="codenumber">12.8.6</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="S_Vector_FluxInt.html" class="internal"><span class="codenumber">12.9</span> <span class="title">Flux Integrals</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="S_Vector_FluxInt.html#SS_Vector_FluxInt_Idea" class="internal"><span class="codenumber">12.9.1</span> <span class="title">The Idea of the Flux of a Vector Field through a Surface</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_FluxInt.html#subsection-144" class="internal"><span class="codenumber">12.9.2</span> <span class="title">Measuring the Flux of a Vector Field through a Surface</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_FluxInt.html#SS_Vector_FluxInt_Calculate" class="internal"><span class="codenumber">12.9.3</span> <span class="title">Efficiently Calculating Flux Integrals</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_FluxInt.html#subsection-146" class="internal"><span class="codenumber">12.9.4</span> <span class="title">Summary</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_FluxInt.html#exercises-34" class="internal"><span class="codenumber">12.9.5</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_FluxInt.html#subsection-146" class="internal"><span class="codenumber">12.9.2</span> <span class="title">The Details of Measuring the Flux of a Vector Field through a Surface</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_FluxInt.html#subsection-147" class="internal"><span class="codenumber">12.9.3</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_FluxInt.html#exercises-34" class="internal"><span class="codenumber">12.9.4</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_FluxInt.html#subsection-148" class="internal"><span class="codenumber">12.9.5</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html" class="internal"><span class="codenumber">12.10</span> <span class="title">Surface Integrals of Scalar Valued Functions</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#subsection-147" class="internal"><span class="codenumber">12.10.1</span> <span class="title">Defining surface integrals of scalar functions</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#subsection-148" class="internal"><span class="codenumber">12.10.2</span> <span class="title">Properties of Scalar Surface Integrals</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#exercises-35" class="internal"><span class="codenumber">12.10.3</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#subsection-149" class="internal"><span class="codenumber">12.10.1</span> <span class="title">Defining surface integrals of scalar functions</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#subsection-150" class="internal"><span class="codenumber">12.10.2</span> <span class="title">Properties of Scalar Surface Integrals</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#subsection-151" class="internal"><span class="codenumber">12.10.3</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#exercises-35" class="internal"><span class="codenumber">12.10.4</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#subsection-152" class="internal"><span class="codenumber">12.10.5</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -633,8 +666,10 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="S_Vector_StokesThm.html#SS_Vector_StokesThm_Development" class="internal"><span class="codenumber">12.11.1</span> <span class="title">Circulation in three dimensions and Stokes’ Theorem</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_StokesThm.html#SS_Vector_StokesThm_Verify" class="internal"><span class="codenumber">12.11.2</span> <span class="title">Verifying and Applying Stokes’ Theorem</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_StokesThm.html#subsection-151" class="internal"><span class="codenumber">12.11.3</span> <span class="title">Summary</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_StokesThm.html#exercises-36" class="internal"><span class="codenumber">12.11.4</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_StokesThm.html#surfaceboundaries" class="internal"><span class="codenumber">12.11.3</span> <span class="title">Practice with Surfaces and thier Boundaries</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_StokesThm.html#subsection-156" class="internal"><span class="codenumber">12.11.4</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_StokesThm.html#exercises-36" class="internal"><span class="codenumber">12.11.5</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_StokesThm.html#subsection-157" class="internal"><span class="codenumber">12.11.6</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -642,8 +677,9 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="S_Vector_DivThm.html#Vector_DivThm_FluxClosedSurface" class="internal"><span class="codenumber">12.12.1</span> <span class="title">Measuring the Flux through a Closed Surface</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_DivThm.html#SS_Vector_DivThm_Verify" class="internal"><span class="codenumber">12.12.2</span> <span class="title">The Divergence Theorem</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_DivThm.html#subsection-154" class="internal"><span class="codenumber">12.12.3</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_DivThm.html#subsection-160" class="internal"><span class="codenumber">12.12.3</span> <span class="title">Summary</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_DivThm.html#exercises-37" class="internal"><span class="codenumber">12.12.4</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_DivThm.html#subsection-161" class="internal"><span class="codenumber">12.12.5</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -658,9 +694,9 @@ window.MathJax = {
 </h2>
 <article class="objectives goal-like" id="objectives-8"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
 <ul class="disc">
-<li id="li-464"><div class="para" id="p-1252">How can a definite integral be used to measure the length of a curve in 2- or 3-space?</div></li>
-<li id="li-465"><div class="para" id="p-1253">Why is arc length useful as a parameter?</div></li>
-<li id="li-466"><div class="para" id="p-1254">What is the curvature of a curve?</div></li>
+<li id="li-459"><div class="para" id="p-1252">How can a definite integral be used to measure the length of a curve in 2- or 3-space?</div></li>
+<li id="li-460"><div class="para" id="p-1253">Why is arc length useful as a parameter?</div></li>
+<li id="li-461"><div class="para" id="p-1254">What is the curvature of a curve?</div></li>
 </ul></article><section class="introduction" id="introduction-8"><div class="para" id="p-1255">Given a space curve, there are two natural geometric questions one might ask: how long is the curve and how much does it bend? In this section, we answer both questions by developing techniques for measuring the length of a space curve as well as its curvature.</div> <article class="exploration project-like" id="PA_9_8"><h3 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">9.8.1</span><span class="period">.</span>
 </h3>
@@ -679,9 +715,9 @@ window.MathJax = {
 <div class="sbspanel top" style="width:33%;"><img src="external/images/fig_9_8_length_animate_08.svg" role="img" class="contained"></div>
 </div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">9.8.1<span class="period">.</span></span><span class="space"> </span>Approximating the length of the curve with <span class="process-math">\(n=3\text{,}\)</span> <span class="process-math">\(n=6\text{,}\)</span> and <span class="process-math">\(n=9\text{.}\)</span></figcaption></figure> <ol class="lower-alpha">
-<li id="li-467"><div class="para" id="p-1258">Write a formula for the length of the line segment that connects the endpoints of the curve on the <span class="process-math">\(i\)</span>th subinterval <span class="process-math">\([t_{i-1},t_i]\text{.}\)</span> (This length is our approximation of the length of the curve on this interval.)</div></li>
-<li id="li-468"><div class="para" id="p-1259">Use your formula in part (a) to write a sum that adds all of the approximations to the lengths on each subinterval.</div></li>
-<li id="li-469"><div class="para" id="p-1260">What do we need to do with the sum in part (b) in order to obtain the exact value of the length of the graph of <span class="process-math">\(\vr(t)\)</span> on the interval <span class="process-math">\([0,2\pi]\text{?}\)</span>
+<li id="li-462"><div class="para" id="p-1258">Write a formula for the length of the line segment that connects the endpoints of the curve on the <span class="process-math">\(i\)</span>th subinterval <span class="process-math">\([t_{i-1},t_i]\text{.}\)</span> (This length is our approximation of the length of the curve on this interval.)</div></li>
+<li id="li-463"><div class="para" id="p-1259">Use your formula in part (a) to write a sum that adds all of the approximations to the lengths on each subinterval.</div></li>
+<li id="li-464"><div class="para" id="p-1260">What do we need to do with the sum in part (b) in order to obtain the exact value of the length of the graph of <span class="process-math">\(\vr(t)\)</span> on the interval <span class="process-math">\([0,2\pi]\text{?}\)</span>
 </div></li>
 </ol></article></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">9.8.1</span> <span class="title">Arc Length</span>
@@ -772,9 +808,9 @@ L = \int_a^b |\vr'(t)| \, dt.\tag{9.8.1}
 <div class="para logical" id="p-1269">
 <div class="para">Here we calculate the arc length of two familiar curves.</div>
 <ol class="lower-alpha">
-<li id="li-470"><div class="para" id="p-1270">Use Equation <a href="" class="xref" data-knowl="./knowl/eq_9_8_arclength_2.html" title="Equation 9.8.1">(9.8.1)</a> to calculate the circumference of a circle of radius <span class="process-math">\(r\text{.}\)</span>
+<li id="li-465"><div class="para" id="p-1270">Use Equation <a href="" class="xref" data-knowl="./knowl/eq_9_8_arclength_2.html" title="Equation 9.8.1">(9.8.1)</a> to calculate the circumference of a circle of radius <span class="process-math">\(r\text{.}\)</span>
 </div></li>
-<li id="li-471"><div class="para" id="p-1271">Find the exact length of the spiral defined by <span class="process-math">\(\vr(t) = \langle \cos(t), \sin(t), t \rangle\)</span> on the interval <span class="process-math">\([0,2\pi]\text{.}\)</span>
+<li id="li-466"><div class="para" id="p-1271">Find the exact length of the spiral defined by <span class="process-math">\(\vr(t) = \langle \cos(t), \sin(t), t \rangle\)</span> on the interval <span class="process-math">\([0,2\pi]\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><div class="para" id="p-1272">We can adapt the arc length formula to curves in 2-space that define <span class="process-math">\(y\)</span> as a function of <span class="process-math">\(x\)</span> as the following activity shows.</div>
@@ -888,7 +924,7 @@ x(t) = x_0+at \ \ \ \ \text{ and }  \ \ \ \ y(t) = y_0+bt.
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-472"><div class="para logical" id="p-1287">
+<li id="li-467"><div class="para logical" id="p-1287">
 <div class="para">To write <span class="process-math">\(t\)</span> in terms of <span class="process-math">\(s\text{,}\)</span> evaluate the integral</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -898,7 +934,7 @@ s=L(t) = \int_{0}^t \sqrt{(x'(w))^2 + (y'(w))^2} \, dw
 <div class="para">to determine the length of the line from time 0 to time <span class="process-math">\(t\text{.}\)</span>
 </div>
 </div></li>
-<li id="li-473"><div class="para logical" id="p-1288">
+<li id="li-468"><div class="para logical" id="p-1288">
 <div class="para">Use the formula from (a) for <span class="process-math">\(s\)</span> in terms of <span class="process-math">\(t\)</span> to write <span class="process-math">\(t\)</span> in terms of <span class="process-math">\(s\text{.}\)</span> Then explain why a parameterization of the line in terms of arc length is</div>
 <div class="displaymath process-math" id="eq_9_8_line_arc_length_parameterization">
 \begin{equation}
@@ -986,7 +1022,7 @@ s(t) \amp = \int_{0}^t \sqrt{(x'(w))^2 + (y'(w))^2 +(z'(w))^2} \, dw\\
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.8.5</span><span class="period">.</span>
 </h4>
 <ol class="lower-alpha">
-<li id="li-474"><div class="para logical" id="p-1301">
+<li id="li-469"><div class="para logical" id="p-1301">
 <div class="para">We should expect that the curvature of a line is 0 everywhere. To show that our definition of curvature measures this correctly in 2-space, recall that <a href="" class="xref" data-knowl="./knowl/eq_9_8_line_arc_length_parameterization.html" title="Equation 9.8.4">(9.8.4)</a> gives us the arc length parameterization</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_9_8_line_arc_length_parameterization.html">
 \begin{equation*}
@@ -996,7 +1032,7 @@ y(s) = y_0+\frac{b}{\sqrt{a^2+b^2}}s
 </div>
 <div class="para">of a line. Use this information to explain why the curvature of a line is 0 everywhere.</div>
 </div></li>
-<li id="li-475">
+<li id="li-470">
 <div class="para logical" id="p-1302">
 <div class="para">Recall that an arc length parameterization of a circle in 2-space of radius <span class="process-math">\(a\)</span> centered at the origin is, from <a href="" class="xref" data-knowl="./knowl/eq_9_8_circle_arc_length_parameterization.html" title="Equation 9.8.3">(9.8.3)</a>,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/eq_9_8_circle_arc_length_parameterization.html">
@@ -1034,8 +1070,8 @@ a \sin\left(\frac{s}{a}\right)\right\rangle.
 <div class="para logical" id="p-1308">
 <div class="para">If <span class="process-math">\(\vr\)</span> is a vector-valued function defining a smooth space curve <span class="process-math">\(C\text{,}\)</span> and if <span class="process-math">\(\vr'(t)\)</span> is not zero and if <span class="process-math">\(\vr''(t)\)</span> exists, then the curvature <span class="process-math">\(\kappa\)</span> of <span class="process-math">\(C\)</span> satisfies</div>
 <ul class="disc">
-<li id="li-476"><div class="para" id="p-1309"><span class="process-math">\(\displaystyle \kappa = \kappa(t) = \frac{\left\lvert \vT'(t) \right\rvert}{ \left\lvert \vr'(t) \right\rvert}\)</span></div></li>
-<li id="li-477"><div class="para" id="p-1310"><span class="process-math">\(\kappa = \frac{\lvert \vr'(t) \times \vr''(t) \rvert}{\lvert \vr'(t) \rvert^3}\text{.}\)</span></div></li>
+<li id="li-471"><div class="para" id="p-1309"><span class="process-math">\(\displaystyle \kappa = \kappa(t) = \frac{\left\lvert \vT'(t) \right\rvert}{ \left\lvert \vr'(t) \right\rvert}\)</span></div></li>
+<li id="li-472"><div class="para" id="p-1310"><span class="process-math">\(\kappa = \frac{\lvert \vr'(t) \times \vr''(t) \rvert}{\lvert \vr'(t) \rvert^3}\text{.}\)</span></div></li>
 </ul>
 </div></article><article class="activity project-like" id="A_9_8_6"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">9.8.6</span><span class="period">.</span>
@@ -1043,7 +1079,7 @@ a \sin\left(\frac{s}{a}\right)\right\rangle.
 <div class="para logical" id="p-1311">
 <div class="para">Use one of the two formulas for <span class="process-math">\(\kappa\)</span> in terms of <span class="process-math">\(t\)</span> to help you answer the following questions.</div>
 <ol class="lower-alpha">
-<li id="li-478"><div class="para logical" id="p-1312">
+<li id="li-473"><div class="para logical" id="p-1312">
 <div class="para">The ellipse <span class="process-math">\(\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1\)</span> has parameterization</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1052,7 +1088,7 @@ a \sin\left(\frac{s}{a}\right)\right\rangle.
 </div>
 <div class="para">Find the curvature of the ellipse. Assuming <span class="process-math">\(0 \lt  b \lt  a\text{,}\)</span> at what points is the curvature the greatest and at what points is the curvature the smallest? Does this agree with your intuition?</div>
 </div></li>
-<li id="li-479"><div class="para" id="p-1313">The standard helix has parameterization <span class="process-math">\(\vr(t) = \cos(t) \vi + \sin(t) \vj + t \vk\text{.}\)</span>  Find the curvature of the helix.  Does the result agree with your intuition?</div></li>
+<li id="li-474"><div class="para" id="p-1313">The standard helix has parameterization <span class="process-math">\(\vr(t) = \cos(t) \vi + \sin(t) \vj + t \vk\text{.}\)</span>  Find the curvature of the helix.  Does the result agree with your intuition?</div></li>
 </ol>
 </div></article><div class="para" id="p-1314">The curvature has another interpretation. Recall that the tangent line to a curve at a point is the line that best approximates the curve at that point. The curvature at a point on a curve describes the <em class="emphasis">circle</em> that best approximates the curve at that point. Remembering that a circle of radius <span class="process-math">\(a\)</span> has curvature <span class="process-math">\(1/a\text{,}\)</span> then the circle that best approximates the curve near a point on a curve whose curvature is <span class="process-math">\(\kappa\)</span> has radius <span class="process-math">\(1/\kappa\)</span> and will be tangent to the tangent line at that point and has its center on the concave side of the curve. This circle, called the <em class="emphasis">osculating circle</em> of the curve at the point, is shown in <a href="" class="xref" data-knowl="./knowl/F_9_8_osculating.html" title="Figure 9.8.7">Figure 9.8.7</a> for a portion of a parabola.</div>
 <figure class="figure figure-like" id="F_9_8_osculating"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/fig_9_8_curvature.svg" role="img" class="contained"></div>
@@ -1060,7 +1096,7 @@ a \sin\left(\frac{s}{a}\right)\right\rangle.
 <span class="type">Subsection</span> <span class="codenumber">9.8.4</span> <span class="title">Summary</span>
 </h3>
 <ul class="disc">
-<li id="li-480"><div class="para logical" id="p-1315">
+<li id="li-475"><div class="para logical" id="p-1315">
 <div class="para">The integration process shows that the length <span class="process-math">\(L\)</span> of a smooth curve defined by <span class="process-math">\(\vr(t)\)</span> on an interval <span class="process-math">\([a,b]\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1068,8 +1104,8 @@ L = \int_a^b |\vr'(t)| \, dt.
 \end{equation*}
 </div>
 </div></li>
-<li id="li-481"><div class="para" id="p-1316">Arc length is useful as a parameter because when we parameterize with respect to arc length, we eliminate the role of speed in our calculation of curvature and the result is a measure that depends only on the geometry of the curve and not on the parameterization of the curve.</div></li>
-<li id="li-482"><div class="para logical" id="p-1317">
+<li id="li-476"><div class="para" id="p-1316">Arc length is useful as a parameter because when we parameterize with respect to arc length, we eliminate the role of speed in our calculation of curvature and the result is a measure that depends only on the geometry of the curve and not on the parameterization of the curve.</div></li>
+<li id="li-477"><div class="para logical" id="p-1317">
 <div class="para">We define the curvature <span class="process-math">\(\kappa\)</span> of a curve in 2- or 3-space to be the rate of change of the magnitude of the unit tangent vector with respect to arc length, or</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1082,17 +1118,17 @@ L = \int_a^b |\vr'(t)| \, dt.
 </h3>
 <div class="para" id="p-1318">The WeBWorK problems are written by many different authors. Some authors use parentheses when writing vectors, e.g., <span class="process-math">\((x(t),y(t),z(t))\)</span> instead of angle brackets <span class="process-math">\(\langle x(t),y(t),z(t) \rangle\text{.}\)</span> Please keep this in mind when working WeBWorK exercises.</div>
 <article class="exercise exercise-like" id="Library__Michigan__Chap17Sec2__Q13.pg"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div id="webwork-83" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="83" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Michigan/Chap17Sec2/Q13.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
-<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-83')">Activate</button></div>
+<div id="webwork-82" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="82" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Michigan/Chap17Sec2/Q13.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-82')">Activate</button></div>
 <div class="problem-contents">
 <div class="para logical" id="p-1319">
 <div class="para">Find the length of the curve</div>
 <div class="displaymath process-math">
 \begin{equation*}
-x = -\left(3+3t\right),\quad y = -\left(1+4t\right), z = 4-4t,
+x = t-5,\quad y = 5+4t, z = 2+2t,
 \end{equation*}
 </div>
-<div class="para">for <span class="process-math">\(4 \le t \le 5\text{.}\)</span>
+<div class="para">for <span class="process-math">\(4 \le t \le 6\text{.}\)</span>
 </div>
 </div> <div class="para" id="p-1320">length = <span class="fillin underline" role="img" aria-label="35-character blank" style="width: 15.9090909090909em;"></span>
 </div> <div class="para" id="p-1321"><em class="emphasis">(Think of second way that you could calculate this length, too, and see that you get the same result.)</em></div>
@@ -1100,81 +1136,81 @@ x = -\left(3+3t\right),\quad y = -\left(1+4t\right), z = 4-4t,
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like">
 <div class="displaymath process-math">
 \begin{equation*}
-\hbox{Length} = \int_4^5
+\hbox{Length} = \int_4^6
 \sqrt{(x'(t))^2 + (y'(t))^2 + (z'(t))^2}\,dt =
-\int_{4}^{5} \sqrt{(-3)^2+(-4)^2+(-4)^2}\,dt = \sqrt{41}.
+\int_{4}^{6} \sqrt{(1)^2+(4)^2+(2)^2}\,dt = 2\sqrt{21}.
 \end{equation*}
-</div>This is the length of a straight line from the point <span class="process-math">\((-15,-17,-12)\)</span> to <span class="process-math">\((-18,-21,-16)\text{.}\)</span>
+</div>This is the length of a straight line from the point <span class="process-math">\((-1,21,10)\)</span> to <span class="process-math">\((1,29,14)\text{.}\)</span>
 </div></div>
 </div>
 </div>
 </div></article><article class="exercise exercise-like" id="Library__272__setStewart13_3__problem_2.pg"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div id="webwork-84" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="84" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/272/setStewart13_3/problem_2.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
-<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-84')">Activate</button></div>
+<div id="webwork-83" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="83" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/272/setStewart13_3/problem_2.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-83')">Activate</button></div>
 <div class="problem-contents">
 <div class="para" id="p-1323">Consider the curve <span class="process-math">\(\displaystyle  \mathbf{r} = 
-(e^{-2 t} \cos(6 t), e^{-2 t} \sin(6 t), e^{-2 t})\text{.}\)</span>
+(e^{-3 t} \cos(-4 t), e^{-3 t} \sin(-4 t), e^{-3 t})\text{.}\)</span>
 </div> <div class="para" id="p-1324">Compute the arclength function <span class="process-math">\(s(t)\text{:}\)</span> (with initial point <span class="process-math">\(t=0\)</span>).</div>
 <div class="solutions"></div>
 </div>
 </div></article><article class="exercise exercise-like" id="Library__Rochester__setVecFunction2Curvature__ur_vc_4_1.pg"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div id="webwork-85" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="85" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Rochester/setVecFunction2Curvature/ur_vc_4_1.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
-<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-85')">Activate</button></div>
+<div id="webwork-84" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="84" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Rochester/setVecFunction2Curvature/ur_vc_4_1.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-84')">Activate</button></div>
 <div class="problem-contents">
 <div class="para logical" id="p-1326">
 <div class="para">Find the length of the given curve:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\mathbf{r} \left( t \right) = \left( 3 t, -4 \sin t, -4 \cos t \right)
+\mathbf{r} \left( t \right) = \left( -2 t, 4 \sin t, 4 \cos t \right)
 \end{equation*}
 </div>
-<div class="para">where <span class="process-math">\(-1 \leq t \leq 1\text{.}\)</span>
+<div class="para">where <span class="process-math">\(-2 \leq t \leq 5\text{.}\)</span>
 </div>
 </div>
 <div class="solutions"></div>
 </div>
 </div></article><article class="exercise exercise-like" id="Library__Rochester__setVecFunction2Curvature__ur_vc_4_6.pg"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
-<div id="webwork-86" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="86" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Rochester/setVecFunction2Curvature/ur_vc_4_6.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
-<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-86')">Activate</button></div>
+<div id="webwork-85" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="85" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Rochester/setVecFunction2Curvature/ur_vc_4_6.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-85')">Activate</button></div>
 <div class="problem-contents">
-<div class="para" id="p-1328">Find the curvature of <span class="process-math">\(y=\sin \left( -3 x \right)\)</span> at <span class="process-math">\(x = \frac{\pi}{4}\text{.}\)</span>
+<div class="para" id="p-1328">Find the curvature of <span class="process-math">\(y=\sin \left( -1 x \right)\)</span> at <span class="process-math">\(x = \frac{\pi}{4}\text{.}\)</span>
 </div>
 <div class="solutions"></div>
 </div>
 </div></article><article class="exercise exercise-like" id="Library__Dartmouth__setMTWCh4S2__problem_3.pg"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
-<div id="webwork-87" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="87" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Dartmouth/setMTWCh4S2/problem_3.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
-<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-87')">Activate</button></div>
+<div id="webwork-86" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="86" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Dartmouth/setMTWCh4S2/problem_3.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-86')">Activate</button></div>
 <div class="problem-contents">
-<div class="para" id="p-1330">Consider the path <span class="process-math">\(\mathbf{r}(t) = (14 t, 7 t^2, 7\ln t)\)</span> defined for <span class="process-math">\(t &gt; 0\text{.}\)</span>
-</div> <div class="para" id="p-1331">Find the length of the curve between the points <span class="process-math">\((14, 7, 0)\)</span> and <span class="process-math">\((70, 175, 7 \ln(5))\text{.}\)</span>
+<div class="para" id="p-1330">Consider the path <span class="process-math">\(\mathbf{r}(t) = (12 t, 6 t^2, 6\ln t)\)</span> defined for <span class="process-math">\(t &gt; 0\text{.}\)</span>
+</div> <div class="para" id="p-1331">Find the length of the curve between the points <span class="process-math">\((12, 6, 0)\)</span> and <span class="process-math">\((24, 24, 6 \ln(2))\text{.}\)</span>
 </div>
 <div class="solutions"></div>
 </div>
 </div></article><article class="exercise exercise-like" id="Library__Rochester__setVecFunction2Curvature__ur_vc_4_5.pg"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div id="webwork-88" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="88" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Rochester/setVecFunction2Curvature/ur_vc_4_5.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
-<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-88')">Activate</button></div>
+<div id="webwork-87" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="87" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Rochester/setVecFunction2Curvature/ur_vc_4_5.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-87')">Activate</button></div>
 <div class="problem-contents">
-<div class="para" id="p-1333">Find the curvature <span class="process-math">\(\kappa (t)\)</span> of the curve <span class="process-math">\(\mathbf{r} (t) = \left( 3 \sin t \right)
-\mathbf{i} + \left( 3 \sin t \right) \mathbf{j} + \left( -1 \cos t \right) \mathbf{k}\)</span>
+<div class="para" id="p-1333">Find the curvature <span class="process-math">\(\kappa (t)\)</span> of the curve <span class="process-math">\(\mathbf{r} (t) = \left( 1 \sin t \right)
+\mathbf{i} + \left( 1 \sin t \right) \mathbf{j} + \left( 4 \cos t \right) \mathbf{k}\)</span>
 </div>
 <div class="solutions"></div>
 </div>
 </div></article><article class="exercise exercise-like" id="Library__Rochester__setVecFunction3Motion__ur_vc_4_10.pg"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div id="webwork-89" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="89" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Rochester/setVecFunction3Motion/ur_vc_4_10.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
-<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-89')">Activate</button></div>
+<div id="webwork-88" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="88" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Rochester/setVecFunction3Motion/ur_vc_4_10.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-88')">Activate</button></div>
 <div class="problem-contents">
-<div class="para" id="p-1335">A factory has a machine which bends wire at a rate of 2 unit(s) of curvature per second. How long does it take to bend a straight wire into a circle of radius 9?</div> <div class="para" id="p-1336">
+<div class="para" id="p-1335">A factory has a machine which bends wire at a rate of 6 unit(s) of curvature per second. How long does it take to bend a straight wire into a circle of radius 8?</div> <div class="para" id="p-1336">
 <span class="fillin underline" role="img" aria-label="15-character blank" style="width: 6.818181818181818em;"></span> seconds</div>
 <div class="solutions"></div>
 </div>
 </div></article><article class="exercise exercise-like" id="Library__272__setStewart13_2__problem_7.pg"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div id="webwork-90" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="90" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/272/setStewart13_2/problem_7.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
-<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-90')">Activate</button></div>
+<div id="webwork-89" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="89" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/272/setStewart13_2/problem_7.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-89')">Activate</button></div>
 <div class="problem-contents">
 <div class="para" id="p-1338">Find the unit tangent vector at the indicated point of the vector function</div> <div class="para logical" id="p-1339"><div class="displaymath process-math">
 \begin{equation*}
-\mathbf{r}(t) = e^{20 t}\cos t \,\mathbf i + 
-e^{20 t}\sin t \,\mathbf j + e^{20 t} \,\mathbf k
+\mathbf{r}(t) = e^{18 t}\cos t \,\mathbf i + 
+e^{18 t}\sin t \,\mathbf j + e^{18 t} \,\mathbf k
 \end{equation*}
 </div></div> <div class="para" id="p-1340">
 <span class="process-math">\(\mathbf T(\pi/2) = \langle\)</span> <span class="fillin underline" role="img" aria-label="25-character blank" style="width: 11.3636363636364em;"></span>, <span class="fillin underline" role="img" aria-label="25-character blank" style="width: 11.3636363636364em;"></span>, <span class="fillin underline" role="img" aria-label="25-character blank" style="width: 11.3636363636364em;"></span> <span class="process-math">\(\rangle\)</span>
@@ -1182,10 +1218,10 @@ e^{20 t}\sin t \,\mathbf j + e^{20 t} \,\mathbf k
 <div class="solutions"></div>
 </div>
 </div></article><article class="exercise exercise-like" id="Library__272__setStewart13_2__problem_8.pg"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
-<div id="webwork-91" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="91" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/272/setStewart13_2/problem_8.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
-<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-91')">Activate</button></div>
+<div id="webwork-90" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="90" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/272/setStewart13_2/problem_8.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-90')">Activate</button></div>
 <div class="problem-contents">
-<div class="para" id="p-1344">Consider the vector function</div> <div class="para" id="p-1345"><span class="process-math">\(\mathbf r(t) = \langle t, t^{2}, t^{5}\rangle\)</span></div> <div class="para" id="p-1346">Compute</div> <div class="para" id="p-1347">
+<div class="para" id="p-1344">Consider the vector function</div> <div class="para" id="p-1345"><span class="process-math">\(\mathbf r(t) = \langle t, t^{9}, t^{8}\rangle\)</span></div> <div class="para" id="p-1346">Compute</div> <div class="para" id="p-1347">
 <span class="process-math">\(\mathbf r'(t) = \langle\)</span> <span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span>, <span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span>, <span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span> <span class="process-math">\(\rangle\)</span>
 </div> <div class="para" id="p-1348">
 <span class="process-math">\(\mathbf T(1) = \langle\)</span> <span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span>, <span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span>, <span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span> <span class="process-math">\(\rangle\)</span>
@@ -1197,11 +1233,11 @@ e^{20 t}\sin t \,\mathbf j + e^{20 t} \,\mathbf k
 <div class="solutions"></div>
 </div>
 </div></article><article class="exercise exercise-like" id="Library__Dartmouth__setMTWCh4S2__problem_4.pg"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div id="webwork-92" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="92" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Dartmouth/setMTWCh4S2/problem_4.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
-<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-92')">Activate</button></div>
+<div id="webwork-91" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="91" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-sourceFilePath="Library/Dartmouth/setMTWCh4S2/problem_4.pg" data-courseID="mitchkeller-dev" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-91')">Activate</button></div>
 <div class="problem-contents">
-<div class="para" id="p-1363">Starting from the point <span class="process-math">\(\left( -3, -4, -4 \right)\text{,}\)</span> reparametrize the curve</div> <div class="para" id="p-1364">
-<span class="process-math">\(\mathbf{x} (t) = ( -3 + t, -4 + t, -4 + t )\)</span> in terms of arclength.</div> <div class="para" id="p-1365">
+<div class="para" id="p-1363">Starting from the point <span class="process-math">\(\left( -5, 2, 5 \right)\text{,}\)</span> reparametrize the curve</div> <div class="para" id="p-1364">
+<span class="process-math">\(\mathbf{x} (t) = ( -5 + 2t, 2  - 3t, 5  - t )\)</span> in terms of arclength.</div> <div class="para" id="p-1365">
 <span class="process-math">\(\mathbf{y}(s) = (\)</span> <span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span>, <span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span>,<span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span> <span class="process-math">\()\)</span>
 </div>
 <div class="solutions"></div>
@@ -1210,20 +1246,20 @@ e^{20 t}\sin t \,\mathbf j + e^{20 t} \,\mathbf k
 <div class="para logical" id="p-1369">
 <div class="para">Consider the moving particle whose position at time <span class="process-math">\(t\)</span> in seconds is given by the vector-valued function <span class="process-math">\(\vr\)</span> defined by <span class="process-math">\(\vr(t) = 5t \vi + 4\sin(3t) \vj + 4\cos(3t) \vk\text{.}\)</span> Use this function to answer each of the following questions.</div>
 <ol class="lower-alpha">
-<li id="li-483"><div class="para" id="p-1370">Find the unit tangent vector, <span class="process-math">\(\vT(t)\text{,}\)</span> to the space curve traced by <span class="process-math">\(\vr(t)\)</span> at time <span class="process-math">\(t\text{.}\)</span>  Write one sentence that explains what <span class="process-math">\(\vT(t)\)</span> tells us about the particle’s motion.</div></li>
-<li id="li-484"><div class="para" id="p-1371">Determine the speed of the particle moving along the space curve with the given parameterization.</div></li>
-<li id="li-485"><div class="para" id="p-1372">Find the exact distance traveled by the particle on the time interval <span class="process-math">\([0,\pi/3]\text{.}\)</span>
+<li id="li-478"><div class="para" id="p-1370">Find the unit tangent vector, <span class="process-math">\(\vT(t)\text{,}\)</span> to the space curve traced by <span class="process-math">\(\vr(t)\)</span> at time <span class="process-math">\(t\text{.}\)</span>  Write one sentence that explains what <span class="process-math">\(\vT(t)\)</span> tells us about the particle’s motion.</div></li>
+<li id="li-479"><div class="para" id="p-1371">Determine the speed of the particle moving along the space curve with the given parameterization.</div></li>
+<li id="li-480"><div class="para" id="p-1372">Find the exact distance traveled by the particle on the time interval <span class="process-math">\([0,\pi/3]\text{.}\)</span>
 </div></li>
-<li id="li-486"><div class="para" id="p-1373">Find the average velocity of the particle on the time interval <span class="process-math">\([0, \pi/3]\text{.}\)</span>
+<li id="li-481"><div class="para" id="p-1373">Find the average velocity of the particle on the time interval <span class="process-math">\([0, \pi/3]\text{.}\)</span>
 </div></li>
-<li id="li-487"><div class="para" id="p-1374">Determine the parameterization of the given curve with respect to arc length.</div></li>
+<li id="li-482"><div class="para" id="p-1374">Determine the parameterization of the given curve with respect to arc length.</div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="Ez_9_8_2"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
 <div class="para logical" id="p-1375">
 <div class="para">Let <span class="process-math">\(y = f(x)\)</span> define a curve in the plane. We can consider this curve as a curve in three-space with <span class="process-math">\(z\)</span>-coordinate 0.</div>
 <ol class="lower-alpha">
-<li id="li-488"><div class="para" id="p-1376">Find a parameterization of the form <span class="process-math">\(\vr(t) = \langle x(t), y(t), z(t) \rangle\)</span> of the curve <span class="process-math">\(y=f(x)\)</span> in three-space.</div></li>
-<li id="li-489"><div class="para logical" id="p-1377">
+<li id="li-483"><div class="para" id="p-1376">Find a parameterization of the form <span class="process-math">\(\vr(t) = \langle x(t), y(t), z(t) \rangle\)</span> of the curve <span class="process-math">\(y=f(x)\)</span> in three-space.</div></li>
+<li id="li-484"><div class="para logical" id="p-1377">
 <div class="para">Use the formula</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1243,28 +1279,28 @@ e^{20 t}\sin t \,\mathbf j + e^{20 t} \,\mathbf k
 <div class="para">Consider the single variable function defined by <span class="process-math">\(y = 4x^2 - x^3.\)</span>
 </div>
 <ol class="lower-alpha">
-<li id="li-490"><div class="para" id="p-1379">Find a parameterization of the form <span class="process-math">\(\vr(t) = \langle x(t), y(t) \rangle\)</span> that traces the curve <span class="process-math">\(y = 4x^2 - x^3\)</span> on the interval from <span class="process-math">\(x =  -3\)</span> to <span class="process-math">\(x = 3\text{.}\)</span>
+<li id="li-485"><div class="para" id="p-1379">Find a parameterization of the form <span class="process-math">\(\vr(t) = \langle x(t), y(t) \rangle\)</span> that traces the curve <span class="process-math">\(y = 4x^2 - x^3\)</span> on the interval from <span class="process-math">\(x =  -3\)</span> to <span class="process-math">\(x = 3\text{.}\)</span>
 </div></li>
-<li id="li-491"><div class="para" id="p-1380">Write a definite integral which, if evaluated, gives the exact length of the given curve from <span class="process-math">\(x =  -3\)</span> to <span class="process-math">\(x = 3\text{.}\)</span>  Why is the integral difficult to evaluate exactly?</div></li>
-<li id="li-492"><div class="para" id="p-1381">Determine the curvature, <span class="process-math">\(\kappa(t)\text{,}\)</span> of the parameterized curve. (<a href="" class="xref" data-knowl="./knowl/Ez_9_8_2.html" title="Exercise 9.8.5.12">Exercise 9.8.5.12</a> might be useful here.)</div></li>
-<li id="li-493"><div class="para" id="p-1382">Use appropriate technology to approximate the absolute maximum and minimum of <span class="process-math">\(\kappa(t)\)</span> on the parameter interval for your parameterization.  Compare your results with the graph of <span class="process-math">\(y = 4x^2 - x^3\text{.}\)</span>  How do the absolute maximum and absolute minimum of <span class="process-math">\(\kappa(t)\)</span> align with the original curve?</div></li>
+<li id="li-486"><div class="para" id="p-1380">Write a definite integral which, if evaluated, gives the exact length of the given curve from <span class="process-math">\(x =  -3\)</span> to <span class="process-math">\(x = 3\text{.}\)</span>  Why is the integral difficult to evaluate exactly?</div></li>
+<li id="li-487"><div class="para" id="p-1381">Determine the curvature, <span class="process-math">\(\kappa(t)\text{,}\)</span> of the parameterized curve. (<a href="" class="xref" data-knowl="./knowl/Ez_9_8_2.html" title="Exercise 9.8.5.12">Exercise 9.8.5.12</a> might be useful here.)</div></li>
+<li id="li-488"><div class="para" id="p-1382">Use appropriate technology to approximate the absolute maximum and minimum of <span class="process-math">\(\kappa(t)\)</span> on the parameter interval for your parameterization.  Compare your results with the graph of <span class="process-math">\(y = 4x^2 - x^3\text{.}\)</span>  How do the absolute maximum and absolute minimum of <span class="process-math">\(\kappa(t)\)</span> align with the original curve?</div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="Ez_9_8_4"><h4 class="heading"><span class="codenumber">14<span class="period">.</span></span></h4>
 <div class="para logical" id="p-1383">
 <div class="para">Consider the standard helix parameterized by <span class="process-math">\(\vr(t) = \cos(t) \vi + \sin(t) \vj + t \vk\text{.}\)</span>
 </div>
 <ol class="lower-alpha">
-<li id="li-494"><div class="para" id="p-1384">Recall that the unit tangent vector, <span class="process-math">\(\vT(t)\text{,}\)</span> is the vector tangent to the curve at time <span class="process-math">\(t\)</span> that points in the direction of motion and has length 1.  Find <span class="process-math">\(\vT(t)\text{.}\)</span>
+<li id="li-489"><div class="para" id="p-1384">Recall that the unit tangent vector, <span class="process-math">\(\vT(t)\text{,}\)</span> is the vector tangent to the curve at time <span class="process-math">\(t\)</span> that points in the direction of motion and has length 1.  Find <span class="process-math">\(\vT(t)\text{.}\)</span>
 </div></li>
-<li id="li-495"><div class="para" id="p-1385">Explain why the fact that <span class="process-math">\(| \vT(t) | = 1\)</span> implies that <span class="process-math">\(\vT\)</span> and <span class="process-math">\(\vT'\)</span> are orthogonal vectors for every value of <span class="process-math">\(t\text{.}\)</span>  (Hint:  note that <span class="process-math">\(\vT \cdot \vT = |\vT|^2 = 1,\)</span> and compute <span class="process-math">\(\frac{d}{dt}[\vT \cdot \vT]\text{.}\)</span>)</div></li>
-<li id="li-496"><div class="para" id="p-1386">For the given function <span class="process-math">\(\vr\)</span> with unit tangent vector <span class="process-math">\(\vT(t)\)</span> (from (a)), determine <span class="process-math">\(\vN(t) = \frac{1}{|\vT'(t)|} \vT'(t)\text{.}\)</span>
+<li id="li-490"><div class="para" id="p-1385">Explain why the fact that <span class="process-math">\(| \vT(t) | = 1\)</span> implies that <span class="process-math">\(\vT\)</span> and <span class="process-math">\(\vT'\)</span> are orthogonal vectors for every value of <span class="process-math">\(t\text{.}\)</span>  (Hint:  note that <span class="process-math">\(\vT \cdot \vT = |\vT|^2 = 1,\)</span> and compute <span class="process-math">\(\frac{d}{dt}[\vT \cdot \vT]\text{.}\)</span>)</div></li>
+<li id="li-491"><div class="para" id="p-1386">For the given function <span class="process-math">\(\vr\)</span> with unit tangent vector <span class="process-math">\(\vT(t)\)</span> (from (a)), determine <span class="process-math">\(\vN(t) = \frac{1}{|\vT'(t)|} \vT'(t)\text{.}\)</span>
 </div></li>
-<li id="li-497"><div class="para" id="p-1387">What geometric properties does <span class="process-math">\(\vN(t)\)</span> have?  That is, how long is this vector, and how is it situated in comparison to <span class="process-math">\(\vT(t)\text{?}\)</span>
+<li id="li-492"><div class="para" id="p-1387">What geometric properties does <span class="process-math">\(\vN(t)\)</span> have?  That is, how long is this vector, and how is it situated in comparison to <span class="process-math">\(\vT(t)\text{?}\)</span>
 </div></li>
-<li id="li-498"><div class="para" id="p-1388">Let <span class="process-math">\(\vB(t) = \vT(t) \times \vN(t)\text{,}\)</span> and compute <span class="process-math">\(\vB(t)\)</span> in terms of your results in (a) and (c).</div></li>
-<li id="li-499"><div class="para" id="p-1389">What geometric properties does <span class="process-math">\(\vB(t)\)</span> have?  That is, how long is this vector, and how is it situated in comparison to <span class="process-math">\(\vT(t)\)</span> and <span class="process-math">\(\vN(t)\text{?}\)</span>
+<li id="li-493"><div class="para" id="p-1388">Let <span class="process-math">\(\vB(t) = \vT(t) \times \vN(t)\text{,}\)</span> and compute <span class="process-math">\(\vB(t)\)</span> in terms of your results in (a) and (c).</div></li>
+<li id="li-494"><div class="para" id="p-1389">What geometric properties does <span class="process-math">\(\vB(t)\)</span> have?  That is, how long is this vector, and how is it situated in comparison to <span class="process-math">\(\vT(t)\)</span> and <span class="process-math">\(\vN(t)\text{?}\)</span>
 </div></li>
-<li id="li-500"><div class="para" id="p-1390">Sketch a plot of the given helix, and compute and sketch <span class="process-math">\(\vT(\pi/2)\text{,}\)</span> <span class="process-math">\(\vN(\pi/2)\text{,}\)</span> and <span class="process-math">\(\vB(\pi/2)\text{.}\)</span>
+<li id="li-495"><div class="para" id="p-1390">Sketch a plot of the given helix, and compute and sketch <span class="process-math">\(\vT(\pi/2)\text{,}\)</span> <span class="process-math">\(\vN(\pi/2)\text{,}\)</span> and <span class="process-math">\(\vB(\pi/2)\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="Ez_9_8_5"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
@@ -1276,7 +1312,7 @@ e^{20 t}\sin t \,\mathbf j + e^{20 t} \,\mathbf k
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-501"><div class="para logical" id="p-1392">
+<li id="li-496"><div class="para logical" id="p-1392">
 <div class="para">Explain why</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1284,7 +1320,7 @@ e^{20 t}\sin t \,\mathbf j + e^{20 t} \,\mathbf k
 \end{equation*}
 </div>
 </div></li>
-<li id="li-502"><div class="para logical" id="p-1393">
+<li id="li-497"><div class="para logical" id="p-1393">
 <div class="para">Use the fact that <span class="process-math">\(\vT(t) = \frac{\vr'(t)}{\lvert \vr'(t) \rvert}\)</span> and <span class="process-math">\(\lvert \vr'(t) \rvert = \frac{ds}{dt}\)</span> to explain why</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1292,7 +1328,7 @@ e^{20 t}\sin t \,\mathbf j + e^{20 t} \,\mathbf k
 \end{equation*}
 </div>
 </div></li>
-<li id="li-503"><div class="para logical" id="p-1394">
+<li id="li-498"><div class="para logical" id="p-1394">
 <div class="para">The Product Rule shows that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1306,7 +1342,7 @@ e^{20 t}\sin t \,\mathbf j + e^{20 t} \,\mathbf k
 \end{equation*}
 </div>
 </div></li>
-<li id="li-504"><div class="para logical" id="p-1395">
+<li id="li-499"><div class="para logical" id="p-1395">
 <div class="para">In <a href="" class="xref" data-knowl="./knowl/Ez_9_8_4.html" title="Exercise 9.8.5.14">Exercise 9.8.5.14</a> we showed that <span class="process-math">\(\lvert \vT(t) \rvert = 1\)</span> implies that <span class="process-math">\(\vT(t)\)</span> is orthogonal to <span class="process-math">\(\vT'(t)\)</span> for every value of <span class="process-math">\(t\text{.}\)</span> Explain what this tells us about <span class="process-math">\(\lvert \vT(t) \times \vT'(t) \rvert\)</span> and conclude that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/Ez_9_8_4.html">
 \begin{equation*}
@@ -1314,7 +1350,7 @@ e^{20 t}\sin t \,\mathbf j + e^{20 t} \,\mathbf k
 \end{equation*}
 </div>
 </div></li>
-<li id="li-505"><div class="para logical" id="p-1396">
+<li id="li-500"><div class="para logical" id="p-1396">
 <div class="para">Finally, use the fact that <span class="process-math">\(\kappa = \frac{\lvert \vT'(t) \rvert }{\lvert \vr'(t) \rvert}\)</span> to verify that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1328,9 +1364,9 @@ e^{20 t}\sin t \,\mathbf j + e^{20 t} \,\mathbf k
 <div class="para">In this exercise we explore how to find the osculating circle for a given curve. As an example, we will use the curve defined by <span class="process-math">\(f(x) = x^2\text{.}\)</span> Recall that this curve can be parameterized by <span class="process-math">\(x(t) = t\)</span> and <span class="process-math">\(y(t)=t^2\text{.}\)</span>
 </div>
 <ol class="lower-alpha">
-<li id="li-506"><div class="para" id="p-1398">Use <a href="" class="xref" data-knowl="./knowl/eq_9_8_unit_tangent.html" title="Equation 9.8.5">(9.8.5)</a> to find <span class="process-math">\(\vT(t)\)</span> for our function <span class="process-math">\(f\text{.}\)</span>
+<li id="li-501"><div class="para" id="p-1398">Use <a href="" class="xref" data-knowl="./knowl/eq_9_8_unit_tangent.html" title="Equation 9.8.5">(9.8.5)</a> to find <span class="process-math">\(\vT(t)\)</span> for our function <span class="process-math">\(f\text{.}\)</span>
 </div></li>
-<li id="li-507"><div class="para logical" id="p-1399">
+<li id="li-502"><div class="para logical" id="p-1399">
 <div class="para">To find the center of the osculating circle, we will want to find a vector that points from a point on the curve to the center of the circle. Such a vector will be orthogonal to the tangent vector at that point. Recall that <span class="process-math">\(\vT(s) = \langle \cos(\phi(s)), \sin(\phi(s)) \rangle\text{,}\)</span> where <span class="process-math">\(\phi\)</span> is the angle the tangent vector to the curve makes with a horizontal vector. Use this fact to show that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1339,9 +1375,9 @@ e^{20 t}\sin t \,\mathbf j + e^{20 t} \,\mathbf k
 </div>
 <div class="para">Explain why this tells us that <span class="process-math">\(\frac{dT}{ds}\)</span> is orthogonal to <span class="process-math">\(\vT\text{.}\)</span> Let <span class="process-math">\(\vN\)</span> be the unit vector in the direction of <span class="process-math">\(\frac{dT}{ds}\text{.}\)</span> The vector <span class="process-math">\(\vN\)</span> is called the <em class="emphasis">principal unit normal vector</em> and points in the direction toward which the curve is turning. The vector <span class="process-math">\(\vN\)</span> also points toward the center of the osculating circle.</div>
 </div></li>
-<li id="li-508"><div class="para" id="p-1400">Find <span class="process-math">\(\vT\)</span> at the point <span class="process-math">\((1,1)\)</span> on the graph of <span class="process-math">\(f\text{.}\)</span> Then find <span class="process-math">\(\vN\)</span> at this same point. How do you know you have the correct direction for <span class="process-math">\(\vN\text{?}\)</span>
+<li id="li-503"><div class="para" id="p-1400">Find <span class="process-math">\(\vT\)</span> at the point <span class="process-math">\((1,1)\)</span> on the graph of <span class="process-math">\(f\text{.}\)</span> Then find <span class="process-math">\(\vN\)</span> at this same point. How do you know you have the correct direction for <span class="process-math">\(\vN\text{?}\)</span>
 </div></li>
-<li id="li-509"><div class="para logical" id="p-1401">
+<li id="li-504"><div class="para logical" id="p-1401">
 <div class="para">
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel top" style="width:50%;"><div class="para" id="p-1402">Let <span class="process-math">\(P\)</span> be a point on the curve. Recall that <span class="process-math">\(\rho = \frac{1}{\kappa}\)</span> at point <span class="process-math">\(P\)</span> is the radius of the osculating circle at point <span class="process-math">\(P\text{.}\)</span> We call <span class="process-math">\(\rho\)</span> the <em class="emphasis">radius of curvature</em> at point <span class="process-math">\(P\text{.}\)</span> Let <span class="process-math">\(C\)</span> be the center of the osculating circle to the curve at point <span class="process-math">\(P\text{,}\)</span> and let <span class="process-math">\(O\)</span> be the origin. Let <span class="process-math">\(\mathbf{\gamma}\)</span> be the vector <span class="process-math">\(\overrightarrow{OC}\text{.}\)</span> See <a href="" class="xref" data-knowl="./knowl/F-9-8-osculating-center.html" title="Figure 9.8.8">Figure 9.8.8</a> for an illustration using an arbitrary function <span class="process-math">\(f\text{.}\)</span>
@@ -1356,7 +1392,7 @@ e^{20 t}\sin t \,\mathbf j + e^{20 t} \,\mathbf k
 <div class="para">where <span class="process-math">\(\vr = \overrightarrow{OP}\text{.}\)</span>
 </div>
 </div></li>
-<li id="li-510"><div class="para" id="p-1403">Finally, use the previous work to find the center of the osculating circle for <span class="process-math">\(f\)</span> at the point <span class="process-math">\((1,1)\text{.}\)</span> Draw pictures of the curve and the osculating circle to verify your work.</div></li>
+<li id="li-505"><div class="para" id="p-1403">Finally, use the previous work to find the center of the osculating circle for <span class="process-math">\(f\)</span> at the point <span class="process-math">\((1,1)\text{.}\)</span> Draw pictures of the curve and the osculating circle to verify your work.</div></li>
 </ol>
 </div></article></section></section></div>
 <div class="ptx-content-footer">

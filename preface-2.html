@@ -5,31 +5,49 @@
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
 <!--********************************************-->
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Vector Calculus Preface</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="Active Calculus - Multivariable + Vector">
+<meta property="book:title" content="Active Calculus - Multivariable">
 <meta property="book:author" content="Steve Schlicker">
 <meta property="book:author" content="Mitchel T. Keller">
 <meta property="book:author" content="Nicholas Long">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
-  tex: {
-    inlineMath: [['\\(','\\)']],
-    tags: "none",
-    tagSide: "right",
-    tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
   },
-  options: {
-    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
-    processHtmlClass: "process-math",
-    renderActions: {
-        findScript: [10, function (doc) {
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
             document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
                 var display = !!node.type.match(/; *mode=display/);
                 var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
@@ -39,25 +57,36 @@ window.MathJax = {
                 math.end = {node: text, delim: '', n: 0};
                 doc.math.push(math);
             });
-        }, '']
-    },
+        },
+        ""
+      ]
+    }
   },
-  chtml: {
-    scale: 0.98,
-    mtextInheritFont: true
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
   },
-  loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
-    paths: {pretext: "https://pretextbook.org/js/lib"},
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
   },
-  startup: {
+  "startup": {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
       rsMathReady();
       }
     )}
-  },
+  }
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
 <script src="https://pretextbook.org/js/0.3/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
@@ -82,7 +111,7 @@ window.MathJax = {
 <body id="acmulti" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="book-1.html"><span class="title">Active Calculus - Multivariable + Vector</span></a></h1>
+<h1 class="heading"><a href="book-1.html"><span class="title">Active Calculus - Multivariable</span></a></h1>
 <p class="byline">Steve Schlicker, Mitchel T. Keller, Nicholas Long</p>
 </div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
@@ -550,7 +579,7 @@ window.MathJax = {
 <div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Using Parametrizations to Calculate Line Integrals</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html#SS_Vector_ParamLineIntegrals_Evaluation" class="internal"><span class="codenumber">12.3.1</span> <span class="title">Parametrizations in the Definition of <span class="process-math">\(\int_C\vF\cdot d\vr\)</span></span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html#subsection-116" class="internal"><span class="codenumber">12.3.2</span> <span class="title">Alternative Notation for Line Integrals</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html#alt_li_notation" class="internal"><span class="codenumber">12.3.2</span> <span class="title">Alternative Notation for Line Integrals</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html#subsection-117" class="internal"><span class="codenumber">12.3.3</span> <span class="title">Independence of Parametrization for a Fixed Curve</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html#subsection-118" class="internal"><span class="codenumber">12.3.4</span> <span class="title">Summary</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_ParamLineIntegrals.html#exercises-28" class="internal"><span class="codenumber">12.3.5</span> <span class="title">Exercises</span></a></div></li>
@@ -565,17 +594,18 @@ window.MathJax = {
 <li><div class="toc-item"><a href="S_Vector_FTCLI.html#SS_Vector_FTCLI_Other" class="internal"><span class="codenumber">12.4.3</span> <span class="title">What other vector fields are path-independent?</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_FTCLI.html#subsection-123" class="internal"><span class="codenumber">12.4.4</span> <span class="title">Summary</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_FTCLI.html#exercises-29" class="internal"><span class="codenumber">12.4.5</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_FTCLI.html#subsection-124" class="internal"><span class="codenumber">12.4.6</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html" class="internal"><span class="codenumber">12.5</span> <span class="title">Line Integrals of Scalar Functions</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-124" class="internal"><span class="codenumber">12.5.1</span> <span class="title">Defining line integrals of scalar functions</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-125" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Using Parameterizations to Calculate Scalar Line Integrals</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-126" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Properties of Scalar Line Integrals</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-127" class="internal"><span class="codenumber">12.5.4</span> <span class="title">Visualizations of Scalar Line Integrals as Area Under a Curve</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-128" class="internal"><span class="codenumber">12.5.5</span> <span class="title">Summary</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#exercises-30" class="internal"><span class="codenumber">12.5.6</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-125" class="internal"><span class="codenumber">12.5.1</span> <span class="title">Defining line integrals of scalar functions</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-126" class="internal"><span class="codenumber">12.5.2</span> <span class="title">Using Parameterizations to Calculate Scalar Line Integrals</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-127" class="internal"><span class="codenumber">12.5.3</span> <span class="title">Properties of Scalar Line Integrals</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#SS_Vector_ScalarLineIntegral_Visualizations" class="internal"><span class="codenumber">12.5.4</span> <span class="title">Visualizations of Scalar Line Integrals as Area Under a Curve</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#subsection-129" class="internal"><span class="codenumber">12.5.5</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarLineIntegral.html#ez_Vector_ScalarLineIntegral" class="internal"><span class="codenumber">12.5.6</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -583,9 +613,9 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="S_Vector_Div.html#SS_Vector_Div_Defn" class="internal"><span class="codenumber">12.6.1</span> <span class="title">Definition of the Divergence of a Vector Field</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_Div.html#SS_Vector_Div_Development" class="internal"><span class="codenumber">12.6.2</span> <span class="title">Measuring the Change in Strength of a Vector Field</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_Div.html#subsection-131" class="internal"><span class="codenumber">12.6.3</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_Div.html#subsection-132" class="internal"><span class="codenumber">12.6.3</span> <span class="title">Summary</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_Div.html#exercises-31" class="internal"><span class="codenumber">12.6.4</span> <span class="title">Exercises</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_Div.html#subsection-132" class="internal"><span class="codenumber">12.6.5</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_Div.html#subsection-133" class="internal"><span class="codenumber">12.6.5</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -595,37 +625,40 @@ window.MathJax = {
 <li><div class="toc-item"><a href="S_Vector_Curl.html#SS_Vector_Curl_Development3D" class="internal"><span class="codenumber">12.7.2</span> <span class="title">Measuring Rotation in Three Dimensions</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_Curl.html#Curl_defn" class="internal"><span class="codenumber">12.7.3</span> <span class="title">Circulation Density in Three Dimensions</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_Curl.html#SS_Vector_Curl_Interpretation" class="internal"><span class="codenumber">12.7.4</span> <span class="title">Interpretation and Usage of Curl</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_Curl.html#subsection-137" class="internal"><span class="codenumber">12.7.5</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_Curl.html#subsection-138" class="internal"><span class="codenumber">12.7.5</span> <span class="title">Summary</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_Curl.html#exercises-32" class="internal"><span class="codenumber">12.7.6</span> <span class="title">Exercises</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_Curl.html#subsection-138" class="internal"><span class="codenumber">12.7.7</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_Curl.html#subsection-139" class="internal"><span class="codenumber">12.7.7</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="S_Vector_GreensTheorem.html" class="internal"><span class="codenumber">12.8</span> <span class="title">Green’s Theorem</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#SS_Vector_GreensTheorem_Circulation" class="internal"><span class="codenumber">12.8.1</span> <span class="title">Circulation</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-140" class="internal"><span class="codenumber">12.8.2</span> <span class="title">Green’s Theorem</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-141" class="internal"><span class="codenumber">12.8.3</span> <span class="title">What happens when vector fields are not smooth?</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-142" class="internal"><span class="codenumber">12.8.4</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-141" class="internal"><span class="codenumber">12.8.2</span> <span class="title">Green’s Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-142" class="internal"><span class="codenumber">12.8.3</span> <span class="title">What happens when vector fields are not smooth?</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-143" class="internal"><span class="codenumber">12.8.4</span> <span class="title">Summary</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#exercises-33" class="internal"><span class="codenumber">12.8.5</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_GreensTheorem.html#subsection-144" class="internal"><span class="codenumber">12.8.6</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="S_Vector_FluxInt.html" class="internal"><span class="codenumber">12.9</span> <span class="title">Flux Integrals</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="S_Vector_FluxInt.html#SS_Vector_FluxInt_Idea" class="internal"><span class="codenumber">12.9.1</span> <span class="title">The Idea of the Flux of a Vector Field through a Surface</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_FluxInt.html#subsection-144" class="internal"><span class="codenumber">12.9.2</span> <span class="title">Measuring the Flux of a Vector Field through a Surface</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_FluxInt.html#SS_Vector_FluxInt_Calculate" class="internal"><span class="codenumber">12.9.3</span> <span class="title">Efficiently Calculating Flux Integrals</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_FluxInt.html#subsection-146" class="internal"><span class="codenumber">12.9.4</span> <span class="title">Summary</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_FluxInt.html#exercises-34" class="internal"><span class="codenumber">12.9.5</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_FluxInt.html#subsection-146" class="internal"><span class="codenumber">12.9.2</span> <span class="title">The Details of Measuring the Flux of a Vector Field through a Surface</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_FluxInt.html#subsection-147" class="internal"><span class="codenumber">12.9.3</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_FluxInt.html#exercises-34" class="internal"><span class="codenumber">12.9.4</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_FluxInt.html#subsection-148" class="internal"><span class="codenumber">12.9.5</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html" class="internal"><span class="codenumber">12.10</span> <span class="title">Surface Integrals of Scalar Valued Functions</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#subsection-147" class="internal"><span class="codenumber">12.10.1</span> <span class="title">Defining surface integrals of scalar functions</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#subsection-148" class="internal"><span class="codenumber">12.10.2</span> <span class="title">Properties of Scalar Surface Integrals</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#exercises-35" class="internal"><span class="codenumber">12.10.3</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#subsection-149" class="internal"><span class="codenumber">12.10.1</span> <span class="title">Defining surface integrals of scalar functions</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#subsection-150" class="internal"><span class="codenumber">12.10.2</span> <span class="title">Properties of Scalar Surface Integrals</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#subsection-151" class="internal"><span class="codenumber">12.10.3</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#exercises-35" class="internal"><span class="codenumber">12.10.4</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_ScalarSurfaceIntegral.html#subsection-152" class="internal"><span class="codenumber">12.10.5</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -633,8 +666,10 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="S_Vector_StokesThm.html#SS_Vector_StokesThm_Development" class="internal"><span class="codenumber">12.11.1</span> <span class="title">Circulation in three dimensions and Stokes’ Theorem</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_StokesThm.html#SS_Vector_StokesThm_Verify" class="internal"><span class="codenumber">12.11.2</span> <span class="title">Verifying and Applying Stokes’ Theorem</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_StokesThm.html#subsection-151" class="internal"><span class="codenumber">12.11.3</span> <span class="title">Summary</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_StokesThm.html#exercises-36" class="internal"><span class="codenumber">12.11.4</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_StokesThm.html#surfaceboundaries" class="internal"><span class="codenumber">12.11.3</span> <span class="title">Practice with Surfaces and thier Boundaries</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_StokesThm.html#subsection-156" class="internal"><span class="codenumber">12.11.4</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_StokesThm.html#exercises-36" class="internal"><span class="codenumber">12.11.5</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_StokesThm.html#subsection-157" class="internal"><span class="codenumber">12.11.6</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -642,8 +677,9 @@ window.MathJax = {
 <ul class="structural">
 <li><div class="toc-item"><a href="S_Vector_DivThm.html#Vector_DivThm_FluxClosedSurface" class="internal"><span class="codenumber">12.12.1</span> <span class="title">Measuring the Flux through a Closed Surface</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_DivThm.html#SS_Vector_DivThm_Verify" class="internal"><span class="codenumber">12.12.2</span> <span class="title">The Divergence Theorem</span></a></div></li>
-<li><div class="toc-item"><a href="S_Vector_DivThm.html#subsection-154" class="internal"><span class="codenumber">12.12.3</span> <span class="title">Summary</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_DivThm.html#subsection-160" class="internal"><span class="codenumber">12.12.3</span> <span class="title">Summary</span></a></div></li>
 <li><div class="toc-item"><a href="S_Vector_DivThm.html#exercises-37" class="internal"><span class="codenumber">12.12.4</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="S_Vector_DivThm.html#subsection-161" class="internal"><span class="codenumber">12.12.5</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -657,27 +693,19 @@ window.MathJax = {
 <section class="preface" id="preface-2"><h2 class="heading hide-type">
 <span class="type">Preface</span> <span class="codenumber"></span> <span class="title">Vector Calculus Preface</span>
 </h2>
-<div class="para" id="p-14">We are glad to have the opportunity to contribute the chapter on <a href="C_Vector.html" class="internal" title="Chapter 12: Vector Calculus">Vector Calculus</a> to expand <span class="booktitle">Active Calculus - Multivariable</span>. This chapter is currently in <em class="alert">draft form</em>, but ready for testing. We have tried to adhere to the style of the <span class="booktitle">Active Calculus</span> series of texts as much as possible. Sections begin with “Motivating Questions” and end with a summary that answers those questions. Each section has a preview activity and several activities intended for classroom use.</div>
-<div class="para" id="p-15">Recognizing that not all institutions will cover all the material in this chapter, we have intended that the overview of vector fields, line integrals of vector fields, and <a href="" class="xref" data-knowl="./knowl/thm_FTCLI.html" title="Theorem 12.4.1: Fundamental Theorem of Calculus for Line Integrals">Fundamental Theorem of Calculus for Line Integrals</a> (<a href="S_Vector_VectorFields.html" class="internal" title="Section 12.1: Vector Fields">Section 12.1–12.4</a>) can be combined with <a href="S_Vector_GreensTheorem.html" class="internal" title="Section 12.8: Green’s Theorem">Section 12.8</a> on <a href="" class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 12.8.3: Green’s Theorem">Green’s Theorem</a>. We would encourage you to explore the <a href="S_Vector_Curl.html" class="internal" title="Section 12.7: The Curl of a Vector Field">section on curl</a> before proceeding to <a href="" class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 12.8.3: Green’s Theorem">Green’s Theorem</a>, but only the first portion on circulation density would be terribly beneficial. <a href="S_Vector_Curl.html" class="internal" title="Section 12.7: The Curl of a Vector Field">Section 12.7</a> does make some passing backward references to the development of divergence in <a href="S_Vector_Div.html" class="internal" title="Section 12.6: The Divergence of a Vector Field">Section 12.6</a>, but it is not necessary to cover divergence in order to do the basics of circulation density and then <a href="" class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 12.8.3: Green’s Theorem">Green’s Theorem</a>.</div>
-<div class="para logical" id="p-16">
-<div class="para">Observant faculty may notice that the graphics in our chapter deviate from those in the previous 11. Because so much of vector calculus relies upon visualizing things in three dimensions, we elected to produce almost all of the graphics using SageMath. This allows for a degree of consistency between the two-dimensional graphics, which are typically static, and the three-dimensional graphics, which are almost always interactive. Thus, you can grab a three-dimensional plot, rotate it, zoom in on it, etc.</div>
+<div class="para" id="p-15">Recognizing that not all institutions will cover all the material in this chapter, we have created the following chart for the depencecies of the topics in Chapter 12.</div>
+<figure class="figure figure-like" id="TopicChart"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/TopicFlowChart.png" class="contained" alt="(for accessibility)"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">0.0.1<span class="period">.</span></span><span class="space"> </span></figcaption></figure><div class="para" id="p-16">In <a href="" class="xref" data-knowl="./knowl/TopicChart.html" title="Figure 0.0.1">Figure 0.0.1</a> the yellow sections are not strictly dependent on the others but use some common arguments that would be helpful for a reader to have seen before working on.</div>
+<div class="para logical" id="p-17">
+<div class="para">Observant faculty may notice that the graphics in Chapter 12 deviate from those in the previous 11. Because so much of vector calculus relies upon visualizing things in three dimensions, we elected to produce almost all of the graphics using SageMath. This allows for a degree of consistency between the two-dimensional graphics, which are typically static, and the three-dimensional graphics, which are almost always interactive. Thus, you can grab a three-dimensional plot, rotate it, zoom in on it, etc.</div>
 <ul class="disc">
 <li id="li-13"><div class="para" id="p-derived-li-13">To <em class="emphasis">rotate</em> a three-dimensional graphic, click and drag with your mouse.</div></li>
 <li id="li-14"><div class="para" id="p-derived-li-14">To <em class="emphasis">zoom</em> on an interactive three-dimensional graphic, use your mouse’s scroll wheel or make your operating system’s scroll gesture on your touchpad.</div></li>
 <li id="li-15"><div class="para" id="p-derived-li-15">To <em class="emphasis">move</em> a three-dimensional graphic instead of rotating, hold down the space bar while clicking and dragging.</div></li>
 </ul>
 </div>
-<div class="para logical" id="p-17">
-<div class="para">Notice that <a href="C_Vector.html" class="internal" title="Chapter 12: Vector Calculus">Chapter 12</a> is a work in progress in a few ways:</div>
-<ul class="disc">
-<li id="li-16"><div class="para" id="p-derived-li-16">Answers and solutions to many activities are not yet written.</div></li>
-<li id="li-17"><div class="para" id="p-derived-li-17">WeBWorK exercises have not yet been added.</div></li>
-<li id="li-18"><div class="para" id="p-derived-li-18">Some sections lack exercises altogether.</div></li>
-<li id="li-19"><div class="para" id="p-derived-li-19">Sections on line integrals and surface integrals of <em class="emphasis">scalar</em> functions are yet to be added.</div></li>
-</ul>
-<div class="para">We welcome suggestions of WeBWorK exercises that faculty think would be good inclusions as well as suggestions for exercise topics. We also welcome feedback on any aspect of this chapter. We have set up a <a class="external" href="https://forms.gle/R1YNrPMC6q9Z2H3n8" target="_blank">Google Form</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 9 </sup></a> to collect feedback. The ongoing COVID-19 pandemic has delayed a final release of these materials. Perhaps by August 2022, they will be ready in a complete, public form, but we hope you continue to find them useful until then.</div>
-</div>
-<cite class="attribution">Mitchel T. Keller and Nicholas Long<br>Sioux City, Iowa, and Nacogdoches, Texas</cite></section><div class="hidden-content tex2jax_ignore" id="hk-fn-9"><div class="fn"><code class="code-inline tex2jax_ignore">forms.gle/R1YNrPMC6q9Z2H3n8</code></div></div>
+<div class="para" id="p-18">We welcome suggestions of  WeBWorK exercises that faculty would consider good inclusions and feedback on any aspect of this chapter. The best way to provide feedback is through the <a class="external" href="https://groups.google.com/u/0/g/active-calculus-multivariable" target="_blank">Active Calculus - Multivariable Google Group</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 9 </sup></a>. We will occasionally give some updated through the blog on <a class="external" href="https://activecalculus.org/" target="_blank"><code class="code-inline tex2jax_ignore">https://activecalculus.org/</code></a>.</div>
+<cite class="attribution">Mitchel T. Keller and Nicholas Long<br>Madison, Wisconsin and Nacogdoches, Texas</cite></section><div class="hidden-content tex2jax_ignore" id="hk-fn-9"><div class="fn"><code class="code-inline tex2jax_ignore">groups.google.com/u/0/g/active-calculus-multivariable</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="preface-1.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="preface-3.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

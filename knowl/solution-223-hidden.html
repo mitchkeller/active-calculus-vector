@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -10,22 +10,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">Here we find that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_Green.html">
+<body class="ignore-math"><div class="solution solution-like">
+<em class="alert">(a)</em> Since <span class="process-math">\(\vec F = 10 x e^{y}\,\vec i + 5 x^2 e^{y}\,\vec j\)</span> is a gradient vector field and <span class="process-math">\(C\)</span> is a closed curve, <span class="process-math">\(\int_C \vec F\cdot d\vec r = 0\text{.}\)</span> <em class="alert">(b)</em> Since<div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial F_2}{\partial x} -
-\frac{\partial F_1}{\partial y} = 3y-2y =
-y\text{.}
+\frac{\partial}{\partial x}(5(x + y)) - \frac{\partial}{\partial y}(10(x - y)) = 15,
+\end{equation*}
+</div>by Green’s Theorem,<div class="displaymath process-math">
+\begin{equation*}
+\int_C\vec G\cdot d\vec r = \int_R\left(15\right)\,dA = 15(\mbox{Area of triangle}) = 105.
 \end{equation*}
 </div>
-<div class="para">The region inside <span class="process-math">\(C_2\)</span> can be described by <span class="process-math">\(0\leq x\leq 3\)</span> and <span class="process-math">\(0\leq y\leq x\text{.}\)</span> Therefore, by <a href="" class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 12.8.3: Green’s Theorem">Green’s Theorem</a>, we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_Green.html">
-\begin{equation*}
-\oint_{C_2} \vG\cdot d\vr  = \int_0^3\!\int_0^x y\, dy\,
-dx = \int_0^3 \left.\frac{y^2}{2}\right|_0^x\, dx = \int_0^3
-\frac{x^2}{2}\, dx = \left.\frac{x^3}{6}\right|_0^3 = \frac{27}{6}\text{.}
-\end{equation*}
-</div>
-</div></div></body>
+</div></body>
 </html>

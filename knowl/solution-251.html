@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -13,112 +13,127 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.10.3.1.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.12.4.1.1</span><span class="period">.</span>
 </h4>
-<span class="process-math">\(x=7 u+4\text{,}\)</span> <span class="process-math">\(y=u-v\text{,}\)</span> and <span class="process-math">\(z=13 u+v\)</span> satisfy the equation of the plane,<div class="displaymath process-math">
+<div class="image-box" style="width: 43.3333333333333%; margin-left: 28.3333333333333%; margin-right: 28.3333333333333%;"><img src="generated/webwork/images/webwork-322-image-1.png" class="contained"></div> With <span class="process-math">\(z_0=7\)</span> Let <span class="process-math">\(\mathcal{S}\)</span> be the surface of the cylinder and <span class="process-math">\(\mathcal{R}\)</span> the region enclosed by <span class="process-math">\(\mathcal{S}\text{.}\)</span> We compute the two sides of the Divergence Theorem:<div class="displaymath process-math">
 \begin{equation*}
-2x-y-z =2(7 u+4 )-( u-v )-( 13 u+v )=
+\iint_{\mathcal{S}} \mathbf{F} \cdot d\mathbf{S} =
+\iiint_{\mathcal{R}} \text{div} (\mathbf{F}) \,dV
+\end{equation*}
+</div>We first calculate the surface integral. <em class="alert">Step 1.</em> Integral over the side of the cylinder. The side of the cylinder is parametrized by<div class="displaymath process-math">
+\begin{equation*}
+\Phi (\theta ,z)=(\cos \theta , \sin \theta ,z),\quad 0\le \theta \le 2\pi ,\quad 0\le z\le 7
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-14 u+8-u+v-13 u-v=8
+\mathbf{n} = \left\lt   \cos \theta , \sin \theta ,0 \right&gt;
 \end{equation*}
-</div>Moreover, for any <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> <span class="process-math">\(z\)</span> satisfying <span class="process-math">\(2x-y-z=8\text{,}\)</span> there are values of <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> such that <span class="process-math">\(x=7 u+4\text{,}\)</span> <span class="process-math">\(y=u-v\text{,}\)</span> and <span class="process-math">\(z=13 u+v\text{,}\)</span> since the following equations can be solved for <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{:}\)</span><div class="displaymath process-math">
+</div>Then,<div class="displaymath process-math">
 \begin{equation*}
-\begin{array}{rcl}x\amp {}={}\amp 7 u+4\\
-\noalign{\smallskip}
-y\amp =\amp u-v\\
-\noalign{\smallskip}
-z\amp =\amp 13 u+v\\
-\noalign{\smallskip}
-2x-y-z\amp =\amp 8\end{array}\quad\Rightarrow\quad
-u=\frac{x-4}{7},\quad v=\frac{x-4}{7}-y
-\end{equation*}
-</div>We conclude that <span class="process-math">\(\mathrm{\Phi }( u,v )\)</span> parametrizes the whole plane <span class="process-math">\(2x-y-z=8\text{.}\)</span> <em class="alert">(a)</em> The tangent vectors <span class="process-math">\({\mathbf{T} }_u\)</span> and <span class="process-math">\({\mathbf{T} }_v\)</span> are:<div class="displaymath process-math">
-\begin{equation*}
-{\mathbf{T} }_u =\frac{\partial \phi }{\partial u}=\frac{\partial }{\partial u}( 7 u+4,u-v,13 u+v )= \left\lt  7,1,13 \right&gt;
+\mathbf{F} \left(\Phi (\theta ,z)\right)\cdot \mathbf{n}  =
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-{\mathbf{T} }_v =\frac{\partial \phi }{\partial v}=\frac{\partial }{\partial v}( 7 u+4,u-v,13 u+v )= \left\lt  0,-1,1 \right&gt;
-\end{equation*}
-</div>The normal vector is the following cross product:<div class="displaymath process-math">
-\begin{equation*}
-\mathbf{n} ( u,v )={\mathbf{T} }_u \times {\mathbf{T} }_v = \left|\begin{array}{rrr}\mathbf{i} \amp \mathbf{j} \amp \mathbf{k} \\ 7\amp 1\amp 13\\ 0\amp -1\amp 1\end{array}\right|=
+\left\lt  3 \cos \theta ,2 z,9\sin \theta  \right&gt; \cdot  \left\lt   \cos \theta , \sin \theta ,0 \right&gt;=
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\left|\begin{array}{rr}1\amp 13\\ -1\amp 1\end{array}\right|\mathbf{i} -\left|\begin{array}{rr}7\amp 13\\ 0\amp 1\end{array}\right|\mathbf{j} +\left|\begin{array}{rr}7\amp 1\\ 0\amp -1\end{array}\right|\mathbf{k}=
+3 \cos^2\theta +2 z  \sin \theta
+\end{equation*}
+</div>We obtain the integral<div class="displaymath process-math">
+\begin{equation*}
+\iint_{\mathrm{side}} \mathbf{F} \cdot d\mathbf{S}  =
+\int_0^{7} \int_0^{2\pi } \left(3 \cos^2\theta +2 z  \sin \theta \right) \,d\theta  \,dz=
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-14 \mathbf{i} -7 \mathbf{j} -7 \mathbf{k} = \left\lt  14,-7,-7 \right&gt;
-\end{equation*}
-</div>
-<em class="alert">(b)</em> That area of <span class="process-math">\(S=\mathrm{\Phi }(\mathcal{D})\)</span> is the following surface integral:<div class="displaymath process-math">
-\begin{equation*}
-Area(S)=\iint_{\mathcal{D}} \| \mathbf{n} ( u,v )\|  \,du \,dv=
+21 \int_0^{2\pi } \cos^2\theta  \,d\theta +\left(\int_0^{7} 2 z \,dz\right)\left(\int_0^{2\pi }  \sin \theta  \,d\theta \right)=
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\iint_{\mathcal{D}} \| \left\lt  14,-7,-7 \right&gt;\|  \,du \,dv=
-7\sqrt{6}\iint_{\mathcal{D}} 1 \,du \,dv=
+21\cdot \left(\frac{\theta }{2}+\frac{\sin 2\theta }{4}\bigg|_0^{2\pi }\right)+0=
+21\pi
+\end{equation*}
+</div>
+<em class="alert">Step 2.</em> Integral over the top of the cylinder. The top of the cylinder is parametrized by<div class="displaymath process-math">
+\begin{equation*}
+\Phi(x,y)=(x,y,7)
+\end{equation*}
+</div>with parameter domain <span class="process-math">\(\mathcal{D}=\lbrace (x,y):\, x^2+ y^2\le 1\rbrace\text{.}\)</span> The upward pointing normal is<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{n} ={\mathbf{T} }_x \times {\mathbf{T} }_y =
+\left\lt  1,0,0 \right&gt;\times \left\lt  0,1,0 \right&gt; =
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-7\sqrt{6}\, \mathrm{Area} (\mathcal{D})
-=7\sqrt{6}\cdot 4\cdot 5=140 \sqrt{6}
+\mathbf{i} \times \mathbf{j} =\mathbf{k}
+= \left\lt  0,0,1 \right&gt;
 \end{equation*}
-</div>
-<em class="alert">(c)</em>  We express <span class="process-math">\(f( x,y,z )=yz\)</span> in terms of the parameters <span class="process-math">\(u\)</span> and <span class="process-math">\(v\text{:}\)</span><div class="displaymath process-math">
+</div>Also,<div class="displaymath process-math">
 \begin{equation*}
-f\left(\phi ( u,v )\right)=( u-v )(13 u+v )=13 u^2-12 uv- v^2
+\mathbf{F} \left(\Phi (x,y)\right)\cdot \mathbf{n} = \left\lt  3 x,14,9 y \right&gt;\cdot \left\lt  0,0,1 \right&gt;=9 y
 \end{equation*}
-</div>Using the Theorem on Surface Integrals we have:<div class="displaymath process-math">
+</div>Hence,<div class="displaymath process-math">
 \begin{equation*}
-\iint_S f( x,y,z ) \,dS =
-\iint_{\mathcal{D}}f\left(\phi ( u,v )\right)\| \mathbf{n} ( u,v )\|  \,du \,dv=
+\iint_{\mathrm{top}} \mathbf{F} \cdot d\mathbf{S} =\iint_{\mathcal{D}} 9 y \,dA=0
+\end{equation*}
+</div>The last integral is zero due to symmetry. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="generated/webwork/images/webwork-322-image-2.png" class="contained"></div> <em class="alert">Step 3.</em> Integral over the bottom of the cylinder. We parametrize the bottom by<div class="displaymath process-math">
+\begin{equation*}
+\Phi (x,y)=(x,y,0),\quad (x,y)\in \mathcal{D}
+\end{equation*}
+</div>The downward pointing normal is <span class="process-math">\(\mathbf{n} = \left\lt  0,0,-1 \right&gt;\text{.}\)</span> Then<div class="displaymath process-math">
+\begin{equation*}
+\mathbf{F} \left(\Phi (x,y)\right)\cdot \mathbf{n} = \left\lt  3 x,0,9 y \right&gt;\cdot \left\lt  0,0,-1 \right&gt; =-9 y
+\end{equation*}
+</div>We obtain the following integral, which is zero due to symmetry:<div class="displaymath process-math">
+\begin{equation*}
+\iint_{\mathrm{bottom}} \mathbf{F} \cdot d\mathbf{S} =\iint_{\mathcal{D}} -9 y \,dA=0
+\end{equation*}
+</div>Adding the integrals we get<div class="displaymath process-math">
+\begin{equation*}
+\iint_{\mathcal{S}} \mathbf{F} \cdot d\mathbf{S}  =
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\iint_{\mathcal{D}} \left(13 u^2-12uv- v^2\right)\| \left\lt  14,-7,-7 \right&gt;\|  \,du \,dv=
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-7\sqrt{6}\int_0^{5} \int_0^{4} \left(13 u^2-12uv- v^2\right) \,du \,dv=
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-7\sqrt{6}\int_0^{5} \left( \frac{13 u^3}3 -\frac{12u^2v}2- v^2u\right)\bigg|_{u=0}^{4} \,dv=
-\end{equation*}
-</div>
-<div class="displaymath process-math">
-\begin{equation*}
-7\sqrt{6}\int_0^{5} \left(\frac{832}3-\frac{192v}2-4 v^2\right) \,dv
+\iint_{\mathrm{side}} \mathbf{F} \cdot d\mathbf{S} +\iint_{\mathrm{top}} \mathbf{F} \cdot d\mathbf{S} +\iint_{\mathrm{bottom}} \mathbf{F} \cdot d\mathbf{S} 
 =
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-7\sqrt{6}\left(\frac{832v}3-\frac{192v^2}4-\frac{4 v^3}3 \right)\bigg|_0^{5}
-=\frac{1680\sqrt{6}}{12}
+21\pi +0+0=21\pi \quad\mathbf{(1)}
+\end{equation*}
+</div>
+<em class="alert">Step 4.</em> Compare with integral of divergence.<div class="displaymath process-math">
+\begin{equation*}
+\text{div}  (\mathbf{F} ) =
+\text{div} \left\lt  3 x,2 z,9 y \right&gt;=
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\approx 342.929
+\frac{\partial }{\partial x}(3 x)+\frac{\partial }{\partial y}(2 z)+\frac{\partial }{\partial z}(9 y)=3
 \end{equation*}
 </div>
+<div class="displaymath process-math">
+\begin{equation*}
+\iiint_{\mathcal{R}} \text{div}  \left(\mathbf{F} \right) \,dV =
+\iiint_{\mathcal{R}} 3 \,dV=
+\end{equation*}
 </div>
-<span class="incontext"><a href="S_Vector_ScalarSurfaceIntegral.html#solution-251" class="internal">in-context</a></span>
+<div class="displaymath process-math">
+\begin{equation*}
+3\iiint_{\mathcal{R}} \,dV=3\, \mathrm{Vol} (\mathcal{R})
+= 3\cdot \pi \cdot 7=21\pi\quad\mathbf{(2)}
+\end{equation*}
+</div>The equality of <span class="process-math">\(\mathbf{(1)}\)</span> and <span class="process-math">\(\mathbf{(2)}\)</span> verifies the Divergence Theorem.</div>
+<span class="incontext"><a href="S_Vector_DivThm.html#solution-251" class="internal">in-context</a></span>
 </body>
 </html>

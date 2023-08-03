@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" dir="ltr">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
 <!--*                                          *-->
@@ -12,8 +12,19 @@
 </head>
 <body class="ignore-math">
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<div class="para">Consider the vector field <span class="process-math">\(\vG = x\vi + y^2z\vj +
-x^2\vk\)</span> and the curve <span class="process-math">\(C_2\text{,}\)</span> which is the triangle with vertices <span class="process-math">\((1,0,0)\text{,}\)</span> <span class="process-math">\((0,1,0)\text{,}\)</span> and <span class="process-math">\((0,0,1)\)</span> with orientation corresponding to the order the points are listed here.</div>
+<div class="para logical">
+<div class="para">Using our parameterization, we get the following for the partial derivative functions and the corresponding normal vector:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\vr_s(s,t) \amp =\langle \cos(t), \sin(t),2s\cos(2t)\rangle \\
+\vr_r(s,t) \amp =\langle -s\sin(t), s\cos(t),-2s^2\sin(2t)\rangle \\
+\vw=\vr_s \times \vr_t \amp =\langle -2s^2\sin(2t)\sin(t)-2s^2\cos(2t)\cos(t) , \\
+\amp \quad \quad  2s^2\cos(t)\sin(2t)-2s^2\sin(t)\cos(2t), s \cos(t)^2 + s \sin(t)^2 \rangle \\
+\amp = \langle -2s^2 \cos(t), 2s^2 \sin(t), s \rangle 
+\end{align*}
+</div>
+<div class="para">Your algebraic simplifications may vary in the last step; Remember that the algebra may look a bit different but you should be consistent with your work and get the same result in the end.</div>
+</div>
 <span class="incontext"><a href="S_Vector_StokesThm.html#p-5699" class="internal">in-context</a></span>
 </body>
 </html>
