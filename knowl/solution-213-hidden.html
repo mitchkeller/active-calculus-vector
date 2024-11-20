@@ -11,17 +11,13 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math"><div class="solution solution-like"><div class="para logical">
-<div class="para">Denote by <span class="process-math">\(D\)</span> the region inside the circle <span class="process-math">\(C\text{.}\)</span> We can describe <span class="process-math">\(D\)</span> readily in polar coordinates with the inequalities <span class="process-math">\(0\leq r \leq 2\)</span> and <span class="process-math">\(0\leq \theta\leq 2\pi\text{.}\)</span> Thus, we need to calculate</div>
-<div class="displaymath process-math">
-\begin{align*}
-\iint_D \left(\frac{\partial F_2}{\partial x} -
-\frac{\partial F_1}{\partial y}\right)\, dA &amp;= \iint_D
-(6xy-2)\, dA\\
-&amp;= \int_0^2 \int_0^{2\pi}
-(6r^2\cos(\theta)\sin(\theta) - 2)r\, d\theta\, dr\text{.}
-\end{align*}
+<div class="para">Here we find that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_Green.html">
+\begin{equation*}
+\frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y} = (5+2y)-2y = 5\text{.}
+\end{equation*}
 </div>
-<div class="para">Using SageMath to calculate this, we obtain <span class="process-math">\(-8\pi\text{.}\)</span>
+<div class="para">Therefore, the integrand in <a href="" class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 12.8.3: Green’s Theorem">Green’s Theorem</a> is the constant <span class="process-math">\(5\text{.}\)</span> Thus, the circulation of <span class="process-math">\(\vF\)</span> around <span class="process-math">\(C\)</span> is <span class="process-math">\(5\)</span> times the area of the region inside <span class="process-math">\(C\text{.}\)</span> That area is <span class="process-math">\(\pi\cdot 3^2 = 9\pi\text{,}\)</span> which means that the circulation is <span class="process-math">\(45\pi\text{.}\)</span>
 </div>
 </div></div></body>
 </html>

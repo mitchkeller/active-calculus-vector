@@ -11,12 +11,20 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para logical"><ul class="disc">
-<li><div class="para">Scalar surface integrals are defined in terms of double Riemann sums of the product of the value of a scalar-valued function at a point on the surface and the area patch of the tangent plane to the surface at that point.</div></li>
-<li><div class="para">A scalar surface integral measures the total accumulation of a scalar-valued function on the surface.</div></li>
-<li><div class="para">Scalar surface integrals can be efficiently computed by parameterizing the surface of integration as <span class="process-math">\(\vr(s,t)\)</span> and then integrating <span class="process-math">\(\iint_D f\vecmag{\vr_s\times \vr_t}(s,t)\, dA\text{,}\)</span> where <span class="process-math">\(D\)</span> is the domain of the parameterization.</div></li>
-</ul></div>
-<span class="incontext"><a href="S_Vector_ScalarSurfaceIntegral.html#p-5651" class="internal">in-context</a></span>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<div class="para logical">
+<div class="para">Using our parameterization, we have the following for the partial derivative functions and the corresponding normal vector:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\vr_s(s,t) \amp =\langle \cos(t), \sin(t),2s\cos(2t)\rangle \\
+\vr_r(s,t) \amp =\langle -s\sin(t), s\cos(t),-2s^2\sin(2t)\rangle \\
+\vw=\vr_s \times \vr_t \amp =\langle -2s^2\sin(2t)\sin(t)-2s^2\cos(2t)\cos(t) , \\
+\amp \quad \quad  2s^2\cos(t)\sin(2t)-2s^2\sin(t)\cos(2t), s \cos(t)^2 + s \sin(t)^2 \rangle \\
+\amp = \langle -2s^2 \cos(t), 2s^2 \sin(t), s \rangle 
+\end{align*}
+</div>
+<div class="para">(There are a number of equivalent algebraic simpmlifications that can be done here by choosing different trigonometric identities.)</div>
+</div>
+<span class="incontext"><a href="S_Vector_StokesThm.html#p-5651" class="internal">in-context</a></span>
 </body>
 </html>

@@ -13,45 +13,31 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.9.4.5.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.9.4.7.1</span><span class="period">.</span>
 </h4>
-<span class="process-math">\(\partial \vec r / \partial s \times \partial \vec r
-/ \partial t\)</span> is given by<div class="displaymath process-math">
+<span class="process-math">\(S\)</span> is <span class="process-math">\(= \left\lt 0,0,1\right&gt;\text{.}\)</span> We estimate the vector surface integral <span class="process-math">\(\iint_S  \mathbf{F} \cdot d\mathbf{S}\)</span> using the division and sample points given in the Figure. Each subsquare has area <span class="process-math">\(\frac14\text{,}\)</span> therefore we obtain the following estimation:<div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial \vec r}{\partial s}\times\frac{\partial \vec
-r}{\partial t}=
-\left|\begin{array}{ccc}
-\quad\vec i\quad\amp \quad\vec j\quad\amp \quad\vec k\quad\\
-2s \amp  2 \amp  0 \\
-0 \amp  2t \amp  3
-\end{array}
-\right| = 6\vec i- 6 s\vec j+4st\vec k.
-\end{equation*}
-</div>Since the <span class="process-math">\(z\)</span>-component, <span class="process-math">\(4st\text{,}\)</span> of the vector <span class="process-math">\(\partial \vec r /
-\partial s \times \partial \vec r / \partial t\)</span> is positive for <span class="process-math">\(0 \lt  s
-\leq 2, 2 \leq t \leq 4\text{,}\)</span> we see that <span class="process-math">\(\partial \vec r/\partial s
-\times \partial \vec r / \partial t\)</span> points upward, in the direction of the orientation of <span class="process-math">\(S\)</span> we were given. Thus, we use<div class="displaymath process-math">
-\begin{equation*}
-d\vec A = \left(\frac{\partial \vec r}{\partial s} \times
-\frac{\partial \vec r}{\partial t}\right)\,ds\,dt,
-\end{equation*}
-</div>and so we have<div class="displaymath process-math">
-\begin{equation*}
-\int_S\vec F\cdot d\vec A =
-\int_0^{2}\int_{2}^{4} (3 t\vec i + 6 s^2\vec k)\cdot
-(6\vec i- 6 s\vec j+4st\vec k)\,dt\,ds
+\iint_S  \mathbf{F} \cdot d\mathbf{S}  \approx
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-=\int_0^{2}\int_{2}^{4} (18 t + 24 s^3 t)\,dt\,ds =
-\int_0^{2}(9 t^2 + 12 s^3 t^2)\bigg|_{t=2}^{t=4}\,ds
+\left(\mathbf{F} (A)\cdot {\mathbf{e}}_n + \mathbf{F} (B) \cdot {\mathbf{e}}_n +\mathbf{F} (C) \cdot {\mathbf{e}}_n + \mathbf{F} (D) \cdot {\mathbf{e}}_n\right) \cdot \frac14 =
 \end{equation*}
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-=\int_0^{2}(108 + 144 s^3)\,ds=(108s + 36 s^4)\bigg|_0^{2}
-=792.
+(\left\lt 5,8,3\right&gt;\cdot \left\lt 0,0,1\right&gt;+\left\lt -6,6,-9\right&gt;\cdot \left\lt 0,0,1\right&gt;+
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\lt -4,-9,-6\right&gt;\cdot \left\lt 0,0,1\right&gt;+\left\lt -1,2,-6\right&gt;\cdot \left\lt 0,0,1\right&gt;) \cdot \frac14 =
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(3 - 9 - 6 - 6) \cdot \frac14=-4.5
 \end{equation*}
 </div>
 </div>

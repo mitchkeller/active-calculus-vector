@@ -11,18 +11,23 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
 <div class="para logical">
-<div class="para">We can now use  <a href="" class="xref" data-knowl="./knowl/ScalarSurfaceIntDef.html" title="Theorem 12.10.4">Theorem 12.10.4</a> to compute the scalar surface integral as</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/ScalarSurfaceIntDef.html">
-\begin{align*}
-\iint_{S_3} x+z \, dS \amp = \int_0^{2\pi}\int_0^{1} (1+s\sin(t)) (s) ds dt \\
-\amp = \int_0^{2\pi} \int_0^{1} s+s^2\sin(t) ds dt \\
-\amp = \int_0^{2\pi} \frac{1}{2}+\frac{1}{3}\sin(t) dt \\
-\amp = \frac{1}{2} (2\pi) + 0 = \pi \text{.}
-\end{align*}
+<div class="para">The next step in setting up the flux integral on the right side of Stokes’ Theorem is calculating the curl of <span class="process-math">\(\vF\text{.}\)</span> Since <span class="process-math">\(\vF=\langle z-x, y+z, xy \rangle \text{,}\)</span> <span class="process-math">\(\curl(\vF)=\langle x-1,1-y,0 \rangle \)</span> and converting to <span class="process-math">\(s\)</span> and <span class="process-math">\(t\)</span> gives <span class="process-math">\(\curl(\vF) (s,t)=\langle s\cos(t)-1,1-s\sin(t),0 \rangle \text{.}\)</span> Now we are able to apply <a href="" class="xref" data-knowl="./knowl/thm_flux_int_calc.html" title="Theorem 12.9.7">Theorem 12.9.7</a>, which give the following iterated integral:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_flux_int_calc.html">
+\begin{equation*}
+\int_0^1 \int_0^{2\pi} \langle s\cos(t)-1,1-s\sin(t),0 \rangle \cdot \langle 0,4s\sin(t), 1 \rangle s \, dt\, ds\text{.}
+\end{equation*}
+</div>
+<div class="para">Evaluating this dot product and computing each integral gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/thm_flux_int_calc.html">
+\begin{equation*}
+\int_0^1 \int_0^{2\pi} -4s^3 \sin(t)^2 + 4s^2 \sin(t) \, dt ds = -\pi\text{,}
+\end{equation*}
+</div>
+<div class="para">which matches our result for the calculation of the circulation around <span class="process-math">\(C\text{.}\)</span>
 </div>
 </div>
-<span class="incontext"><a href="S_Vector_ScalarSurfaceIntegral.html#p-5649" class="internal">in-context</a></span>
+<span class="incontext"><a href="S_Vector_StokesThm.html#p-5649" class="internal">in-context</a></span>
 </body>
 </html>
