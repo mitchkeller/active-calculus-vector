@@ -23,7 +23,16 @@
               (1,-1) lineto stroke
               (0,0) lineto stroke
             </pre>
-<div class="para">The process described by these commands is 1) tell Postscript to start at the point <span class="process-math">\((0,0)\text{,}\)</span> 2) draw a line from the point <span class="process-math">\((0,0)\)</span> to the point <span class="process-math">\((1,1)\)</span> (this is what the line to and stroke commands do), then 3) draw lines from <span class="process-math">\((1,1)\)</span> to <span class="process-math">\((1,-1)\)</span> and 4) <span class="process-math">\((1,-1)\)</span> back to the origin. Each of these commands encodes two important pieces of information: a direction in which to move and a distance to move. Mathematically, we can capture this information succinctly in a vector. To do so, we record the movement on the map in a pair <span class="process-math">\(\langle x, y \rangle\)</span> (this pair <span class="process-math">\(\langle x, y \rangle\)</span> is a <dfn class="terminology">vector</dfn>), where <span class="process-math">\(x\)</span> is the horizontal displacement and <span class="process-math">\(y\)</span> the vertical displacement from one point to another. So, for example, the vector from the origin to the point <span class="process-math">\((1,1)\)</span> is represented by <span class="process-math">\(\langle 1,1 \rangle\)</span> but the vector from the point <span class="process-math">\((1,1)\)</span> to the origin is represented by <span class="process-math">\(\langle -1,-1 \rangle\text{.}\)</span>
+<div class="para">The process described by these commands is</div>
+<ol class="decimal" id="PA-9-2-1-1-5">
+<li><div class="para">tell Postscript to start at the point <span class="process-math">\((0,0)\text{,}\)</span>
+</div></li>
+<li><div class="para">draw a line from the point <span class="process-math">\((0,0)\)</span> to the point <span class="process-math">\((1,1)\)</span> (this is what the <code class="code-inline tex2jax_ignore">line to</code> and <code class="code-inline tex2jax_ignore">stroke</code> commands do),</div></li>
+<li><div class="para">draw lines from <span class="process-math">\((1,1)\)</span> to <span class="process-math">\((1,-1)\text{,}\)</span> and</div></li>
+<li><div class="para">
+<span class="process-math">\((1,-1)\)</span> back to the origin.</div></li>
+</ol>
+<div class="para">Each of these commands encodes two important pieces of information: a direction in which to move and a distance to move. Mathematically, we can capture this information succinctly in a vector. To do so, we record the movement on the map in a pair <span class="process-math">\(\langle x, y \rangle\text{,}\)</span> where <span class="process-math">\(x\)</span> is the horizontal displacement and <span class="process-math">\(y\)</span> the vertical displacement from one point to another. This pair <span class="process-math">\(\langle x, y \rangle\)</span> is a <dfn class="terminology">vector</dfn>, and we call each number in the pair a <dfn class="terminology">component</dfn>. As an example, the vector from the origin to the point <span class="process-math">\((1,1)\)</span> is represented by <span class="process-math">\(\langle 1,1 \rangle\)</span> while the vector from the point <span class="process-math">\((1,1)\)</span> to the origin is represented by <span class="process-math">\(\langle -1,-1 \rangle\text{.}\)</span>
 </div>
 </div></div>
 <article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
