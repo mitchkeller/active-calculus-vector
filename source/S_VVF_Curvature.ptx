@@ -281,7 +281,7 @@
       </statement>
       <proof>
         <p>
-          We will give the outline of a proof of the first result here in order to emphasize that this result comes from a chain rule argument related to <xref ref="coordchangetounitspeed" >the change of parameters going to a unit speed parameterization</xref>. 
+          We will give the outline of a proof of the first result here in order to emphasize that this result comes from a chain rule argument related to <xref ref="coordchangetounitspeed" text="custom">the change of parameters going to a unit speed parameterization</xref>. 
         </p>
         <p>
           Let <m>\vr(t)</m> be some parameterization of our curve <m>C</m>. Remember that in order to calculate the curvature, <m>\vT</m> will need to have an input corresponding to the parameter of the unit speed parameterization, which means the input of the <m>\vT</m> will need to measure the arclength of <m>C</m> to the point we at. We will use a function <m>s(t)</m> with input being the parameter of <m>\vr(t)</m> and the output of <m>s(t)</m> will be the arclength on <m>C</m> to the point <m>\vr(t)</m>. Note that <m>s(t)</m> will be computed using <xref ref="Length-of-a-curve" /> and that the derivative <m>\frac{ds}{dt}</m> will be <m>\Vert\vr'(t)\Vert</m>. 

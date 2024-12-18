@@ -32,7 +32,7 @@
 </objectives>
 <introduction>
 <p>
-  In the previous sections we have introduced the notation and graphs for vector valued functions, as well as how the calculus operations of limits, derivatives, and integrals will apply to these functions. In this section we will start our work on utilizing these calculus elements alongside our vector tools (like magnitude, direction, or projections) to measure important properties and find ways to efficiently calculate how these properties change along our curve. The first property we will investigate comes up very naturally when looking at curves in space: <q>What is the length of a given curve in space?</q> Remember that <xref ref="Distance-formula" >the distance between two points in space</xref> is given by 
+  In the previous sections we have introduced the notation and graphs for vector valued functions, as well as how the calculus operations of limits, derivatives, and integrals will apply to these functions. In this section we will start our work on utilizing these calculus elements alongside our vector tools (like magnitude, direction, or projections) to measure important properties and find ways to efficiently calculate how these properties change along our curve. The first property we will investigate comes up very naturally when looking at curves in space: <q>What is the length of a given curve in space?</q> Remember that <xref ref="Distance-formula" text="custom"> the distance between two points in space</xref> is given by 
   <me>
     \vert{PQ}\vert = \sqrt{(x_1-x_0)^2 + (y_1-y_0)^2 + (z_1-z_0)^2}
   </me>
