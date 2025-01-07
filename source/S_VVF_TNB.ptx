@@ -82,7 +82,7 @@
       <task>
         <statement>
           <p>
-            At each of the labeled points on the curve, draw a vector in the direction of travel. Write a sentence about how you determining this vector at the various points. 
+            At each of the labeled points on the curve, draw a vector in the direction of travel. Write a sentence about how you are determining this vector at the various points. 
           </p>
         </statement>
       </task>
@@ -95,14 +95,14 @@
       </task>
     </exploration>
     <p>
-      This preview activity highlights the intuitive nature of measuring the direction of travel and the direction of turning given a plot of a curve in space. We will now look at how to use location information in the form of a parameterization of a curve to give precise ways of measuring the direction of travel and the direction of turning at a particular point on the curve. 
+      This preview activity highlights the intuitive nature of measuring the direction of travel and the direction of turning given a plot of a curve in space. We will now look at how to use location information in the form of a parameterization of a curve to precisely measure the direction of travel and the direction of turning at a particular point on the curve. 
     </p>
   </introduction>
 
   <subsection xml:id="subsec-T">
     <title>Direction of travel</title>
     <p>
-      Based on our work in <xref ref="vvf-derivative" />, if <m>\vr(t)</m> is a parameterization of a curve in space, then the velocity vector, <m>\vv(t)=\vr'(t)</m>, is in the direction of travel. Since the speed, <m>\Vert\vv(t)\Vert</m>, is not always 1 (the velocity is not a unit vector), we define the <term>direction of travel</term> as follows.
+      Based on our work in <xref ref="vvf-derivative" />, if <m>\vr(t)</m> is a parameterization of a curve in space, then the velocity vector, <m>\vv(t)=\vr'(t)</m>, is in the direction of travel. Since the speed, <m>\Vert\vv(t)\Vert</m>, is not always 1 (the velocity is not a unit vector), we define the <term>direction of travel</term> using a unit vector as follows.
     </p>
       <definition xml:id="def-T">
         <statement>
@@ -117,7 +117,7 @@
       From the definition, the unit tangent exists as long as the velocity exists and is not the zero vector. If the velocity vector is <m>\vec{0}</m>, then the object is not moving, thus the direction of travel would not make sense at that instant. If there is a jump or discontinuity in the derivative (<m>\vv</m> does not exist), the direction of travel at that instant does not make sense because there is not a consistent way to define motion. 
     </p>
     <p>
-      The definition of <m>\vT</m> allows us to separate the velocity into its magnitude (speed) and direction (unit tangent). Remember that <m>\vT</m> changes along the curve and is calculated as a function of the parameter.  
+      The definition of <m>\vT</m> allows us to separate the velocity into its magnitude (speed) and direction (unit tangent). Using a unit vector allows us to express the direction of travel as a vector that is separate of the length of any related measurements. Remember that <m>\vT</m> changes along the curve and is calculated as a function of the parameter.
     </p>
     <example xml:id="helix-T">
       <p>
@@ -173,7 +173,7 @@
       <task>
         <statement>
           <p>
-            Find <m>\vv</m>, speed, and <m>\vT</m> for a line given by the parameterization <m>\vr(t)=\langle 3t-1,2-2t,5+t\rangle</m>. Write a few sentences about why your results make sense and do not change for different parameter values.
+            Find <m>\vv</m>, speed, and <m>\vT</m> for a line given by the parameterization <m>\vr(t)=\langle 3t-1,2-2t,5+t\rangle</m>. Write a few sentences about why your results make sense and why <m>\vT</m> will not change for different parameter values (in this example). 
           </p>
         </statement>
       </task>
@@ -226,10 +226,10 @@
       </interactive>
     </figure>
     <p>
-      Let's start looking at <m>\vec{T}'=\frac{d\vec{T}}{dt}</m>, which will measure how quickly <m>\vec{T}</m> is changing in terms of the parameter. The vector <m>\vec{T}'=\frac{d\vec{T}}{dt}</m> will measure the change in the direction of travel. 
+      Let's start looking at <m>\vec{T}'=\frac{d\vec{T}}{dt}</m>, which will measure how quickly <m>\vec{T}</m> is changing in terms of the parameter. The vector <m>\vec{T}'=\frac{d\vec{T}}{dt}</m> will measure the rate of change in the direction of travel. 
     </p>
     <p>  
-      Remember that vectors have magnitude and direction, so the derivative of a vector valued function of 1 variable will measure the change in the magnitude <em>and</em> change in the direction. Since <m>\vT</m> will always have length 1 (when <m>\vT</m> exists), <em>all</em> of the change in <m>\vT</m> will correspond to a change in direction. So the direction of <m>\vec{T}'=\frac{d\vec{T}}{dt}</m> will be exactly what we are looking for; namely, <m>\vec{T}'=\frac{d\vec{T}}{dt}</m> will be in the direction of turning. We don't care (for now) about how fast the car is turning, just what direction that turning is in. So we define the unit normal vector, denoted <m>\vN</m>, as the unit vector in the direction of <m>\vec{T}'=\frac{d\vec{T}}{dt}</m>.
+      Remember that vectors have magnitude and direction, so the derivative of a vector valued function will measure the change in the magnitude <em>and</em> change in the direction. Since <m>\vT</m> will always have length 1 (when <m>\vT</m> exists), <em>all</em> of the change in <m>\vT</m> will correspond to a change in direction. So the direction of <m>\vec{T}'=\frac{d\vec{T}}{dt}</m> will be exactly what we are looking for; namely, <m>\vec{T}'=\frac{d\vec{T}}{dt}</m> will be in the direction of turning. We don't care (for now) about how fast the car is turning, just what direction that turning is in. So we define the unit normal vector, denoted <m>\vN</m>, as the unit vector in the direction of <m>\vec{T}'=\frac{d\vec{T}}{dt}</m>.
     </p>
     <definition xml:id="def-N">
       <statement>
@@ -291,7 +291,7 @@
         </md> 
     </p>
     <p>
-      We can calculate <m>\vN(\frac{\pi}{2})=\langle 0,-1,0 \rangle</m> and <m>\vN(\frac{5\pi}{4})=\langle \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2},0 \rangle</m>. If we add these vectors to the plot of the helix with the Unit Tangent Vectors, as in , we can see that the direction of turning (as measured by <m>\vN</m>) is pointing toward the center of the helix. This should make sense the the direction you are turning is toward the inside of the circular trace. Note that the Unit Tangent vector has a vertical component because which corresponds to going <q>up</q> the helix but there is no vertical component to <m>\vN</m>. This is because there is vertical motion, but there is no turning in the vertical direction. The z component of <m>\vT</m> is unchanging so the vertical component of <m>\vT'</m> will be zero. 
+      We can calculate <m>\vN(\frac{\pi}{2})=\langle 0,-1,0 \rangle</m> and <m>\vN(\frac{5\pi}{4})=\langle \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2},0 \rangle</m>. If we add these vectors to the plot of the helix with the Unit Tangent Vectors, as in <xref ref="helix-plot2" />, we can see that the direction of turning (as measured by <m>\vN</m>) is pointing toward the center of the helix. It should make sense the the direction you are turning to stay on the helix is toward the inside of the circular trace. Note that the Unit Tangent vector has a vertical component which corresponds to going <q>up</q> the helix but there is no vertical component to <m>\vN</m>. This is because there is vertical motion, but there is no turning in the vertical direction. The z component of <m>\vT</m> is unchanging so the vertical component of <m>\vT'</m> will be zero. 
     </p>
     <figure xml:id="helix-plot3">
       <caption> A plot of the helix with <m>\vT</m> and <m>\vN</m> plotted for a couple points</caption>
@@ -343,13 +343,13 @@
 <activity xml:id="difficult-calcN">
   <introduction>
     <p>
-      In general, calculating <m>\vN</m> as a function of the parameter <m>t</m> ends up being very difficult because there are multiple compositions of functions involved which means there is a nesting of chain rules involved in the definition. In this activity, we will examine how to go through the direct calculation of <m>\vN</m> for a curve parameterized by <m>\vr(t) =\langle t,t^2,t^2\rangle </m>.
+      In general, calculating <m>\vN</m> as a function of the parameter <m>t</m> ends up being very difficult because there are multiple compositions of functions involved which means there is a nesting of chain rules involved in the definition. In this activity, we will examine how to go through the direct calculation of <m>\vN</m> for a curve parameterized by <m>\vr(t) =\langle t,t^2,t^3\rangle </m>.
     </p>
   </introduction>
   <task>
     <statement>
       <p>
-        Given the parameterization, <m>\vr(t) =\langle t,t^2,t^2\rangle </m>, calculate <m>\vv(t)</m> and <m>\text{speed}(t)</m>.
+        Given the parameterization, <m>\vr(t) =\langle t,t^2,t^3\rangle </m>, calculate <m>\vv(t)</m> and <m>\text{speed}(t)</m>.
       </p>
     </statement>
     <answer>
@@ -361,7 +361,7 @@
   <task>
     <statement>
       <p>
-        Now calculate <m>\vT(t)</m> for the <m>\vr(t) =\langle t,t^2,t^2\rangle </m> path.
+        Now calculate <m>\vT(t)</m> for the <m>\vr(t) =\langle t,t^2,t^3\rangle </m> path.
       </p>
     </statement>
     <answer>
@@ -430,7 +430,7 @@
   </p>
 </question>
 <p>
-  We will answer this question here with a conceptual, geometric argument. By <xref ref="def-N" />, the unit normal vector is parallel to <m>\vT'=\frac{d\vT}{dt}</m>. The derivative of the unit tangent vector will measure the change in <m>\vT</m>, and since <m>\vT</m> is a vector, this will include change in the magnitude and in the direction of <m>\vT</m>. Since the length of <m>\vT</m> does not change, then all of <m>\vT'=\frac{d\vT}{dt}</m> will be a change in the direction of <m>\vT</m> and not at all in the direction of <m>\vT</m>. This is an intuitive argument for why <m>\vT</m> and <m>\vN</m> are orthogonal.
+  We will first answer this question with a conceptual, geometric argument. By <xref ref="def-N" />, the unit normal vector is parallel to <m>\vT'=\frac{d\vT}{dt}</m>. The derivative of the unit tangent vector will measure the change in <m>\vT</m>, and since <m>\vT</m> is a vector, this will include change in the magnitude and in the direction of <m>\vT</m>. Since the length of <m>\vT</m> does not change, then <em>all</em> of <m>\vT'=\frac{d\vT}{dt}</m> will be a change in the direction of <m>\vT</m> and not at all in the direction of <m>\vT</m>. This is an intuitive argument for why <m>\vT</m> and <m>\vN</m> are orthogonal.
 </p>
 <p>
   We can also give a more rigorous algebraic argument, but this argument does not provide insight into the measurements or relationship between <m>\vT</m> and <m>\vN</m>. For this argument, we will look at the derivative of <m>\Vert \vT \Vert^2</m>. Because the length of <m>\vT</m> is constant, then <m> \frac{d}{dt}\left(\Vert \vT \Vert^2 \right)=0</m>. To simplify <m> \frac{d}{dt}\left(\Vert \vT \Vert^2 \right)</m>, we will use properties of the dot product related to the magnitude, the derivative product rule (across the dot product), then the commutative property of the dot product, respectively.
@@ -511,7 +511,7 @@
 <subsection xml:id="subsec-driverroadTNB">
   <title>The Driver or the Road: TNB Frame</title>
   <p>
-    In this subsection, we will talk about whether the measurements of <m>\vT</m>, <m>\vN</m>, and <m>\vB</m> will be properties of the driver or the road. A parameterized curve also has a stated orientation (direction of travel). Remember that a measurement involving a parameterized curve is a property of the driver if two different parameterizations can have the different measurements at the same location on the curve. Remember that this does not mean that you look at the same parameter value on the curve, but rather the same <em>location</em> on the curve. A measurement on a parametertized curve is a property of the road if every parameterization of this curve must have the same measurement for a fixed location on the curve. These are the same ideas that were first discussed in <xref ref="driver_road_act" />.
+    In this subsection, we will talk about whether the measurements of <m>\vT</m>, <m>\vN</m>, and <m>\vB</m> will be properties of the driver or the road. A parameterized curve also has a stated orientation (direction of travel). Remember that a measurement involving a parameterized curve is a property of the driver if two different parameterizations can have different measurements at the same location on the curve. Remember that this does not mean that you look at the same parameter value on the curve, but rather the same <em>location</em> on the curve. A measurement on a parameterized curve is a property of the road if <em>every</em> parameterization of this curve must have the same measurement for a fixed location on the curve. These are the same ideas that were first discussed in <xref ref="driver_road_act" />.
   </p>
   <activity>
     <task>
@@ -534,6 +534,11 @@
           Is <m>\vB</m> a property of the driver or the road? Justify your ideas.
         </p>
       </statement>
+      <hint>
+        <p>
+          Use the definition of <m>\vB</m> and your answers to parts (a) and (b).
+        </p>
+      </hint>
     </task>
   </activity>
 </subsection>
