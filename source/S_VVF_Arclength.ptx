@@ -390,9 +390,9 @@
           (4,0) node (t) {$(t)$}
           (4,-4) node[align=center] (C) {position};
           \begin{scope}[nodes={midway,scale=.75}]
-          \draw[-$] (s)--(t) node[above]{$\alpha(s)$};
-          \draw[-@&gt;] (t)--(C) node[left]{$\vec{r}(t)$};
-          \draw[-@&gt;] (s)--(C) node[below]{$\vec{r}(\alpha(s))$};
+          \draw[->] (s)--(t) node[above]{$\alpha(s)$};
+          \draw[->] (t)--(C) node[left]{$\vec{r}(t)$};
+          \draw[->] (s)--(C) node[below]{$\vec{r}(\alpha(s))$};
           \end{scope}
           \end{tikzpicture}   
         </latex-image>
