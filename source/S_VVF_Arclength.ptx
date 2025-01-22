@@ -381,7 +381,7 @@
     </p>
     <figure xml:id="unitspeeddiagram">
       <caption>Composition of <m>\alpha(s)</m> and <m>\vr(t)</m> to get the unit speed parameterization</caption>
-      <image>
+      <image width="50%">
         <shortdescription></shortdescription>
         <latex-image>
           \begin{tikzpicture}
@@ -392,7 +392,7 @@
           \begin{scope}[nodes={midway,scale=.75}]
           \draw[->] (s)--(t) node[above]{$\alpha(s)$};
           \draw[->] (t)--(C) node[left]{$\vec{r}(t)$};
-          \draw[->] (s)--(C) node[below]{$\vec{r}(\alpha(s))$};
+          \draw[->] (s)--(C) node[left]{$\vec{r}(\alpha(s))$};
           \end{scope}
           \end{tikzpicture}   
         </latex-image>
