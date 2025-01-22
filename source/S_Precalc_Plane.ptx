@@ -33,29 +33,29 @@
 
   <introduction>
     <p>
-      In <xref ref="S-Precalc-Lines" />, we saw how to describe a line in <m>\R^n</m> by setting an initial point and allowing as much movement as you want in a direction given by the direction vector. In our preview activity, we will be looking at what happens when we allow only movement that is perpendicular to a given direction. Since we will specify the given direction by a vector, we will find the perpendicular directions using orthogonal vectors.    
+      In <xref ref="S-Precalc-Lines" />, we saw how to describe a line in <m>\R^n</m> by setting an initial point and allowing unrestricted movement in a direction given by a direction vector. In this section's Preview Activity, we will be looking at what happens when we allow only movement that is perpendicular to a given direction. Since we will specify the given direction by a vector, we will find the perpendicular directions using orthogonal vectors.    
     </p>
     <exploration xml:id="PA_planes">
       <introduction>
         <p>
-          In this Preview Activity, we will be looking at what happens when we allow movement on a figure with the restriction that the movement must be orthogonal to <m>\vv=\langle 1,2,3 \rangle </m>.
+          We will consider what happens when we allow movement in <m>\R^3</m> with the restriction that the movement must be orthogonal to <m>\vv=\langle 1,2,3 \rangle </m>.
         </p>
       </introduction>
-      <task>
+      <task xml:id="PA_planes-x0">
         <statement>
           <p>
             Find values for <m>a_0</m> and <m>b_0</m> such that <m>\langle 0,a_0,b_0 \rangle</m> is orthogonal to <m>\langle 1,2,3\rangle</m>. 
           </p>
         </statement>
       </task>
-      <task>
+      <task xml:id="PA_planes-z0">
         <statement>
           <p>
             Find values for <m>c_0</m> and <m>d_0</m> such that <m>\langle c_0,d_0,0 \rangle</m> is orthogonal to <m>\langle 1,2,3\rangle</m>. 
           </p>
         </statement>
       </task>
-      <task>
+      <task xml:id="PA_planes-z1">
         <statement>
           <p>
             Find values for <m>c_1</m> and <m>d_1</m> such that <m>\langle c_1,d_1,1 \rangle</m> is orthogonal to <m>\langle 1,2,3\rangle</m>. 
@@ -75,8 +75,8 @@
             Verify that each of the following vectors is also orthogonal to <m>\langle 1,2,3 \rangle</m>.
             <ul>
               <li><m>\langle -2,-2,2 \rangle</m></li>
-              <li><m>\langle c_0,a_0+d_0,b_0 \rangle</m> with your values from parts (a) and (b)</li>
-              <li><m>\langle -2c_1,a_0-2d_1,b_0-2 \rangle</m> with your values from parts (a) and (c)</li>
+              <li><m>\langle c_0,a_0+d_0,b_0 \rangle</m> with your values from parts <xref ref="PA_planes-x0" text="local"/> and <xref ref="PA_planes-z0" text="local"/></li>
+              <li><m>\langle -2c_1,a_0-2d_1,b_0-2 \rangle</m> with your values from parts <xref ref="PA_planes-x0" text="local"/> and <xref ref="PA_planes-z1" text="local"/></li>
             </ul>
           </p>
         </statement>
@@ -84,11 +84,11 @@
       <task>
         <statement>
           <p>
-            Put all of the vectors you have computed into the interact below to visually verify that each of them is orthogonal to <m>\langle 1,2,3 \rangle</m>. You should put the component values of each vector into this array with each vector corresponding to a row. 
+            Put all of the vectors you have computed into the interactive below to visually verify that each of them is orthogonal to <m>\langle 1,2,3 \rangle</m>. You should put the component values of each vector into this array with each vector corresponding to a row. If you do not have eight distinct vectors from the previous parts, multiply one of your repeated vectors by <m>-1</m> and enter that instead of entering a vector multiple times.
           </p>
           <figure xml:id="multivecplane">
             <caption>A plot of your vectors that should be orthogonal to <m>\langle 1,2,3 \rangle</m></caption>
-            <interactive title="interactive-multivecplane" platform="sage" width="100%" aspect="1:2">
+            <interactive title="interactive-multivecplane" platform="sage" width="100%" aspect="1:1.5">
               <slate surface="sage">
                 from sage.plot.plot3d.plot3d import axes
                 @interact
@@ -115,7 +115,7 @@
   <subsection>
     <title>Planes in Space</title>
     <p>
-      Now that we have a way of describing lines, we would like to develop a means of describing planes in three dimensions. In <xref ref="S-Precalc-3Dcoord">Section</xref>, we studied the coordinate planes and planes parallel to them. In particular, fundamental planes were of the form <m>coordinate = constant</m>, like <m>x=1, y=-2, \text{or} z=\sqrt{3}</m>.
+      Now that we have a way of describing lines, we would like to develop a means of describing planes in three dimensions. In <xref ref="S-Precalc-3Dcoord">Section</xref>, we studied the coordinate planes and planes parallel to them. In particular, <m>x=1</m>, <m>y=-2</m>, and <m>z=\sqrt{3}</m> are examples of fundamental planes. In general, the equations of fundamental planes have the form <m>coordinate = constant</m>.
     </p>
     <figure xml:id="fundamentalplanewithvector">
       <caption>A plot of <m>x=1</m> in red, <m>y=-2</m> in blue, and <m>z=\sqrt{3}</m> in green with a normal vector plotted for each fundamental plane</caption>
@@ -141,7 +141,7 @@
     <definition>
       <statement>
         <p>
-          A <term>plane</term><idx><h>plane</h><h>definition</h></idx> <m>p</m> in space is the set of all terminal points of vectors emanating from a given point <m>P_0</m> perpendicular to a fixed vector <m>\vn</m>, as shown in <xref ref="Planewithvector">Figure</xref>.
+          A <term>plane</term><idx><h>plane</h><h>definition</h></idx> <m>p</m> in space is the set of all terminal points of vectors emanating from a given point <m>P_0</m> perpendicular to a fixed vector <m>\vn</m>, as shown in <xref ref="Planewithvector">Figure</xref>. We call <m>\vn</m> the <term>normal vector</term><idx><h>normal vector</h></idx><idx><h>vector</h><h>normal (to plane)</h></idx> of the plane.
         </p>
       </statement>
     </definition>
@@ -184,7 +184,7 @@
     </p>
 
     <p>
-      The fixed vector <m>\vn</m> perpendicular to the plane is frequently called a <em>normal vector</em> to the plane. We may now summarize our new equation for a plane. 
+      We may now summarize our new equation for a plane. 
     </p>
 
     <assemblage xml:id="Plane-scalar-equation">
@@ -193,19 +193,19 @@
       <ul>
         <li>
           <p>
-            The <em>scalar equation</em> of the plane<idx><h>plane</h><h>scalar equation</h></idx> with normal vector <m>\vn =\langle a,b,c \rangle</m> containing the point <m>P = (x_0, y_0,z_0)</m> is
+            The <term>scalar equation</term> of the plane<idx><h>plane</h><h>scalar equation</h></idx> with normal vector <m>\vn =\langle a,b,c \rangle</m> containing the point <m>P = (x_0, y_0,z_0)</m> is
             <men xml:id="eq_9_5_plane_norm">
-              a(x-x_0) + b(y-y_0) + c(z-z_0) = 0.
-            </men>
+              a(x-x_0) + b(y-y_0) + c(z-z_0) = 0
+            </men>.
           </p>
         </li>
 
         <li>
           <p>
-            The <em>vector equation</em> of the plane<idx><h>plane</h><h>vector equation</h></idx> with normal vector <m>\vn =\langle a,b,c \rangle</m> containing the points <m>P = (x_0, y_0,z_0)</m> and <m>Q = (x,y,z)</m> is
+            The <term>vector equation</term> of the plane<idx><h>plane</h><h>vector equation</h></idx> with normal vector <m>\vn =\langle a,b,c \rangle</m> containing the points <m>P = (x_0, y_0,z_0)</m> and <m>Q = (x,y,z)</m> is
             <men xml:id="eq_9_5_plane_norm_vector">
-              \vn \cdot \overrightarrow{PQ} = 0.
-            </men>
+              \vn \cdot \overrightarrow{PQ} = 0
+            </men>.
           </p>
         </li>
       </ul>
@@ -214,19 +214,19 @@
     <p>
       We may take the scalar equation of a plane a little further and note that since
       <me>
-        a(x-x_0) + b(y-y_0) + c(z-z_0) = 0,
-      </me>
+        a(x-x_0) + b(y-y_0) + c(z-z_0) = 0
+      </me>,
       it equivalently follows that
       <me>
-        ax + by + cz = ax_0+by_0+cz_0.
-      </me>
+        ax + by + cz = ax_0+by_0+cz_0
+      </me>.
       That is, we may write an equation of a plane as <m>ax+by+cz = d</m> where <m>d = \vn\cdot\langle x_0,y_0,z_0\rangle</m>.
     </p>
     <p>
-      Before we look at some examples, we will mention a few ideas that relate planes (as a collection of points), equations for these planes, and normal vectors for these planes. As we saw with lines and will see for most other types of graphs, there is not a unique way to give an equation for a plane. This highlights the difference between an equation that describes a graph and the set of points that make up the graph or make the equation true. For instance, <m>x+y+z=1</m> and <m>2x+2y+2z=2</m> are different equations but describe the same graph (have the same set of <m>(x,y,z)</m> points that make the equation a true statement.) You may be tempted to say <q>Those are the same equations. They just differ by a scalar multiple!</q>, but this difference is the same as the difference between parallel vectors. 
+      Before we look at some examples, we will mention a few ideas that relate planes (as a collection of points), equations for these planes, and normal vectors for these planes. As we saw with lines and will see for most other types of graphs, there are multiple different equations that can describe any given plane. This highlights the difference between an equation that describes a graph and the set of points that make up the graph or make the equation true. For instance, <m>x+y+z=1</m> and <m>2x+2y+2z=2</m> are different equations but describe the same graph. That is, the equations have the same set of <m>(x,y,z)</m> points that make the equation true. You may be tempted to say <q>Those are the same equations. They just differ by a scalar multiple!</q>, but this difference is the same as the difference between parallel vectors. 
     </p>
     <p>
-      The good news is that the orientation of a plane is encoded into the normal vector, thus we can use all the powerful tools we developed for vectors. We say that two planes are <term>parallel</term> if their normal vectors are parallel (as vectors). In fact, we can describe the angle between two planes using normal vectors. The angle between two planes is the acute angle between their respective normal vector directions. While the angle between two vectors (as defined in <xref ref="subsec-vecangle" />) can be obtuse, the angle between planes will not be greater than <m>\frac{\pi}{2}</m>. When using normal vectors to describe the orientation of a plane (like when we want to measure the angle between planes), we need to consider all the vectors parallel to our choice of the normal vector because any vector parallel to our choice would give an equivalent equations for the plane. We will look at specifics of this in our next example. 
+      The good news is that the orientation of a plane is encoded into the normal vector, thus we can use all the powerful tools we developed for vectors. We say that two planes are <term>parallel</term> if their normal vectors are parallel (as vectors). In fact, we can describe the angle between two planes using normal vectors. The angle between two planes is the acute angle between their respective normal vectors. While the angle between two vectors (as defined in <xref ref="subsec-vecangle" />) can be obtuse, the angle between planes will not be greater than <m>\frac{\pi}{2}</m>. When using normal vectors to describe the orientation of a plane, we need to consider all the vectors parallel to our choice of the normal vector because any vector parallel to our choice would give an equivalent equations for the plane. We will look at specifics of this in our next example. 
     </p>
     <example>
       <p>
@@ -236,12 +236,12 @@
         </me>
         or
         <me>
-          x + 2y + z = 1.
-        </me>
+          x + 2y + z = 1
+        </me>.
         Notice that the coefficients of <m>x</m>, <m>y</m>, and <m>z</m> in this description give a vector perpendicular to the plane. 
       </p>
       <figure xml:id="exampleplane1">
-        <caption>A plot of a plane with normal vector <m>\vn</m> in red and vector on the plane <m>\overrightarrow{PQ}</m> in orange</caption>
+        <caption>A plot of a plane with normal vector <m>\vn</m> in red</caption>
         <interactive title="interactive-exampleplane1" platform="sage" width="100%" aspect="1:1">
           <slate surface="sage">
             from sage.plot.plot3d.plot3d import axes
@@ -285,8 +285,8 @@
         </interactive>
       </figure>
       <p>
-        If we wanted to find the angle between <m>x+2y+z=1</m> and <m>-2x+y-3z=4</m>, we would need to consider the angle between the normal vectors <m>\langle1,2,1\rangle</m> and <m>\langle -2,1,-3\rangle</m>. The dot product of these normal vectors is <m>\langle1,2,1\rangle \cdot \langle -2,1,-3\rangle=-3</m>, so the angle between these vectors is obtuse, but the (smallest) angle between the planes is NOT obtuse. The equation <m>x-\frac{1}{2}y+\frac{3}{2}z=2</m> will describe the same set of points as <m>-2x+y-3z=4</m> but the normal vector for <m>x-\frac{1}{2}y+\frac{3}{2}z=2</m> will be <m>\langle 1,-\frac{1}{2},\frac{3}{2} \rangle</m>, which makes an acute angle with <m>\langle1,2,1\rangle </m>. So the angle between <m>x+2y+z=1</m> and <m>-2x+y-3z=4</m> is 
-        <me>\arccos\left(\frac{\langle1,2,1\rangle \cdot \langle1,\frac{1}{2},\frac{3}{2} \rangle}{\sqrt{7} \sqrt{\frac{7}{2}}}\right)\approx 1.2373</me>
+        If we wanted to find the angle between <m>x+2y+z=1</m> and <m>-2x+y-3z=4</m>, we would need to consider the angle between the normal vectors <m>\langle1,2,1\rangle</m> and <m>\langle -2,1,-3\rangle</m>. The dot product of these normal vectors is <m>\langle1,2,1\rangle \cdot \langle -2,1,-3\rangle=-3</m>. This tells us that the angle between these vectors is obtuse. However, the (smallest) angle between the planes is <em>not</em> obtuse. The equation <m>x-\frac{1}{2}y+\frac{3}{2}z=2</m> will describe the same set of points as <m>-2x+y-3z=4</m> but the normal vector for <m>x-\frac{1}{2}y+\frac{3}{2}z=2</m> will be <m>\langle 1,-\frac{1}{2},\frac{3}{2} \rangle</m>. This vector makes an acute angle with <m>\langle1,2,1\rangle </m>. This allows us to conclude that the angle between <m>x+2y+z=1</m> and <m>-2x+y-3z=4</m> is 
+        <me>\arccos\left(\frac{\langle1,2,1\rangle \cdot \langle1,\frac{1}{2},\frac{3}{2} \rangle}{\sqrt{7} \sqrt{\frac{7}{2}}}\right)\approx 1.2373</me>.
       </p>
       <figure xml:id="planesangle">
         <caption>A plot of planes <m>x+2y+z=1</m> and <m>-2x+y-3z=4</m> with normal vectors</caption>
@@ -308,7 +308,7 @@
         </interactive>
       </figure>
       <p>
-        
+        Our next activity gives you an opportunity to practice with equations of planes and also to think about interactions between planes and lines.
       </p>
     </example>
     <activity xml:id="A_9_5_9">
@@ -349,9 +349,14 @@
       <task>
         <statement>
           <p>
-            Write a scalar equation of the plane <m>p_2</m> that is parallel to <m>p_1</m> and passing through the point <m>(3, 0, 4)</m>. (Hint: Compare normal vectors of the planes.)
+            Write a scalar equation of the plane <m>p_2</m> that is parallel to <m>p_1</m> and passes through the point <m>(3, 0, 4)</m>.
           </p>
         </statement>
+        <hint>
+          <p>
+            Compare normal vectors of the planes.
+          </p>
+        </hint>
         <answer>
           <p>
             <m>2(x - 3) - 1(y) + (z - 4) = 0</m>
@@ -363,10 +368,10 @@
           </p>
         </solution>
       </task>
-      <task>
+      <task xml:id="task_A_9_5_9-param-line">
         <statement>
           <p>
-            Write a parametric description of the line <m>l</m> passing through the point <m>(2,0,2)</m> and perpendicular to the plane <m>p_3</m> described by the equation <m>x+2y-2z = 7</m>.
+            Give parametric equations for the line <m>\mathcal{L}</m> passing through the point <m>(2,0,2)</m> and perpendicular to the plane <m>p_3</m> described by the equation <m>x+2y-2z = 7</m>.
           </p>
         </statement>
         <answer>
@@ -376,7 +381,7 @@
         </answer>
         <solution>
           <p>
-            The normal vector of the plane <m>p_3</m> is <m>\langle 1, 2, -2 \rangle</m>, which will be the direction of line <m>l</m>.
+            The normal vector of the plane <m>p_3</m> is <m>\langle 1, 2, -2 \rangle</m>, which will be the direction of line <m>\mathcal{L}</m>.
           </p>
           <p>
             The corresponding parametric equations are <m>x(t) = 2 + t, y(t) = 2t, z(t) = 2 - 2t</m>.
@@ -386,7 +391,7 @@
       <task>
         <statement>
           <p>
-            Find the point at which <m>l</m> intersects the plane <m>p_3</m>.
+            Find the point at which <m>\mathcal{L}</m> intersects <m>p_3</m>.
           </p>
         </statement>
         <answer>
@@ -396,17 +401,20 @@
         </answer>
         <solution>
           <p>
-            We need to plug in the parametric equations from <m>d</m> into <m>x + 2y - 2z = 7</m> and solve for <m>t</m>.
+            We need to substitute the parametric equations from <xref ref="task_A_9_5_9-param-line" text="local"/> into <m>x + 2y - 2z = 7</m> and solve for <m>t</m>.
           </p>
           <p>
-            <m>(2 + t) + 2(0 + 2t) - 2(2 - 2t) = 7</m>. Solve to get <m>t = 1</m>. Plug <m>t = 1</m> into the parametric equations to get the point of intersection <m>(3, 2, 0)</m>.
+            <m>(2 + t) + 2(0 + 2t) - 2(2 - 2t) = 7</m>. Solve to get <m>t = 1</m>. Substitute <m>t = 1</m> into the parametric equations to get the point of intersection <m>(3, 2, 0)</m>.
           </p>
         </solution>
       </task>
     </activity>
+    <p>
+      Just as two distinct points in space determine a line, three non-collinear points in space determine a plane. Our next example illustrates a method for finding an equation of the plane containing three non-collinear points in <m>\R^3</m>.
+    </p>
     <example>
       <p>
-        Just as two distinct points in space determine a line, three non-collinear points in space determine a plane. Consider three points <m>P_0</m>, <m>P_1</m>, and <m>P_2</m> in space, not all lying on the same line as shown in <xref ref="exampleplane2">Figure</xref>.
+         Consider three points <m>P_0</m>, <m>P_1</m>, and <m>P_2</m> in space, not all lying on the same line, as shown in <xref ref="exampleplane2">Figure</xref>.
       </p>
 
       <!-- <figure xml:id="F_9_5_Plane">
@@ -427,9 +435,9 @@
             plot9+=point(P0,size=30,color="black")+point(P1,size=30,color="black")+point(P2,size=30,color="black")
             plot9+=text3d("P\u2080",(-.75,-0.85,0.35),color="black",fontsize=25)+text3d("P\u2081",(1,-0.45,0.35),color="black",fontsize=25)
             plot9+=text3d("P\u2082",(-.75,0.75,0.35),color="black",fontsize=25)
-            #+text3d("p",(2.5,2,0),color="green",fontsize=25)
-            plot9+=arrow(P0,(1,1,0),color="blue")+text3d("P",(1.1,1.3,0.15),color="black",fontsize=25)+point3d((1,1,0),color="black",size=30)
-            plot9+=text3d("n",(-0.5,-0.5,2),color="red",fontsize=25)
+            #+text3d("p",(2.5,2,0),color="black",fontsize=25)
+            plot9+=arrow(P0,(1,1,0),color="blue")+text3d("Q",(1.1,1.3,0.15),color="black",fontsize=25)+point3d((1,1,0),color="black",size=30)
+            plot9+=text3d("n",(-0.5,-0.5,1.6),color="red",fontsize=25)
             show(plot9,viewpoint=[[-0.8414,-0.2517,-0.4782],64.05],camera_position=[3.2031,-4.8751,4.9657])
           </slate>
         </interactive>
@@ -437,14 +445,17 @@
       <p>
         Notice that the vectors <m>\overrightarrow{P_0P_1}</m> and <m>\overrightarrow{P_0P_2}</m> both lie in the plane <m>p</m>. If we form their cross-product
         <me>
-          \vn = \overrightarrow{P_0P_1} \times \overrightarrow{P_0P_2},
-        </me>
-        we obtain a normal vector to the plane <m>p</m>. Therefore, if <m>P</m> is any other point on <m>p</m>, it then follows that <m>\overrightarrow{P_0P}</m> will be perpendicular to <m>\vn</m>, and we have the equation:
+          \vn = \overrightarrow{P_0P_1} \times \overrightarrow{P_0P_2}
+        </me>,
+        we obtain a normal vector to the plane <m>p</m>. Therefore, if <m>Q</m> is any other point on <m>p</m>, it then follows that <m>\overrightarrow{P_0Q}</m> will be perpendicular to <m>\vn</m>, and we have the equation:
         <men xml:id="eq_9_5_plane_vect">
-          \vn \cdot \overrightarrow{P_0P} = 0
+          \vn \cdot \overrightarrow{P_0Q} = 0
         </men>
       </p>
     </example>
+    <p>
+      The final activity of this section allows you to practice with finding an equation of a plane passing through three points.
+    </p>
     <activity xml:id="A_9_5_7">
       <introduction>
         <p>
@@ -471,7 +482,7 @@
       <task>
         <statement>
           <p>
-            Find a normal vector <m>\vn</m> to the plane <m>p</m>.
+            Find a normal vector <m>\vn</m> to <m>p</m>.
           </p>
         </statement>
         <answer>
@@ -488,7 +499,7 @@
       <task>
         <statement>
           <p>
-            Find a scalar equation of the plane <m>p</m>.
+            Find a scalar equation of <m>p</m>.
           </p>
         </statement>
         <answer>
@@ -505,7 +516,7 @@
       <task>
         <statement>
           <p>
-            Consider a second plane, <m>q</m>, with scalar equation <m>-3(x-1) + 4(y+3) + 2(z-5)=0</m>.  Find two different points on plane <m>q</m>, as well as a vector <m>\vm</m> that is normal to <m>q</m>.
+            Consider a second plane <m>q</m> with scalar equation <m>-3(x-1) + 4(y+3) + 2(z-5)=0</m>.  Find two different points on <m>q</m> as well as a vector <m>\vm</m> that is normal to <m>q</m>.
           </p>
         </statement>
         <answer>
@@ -526,7 +537,7 @@
       <task>
         <statement>
           <p>
-            The angle between two planes is the acute angle between their respective normal vectors.  What is the angle between planes <m>p</m> and <m>q</m>?
+            What is the angle between planes <m>p</m> and <m>q</m>?
           </p>
         </statement>
         <answer>
@@ -543,8 +554,7 @@
     </activity>
   </subsection>
 
-  <subsection>
-    <title>Summary</title>
+  <outcomes>
     <ul>
       <li>
         <p>
@@ -561,6 +571,6 @@
       </li>
     </ul>
 
-    </subsection>
+    </outcomes>
     <xi:include href="./exercises/ez-S_Precalc_Plane.ptx" />
 </section>
