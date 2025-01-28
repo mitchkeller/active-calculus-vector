@@ -861,7 +861,7 @@
       \vL(t) = \vr(a) + (t-a)
       \vr'(a).
     </men>
-    (For example, in Equation<nbsp/><xref ref="E_TanLineVecFxn"/>, <m>\vL(0) = \vr(a)</m>, so the line's parameterization <q>starts</q> at <m>t = 0</m>.  When we write the parameterization in the form of Equation<nbsp/><xref ref="E_TanLineVecFxn2"/>, <m>\vL(a) = \vr(a)</m>, so the line's parameterization <q>starts</q> at <m>t = a</m>.)
+    For example, in Equation<nbsp/><xref ref="E_TanLineVecFxn"/>, <m>\vL(0) = \vr(a)</m>, so the line's parameterization <q>starts</q> at <m>t = 0</m>.  When we write the parameterization in the form of Equation<nbsp/><xref ref="E_TanLineVecFxn2"/>, <m>\vL(a) = \vr(a)</m>, so the line's parameterization <q>starts</q> at <m>t = a</m>.
   </p>
   <p>
     As we will learn in <xref ref="C_MVF" />, a smooth surface in 3-space is also locally linear. That means that the surface will look like a plane, which we call its <em>tangent plane</em>, as we zoom in on the graph. It is possible to use tangent lines to traces of the surface to generate a formula for the tangent plane; see <xref ref="Ez_9_7_3">Exercise</xref> for more details.
