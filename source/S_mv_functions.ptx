@@ -354,7 +354,7 @@
         When we consider the range of <m>f(x,y)=\sqrt{xy}</m> we need to think about what values can actually be outputs of <m>f</m>. You may be tempted to say that outputs are scalars so the range should be <m>\mathbb{R}</m>, all real numbers. There is no way to get a negative output for <m>f</m> so all not all real numbers are actual outputs of <m>f</m>. Instead, the range of <m>f</m> will be the interval <m>[0,\infty)</m> because those are the values you can actually get as an output from <m>f</m>.
       </p>
       <p>
-        For our second example, we will look at the domain and range of <m>g(x,y)=\frac{\arcsin(y)}{2x}</m>. First we need to recall the domain and range of the arcsin function are <m>[-1,1]</m> and <m>[-\frac{\pi}{2},\frac{\pi}{2}]</m>, respectively. So we will only be allowed to use inputs with <m>y</m>-values in the interval <m>[-1,1]</m> and <m>x\neq0</m>. Thus the domain of <m>g</m> is <m>\{(x,y)\in|mathbb{R}^2 | x \neq 0 \text{ and } -1 \leq y \leq 1\}</m>.
+        For our second example, we will look at the domain and range of <m>g(x,y)=\frac{\arcsin(y)}{2x}</m>. First we need to recall the domain and range of the arcsin function are <m>[-1,1]</m> and <m>[-\frac{\pi}{2},\frac{\pi}{2}]</m>, respectively. So we will only be allowed to use inputs with <m>y</m>-values in the interval <m>[-1,1]</m> and <m>x\neq0</m>. Thus the domain of <m>g</m> is <m>\{(x,y)\in\mathbb{R}^2 | x \neq 0 \text{ and } -1 \leq y \leq 1\}</m>.
       </p>
       <figure xml:id="domainmv2">
         <caption>A plot of the domain of <m>g(x,y)=\frac{\arcsin(y)}{2x}</m></caption>
@@ -369,7 +369,7 @@
         </image>
       </figure>
       <p>
-        The range of arcsin
+        The range of arcsin is <m>[-\frac{\pi}{2},\frac{\pi}{2}]</m> but since the output of <m>g</m> will be <m>\frac{\arcsin(y)}{2x}</m>, the range of <m>g</m> will be <m>\mathbb{R}</m>, all real numbers. The input <m>(\frac{\pi}{2},\frac{1}{2a})</m> will be sent to <m>a</m> for any value of <m>a\neq 0</m> and <m>g(0,1)=0</m>. 
       </p>
     </example>
     <activity xml:id="A-9-1-1">
