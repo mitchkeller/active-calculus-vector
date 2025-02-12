@@ -649,7 +649,7 @@
         <slate surface="sage">
           var('x,y')
           g(x,y)=x^2*sin(2*y)/9.8
-          plot10=plot3d(g,(x,0,200),(y,0,1.5),aspect_ratio=[1,100,0.05],mesh=True,opacity=0.5,ticks=[[0,50,100,150,200],[0,0.5,1.0,1.5],[500,1000,1500]])
+          plot10=plot3d(g,(x,0,200),(y,0,1.5),aspect_ratio=[1,100,0.05],mesh=True,opacity=0.8,color="gray")
           show(plot10,viewpoint=[[-0.792,0.3576,0.4949],84.75],camera_position=[-200.2301,-189.6884,234.3567])
         </slate>
       </interactive>
@@ -666,7 +666,7 @@
         <slate surface="sage">
           var('x,y,z,r,t')
           g(x,z)=x^2/5+z^2
-          plot11=parametric_plot3d((r*cos(t)/sqrt(5),(r*cos(t))^2+(r*sin(t))^2,r*sin(t)),(r,0,2),(t,0,2*pi),opacity=0.5,mesh=True)
+          plot11=parametric_plot3d((r*cos(t)/sqrt(5),(r*cos(t))^2+(r*sin(t))^2,r*sin(t)),(r,0,2),(t,0,2*pi),color="gray",opacity=0.8,mesh=True)
           plot11+=line([(0,1,-2),(0,1,2)],color="red",thickness=2)
           plot11+=point((0,1,1),color="red",size=30)
           plot11+=point((0,1,-1),color="red",size=30)
@@ -691,6 +691,19 @@
         f(x) = \frac{x^2}{32}\sin(2\cdot 0.6)
       </me>
     </p>
+    <figure xml:id="trace2">
+        <caption>A plot of <m>f(x,0.6) = \frac{x^2}{32}\sin(2\cdot 0.6)</m> on left and <m>f(150,y) = \frac{150^2 \sin(2y)}{32}</m> on right</caption>
+        <image width="100%" xml:id="img-trace2">
+          <sageplot>
+            var('x,y')
+            g(x,y)=x^2*sin(2*y)/9.8
+            plot12=plot(g(x,0.6),(x,0,200),color="red",gridlines=True,ymin=0,ymax=4100)
+            plot13=plot(g(150,y),(y,0,pi/2),color="green",gridlines=True,ymin=0,ymax=4100)
+            plot14=graphics_array([plot12,plot13],1,2)
+            plot14
+          </sageplot>
+        </image>
+      </figure>
     <p>
       We can plot this curve on the surface by tracing out the points on the surface when <m>y = 0.6</m>, as shown at left in <xref ref="trace1">Figure</xref>. The formula clearly shows that <m>f</m> is quadratic in the <m>x</m>-direction. More descriptively, as we increase the launch velocity while keeping the launch angle constant, the horizontal distance the object travels increases proportional to the square of the initial velocity.
     </p>
@@ -698,7 +711,7 @@
     <p>
       Similarly, if we fix the initial velocity at 150 feet per second, we can consider the distance as a function of the launch angle only. In this case we have
       <me>
-        f(y) = \frac{150^2 \sin(2y)}{32}.
+        f(y) = \frac{150^2 \sin(2y)}{32}
       </me>
     </p>
 
@@ -709,12 +722,23 @@
       <caption>The surface given by <m>z=f(x,y) = \frac{x^2 \sin(2y)}{g}</m> with traces <m>y=0.6</m> (in red) and <m>x=150</m> (in green)</caption>
       <interactive title="interactive-trace1" platform="sage" width="85%" aspect="1:1">
         <slate surface="sage">
-          var('x,y')
+          scale=100
+          plot11=line([(0,0,0),(scale,0,0)],color="black",thickness=3,frame=False)+line([(0,0,0),(0,scale/100,0)],color="black",thickness=3)+line([(0,0,0),(0,0,scale*20)],color="black",thickness=3)
+          var('x,y,z')
+          d1=50
+          d2=0.5
           g(x,y)=x^2*sin(2*y)/9.8
-          plot10=plot3d(g,(x,0,200),(y,0,pi/2),color="gray",plot_points=21,mesh=True,opacity=0.8,ticks=[[0,50,100,150,200],[0,0.5,1.0,1.5],[500,1000,1500]])
-          plot10+=parametric_plot3d((x,0.6,g(x,0.6)),(x,0,200),color="red",thickness=3)
-          plot10+=parametric_plot3d((150,y,g(150,y)),(y,0,pi/2),color="green",thickness=3)
-          show(plot10,aspect_ratio=[1,100,0.05],viewpoint=[[-0.792,0.3576,0.4949],84.75],camera_position=[-200.2301,-189.6884,234.3567])
+          plot11+=plot3d(g,(x,0,200),(y,0,pi/2),color="gray",plot_points=21,mesh=True,opacity=0.8,frame=False)
+          plot11+=parametric_plot3d((x,0.6,g(x,0.6)),(x,0,200),color="red",thickness=3)
+          plot11+=parametric_plot3d((150,y,g(150,y)),(y,0,pi/2),color="green",thickness=3)
+          plot11+=parametric_plot3d((x,pi/2+d2,g(x,0.6)),(x,0,200),color="red",thickness=3)
+          plot11+=parametric_plot3d((200+d1,y,g(150,y)),(y,0,pi/2),color="green",thickness=3)
+          plot11+=parametric_plot3d((x,pi/2+d2,z),(x,0,200),(z,0,4100),color="gray",plot_points=11,opacity=0.3,mesh=True)
+          plot11+=parametric_plot3d((200+d1,y,z),(y,0,pi/2),(z,0,4100),color="gray",plot_points=11,opacity=0.3,mesh=True)
+          plot11+=text3d("x",(100,pi/2+d2,-300),fontsize=50)
+          plot11+=text3d("z",(200+d1,pi/2+d2,4100/2),fontsize=50)
+          plot11+=text3d("y",(200+d1,0.75,-300),fontsize=50)
+          show(plot11,aspect_ratio=[1,100,0.05],viewpoint=[[-0.792,0.3576,0.4949],84.75],camera_position=[-200.2301,-189.6884,234.3567])
         </slate>
       </interactive>
     </figure>
@@ -727,9 +751,8 @@
         </sidebyside>
     </figure> -->
     
-
     <p>
-      The curves we define when we fix one of the independent variables in our two variable function are called <em>traces</em>.
+      The curves we define when we fix one of the independent variables in our two variable function are called <em>traces</em>. In <xref ref="trace1" />, we have made a copy of the trace off the side of the figure so you can see each trace as a curve on the proper 2D slice
     </p>
 
     <definition>
