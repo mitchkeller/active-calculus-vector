@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!-- **********************************************************************-->
+<!-- Copyright 2013-2024                                                   -->
+<!-- Nicholas Long, Mitch Keller                       -->
+<!--                                                                       -->
+<!-- This file is part of Active Calculus Multivariable.                   -->
+<!--                                                                       -->
+<!-- Permission is granted to copy, distribute and/or modify this document -->
+<!-- under the terms of the Creative Commons BY-NC-SA license.  The work   -->
+<!-- may be used for free by any party so long as attribution is given to  -->
+<!-- the author(s), the work and its derivatives are used in the spirit of -->
+<!-- "share and share alike"; no party may sell this work or any of its    -->
+<!-- derivatives for profit.  All trademarks are the registered marks of   -->
+<!-- their respective owners.                                              -->
+<!-- **********************************************************************-->
+<section xml:id="S-MV-HD">
+  <title>Higher Dimensions</title>
+  
+    <objectives>
+        <ul>
+          <li>
+            <p>
+              implicit surfaces
+            </p>
+          </li>
+
+          <li>
+            <p>
+              how do our differential tools scale to higher dimensions
+            </p>
+          </li>
+
+          <li>
+            <p>
+              What is a level curve of a function of two variables? What does a level curve tell us about a function?
+            </p>
+          </li>
+        </ul>
+    </objectives>
+
+    <introduction> 
+    <p>
+      words go here
+    </p>
+  
+    <exploration xml:id="PA-MV-HD">
+      <statement>
+       <p>
+          Suppose you invest money in an account that pays 5% interest compounded continuously. If you invest <m>P</m> dollars in the account, the amount <m>A</m> of money in the account after <m>t</m> years is given by 
+          <me>
+            A = Pe^{0.05t}.
+          </me>
+        </p>
+
+        <p>
+          The variables <m>P</m> and <m>t</m> are independent of each other, so using functional notation we write
+          <me>
+           A(P,t) = Pe^{0.05t}.
+          </me>
+          <ol marker="a.">
+            <li>
+              <p>
+                Find the amount of money in the account after 7 years if you originally invest 1000 dollars. 
+              </p>
+            </li>
+
+          </ol>
+        </p>
+      </statement>
+    </exploration>   
+   </introduction>
+
+  <subsection>
+    <title>Functions of Several Variables</title>
+    <p>
+      words
+    </p>
+
+
+  </subsection>
+
+  <subsection>
+    <title>Summary</title>
+    <ul>
+      <li>
+        <p>
+          1
+        </p>
+      </li>
+
+      <li>
+        <p>
+          2
+        </p>
+      </li>
+
+      <li>
+        <p>
+          3
+        </p>
+      </li>
+
+      <li>
+        <p>
+          4
+        </p>
+      </li>
+    </ul>
+
+    </subsection>
+
+      
+</section>
