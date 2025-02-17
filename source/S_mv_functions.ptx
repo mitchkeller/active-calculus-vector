@@ -644,7 +644,7 @@
             var('x,y')
             g(x,y)=x^2*sin(2*y)/32
             plot12=plot(g(x,0.6),(x,0,200),color="red",thickness=2,gridlines=True,ymin=0,ymax=1200,axes_labels=["$x$","$z$"],frame=True)
-            plot13=plot(g(150,y),(y,0,pi/2),color="green",thickness=2,gridlines=True,ymin=0,ymax=1200,axes_labels=["$y$","$z$"],frame=True)
+            plot13=plot(g(150,y),(y,0,pi/2),color="blue",thickness=2,gridlines=True,ymin=0,ymax=1200,axes_labels=["$y$","$z$"],frame=True)
             plot14=graphics_array([plot12,plot13],1,2)
             plot14
           </sageplot>
@@ -665,7 +665,7 @@
       We can again plot this curve on the surface by tracing out the points on the surface when <m>x=150</m>, as shown at right in <xref ref="trace1">Figure</xref>. The formula clearly show that <m>f</m> is sinusoidal in the <m>y</m>-direction. More descriptively, as we increase the launch angle while keeping the initial velocity constant, the horizontal distance traveled by the object is proportional to the sine of twice the launch angle.
     </p>
     <figure xml:id="trace1">
-      <caption>The surface given by <m>z=f(x,y) = \frac{x^2 \sin(2y)}{g}</m> with traces <m>y=0.6</m> (in red) and <m>x=150</m> (in green)</caption>
+      <caption>The surface given by <m>z=f(x,y) = \frac{x^2 \sin(2y)}{g}</m> with traces <m>y=0.6</m> (in red) and <m>x=150</m> (in blue)</caption>
       <interactive title="interactive-trace1" platform="sage" width="85%" aspect="1:1">
         <slate surface="sage">
           scale=100
@@ -1123,7 +1123,7 @@
               plot19+=parametric_plot3d((t,yv,g(t,yv)),(t,0,200),color="red",thickness=2)
           c3=[200*i/8 for i in range(1,9)]
           for xv in c3:
-              plot19+=parametric_plot3d((xv,t,g(xv,t)),(t,0,pi/2),color="green",thickness=2)
+              plot19+=parametric_plot3d((xv,t,g(xv,t)),(t,0,pi/2),color="blue",thickness=2)
           show(plot19,aspect_ratio=[1,100,0.15],viewpoint=[[-0.8451,0.2673,0.4629],68.68],camera_position=[-116.3915,-229.3542,311.024])
         </slate>
       </interactive>
