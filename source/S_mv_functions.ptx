@@ -1058,21 +1058,17 @@
     </p>
     <figure xml:id="contour1">
       <caption>A contour plot of <m>f(x,y) = \frac{x^2 \sin(2y)}{32}</m></caption>
-      <image width="55%" label="img-contour1">
-        <shortdescription>A contour plot of <m>f(x,y) = \frac{x^2 \sin(2y)}{32}</m></shortdescription>
-        <description><p>A contour plot of <m>f(x,y) = \frac{x^2 \sin(2y)}{32}</m></p></description>
-        <interactive title="interactive-contour1" platform="sage" width="85%" aspect="1:1">
-          <slate surface="sage">
-            var('x,y,z')
-            @interact
-            def contourexpanded(s1=checkbox(False,label="Fill in between contours"),s2=checkbox(False,label="Show Contour Legend"),n=slider(3,20,1,default=9,label="Number of Contours",display_value=False)):
-                g(x,y)=x^2*sin(2*y)/32
-                c=[1350/n*i for i in range(n)]
-                plot17=contour_plot(g(x,y),(x,0,200),(y,0,pi/2),contours=c,aspect_ratio=100,fill=s1,labels=True,label_fmt="%1.0f",colorbar=s2,axes_labels=["$x$","$y$"])
-                show(plot17)       
-          </slate>
-        </interactive>  
-      </image>
+      <interactive title="interactive-contour1" platform="sage" width="85%" aspect="1:1">
+        <slate surface="sage">
+          var('x,y,z')
+          @interact
+          def contourexpanded(s1=checkbox(False,label="Fill in between contours"),s2=checkbox(False,label="Show Contour Legend"),n=slider(3,20,1,default=9,label="Number of Contours",display_value=False)):
+            g(x,y)=x^2*sin(2*y)/32
+            c=[1350/n*i for i in range(n)]
+            plot17=contour_plot(g(x,y),(x,0,200),(y,0,pi/2),contours=c,aspect_ratio=100,fill=s1,labels=True,label_fmt="%1.0f",colorbar=s2,axes_labels=["$x$","$y$"])
+            show(plot17)       
+        </slate>
+      </interactive>  
     </figure>
     <p>
       If we lift these contours and plot them at their respective heights, then we get a picture of the surface itself, as illustrated at right in <xref ref="contour2">Figure</xref>.
@@ -1208,7 +1204,7 @@
     </p>
     <figure xml:id="contourgallery">
       <caption>A plot of various functions and their contour plots</caption>
-      <interactive title="interactive-contourgallery" platform="sage" width="85%" aspect="1:2">
+      <interactive title="interactive-contourgallery" platform="sage" width="100%" aspect="1:2.25">
         <slate surface="sage">
           from sage.plot.plot3d.plot3d import axes
           var('x,y,z,t,s')

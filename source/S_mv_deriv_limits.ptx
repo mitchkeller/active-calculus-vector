@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- **********************************************************************-->
-<!-- Copyright 2013-2018                                                   -->
-<!-- Steven Schlicker                                                      -->
+<!-- Copyright 2013-2024                                                   -->
+<!-- Nicholas Long, Mitch Keller, Steven Schlicker                         -->
 <!--                                                                       -->
 <!-- This file is part of Active Calculus Multivariable.                   -->
 <!--                                                                       -->
@@ -13,159 +13,325 @@
 <!-- derivatives for profit.  All trademarks are the registered marks of   -->
 <!-- their respective owners.                                              -->
 <!-- **********************************************************************-->
-<section xml:id="S-10-1-Limits">
+<section xml:id="S-10-1-Limits" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Limits</title>
-  
-    <objectives>
-        <ul>
-          <li>
-            <p>
-              What do we mean by the limit of a function <m>f</m> of two variables at a point <m>(a,b)</m>?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              What techniques can we use to show that a function of two variables does not have a limit at a point <m>(a,b)</m>?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              What does it mean for a function <m>f</m> of two variables to be continuous at a point <m>(a,b)</m>?
-            </p>
-          </li>
-        </ul>
-    </objectives>
-
-    <introduction>
+  <objectives>
+      <ul>
+        <li>
+          <p>
+            What do we mean by the limit of a function <m>f</m> of two variables at a point <m>(a,b)</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            What techniques can we use to show that a function of two variables does not have a limit at a point <m>(a,b)</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            What does it mean for a function <m>f</m> of two variables to be continuous at a point <m>(a,b)</m>?
+          </p>
+        </li>
+      </ul>
+  </objectives>
+  <introduction>
+  <p>
+    In this section, we want to study limits of functions of several variables, and will primarily look at limits of functions of two variables. In single variable calculus, we studied the notion of limit, which turned out to be a critical concept that served as the critical third step in the classic calculus approach when understanding the derivative and the definite integral. In this section, we will begin to understand how the concept of limit for functions of two variables is similar to what we encountered for functions of a single variable. We will use the notion of the limit of a function of several variables as the last step in understanding and defining important concepts related to differentiability later in this chapter. 
+  </p>
+  <p>
+   We did not need to generalize our ideas related to limits when we looked at vector valued functions of one variable (in <xref ref="C_VVF" />) because we can apply our 1 variable limits componentwise. The limit of a of function like <m>\vr(t)=\langle x(t),y(t),z(t) \rangle</m> is evaluated as three separate 1 variable limits. 
+  </p>
+  <p>
+    Let's begin by reviewing the idea behind a limit of a function of one variable. We say that a function <m>f</m> has a limit <m>L</m> as <m>x</m> approaches <m>a</m> provided that we can make the values <m>f(x)</m> as close to <m>L</m> as we like by taking <m>x</m> sufficiently close (but not equal) to <m>a</m>. We denote this behavior by writing
+    <me>
+      \lim_{x\to a}f(x) = L.
+    </me>
+    Remember that you may need to look at how the outputs of the function <m>f</m> as you approach the input <m>x=a</m> from the right and left separately in order to ensure that the limit exists. 
+  </p>
+<exploration xml:id="PA_10_1">
+  <introduction>
     <p>
-      In this section, we will study limits of
-      functions of several variables, with a focus on limits of functions
-      of two variables. In single variable calculus, we studied the notion of limit, which turned out to be a critical
-      concept that formed the basis for the derivative and the definite
-      integral. In this section we will begin to understand how the concept
-      of limit for functions of two variables is similar to what we
-      encountered for functions of a single variable.
-      The limit will again be the fundamental
-      idea in multivariable calculus, and we will use this notion of the limit
-      of a function of several variables to define the important concept of
-      differentiability later in this chapter. We have already seen its use in the derivatives of vector-valued functions in <xref ref="S-VVF-Calculus">Section</xref>.
+      In this Preview Activity, we will look at limits of several functions by working with tables, graphs, and the algebraic forms of these functions. 
     </p>
-
-    <p>
-      Let's begin by reviewing what we mean by the
-      limit of a function of one variable. We say that a function <m>f</m> has a limit <m>L</m> as
-      <m>x</m> approaches <m>a</m> provided that we can make the values <m>f(x)</m> as close to <m>L</m> as we like
-      by taking <m>x</m> sufficiently close (but not equal) to <m>a</m>. We denote this behavior by writing
-      <me>
-        \lim_{x\to a}f(x) = L.
-      </me>
-    </p>
-
-    <exploration xml:id="PA_10_1">
-     <statement>
+  </introduction>
+  <task>
+    <statement>
       <p>
-        We investigate the limits of several different functions by working with tables and graphs.
-        <ol marker="a.">
-          <li>
-            <p>
-              Consider the function <m>f</m> defined by
-              <me>
-                f(x) = 3-x.
-              </me>
-              Complete <xref ref="T-10-1-PA1_a">Table</xref>. 
-              <table xml:id="T-10-1-PA1_a">
-                <title>Values of <m>f(x) = 3-x</m>.</title>
-                <tabular halign="center" bottom="minor" top="minor">
-                <row bottom="medium">
-                  <cell><m> x</m></cell>
-                  <cell><nbsp/> <m>-0.2</m> <nbsp/></cell>
-                  <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
-                  <cell><nbsp/> <m>0.0</m> <nbsp/></cell>
-                  <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
-                  <cell><nbsp/> <m>0.2</m> <nbsp/></cell>
-                </row>
-                <row>
-                  <cell><m>f(x)</m></cell>
-                  <cell/>
-                  <cell/>
-                  <cell/>
-                  <cell/>
-                  <cell/>
-                </row>              
-              </tabular>
-            </table>
-            <p>
-
-            </p>
-
-              What does the table suggest regarding <m>\lim_{x\to 0}f(x)</m>?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Explain how your results in (a) are reflected in <xref ref="F_10_1_activity_1">Figure</xref>.
-
-              <figure xml:id="F_10_1_activity_1">
-                <caption>The graph of <m>f(x) = 3-x</m>.</caption>
-                <image width="50%" source="images/fig_10_1_activity_3"/>
-              </figure>
-
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Next, consider
-              <me>
-                g(x) = \frac{x}{|x|}.
-              </me>
-              Complete <xref ref="T-10-1-PA1_b">Table</xref> with values near <m>x = 0</m>, the point at which <m>g</m> is not defined.
-              <table xml:id="T-10-1-PA1_b">
-                <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
-              <tabular halign="center" bottom="minor" top="minor">
-                <row bottom="medium">
-                  <cell><m> x</m></cell>
-                  <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
-                  <cell><nbsp/> <m>-0.01</m> <nbsp/></cell>
-                  <cell><nbsp/> <m>-0.001</m> <nbsp/></cell>
-                  <cell><nbsp/> <m>0.001</m> <nbsp/></cell>
-                  <cell><nbsp/> <m>0.01</m> <nbsp/></cell>
-                  <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
-                </row>
-                <row>
-                  <cell><m>g(x)</m></cell>
-                  <cell/>
-                  <cell/>
-                  <cell/>
-                  <cell/>
-                  <cell/>
-                  <cell/>
-                </row>              
-              </tabular>
-            </table>
-            <p>
-
-            </p>
-              What does this suggest about <m>\lim_{x\to 0}g(x)</m>?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Explain how your results in (c) are reflected in <xref ref="F_10_1_activity_2">Figure</xref>.
-
-              <figure xml:id="F_10_1_activity_2">
-                <caption>The graph of <m>g(x) = \frac{x}{|x|}</m>.</caption>
-                <image width="50%" source="images/fig_10_1_activity_2"/>
-              </figure>
-
-            </p>
-          </li>
-
-          <li>
+        Let <m>f</m> defined by <m> f(x) = 3-x</m>. Complete <xref ref="T-10-1-PA1_a">Table</xref>. 
+        <table xml:id="T-10-1-PA1_a">
+          <title>Values of <m>f(x) = 3-x</m>.</title>
+          <tabular halign="center" bottom="minor" top="minor">
+          <row bottom="medium">
+            <cell><m> x</m></cell>
+            <cell><nbsp/> <m>-0.2</m> <nbsp/></cell>
+            <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>-0.01</m> <nbsp/></cell>
+            <cell><nbsp/> <m>0.01</m> <nbsp/></cell>
+            <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>0.2</m> <nbsp/></cell>
+          </row>
+          <row>
+            <cell><m>f(x)</m></cell>
+            <cell/>
+            <cell/>
+            <cell/>
+            <cell/>
+            <cell/>
+            <cell/>
+          </row>              
+          </tabular>
+        </table>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <table >
+          <title>Values of <m>f(x) = 3-x</m>.</title>
+          <tabular halign="center" bottom="minor" top="minor">
+            <row bottom="medium">
+              <cell><m> x</m></cell>
+              <cell><nbsp/> <m>-0.2</m> <nbsp/></cell>
+              <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
+              <cell><nbsp/> <m>0.0</m> <nbsp/></cell>
+              <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
+              <cell><nbsp/> <m>0.2</m> <nbsp/></cell>
+            </row>
+            <row>
+              <cell><m>f(x)</m></cell>
+              <cell><nbsp/> <m>-3.2</m> <nbsp/></cell>
+              <cell><nbsp/> <m>-3.1</m> <nbsp/></cell>
+              <cell><nbsp/> <m>3</m> <nbsp/></cell>
+              <cell><nbsp/> <m>2.9</m> <nbsp/></cell>
+              <cell><nbsp/> <m>2.8</m> <nbsp/></cell>
+            </row>              
+          </tabular>
+        </table>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        <table >
+          <title>Values of <m>f(x) = 3-x</m>.</title>
+          <tabular halign="center" bottom="minor" top="minor">
+            <row bottom="medium">
+              <cell><m> x</m></cell>
+              <cell><nbsp/> <m>-0.2</m> <nbsp/></cell>
+              <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
+              <cell><nbsp/> <m>0.0</m> <nbsp/></cell>
+              <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
+              <cell><nbsp/> <m>0.2</m> <nbsp/></cell>
+            </row>
+            <row>
+              <cell><m>f(x)</m></cell>
+              <cell><nbsp/> <m>-3.2</m> <nbsp/></cell>
+              <cell><nbsp/> <m>-3.1</m> <nbsp/></cell>
+              <cell><nbsp/> <m>3</m> <nbsp/></cell>
+              <cell><nbsp/> <m>2.9</m> <nbsp/></cell>
+              <cell><nbsp/> <m>2.8</m> <nbsp/></cell>
+            </row>              
+          </tabular>
+        </table>
+      </p>
+    </solution>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Write a sentence about what <xref ref="T-10-1-PA1_a">Table</xref> suggests regarding <me>\lim_{x\to 0}f(x)</me>
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <m>\lim_{x\to 0}f(x) = 3 </m>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        <m>\lim_{x\to 0}f(x) = 3 </m>
+      </p>
+    </solution>
+  </task>  
+  <task>
+    <statement>
+      <p>
+        Write a couple of sentences to explain how your values in <xref ref="T-10-1-PA1_a">Table</xref> and the <me>\lim_{x\to 0}f(x)</me> are demonstrated in <xref ref="F_10_1_activity_1">Figure</xref>.
+      </p>
+      <figure xml:id="F_10_1_activity_1">
+        <caption>The graph of <m>f(x) = 3-x</m>.</caption>
+        <image width="50%" source="images/fig_10_1_activity_3"/>
+      </figure>
+    </statement>
+    <answer>
+      <p>
+        On the graph, we can see that just to the left of <m>x = 0</m> and just to the right of <m>x = 0</m>, the function has output values very very close to 3.
+      </p>
+    </answer>
+    <solution>
+      <p>
+        On the graph, we can see that just to the left of <m>x = 0</m> and just to the right of <m>x = 0</m>, the function has output values very very close to 3.
+      </p>
+    </solution>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Let <me>g(x) = \frac{x}{|x|}</me>. Complete <xref ref="T-10-1-PA1_b">Table</xref> with values near <m>x = 0</m>, the point at which <m>g</m> is not defined.
+      </p>
+      <table xml:id="T-10-1-PA1_b">
+        <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
+      <tabular halign="center" bottom="minor" top="minor">
+        <row bottom="medium">
+          <cell><m> x</m></cell>
+          <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
+          <cell><nbsp/> <m>-0.01</m> <nbsp/></cell>
+          <cell><nbsp/> <m>-0.001</m> <nbsp/></cell>
+          <cell><nbsp/> <m>0.001</m> <nbsp/></cell>
+          <cell><nbsp/> <m>0.01</m> <nbsp/></cell>
+          <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
+        </row>
+        <row>
+          <cell><m>g(x)</m></cell>
+          <cell/>
+          <cell/>
+          <cell/>
+          <cell/>
+          <cell/>
+          <cell/>
+        </row>              
+      </tabular>
+      </table>
+    </statement>
+    <answer>
+      <p>
+        <table >
+          <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
+          <tabular halign="center" bottom="minor" top="minor">
+          <row bottom="medium">
+            <cell><m> x</m></cell>
+            <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>-0.01</m> <nbsp/></cell>
+            <cell><nbsp/> <m>-0.001</m> <nbsp/></cell>
+            <cell><nbsp/> <m>0.001</m> <nbsp/></cell>
+            <cell><nbsp/> <m>0.01</m> <nbsp/></cell>
+            <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
+          </row>
+          <row>
+            <cell><m>g(x)</m></cell>
+            <cell><nbsp/> <m>-1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>-1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>-1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>1</m> <nbsp/></cell>
+          </row>              
+          </tabular>
+        </table>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        <table >
+          <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
+          <tabular halign="center" bottom="minor" top="minor">
+          <row bottom="medium">
+            <cell><m> x</m></cell>
+            <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>-0.01</m> <nbsp/></cell>
+            <cell><nbsp/> <m>-0.001</m> <nbsp/></cell>
+            <cell><nbsp/> <m>0.001</m> <nbsp/></cell>
+            <cell><nbsp/> <m>0.01</m> <nbsp/></cell>
+            <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
+          </row>
+          <row>
+            <cell><m>g(x)</m></cell>
+            <cell><nbsp/> <m>-1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>-1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>-1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>1</m> <nbsp/></cell>
+          </row>              
+          </tabular>
+        </table>
+      </p>
+    </solution>
+  </task>
+  <task xml:id="PA-limit-LR">
+    <statement>
+      <p>
+        Write a few sentences about what the values in <xref ref="T-10-1-PA1_b">Table</xref> suggests about <m>\lim_{x\to 0}g(x)</m>.
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <m>\lim_{x\to 0}g(x) </m> does not exist because from the left, the output of g goes to -1 and from the right, the output of g is 1.
+      </p>
+    </answer>
+    <solution>
+      <p>
+        <m>\lim_{x\to 0}g(x) </m> does not exist because from the left, the output of g goes to -1 and from the right, the output of g is 1.
+      </p>
+    </solution>
+  </task>      
+  <task>
+    <statement>
+      <p>
+        Write a couple of sentences to explain how your values in <xref ref="T-10-1-PA1_b">Table</xref> and the <me>\lim_{x\to 0}f(x)</me> are demonstrated in <xref ref="F_10_1_activity_2">Figure</xref>.
+      </p>
+      <figure xml:id="F_10_1_activity_2">
+        <caption>The graph of <m>g(x) = \frac{x}{|x|}</m>.</caption>
+        <image width="50%" source="images/fig_10_1_activity_2"/>
+      </figure>
+    </statement>
+    <answer>
+      <p>
+        We can see visually that <m>\lim_{x\to 0^-}g(x)\  = - 1</m> and <m>\lim_{x\to 0^+}g(x) = 1\ </m>. Since the limit as <m>x</m> approaches zero from the left and the limit as <m>x</m> approaches zero from the right are not the same, <m>\lim_{x\to 0}g(x)\ </m> does not exist.
+      </p>
+    </answer>
+    <solution>
+      <p>
+        We can see visually that <m>\lim_{x\to 0^-}g(x)\  = - 1</m> and <m>\lim_{x\to 0^+}g(x) = 1\ </m>. Since the limit as <m>x</m> approaches zero from the left and the limit as <m>x</m> approaches zero from the right are not the same, <m>\lim_{x\to 0}g(x)\ </m> does not exist.
+      </p>
+    </solution>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Let <m>h(x)=\frac{1-x^2}{x+1}</m>. At what points is <m>h</m> undefined? 
+      </p>
+    </statement>
+    <answer>
+      <p>
+        The function <m>h</m> is undefined at <m>x=-1</m>.
+      </p>
+    </answer>
+    <solution>
+      <p>
+        The function <m>h</m> is undefined at <m>x=-1</m>.
+      </p>
+    </solution>
+  </task>        
+  <task>
+    <statement>
+      <p>
+        Show that the limit as x goes to <m>-1</m> of <m>h(x)</m> exists and write a sentence about why <m>h(-1)</m> does not exist but the limit as x goes to <m>-1</m> does exist. 
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <m>h(x)=\frac{1-x^2}{x+1}=\frac{(x+1)(1-x)}{x+1}=(1-x)</m> when <m>x\neq -1</m>, so everywhere but at <m>x=-1</m> the function <m>h</m> will have output of <m>1-x</m>. Thus the limit as x goes to -1 of 1-x will be 2. Remember that the limit describes what the output of the function is approaching very near a particular input and NOT at that input. 
+      </p>
+    </answer>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Graph <m>h(x)</m> for a region around <m>x=-1</m> and explain how this graph relates to your answer to the previous two tasks.
+      </p>
+    </statement>
+  </task>
+  </exploration>
+          <!-- <li>
             <p>
               Now, let's examine a function of two variables.  Let
               <me>
@@ -335,91 +501,8 @@
       </p>
       
      </statement>
-
-      <answer>
-        <p>
-          
-        </p> 
-        <ol marker="a.">
-          <li>
-           
-            <table >
-            <title>Values of <m>f(x) = 3-x</m>.</title>
-            <tabular halign="center" bottom="minor" top="minor">
-              <row bottom="medium">
-                <cell><m> x</m></cell>
-                <cell><nbsp/> <m>-0.2</m> <nbsp/></cell>
-                <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>0.0</m> <nbsp/></cell>
-                <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>0.2</m> <nbsp/></cell>
-              </row>
-              <row>
-                <cell><m>f(x)</m></cell>
-                <cell><nbsp/> <m>-3.2</m> <nbsp/></cell>
-                <cell><nbsp/> <m>-3.1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>3</m> <nbsp/></cell>
-                <cell><nbsp/> <m>2.9</m> <nbsp/></cell>
-                <cell><nbsp/> <m>2.8</m> <nbsp/></cell>
-              </row>              
-            </tabular>
-            </table>
-        
-        
-
-            <p>
-              <m>\lim_{x\to 0}f(x) = 3 </m>
-            </p>
-          </li>
-
-          <li>
-            <p>
-              On the graph, we can see that just to the left of <m>x = 0</m> and just to the right of <m>x = 0</m>, the function has output values very very close to 3.
-            </p>
-          </li>
-      
-          <li>
-            <table >
-              <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
-              <tabular halign="center" bottom="minor" top="minor">
-              <row bottom="medium">
-                <cell><m> x</m></cell>
-                <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>-0.01</m> <nbsp/></cell>
-                <cell><nbsp/> <m>-0.001</m> <nbsp/></cell>
-                <cell><nbsp/> <m>0.001</m> <nbsp/></cell>
-                <cell><nbsp/> <m>0.01</m> <nbsp/></cell>
-                <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
-              </row>
-              <row>
-                <cell><m>g(x)</m></cell>
-                <cell><nbsp/> <m>-1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>-1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>-1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>1</m> <nbsp/></cell>
-              </row>              
-              </tabular>
-            </table>
-
-            <p>
-              <m>\lim_{x\to 0}g(x) </m> does not exist
-            </p>  
-
-
-          </li>
-      
-
-          <li>
-            <p>
-              We can see visually that <m>\lim_{x\to 0^-}g(x)\  = - 1</m> and <m>\lim_{x\to 0^+}g(x) = 1\ </m>. Since the limit as <m>x</m> approaches zero from the left and the limit as <m>x</m> approaches zero from the right are not the same, <m>\lim_{x\to 0}g(x)\ </m> does not exist.
-            </p>
-          </li>
-      
-          <li>
-
-            <table >
+     <answer>
+     <table >
               <title>Values of <m>f(x,y) = 3 - x - 2y</m>.</title>
               <tabular halign="right" bottom="minor" top="minor">
                 <row bottom="medium">
@@ -552,540 +635,399 @@
             <p>
               The graph on the left shows that as the function approaches an <m>x</m>-value of 0 and <m>y</m>-value of 0, the function approaches different output values such as 1 and -1.
             </p>
-          </li>
+            </answer>
+ -->
+  <p>
+    In <xref ref="PA_10_1">Preview Activity</xref>, we recalled the notion of limit from single variable calculus. Specifically, the limit  <me>\lim_{x \rightarrow a} f(x)</me> (if it exists) will be the value that the output of <m>f</m> approaches as the inputs (<m>x</m>-values) get closer to <m>a</m>. We needed to look at whether the same values for the output of <m>f</m> was approached as the input values approach <m>x=a</m> from different directions. Tables of values for the function can give evidence that a limit will either exist or not but will not have enough evidence to show a limit exists. Similarly, we can use graphs to visually represent the behavior of the output values as we approach a particular input from different directions.
+  </p>
+</introduction>
 
-        </ol>
-      
-
-      </answer>
-
-      <solution>
-        <p>
-          
-        </p> 
-        <ol marker="a.">
-          <li>
-           
-            <table >
-            <title>Values of <m>f(x) = 3-x</m>.</title>
-            <tabular halign="center" bottom="minor" top="minor">
-              <row bottom="medium">
-                <cell><m> x</m></cell>
-                <cell><nbsp/> <m>-0.2</m> <nbsp/></cell>
-                <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>0.0</m> <nbsp/></cell>
-                <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>0.2</m> <nbsp/></cell>
-              </row>
-              <row>
-                <cell><m>f(x)</m></cell>
-                <cell><nbsp/> <m>-3.2</m> <nbsp/></cell>
-                <cell><nbsp/> <m>-3.1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>3</m> <nbsp/></cell>
-                <cell><nbsp/> <m>2.9</m> <nbsp/></cell>
-                <cell><nbsp/> <m>2.8</m> <nbsp/></cell>
-              </row>              
-            </tabular>
-            </table>
-        
-        
-
-            <p>
-              <m>\lim_{x\to 0}f(x) = 3 </m>
-            </p>
-          </li>
-
-          <li>
-            <p>
-              On the graph, we can see that just to the left of <m>x = 0</m> and just to the right of <m>x = 0</m>, the function has output values very very close to 3.
-            </p>
-          </li>
-      
-          <li>
-            <table >
-              <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
-              <tabular halign="center" bottom="minor" top="minor">
-              <row bottom="medium">
-                <cell><m> x</m></cell>
-                <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>-0.01</m> <nbsp/></cell>
-                <cell><nbsp/> <m>-0.001</m> <nbsp/></cell>
-                <cell><nbsp/> <m>0.001</m> <nbsp/></cell>
-                <cell><nbsp/> <m>0.01</m> <nbsp/></cell>
-                <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
-              </row>
-              <row>
-                <cell><m>g(x)</m></cell>
-                <cell><nbsp/> <m>-1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>-1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>-1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>1</m> <nbsp/></cell>
-                <cell><nbsp/> <m>1</m> <nbsp/></cell>
-              </row>              
-              </tabular>
-            </table>
-
-            <p>
-              <m>\lim_{x\to 0}g(x) </m> does not exist
-            </p>  
-
-
-          </li>
-      
-
-          <li>
-            <p>
-              We can see visually that <m>\lim_{x\to 0^-}g(x)\  = - 1</m> and <m>\lim_{x\to 0^+}g(x) = 1\ </m>. Since the limit as <m>x</m> approaches zero from the left and the limit as <m>x</m> approaches zero from the right are not the same, <m>\lim_{x\to 0}g(x)\ </m> does not exist.
-            </p>
-          </li>
-      
-          <li>
-
-            <table >
-              <title>Values of <m>f(x,y) = 3 - x - 2y</m>.</title>
-              <tabular halign="right" bottom="minor" top="minor">
-                <row bottom="medium">
-                  <cell><m>x\backslash y</m></cell>
-                  <cell><nbsp/><nbsp/><nbsp/><m>-1.0</m><nbsp/><nbsp/><nbsp/></cell>
-                  <cell><nbsp/><nbsp/><nbsp/><m>-0.1</m><nbsp/><nbsp/><nbsp/></cell>
-                  <cell><nbsp/><nbsp/><nbsp/><nbsp/><m>0.0</m><nbsp/><nbsp/><nbsp/></cell>
-                  <cell><nbsp/><nbsp/><nbsp/><nbsp/><m>0.1</m><nbsp/><nbsp/><nbsp/></cell>
-                  <cell><nbsp/><nbsp/><nbsp/><nbsp/><m>1.0</m><nbsp/><nbsp/><nbsp/></cell>
-                </row>
-                <row>
-                  <cell><m>-1.0</m>  </cell>
-                  <cell halign="center"><nbsp/><nbsp/><m>6</m></cell>
-                  <cell halign="center"><nbsp/><nbsp/><m>4.2</m></cell>
-                  <cell halign="center"><nbsp/><nbsp/><m>4</m></cell>
-                  <cell halign="center"><nbsp/><nbsp/><m>3.8</m></cell>
-                  <cell halign="center"><nbsp/><nbsp/><m>2</m></cell>
-                </row>
-                <row>
-                  <cell> <m>-0.1</m> </cell>
-                  <cell halign="center"><nbsp/><m>5.1</m></cell>
-                  <cell halign="center"><nbsp/><m>3.3</m></cell>
-                  <cell halign="center"><nbsp/><m>3.1</m></cell>
-                  <cell halign="center"><nbsp/><m>2.9</m></cell>
-                  <cell halign="center"><nbsp/><m>1.1</m></cell>
-                </row>
-                <row>
-                  <cell><m>0.0</m>  </cell>
-                  <cell halign="center"><m>5</m></cell>
-                  <cell halign="center"><m>3.2</m></cell>
-                  <cell halign="center"><m>3</m></cell>
-                  <cell halign="center"><m>2.8</m></cell>
-                  <cell halign="center"><m>1</m></cell>
-                </row>
-                <row>
-                  <cell><m>0.1</m> </cell>
-                  <cell halign="center"><nbsp/><nbsp/><m>4.9</m></cell>
-                  <cell halign="center"><nbsp/><nbsp/><m>3.1</m></cell>
-                  <cell halign="center"><nbsp/><nbsp/><m>2.9</m></cell>
-                  <cell halign="center"><nbsp/><nbsp/><m>2.7</m></cell>
-                  <cell halign="center"><nbsp/><nbsp/><m>0.9</m></cell>
-                </row>
-                <row>
-                  <cell><m>1.0</m> </cell>
-                  <cell halign="center"><nbsp/><m>4</m></cell>
-                  <cell halign="center"><nbsp/><m>2.2</m></cell>
-                  <cell halign="center"><nbsp/><m>2.0</m></cell>
-                  <cell halign="center"><nbsp/><m>1.8</m></cell>
-                  <cell halign="center"><nbsp/><m>0</m></cell>
-                </row>
-              </tabular>
-            </table>
-
-            <p>
-              <m>\lim_{(x,y) \to (0,0)} f(x,y) = 3\ \ </m>
-            </p>
-
-          </li>
-      
-        
-          <li>
-            <p>
-              The curves represent the output, <m>z</m>, of the function. We can see that as <m>x</m> and <m>y</m> go from 1.5 to 0, the output value gets closer and closer to <m>z = 3</m>.
-            </p>
-          </li>
-      
-          <li>
-            <table >
-              <title>Values of <m>g(x,y) = \frac{2xy}{x^2+y^2}</m>.</title>
-              <tabular halign="center" bottom="minor" top="minor">
-              <row bottom="medium">
-                <cell halign="right"><m>x\backslash y</m></cell>
-                <cell><nbsp/><nbsp/><nbsp/><m>-1.0</m><nbsp/><nbsp/><nbsp/></cell>
-                <cell><nbsp/><nbsp/><nbsp/><m>-0.1</m><nbsp/><nbsp/><nbsp/></cell>
-                <cell><nbsp/><nbsp/><nbsp/><nbsp/><m>0.0</m><nbsp/><nbsp/><nbsp/></cell>
-                <cell><nbsp/><nbsp/><nbsp/><nbsp/><m>0.1</m><nbsp/><nbsp/><nbsp/></cell>
-                <cell><nbsp/><nbsp/><nbsp/><nbsp/><m>1.0</m><nbsp/><nbsp/><nbsp/></cell>
-              </row>
-              <row>
-                <cell halign="right"><m>-1.0</m>  </cell>
-                <cell><m>1</m></cell>
-                <cell><m>0.198</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>-0.198</m></cell>
-                <cell><m>-1</m></cell>
-              </row>
-              <row>
-                <cell halign="right"> <m>-0.1</m> </cell>
-                <cell><m>0.198</m></cell>
-                <cell><m>1</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>-1</m></cell>
-                <cell><m>-0.198</m></cell>
-              </row>
-              <row>
-                <cell halign="right"><m>0.0</m>  </cell>
-                <cell><m>0</m></cell>
-                <cell><m>0</m></cell>
-                <cell> <mdash/> </cell>
-                <cell><m>0</m></cell>
-                <cell><m>0</m></cell>
-              </row>
-              <row>
-                <cell halign="right"><m>0.1</m> </cell>
-                <cell><m>-0.198</m></cell>
-                <cell><m>-1</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>1</m></cell>
-                <cell><m>0.198</m></cell>
-              </row>
-              <row>
-                <cell halign="right"><m>1.0</m> </cell>
-                <cell><m>-1</m></cell>
-                <cell><m>-0.198</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>0.198</m></cell>
-                <cell><m>1</m></cell>
-              </row>
-              </tabular>
-            </table>  
-
-            <p>
-              <m>\lim_{(x,y) \to (0,0)} g(x,y)\ </m> DNE
-            </p>
-
-          </li>
-      
-          <li>
-      
-            <p>
-              The graph on the left shows that as the function approaches an <m>x</m>-value of 0 and <m>y</m>-value of 0, the function approaches different output values such as 1 and -1.
-            </p>
-          </li>
-
-        </ol>
-      
-
-      
-      </solution>
-
-
-
-    </exploration>
-  </introduction>
-
-
-  <subsection>
-    <title>Limits of Functions of Two Variables</title>
+<subsection>
+  <title>Limits of Functions of Two Variables</title>
+  <p>
+    In this section, we will look at how the concepts of limits on single variable functions can be expanded to work with functions of two variables. We will focus on two variables here because tools like tables and graphs readily make sense for a function of the form <m>f(x,y)</m> but become more difficult to use for functions of more than two variables. All of the concepts of limits and continuity can be expanded to functions of any number of variables but that kind of generalization involves a lot of mathematical tools that are not appropriate at this time. <!-- In a natural followup to our work in <xref ref="PA_10_1">Preview Activity</xref>, we now formally define what it means for a function of two variables to have a limit at a point. -->
+  </p>
+  <p>
+    The biggest difference between limits of single variable functions and multivariable functions is the number of ways we can approach a particular input. For a single variable function, there are only two ways in which we can approach an input like <m>x=a</m>, which we call approaching from the left and approaching from the right, as shown in <xref ref="LR1" />. When considering a limit of a single variable function, you only have to evaluate and compare the output of your function in these two directions. If the output of your function did not agree as you approach from the left and right, then the limit did not exist (like in <xref ref="PA-limit-LR" />)
+  </p> 
+  <figure xml:id="LR1">
+    <caption>The two ways to approach an input in 1D </caption>
+    <image width="45%" label="img-LR1">
+      <description><p> A plot of two vectors with an acute angle between them</p></description>
+      <sageplot>
+        scale=5
+        plot3=arrow((0,0),(scale+0.5,0),color="black",ticks=[[0],[]],tick_formatter=[["$a$"],[]],ymin=-0.25,ymax=0.25,xmin=-scale-0.5,xmax=scale+0.5,aspect_ratio=1)
+        plot3+=arrow((0,0),(-scale-0.5,0),color="black")
+        plot3+=text("$x=a$",(0,-0.5),color="black",fontsize=20)
+        plot3+=text("approach from left",(-2.5,0.25),color="red",fontsize=15)
+        plot3+=arrow((-2.5,0),(0,0),color="red",zorder=5,width=2)
+        plot3+=text("approach from right",(2.5,0.25),color="blue",fontsize=15)
+        plot3+=arrow((2.5,0),(0,0),color="blue",zorder=5,width=2)
+        plot3
+      </sageplot>
+    </image>
+  </figure> 
+  <p>
+    In contrast to the single variable case, there are <alert>A LOT</alert> of different ways to approach an input for a function like <m>f(x,y)</m>. In <xref ref="LR2">Figure</xref>, you can see a variety of different ways to approach the point <m>(a,b)</m>. When we look at how to get close to a input in two dimensions, we will need to think about more than just the straightline directions; we have to consider curved paths and other collections of points that aren't even a continuous path. In the next example, we will explore how we can think about the various representations of a multivariable function and what it would mean look at the output of the function as the inputs get close to a particular value. 
+  </p>
+  <figure xml:id="LR2">
+    <caption>Seven different ways to approach a point in 2D</caption>
+    <image width="45%" label="img-LR2">
+      <description><p> A plot of two vectors with an acute angle between them</p></description>
+      <sageplot>
+        var('t')
+        paths=[(t+1,1),(1,t+1),(1,1-t),(1-t,1),(1-t,1+t),(1+t,1+2*t^2),(1-t,1-t-0.1*sin(20*t))]
+        plot4=point((1,1),size=40,color="black",ticks=[[],[]],ymin=-0.1,ymax=2,xmin=-0.1,xmax=2,axes_labels=["$x$","$y$"],aspect_ratio=1)
+        plot4+=text("$(a,b)$",(1.15,0.9),color="black",fontsize=15)
+        for p in paths:
+          r(t)=p
+          plot4+=parametric_plot(r,(t,0,0.5),color="gray",thickness=1)
+          plot4+=arrow(r(t=0.25),r(t=0.2),color="gray",arrowsize=2)
+        plot4
+      </sageplot>
+    </image>
+  </figure> 
+  <example xml:id="LimitEx1">
     <p>
-      In <xref ref="PA_10_1">Preview Activity</xref>, we recalled the notion of limit
-      from single variable calculus and saw that a similar concept applies
-      to functions of two variables.
-      Though we will focus on functions of two variables, for the sake of
-      discussion, all the ideas we establish here are valid for functions of
-      any number of variables. In a natural followup to our work in <xref ref="PA_10_1">Preview Activity</xref>,
-      we now formally define what it means for a function of two variables to have a
-      limit at a point.
+      In this example, we will examine the same tools used in <xref ref="PA_10_1">Preview Activity</xref> (tables and graphs) to think about what the output of the function <m>f(x,y)=3-x-2y</m> approaches as the inputs get close to <m>(0,0)</m>. <xref ref="tableE1">Table</xref> shows a spreadsheet of output values for <m>f</m> near the input <m>(0,0)</m>. We have purposefully omitted the value of <m>f(0,0)</m> because we need to look at what is happening to <m>f</m> <em>near</em> <m>(0,0)</m>, not what is happening at <m>(0,0)</m>. 
     </p>
-
-    <definition>
+    <table xml:id="tableE1" >
+      <title>Values of <m>f(x,y) = 3 - x - 2y</m></title>
+      <tabular halign="center"  >
+        <row >
+          <cell><m>x \backslash y</m></cell>
+          <cell bottom="medium"><nbsp/><nbsp/><nbsp/><m>-1.0</m><nbsp/><nbsp/><nbsp/></cell>
+          <cell bottom="medium"><nbsp/><nbsp/><nbsp/><m>-0.1</m><nbsp/><nbsp/><nbsp/></cell>
+          <cell bottom="medium"><nbsp/><nbsp/><nbsp/><nbsp/><m>0.0</m><nbsp/><nbsp/><nbsp/></cell>
+          <cell bottom="medium"><nbsp/><nbsp/><nbsp/><nbsp/><m>0.1</m><nbsp/><nbsp/><nbsp/></cell>
+          <cell bottom="medium"><nbsp/><nbsp/><nbsp/><nbsp/><m>1.0</m><nbsp/><nbsp/><nbsp/></cell>
+        </row>
+        <row>
+          <cell right="medium"><m>-1.0</m>  </cell>
+          <cell halign="center"><nbsp/><nbsp/><m>6</m></cell>
+          <cell halign="center"><nbsp/><nbsp/><m>4.2</m></cell>
+          <cell halign="center"><nbsp/><nbsp/><m>4</m></cell>
+          <cell halign="center"><nbsp/><nbsp/><m>3.8</m></cell>
+          <cell halign="center"><nbsp/><nbsp/><m>2</m></cell>
+        </row>
+        <row>
+          <cell right="medium"> <m>-0.1</m> </cell>
+          <cell halign="center"><nbsp/><m>5.1</m></cell>
+          <cell halign="center"><nbsp/><m>3.3</m></cell>
+          <cell halign="center"><nbsp/><m>3.1</m></cell>
+          <cell halign="center"><nbsp/><m>2.9</m></cell>
+          <cell halign="center"><nbsp/><m>1.1</m></cell>
+        </row>
+        <row>
+          <cell right="medium"><m>0.0</m>  </cell>
+          <cell halign="center"><m>5</m></cell>
+          <cell halign="center"><m>3.2</m></cell>
+          <cell halign="center"><m> </m></cell>
+          <cell halign="center"><m>2.8</m></cell>
+          <cell halign="center"><m>1</m></cell>
+        </row>
+        <row>
+          <cell right="medium"><m>0.1</m> </cell>
+          <cell halign="center"><nbsp/><nbsp/><m>4.9</m></cell>
+          <cell halign="center"><nbsp/><nbsp/><m>3.1</m></cell>
+          <cell halign="center"><nbsp/><nbsp/><m>2.9</m></cell>
+          <cell halign="center"><nbsp/><nbsp/><m>2.7</m></cell>
+          <cell halign="center"><nbsp/><nbsp/><m>0.9</m></cell>
+        </row>
+        <row>
+          <cell right="medium"><m>1.0</m> </cell>
+          <cell halign="center"><nbsp/><m>4</m></cell>
+          <cell halign="center"><nbsp/><m>2.2</m></cell>
+          <cell halign="center"><nbsp/><m>2.0</m></cell>
+          <cell halign="center"><nbsp/><m>1.8</m></cell>
+          <cell halign="center"><nbsp/><m>0</m></cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      As you can see in <xref ref="tableE1"/>, as the inputs, <m>(x,y)</m>, get closer to <m>(0,0)</m> the output of <m>f(x,y)</m> gets closer to 3. We can look at some aspect of directionality using a table, like how the row corresponding to <m>x=0</m> shows values of <m>f</m> for inputs on the <m>y</m>-axis and the values on the diagonal (from top left to bottom right) shows values of <m>f</m> for inputs with the same <m>x</m>- and <m>y</m>-coordinates. 
+    </p>
+    <p>
+      Visual representations like contour graphs and surface plots will give more information with respect to the different directions we can approach <m>(0,0)</m>. <xref ref="contourE1"/> shows a contour plot of <m>f(x,y)=3-x-2y</m> where you can use the slider to change the number of contours used in the plot. The input point <m>(0,0)</m> is highlighted in red and you can see that regardless of how many contours are displayed, the output value of <m>f</m> seems to approach 3 near the red point. Just as with the table, you can get some idea on the directionality of how the outputs will approach 3 but because the contour plot does not give information about what is happening in-between contours, you are left to mentally fill in this information. 
+    </p>
+    <figure xml:id="contourE1">
+      <caption>A contour plot of <m>f(x,y) = 3-x-2y</m> with the point <m>(0,0)</m> highlighted in red</caption>
+      <interactive title="interactive-contourE1" platform="sage" width="85%" aspect="1:1">
+        <slate surface="sage">
+          var('x,y,z')
+          @interact
+          def contourexpanded(n=slider(4,20,2,default=8,label="Number of Contours",display_value=False)):
+            g(x,y)=3-x-2*y
+            c=[6*i/n for i in range(n)]
+            plot1=contour_plot(g(x,y),(x,-1,1),(y,-1,1),contours=c,labels=True,label_fmt="%1.2f",colorbar=True,axes_labels=["$x$","$y$"])
+            plot1+=point((0,0),size=30,color="red",zorder=5)
+            show(plot1)      
+        </slate>
+      </interactive>  
+    </figure>
+    <p>
+      A plot of the surface <m>z=f(x,y)=3-x-2y</m> will give the more information about what is happening in different directions as the inputs approach <m>(0,0)</m>. The drawback to using surface plots is that they are very difficult to create by hand;Even computer generated plots of surfaces can be difficult to interpret and are prone to errors because of imprecise numerical calculations. In our case, the plot of <m>z=f(x,y)=3-x-2y</m> is quite straightforward because the surface is a plane. We can see in <xref ref="Limitplot1"/> that if we approach the input point <m>(0,0)</m> in any direction or along any path, then the output of <m>f</m> (as shown by the z-coordinate on the plot) will get closer to 3.
+    </p>
+    <figure xml:id="Limitplot1">
+      <caption>A plot of <m>z=f(x,y) = 3-x-2y</m> with several paths approaching the input <m>(0,0)</m></caption>
+      <interactive title="interactive-contourE1" platform="sage" width="85%" aspect="1:1">
+        <slate surface="sage">
+          from sage.plot.plot3d.plot3d import axes
+          @interact
+          def limitplot(s1=checkbox(True,label="Show Surface")):
+            var('t')
+            scale=0.5
+            plot2=axes(scale,0.5,color="black",aspect_ratio=[1,1,0.25])
+            plot2+=text3d("x",(scale+0.1,0,0),fontsize=30)+text3d("y",(0,scale+0.1,0),fontsize=30)+text3d("z",(0,0,scale+0.25),fontsize=30)
+            var('x,y')
+            f(x,y)=3-x-2*y
+            if(s1):
+              plot2+=plot3d(f,(x,-.5,0.5),(y,-0.5,0.5),color="gray",mesh=True,opacity=0.25,plot_points=5)
+            plot2+=point((0,0,3),size=15,color="black")+text3d("(0,0,3)",(0.3,-0.1,3.5),color="black",fontsize=25,zorder=10)
+            paths=[(t,0),(0,t+0),(0,0-t),(0-t,0),(0-t,0+t),(0+t,0+2*t^2),(0-t,0-t-0.1*sin(20*t))]
+            for p in paths:
+              r1(t)=(p[0],p[1],0)
+              r2(t)=(p[0],p[1],f(p[0],p[1]))
+              plot2+=parametric_plot3d(r1,(t,0,0.5),color="blue",thickness=2,zorder=5)
+              plot2+=arrow(r1(t=0.25),r1(t=0.2),color="blue",arrowsize=3,zorder=5)
+              plot2+=parametric_plot3d(r2,(t,0,0.5),color="red",thickness=2)
+              plot2+=arrow(r2(t=0.25),r2(t=0.2),color="red",arrowsize=2)
+            show(plot2,viewpoint=[[-0.124,-0.7108,-0.6924],166.22],camera_position=[1.0437,2.363,0.5013])   
+        </slate>
+      </interactive>  
+    </figure>
+    <p>
+      In all of our representations, we see evidence that if the input of our function, <m>(x,y)</m>, approaches <m>(0,0)</m>, then the output of our function goes to 3, regardless of the direction or way we approach <m>(0,0)</m>. We generalize this idea with the following definition.
+    </p>
+  </example>
+  <definition>
+    <statement>
+      <p>
+        Given a function <m>f = f(x,y)</m>, we say that <m>f</m> <term>has limit <m>L</m> as <m>(x,y)</m> approaches <m>(a,b)</m></term> provided that we can make <m>f(x,y)</m> as close to <m>L</m> as we like by taking <m>(x,y)</m> sufficiently close (but not equal) to <m>(a,b)</m>. We write
+        <me>
+          \lim_{(x,y)\to(a,b)} f(x,y) = L
+        </me>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Our work in <xref ref="LimitEx1" /> showed that the limit of <m>f(x,y)=3-x-2y</m> as <m>(x,y)</m> approaches <m>(0,0)</m> is 3. Symbolically, this looks like
+    <me>lim_{(x,y)\rightarrow(0,0)} 3-x-2y = 3</me>
+  </p>
+  <p>
+    To investigate the limit of a single variable function, <m>\lim_{x\to a}f(x)</m>, we often consider the behavior of <m>f</m> as <m>x</m> approaches <m>a</m> from the right and from the left. Similarly, we may investigate limits of two-variable functions, <m>\lim_{(x,y)\to(a,b)} f(x,y)</m> by considering the behavior of <m>f</m> as <m>(x,y)</m> approaches <m>(a,b)</m> along a particular path. Remember that the multivariable function situation is more complicated because there are infinitely many ways in which <m>(x,y)</m> may approach <m>(a,b)</m>, so we will not be able to check every possible path. In the next activity, we see how it is important to consider a variety of those paths in investigating whether or not a limit exists.
+  </p>
+  <activity xml:id="A_10_1_1">
+    <introduction>
+      <p>
+        Consider the function <m>f</m>, defined by
+        <me>
+          f(x,y) = \frac{y}{\sqrt{x^2+y^2}}
+        </me>
+        whose graph is shown below in <xref ref="F_10_1_disc_2">Figure</xref>
+      </p>
+      <figure xml:id="F_10_1_disc_2">
+        <caption>A plot of <m>z=f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m></caption>
+        <interactive title="interactive-surfaceLim1" platform="sage" width="85%" aspect="1:1">
+          <slate surface="sage">
+            from sage.plot.plot3d.plot3d import axes
+            var('t')
+            scale=1
+            plot5=axes(scale,0.5,color="black",aspect_ratio=[1,1,1])
+            plot5+=text3d("x",(scale+0.25,0,0),fontsize=30)+text3d("y",(0,scale+0.25,0),fontsize=30)+text3d("z",(0,0,scale+0.25),fontsize=30)
+            var('x,y')
+            f(x,y)=y/sqrt(x^2+y^2)
+            plot5+=plot3d(f,(x,-1,1),(y,-1,1),color="blue",mesh=True,opacity=0.5,plot_points=31)
+            show(plot5,viewpoint=[[-0.8872,-0.296,-0.354],86.61],camera_position=[3.1343,-3.8823,1.0265])
+          </slate>
+        </interactive>  
+      </figure>
+      <!-- <figure xml:id="F_10_1_disc_2">
+        <caption>The graph of <m>f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m>.</caption>
+        <image width="50%" source="images/fig_10_1_disc_2"/>
+      </figure> -->
+    </introduction>
+    <task>
       <statement>
         <p>
-          Given a function <m>f = f(x,y)</m>, we say that <m>f</m>
-          <term>has limit <m>L</m> as <m>(x,y)</m> approaches <m>(a,b)</m></term> provided that we can make
-          <m>f(x,y)</m> as close to <m>L</m> as we like by taking <m>(x,y)</m>
-          sufficiently close (but not equal) to <m>(a,b)</m>. We write
-          <me>
-            \lim_{(x,y)\to(a,b)} f(x,y) = L.
-          </me>
+          Is <m>f</m> defined at the point <m>(0,0)</m>?  What, if anything, does this say about whether <m>f</m> has a limit at the point <m>(0,0)</m>?
         </p>
       </statement>
-    </definition>
-
-    <p>
-      To investigate the limit of a single variable function, <m>\lim_{x\to
-        a}f(x)</m>, we often consider the behavior of <m>f</m> as <m>x</m> approaches
-      <m>a</m> from the right and from the left. Similarly, we may investigate
-      limits of two-variable functions, <m>\lim_{(x,y)\to(a,b)} f(x,y)</m> by
-      considering the behavior of <m>f</m> as <m>(x,y)</m> approaches <m>(a,b)</m> from
-      various directions. This situation is more complicated because there
-      are infinitely many ways in which <m>(x,y)</m> may approach <m>(a,b)</m>. In the next activity, we
-      see how it is important to consider a variety of those paths in investigating whether or not a limit exists.
-    </p>
-
-    <activity xml:id="A_10_1_1">
+      <answer>
+        <p>
+          Since the denominator is 0 when <m>(x,y) = (0,0)</m>, the function <m>f</m> is not defined at the origin. However, a function can have a limit at a point where it is undefined, so this information does not determine if <m>f</m> has a limit at <m>(0,0)</m> or not.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          Since the denominator is 0 when <m>(x,y) = (0,0)</m>, the function <m>f</m> is not defined at the origin. However, a function can have a limit at a point where it is undefined, so this information does not determine if <m>f</m> has a limit at <m>(0,0)</m> or not.
+        </p>
+      </solution>
+    </task> 
+    <task>
       <statement>
         <p>
-          Consider the function <m>f</m>, defined by
-          <me>
-            f(x,y) = \frac{y}{\sqrt{x^2+y^2}},
-          </me>
-          whose graph is shown below in
-          <xref ref="F_10_1_disc_2">Figure</xref>
+          Values of <m>f</m> (to three decimal places) at several points close to <m>(0,0)</m> are shown in <xref ref="T-10-1-data">Table</xref>.
         </p>
-
-        <figure xml:id="F_10_1_disc_2">
-          <caption>The graph of <m>f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m>.</caption>
-          <image width="50%" source="images/fig_10_1_disc_2"/>
-        </figure>
-
-        <ol marker="a.">
-          <li>
-            <p>
-              Is <m>f</m> defined at the point <m>(0,0)</m>?  What, if anything, does
-              this say about whether <m>f</m> has a limit at the point <m>(0,0)</m>?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Values of <m>f</m> (to three decimal places) at several points close to
-                <m>(0,0)</m> are shown in <xref ref="T-10-1-data">Table</xref>.
-            </p>
-
-            <table xml:id="T-10-1-data">
-                  <title>Values of a function <m>f</m>.</title>
-              <tabular halign="right" bottom="minor" top="minor">
-                <row bottom="medium">
-                  <cell halign="center"><m>x\backslash y</m></cell>
-                  <cell><m>-1.000</m></cell>
-                  <cell><m>-0.100</m></cell>
-                  <cell><nbsp/><m>0.000</m></cell>
-                  <cell><nbsp/><m>0.100</m></cell>
-                  <cell><nbsp/><m>1.000</m></cell>
-                </row>
-                <row>
-                  <cell><m>-1.000</m></cell>
-                  <cell><m>-0.707</m></cell>
-                  <cell halign="center"><mdash/></cell>
-                  <cell><nbsp/><m>0.000</m></cell>
-                  <cell halign="center"><mdash/></cell>
-                  <cell><nbsp/><m>0.707</m></cell>
-                </row>
-                <row>
-                  <cell><m>-0.100</m></cell>
-                  <cell halign="center"><mdash/></cell>
-                  <cell><m>-0.707</m></cell>
-                  <cell><nbsp/><m>0.000</m></cell>
-                  <cell><nbsp/><m>0.707</m></cell>
-                  <cell halign="center"><mdash/></cell>
-                </row>
-                <row>
-                  <cell><m>0.000</m></cell>
-                  <cell><m>-1.000</m></cell>
-                  <cell><m>-1.000</m></cell>
-                  <cell halign="center"><mdash/></cell>
-                  <cell><nbsp/><m>1.000</m></cell>
-                  <cell><nbsp/><m>1.000</m></cell>
-                </row>
-                <row>
-                  <cell><m>0.100</m></cell>
-                  <cell halign="center"><mdash/></cell>
-                  <cell><m>-0.707</m></cell>
-                  <cell><m>0.000</m></cell>
-                  <cell><m>0.707</m></cell>
-                  <cell halign="center"><mdash/></cell>
-                </row>
-                <row>
-                  <cell><m>1.000</m></cell>
-                  <cell><m>-0.707</m></cell>
-                  <cell halign="center"><mdash/></cell>
-                  <cell><m>0.000</m></cell>
-                  <cell halign="center"><mdash/></cell>
-                  <cell><m>0.707</m></cell>
-                </row>
-              </tabular>
-            </table>
-
-            <p>              
-              Based on these calculations, state whether <m>f</m> has a limit at
-              <m>(0,0)</m> and give an argument supporting your statement. (Hint: The blank spaces in the table are there to help you see the patterns.)
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Now we formalize the conjecture from the previous part by considering what happens if we restrict our attention to different paths. First, we look at <m>f</m> for points in the domain along the <m>x</m>-axis;  that is, we consider what happens when <m>y = 0</m>. What is the behavior of <m>f(x,0)</m> as <m>x \to 0</m>?  If we approach <m>(0,0)</m> by moving along the <m>x</m>-axis, what value do we find as the limit?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              What is the behavior of <m>f</m> along the line <m>y=x</m> when <m>x \gt 0</m>;  that is, what is the value of <m>f(x,x)</m> when <m>x&gt;0</m>?  If we approach <m>(0,0)</m> by moving along the line <m>y=x</m> in the first quadrant (thus considering <m>f(x,x)</m> as <m>x \to 0^+</m>), what value do we find as the limit?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              In general, if <m>\lim_{(x,y)\to(0,0)}f(x,y) = L</m>, then <m>f(x,y)</m> approaches
-              <m>L</m> as <m>(x,y)</m> approaches <m>(0,0)</m>, regardless of the path we take in letting <m>(x,y) \to (0,0)</m>.   Explain what the last two parts
-              of this activity imply about the existence of <m>\lim_{(x,y)\to(0,0)} f(x,y)</m>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Shown below in <xref ref="F_10_1_limit_contour_2">Figure</xref> is a set of
-              contour lines of the function <m>f</m>.  What is the behavior of
-              <m>f(x,y)</m> as <m>(x,y)</m> approaches <m>(0,0)</m> along any straight line?  
-              How does this observation reinforce your conclusion about the
-              existence of <m>\lim_{(x,y)\to(0,0)}f(x,y)</m> from the previous part of
-              this activity? (Hint: Use the fact that a non-vertical line has equation <m>y=mx</m> for some constant <m>m</m>.)
+        <table xml:id="T-10-1-data">
+          <title>Values of a function <m>f</m>.</title>
+          <tabular halign="right">
+            <row bottom="medium">
+              <cell halign="center" right="medium"><m>x\backslash y</m></cell>
+              <cell><m>-1.000</m></cell>
+              <cell><m>-0.100</m></cell>
+              <cell><nbsp/><m>0.000</m></cell>
+              <cell><nbsp/><m>0.100</m></cell>
+              <cell><nbsp/><m>1.000</m></cell>
+            </row>
+            <row>
+              <cell right="medium"><m>-1.000</m></cell>
+              <cell><m>-0.707</m></cell>
+              <cell halign="center"><mdash/></cell>
+              <cell><nbsp/><m>0.000</m></cell>
+              <cell halign="center"><mdash/></cell>
+              <cell><nbsp/><m>0.707</m></cell>
+            </row>
+            <row>
+              <cell right="medium"><m>-0.100</m></cell>
+              <cell halign="center"><mdash/></cell>
+              <cell><m>-0.707</m></cell>
+              <cell><nbsp/><m>0.000</m></cell>
+              <cell><nbsp/><m>0.707</m></cell>
+              <cell halign="center"><mdash/></cell>
+            </row>
+            <row>
+              <cell right="medium"><m>0.000</m></cell>
+              <cell><m>-1.000</m></cell>
+              <cell><m>-1.000</m></cell>
+              <cell halign="center"><mdash/></cell>
+              <cell><nbsp/><m>1.000</m></cell>
+              <cell><nbsp/><m>1.000</m></cell>
+            </row>
+            <row>
+              <cell right="medium"><m>0.100</m></cell>
+              <cell halign="center"><mdash/></cell>
+              <cell><m>-0.707</m></cell>
+              <cell><m>0.000</m></cell>
+              <cell><m>0.707</m></cell>
+              <cell halign="center"><mdash/></cell>
+            </row>
+            <row>
+              <cell right="medium"><m>1.000</m></cell>
+              <cell><m>-0.707</m></cell>
+              <cell halign="center"><mdash/></cell>
+              <cell><m>0.000</m></cell>
+              <cell halign="center"><mdash/></cell>
+              <cell><m>0.707</m></cell>
+            </row>
+          </tabular>
+        </table>
+        <p>              
+          Based on these calculations, state whether you think <m>f</m> has a limit at <m>(0,0)</m> and give an argument supporting your statement.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The blank spaces in the table are there to help you see the patterns.
+        </p>
+      </hint>
+      <answer>
+        <p>
+          It looks as though the values of <m>f</m> are approaching different numbers (e.g., <m>-1</m>, <m>-0.707</m>, <m>0.707</m>, <m>1</m>) as <m>(x,y)</m> nears <m>(0,0)</m>. The function <m>f</m> will have a limit at the point <m>(0,0)</m> if all of the values of the function become arbitrarily close to one fixed number as <m>(x,y)</m> gets as close to <m>(0,0)</m> as we want. Since the values of <m>f</m> do not approach a single fixed number as <m>(x,y)</m> gets close to <m>(0,0)</m>, we should conclude that <m>f</m> does not have a limit at <m>(0,0)</m>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          It looks as though the values of <m>f</m> are approaching different numbers (e.g., <m>-1</m>, <m>-0.707</m>, <m>0.707</m>, <m>1</m>) as <m>(x,y)</m> nears <m>(0,0)</m>. The function <m>f</m> will have a limit at the point <m>(0,0)</m> if all of the values of the function become arbitrarily close to one fixed number as <m>(x,y)</m> gets as close to <m>(0,0)</m> as we want. Since the values of <m>f</m> do not approach a single fixed number as <m>(x,y)</m> gets close to <m>(0,0)</m>, we should conclude that <m>f</m> does not have a limit at <m>(0,0)</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Now we formalize your conjecture from the previous part by considering what happens if we restrict our attention to different paths. First, we look at <m>f</m> for points in the domain along the <m>x</m>-axis;  that is, we consider what happens when <m>y = 0</m>. Write out what the output of <m>f</m> will when <m>y=0</m>. In other words, <m>f(x,0)= </m>?
+        </p> 
+        <p> 
+          What is the behavior of <m>f(x,0)</m> as <m>x \to 0</m>?  If we approach <m>(0,0)</m> by moving along the <m>x</m>-axis, what value do we find as the limit?
+        </p>
+      </statement>
+      <answer>
+        <p>
+          When <m>y=0</m> we have <m>f(x,y) = f(x,0) = 0</m> as indicated in the table. So <m>\lim_{x \to 0} f(x,0) = 0</m>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          When <m>y=0</m> we have <m>f(x,y) = f(x,0) = 0</m> as indicated in the table. So <m>\lim_{x \to 0} f(x,0) = 0</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          What is the behavior of <m>f</m> along the line <m>y=x</m> when <m>x \gt 0</m>;  that is, what is the value of <m>f(x,x)</m> when <m>x&gt;0</m>?  If we approach <m>(0,0)</m> by moving along the line <m>y=x</m> in the first quadrant (thus considering <m>f(x,x)</m> as <m>x \to 0^+</m>), what value do we find as the limit?
+        </p>
+      </statement>
+      <answer>
+        <p>
+           When <m>x \gt 0</m> we have <m>f(x,y) = f(x,x) = \frac{x}{\sqrt{2x^2}} = \frac{1}{\sqrt{2}}</m>. So <m>\lim_{x \to 0} f(x,x) = \frac{1}{\sqrt{2}} \approx 0.707</m> as illustrated in the table.
+        </p>
+      </answer>
+      <solution>
+        <p>
+           When <m>x \gt 0</m> we have <m>f(x,y) = f(x,x) = \frac{x}{\sqrt{2x^2}} = \frac{1}{\sqrt{2}}</m>. So <m>\lim_{x \to 0} f(x,x) = \frac{1}{\sqrt{2}} \approx 0.707</m> as illustrated in the table.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          In general, if <m>\lim_{(x,y)\to(0,0)}f(x,y) = L</m>, then <m>f(x,y)</m> approaches <m>L</m> as <m>(x,y)</m> approaches <m>(0,0)</m>, regardless of the path we take in letting <m>(x,y) \to (0,0)</m>. Based on the last two parts of this activity, can the limit <me>\lim_{(x,y)\to(0,0)} f(x,y)</me> exist? Write a sentence or two to justify your idea.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          The fact that <m>f(x,y)</m> gets arbitrarily close to <m>0</m> as <m>(x,0)</m> gets as close to <m>(0,0)</m> as we want and the fact that <m>f(x,y)</m> gets arbitrarily close to <m>\frac{1}{\sqrt{2}}</m> as <m>(x,x)</m> gets as close to <m>(0,0)</m> as we want shows that there is no fixed number <m>L</m> that all of the values of <m>f(x,y)</m> approach as <m>(x,y)</m> gets close to <m>(0,0)</m>. So <m>f</m> does not have a limit at <m>(0,0)</m>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          The fact that <m>f(x,y)</m> gets arbitrarily close to <m>0</m> as <m>(x,0)</m> gets as close to <m>(0,0)</m> as we want and the fact that <m>f(x,y)</m> gets arbitrarily close to <m>\frac{1}{\sqrt{2}}</m> as <m>(x,x)</m> gets as close to <m>(0,0)</m> as we want shows that there is no fixed number <m>L</m> that all of the values of <m>f(x,y)</m> approach as <m>(x,y)</m> gets close to <m>(0,0)</m>. So <m>f</m> does not have a limit at <m>(0,0)</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Substitute <m>y=mx</m> into <m>f(x,y)</m> and simplify your result for <m>f(x,mx)</m>. Use your expression and limit rules to evaluate 
+          <me>lim_{x\rightarrow 0} f(x,mx)</me>
+          Use this limit to explain the the behavior of <m>f(x,y)</m> as <m>(x,y)</m> approaches <m>(0,0)</m> along line of the form <m>y=mx</m> and how this observation reinforces your conclusion about the existence of <m>\lim_{(x,y)\to(0,0)}f(x,y)</m> from the previous part of this activity?
+        </p>
+      </statement>
+      <answer>
+        <p>
+          When <m>y=mx</m> we have <m>f(x,y) = f(x,mx) = \frac{mx}{\sqrt{(1+m^2)x^2}}</m>. If <m>x \gt 0</m>, then <m>f(x,mx) = \frac{m}{1+m^2}</m> and if <m>x \lt 0</m>, then <m>f(x,mx) = -\frac{m}{1+m^2}</m>. In either case, the values <m>f(x,mx)</m> do not all approach the same number <m>L</m> as <m>x</m> gets arbitrarily close to <m>0</m>. In other words, <m>f</m> has different limits along different paths that contain the origin.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          When <m>y=mx</m> we have <m>f(x,y) = f(x,mx) = \frac{mx}{\sqrt{(1+m^2)x^2}}</m>. If <m>x \gt 0</m>, then <m>f(x,mx) = \frac{m}{1+m^2}</m> and if <m>x \lt 0</m>, then <m>f(x,mx) = -\frac{m}{1+m^2}</m>. In either case, the values <m>f(x,mx)</m> do not all approach the same number <m>L</m> as <m>x</m> gets arbitrarily close to <m>0</m>. In other words, <m>f</m> has different limits along different paths that contain the origin.
+        </p>
+      </solution>
+    </task>    
+  </activity>
+          
+           <!--  <p>
+              Shown below in <xref ref="F_10_1_limit_contour_2">Figure</xref> is a set of contour lines of the function <m>f</m>.
 
               <figure xml:id="F_10_1_limit_contour_2">
                 <caption>Contour lines of <m>f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m>.</caption>
                 <image width="50%" source="images/fig_10_1_limit_contour_2"/>
-              </figure>
+              </figure> -->
 
-            </p>
-          </li>
-        </ol>
-      </statement>
+     
 
-
-      <answer>
-        
-        <ol marker="a.">
-          <li>
-            <p>
-              Since the denominator is 0 when <m>(x,y) = (0,0)</m>,
-              the function <m>f</m> is not defined at the origin.
-              However, a function can have a limit at a point where it is undefined,
-              so this information does not determine if <m>f</m> has a limit at <m>(0,0)</m> or not.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              It looks as though the values of <m>f</m> are approaching different numbers (e.g., <m>-1</m>,
-              <m>-0.707</m>,
-              <m>0.707</m>, <m>1</m>) as <m>(x,y)</m> nears <m>(0,0)</m>.
-              The function <m>f</m> will have a limit at the point <m>(0,0)</m> if all of the values of the function become arbitrarily close to one fixed number as <m>(x,y)</m> gets as close to <m>(0,0)</m> as we want.
-              Since the values of <m>f</m> do not approach a single fixed number as <m>(x,y)</m> gets close to <m>(0,0)</m>,
-              we should conclude that <m>f</m> does not have a limit at <m>(0,0)</m>.
-            </p>
-
-          </li>
-
-          <li>
-            <p>
-              When <m>y=0</m> we have <m>f(x,y) = f(x,0) = 0</m> as indicated in the table.
-              So <m>\lim_{x \to 0} f(x,0) = 0</m>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              When <m>x \gt 0</m> we have <m>f(x,y) = f(x,x) = \frac{x}{\sqrt{2x^2}} = \frac{1}{\sqrt{2}}</m>.
-              So <m>\lim_{x \to 0} f(x,x) = \frac{1}{\sqrt{2}} \approx 0.707</m> as illustrated in the table.
-
-            </p>
-          </li>
-
-          <li>
-            <p>
-              The fact that <m>f(x,y)</m> gets arbitrarily close to <m>0</m> as <m>(x,0)</m> gets as close to <m>(0,0)</m> as we want and the fact that <m>f(x,y)</m> gets arbitrarily close to
-              <m>\frac{1}{\sqrt{2}}</m> as <m>(x,x)</m> gets as close to <m>(0,0)</m> as we want shows that there is no fixed number <m>L</m> that all of the values of <m>f(x,y)</m> approach as <m>(x,y)</m> gets close to <m>(0,0)</m>.
-              So <m>f</m> does not have a limit at <m>(0,0)</m>.
-
-            </p>
-          </li>
-
-          <li>
-            <p>
-              When <m>y=mx</m> we have <m>f(x,y) = f(x,mx) = \frac{mx}{\sqrt{(1+m^2)x^2}}</m>.
-              If <m>x \gt 0</m>,
-              then <m>f(x,mx) = \frac{m}{1+m^2}</m> and if <m>x \lt 0</m>,
-              then <m>f(x,mx) = -\frac{m}{1+m^2}</m>.
-              In either case,
-              the values <m>f(x,mx)</m> do not all approach the same number <m>L</m> as <m>x</m> gets arbitrarily close to <m>0</m>.
-              In other words,
-              <m>f</m> has different limits along different paths that contain the origin.
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        
-        <ol marker="a.">
-          <li>
-            <p>
-              Since the denominator is 0 when <m>(x,y) = (0,0)</m>,
-              the function <m>f</m> is not defined at the origin.
-              However, a function can have a limit at a point where it is undefined,
-              so this information does not determine if <m>f</m> has a limit at <m>(0,0)</m> or not.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              It looks as though the values of <m>f</m> are approaching different numbers (e.g., <m>-1</m>,
-              <m>-0.707</m>,
-              <m>0.707</m>, <m>1</m>) as <m>(x,y)</m> nears <m>(0,0)</m>.
-              The function <m>f</m> will have a limit at the point <m>(0,0)</m> if all of the values of the function become arbitrarily close to one fixed number as <m>(x,y)</m> gets as close to <m>(0,0)</m> as we want.
-              Since the values of <m>f</m> do not approach a single fixed number as <m>(x,y)</m> gets close to <m>(0,0)</m>,
-              we should conclude that <m>f</m> does not have a limit at <m>(0,0)</m>.
-            </p>
-
-          </li>
-
-          <li>
-            <p>
-              When <m>y=0</m> we have <m>f(x,y) = f(x,0) = 0</m> as indicated in the table.
-              So <m>\lim_{x \to 0} f(x,0) = 0</m>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              When <m>x \gt 0</m> we have <m>f(x,y) = f(x,x) = \frac{x}{\sqrt{2x^2}} = \frac{1}{\sqrt{2}}</m>.
-              So <m>\lim_{x \to 0} f(x,x) = \frac{1}{\sqrt{2}} \approx 0.707</m> as illustrated in the table.
-
-            </p>
-          </li>
-
-          <li>
-            <p>
-              The fact that <m>f(x,y)</m> gets arbitrarily close to <m>0</m> as <m>(x,0)</m> gets as close to <m>(0,0)</m> as we want and the fact that <m>f(x,y)</m> gets arbitrarily close to
-              <m>\frac{1}{\sqrt{2}}</m> as <m>(x,x)</m> gets as close to <m>(0,0)</m> as we want shows that there is no fixed number <m>L</m> that all of the values of <m>f(x,y)</m> approach as <m>(x,y)</m> gets close to <m>(0,0)</m>.
-              So <m>f</m> does not have a limit at <m>(0,0)</m>.
-
-            </p>
-          </li>
-
-          <li>
-            <p>
-              When <m>y=mx</m> we have <m>f(x,y) = f(x,mx) = \frac{mx}{\sqrt{(1+m^2)x^2}}</m>.
-              If <m>x \gt 0</m>,
-              then <m>f(x,mx) = \frac{m}{1+m^2}</m> and if <m>x \lt 0</m>,
-              then <m>f(x,mx) = -\frac{m}{1+m^2}</m>.
-              In either case,
-              the values <m>f(x,mx)</m> do not all approach the same number <m>L</m> as <m>x</m> gets arbitrarily close to <m>0</m>.
-              In other words,
-              <m>f</m> has different limits along different paths that contain the origin.
-            </p>
-          </li>
-        </ol>
-      </solution>
-
-
-
-    </activity>
+      
 
     <p>
       As we have seen in <xref ref="A_10_1_1">Activity</xref>, if <m>(x,y)</m> approaches <m>(a,b)</m> along two different paths and we find that <m>f(x,y)</m> has two different limits, we can conclude that <m>\lim_{(x,y)\to(a,b)}f(x,y)</m> does not exist. This is similar
