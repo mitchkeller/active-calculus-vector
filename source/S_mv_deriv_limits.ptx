@@ -1074,9 +1074,9 @@
     <p>
       As we have seen in <xref ref="A_10_1_1">Activity</xref>, if along two different paths as <m>(x,y)</m> approaches <m>(a,b)</m> we find that <m>f(x,y)</m> has two different limits, we can conclude that <m>\displaystyle{\lim_{(x,y)\to(a,b)}f(x,y)}</m> does not exist. This is similar to the one-variable example <m>g(x)=x/|x|</m> as shown in <xref ref="F_10_1_one_variable">Figure</xref>; <m>\dispalystyle{\lim_{x \to 0}g(x)}</m> does not exist because we see different limits as <m>x</m> approaches 0 from the left and the right.
     </p>
-    <figure xml:id="F_10_1_activity_2p">
+    <figure xml:id="F_10_1_one_variable">
       <caption>A plot of <m>g(x)=\frac{x}{\abs{x}}</m> on right</caption>
-      <image width="100%" xml:id="img-F_10_1_activity_2p">
+      <image width="100%" xml:id="img-F_10_1_one_variable">
         <sageplot>
           var('t')
           plot9=parametric_plot((t,-1),(t,-1.5,0),thickness=2,color="blue",axes=True,axes_labels=["$x$","$y$"],gridlines=True,xmin=-1.5,xmax=1.5,ymin=-1.5,ymax=1.5)
