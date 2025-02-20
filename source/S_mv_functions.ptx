@@ -638,18 +638,18 @@
       </me>
     </p>
     <figure xml:id="trace2">
-        <caption>A plot of <m>f(x,0.6) = \frac{x^2}{32}\sin(2\cdot 0.6)</m> on left and <m>f(150,y) = \frac{150^2 \sin(2y)}{32}</m> on right</caption>
-        <image width="100%" xml:id="img-trace2">
-          <sageplot>
-            var('x,y')
-            g(x,y)=x^2*sin(2*y)/32
-            plot12=plot(g(x,0.6),(x,0,200),color="red",thickness=2,gridlines=True,ymin=0,ymax=1200,axes_labels=["$x$","$z$"],frame=True)
-            plot13=plot(g(150,y),(y,0,pi/2),color="blue",thickness=2,gridlines=True,ymin=0,ymax=1200,axes_labels=["$y$","$z$"],frame=True)
-            plot14=graphics_array([plot12,plot13],1,2)
-            plot14
-          </sageplot>
-        </image>
-      </figure>
+      <caption>A plot of <m>f(x,0.6) = \frac{x^2}{32}\sin(2\cdot 0.6)</m> on left and <m>f(150,y) = \frac{150^2 \sin(2y)}{32}</m> on right</caption>
+      <image width="100%" xml:id="img-trace2">
+        <sageplot>
+          var('x,y')
+          g(x,y)=x^2*sin(2*y)/32
+          plot12=plot(g(x,0.6),(x,0,200),color="red",thickness=2,gridlines=True,ymin=0,ymax=1200,axes_labels=["$x$","$z$"],frame=True)
+          plot13=plot(g(150,y),(y,0,pi/2),color="blue",thickness=2,gridlines=True,ymin=0,ymax=1200,axes_labels=["$y$","$z$"],frame=True)
+          plot14=graphics_array([plot12,plot13],1,2)
+          plot14
+        </sageplot>
+      </image>
+    </figure>
     <p>
       We can plot this curve on the surface by tracing out the points on the surface when <m>y = 0.6</m>, as shown at left in <xref ref="trace1">Figure</xref>. The formula clearly shows that <m>f</m> is quadratic in the <m>x</m>-direction. More descriptively, as we increase the launch velocity while keeping the launch angle constant, the horizontal distance the object travels increases proportional to the square of the initial velocity.
     </p>

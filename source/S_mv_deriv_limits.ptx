@@ -157,9 +157,19 @@
         Write a couple of sentences to explain how your values in <xref ref="T-10-1-PA1_a">Table</xref> and the <me>\lim_{x\to 0}f(x)</me> are demonstrated in <xref ref="F_10_1_activity_1">Figure</xref>.
       </p>
       <figure xml:id="F_10_1_activity_1">
+        <caption>A plot of <m>f(x,0.6) = \frac{x^2}{32}\sin(2\cdot 0.6)</m> on left and <m>f(150,y) = \frac{150^2 \sin(2y)}{32}</m> on right</caption>
+        <image width="100%" xml:id="img-F_10_1_activity_1">
+          <sageplot>
+            var('t')
+            plot8=parametric_plot((t,3-t),(t,-2,3),thickness=2,color="blue",axes=True,axes_labels=["$x$","$y$"],gridlines=True,xmin=-3,xmax=3,ymin=0,ymax=5)
+            plot8
+          </sageplot>
+        </image>
+      </figure>
+      <!-- <figure xml:id="F_10_1_activity_1">
         <caption>The graph of <m>f(x) = 3-x</m>.</caption>
         <image width="50%" source="images/fig_10_1_activity_3"/>
-      </figure>
+      </figure> -->
     </statement>
     <answer>
       <p>
@@ -279,9 +289,22 @@
         Write a couple of sentences to explain how your values in <xref ref="T-10-1-PA1_b">Table</xref> and the <me>\lim_{x\to 0}f(x)</me> are demonstrated in <xref ref="F_10_1_activity_2">Figure</xref>.
       </p>
       <figure xml:id="F_10_1_activity_2">
+        <caption>A plot of <m>g(x)=\frac{x}{\abs{x}}</m> on right</caption>
+        <image width="100%" xml:id="img-F_10_1_activity_2">
+          <sageplot>
+            var('t')
+            plot9=parametric_plot((t,-1),(t,-1.5,0),thickness=2,color="blue",axes=True,axes_labels=["$x$","$y$"],gridlines=True,xmin=-1.5,xmax=1.5,ymin=-1.5,ymax=1.5)
+            plot9+=circle((0,-1),radius=0.05,thickness=2,edgecolor="black",fill=True,facecolor="white",zorder=5)
+            plot9+=parametric_plot((t,1),(t,0,1.5),thickness=2,color="blue")
+            plot9+=circle((0,1),radius=0.05,thickness=2,edgecolor="black",fill=True,facecolor="white",zorder=5)
+            plot9
+          </sageplot>
+        </image>
+      </figure>
+      <!-- <figure xml:id="F_10_1_activity_2">
         <caption>The graph of <m>g(x) = \frac{x}{|x|}</m>.</caption>
         <image width="50%" source="images/fig_10_1_activity_2"/>
-      </figure>
+      </figure> -->
     </statement>
     <answer>
       <p>
@@ -653,7 +676,7 @@
   <figure xml:id="LR1">
     <caption>The two ways to approach an input in 1D </caption>
     <image width="75%" label="img-LR1">
-      <description><p> A plot of two vectors with an acute angle between them</p></description>
+      <description><p> A plot of two vectors on the number line approaching a point from the left and right </p></description>
       <sageplot>
         scale=5
         plot3=arrow((0,0),(scale+0.5,0),color="black",ticks=[[0],[]],tick_formatter=[["$a$"],[]],ymin=-0.25,ymax=0.25,xmin=-scale-0.5,xmax=scale+0.5,aspect_ratio=1)
@@ -681,8 +704,8 @@
         plot4+=text("$(a,b)$",(1.15,0.9),color="black",fontsize=15)
         for p in paths:
           r(t)=p
-          plot4+=parametric_plot(r,(t,0,0.5),color="gray",thickness=1)
-          plot4+=arrow(r(t=0.25),r(t=0.2),color="gray",arrowsize=2)
+          plot4+=parametric_plot(r,(t,0,0.75),color="gray",thickness=2)
+          plot4+=arrow(r(t=0.25),r(t=0.2),color="gray",arrowsize=3)
         plot4
       </sageplot>
     </image>
@@ -752,7 +775,7 @@
     </p>
     <figure xml:id="contourE1">
       <caption>A contour plot of <m>f(x,y) = 3-x-2y</m> with the point <m>(0,0)</m> highlighted in red</caption>
-      <interactive title="interactive-contourE1" platform="sage" width="100%" aspect="1:1.25">
+      <interactive title="interactive-contourE1" platform="sage" width="100%" aspect="1:1.15">
         <slate surface="sage">
           var('x,y,z')
           @interact
@@ -798,13 +821,20 @@
     </figure>
     <p>
       If you were not convinced that the output of <m>f</m> approaches 3 as <m>(x,y) \to (0,0)</m>, you could look at approaching the origin along a particular path. For instance, we could look to simplify our limit to look at approaching the origin along the path given by <m>y=2x</m>. This means that we don't really need to examine our function's output at all points around the origin, but rather only at points of the form <m>(x,2x)</m>. Our limit expression becomes a 1-dimensional problem in this case because along the path given by <m>y=2x</m>
-      <me>(\text{along the path given by }y=2x) \quad \lim_{(x,y)\to (0,0)} f(x,y) = \lim_{(x,2x)\to (0,0)} f(x,2x) = \lim_{x \to 0} 3-x-2(2x)</me>
-      Note that the limit along this path is now something like what you evaluated in your single variable calculus work. 
+      <md>
+        <mrow> (\text{along }y=2x) \quad \lim_{(x,y)\to (0,0)} f(x,y) \amp\Rightarrow </mrow>
+        <mrow> \quad \quad \lim_{(x,2x)\to (0,0)} f(x,2x) \amp= \lim_{x \to 0} 3-x-2(2x) </mrow>
+      </md>
+      Note that the limit along this path is now something like what you evaluated in your single variable calculus work. In fact, you can evaluate <m>\displaystyle{\lim_{x \to 0} 3-x-2(2x)}</m> to get 3.
     </p>
     <p>
-      This idea for reducing our two variable limit to a one variable limit is very versatile as well. If you wanted to approach the origin along the path given by <m>x=sin(y)</m> or along the path parameterized by <m>\vr(t)= \rangle t \cos(t) , t \sin(t) \langle</m>, then you would get the following:
-      <me>(\text{along the path given by }x=sin(y)) \quad \lim_{(x,y)\to (0,0)} f(x,y) = \lim_{(\sin(y),y)\to (0,0)} f(\sin(y),y) = \lim_{y \to 0} 3-\sin(y)-2(y) = 3-0-0=3 </me>
-      <me>(\text{along the path given by } \vr(t)= \rangle t \cos(t) , t \sin(t) \langle) \quad \lim_{(x,y)\to (0,0)} f(x,y) = \lim_{t \to 0} f(t \cos(t), t \sin(t)) = \lim_{t \to 0} 3-t \cos(t)-2(t \sin(t))=3-0-0=3</me>
+      This idea for reducing a two variable limit to a one variable limit is very versatile, but has a significant drawback. If you wanted to approach the origin along the path given by <m>x=sin(y)</m> or along the path parameterized by <m>\vr(t)= \langle t \cos(t) , t \sin(t) \rangle</m>, then you would get the following:
+      <md>
+        <mrow> (\text{along }x=sin(y)) \quad \lim_{(x,y)\to (0,0)} f(x,y) \amp\Rightarrow </mrow>
+        <mrow> \quad \quad \lim_{(\sin(y),y)\to (0,0)} f(\sin(y),y) \amp= \lim_{y \to 0} 3-\sin(y)-2(y) = 3-0-0=3 </mrow>
+        <mrow> (\text{along }\vr(t)= \langle t \cos(t) , t \sin(t) \rangle) \quad \lim_{(x,y)\to (0,0)} f(x,y) \amp\Rightarrow </mrow>
+        <mrow> \quad \quad \lim_{t \to 0} f(t \cos(t), t \sin(t)) \amp= \lim_{t \to 0} 3-t \cos(t)-2(t \sin(t))=3-0-0=3 </mrow>
+      </md>
     </p>
     <p>
       Remember that you will never be able to test all possible paths that approach this limit point, so while this idea to reduce down to a particular path is helpful, we will not be able to exhaust all possible ways to approach our limit point. 
@@ -825,10 +855,10 @@
   </definition>
   <p>
     Our work in <xref ref="LimitEx1" /> showed that the limit of <m>f(x,y)=3-x-2y</m> as <m>(x,y)</m> approaches <m>(0,0)</m> is 3. Symbolically, this looks like
-    <me>lim_{(x,y)\rightarrow(0,0)} 3-x-2y = 3</me>
+    <me>\lim_{(x,y)\rightarrow(0,0)} 3-x-2y = 3</me>
   </p>
   <p>
-    To investigate the limit of a single variable function, <m>\lim_{x\to a}f(x)</m>, we often consider the behavior of <m>f</m> as <m>x</m> approaches <m>a</m> from the right and from the left. Similarly, we may investigate limits of two-variable functions, <m>\lim_{(x,y)\to(a,b)} f(x,y)</m> by considering the behavior of <m>f</m> as <m>(x,y)</m> approaches <m>(a,b)</m> along a particular path. Remember that the multivariable function situation is more complicated because there are infinitely many ways in which <m>(x,y)</m> may approach <m>(a,b)</m>, so we will not be able to check every possible path. In the next activity, we see how it is important to consider a variety of those paths in investigating whether or not a limit exists.
+    To investigate the limit of a single variable function, <m>\displaystyle{\lim_{x\to a}f(x)}</m>, we often consider the behavior of <m>f</m> as <m>x</m> approaches <m>a</m> from the right and from the left. Similarly, we may investigate limits of two-variable functions, <m>\displaystyle{\lim_{(x,y)\to(a,b)} f(x,y)}</m> by considering the behavior of <m>f</m> as <m>(x,y)</m> approaches <m>(a,b)</m> along a particular path. Remember that the multivariable function situation is more complicated because there are infinitely many ways in which <m>(x,y)</m> may approach <m>(a,b)</m>, so we will not be able to check every possible path. In the next activity, we see how it is important to consider a variety of those paths in investigating whether or not a limit exists.
   </p>
   <activity xml:id="A_10_1_1">
     <introduction>
@@ -843,14 +873,13 @@
         <caption>A plot of <m>z=f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m></caption>
         <interactive title="interactive-surfaceLim1" platform="sage" width="100%" aspect="1:1">
           <slate surface="sage">
-            from sage.plot.plot3d.plot3d import axes
             var('t')
             scale=1
             plot5=axes(scale,0.5,color="black",aspect_ratio=[1,1,1])
             plot5+=text3d("x",(scale+0.25,0,0),fontsize=30)+text3d("y",(0,scale+0.25,0),fontsize=30)+text3d("z",(0,0,scale+0.25),fontsize=30)
             var('x,y')
             f(x,y)=y/sqrt(x^2+y^2)
-            plot5+=plot3d(f,(x,-1,1),(y,-1,1),color="blue",mesh=True,opacity=0.5,plot_points=31)
+            plot5+=plot3d(f,(x,-1,1),(y,-1,1),color="gray",mesh=True,opacity=0.5,plot_points=41)
             show(plot5,viewpoint=[[-0.8872,-0.296,-0.354],86.61],camera_position=[3.1343,-3.8823,1.0265])
           </slate>
         </interactive>  
@@ -883,15 +912,15 @@
           Values of <m>f</m> (to three decimal places) at several points close to <m>(0,0)</m> are shown in <xref ref="T-10-1-data">Table</xref>.
         </p>
         <table xml:id="T-10-1-data">
-          <title>Values of a function <m>f</m>.</title>
+          <title>Values of the function <m>f=\frac{y}{\sqrt{x^2+y^2}}</m></title>
           <tabular halign="right">
-            <row bottom="medium">
-              <cell halign="center" right="medium"><m>x\backslash y</m></cell>
-              <cell><m>-1.000</m></cell>
-              <cell><m>-0.100</m></cell>
-              <cell><nbsp/><m>0.000</m></cell>
-              <cell><nbsp/><m>0.100</m></cell>
-              <cell><nbsp/><m>1.000</m></cell>
+            <row >
+              <cell halign="center" ><m>x\backslash y</m></cell>
+              <cell bottom="medium"><m>-1.000</m></cell>
+              <cell bottom="medium"><m>-0.100</m></cell>
+              <cell bottom="medium"><nbsp/><m>0.000</m></cell>
+              <cell bottom="medium"><nbsp/><m>0.100</m></cell>
+              <cell bottom="medium"><nbsp/><m>1.000</m></cell>
             </row>
             <row>
               <cell right="medium"><m>-1.000</m></cell>
@@ -1013,8 +1042,8 @@
       <statement>
         <p>
           Substitute <m>y=mx</m> into <m>f(x,y)</m> and simplify your result for <m>f(x,mx)</m>. Use your expression and limit rules to evaluate 
-          <me>lim_{x\rightarrow 0} f(x,mx)</me>
-          Use this limit to explain the the behavior of <m>f(x,y)</m> as <m>(x,y)</m> approaches <m>(0,0)</m> along line of the form <m>y=mx</m> and how this observation reinforces your conclusion about the existence of <m>\lim_{(x,y)\to(0,0)}f(x,y)</m> from the previous part of this activity?
+          <me>\lim_{x\rightarrow 0} f(x,mx)</me>
+          Use this limit to explain the the behavior of <m>f(x,y)</m> as <m>(x,y)</m> approaches <m>(0,0)</m> along line of the form <m>y=mx</m> and how this observation reinforces your conclusion about the existence of <m>\displaystyle{\lim_{(x,y)\to(0,0)}f(x,y)}</m> from the previous part of this activity?
         </p>
       </statement>
       <answer>
@@ -1043,13 +1072,25 @@
       
 
     <p>
-      As we have seen in <xref ref="A_10_1_1">Activity</xref>, if along two different paths as <m>(x,y)</m> approaches <m>(a,b)</m> we find that <m>f(x,y)</m> has two different limits, we can conclude that <m>\lim_{(x,y)\to(a,b)}f(x,y)</m> does not exist. This is similar to the one-variable example <m>g(x)=x/|x|</m> as shown in <xref ref="F_10_1_one_variable">Figure</xref>; <m>\lim_{x\to0}g(x)</m> does not exist because we see different limits as <m>x</m> approaches 0 from the left and the right.
+      As we have seen in <xref ref="A_10_1_1">Activity</xref>, if along two different paths as <m>(x,y)</m> approaches <m>(a,b)</m> we find that <m>f(x,y)</m> has two different limits, we can conclude that <m>\displaystyle{\lim_{(x,y)\to(a,b)}f(x,y)}</m> does not exist. This is similar to the one-variable example <m>g(x)=x/|x|</m> as shown in <xref ref="F_10_1_one_variable">Figure</xref>; <m>\dispalystyle{\lim_{x \to 0}g(x)}</m> does not exist because we see different limits as <m>x</m> approaches 0 from the left and the right.
     </p>
-
-    <figure xml:id="F_10_1_one_variable">
+    <figure xml:id="F_10_1_activity_2p">
+      <caption>A plot of <m>g(x)=\frac{x}{\abs{x}}</m> on right</caption>
+      <image width="100%" xml:id="img-F_10_1_activity_2p">
+        <sageplot>
+          var('t')
+          plot9=parametric_plot((t,-1),(t,-1.5,0),thickness=2,color="blue",axes=True,axes_labels=["$x$","$y$"],gridlines=True,xmin=-1.5,xmax=1.5,ymin=-1.5,ymax=1.5)
+          plot9+=circle((0,-1),radius=0.05,thickness=2,edgecolor="black",fill=True,facecolor="white",zorder=5)
+          plot9+=parametric_plot((t,1),(t,0,1.5),thickness=2,color="blue")
+          plot9+=circle((0,1),radius=0.05,thickness=2,edgecolor="black",fill=True,facecolor="white",zorder=5)
+          plot9
+        </sageplot>
+      </image>
+    </figure>
+    <!-- <figure xml:id="F_10_1_one_variable">
       <caption>The graph of <m>g(x) = \frac{x}{|x|}</m>.</caption>
       <image width="50%" source="images/fig_10_1_activity_2"/>
-    </figure>
+    </figure> -->
 
     <p>
       As a general rule, we have
@@ -1058,7 +1099,7 @@
     <assemblage xml:id="Limits-paths">
       <title>Limits along different paths</title>
       <p>
-        If <m>f(x,y)</m> has two different limits as <m>(x,y)</m> approaches <m>(a,b)</m> along two different paths, then <m>\lim_{(x,y)\to(a,b)}f(x,y)</m> does not exist.
+        If <m>f(x,y)</m> has two different limits as <m>(x,y)</m> approaches <m>(a,b)</m> along two different paths, then <m>\displaystyle{\lim_{(x,y)\to(a,b)}f(x,y)}</m> does not exist.
       </p>
     </assemblage>
     <p>
@@ -1162,7 +1203,7 @@
     <task>
       <statement>
         <p>
-          State whether the limit <m>\lim_{(x,y)\to(0,0)} g(x,y)</m> exists or not and provide a justification of your statement.
+          State whether the limit <m>\displaystyle{\lim_{(x,y)\to(0,0)} g(x,y)}</m> exists or not and provide a justification of your statement.
         </p>
       </statement>
       <answer>
@@ -1181,7 +1222,7 @@
     This activity shows that we need to be careful when studying the limit of a two-variable functions by considering its behavior along different paths. If we find two different paths that result in two different limits, then we may conclude that the limit does not exist. However, we can never conclude that the limit of a function exists only by considering its behavior along different paths.
   </p>
   <p>
-    Generally speaking, concluding that a limit, <m>\lim_{(x,y)\to(a,b)}f(x,y)</m>, exists requires a more careful argument. 
+    Generally speaking, concluding that a limit, <m>\displaystyle{\lim_{(x,y)\to(a,b)}f(x,y)}</m>, exists requires a more careful argument. 
   </p>
   <example xml:id="A_10_1_Limit_exists">
     <p>
@@ -1189,7 +1230,7 @@
       <me>
         f(x,y) = \frac{x^2y^2}{x^2+y^2}.
       </me>
-      We want to know  whether <m>\lim_{(x,y)\to(0,0)}f(x,y)</m> exists.
+      We want to know  whether <m>\displaystyle{\lim_{(x,y)\to(0,0)}f(x,y)}</m> exists.
     </p>
     <p>
       Note that if either <m>x</m> or <m>y</m> is 0, then <m>f(x,y) = 0</m>. Therefore, if <m>f</m> has a limit at <m>(0,0)</m>, it must be 0. We will therefore argue
@@ -1228,8 +1269,7 @@
   <assemblage xml:id="Limit-properties">
     <title>Properties of Limits</title>
     <p>
-      Let <m>f=f(x,y)</m> and <m>g=g(x,y)</m> be functions so that <m>\lim_{(x,y) \to (a,b)} f(x,y)</m> and <m>\lim_{(x,y) \to (a,b)} g(x,y)</m> both
-      exist. Then
+      Let <m>f=f(x,y)</m> and <m>g=g(x,y)</m> be functions so that <m>\displaystyle{\lim_{(x,y) \to (a,b)} f(x,y)}</m> and <m>\displaystyle{\lim_{(x,y) \to (a,b)} g(x,y)}</m> both exist. Then
       <ol>
         <li>
           <p>
@@ -1373,12 +1413,12 @@
         </li>
         <li>
           <p>
-            <m>\lim_{x\to a}f(x)</m> exists, and
+            <m>\displaystyle{\lim_{x\to a}f(x)}</m> exists, and
           </p>
         </li>
         <li>
           <p>
-            <m>\lim_{x\to a}f(x)=f(a)</m>.
+            <m>\displaystyle{\lim_{x\to a}f(x)=f(a)}</m>
           </p>
         </li>
       </ol>
@@ -1400,12 +1440,12 @@
             </li>
             <li>
               <p>
-                <m>\lim_{(x,y) \to (a,b)} f(x,y)</m> exists, and
+                <m>\displaystyle{\lim_{(x,y) \to (a,b)} f(x,y)}</m> exists, and
               </p>
             </li>
             <li>
               <p>
-                <m>\lim_{(x,y) \to (a,b)} f(x,y) = f(a,b)</m>.
+                <m>\displaystyle{\lim_{(x,y) \to (a,b)} f(x,y) = f(a,b)}</m>.
               </p>
             </li>
           </ol>
