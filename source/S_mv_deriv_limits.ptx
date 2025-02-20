@@ -797,6 +797,19 @@
       </interactive>  
     </figure>
     <p>
+      If you were not convinced that the output of <m>f</m> approaches 3 as <m>(x,y) \to (0,0)</m>, you could look at approaching the origin along a particular path. For instance, we could look to simplify our limit to look at approaching the origin along the path given by <m>y=2x</m>. This means that we don't really need to examine our function's output at all points around the origin, but rather only at points of the form <m>(x,2x)</m>. Our limit expression becomes a 1-dimensional problem in this case because along the path given by <m>y=2x</m>
+      <me>(\text{along the path given by }y=2x) \quad \lim_{(x,y)\to (0,0)} f(x,y) = \lim_{(x,2x)\to (0,0)} f(x,2x) = \lim_{x \to 0} 3-x-2(2x)</me>
+      Note that the limit along this path is now something like what you evaluated in your single variable calculus work. 
+    </p>
+    <p>
+      This idea for reducing our two variable limit to a one variable limit is very versatile as well. If you wanted to approach the origin along the path given by <m>x=sin(y)</m> or along the path parameterized by <m>\vr(t)= \rangle t \cos(t) , t \sin(t) \langle</m>, then you would get the following:
+      <me>(\text{along the path given by }x=sin(y)) \quad \lim_{(x,y)\to (0,0)} f(x,y) = \lim_{(\sin(y),y)\to (0,0)} f(\sin(y),y) = \lim_{y \to 0} 3-\sin(y)-2(y) = 3-0-0=3 </me>
+      <me>(\text{along the path given by } \vr(t)= \rangle t \cos(t) , t \sin(t) \langle) \quad \lim_{(x,y)\to (0,0)} f(x,y) = \lim_{t \to 0} f(t \cos(t), t \sin(t)) = \lim_{t \to 0} 3-t \cos(t)-2(t \sin(t))=3-0-0=3</me>
+    </p>
+    <p>
+      Remember that you will never be able to test all possible paths that approach this limit point, so while this idea to reduce down to a particular path is helpful, we will not be able to exhaust all possible ways to approach our limit point. 
+    </p>
+    <p>
       In all of our representations, we see evidence that if the input of our function, <m>(x,y)</m>, approaches <m>(0,0)</m>, then the output of our function goes to 3, regardless of the direction or way we approach <m>(0,0)</m>. We generalize this idea with the following definition.
     </p>
   </example>
