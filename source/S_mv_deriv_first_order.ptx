@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- **********************************************************************-->
-<!-- Copyright 2013-2018                                                   -->
-<!-- Steven Schlicker                                                      -->
+<!-- Copyright 2013-2024                                                   -->
+<!-- Nicholas Long, Mitch Keller, Steven Schlicker                         -->
 <!--                                                                       -->
 <!-- This file is part of Active Calculus Multivariable.                   -->
 <!--                                                                       -->
@@ -13,253 +13,257 @@
 <!-- derivatives for profit.  All trademarks are the registered marks of   -->
 <!-- their respective owners.                                              -->
 <!-- **********************************************************************-->
-<section xml:id="S-10-2-First-Order-Partial-Derivatives">
+<section xml:id="S-10-2-First-Order-Partial-Derivatives"  xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>First-Order Partial Derivatives</title>
-  
-    <objectives>
-        <ul>
-          <li>
-            <p>
-              How are the first-order partial derivatives of a function <m>f</m> of
-                the independent variables <m>x</m> and <m>y</m> defined?
-            </p>
-          </li>
+  <objectives>
+  <ul>
+    <li>
+      <p>
+        Given a function to two variables, <m>f(x,y)</m>, how can we measure the rate of change with respect to one of the input variables?
+      </p>
+    </li>
+    <li>
+      <p>
+        Given a function <m>f</m> of the independent variables <m>x</m> and <m>y</m>, what what does the rate of change with respect to either <m>x</m> or <m>y</m> tell us about the graph of <m>f</m>?
+      </p>
+    </li>
+  </ul>
+      <!-- <ul>
+        <li>
+          <p>
+            How are the first-order partial derivatives of a function <m>f</m> of the independent variables <m>x</m> and <m>y</m> defined?
+          </p>
+        </li>
 
-          <li>
-            <p>
-              Given a function
-                <m>f</m> of the independent variables <m>x</m> and <m>y</m>, what do the first-order partial derivatives <m>\frac{\partial
-                  f}{\partial x}</m> and <m>\frac{\partial f}{\partial y}</m> tell us about <m>f</m>?
-            </p>
-          </li>
-        </ul>
-    </objectives>
+        <li>
+          <p>
+            Given a function <m>f</m> of the independent variables <m>x</m> and <m>y</m>, what do the first-order partial derivatives <m>\frac{\partial
+                f}{\partial x}</m> and <m>\frac{\partial f}{\partial y}</m> tell us about <m>f</m>?
+          </p>
+        </li>
+      </ul> -->
+  </objectives>
 
     <introduction>
     <p>
-      The derivative plays a central role in first semester calculus
-      because it provides important information about a function. Thinking
-      graphically, for instance, the derivative at a point tells us the
-      slope of the tangent line to the graph at that point. In addition, the
-      derivative at a point also provides the instantaneous rate of change of
-      the function with respect to changes in the independent variable.
+      The derivative plays a central role in single variable calculus because it provides important information about a function in terms of each of the representations of the function. Thinking graphically, the derivative at a point tells us the slope of the line tangent to the graph at the given point. Numerically, the derivative at a point also provides the instantaneous rate of change of the function with respect to a change in the independent variable. Algebraically, we can calculate the derivative as a function of the same input variable, which is useful as a tool for the calculations described above and as a way to examine behaviors like regions where the function is increasing or decreasing, as well as the concavity of graph. 
     </p>
 
     <p>
-      Now that we are investigating functions of two or more variables, we can still ask how fast the function is changing, though we have to be careful about what we mean. Thinking
-      graphically again, we can try to measure how steep the graph of the function is in a particular direction. Alternatively, we may want to know how fast a function's output changes in response to a change in one of the inputs. Over the next few sections, we will develop tools for addressing issues such as these. Preview
-      <xref ref="PA_10_2">Activity</xref> explores some issues with what we will come to call <em>partial derivatives</em>.
+      In this chapter, we are investigating functions of two or more variables. While we can still ask how fast a function of several variables is changing, we have to be careful about what we mean. Thinking graphically again, we can try to measure how steep the graph of the function is in a particular direction, which we saw in <xref ref="S-10-1-Limits"/> is a much deeper idea when you have multiple input variables. Alternatively, we may want to know how fast a function's output changes in response to a change in only one of the inputs. Over the next few sections, we will develop tools for addressing issues such as these. In <xref ref="PA_10_2"/>, we will look at how we can apply our single variable calculus knowledge to gain insight into how to measure the rate of change when we hold all but one input variable constant. 
+      <!-- Preview <xref ref="PA_10_2">Activity</xref> explores some issues with what we will come to call <em>partial derivatives</em>. -->
     </p>
 
     <exploration xml:id="PA_10_2">
-      <statement>
-        <p>
-          Suppose we take out an $18,000 car loan at interest rate <m>r</m> and we agree to pay off the loan in <m>t</m> years. The monthly payment, in dollars, is
+    <introduction>
+      <p>
+        Suppose we take out an $18,000 car loan at interest rate <m>r</m> and we agree to pay off the loan in <m>t</m> years. The monthly payment, in dollars, is
           <me>
             M(r,t) =
               \frac{1500r}{1-\left(1+\frac{r}{12}\right)^{-12t}}.
           </me>
-          <ol marker="a.">
-            <li>
-              <p>
-                What is the monthly payment if the interest rate is <m>3\%</m> so that <m>r =
-                    0.03</m>, and we pay the loan off in <m>t=4</m> years?
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Suppose the interest rate is fixed at <m>3\%</m>.  Express <m>M</m> as a function <m>f</m> of <m>t</m> alone using <m>r=0.03</m>. That is, let <m>f(t) = M(0.03, t)</m>. Sketch the graph of <m>f</m> on the left of
-                    <xref ref="F_10_2_preview_1">Figure</xref>.  Explain the meaning of the function <m>f</m>.
-
-                <figure xml:id="F_10_2_preview_1">
-                  <caption>Left: Graphs <m>f(t)= M(0.03, t)</m>. Right: Graph <m>g(r) = M(r,4)</m>.</caption>
-                  <sidebyside widths="50% 50%">
-                  <image source="images/fig_10_2_preview_1"/>
-                  <image source="images/fig_10_2_preview_2"/>
-                  </sidebyside>
-                </figure>
-
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Find the instantaneous rate of change <m>f'(4)</m> and state the units on
-                    this quantity.  What information does <m>f'(4)</m> tell us about our
-                    car loan?  What information does <m>f'(4)</m> tell us about the graph
-                    you sketched in (b)?
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Express <m>M</m> as a function of <m>r</m> alone, using a fixed time of <m>t=4</m>.  That is, let <m>g(r) = M(r, 4)</m>. Sketch the graph of <m>g</m> on the right of
-                    <xref ref="F_10_2_preview_1">Figure</xref>.  Explain the meaning of the function <m>g</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Find the instantaneous rate of change <m>g'(0.03)</m> and state the units on
-                    this quantity.  What information does <m>g'(0.03)</m> tell us about our
-                    car loan?  What information does <m>g'(0.03)</m> tell us about the graph
-                    you sketched in (d)?
-              </p>
-            </li>
-          </ol>
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          What is the monthly payment if the interest rate is <m>3\%</m> (so <m>r = 0.03</m>) and we pay the loan off in <m>t=4</m> years?
         </p>
       </statement>
-
       <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-             approximately <m>\$ 398.42 </m>
-            </p>
-          </li>
-          <li>
-            <p>
-              If <m>r</m> is fixed at <m>r=0.03</m>,
-              then <m>M</m> is a function of <m>t</m> alone and
-              <me>
-                f(t) = M(0.03,t) =  \frac{1500(0.03)}{1-\left(1+\frac{0.03}{12}\right)^{-12t}} = \frac{45}{1-1.0025^{-12t}}
-              </me>.
-              The function <m>f</m> tells us the monthly payment on a loan at different durations of time if the interest rate is fixed at <m>3\%</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              We have
-              <me>
-                f'(4) \approx -93.75 \ \frac{\text{ dollars } }{\text{ year } }
-              </me>,
-              which tells us that if we keep the interest rate constant at <m>3\%</m>,
-              for every one year increase in the duration of the loan from 4 years there is an approximate decrease in the monthly payment of approximately 93.75 dollars.
-              The quantity <m>f'(4)</m> also tells us the slope of the line tangent to the graph of <m>f</m> at <m>t=4</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              If <m>t</m> is fixed at <m>t=4</m>,
-              then <m>M</m> is a function of <m>r</m> alone and
-              <me>
-                g(r) = M(r,4) = \frac{1500r}{1-\left(1+\frac{r}{12}\right)^{-48}}
-              </me>.
-              The function <m>g</m> tells us the monthly payment on a loan at different interest rates if the duration of the loan is fixed at 4 years.
-            </p>
-          </li>
-          <li>
-            <p>
-             We have
-              <me>
-                g'(0.03) \approx 795.54 \ \frac{\text{ dollars } }{\text{ % } }
-              </me>,
-              which tells us that if we keep the duration of the loan constant at 4 years,
-              when we increase the interest rate by 1 from a rate of 3%, the monthly payment on the loan increases by approximately $795.54.
-              The quantity <m>g'(0.03)</m> also tells us the slope of the line tangent to the graph of <m>g</m> at <m>r=0.03</m>.
-            </p>
-          </li>
-        </ol>
+        <p>
+          approximately <m>\$ 398.42 </m>
+        </p>
       </answer>
-
-
       <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              If the interest rate is <m>r=3\% = 0.03</m>,
-              and we pay the loan off in <m>t=4</m> years,
-              then the monthly payment is
-              <me>
-                M(0.03,4) =   \frac{1500(0.03)}{1-\left(1+\frac{0.03}{12}\right)^{-12(4)}} \approx 398.42
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              If <m>r</m> is fixed at <m>r=0.03</m>,
-              then <m>M</m> is a function of <m>t</m> alone and
-              <me>
-                f(t) = M(0.03,t) =  \frac{1500(0.03)}{1-\left(1+\frac{0.03}{12}\right)^{-12t}} = \frac{45}{1-1.0025^{-12t}}
-              </me>.
-              The function <m>f</m> tells us the monthly payment on a loan at different durations of time if the interest rate is fixed at <m>3\%</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Using techniques from single variable calculus we have
-              <me>
-                f'(t) = -\frac{(45)(12)1.0025^{-12t}\ln(1.0025)}{\left(1-1.0025^{-12t}\right)^2}
-              </me>.
-              So
-              <me>
-                f'(4) \approx -93.75 \ \frac{\text{ dollars } }{\text{ year } }
-              </me>,
-              which tells us that if we keep the interest rate constant at <m>3\%</m>,
-              for every one year increase in the duration of the loan from 4 years there is an approximate decrease in the monthly payment of approximately 93.75 dollars.
-              The quantity <m>f'(4)</m> also tells us the slope of the line tangent to the graph of <m>f</m> at <m>t=4</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              If <m>t</m> is fixed at <m>t=4</m>,
-              then <m>M</m> is a function of <m>r</m> alone and
-              <me>
-                g(r) = M(r,4) = \frac{1500r}{1-\left(1+\frac{r}{12}\right)^{-12(4)}} = \frac{1500r}{1-\left(1+\frac{r}{12}\right)^{-48}}
-              </me>.
-              The function <m>g</m> tells us the monthly payment on a loan at different interest rates if the duration of the loan is fixed at 4 years.
-            </p>
-          </li>
-          <li>
-            <p>
-              Using techniques from single variable calculus we have
-              <me>
-                g'(r) = \frac{1500\left(1-\left(1+\frac{r}{12}\right)^{-48}\right) - 1500r\left(48\left(1+\frac{r}{12}\right)^{-49}\right)\left(\frac{1}{12}\right)}{\left(1-\left(1+\frac{r}{12}\right)^{-48}\right)^2}
-              </me>.
-              So
-              <me>
-                g'(0.03) \approx 795.54 \ \frac{\text{ dollars } }{\text{ \% } }
-              </me>,
-              which tells us that if we keep the duration of the loan constant at 4 years,
-              if we increase the interest rate by 1 from a rate of 3%, the monthly payment on the loan increases by approximately $795.54.
-              The quantity <m>g'(0.03)</m> also tells us the slope of the line tangent to the graph of <m>g</m> at <m>r=0.03</m>.
-            </p>
-          </li>
-        </ol>
+        <p>
+          <m>M(0.03,4)=\$ 398.42 </m>
+        </p>
       </solution>
-
+    </task>
+    <task>
+      <statement>
+        <p>
+          Suppose the interest rate is fixed at <m>3\%</m>.  Express <m>M</m> as a function <m>f</m> of <m>t</m> alone using <m>r=0.03</m>. That is, let <m>f(t) = M(0.03, t)</m>. Sketch the graph of <m>f</m> on <xref ref="F_10_2_preview_1"/>. Write a couple of sentences to explain the meaning of the function <m>f</m>.
+        </p>
+        <figure xml:id="F_10_2_preview_1">
+          <caption>A plot of <m>f(t)=M(0.03,t)</m></caption>
+          <image width="50%" xml:id="img-F_10_2_preview_1">
+            <sageplot>
+              tx=[i for i in range(0,11)]
+              ty=[j for j in range(0,1250,250)]
+              plot1=point((0,0),size=0,color="black",gridlines=True,ticks=[tx,ty],xmin=0,xmax=10,ymin=0,ymax=1000,axes_labels=["$t$","$f(t)$"],frame=False)
+              plot1
+            </sageplot>
+          </image>
+        </figure>
+      </statement>
+      <answer>
+        <p>
+          If <m>r</m> is fixed at <m>r=0.03</m>, then <m>M</m> is a function of <m>t</m> alone and
+          <me>
+            f(t) = M(0.03,t) =  \frac{1500(0.03)}{1-\left(1+\frac{0.03}{12}\right)^{-12t}} = \frac{45}{1-1.0025^{-12t}}
+          </me>
+          The function <m>f</m> tells us the monthly payment on a loan at different durations of time if the interest rate is fixed at <m>3\%</m>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          If <m>r</m> is fixed at <m>r=0.03</m>, then <m>M</m> is a function of <m>t</m> alone and
+          <me>
+            f(t) = M(0.03,t) =  \frac{1500(0.03)}{1-\left(1+\frac{0.03}{12}\right)^{-12t}} = \frac{45}{1-1.0025^{-12t}}
+          </me>
+          The function <m>f</m> tells us the monthly payment on a loan at different durations of time if the interest rate is fixed at <m>3\%</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Find the instantaneous rate of change <m>f'(4)</m> and state the units on this quantity.  What information does <m>f'(4)</m> tell us about our car loan? What information does <m>f'(4)</m> tell us about the graph you sketched in (b)?
+        </p>
+      </statement>
+      <answer>
+        <p>
+          We have
+          <me>
+            f'(4) \approx -93.75 \ \frac{\text{ dollars } }{\text{ year } }
+          </me>
+          which tells us that if we keep the interest rate constant at <m>3\%</m>, for every one year increase in the duration of the loan from 4 years there is an approximate decrease in the monthly payment of approximately 93.75 dollars. The quantity <m>f'(4)</m> also tells us the slope of the line tangent to the graph of <m>f</m> at <m>t=4</m>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          We have
+          <me>
+            f'(4) \approx -93.75 \ \frac{\text{ dollars } }{\text{ year } }
+          </me>
+          which tells us that if we keep the interest rate constant at <m>3\%</m>, for every one year increase in the duration of the loan from 4 years there is an approximate decrease in the monthly payment of approximately 93.75 dollars. The quantity <m>f'(4)</m> also tells us the slope of the line tangent to the graph of <m>f</m> at <m>t=4</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Suppose that we want to examine how the monthly payment will change if we plan to take 4 years to pay off the loan. Express <m>M</m> as a function of the interest rate <m>r</m> with a fixed loan term of <m>t=4</m>. That is, let <m>g(r) = M(r, 4)</m>. Give the function <m>g(r)</m> and sketch a graph of <m>g</m> on <xref ref="F_10_2_preview_2"/>. Write a couple of sentences to explain the meaning of the function <m>g</m>.
+        </p>
+        <figure xml:id="F_10_2_preview_2">
+          <caption>A plot of <m>f(t)=M(0.03,t)</m></caption>
+          <image width="50%" xml:id="img-F_10_2_preview_2">
+            <sageplot>
+              tx=[i*0.02 for i in range(0,11)]
+              ty=[j for j in range(0,1250,250)]
+              plot2=point((0,0),size=0,color="black",gridlines=True,ticks=[tx,ty],xmin=0,xmax=0.1,ymin=0,ymax=1000,axes_labels=["$r$","$g(r)$"],frame=False)
+              plot2
+            </sageplot>
+          </image>
+        </figure>
+      </statement>
+      <answer>
+        <p>
+          If <m>t</m> is fixed at <m>t=4</m>, then <m>M</m> is a function of <m>r</m> alone and
+          <me>
+            g(r) = M(r,4) = \frac{1500r}{1-\left(1+\frac{r}{12}\right)^{-48}}
+          </me>.
+          The function <m>g</m> tells us the monthly payment on a loan at different interest rates if the duration of the loan is fixed at 4 years.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          If <m>t</m> is fixed at <m>t=4</m>, then <m>M</m> is a function of <m>r</m> alone and
+          <me>
+            g(r) = M(r,4) = \frac{1500r}{1-\left(1+\frac{r}{12}\right)^{-48}}
+          </me>.
+          The function <m>g</m> tells us the monthly payment on a loan at different interest rates if the duration of the loan is fixed at 4 years.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Find the instantaneous rate of change <m>g'(0.03)</m> and state the units on this quantity.  Write a couple of sentences to explain what information does <m>g'(0.03)</m> tell us about our car loan.  What information does <m>g'(0.03)</m> tell us about the graph you sketched in (d)?
+        </p>
+      </statement>
+      <answer>
+        <p>
+          We have
+          <me>
+            g'(0.03) \approx 795.54  \frac{\text{ dollars } }{\% }
+          </me>,
+          which tells us that if we keep the duration of the loan constant at 4 years, when we increase the interest rate by 1 from a rate of 3%, the monthly payment on the loan increases by approximately $795.54. The quantity <m>g'(0.03)</m> also tells us the slope of the line tangent to the graph of <m>g</m> at <m>r=0.03</m>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          We have
+          <me>
+            g'(0.03) \approx 795.54  \frac{\text{ dollars } }{\% }
+          </me>,
+          which tells us that if we keep the duration of the loan constant at 4 years, when we increase the interest rate by 1 from a rate of 3%, the monthly payment on the loan increases by approximately $795.54. The quantity <m>g'(0.03)</m> also tells us the slope of the line tangent to the graph of <m>g</m> at <m>r=0.03</m>.
+        </p>
+      </solution>
+    </task>
     </exploration>
   </introduction>
 
   <subsection>
     <title>First-Order Partial Derivatives</title>
     <p>
-      In <xref ref="S-MV-Functions">Section</xref>, we studied the behavior
-      of a function of two or more variables by considering the <em>traces</em>
-      of the function. Recall that in one example, we considered the function <m>f</m> defined by
+      In <xref ref="S-MV-Functions">Section</xref>, we studied the behavior of a function of two or more variables by considering the <em>traces</em> of the function. Recall that in one example, we considered the function <m>f</m> defined by
       <me>
         f(x,y) = \frac{x^2 \sin(2 y)}{32},
       </me>
-      which measures the range, or horizontal distance, in feet, traveled by a
-      projectile launched with an initial
-      speed of <m>x</m> feet per second at an angle <m>y</m> radians to the
-      horizontal. The graph of this function is given again on the left in <xref ref="F_10_2_trace_y">Figure</xref>. Moreover, if we fix the angle <m>y = 0.6</m>, we may view the trace <m>f(x,0.6)</m> as a
-      function of <m>x</m> alone, as seen at right in <xref ref="F_10_2_trace_y">Figure</xref>.
+      which measures the range, or horizontal distance, in feet, traveled by a projectile launched with an initial speed of <m>x</m> feet per second at an angle <m>y</m> radians to the horizontal. The graph of this function is given again in <xref ref="zfnxy2">Figure</xref> with traces plotted on the surface for <m>x=150</m> and <m>y=0.6</m>. 
     </p>
-
+    <figure xml:id="zfnxy2">
+      <caption>The distance surface given by <m>z=f(x,y) = \frac{x^2 \sin(2y)}{g}</m></caption>
+      <interactive title="interactive-zfnxy2" platform="sage" width="85%" aspect="1:1">
+        <slate surface="sage">
+          scale=100
+          plot11=line([(0,0,0),(scale,0,0)],color="black",thickness=3)+line([(0,0,0),(0,scale/100,0)],color="black",thickness=3)+line([(0,0,0),(0,0,scale*20)],color="black",thickness=3)
+          var('x,y,z')
+          d1=100
+          d2=1
+          g(x,y)=x^2*sin(2*y)/9.8
+          plot11+=plot3d(g,(x,0,200),(y,0,pi/2),color="gray",plot_points=21,opacity=0.8,mesh=True,frame=False)
+          plot11+=parametric_plot3d((x,0.6,g(x,0.6)),(x,0,200),color="red",thickness=3)
+          plot11+=parametric_plot3d((150,y,g(150,y)),(y,0,pi/2),color="blue",thickness=3)
+          plot11+=parametric_plot3d((x,pi/2+d2,g(x,0.6)),(x,0,200),color="red",thickness=3)
+          plot11+=parametric_plot3d((200+d1,y,g(150,y)),(y,0,pi/2),color="blue",thickness=3)
+          plot11+=parametric_plot3d((x,pi/2+d2,z),(x,0,200),(z,0,4100),color="gray",plot_points=5,opacity=0.0,mesh=True)
+          plot11+=parametric_plot3d((200+d1,y,z),(y,0,pi/2),(z,0,4100),color="gray",plot_points=5,opacity=0.0,mesh=True)
+          plot11+=text3d("x",(100,pi/2+d2,-300),fontsize=50)
+          plot11+=text3d("z",(200+d1,pi/2+d2,4100),fontsize=50)
+          plot11+=text3d("y",(200+d1,0.75,-300),fontsize=50)
+          show(plot11,aspect_ratio=[1,100,0.05],viewpoint=[[-0.8958,0.2603,0.3602],77.78],camera_position=[-150.5634,-345.094,280.5231])
+        </slate>
+      </interactive>
+    </figure>
+    <p>
+      Moreover, if we fix the angle <m>y = 0.6</m>, we may view the trace <m>f(x,0.6)</m> as a function of <m>x</m> alone, as seen in <xref ref="F_10_2_trace_y">Figure</xref>.
+    </p>
     <figure xml:id="F_10_2_trace_y">
+          <caption>A plot of <m>f(t)=M(0.03,t)</m></caption>
+          <image width="50%" xml:id="img-F_10_2_trace_y">
+            <sageplot>
+              var('x,y')
+              g(x,y)=x^2*sin(2*y)/32
+              plot3=plot(g(x,0.6),(x,0,200),color="red",thickness=2,gridlines=True,ymin=0,ymax=1200,axes_labels=["$x$","$f(x,0.06)$"],frame=True)
+              plot3+=point((150,g(150,0.6)),size=50,color="black",aspect_ratio=0.2,zorder=5)
+              plot3
+            </sageplot>
+          </image>
+        </figure>
+    <!-- <figure xml:id="F_10_2_trace_y">
       <caption>Left: The trace of <m>z=\frac{x^2 \sin(2 y)}{32}</m> with <m>y = 0.6</m>.</caption>
       <sidebyside widths="50% 50%">
       <image source="images/fig_10_2_trace_y_a"/>
       <image source="images/fig_10_2_trace_y"/>
       </sidebyside>
-    </figure>
+    </figure> -->
 
     <p>
-      Since the trace is a one-variable function, we may consider its
-      derivative just as we did in the first semester of calculus. With
-      <m>y=0.6</m>, we have
+      Since the trace is a one-variable function, we may consider its derivative just as we did in the first semester of calculus. With <m>y=0.6</m>, we have
       <me>
         f(x,0.6) = \frac{\sin(1.2)}{32}x^2,
       </me>

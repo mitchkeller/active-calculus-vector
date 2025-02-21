@@ -1081,12 +1081,13 @@
           g(x,y)=x^2*sin(2*y)/32
           s=1
           plot18=plot3d(g,(x,0,200),(y,0,pi/2),color="gray",plot_points=21,opacity=0.1*s)
-          c=[150*i for i in range(8)]
-          for h in c:
-              tv=arcsin(32*h/(200^2))/2
-              plot18+=parametric_plot3d((sqrt(32*h/sin(2*t)),t,h),(t,tv,pi/2-tv),color="black",thickness=2)
-              #plot18+=parametric_plot3d((sqrt(32*h/sin(2*t)),t,-10),(t,tv,pi/2-tv),color="black",thickness=2)
-          show(plot18,aspect_ratio=[1,100,0.15],viewpoint=[[-0.8451,0.2673,0.4629],68.68],camera_position=[-116.3915,-229.3542,311.024])
+          c=["pink","red","orange","yellow","green","blue","indigo","violet"]
+          for i in range(8):
+            h=150*i
+            tv=arcsin(32*h/(200^2))/2
+            plot18+=parametric_plot3d((sqrt(32*h/sin(2*t)),t,h),(t,tv,pi/2-tv),color=c[i],thickness=2)
+            plot18+=text3d(str(h),(sqrt(32*h/1)-25,pi/4,h),color=c[i],fontsize=15)
+          show(plot18,aspect_ratio=[1,100,0.15],viewpoint=[[-0.9811,0.124,0.1483],80.88],camera_position=[-13.4812,-314.7077,166.7816])
         </slate>
       </interactive>
     </figure>
