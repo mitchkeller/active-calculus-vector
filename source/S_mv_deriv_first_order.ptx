@@ -243,17 +243,17 @@
       Moreover, if we fix the angle <m>y = 0.6</m>, we may view the trace <m>f(x,0.6)</m> as a function of <m>x</m> alone, as seen in <xref ref="F_10_2_trace_y">Figure</xref>.
     </p>
     <figure xml:id="F_10_2_trace_y">
-          <caption>A plot of <m>f(t)=M(0.03,t)</m></caption>
-          <image width="50%" xml:id="img-F_10_2_trace_y">
-            <sageplot>
-              var('x,y')
-              g(x,y)=x^2*sin(2*y)/32
-              plot3=plot(g(x,0.6),(x,0,200),color="red",thickness=2,gridlines=True,ymin=0,ymax=1200,axes_labels=["$x$","$f(x,0.06)$"],frame=True)
-              plot3+=point((150,g(150,0.6)),size=50,color="black",aspect_ratio=0.2,zorder=5)
-              plot3
-            </sageplot>
-          </image>
-        </figure>
+      <caption>A plot of <m>f(t)=M(0.03,t)</m></caption>
+      <image width="50%" xml:id="img-F_10_2_trace_y">
+        <sageplot>
+          var('x,y')
+          g(x,y)=x^2*sin(2*y)/32
+          plot3=plot(g(x,0.6),(x,0,200),color="red",thickness=2,gridlines=True,ymin=0,ymax=1200,axes_labels=["$x$","$f(x,0.06)$"],frame=True)
+          plot3+=point((150,g(150,0.6)),size=50,color="black",aspect_ratio=0.2,zorder=5)
+          plot3
+        </sageplot>
+      </image>
+    </figure>
     <!-- <figure xml:id="F_10_2_trace_y">
       <caption>Left: The trace of <m>z=\frac{x^2 \sin(2 y)}{32}</m> with <m>y = 0.6</m>.</caption>
       <sidebyside widths="50% 50%">
