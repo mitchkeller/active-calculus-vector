@@ -393,7 +393,7 @@
       <md>
         <mrow>s(a) \amp = \int_{0}^a \sqrt{(x'(t))^2 + (y'(t))^2 +(z'(t))^2} \, dt</mrow>
         <mrow>\amp = 2\int_0^a t+2 \, dt</mrow>
-        <mrow>\amp = \left(t^2+4t\right)\biggm|_{0}^{a}</mrow>
+        <mrow>\amp = \left(t^2+4t\right)\restrict{0}^{a}</mrow>
         <mrow>\amp = a^2+4a</mrow>
       </md>
       The arclength traveled from <m>t=0</m> to <m>t=a</m> along the curve <m>C</m> is <m>a^2+4a</m>. Remember that we want to transform our parameterization to have unit speed, which will mean that the arclength up to a point and the parameter value corresponding to that point will be the same value. We want to state a function that has an input of arclength along the curve <m>C</m> and outputs the time at which our original parameter reaches that location. In other words, we want the inverse function of <m>s(a)=a^2+4a</m> because <m>s(a)</m> has an output of the arclength up to the point corresponding to the parameter value <m>a</m>. Since <m>a \geq 0</m>, we can solve the equation <m>s = a^2+4a</m> (or <m>a^2+4a-s=0</m>) for <m>a</m> to obtain <m>a = \frac{-4 +\sqrt{16+4s}}{2} = -2 + \sqrt{4+s}</m>. Note again that by restricting to positive parameter values, we only need to consider one branch of our solutions. 

@@ -638,7 +638,7 @@
 
                 <li>
                   <p>
-                    Now suppose that <m>r = 3</m> and <m>\theta=\pi/6</m>. Find the values of <m>x</m> and <m>y</m> that correspond to these given values of <m>r</m> and <m>\theta</m>, and then use the Chain Rule to find the value of the partial derivative <m>\frac{\partial z}{\partial \theta}|_{(3,\frac{\pi}{6})}</m>.
+                    Now suppose that <m>r = 3</m> and <m>\theta=\pi/6</m>. Find the values of <m>x</m> and <m>y</m> that correspond to these given values of <m>r</m> and <m>\theta</m>, and then use the Chain Rule to find the value of the partial derivative <m>\frac{\partial z}{\partial \theta}\restrict{(3,\frac{\pi}{6})}</m>.
                   </p>
                 </li>
               </ol>
@@ -966,7 +966,7 @@
                             \ 
                             \frac{\partial z}{\partial y}
                   </me>
-                  and then determine both <m>\frac{\partial z}{\partial x}\bigm|_{(0, \frac{2\pi}{3})}</m> and <m>\frac{\partial z}{\partial y}\bigm|_{(0, \frac{2\pi}{3})}</m>.
+                  and then determine both <m>\frac{\partial z}{\partial x}\restrict{(0, \frac{2\pi}{3})}</m> and <m>\frac{\partial z}{\partial y}\restrict{(0, \frac{2\pi}{3})}</m>.
                 </p>
               </li>
             </ol>
