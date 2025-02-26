@@ -928,12 +928,32 @@
         </p>
       </statement>
     </task>
+    <answer>
+      <p>
+        Negative
+      </p>
+    </answer>
+    <solution>
+      <p>
+        For an increase in wind speed of 5 (going from 20 to 25) while holding the ambient temperature constant at -10, there is a decrease of 2 degrees in the wind chill. Physically this makes sense as well; if you have the same ambient temperature and increase wind speed, then you will feel colder.
+      </p>
+    </solution>
     <task>
       <statement>
         <p>
           Do you think <m>w_T</m>, the partial derivative with respect to wind speed, is positive, negative, or zero at <m>(v,T)=(20,-10)</m>? Write a couple of sentences to justify why you think the partial derivative is +/-/0 and remember to pay attention to which variable will be changing and which variable will be constant. 
         </p>
       </statement>
+      <answer>
+      <p>
+        Positive
+      </p>
+    </answer>
+    <solution>
+      <p>
+        For an increase in the ambient temperature (going from -10 to -5) while holding the wind speed constant at 20, there is a increase of 6 degrees in the wind chill. Physically this makes sense as well; if you have the same wind speed and increase the ambient temperature, then you will feel warmer.
+      </p>
+    </solution>
     </task>
     <task>
       <statement>
