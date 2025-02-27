@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- **********************************************************************-->
-<!-- Copyright 2013-2024                                                   -->
+<!-- Copyright 2013-2025                                                   -->
 <!-- Nicholas Long, Mitch Keller, Steven Schlicker                         -->
 <!--                                                                       -->
 <!-- This file is part of Active Calculus Multivariable.                   -->
@@ -643,7 +643,7 @@
   </p>
   <figure xml:id="F_10_2_trace_tangent">
     <caption>The surface given by <m>z=f(x,y) = \frac{x^2 \sin(2y)}{g}</m> with traces <m>y=0.6</m> (in red) and <m>x=150</m> (in blue)</caption>
-    <interactive title="interactive-F_10_2_trace_tangent" platform="sage" width="85%" aspect="1:1">
+    <interactive title="interactive-F_10_2_trace_tangent" platform="sage" width="85%" aspect="1:1.15">
       <slate surface="sage">
         var('x,y,z,t')
         selctions=["x-trace only","y-trace only","both traces"];
@@ -697,13 +697,6 @@
           Here <m>C</m> is the speed of sound in meters/second, <m>T</m> is the temperature in degrees Celsius, <m>S</m> is the salinity in grams/liter of water, and <m>D</m> is the depth below the ocean surface in meters.
       </p>
     </introduction>
-    <task>
-      <statement>
-        <p>
-          Use the
-        </p>
-      </statement>
-    </task>
     <task>
       <statement>
         <p>
@@ -794,8 +787,8 @@
           <tabular halign="center">
             <row>
               <cell><m>v \backslash T</m></cell>
-              <cell bottom="medium"><m>-30</m></cell>
-              <cell bottom="medium"><m>-25</m></cell>
+              <!-- <cell bottom="medium"><m>-30</m></cell>
+              <cell bottom="medium"><m>-25</m></cell> -->
               <cell bottom="medium"><m>-20</m></cell>
               <cell bottom="medium"><m>-15</m></cell>
               <cell bottom="medium"><m>-10</m></cell>
@@ -803,10 +796,10 @@
               <cell bottom="medium"><m>0</m></cell>
               <cell bottom="medium"><m>5</m></cell>
               <cell bottom="medium"><m>10</m></cell>
-              <cell bottom="medium"><m>15</m></cell>
-              <cell bottom="medium"><m>20</m></cell>
+             <!--  <cell bottom="medium"><m>15</m></cell>
+              <cell bottom="medium"><m>20</m></cell> -->
             </row>
-            <row>
+            <!-- <row>
               <cell right="medium"><m>5</m></cell>
               <cell><m>-46</m></cell>
               <cell><m>-40</m></cell>
@@ -819,11 +812,11 @@
               <cell><m>1</m></cell>
               <cell><m>7</m></cell>
               <cell><m>13</m></cell>
-            </row>
+            </row> -->
             <row>
               <cell right="medium"><m>10</m></cell>
-              <cell><m>-53</m></cell>
-              <cell><m>-47</m></cell>
+              <!-- <cell><m>-53</m></cell>
+              <cell><m>-47</m></cell> -->
               <cell><m>-41</m></cell>
               <cell><m>-35</m></cell>
               <cell><m>-28</m></cell>
@@ -831,13 +824,13 @@
               <cell><m>-16</m></cell>
               <cell><m>-10</m></cell>
               <cell><m>-4</m></cell>
-              <cell><m>3</m></cell>
-              <cell><m>9</m></cell>
+              <!-- <cell><m>3</m></cell>
+              <cell><m>9</m></cell> -->
             </row>
             <row>
               <cell right="medium"><m>15</m></cell>
-              <cell><m>-58</m></cell>
-              <cell><m>-51</m></cell>
+              <!-- <cell><m>-58</m></cell>
+              <cell><m>-51</m></cell> -->
               <cell><m>-45</m></cell>
               <cell><m>-39</m></cell>
               <cell><m>-32</m></cell>
@@ -845,13 +838,13 @@
               <cell><m>-19</m></cell>
               <cell><m>-13</m></cell>
               <cell><m>-7</m></cell>
-              <cell><m>0</m></cell>
-              <cell><m>6</m></cell>
+              <!-- <cell><m>0</m></cell>
+              <cell><m>6</m></cell> -->
             </row>
             <row>
               <cell right="medium"><m>20</m></cell>
-              <cell><m>-61</m></cell>
-              <cell><m>-55</m></cell>
+              <!-- <cell><m>-61</m></cell>
+              <cell><m>-55</m></cell> -->
               <cell><m>-48</m></cell>
               <cell><m>-42</m></cell>
               <cell><m>-35</m></cell>
@@ -859,13 +852,13 @@
               <cell><m>-22</m></cell>
               <cell><m>-15</m></cell>
               <cell><m>-9</m></cell>
-              <cell><m>-2</m></cell>
-              <cell><m>4</m></cell>
+              <!-- <cell><m>-2</m></cell>
+              <cell><m>4</m></cell> -->
             </row>
             <row>
               <cell right="medium"><m>25</m></cell>
-              <cell><m>-64</m></cell>
-              <cell><m>-58</m></cell>
+              <!-- <cell><m>-64</m></cell>
+              <cell><m>-58</m></cell> -->
               <cell><m>-51</m></cell>
               <cell><m>-44</m></cell>
               <cell><m>-37</m></cell>
@@ -873,13 +866,13 @@
               <cell><m>-24</m></cell>
               <cell><m>-17</m></cell>
               <cell><m>-11</m></cell>
-              <cell><m>-4</m></cell>
-              <cell><m>3</m></cell>
+              <!-- <cell><m>-4</m></cell>
+              <cell><m>3</m></cell> -->
             </row>
             <row>
               <cell right="medium"><m>30</m></cell>
-              <cell><m>-67</m></cell>
-              <cell><m>-60</m></cell>
+              <!-- <cell><m>-67</m></cell>
+              <cell><m>-60</m></cell> -->
               <cell><m>-53</m></cell>
               <cell><m>-46</m></cell>
               <cell><m>-39</m></cell>
@@ -887,13 +880,13 @@
               <cell><m>-26</m></cell>
               <cell><m>-19</m></cell>
               <cell><m>-12</m></cell>
-              <cell><m>-5</m></cell>
-              <cell><m>1</m></cell>
+             <!--  <cell><m>-5</m></cell>
+              <cell><m>1</m></cell> -->
             </row>
             <row>
               <cell right="medium"><m>35</m></cell>
-              <cell><m>-69</m></cell>
-              <cell><m>-62</m></cell>
+              <!-- <cell><m>-69</m></cell>
+              <cell><m>-62</m></cell> -->
               <cell><m>-55</m></cell>
               <cell><m>-48</m></cell>
               <cell><m>-41</m></cell>
@@ -901,10 +894,10 @@
               <cell><m>-27</m></cell>
               <cell><m>-21</m></cell>
               <cell><m>-14</m></cell>
-              <cell><m>-7</m></cell>
-              <cell><m>0</m></cell>
+              <!-- <cell><m>-7</m></cell>
+              <cell><m>0</m></cell> -->
             </row>
-            <row>
+            <!-- <row>
               <cell right="medium"><m>40</m></cell>
               <cell><m>-71</m></cell>
               <cell><m>-64</m></cell>
@@ -917,7 +910,7 @@
               <cell><m>-15</m></cell>
               <cell><m>-8</m></cell>
               <cell><m>-1</m></cell>
-            </row>
+            </row> -->
           </tabular>
         </table>
     </introduction>
@@ -1096,9 +1089,21 @@
       <p>
         Shown below in <xref ref="F_10_2_activity_contour">Figure</xref> is a contour plot of a function <m>f</m>. The values of the function on a few of the contours are indicated to the left of the figure.
       </p>
-      <figure xml:id="F_10_2_activity_contour">
+      <!-- <figure xml:id="F_10_2_activity_contour">
         <caption>A contour plot of <m>f</m>.</caption>
         <image width="50%" source="images/fig_10_2_activity_contours"/>
+      </figure> -->
+      <figure xml:id="F_10_2_activity_contour">
+        <caption>A plot of <m>f(t)=M(0.03,t)</m></caption>
+        <image width="50%" xml:id="img-F_10_2_activity_contour">
+          <sageplot>
+            var('x,y,z')
+            g(x,y)=(cos(pi/5.5)*x+sin(pi/5.5)*y-2)*(-sin(pi/5.5)*x+cos(pi/5.5)*y-1)/2
+            c=[i for i in range(-3,9)]
+            plot12=contour_plot(g(x,y),(x,-3,3),(y,-3,3),contours=c,fill=false,gridlines=True,labels=True,label_fmt="%1.0f",axes_labels=["$x$","$y$"],label_inline=True,linewidths=2,axes=True,frame=False)
+            plot12
+          </sageplot>
+        </image>
       </figure>
     </introduction>
     <task>
