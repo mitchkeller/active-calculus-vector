@@ -598,575 +598,619 @@
       <slate surface="sage">
         var('x,y,z,t')
         @interact
-        def exptrace(a=slider(1,2,0.1,default=1.2,label="x-coordinate")):
-          g(x,y)=sin(x)*exp(-y)
-          gx=diff(g,x)
-          gy=diff(g,y)
-          gv=g(a,-1.5)
-          gxv=gx(a,-1.5)
-          gyv=gy(a,-1.5)
-          plot11=plot3d(g,(x,0,pi),(y,-2,2),color="gray",plot_points=21,mesh=True,opacity=0.9,aspect_ratio=(1,0.5,0.5))
-          plot11+=parametric_plot3d((x,-1.5,g(x,-1.5)+0.05),(x,0,pi),color="blue",thickness=3)
-          plot11+=parametric_plot3d((a+t,-1.5,gv+t*gxv+0.05),(t,-0.75,0.75),color="red",thickness=4,zorder=5)
+        def expytrace(a=slider(1,2,0.1,default=1.2,label="x-coordinate")):
+          f(x,y)=sin(x)*exp(-y)
+          param(s,t)=(s,t,f(s,t))
+          #set up grid      n is number of steps in s    m is number of steps in t  
+          #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+          n=10;m=12;a1=0;a2=pi;b1=-2;b2=0; 
+          #c1 is surface color     o1 is surface opacity
+          #c2 and o2 are for constant t value traces
+          #c3 and o3 are for constant s value traces
+          c1="gray"; c2="black"; c3="black"; o1=0.3; o2=0.4; o3=0.4;
+          plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,aspect_ratio=(1,1,0.4))
+          for i in range(n+1):
+            sv=a1+i/n*(a2-a1)
+            plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+          for i in range(m+1):
+            tv=b1+i/m*(b2-b1)
+            plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+          fx=diff(f,x)
+          fy=diff(f,y)
+          fv=f(a,-1.5)
+          fxv=fx(a,-1.5)
+          fyv=fy(a,-1.5)
+          plot11=plot99+parametric_plot3d((x,-1.5,f(x,-1.5)+0.05),(x,0,pi),color="blue",thickness=3)
+          plot11+=point((a,-1.5,f(a,-1.5)),color="black",size=30)
+          plot11+=parametric_plot3d((a+t,-1.5,fv+t*fxv+0.05),(t,-0.75,0.75),color="red",thickness=4,zorder=5)
           show(plot11,viewpoint=[[-0.095,-0.5444,-0.8334],163.45],camera_position=[3.6961,5.9053,4.602])
       </slate>
-    </interactive>
+    </interactive> 
   </figure>
+  <p>
+    You should notice that the slope of the tangent line is decreasing as <m>x</m> increases, and just as in single variable calculus, this is why the trace is concave down. Indeed, we see that <m>f_x(x,y)=\cos(x)e^{-y}</m> and so <m>f_{xx}(x,y)=-\sin(x)e^{-y} \lt  0</m>, since <m>e^{-y} \gt 0</m> for all values of <m>y</m>, including <m>y = -1.5</m>.
+  </p>
+  <p>
+    In the following activity, we further explore what second-order partial derivatives tell us about the geometric behavior of a surface.
+  </p>
+  <activity xml:id="A_10_3_2a">
+  <introduction>
     <p>
-      Consider, for example, <m>f(x,y) = \sin(x) e^{-y}</m>. <xref ref="F_10_3_fxx">Figure</xref> shows the graph of this function along with the
-      trace given by <m>y=-1.5</m>. Also shown are three tangent lines to this
-      trace, with increasing <m>x</m>-values from left to right among the three plots in <xref ref="F_10_3_fxx">Figure</xref>.
+      We continue to consider the function <m>f</m> defined by <m>f(x,y) = \sin(x) e^{-y}</m>.
     </p>
+  </introduction>
+  <task>
+    <statement>
+      <p>
+        In <xref ref="F_10_3_fyy">Figure</xref>, we see the trace of <m>f(x,y) = \sin(x) e^{-y}</m> with <m>x</m> held constant with <m>x = 1.75</m> plotted in blue. You can use the slider in <xref ref="F_10_3_fyy">Figure</xref> to look at how the slope of the tangent line changes as you vary the <m>y</m>-coordinate along this trace. Write a couple of sentences that describe whether the slope of the tangent lines to this curve increase or decrease as <m>y</m> increases. Be sure to pay attention to which direction corresponds to each coordinate increasing. 
+      </p>
+      <figure xml:id="F_10_3_fyy">
+        <caption>The surface given by <m>z=f(x,y) = \sin(x)e^{-y}</m> with trace at <m>x=1.75</m> and tangent line drawn </caption>
+        <interactive title="interactive-F_10_3_fyy" platform="sage" width="85%" aspect="1:1.15">
+          <slate surface="sage">
+            var('x,y,z,t')
+            @interact
+            def expxtrace(a=slider(-2,-1,0.1,default=-1.5,label="y-coordinate")):
+              f(x,y)=sin(x)*exp(-y)
+              param(s,t)=(s,t,f(s,t))
+              #set up grid      n is number of steps in s    m is number of steps in t  
+              #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+              n=10;m=12;a1=0;a2=pi;b1=-2;b2=0; 
+              #c1 is surface color     o1 is surface opacity
+              #c2 and o2 are for constant t value traces
+              #c3 and o3 are for constant s value traces
+              c1="gray"; c2="black"; c3="black"; o1=0.3; o2=0.4; o3=0.4;
+              plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,aspect_ratio=(1,1,0.4))
+              for i in range(n+1):
+                sv=a1+i/n*(a2-a1)
+                plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+              for i in range(m+1):
+                tv=b1+i/m*(b2-b1)
+                plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+              fx=diff(f,x)
+              fy=diff(f,y)
+              fv=f(1.75,a)
+              fxv=fx(1.75,a)
+              fyv=fy(1.75,a)
+              plot12=plot99+parametric_plot3d((1.75,y,f(1.75,y)+0.05),(y,-2,0),color="blue",thickness=3)
+              plot12+=point3d((1.75,a,f(1.75,a)),color="black",size=30)
+              plot12+=parametric_plot3d((1.75,a+t,fv+t*fyv+0.05),(t,-0.5,0.5),color="red",thickness=4,zorder=5)
+              show(plot12,viewpoint=[[-0.095,-0.5444,-0.8334],163.45],camera_position=[3.6961,5.9053,4.602])
+          </slate>
+        </interactive> 
+      </figure>
+      <!-- <figure xml:id="F_10_3_fyy">
+        <caption>The tangent lines to a trace with increasing <m>y</m>.</caption>
+        <sidebyside widths="33% 33% 33%">
+        <image source="images/fig_10_3_fyy_1"/>
+        <image source="images/fig_10_3_fyy_2"/>
+        <image source="images/fig_10_3_fyy_3"/>
+        </sidebyside>
+      </figure> -->
+    </statement>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Compute <m>f_{yy}(x,y)</m> and explain how your observations in the previous task is related to the value of <m>f_{yy}(1.75,y)</m>.  Be sure to address the notion of concavity in your response and be careful to note the directions in which <m>x</m> and <m>y</m> are increasing.
+      </p>
+    </statement>
+    <answer>
+      <p>
+        The figures seem to indicate that the slopes of the tangent lines to the trace <m>f(1.75,y)</m> increase as <m>y</m> increases. Note that <m>\frac{d}{dy} f(1.75,y) = \frac{d}{dy} \sin(1.75) e^{-y} = -\sin(1.75) e^{-y}</m>, so as <m>y</m> increases the slopes of the tangent lines become less negative. Note also that <m>\frac{d^2}{dy^2} f(1.75,y) = \sin(1.75)e^{-y}</m> which is a decreasing function. This tells us that the <m>x=1.75</m> trace is concave down. That means that the slopes of the tangent lines to the trace are increasing, but at a decreasing rate. This is reflected in the fact that the surface seems to be leveling off as <m>y</m> increases.
+      </p>
+    </answer>
+    <solution>
+      <p>
+        The figures seem to indicate that the slopes of the tangent lines to the trace <m>f(1.75,y)</m> increase as <m>y</m> increases. Note that <m>\frac{d}{dy} f(1.75,y) = \frac{d}{dy} \sin(1.75) e^{-y} = -\sin(1.75) e^{-y}</m>, so as <m>y</m> increases the slopes of the tangent lines become less negative. Note also that <m>\frac{d^2}{dy^2} f(1.75,y) = \sin(1.75)e^{-y}</m> which is a decreasing function. This tells us that the <m>x=1.75</m> trace is concave down. That means that the slopes of the tangent lines to the trace are increasing, but at a decreasing rate. This is reflected in the fact that the surface seems to be leveling off as <m>y</m> increases.
+      </p>
+    </solution>
+  </task>
+  <task>
+    <statement>
+      <p>
+        We want to explore what is described by the mixed partial derivative, <m>f_{xy}</m> and we will focus on the point given by <m>(x,y)=(1.75,-1.5)</m>. We are going to work through the definition for <m>f_{xy} (1.75,-1.5)</m> carefully now.
+      </p>
+      <p>  
+        The partial derivative <m>f_x(1.75,-1.5)</m> measures the slope of the line tangent to the trace given by <m>y=-1.5</m>. The tangent line we are examining is changing in the <m>x</m>-direction. When we look at <m>f_{xy}</m>, we are taking the partial derivative of <m>f_x</m> with respect to <m>y</m>, <m>\frac{\partial}{\partial y} \Bigl[ f_x \Bigr]</m>. So we are looking at how the slope of the tangent line in the <m>x</m>-direction will change when we vary the <m>y</m>-coordinate a little bit. We would approximate <m>f_{xy}(1.75,-1.5)</m> with the following difference quotient:
+        <me> \frac{f_x(1.75,-1.5+h)-f_x(1.75,-1.5)}{h}</me>
+      </p>
+      <p>
+        You might think of sliding your pencil down the trace with <m>x=1.5</m> so that the pencil is in the <m>x</m>-direction and tangent to the surface. In <xref ref="F_10_3_fxy">Figure</xref>, the pencil would be the red tangent line drawn. You can use the slider to change the <m>y</m>-coordinate of the point where the red tangent line is drawn. You should look at what happens to the slope of the red tangent line as you increase the <m>t</m>-cooridnate with the slider. The tangent line at the point <m>(1.75,-1.5)</m> is drawn in gray for reference purposes. 
+      </p>
+      <p>
+        Based on <xref ref="F_10_3_fxy">Figure</xref>, write a few sentences about whether <m>f_{xy}(1.75, -1.5)</m> is positive or negative and justify your reasoning.
+      </p>
+     <!--  <figure xml:id="F_10_3_fxy">
+        <caption>The trace of <m>z = f(x,y) = \sin(x)e^{-y}</m> with <m>x = 1.75</m>, along with tangent lines in the <m>y</m>-direction at three different points.</caption>
+        <sidebyside widths="33% 33% 33%">
+        <image source="images/fig_10_3_fxy_1"/>
+        <image source="images/fig_10_3_fxy_2"/>
+        <image source="images/fig_10_3_fxy_3"/>
+        </sidebyside>
+      </figure> -->
+      <figure xml:id="F_10_3_fxy">
+        <caption>The surface given by <m>z=f(x,y) = \sin(x)e^{-y}</m> with trace at <m>x=1.75</m> and tangent line drawn </caption>
+        <interactive title="interactive-F_10_3_fxy" platform="sage" width="85%" aspect="1:1.15">
+          <slate surface="sage">
+            var('x,y,z,t')
+            @interact
+            def expxtrace(a=slider(-2,-1,0.1,default=-1.5,label="y-coordinate")):
+              f(x,y)=sin(x)*exp(-y)
+              param(s,t)=(s,t,f(s,t))
+              #set up grid      n is number of steps in s    m is number of steps in t  
+              #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+              n=10;m=12;a1=0;a2=pi;b1=-2;b2=0; 
+              #c1 is surface color     o1 is surface opacity
+              #c2 and o2 are for constant t value traces
+              #c3 and o3 are for constant s value traces
+              c1="gray"; c2="black"; c3="black"; o1=0.2; o2=0.3; o3=0.3;
+              plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,aspect_ratio=(1,1,0.4))
+              for i in range(n+1):
+                sv=a1+i/n*(a2-a1)
+                plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+              for i in range(m+1):
+                tv=b1+i/m*(b2-b1)
+                plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+              fx=diff(f,x)
+              fy=diff(f,y)
+              fv=f(1.75,a)
+              fxv=fx(1.75,a)
+              fyv=fy(1.75,a)
+              fxy=diff(fx,y)
+              fxyv=fxy(1.75,a)
+              plot12=plot99+parametric_plot3d((1.75,y,f(1.75,y)),(y,-2,0),color="blue",thickness=3,opacity=0.5)
+              plot12+=text3d("x=1.5",(1.5,-2,8),color="blue",fontsize=20)
+              plot12+=point3d((1.75,a,f(1.75,a)),color="black",size=30)
+              plot12+=parametric_plot3d((1.75+t,-1.5,f(1.75,-1.5)+t*fx(1.75,-1.5)+0.05),(t,-0.5,0.5),color="gray",thickness=4,zorder=3)
+              plot12+=parametric_plot3d((1.75+t,a,fv+t*fxv+0.05),(t,-0.5,0.5),color="red",thickness=4,zorder=5)
+              show(plot12,viewpoint=[[-0.095,-0.5444,-0.8334],163.45],camera_position=[3.5605,4.5275,4.1779])
+          </slate>
+        </interactive> 
+      </figure>
+    </statement>
+    <answer>
+      <p>
+        Based on the figure, the slopes of the tangent lines in the <m>x</m> direction along the <m>x=1.75</m> trace appear to be negative, but getting less negative as <m>y</m> increases. So we expect <m>f_{xy}(1.75,-1.5)</m> to be positive.
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Based on the figure, the slopes of the tangent lines in the <m>x</m> direction along the <m>x=1.75</m> trace appear to be negative, but getting less negative as <m>y</m> increases. So we expect <m>f_{xy}(1.75,-1.5)</m> to be positive.
+      </p>
+    </solution>
+  </task>
+  <task>
+    <statement>
+      <p>
+        Compute <m>f_{xy}(x,y)</m> and evaluate <m>f_{xy}(1.75, -1.5)</m>.  Write a couple of sentences about how does this value compare with your observations in the previous task.
+      </p>
+    </statement>
+    <answer>
+      <p>
+        Since <m>f_x(x,y) = \cos(x)e^{-y}</m>, we have <m>f_{xy} = -\cos(x)e^{-y}</m>. So <m>f_{xy}(1.75,-1.5) \approx 0.8</m>. This number is positive, as we discussed in the previous part.
+      </p>
+    </answer>
+    <solution>
+      <p>
+        Since <m>f_x(x,y) = \cos(x)e^{-y}</m>, we have <m>f_{xy} = -\cos(x)e^{-y}</m>. So <m>f_{xy}(1.75,-1.5) \approx 0.8</m>. This number is positive, as we discussed in the previous part.
+      </p>
+    </solution>
+  </task>    
+  <task>
+    <statement>
+      <p>
+        We know that <m>f_{xx}(1.75, -1.5)</m> measures the concavity of the <m>y = -1.5</m> trace, and that <m>f_{yy}(1.75, -1.5)</m> measures the concavity of the <m>x = 1.75</m> trace.  What do you think the quantity <m>f_{xy}(1.75, -1.5)</m> measures?
+      </p>
+    </statement>
+    <answer>
+      <p>
+        The quantity <m>f_{xy}(1.75,-1.5)</m> tells us how much the slopes of the <m>x=1.75</m> trace change as we increase <m>y</m> from <m>-1.5</m>. Geometrically, we could describe <m>f_{xy}(1.75,-1.5)</m> as telling us how much the surface <q>twists</q> in the <m>y</m> direction when <m>y=-1.5</m> as we move along the <m>x=1.75</m> trace.
+      </p>
+    </answer>
+    <solution>
+      <p>
+        The quantity <m>f_{xy}(1.75,-1.5)</m> tells us how much the slopes of the <m>x=1.75</m> trace change as we increase <m>y</m> from <m>-1.5</m>. Geometrically, we could describe <m>f_{xy}(1.75,-1.5)</m> as telling us how much the surface <q>twists</q> in the <m>y</m> direction when <m>y=-1.5</m> as we move along the <m>x=1.75</m> trace.
+      </p>
+    </solution>
+  </task>
+  <task>
+    <statement>
+      <p>
+        On <xref ref="F_10_3_fyx">Figure</xref>, the trace with <m>y = -1.5</m> is highlighted with the point <m>(1.75,-1.5,f(1.75,-1.5))</m> drawn in black. Sketch three tangent lines whose slopes correspond to the value of <m>f_{yx}(x,-1.5)</m> for three different values of <m>x</m> (near <m>x=1.75</m>). Use your tangent lines to state whether <m>f_{yx}(1.75, -1.5)</m> is positive or negative. Justify your reasoning and describe what you think <m>f_{yx}(1.75, -1.5)</m> measures.
+      </p>
+      <figure xml:id="F_10_3_fyx">
+        <caption>The surface given by <m>z=f(x,y) = \sin(x)e^{-y}</m> with trace at <m>y=-1.5</m> </caption>
+        <interactive title="interactive-F_10_3_fyx" platform="sage" width="85%" aspect="1:1.15">
+          <slate surface="sage">
+            f(x,y)=sin(x)*exp(-y)
+            param(s,t)=(s,t,f(s,t))
+            #set up grid      n is number of steps in s    m is number of steps in t  
+            #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+            n=10;m=12;a1=0;a2=pi;b1=-2;b2=0; 
+            #c1 is surface color     o1 is surface opacity
+            #c2 and o2 are for constant t value traces
+            #c3 and o3 are for constant s value traces
+            c1="gray"; c2="black"; c3="black"; o1=0.2; o2=0.3; o3=0.3;
+            plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,aspect_ratio=(1,1,0.4))
+            for i in range(n+1):
+              sv=a1+i/n*(a2-a1)
+              plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+            for i in range(m+1):
+              tv=b1+i/m*(b2-b1)
+              plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+            a=-1.5
+            fx=diff(f,x)
+            fy=diff(f,y)
+            fv=f(1.75,a)
+            fxv=fx(1.75,a)
+            fyv=fy(1.75,a)
+            fxy=diff(fx,y)
+            fxyv=fxy(1.75,a)
+            plot13=plot99+parametric_plot3d((x,-1.5,f(x,-1.5)),(x,0,pi),color="blue",thickness=3,opacity=0.5)
+            plot13+=text3d("y=-1.5",(-0.5,-1.5,1),color="blue",fontsize=20)
+            plot13+=point3d((1.75,-1.5,f(1.75,-1.5)),color="black",size=30)
+            #plot13+=parametric_plot3d((1.75+t,-1.5,f(1.75,-1.5)+t*fx(1.75,-1.5)+0.05),(t,-0.5,0.5),color="gray",thickness=4,zorder=3)
+            #plot13+=parametric_plot3d((1.75+t,a,fv+t*fxv+0.05),(t,-0.5,0.5),color="red",thickness=4,zorder=5)
+            show(plot13,viewpoint=[[-0.095,-0.5444,-0.8334],163.45],camera_position=[3.5605,4.5275,4.1779])
+          </slate>
+        </interactive> 
+      </figure>
+    </statement>
+    <answer>
+      <p>
+        The sketches are shown below. Since <m>f_y(x,y) = -\sin(x)e^{-y}</m>, when <m>x</m> exceeds <m>\frac{\pi}{2}</m> and increases, <m>f_y(x,y)</m> increases for fixed <m>y</m>. So we should expect <m>f_{yx}(1.75,-1.5)</m> to be positive. In fact, <m>f_{yx}(1.75,-1.5) = 0.8</m>. The value of <m>f_{yx}(1.75,-1.5)</m> measures how much the surface <q>twists</q> in the <m>x</m> direction when <m>x=1.75</m> as we move along the <m>y=-1.5</m> trace.
+      </p>
+      <image width="73%" source="images/fig_10_3_Act_2a_fyx_1.png"/> 
+      <image width="73%" source="images/fig_10_3_Act_2a_fyx_2.png"/> 
+      <image width="73%" source="images/fig_10_3_Act_2a_fyx_3.png"/>
+    </answer>
+  </task>
+  </activity>
 
-    <p>
-      That the slope of the tangent line is decreasing as <m>x</m> increases is
-      reflected, as it is in one-variable calculus, in the fact that the
-      trace is concave down. Indeed, we see that <m>f_x(x,y)=\cos(x)e^{-y}</m> and so
-      <m>f_{xx}(x,y)=-\sin(x)e^{-y} \lt  0</m>, since <m>e^{-y} &gt; 0</m> for all values of <m>y</m>, including <m>y = -1.5</m>.
-    </p>
-
-    <p>
-      In the following activity, we further explore what second-order partial derivatives tell us about the geometric behavior of a surface.
-    </p>
-
-    <activity xml:id="A_10_3_2a">
-      <statement>
-        <p>
-          We continue to consider the function <m>f</m> defined by <m>f(x,y) = \sin(x) e^{-y}</m>.
-          <ol marker="a.">
-            <li>
-              <p>
-                In <xref ref="F_10_3_fyy">Figure</xref>, we see the trace of <m>f(x,y) = \sin(x) e^{-y}</m> that has <m>x</m> held constant with <m>x = 1.75</m>. We also see three different lines that are tangent to the trace of <m>f</m> in the <m>y</m> direction at values of <m>y</m> that are increasing from left to right in the figure. Write a couple of sentences that describe whether the slope of the tangent lines to this curve increase or decrease as <m>y</m> increases, and, after computing <m>f_{yy}(x,y)</m>, explain how this observation is related to the value of <m>f_{yy}(1.75,y)</m>.  Be sure to address the notion of concavity in your response.(You need to be careful about the directions in which <m>x</m> and <m>y</m> are increasing.)
-
-                <figure xml:id="F_10_3_fyy">
-                  <caption>The tangent lines to a trace with increasing <m>y</m>.</caption>
-                  <sidebyside widths="33% 33% 33%">
-                  <image source="images/fig_10_3_fyy_1"/>
-                  <image source="images/fig_10_3_fyy_2"/>
-                  <image source="images/fig_10_3_fyy_3"/>
-                  </sidebyside>
-                </figure>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                In <xref ref="F_10_3_fxy">Figure</xref>, we start to think about the mixed partial derivative, <m>f_{xy}</m>.  Here, we first hold <m>y</m> constant to generate the first-order partial derivative <m>f_x</m>, and then we hold <m>x</m> constant to compute <m>f_{xy}</m>.  This leads to first thinking about a trace with <m>x</m> being constant, followed by slopes of tangent lines in the <m>x</m>-direction that slide along the original trace.  You might think of sliding your pencil down the trace with <m>x</m> constant in a way that its slope indicates <m>(f_x)_y</m> in order to further animate the three snapshots shown in the figure.
-
-                <figure xml:id="F_10_3_fxy">
-                  <caption>The trace of <m>z = f(x,y) = \sin(x)e^{-y}</m> with <m>x = 1.75</m>, along with tangent lines in the <m>y</m>-direction at three different points.</caption>
-                  <sidebyside widths="33% 33% 33%">
-                  <image source="images/fig_10_3_fxy_1"/>
-                  <image source="images/fig_10_3_fxy_2"/>
-                  <image source="images/fig_10_3_fxy_3"/>
-                  </sidebyside>
-                </figure>
-
-                <p>
-
-                </p>
-
-                Based on <xref ref="F_10_3_fxy">Figure</xref>, is <m>f_{xy}(1.75, -1.5)</m> positive or negative?  Why?
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Determine the formula for <m>f_{xy}(x,y)</m>, and hence evaluate <m>f_{xy}(1.75, -1.5)</m>.  How does this value compare with your observations in (b)?
-              </p>
-            </li>
-
-            <li>
-              <p>
-                We know that <m>f_{xx}(1.75, -1.5)</m> measures the concavity of the <m>y = -1.5</m> trace, and that <m>f_{yy}(1.75, -1.5)</m> measures the concavity of the <m>x = 1.75</m> trace.  What do you think the quantity <m>f_{xy}(1.75, -1.5)</m> measures?
-              </p>
-            </li>
-
-            <li>
-              <p>
-                On <xref ref="F_10_3_fxy">Figure</xref>, sketch the trace with <m>y = -1.5</m>, and sketch three tangent lines whose slopes correspond to the value of <m>f_{yx}(x,-1.5)</m> for three different values of <m>x</m>, the middle of which is <m>x = -1.5</m>.  Is <m>f_{yx}(1.75, -1.5)</m> positive or negative?  Why?  What does <m>f_{yx}(1.75, -1.5)</m> measure?
-              </p>
-            </li>
-          </ol>
-        </p>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              The figures seem to indicate that the slopes of the tangent lines to the trace
-              <m>f(1.75,y)</m> increase as <m>y</m> increases.
-              Note that <m>\frac{d}{dy} f(1.75,y) = \frac{d}{dy} \sin(1.75) e^{-y} = -\sin(1.75) e^{-y}</m>,
-              so as <m>y</m> increases the slopes of the tangent lines become less negative.
-              Note also that <m>\frac{d^2}{dy^2} f(1.75,y) = \sin(1.75)e^{-y}</m> which is a decreasing function.
-              This tells us that the <m>x=1.75</m> trace is concave down.
-              That means that the slopes of the tangent lines to the trace are increasing,
-              but at a decreasing rate.
-              This is reflected in the fact that the surface seems to be leveling off as <m>y</m> increases.
-            </p>
-          </li>
-          <li>
-            <p>
-              Based on the figure,
-              the slopes of the tangent lines in the <m>x</m> direction along the <m>x=1.75</m> trace appear to be negative,
-              but getting less negative as <m>y</m> increases.
-              So we expect <m>f_{xy}(1.75,-1.5)</m> to be positive.
-            </p>
-          </li>
-          <li>
-            <p>
-              Since <m>f_x(x,y) = \cos(x)e^{-y}</m>,
-              we have <m>f_{xy} = -\cos(x)e^{-y}</m>.
-              So <m>f_{xy}(1.75,-1.5) \approx 0.8</m>.
-              This number is positive, as we discussed in the previous part.
-            </p>
-          </li>
-          <li>
-            <p>
-              The quantity <m>f_{xy}(1.75,-1.5)</m> tells us how much the slopes of the <m>x=1.75</m> trace change as we increase <m>y</m> from <m>-1.5</m>.
-              Geometrically, we could describe
-              <m>f_{xy}(1.75,-1.5)</m> as telling us how much the surface
-              <q>twists</q>
-              in the <m>y</m> direction when <m>y=-1.5</m> as we move along the <m>x=1.75</m> trace.
-            </p>
-          </li>
-          <li>
-            <p>
-              The sketches are shown below.
-              Since <m>f_y(x,y) = -\sin(x)e^{-y}</m>,
-              when <m>x</m> exceeds <m>\frac{\pi}{2}</m> and increases,
-              <m>f_y(x,y)</m> increases for fixed <m>y</m>.
-              So we should expect <m>f_{yx}(1.75,-1.5)</m> to be positive.
-              In fact, <m>f_{yx}(1.75,-1.5) = 0.8</m>.
-              The value of <m>f_{yx}(1.75,-1.5)</m> measures how much the surface
-              <q>twists</q>
-              in the <m>x</m> direction when <m>x=1.75</m> as we move along the <m>y=-1.5</m> trace.
-              <image width="73%" source="images/fig_10_3_Act_2a_fyx_1.png"/> <nbsp/><image width="73%" source="images/fig_10_3_Act_2a_fyx_2.png"/> <nbsp/><image width="73%" source="images/fig_10_3_Act_2a_fyx_3.png"/>
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              The figures seem to indicate that the slopes of the tangent lines to the trace
-              <m>f(1.75,y)</m> increase as <m>y</m> increases.
-              Note that <m>\frac{d}{dy} f(1.75,y) = \frac{d}{dy} \sin(1.75) e^{-y} = -\sin(1.75) e^{-y}</m>,
-              so as <m>y</m> increases the slopes of the tangent lines become less negative.
-              Note also that <m>\frac{d^2}{dy^2} f(1.75,y) = \sin(1.75)e^{-y}</m> which is a decreasing function.
-              This tells us that the <m>x=1.75</m> trace is concave down.
-              That means that the slopes of the tangent lines to the trace are increasing,
-              but at a decreasing rate.
-              This is reflected in the fact that the surface seems to be leveling off as <m>y</m> increases.
-            </p>
-          </li>
-          <li>
-            <p>
-              Based on the figure,
-              the slopes of the tangent lines in the <m>x</m> direction along the <m>x=1.75</m> trace appear to be negative,
-              but getting less negative as <m>y</m> increases.
-              So we expect <m>f_{xy}(1.75,-1.5)</m> to be positive.
-            </p>
-          </li>
-          <li>
-            <p>
-              Since <m>f_x(x,y) = \cos(x)e^{-y}</m>,
-              we have <m>f_{xy} = -\cos(x)e^{-y}</m>.
-              So <m>f_{xy}(1.75,-1.5) \approx 0.8</m>.
-              This number is positive, as we discussed in the previous part.
-            </p>
-          </li>
-          <li>
-            <p>
-              The quantity <m>f_{xy}(1.75,-1.5)</m> tells us how much the slopes of the <m>x=1.75</m> trace change as we increase <m>y</m> from <m>-1.5</m>.
-              Geometrically, we could describe
-              <m>f_{xy}(1.75,-1.5)</m> as telling us how much the surface
-              <q>twists</q>
-              in the <m>y</m> direction when <m>y=-1.5</m> as we move along the <m>x=1.75</m> trace.
-            </p>
-          </li>
-          <li>
-            <p>
-              The sketches are shown below.
-              Since <m>f_y(x,y) = -\sin(x)e^{-y}</m>,
-              when <m>x</m> exceeds <m>\frac{\pi}{2}</m> and increases,
-              <m>f_y(x,y)</m> increases for fixed <m>y</m>.
-              So we should expect <m>f_{yx}(1.75,-1.5)</m> to be positive.
-              In fact, <m>f_{yx}(1.75,-1.5) = 0.8</m>.
-              The value of <m>f_{yx}(1.75,-1.5)</m> measures how much the surface
-              <q>twists</q>
-              in the <m>x</m> direction when <m>x=1.75</m> as we move along the <m>y=-1.5</m> trace.
-              <image width="73%" source="images/fig_10_3_Act_2a_fyx_1.png"/> <nbsp/><image width="73%" source="images/fig_10_3_Act_2a_fyx_2.png"/> <nbsp/><image width="73%" source="images/fig_10_3_Act_2a_fyx_3.png"/>
-            </p>
-          </li>
-        </ol>
-      </solution>
-
-    </activity>
-
-    <p>
-      Just as with the first-order partial derivatives, we can
-      approximate second-order partial derivatives in the situation where we have only
-      partial information about the function.
-    </p>
-
-    <activity xml:id="A_10_3_6">
-      <statement>
-        <p>
-          As we saw in <xref ref="A_10_2_12">Activity</xref>, the wind chill <m>w(v,T)</m>, in degrees Fahrenheit, is
-          a function of the
-          wind speed, in miles per hour, and the air temperature, in degrees Fahrenheit. Some values of the wind chill are
-          recorded in <xref ref="T_10_3_wind_chill">Table</xref>.
-        </p>
-
-        <table xml:id="T_10_3_wind_chill">
-          <title>Wind chill as a function of wind speed and temperature.</title>
-          <tabular halign="center" bottom="minor" top="minor">
-            <row bottom="medium">
+  <p>
+    Just as with the first-order partial derivatives, we can approximate second-order partial derivatives in the situation where we have only partial information about the function, like with tables or contour plots.
+  </p>
+  <activity xml:id="A_10_3_6">
+    <introduction>
+      <p>
+        As we saw in <xref ref="A_10_2_12">Activity</xref>, the wind chill <m>w(v,T)</m>, in degrees Fahrenheit, is a function of the wind speed, in miles per hour, and the air temperature, in degrees Fahrenheit. Some values of the wind chill are recorded in <xref ref="T_10_3_wind_chill">Table</xref>.
+      </p>
+      <table xml:id="T_10_3_wind_chill">
+          <title>Wind chill as a function of wind speed and temperature</title>
+          <tabular halign="center">
+            <row>
               <cell><m>v \backslash T</m></cell>
-              <cell>-30</cell>
-              <cell>-25</cell>
-              <cell>-20</cell>
-              <cell>-15</cell>
-              <cell>-10</cell>
-              <cell>-5</cell>
-              <cell>0</cell>
-              <cell>5</cell>
-              <cell>10</cell>
-              <cell>15</cell>
-              <cell>20</cell>
+              <!-- <cell bottom="medium"><m>-30</m></cell>
+              <cell bottom="medium"><m>-25</m></cell> -->
+              <cell bottom="medium"><m>-20</m></cell>
+              <cell bottom="medium"><m>-15</m></cell>
+              <cell bottom="medium"><m>-10</m></cell>
+              <cell bottom="medium"><m>-5</m></cell>
+              <cell bottom="medium"><m>0</m></cell>
+              <cell bottom="medium"><m>5</m></cell>
+              <cell bottom="medium"><m>10</m></cell>
+             <!--  <cell bottom="medium"><m>15</m></cell>
+              <cell bottom="medium"><m>20</m></cell> -->
+            </row>
+            <!-- <row>
+              <cell right="medium"><m>5</m></cell>
+              <cell><m>-46</m></cell>
+              <cell><m>-40</m></cell>
+              <cell><m>-34</m></cell>
+              <cell><m>-28</m></cell>
+              <cell><m>-22</m></cell>
+              <cell><m>-16</m></cell>
+              <cell><m>-11</m></cell>
+              <cell><m>-5</m></cell>
+              <cell><m>1</m></cell>
+              <cell><m>7</m></cell>
+              <cell><m>13</m></cell>
+            </row> -->
+            <row>
+              <cell right="medium"><m>10</m></cell>
+              <!-- <cell><m>-53</m></cell>
+              <cell><m>-47</m></cell> -->
+              <cell><m>-41</m></cell>
+              <cell><m>-35</m></cell>
+              <cell><m>-28</m></cell>
+              <cell><m>-22</m></cell>
+              <cell><m>-16</m></cell>
+              <cell><m>-10</m></cell>
+              <cell><m>-4</m></cell>
+              <!-- <cell><m>3</m></cell>
+              <cell><m>9</m></cell> -->
             </row>
             <row>
-              <cell>5</cell>
-              <cell>-46</cell>
-              <cell>-40</cell>
-              <cell>-34</cell>
-              <cell>-28</cell>
-              <cell>-22</cell>
-              <cell>-16</cell>
-              <cell>-11</cell>
-              <cell>-5</cell>
-              <cell>1</cell>
-              <cell>7</cell>
-              <cell>13</cell>
+              <cell right="medium"><m>15</m></cell>
+              <!-- <cell><m>-58</m></cell>
+              <cell><m>-51</m></cell> -->
+              <cell><m>-45</m></cell>
+              <cell><m>-39</m></cell>
+              <cell><m>-32</m></cell>
+              <cell><m>-26</m></cell>
+              <cell><m>-19</m></cell>
+              <cell><m>-13</m></cell>
+              <cell><m>-7</m></cell>
+              <!-- <cell><m>0</m></cell>
+              <cell><m>6</m></cell> -->
             </row>
             <row>
-              <cell>10</cell>
-              <cell>-53</cell>
-              <cell>-47</cell>
-              <cell>-41</cell>
-              <cell>-35</cell>
-              <cell>-28</cell>
-              <cell>-22</cell>
-              <cell>-16</cell>
-              <cell>-10</cell>
-              <cell>-4</cell>
-              <cell>3</cell>
-              <cell>9</cell>
+              <cell right="medium"><m>20</m></cell>
+              <!-- <cell><m>-61</m></cell>
+              <cell><m>-55</m></cell> -->
+              <cell><m>-48</m></cell>
+              <cell><m>-42</m></cell>
+              <cell><m>-35</m></cell>
+              <cell><m>-29</m></cell>
+              <cell><m>-22</m></cell>
+              <cell><m>-15</m></cell>
+              <cell><m>-9</m></cell>
+              <!-- <cell><m>-2</m></cell>
+              <cell><m>4</m></cell> -->
             </row>
             <row>
-              <cell>15</cell>
-              <cell>-58</cell>
-              <cell>-51</cell>
-              <cell>-45</cell>
-              <cell>-39</cell>
-              <cell>-32</cell>
-              <cell>-26</cell>
-              <cell>-19</cell>
-              <cell>-13</cell>
-              <cell>-7</cell>
-              <cell>0</cell>
-              <cell>6</cell>
+              <cell right="medium"><m>25</m></cell>
+              <!-- <cell><m>-64</m></cell>
+              <cell><m>-58</m></cell> -->
+              <cell><m>-51</m></cell>
+              <cell><m>-44</m></cell>
+              <cell><m>-37</m></cell>
+              <cell><m>-31</m></cell>
+              <cell><m>-24</m></cell>
+              <cell><m>-17</m></cell>
+              <cell><m>-11</m></cell>
+              <!-- <cell><m>-4</m></cell>
+              <cell><m>3</m></cell> -->
             </row>
             <row>
-              <cell>20</cell>
-              <cell>-61</cell>
-              <cell>-55</cell>
-              <cell>-48</cell>
-              <cell>-42</cell>
-              <cell>-35</cell>
-              <cell>-29</cell>
-              <cell>-22</cell>
-              <cell>-15</cell>
-              <cell>-9</cell>
-              <cell>-2</cell>
-              <cell>4</cell>
+              <cell right="medium"><m>30</m></cell>
+              <!-- <cell><m>-67</m></cell>
+              <cell><m>-60</m></cell> -->
+              <cell><m>-53</m></cell>
+              <cell><m>-46</m></cell>
+              <cell><m>-39</m></cell>
+              <cell><m>-33</m></cell>
+              <cell><m>-26</m></cell>
+              <cell><m>-19</m></cell>
+              <cell><m>-12</m></cell>
+             <!--  <cell><m>-5</m></cell>
+              <cell><m>1</m></cell> -->
             </row>
             <row>
-              <cell>25</cell>
-              <cell>-64</cell>
-              <cell>-58</cell>
-              <cell>-51</cell>
-              <cell>-44</cell>
-              <cell>-37</cell>
-              <cell>-31</cell>
-              <cell>-24</cell>
-              <cell>-17</cell>
-              <cell>-11</cell>
-              <cell>-4</cell>
-              <cell>3</cell>
+              <cell right="medium"><m>35</m></cell>
+              <!-- <cell><m>-69</m></cell>
+              <cell><m>-62</m></cell> -->
+              <cell><m>-55</m></cell>
+              <cell><m>-48</m></cell>
+              <cell><m>-41</m></cell>
+              <cell><m>-34</m></cell>
+              <cell><m>-27</m></cell>
+              <cell><m>-21</m></cell>
+              <cell><m>-14</m></cell>
+              <!-- <cell><m>-7</m></cell>
+              <cell><m>0</m></cell> -->
             </row>
-            <row>
-              <cell>30</cell>
-              <cell>-67</cell>
-              <cell>-60</cell>
-              <cell>-53</cell>
-              <cell>-46</cell>
-              <cell>-39</cell>
-              <cell>-33</cell>
-              <cell>-26</cell>
-              <cell>-19</cell>
-              <cell>-12</cell>
-              <cell>-5</cell>
-              <cell>1</cell>
-            </row>
-            <row>
-              <cell>35</cell>
-              <cell>-69</cell>
-              <cell>-62</cell>
-              <cell>-55</cell>
-              <cell>-48</cell>
-              <cell>-41</cell>
-              <cell>-34</cell>
-              <cell>-27</cell>
-              <cell>-21</cell>
-              <cell>-14</cell>
-              <cell>-7</cell>
-              <cell>0</cell>
-            </row>
-            <row>
-              <cell>40</cell>
-              <cell>-71</cell>
-              <cell>-64</cell>
-              <cell>-57</cell>
-              <cell>-50</cell>
-              <cell>-43</cell>
-              <cell>-36</cell>
-              <cell>-29</cell>
-              <cell>-22</cell>
-              <cell>-15</cell>
-              <cell>-8</cell>
-              <cell>-1</cell>
-            </row>
+            <!-- <row>
+              <cell right="medium"><m>40</m></cell>
+              <cell><m>-71</m></cell>
+              <cell><m>-64</m></cell>
+              <cell><m>-57</m></cell>
+              <cell><m>-50</m></cell>
+              <cell><m>-43</m></cell>
+              <cell><m>-36</m></cell>
+              <cell><m>-29</m></cell>
+              <cell><m>-22</m></cell>
+              <cell><m>-15</m></cell>
+              <cell><m>-8</m></cell>
+              <cell><m>-1</m></cell>
+            </row> -->
           </tabular>
         </table>
-
-        <ol marker="a.">
-          <li>
-            <p>
-              Estimate the partial derivatives <m>w_{T}(20,-15)</m>, <m>w_{T}(20,-10)</m>, and <m>w_T(20,-5)</m>.  Use these results to estimate the second-order partial
-                <m>w_{TT}(20, -10)</m>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              In a similar way, estimate the second-order partial <m>w_{vv}(20,-10)</m>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Estimate the partial derivatives <m>w_T(20,-10)</m>, <m>w_T(25,-10)</m>, and <m>w_T(15,-10)</m>, and use your results to
-                estimate the partial <m>w_{Tv}(20,-10)</m>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              In a similar way, estimate the partial derivative <m>w_{vT}(20,-10)</m>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Write several sentences that explain what the values <m>w_{TT}(20, -10)</m>,  <m>w_{vv}(20,-10)</m>, and <m>w_{Tv}(20,-10)</m> indicate regarding the behavior of <m>w(v,T)</m>.
-            </p>
-          </li>
-        </ol>
-      </statement>  
-
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Estimate the partial derivatives <m>w_{T}(20,-15)</m>, <m>w_{T}(20,-10)</m>, and <m>w_T(20,-5)</m>.  Use these results to estimate the second-order partial <m>w_{TT}(20, -10)</m>.
+        </p>
+      </statement>
       <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              We approximate <m>w_T(20,-15)</m> using a symmetric difference quotient:
-              <me>
-                w_T(20,-15) \approx \frac{w(20,-10)-w(20,-20)}{10} = \frac{-35-(-48)}{10} = 1.3
-              </me>.
-              Similarly,
-              <me>
-                w_T(20,-10) \approx \frac{w(20,-5)-w(20,-15)}{10} = \frac{-29-(-42)}{10} = 1.3
-              </me>
-              and
-              <me>
-                w_T(20,-5) \approx \frac{w(20,0)-w(20,-10)}{10} = \frac{-22-(-35)}{10} = 1.3
-              </me>.
-              Now <m>w_{TT}(20,-10)</m> can also be approximated with a symmetric difference quotient as
-              <me>
-                w_{TT}(20,-10) \approx \frac{w_T(20,-5) - w_T(20,-15)}{10} \approx \frac{1.3-1.3}{10} = 0
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              To approximate <m>w_{vv}(20,-10)</m> we will use a symmetric difference quotient with
-              <m>w_v(25,-10)</m> and <m>w_v(15,-10)</m>.
-              Now
-              <md>
-                <mrow>w_v(25,-10) \approx \frac{w(30,-10) - w(20,-10)}{10} = \frac{-39-(-35)}{10} = -0.4</mrow>
-                <mrow>w_v(15,-10) \approx \frac{w(20,-10) - w(10,-10)}{10} = \frac{-35-(-32)}{10} = -0.3</mrow>
-              </md>,
-              so
-              <me>
-                w_{vv}(20,-10) \approx \frac{w_v(25,-10) - w_v(15,-10)}{10} = \frac{-0.4-(-0.3)}{10} = -0.01
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              We already have <m>w_T(20,-10) \approx 1.3</m>,
-              and similar calculations show that
-              <md>
-                <mrow>w_T(15,-10) \approx \frac{w(15,-5)-w(15,-15)}{10} = \frac{-26-(-39)}{10} = 1.3</mrow>
-                <mrow>w_T(25,-10) \approx \frac{w(25,-5)-w(25,-15)}{10} = \frac{-31-(-44)}{10} = 1.3</mrow>
-              </md>.
-              So
-              <me>
-                w_{Tv}(20,-10) \approx \frac{w_T(25,-10) - w_T(15,-10)}{10} \approx 0
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              To estimate <m>w_{vT}(20,-10)</m> we use a symmetric difference quotient with
-              <m>w_v(20,-15)</m> and <m>w_v(20,-5)</m>.
-              Now
-              <md>
-                <mrow>w_v(20,-15) \approx \frac{w(25,-15)-w(15,-15)}{10} = \frac{-44-(-39)}{10} = -0.5</mrow>
-                <mrow>w_v(20,-5) \approx \frac{w(25,-5)-w(15,-5)}{10} = \frac{-31-(-26)}{10} = -0.5</mrow>
-              </md>.
-              So
-              <me>
-                w_{vT}(20,-10) \approx \frac{w_v(20,-5) - w_v(20,-15)}{10} \approx 0
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The fact that <m>w_{TT}(20, -10) \approx 0.03</m> means that for every one
-              <m>^{\circ}F</m> increase from <m>-10</m> degrees,
-              the rate at which the wind chill changes as the temperature increases grows by approximately 0.03
-              <m>\frac{^{\circ}F}{^{\circ}F}</m> if the wind speed is 20 miles per hour.
-              The fact that <m>w_{vv}(20, -10) \approx -0.01</m> means that for every one mile per hour increase in the wind speed from 20 miles per hour,
-              at a temperature of <m>-10^{\circ}F</m>,
-              the rate at which the wind chill changes as the wind speed increases declines by approximately 0.01 <m>\frac{^{\circ}F}{\text{ mile/hour } }</m>.
-              The fact that <m>w_{Tv}(20, -10) \approx 0</m> means that there is no change in the rate at which the wind chill changes as the temperature increases if the wind speed increases from 20 miles per hour and the temperature is <m>-10^{\circ}F</m>.
-            </p>
-          </li>
-        </ol>
+        <p>
+          We approximate <m>w_T(20,-15)</m> using a symmetric difference quotient:
+          <me>
+            w_T(20,-15) \approx \frac{w(20,-10)-w(20,-20)}{10} = \frac{-35-(-48)}{10} = 1.3
+          </me>.
+          Similarly,
+          <me>
+            w_T(20,-10) \approx \frac{w(20,-5)-w(20,-15)}{10} = \frac{-29-(-42)}{10} = 1.3
+          </me>
+          and
+          <me>
+            w_T(20,-5) \approx \frac{w(20,0)-w(20,-10)}{10} = \frac{-22-(-35)}{10} = 1.3
+          </me>.
+          Now <m>w_{TT}(20,-10)</m> can also be approximated with a symmetric difference quotient as
+          <me>
+            w_{TT}(20,-10) \approx \frac{w_T(20,-5) - w_T(20,-15)}{10} \approx \frac{1.3-1.3}{10} = 0
+          </me>.
+        </p>
       </answer>
-
       <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              We approximate <m>w_T(20,-15)</m> using a symmetric difference quotient:
-              <me>
-                w_T(20,-15) \approx \frac{w(20,-10)-w(20,-20)}{10} = \frac{-35-(-48)}{10} = 1.3
-              </me>.
-              Similarly,
-              <me>
-                w_T(20,-10) \approx \frac{w(20,-5)-w(20,-15)}{10} = \frac{-29-(-42)}{10} = 1.3
-              </me>
-              and
-              <me>
-                w_T(20,-5) \approx \frac{w(20,0)-w(20,-10)}{10} = \frac{-22-(-35)}{10} = 1.3
-              </me>.
-              Now <m>w_{TT}(20,-10)</m> can also be approximated with a symmetric difference quotient as
-              <me>
-                w_{TT}(20,-10) \approx \frac{w_T(20,-5) - w_T(20,-15)}{10} \approx \frac{1.3-1.3}{10} = 0
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              To approximate <m>w_{vv}(20,-10)</m> we will use a symmetric difference quotient with
-              <m>w_v(25,-10)</m> and <m>w_v(15,-10)</m>.
-              Now
-              <md>
-                <mrow>w_v(25,-10) \approx \frac{w(30,-10) - w(20,-10)}{10} = \frac{-39-(-35)}{10} = -0.4</mrow>
-                <mrow>w_v(15,-10) \approx \frac{w(20,-10) - w(10,-10)}{10} = \frac{-35-(-32)}{10} = -0.3</mrow>
-              </md>,
-              so
-              <me>
-                w_{vv}(20,-10) \approx \frac{w_v(25,-10) - w_v(15,-10)}{10} = \frac{-0.4-(-0.3)}{10} = -0.01
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              We already have <m>w_T(20,-10) \approx 1.3</m>,
-              and similar calculations show that
-              <md>
-                <mrow>w_T(15,-10) \approx \frac{w(15,-5)-w(15,-15)}{10} = \frac{-26-(-39)}{10} = 1.3</mrow>
-                <mrow>w_T(25,-10) \approx \frac{w(25,-5)-w(25,-15)}{10} = \frac{-31-(-44)}{10} = 1.3</mrow>
-              </md>.
-              So
-              <me>
-                w_{Tv}(20,-10) \approx \frac{w_T(25,-10) - w_T(15,-10)}{10} \approx 0
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              To estimate <m>w_{vT}(20,-10)</m> we use a symmetric difference quotient with
-              <m>w_v(20,-15)</m> and <m>w_v(20,-5)</m>.
-              Now
-              <md>
-                <mrow>w_v(20,-15) \approx \frac{w(25,-15)-w(15,-15)}{10} = \frac{-44-(-39)}{10} = -0.5</mrow>
-                <mrow>w_v(20,-5) \approx \frac{w(25,-5)-w(15,-5)}{10} = \frac{-31-(-26)}{10} = -0.5</mrow>
-              </md>.
-              So
-              <me>
-                w_{vT}(20,-10) \approx \frac{w_v(20,-5) - w_v(20,-15)}{10} \approx 0
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The fact that <m>w_{TT}(20, -10) \approx 0.03</m> means that for every one
-              <m>^{\circ}F</m> increase from <m>-10</m> degrees,
-              the rate at which the wind chill changes as the temperature increases grows by approximately 0.03
-              <m>\frac{^{\circ}F}{^{\circ}F}</m> if the wind speed is 20 miles per hour.
-              The fact that <m>w_{vv}(20, -10) \approx -0.01</m> means that for every one mile per hour increase in the wind speed from 20 miles per hour,
-              at a temperature of <m>-10^{\circ}F</m>,
-              the rate at which the wind chill changes as the wind speed increases declines by approximately 0.01 <m>\frac{^{\circ}F}{\text{ mile/hour } }</m>.
-              The fact that <m>w_{Tv}(20, -10) \approx 0</m> means that there is no change in the rate at which the wind chill changes as the temperature increases if the wind speed increases from 20 miles per hour and the temperature is <m>-10^{\circ}F</m>.
-            </p>
-          </li>
-        </ol>
+        <p>
+          We approximate <m>w_T(20,-15)</m> using a symmetric difference quotient:
+          <me>
+            w_T(20,-15) \approx \frac{w(20,-10)-w(20,-20)}{10} = \frac{-35-(-48)}{10} = 1.3
+          </me>.
+          Similarly,
+          <me>
+            w_T(20,-10) \approx \frac{w(20,-5)-w(20,-15)}{10} = \frac{-29-(-42)}{10} = 1.3
+          </me>
+          and
+          <me>
+            w_T(20,-5) \approx \frac{w(20,0)-w(20,-10)}{10} = \frac{-22-(-35)}{10} = 1.3
+          </me>.
+          Now <m>w_{TT}(20,-10)</m> can also be approximated with a symmetric difference quotient as
+          <me>
+            w_{TT}(20,-10) \approx \frac{w_T(20,-5) - w_T(20,-15)}{10} \approx \frac{1.3-1.3}{10} = 0
+          </me>.
+        </p>
       </solution>
-
-    </activity>
-
-    <p>
-      As we have found in <xref ref="A_10_3_2a">Activities</xref> and <xref ref="A_10_3_6"/>, we may think of <m>f_{xy}</m> as measuring the
-      <q>twist</q> of the graph as we increase <m>y</m> along a particular trace where <m>x</m> is held constant. In the same way, <m>f_{yx}</m> measures how
-      the graph twists as we increase <m>x</m>. If we remember that Clairaut's
-      theorem tells us that <m>f_{xy} = f_{yx}</m>, we see that the amount of
-      twisting is the same in both directions. This twisting is perhaps
-      more easily seen in <xref ref="F_10_3_ruled">Figure</xref>, which shows the graph
-      of <m>f(x,y) = -xy</m>, for which <m>f_{xy} = -1</m>.
-    </p>
-
-    <figure xml:id="F_10_3_ruled">
+    </task> 
+    <task>
+      <statement>
+        <p>
+          In a similar way, estimate the second-order partial <m>w_{vv}(20,-10)</m>.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          To approximate <m>w_{vv}(20,-10)</m> we will use a symmetric difference quotient with <m>w_v(25,-10)</m> and <m>w_v(15,-10)</m>. Now
+          <md>
+            <mrow>w_v(25,-10) \approx \frac{w(30,-10) - w(20,-10)}{10} = \frac{-39-(-35)}{10} = -0.4</mrow>
+            <mrow>w_v(15,-10) \approx \frac{w(20,-10) - w(10,-10)}{10} = \frac{-35-(-32)}{10} = -0.3</mrow>
+          </md>,
+          so
+          <me>
+            w_{vv}(20,-10) \approx \frac{w_v(25,-10) - w_v(15,-10)}{10} = \frac{-0.4-(-0.3)}{10} = -0.01
+          </me>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          To approximate <m>w_{vv}(20,-10)</m> we will use a symmetric difference quotient with <m>w_v(25,-10)</m> and <m>w_v(15,-10)</m>. Now
+          <md>
+            <mrow>w_v(25,-10) \approx \frac{w(30,-10) - w(20,-10)}{10} = \frac{-39-(-35)}{10} = -0.4</mrow>
+            <mrow>w_v(15,-10) \approx \frac{w(20,-10) - w(10,-10)}{10} = \frac{-35-(-32)}{10} = -0.3</mrow>
+          </md>,
+          so
+          <me>
+            w_{vv}(20,-10) \approx \frac{w_v(25,-10) - w_v(15,-10)}{10} = \frac{-0.4-(-0.3)}{10} = -0.01
+          </me>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Estimate the partial derivatives <m>w_T(20,-10)</m>, <m>w_T(25,-10)</m>, and <m>w_T(15,-10)</m>, and use your results to estimate the partial <m>w_{Tv}(20,-10)</m>.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          We already have <m>w_T(20,-10) \approx 1.3</m>, and similar calculations show that
+          <md>
+            <mrow>w_T(15,-10) \approx \frac{w(15,-5)-w(15,-15)}{10} = \frac{-26-(-39)}{10} = 1.3</mrow>
+            <mrow>w_T(25,-10) \approx \frac{w(25,-5)-w(25,-15)}{10} = \frac{-31-(-44)}{10} = 1.3</mrow>
+          </md>.
+          So
+          <me>
+            w_{Tv}(20,-10) \approx \frac{w_T(25,-10) - w_T(15,-10)}{10} \approx 0
+          </me>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          We already have <m>w_T(20,-10) \approx 1.3</m>, and similar calculations show that
+          <md>
+            <mrow>w_T(15,-10) \approx \frac{w(15,-5)-w(15,-15)}{10} = \frac{-26-(-39)}{10} = 1.3</mrow>
+            <mrow>w_T(25,-10) \approx \frac{w(25,-5)-w(25,-15)}{10} = \frac{-31-(-44)}{10} = 1.3</mrow>
+          </md>.
+          So
+          <me>
+            w_{Tv}(20,-10) \approx \frac{w_T(25,-10) - w_T(15,-10)}{10} \approx 0
+          </me>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          In a similar way, estimate the partial derivative <m>w_{vT}(20,-10)</m>.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          To estimate <m>w_{vT}(20,-10)</m> we use a symmetric difference quotient with
+          <m>w_v(20,-15)</m> and <m>w_v(20,-5)</m>.
+          Now
+          <md>
+            <mrow>w_v(20,-15) \approx \frac{w(25,-15)-w(15,-15)}{10} = \frac{-44-(-39)}{10} = -0.5</mrow>
+            <mrow>w_v(20,-5) \approx \frac{w(25,-5)-w(15,-5)}{10} = \frac{-31-(-26)}{10} = -0.5</mrow>
+          </md>.
+          So
+          <me>
+            w_{vT}(20,-10) \approx \frac{w_v(20,-5) - w_v(20,-15)}{10} \approx 0
+          </me>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          To estimate <m>w_{vT}(20,-10)</m> we use a symmetric difference quotient with
+          <m>w_v(20,-15)</m> and <m>w_v(20,-5)</m>.
+          Now
+          <md>
+            <mrow>w_v(20,-15) \approx \frac{w(25,-15)-w(15,-15)}{10} = \frac{-44-(-39)}{10} = -0.5</mrow>
+            <mrow>w_v(20,-5) \approx \frac{w(25,-5)-w(15,-5)}{10} = \frac{-31-(-26)}{10} = -0.5</mrow>
+          </md>.
+          So
+          <me>
+            w_{vT}(20,-10) \approx \frac{w_v(20,-5) - w_v(20,-15)}{10} \approx 0
+          </me>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Write a few sentences to explain what the values <m>w_{TT}(20, -10)</m>,  <m>w_{vv}(20,-10)</m>, and <m>w_{Tv}(20,-10)</m> indicate regarding the behavior of <m>w(v,T)</m>.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          The fact that <m>w_{TT}(20, -10) \approx 0.03</m> means that for every one <m>^{\circ}F</m> increase from <m>-10</m> degrees, the rate at which the wind chill changes as the temperature increases grows by approximately 0.03 <m>\frac{^{\circ}F}{^{\circ}F}</m> if the wind speed is 20 miles per hour. The fact that <m>w_{vv}(20, -10) \approx -0.01</m> means that for every one mile per hour increase in the wind speed from 20 miles per hour, at a temperature of <m>-10^{\circ}F</m>, the rate at which the wind chill changes as the wind speed increases declines by approximately 0.01 <m>\frac{^{\circ}F}{\text{ mile/hour } }</m>. The fact that <m>w_{Tv}(20, -10) \approx 0</m> means that there is no change in the rate at which the wind chill changes as the temperature increases if the wind speed increases from 20 miles per hour and the temperature is <m>-10^{\circ}F</m>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          The fact that <m>w_{TT}(20, -10) \approx 0.03</m> means that for every one <m>^{\circ}F</m> increase from <m>-10</m> degrees, the rate at which the wind chill changes as the temperature increases grows by approximately 0.03 <m>\frac{^{\circ}F}{^{\circ}F}</m> if the wind speed is 20 miles per hour. The fact that <m>w_{vv}(20, -10) \approx -0.01</m> means that for every one mile per hour increase in the wind speed from 20 miles per hour, at a temperature of <m>-10^{\circ}F</m>, the rate at which the wind chill changes as the wind speed increases declines by approximately 0.01 <m>\frac{^{\circ}F}{\text{ mile/hour } }</m>. The fact that <m>w_{Tv}(20, -10) \approx 0</m> means that there is no change in the rate at which the wind chill changes as the temperature increases if the wind speed increases from 20 miles per hour and the temperature is <m>-10^{\circ}F</m>.
+        </p>
+      </solution>
+    </task>
+  </activity>
+  <p>
+    As we have found in <xref ref="A_10_3_2a">Activities</xref> and <xref ref="A_10_3_6"/>, we may think of <m>f_{xy}</m> as measuring the <q>twist</q> of the graph as we increase <m>y</m> along a particular trace where <m>x</m> is held constant. In the same way, <m>f_{yx}</m> measures how the graph twists as we increase <m>x</m>. If we remember that Clairaut's theorem tells us that <m>f_{xy} = f_{yx}</m>, we see that the amount of twisting is the same in both directions. This twisting is perhaps more easily seen in <xref ref="F_10_3_ruled">Figure</xref>, which shows the graph  of <m>f(x,y) = -xy</m>, for which <m>f_{xy} = -1</m>.
+  </p>
+  <figure xml:id="F_10_3_ruled">
+    <caption>The surface given by <m>z=f(x,y) = xy</m> </caption>
+    <interactive title="interactive-F_10_3_rules" platform="sage" width="100%" aspect="1:1.15">
+      <slate surface="sage">
+        from sage.plot.plot3d.plot3d import axes
+        scale=1.25
+        plot5=axes(scale,1,color="black",aspect_ratio=[1,1,1])
+        plot5+=text3d("x",(scale+0.25,0,0),fontsize=30)+text3d("y",(0,scale+0.25,0),fontsize=30)+text3d("z",(0,0,scale+0.25),fontsize=30)
+        var('x,y,z,t,s')
+        param(s,t)=(s,t,-s*t)
+        #set up grid      n is number of steps in s    m is number of steps in t  
+        #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+        n=10;m=12;a1=-1;a2=1;b1=-1;b2=1; 
+        #c1 is surface color     o1 is surface opacity
+        #c2 and o2 are for constant t value traces
+        #c3 and o3 are for constant s value traces
+        c1="gray"; c2="black"; c3="black"; o1=0.3; o2=0.7; o3=0.7;
+        plot5+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,frame=False)
+        for i in range(n+1):
+          sv=a1+i/n*(a2-a1)
+          plot5+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+        for i in range(m+1):
+          tv=b1+i/m*(b2-b1)
+          plot5+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+        show(plot5,viewpoint=[[-0.4417,-0.5254,-0.7272],117.13],camera_position=[5.5415,1.1735,2.0264])
+      </slate>
+    </interactive> 
+  </figure>
+    <!-- <figure xml:id="F_10_3_ruled">
       <caption>The graph of <m>f(x,y) = -xy</m>.</caption>
       <image width="50%" source="images/fig_10_3_ruled"/>
-    </figure>
+    </figure> -->
   </subsection>
 
   <subsection>
