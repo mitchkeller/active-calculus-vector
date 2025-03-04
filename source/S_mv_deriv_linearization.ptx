@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- **********************************************************************-->
-<!-- Copyright 2013-2018                                                   -->
-<!-- Steven Schlicker                                                      -->
+<!-- Copyright 2013-2025                                                  -->
+<!-- Nicholas Long, Mitchel Keller, Steven Schlicker                       -->
 <!--                                                                       -->
 <!-- This file is part of Active Calculus Multivariable.                   -->
 <!--                                                                       -->
@@ -13,140 +13,311 @@
 <!-- derivatives for profit.  All trademarks are the registered marks of   -->
 <!-- their respective owners.                                              -->
 <!-- **********************************************************************-->
-<section xml:id="S-10-4-Linearization">
+<section xml:id="S-10-4-Linearization" xmlns:xi="http://www.w3.org/2001/XInclude" >
   <title>Linearization: Tangent Planes and Differentials</title>
-  
-    <objectives>
-        <ul>
-          <li>
-            <p>
-              What does it mean for a function of two variables to be
-                  locally linear at a point?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              How do we find the equation of the plane tangent to a locally
-                  linear function at a point?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              What is the differential of a multivariable function of two
-                  variables and what are its uses?
-            </p>
-          </li>
-        </ul>
-    </objectives>
-
-    <introduction>
+  <objectives>
+    <ul>
+      <li>
+        <p>
+          What does it mean for a function of two variables to be locally linear at a point?
+        </p>
+      </li>
+      <li>
+        <p>
+          How do we find the equation of the plane tangent to a locally linear function at a point?
+        </p>
+      </li>
+      <li>
+        <p>
+          What is the differential of a multivariable function of two variables and what are its uses?
+        </p>
+      </li>
+    </ul>
+  </objectives>
+  <introduction>
     <p>
-      One of the central concepts in single variable calculus is that the
-      graph of a differentiable function, when viewed on a very small scale, looks like a
-      line. We call this line the tangent line and measure its slope with
-      the derivative. In this section, we will extend this concept to
-      functions of several variables.
+      In single variable calculus, we learned that a differentiable function is <em>locally linear</em>. <idx><h>locally linear</h></idx> In other words, if we zoom in on the graph of a differentiable function around a point, the graph will look like the tangent line to the function at that point. In <xref ref="LLline2" /> you can look at the graph of a curve and zoom in around a point on that curve to see that eventually the graph of the function will look linear. You can use the sliders above the plot to change how closely zoomed in the plot will be or change the location on the curve that you are examining. You should visually verify at a several points that this function is differentiable because at any point shown, the graph is locally linear.
     </p>
-
+    <figure xml:id="LLline2">
+      <caption>A plot with the ability to zoom in on a point of <m>y=f(x)</m>, where <m>f</m> is a nonlinear, differentiable function</caption>
+      <interactive title="interactive-LLline" platform="sage" width="100%" aspect="1:1">
+        <slate surface="sage">
+          @interact
+          def LLline(zoom=slider(0,8,1,default=0,label="Zoom"),val=slider(0,2,0.05,default=1.00,label="Location")):
+            var('x')
+            f(x)=x*cos(pi*x)
+            fv=f(val)
+            plot1=plot(f(x),(x,-4,4),color="black",gridlines=True,thickness=2)
+            plot1+=point((val,fv),color="black",size=40,xmin=val-2^(-zoom+1),xmax=val+2^(-zoom+1),ymin=fv-2^(-zoom+1),ymax=fv+2^(-zoom+1))
+            show(plot1)
+        </slate>
+      </interactive>
+    </figure>
     <p>
-      Let's see what happens when we look
-      at the graph of a two-variable function on a small scale. To begin, let's consider the function <m>f</m> defined by
+      When viewing our differentiable function on a very small scale, the graph will be very close to the graph of the tangent line. Remember that we can use the derivative of our function to find the slope of our tangent line as a measure of how tilted the graph is on a small scale. 
+    </p>
+    <p>
+      For graphs in the cartesian plane, there was only one type of flat graph, i.e. a line. When we generalized to higher dimensions, we saw how lines and planes would be considered flat graphs but lines would be considered a 1-dimensional flat graph (because there is only direction to move along the graph) and planes would be considered a 2 dimensional flat graph.
+    </p>
+    <p>
+      In <xref ref="tangentlines"/>, we saw that a curve, as the graph of a vector valued function of one variable, would be locally linear and approximated well by a tangent line if the function was differentiable. So a curve/vector valued function will be differentiable if the graph looks like a line on a small scale. Similarly, we will try to generalize our idea of local linearity and differentiability to the graph of a multivariable function by asking if the graph of the surface given by <m>z=f(x,y)</m> will look like a plane on a very small scale. 
+    </p>
+    <p>
+      To start our investigation, let's see what happens when we look at the graph of a <q>nice</q> two-variable function on a small scale. We will look at
       <me>
-        f(x,y) = 6 - \frac{x^2}2 - y^2,
+        f(x,y) = 6 - \frac{x^2}{2} - y^2,
       </me>
       whose graph is shown in <xref ref="F_10_4_tangent_1">Figure</xref>.
     </p>
-
     <figure xml:id="F_10_4_tangent_1">
+      <caption>A plot of <m>f(x,y)=6-\frac{x^2}{2}-y^2</m> with the point <m>(1,1,\frac{9}{2})</m> highlighted</caption>
+      <interactive label="interactive-F_10_4_tangent_1" platform="sage" width="100%" aspect="1:1">
+        <slate surface="sage">
+          var('x,y,t,s')
+          plot2=plot3d(6-x^2/2-y^2,(x,-2,2),(y,-2,2),color="blue",plot_points=21,opacity=0.4,mesh=True)
+          plot2+=parametric_plot3d((s,t,0),(s,-2,2),(t,-2,2),color="gray",opacity=0.2,plot_points=3,mesh=True)
+          plot2+=point((1,1,4.5),color="black",size=30)
+          plot2+=point((1,1,0),color="gray",size=30)
+          plot2+=line([(1,1,4.5),(1,1,0)],color="gray",thickness=2)
+          show(plot2,viewpoint=[[-0.3161,-0.525,-0.7902],129.11],camera_position=[7.2388,3.9416,3.9252],aspect_ratio=(1,1,0.5))
+        </slate>
+      </interactive>
+    </figure>
+    <!-- <figure xml:id="F_10_4_tangent_1">
       <caption>The graph of <m>f(x,y)=6-x^2/2 - y^2</m>.</caption>
       <image width="50%" source="images/fig_10_4_tangent_1"/>
-    </figure>
-
+    </figure> -->
     <p>
-      We choose to study the behavior of this function near the point <m>(x_0,
-      y_0) = (1,1)</m>. In particular, we wish to view the graph on an
-      increasingly small scale around this point, as shown in the two plots in <xref ref="F_10_4_tangent_2">Figure</xref>
+      We will examine the behavior of this function near the point <m>(x_0,y_0) = (1,1)</m> which has <m>f(1,1)=4.5</m>. In particular, we wish to view the graph on an increasingly small scale around the point <m>(1,1,4.5)</m>. In <xref ref="F_10_4_tangent_2">Figure</xref> you can use the slider labeled <q>Zoom</q> to change the scale on the plot. With a zoom of 0, you can see how the surface is curved very easily, but as you get past zoom level 3, the surface looks like a tilted plane. On plots like <xref ref="F_10_4_tangent_2">Figure</xref>, you should pay attention to the scale on the edge of the plot to see how small of a scale you are viewing around your point. 
     </p>
-
     <figure xml:id="F_10_4_tangent_2">
+      <caption>A plot of <m>f(x,y)=6-\frac{x^2}{2}-y^2</m> with the point <m>(1,1,\frac{9}{2})</m> highlighted and the option to zoom in around the highlighted point.</caption>
+      <interactive label="interactive-F_10_4_tangent_2" platform="sage" width="100%" aspect="1:1">
+        <slate surface="sage">
+          var('x,y')
+          @interact
+          def LLsurface(a=slider(0,6,1,default=0,label="Zoom")):
+            z=2*2^(-a)
+            plot3=plot3d(6-x^2/2-y^2,(x,1-z,1+z),(y,1-z,1+z),color="blue",plot_points=13,opacity=0.4,mesh=True)
+            plot3+=point((1,1,4.5),color="black",size=30*z)
+            show(plot3,viewpoint=[[-0.3161,-0.525,-0.7902],129.11],camera_position=[7.2388,3.9416,3.9252],aspect_ratio=(1,1,0.5))
+        </slate>
+      </interactive>
+    </figure>
+    <!-- <figure xml:id="F_10_4_tangent_2">
       <caption>The graph of <m>f(x,y)=6-x^2/2 - y^2</m>.</caption>
       <sidebyside widths="50% 50%">
       <image source="images/fig_10_4_tangent_2"/>
       <image source="images/fig_10_4_tangent_3"/>
       </sidebyside>
-    </figure>
+    </figure> -->
 
     <p>
-      Just as the graph of a differentiable single-variable function looks like a line
-      when viewed on a small scale, we see that the graph of this particular two-variable
-      function looks like a plane, as seen in <xref ref="F_10_4_tangent_4">Figure</xref>.
-      In the following preview activity, we explore how to find the equation of this plane.
+      Just as the graph of a differentiable single-variable function (or a differentiable vector valued function of one variable) looks like a line when viewed on a small scale, we see that the graph of this particular two-variable function looks like a plane, as seen in <xref ref="F_10_4_tangent_4">Figure</xref>. In the following preview activity, we will explore how to give the equation of this plane in terms of values related to our function <m>f(x,y)</m>.
     </p>
-
     <figure xml:id="F_10_4_tangent_4">
+      <caption>A plot of <m>f(x,y)=6-\frac{x^2}{2}-y^2</m> with tangent plane at the point <m>(1,1,\frac{9}{2})</m> drawn and the option to zoom in around <m>(1,1,\frac{9}{2})</m></caption>
+      <interactive label="interactive-F_10_4_tangent_4" platform="sage" width="100%" aspect="1:1">
+        <slate surface="sage">
+          var('x,y,s,t')
+          @interact
+          def LLsurface(a=slider(0,6,1,default=0,label="Zoom")):
+            z=2*2^(-a)
+            plot4=plot3d(6-x^2/2-y^2,(x,1-z,1+z),(y,1-z,1+z),color="blue",plot_points=13,opacity=0.4,mesh=True)
+            plot4+=point((1,1,4.5),color="black",size=30*z)
+            plot4+=parametric_plot3d((1-s,1-t,4.5+s+2*t),(s,-z,z),(t,-z,z),color="red",opacity=0.3,plot_points=5,mesh=True)
+            show(plot4,viewpoint=[[-0.5332,-0.5677,-0.6272],119],camera_position=[1.1679,1.0105,2.2664],aspect_ratio=(1,1,0.5))
+        </slate>
+      </interactive>
+    </figure>
+    <!-- <figure xml:id="F_10_4_tangent_4">
       <caption>The graph of <m>f(x,y)=6-x^2/2 - y^2</m>.</caption>
       <image width="50%" source="images/fig_10_4_tangent_4"/>
-    </figure>
-
-    <p>
-      In what follows, we will also use the important fact<fn>As we saw in <xref ref="S-Precalc-Planes">Section</xref>, the equation
-        of a plane passing through the point <m>(x_0, y_0, z_0)</m> may be written
-        in the form <m>A(x-x_0) + B(y-y_0) + C(z-z_0) = 0</m>.  If the
-        plane is not vertical, then <m>C\neq 0</m>, and we can
-        rearrange this and hence write
-      <m>C(z-z_0) = -A(x-x_0) - B(y-y_0)</m>
-      and thus
-      <md>
-        <mrow>z \amp  = z_0-\frac AC(x-x_0) - \frac BC(y-y_0)</mrow>
-        <mrow>\amp  = z_0 + a(x-x_0) + b(y-y_0)</mrow>
-      </md>
-      where <m>a=-A/C</m> and <m>b=-B/C</m>, respectively.</fn> that the plane passing through <m>(x_0, y_0, z_0)</m> may be expressed in the form
-      <m>z = z_0 + a(x-x_0) + b(y-y_0)</m>, where <m>a</m> and <m>b</m> are constants.
-    </p>
-
-    <exploration xml:id="PA_10_4">
+    </figure> -->
+    <proposition xml:id="nvplaneeqn">
       <statement>
         <p>
-          Let <m>f(x,y) = 6 - \frac{x^2}2 - y^2</m>, and let <m>(x_0,y_0)
-            = (1,1)</m>.
-          <ol marker="a.">
-            <li>
-              <p>
-                Evaluate <m>f(x,y) = 6 - \frac{x^2}2 - y^2</m> and its partial derivatives at <m>(x_0,y_0)</m>;  that is, find <m>f(1,1)</m>, <m>f_x(1,1)</m>, and <m>f_y(1,1)</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                We know one point on the tangent plane;  namely, the <m>z</m>-value of the tangent
-                  plane agrees with the <m>z</m>-value on the graph of <m>f(x,y) = 6 - \frac{x^2}2 - y^2</m> at the point <m>(x_0,
-                  y_0)</m>.  In other words, both the tangent plane and the graph of the function <m>f</m> contain the point <m>(x_0, y_0, z_0)</m>. Use this observation to determine <m>z_0</m> in the expression
-                  <m>z = z_0 + a(x-x_0) + b(y-y_0)</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Sketch the traces of <m>f(x,y) = 6 - \frac{x^2}2 - y^2</m> for <m>y=y_0=1</m> and <m>x=x_0=1</m>
-                  below in <xref ref="F_10_4_traces">Figure</xref>.
-
-                <figure xml:id="F_10_4_traces">
-                  <caption>The traces of <m>f(x,y)</m> with <m>y=y_0=1</m> and <m>x=x_0=1</m>.</caption>
-                  <sidebyside widths="50% 50%">
-                  <image source="images/fig_10_4_tangent_trace_y"/>
-                  <image source="images/fig_10_4_tangent_trace_x"/>
-                  </sidebyside>
-                </figure>
-
-              </p>
-            </li>
-
-            <li>
+          A non-vertical plane that goes through the point <m>(x_0,y_0,z_0)</m> can be expressed in the form <m>z = z_0 + a(x-x_0) + b(y-y_0)</m>, where <m>a</m> and <m>b</m> are constants.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          As we saw in <xref ref="S-Precalc-Planes">Section</xref>, the equation of a plane passing through the point <m>(x_0, y_0, z_0)</m> may be written in the form <m>A(x-x_0) + B(y-y_0) + C(z-z_0) = 0</m>.  If the plane is not vertical, then <m>C\neq 0</m>, and we can rearrange this equation and write <m>C(z-z_0) = -A(x-x_0) - B(y-y_0)</m> and thus
+          <md>
+            <mrow>z \amp  = z_0-\frac{A}{C}(x-x_0) - \frac{B}{C}(y-y_0)</mrow>
+            <mrow>\amp  = z_0 + a(x-x_0) + b(y-y_0)</mrow>
+          </md>
+          where <m>a=-A/C</m> and <m>b=-B/C</m>, respectively.
+        </p>
+        <p>
+          After our work in the Preview Activity, we will look at how to obtain this equation in terms of the normal vector of this plane that best describes the surface at a particular point.
+        </p>
+      </proof>
+    </proposition>
+    <exploration xml:id="PA_10_4">
+    <introduction>
+      <p>
+        We want to find the equation of the plane (of the form given in <xref ref="nvplaneeqn"/>) that best describes the surface given by <m>z=f(x,y)=6-\frac{x^2}2 - y^2</m>, around the input <m>(x_0,y_0) = (1,1)</m>. In particular, we will need to find the proper values of <m>z_0</m>, <m>a</m>, and <m>b</m>. 
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          Evaluate <m>f(x,y) = 6 - \frac{x^2}2 - y^2</m> and its partial derivatives at <m>(x_0,y_0)</m>;  that is, find <m>f(1,1)</m>, <m>f_x(1,1)</m>, and <m>f_y(1,1)</m>.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          Since <m>f_x(x,y) = -x</m> and <m>f_y(x,y) = -2y</m> we have <m>f(1,1) = \frac{9}{2}</m>, <m>f_x(1,1) = -1</m>, and <m>f_y(1,1) = -2</m>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          Since <m>f_x(x,y) = -x</m> and <m>f_y(x,y) = -2y</m> we have <m>f(1,1) = \frac{9}{2}</m>, <m>f_x(1,1) = -1</m>, and <m>f_y(1,1) = -2</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          The value <m>z_0</m> from <xref ref="nvplaneeqn"/> will need to be the <m>z</m>-coordinate value where our plane will intersect the surface. What is the <m>z</m>-coordinate of the point where the plane and the surface intersect?
+          <!-- We know one point on the tangent plane;  namely, the <m>z</m>-value of the tangent plane agrees with the <m>z</m>-value on the graph of <m>f(x,y) = 6 - \frac{x^2}2 - y^2</m> at the point <m>(x_0, y_0)</m>.  In other words, both the tangent plane and the graph of the function <m>f</m> contain the point <m>(x_0, y_0, z_0)</m>. Use this observation to determine <m>z_0</m> in the expression <m>z = z_0 + a(x-x_0) + b(y-y_0)</m>. -->
+        </p>
+      </statement>
+      <answer>
+        <p>
+          4.5
+        </p>
+      </answer>
+      <solution>
+        <p>
+          Since <m>f(1,1) = \frac{9}{2}</m> we must have <m>z_0=\frac{9}{2}</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          If our plane will best describe the surface near our input <m>(x_0,y_0)</m>, then the plane will also fit the behavior of the traces <m>x=1</m> and <m>y=1</m> near our point of interest.
+        </p>
+        <p>
+          Sketch the traces of <m>f(x,y) = 6 - \frac{x^2}2 - y^2</m> for <m>y=y_0=1</m> and <m>x=x_0=1</m> below in <xref ref="F_10_4_traces">Figure</xref>. Draw the tangent lines to the each of the traces when the input (either <m>x</m> or <m>y</m> as appropriate) is 1. 
+        </p>
+        <figure xml:id="F_10_4_traces">
+          <caption>The traces of <m>f(x,y)</m> with <m>y=y_0=1</m> and <m>x=x_0=1</m>.</caption>
+          <sidebyside widths="50% 50%">
+          <image source="images/fig_10_4_tangent_trace_y"/>
+          <image source="images/fig_10_4_tangent_trace_x"/>
+          </sidebyside>
+        </figure>
+      </statement>
+      <answer>
+        <p>
+          The slope of the tangent line to the trace of <m>f</m> with <m>y=1</m> (in the <m>x</m> direction) at <m>x_0=1</m> is <m>f_x(1,1) = -1</m>. So the equation of this tangent line is <m>y = \frac{9}{2} - (x-1)</m>.
+        </p>
+        <p>
+          The slope of the tangent line to the trace of <m>f</m> with <m>x=1</m> (in the <m>y</m> direction) at <m>y_0=1</m> is <m>f_y(1,1) = -2</m>. So the equation of this tangent line is <m>y = \frac{9}{2} - (y-1)</m>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          The slope of the tangent line to the trace of <m>f</m> with <m>y=1</m> (in the <m>x</m> direction) at <m>x_0=1</m> is <m>f_x(1,1) = -1</m>. So the equation of this tangent line is <m>y = \frac{9}{2} - (x-1)</m>.
+        </p>
+        <p>
+          The slope of the tangent line to the trace of <m>f</m> with <m>x=1</m> (in the <m>y</m> direction) at <m>y_0=1</m> is <m>f_y(1,1) = -2</m>. So the equation of this tangent line is <m>y = \frac{9}{2} - (y-1)</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Give the slopes of the tangent lines to the traces that you drew in the previous part and write a few sentences to explain why the tilt of the tangent plane in the <m>x</m>-direction is given by the partial derivative of <m>f_x</m> and the tilt of the tangent plane in the <m>y</m>-direction is given by the partial derivative of <m>f_y</m>. You will likely want to talk about how each of these slopes/partial derivatives relates to the traces (of the surface and the plane) in <xref ref="F_10_4_tangent_traces"/>.
+        </p>
+        <figure xml:id="F_10_4_tangent_traces">
+          <caption>A plot of <m>f(x,y)=6-\frac{x^2}{2}-y^2</m> with tangent plane at the point <m>(1,1,\frac{9}{2})</m> </caption>
+          <interactive label="interactive-F_10_4_tangent_traces" platform="sage" width="100%" aspect="1:1">
+            <slate surface="sage">
+              var('x,y,z,t,s')
+              f(x,y)=6-x^2/2-y^2
+              param(s,t)=(s,t,f(s,t))
+              param2(s,t)=(s,t,4.5-(s-1)-2*(t-1))
+              #set up grid      n is number of steps in s    m is number of steps in t  
+              #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+              n=6;m=6;a1=1/2;a2=1.5;b1=1/2;b2=1.5; 
+              #c1 is surface color     o1 is surface opacity
+              #c2 and o2 are for constant t value traces
+              #c3 and o3 are for constant s value traces
+              c1="blue"; c2="black"; c3="black"; o1=0.3; o2=0.8; o3=0.8;
+              plot6=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+              plot6+=parametric_plot3d(param2,(s,a1,a2),(t,b1,b2),color="red",opacity=o1)
+              for i in range(n+1):
+                sv=a1+i/n*(a2-a1)
+                plot6+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+                plot6+=parametric_plot3d(param2(sv,t),(t,b1,b2),color=c2,opacity=o2)
+              for i in range(m+1):
+                tv=b1+i/m*(b2-b1)
+                plot6+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+                plot6+=parametric_plot3d(param2(s,tv),(s,a1,a2),color=c3,opacity=o3)
+              plot6+=point((1,1,4.5),color="black",size=10)
+              sv=1; plot6+=parametric_plot3d(param(sv,t),(t,b1,b2),color="blue",opacity=1,thickness=3)
+              tv=1; plot6+=parametric_plot3d(param(s,tv),(s,a1,a2),color="blue",opacity=1,thickness=3)
+              sv=1; plot6+=parametric_plot3d(param2(sv,t),(t,b1,b2),color="red",opacity=1,thickness=3)
+              tv=1; plot6+=parametric_plot3d(param2(s,tv),(s,a1,a2),color="red",opacity=1,thickness=3)
+              show(plot6,aspect_ratio=(1,1,0.35),viewpoint=[[-0.396,-0.6577,-0.6407],137.81],camera_position=[3.2568,2.1949,1.6581])
+            </slate>
+          </interactive>
+        </figure>
+      </statement>
+      <answer>
+        <p>
+          The tangent line of the trace on the surface in the <m>x</m> direction at the point <m>(x_0,y_0,z_0)</m> is the same as the tangent line found in the last part of this activity with <m>y</m> constant at <m>1</m>. The slope of this line tells us how <m>z</m> changes as we change only the <m>x</m> coordinate at this point. So that slope, <m>f_x(x_0,y_0)</m>, should be the value of <m>a</m> in the equation <m>z = z_0+a(x-x_0) + b(y-y_0)</m> of the tangent plane. In other words, <m>f_x(x_0,y_0)</m> should be equal to <m>z_x(x_0,y_0)</m>.
+        </p> 
+        <p>
+          The tangent line of the trace on the surface in the <m>y</m> direction at the point <m>(x_0,y_0,z_0)</m> is the same as the tangent line <m>y = \frac{9}{2} - (y-1)</m> just found with <m>x</m> constant at <m>1</m>. The slope of this line tells us how <m>z</m> changes as we change only the <m>y</m> coordinate at this point. So that slope, <m>f_y(x_0,y_0)</m>, should be the value of <m>b</m> in the equation <m>z = z_0+a(x-x_0) + b(y-y_0)</m> of the tangent plane. In other words, <m>f_y(x_0,y_0)</m> should be equal to <m>z_y(x_0,y_0)</m>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          The tangent line of the trace on the surface in the <m>x</m> direction at the point <m>(x_0,y_0,z_0)</m> is the same as the tangent line found in the last part of this activity with <m>y</m> constant at <m>1</m>. The slope of this line tells us how <m>z</m> changes as we change only the <m>x</m> coordinate at this point. So that slope, <m>f_x(x_0,y_0)</m>, should be the value of <m>a</m> in the equation <m>z = z_0+a(x-x_0) + b(y-y_0)</m> of the tangent plane. In other words, <m>f_x(x_0,y_0)</m> should be equal to <m>z_x(x_0,y_0)</m>.
+        </p> 
+        <p>
+          The tangent line of the trace on the surface in the <m>y</m> direction at the point <m>(x_0,y_0,z_0)</m> is the same as the tangent line <m>y = \frac{9}{2} - (y-1)</m> just found with <m>x</m> constant at <m>1</m>. The slope of this line tells us how <m>z</m> changes as we change only the <m>y</m> coordinate at this point. So that slope, <m>f_y(x_0,y_0)</m>, should be the value of <m>b</m> in the equation <m>z = z_0+a(x-x_0) + b(y-y_0)</m> of the tangent plane. In other words, <m>f_y(x_0,y_0)</m> should be equal to <m>z_y(x_0,y_0)</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Fill in the blanks below with the proper values to give the tangent plane to the graph of <m>f(x,y)=6-x^2/2 - y^2</m> at the point <m>(x_0,y_0)=(1,1)</m>.
+          <me>z=z_0 + a(x-x_0) + b(y-y_0)= \underline{\hspace{1cm}} + \underline{\hspace{1cm}}(x-\underline{\hspace{1cm}}) +\underline{\hspace{1cm}}(y-\underline{\hspace{1cm}})</me> 
+        </p>
+      </statement>
+      <answer>
+        <p>
+          The equation of the tangent plane to the graph of
+          <m>f(x,y)=6-x^2/2 - y^2</m> at the point <m>(x_0,y_0)=(1,1)</m> is
+          <md>
+            <mrow> z \amp = z_0 + a(x-x_0) + b(y-y_0)</mrow>
+            <mrow> \amp = z_0 + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)</mrow>
+            <mrow> \amp = \frac{9}{2} - (x-1) - 2(y-1) </mrow>
+          </md>
+        </p>
+      </answer>
+      <solution>
+        <p>
+          The equation of the tangent plane to the graph of
+          <m>f(x,y)=6-x^2/2 - y^2</m> at the point <m>(x_0,y_0)=(1,1)</m> is
+          <md>
+            <mrow> z \amp = z_0 + a(x-x_0) + b(y-y_0)</mrow>
+            <mrow> \amp = z_0 + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)</mrow>
+            <mrow> \amp = \frac{9}{2} - (x-1) - 2(y-1) </mrow>
+          </md>
+        </p>
+      </solution>
+    </task>
+            <!-- <li>
               <p>
                 Determine the equation of the tangent line of the trace that you sketched in the previous part with <m>y=1</m> (in the <m>x</m> direction) at the point <m>x_0=1</m>.
-
                 <figure xml:id="F_10_4_tangent_traces">
                   <caption>The traces of <m>f(x,y)</m> and the tangent plane.</caption>
                   <sidebyside widths="50% 50%">
@@ -154,163 +325,19 @@
                   <image source="images/fig_10_4_tangent_6"/>
                   </sidebyside>
                 </figure>
-
               </p>
             </li>
-
             <li xml:id="PA_10_4_tangent_line_plane">
               <p>
                 <xref ref="F_10_4_tangent_traces">Figure</xref> shows the traces of the function and the traces of the tangent plane.  Explain how the tangent line of the trace of <m>f</m>, whose equation you found in the last part of this activity, is related to the tangent plane.  How does this observation help you determine the constant <m>a</m> in the equation for the tangent plane <m>z = z_0+a(x-x_0) + b(y-y_0)</m>?  (Hint: How do you think <m>f_x(x_0,y_0)</m> should be related to <m>z_x(x_0,y_0)</m>?)
               </p>
             </li>
-
             <li>
               <p>
                 In a similar way to what you did in (d), determine the equation of the tangent line of the trace with <m>x=1</m> at the point <m>y_0=1</m>.  Explain how this tangent line is related to the tangent plane, and use this observation to determine the constant <m>b</m> in the equation for the tangent plane <m>z=z_0+a(x-x_0) + b(y-y_0)</m>. (Hint: How do you think <m>f_y(x_0,y_0)</m> should be related to <m>z_y(x_0,y_0)</m>?)
               </p>
             </li>
-
-            <li>
-              <p>
-                Finally, write the equation <m>z=z_0 + a(x-x_0) + b(y-y_0)</m> of the tangent
-                  plane to the graph of <m>f(x,y)=6-x^2/2 - y^2</m> at the point
-                  <m>(x_0,y_0)=(1,1)</m>.
-              </p>
-            </li>
-          </ol>
-        </p>
-      </statement>  
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              Since <m>f_x(x,y) = -x</m> and
-              <m>f_y(x,y) = -2y</m> we have <m>f(1,1) = \frac{9}{2}</m>,
-              <m>f_x(1,1) = -1</m>, and <m>f_y(1,1) = -2</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Since <m>f(1,1) = \frac{9}{2}</m> we must have <m>z_0=\frac{9}{2}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The slope of the tangent line to the trace of <m>f</m> with <m>y=1</m>
-              (in the <m>x</m> direction)
-              at <m>x_0=1</m> is <m>f_x(1,1) = -1</m>.
-              So the equation of this tangent line is <m>y = \frac{9}{2} - (x-1)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The tangent line of the trace on the surface in the <m>x</m> direction at the point
-              <m>(x_0,y_0,z_0)</m> is the same as the tangent line found in the last part of this activity with <m>y</m> constant at <m>1</m>.
-              The slope of this line tells us how <m>z</m> changes as we change only the <m>x</m> coordinate at this point.
-              So that slope, <m>f_x(x_0,y_0)</m>,
-              should be the value of <m>a</m> in the equation
-              <m>z = z_0+a(x-x_0) + b(y-y_0)</m> of the tangent plane.
-              In other words,
-              <m>f_x(x_0,y_0)</m> should be equal to <m>z_x(x_0,y_0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The slope of the tangent line to the trace of <m>f</m> with <m>x=1</m>
-              (in the <m>y</m> direction)
-              at <m>y_0=1</m> is <m>f_y(1,1) = -2</m>.
-              So the equation of this tangent line is <m>y = \frac{9}{2} - (y-1)</m>.
-              The tangent line of the trace on the surface in the <m>y</m> direction at the point
-              <m>(x_0,y_0,z_0)</m> is the same as the tangent line
-              <m>y = \frac{9}{2} - (y-1)</m> just found with <m>x</m> constant at <m>1</m>.
-              The slope of this line tells us how <m>z</m> changes as we change only the <m>y</m> coordinate at this point.
-              So that slope, <m>f_y(x_0,y_0)</m>,
-              should be the value of <m>b</m> in the equation
-              <m>z = z_0+a(x-x_0) + b(y-y_0)</m> of the tangent plane.
-              In other words,
-              <m>f_y(x_0,y_0)</m> should be equal to <m>z_y(x_0,y_0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The equation of the tangent plane to the graph of
-              <m>f(x,y)=6-x^2/2 - y^2</m> at the point <m>(x_0,y_0)=(1,1)</m> is
-              <md>
-                <mrow> z \amp = z_0 + a(x-x_0) + b(y-y_0)</mrow>
-                <mrow> \amp = z_0 + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)</mrow>
-                <mrow> \amp = \frac{9}{2} - (x-1) - 2(y-1) </mrow>
-              </md>.
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              Since <m>f_x(x,y) = -x</m> and
-              <m>f_y(x,y) = -2y</m> we have <m>f(1,1) = \frac{9}{2}</m>,
-              <m>f_x(1,1) = -1</m>, and <m>f_y(1,1) = -2</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Since <m>f(1,1) = \frac{9}{2}</m> we must have <m>z_0=\frac{9}{2}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The slope of the tangent line to the trace of <m>f</m> with <m>y=1</m>
-              (in the <m>x</m> direction)
-              at <m>x_0=1</m> is <m>f_x(1,1) = -1</m>.
-              So the equation of this tangent line is <m>y = \frac{9}{2} - (x-1)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The tangent line of the trace on the surface in the <m>x</m> direction at the point
-              <m>(x_0,y_0,z_0)</m> is the same as the tangent line found in the last part of this activity with <m>y</m> constant at <m>1</m>.
-              The slope of this line tells us how <m>z</m> changes as we change only the <m>x</m> coordinate at this point.
-              So that slope, <m>f_x(x_0,y_0)</m>,
-              should be the value of <m>a</m> in the equation
-              <m>z = z_0+a(x-x_0) + b(y-y_0)</m> of the tangent plane.
-              In other words,
-              <m>f_x(x_0,y_0)</m> should be equal to <m>z_x(x_0,y_0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The slope of the tangent line to the trace of <m>f</m> with <m>x=1</m>
-              (in the <m>y</m> direction)
-              at <m>y_0=1</m> is <m>f_y(1,1) = -2</m>.
-              So the equation of this tangent line is <m>y = \frac{9}{2} - (y-1)</m>.
-              The tangent line of the trace on the surface in the <m>y</m> direction at the point
-              <m>(x_0,y_0,z_0)</m> is the same as the tangent line
-              <m>y = \frac{9}{2} - (y-1)</m> just found with <m>x</m> constant at <m>1</m>.
-              The slope of this line tells us how <m>z</m> changes as we change only the <m>y</m> coordinate at this point.
-              So that slope, <m>f_y(x_0,y_0)</m>,
-              should be the value of <m>b</m> in the equation
-              <m>z = z_0+a(x-x_0) + b(y-y_0)</m> of the tangent plane.
-              In other words,
-              <m>f_y(x_0,y_0)</m> should be equal to <m>z_y(x_0,y_0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The equation of the tangent plane to the graph of
-              <m>f(x,y)=6-x^2/2 - y^2</m> at the point <m>(x_0,y_0)=(1,1)</m> is
-              <md>
-                <mrow> z \amp = z_0 + a(x-x_0) + b(y-y_0)</mrow>
-                <mrow> \amp = z_0 + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)</mrow>
-                <mrow> \amp = \frac{9}{2} - (x-1) - 2(y-1) </mrow>
-              </md>.
-            </p>
-          </li>
-        </ol>
-      </solution>
-
+ -->
     </exploration>
   </introduction>
 
