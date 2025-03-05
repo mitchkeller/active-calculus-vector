@@ -344,532 +344,546 @@
   <subsection>
     <title>The Tangent Plane</title>
     <p>
-      Before stating the formula for the equation of the tangent plane at a point for a general function <m>f=f(x,y)</m>, we need to discuss a technical
-      condition. As we have noted, when we look at the graph of a single-variable
-      function on a small scale near a point <m>x_0</m>, we expect to see a line;
-      in this case, we say that <em><m>f</m> is locally linear near <m>x_0</m></em> since the graph looks like a linear function locally around <m>x_0</m>. Of course, there are functions, such as the absolute value function given by <m>f(x)=|x|</m>, that are not locally linear at every point. In single-variable calculus, we learn that if the derivative of a function exists at a point, then the function is guaranteed to be locally linear there.
+      Before we state a general formula for the equation of the tangent plane at a particular point on the graph of <m>z=f(x,y)</m>, we need to discuss a technical
+      condition and look at a couple of examples of functions that are NOT locally linear.
     </p>
-
+    <p>  
+      As we have noted, when we look at the graph of a <q>nice</q> single-variable function on a small scale near a point <m>x_0</m>, we expect to see a line; in this case, we say that <em><m>f</m> is locally linear near <m>x_0</m></em> since the graph looks like a linear function locally around <m>x_0</m>. Of course, there are functions, such as the absolute value function given by <m>f(x)=|x|</m>, that are not locally linear at every point. In single-variable calculus, we learn that if the derivative of a function exists at a point, then the function is guaranteed to be locally linear there.
+    </p>
     <p>
       In a similar way, we say that a two-variable function <em><m>f</m> is locally linear<idx><h>function</h><h>locally linear</h></idx> near <m>(x_0,y_0)</m></em> provided that the graph of <m>f</m> looks like a plane (its <em>tangent plane</em>) when viewed on a small scale near <m>(x_0,y_0)</m>. How can we tell when a function of two variables is locally linear at a point?
     </p>
-
+    <example>
+      <task>
+        <statement>
+          <p>
+            If you looked at a graph of the function <m>f(x,y)=|x|+|y|</m>, you would see that no matter how much you zoom in around the origin (or any point on the surface with either <m>x</m> or <m>y</m> zero), the surface will never look like a plane. This function is continuous at every point, but neither partial derivative will be defined when either <m>x</m> or <m>y</m> are zero. 
+          </p>
+          <figure xml:id="absxabsy">
+            <caption>A plot of <m>f(x,y)=|x|+|y|</m> </caption>
+            <interactive label="interactive-absxabsy" platform="sage" width="100%" aspect="1:1">
+              <slate surface="sage">
+                from sage.plot.plot3d.plot3d import axes
+                plot8=axes(2.5,1,color="black")+text3d("x",(3,0,0),fontsize=30)+text3d("y",(0,3,0),fontsize=30)+text3d("z",(0,0,3),fontsize=30)
+                var('x,y')
+                plot8+=plot3d(abs(x)+abs(y),(x,-2,2),(y,-2,2),plot_points=31,mesh=True,opacity=0.8)
+                show(plot8)
+              </slate>
+            </interactive>
+          </figure>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            It is not unreasonable to expect that if <m>f_x(a,b)</m> and <m>f_y(a,b)</m> exist for some function <m>f</m> at a point <m>(a,b)</m>, then <m>f</m> is locally linear at <m>(a,b)</m>. This is not sufficient, however. Let us consider, the function <m>f</m> defined by <m>f(x,y) = x^{1/3} y^{1/3}</m>. In <xref ref="Ez_10_4_0">Exercise</xref> you are asked to show that <m>f_x(0,0)</m> and <m>f_y(0,0)</m> both exist, but that <m>f</m> is not locally linear at <m>(0,0)</m>. You can see from the figure below that as you zoom in around the origin, the graph will not flatten out and look planar. 
+          </p>
+          <figure xml:id="x13y13">
+            <caption>A plot of <m>f(x,y)= x^{1/3} y^{1/3}</m> </caption>
+            <interactive label="interactive-x13y13" platform="sage" width="100%" aspect="1:1">
+              <slate surface="sage">
+                var('x,y,t,s')
+                f(x,y)=x^(1/3.)*y^(1/3.)
+                @interact
+                def notLL1(a=slider(0,6,1,default=0,label="Zoom:")):
+                    b=2^(-a)
+                    p1=parametric_plot3d((s,t,f(s,t)),(s,0,b),(t,0,b),mesh=True,plot_points=21,opacity=0.5)
+                    p1+=parametric_plot3d((-s,-t,f(s,t)),(s,0,b),(t,0,b),mesh=True,plot_points=21,opacity=0.5)
+                    p1+=parametric_plot3d((-s,t,-f(s,t)),(s,0,b),(t,0,b),mesh=True,plot_points=21,opacity=0.5)
+                    p1+=parametric_plot3d((s,-t,-f(s,t)),(s,0,b),(t,0,b),mesh=True,plot_points=21,opacity=0.5)
+                    show(p1)
+              </slate>
+            </interactive>
+          </figure>
+        </statement>
+      </task>
+    </example>
     <p>
-      It is not unreasonable to expect that if <m>f_x(a,b)</m> and <m>f_y(a,b)</m> exist for some function <m>f</m> at a point <m>(a,b)</m>, then <m>f</m> is locally linear at <m>(a,b)</m>. This is not sufficient, however. As an example, consider the function <m>f</m> defined by <m>f(x,y) = x^{1/3} y^{1/3}</m>. In <xref ref="Ez_10_4_0">Exercise</xref> you are asked to show that <m>f_x(0,0)</m> and <m>f_y(0,0)</m> both exist, but that <m>f</m> is not locally linear at <m>(0,0)</m> (see <xref ref="F_10_4_Not_diff">Figure</xref>). So the existence of the two first order partial derivatives at a point does not guarantee local linearity at that point. 
+      It would take us too far afield to provide a rigorous discussion of differentiability of functions of more than one variable (but <xref ref="Ez_10_4_4">Exercise</xref> covers some of these details). We will be content to define a stronger, but more easily verified, set of conditions that ensure local linearity. 
     </p>
-
-    <p>
-      It would take us too far afield to provide a rigorous dicussion of differentiability of functions of more than one variable (see <xref ref="Ez_10_4_4">Exercise</xref> for a little more detail), so we will be content to define stronger, but more easily verified, conditions that ensure local linearity. 
-    </p>
-
     <assemblage xml:id="Differentiablity">
       <title>Differentiablity</title>
-    <p>
-      If <m>f</m> is a function of the independent variables <m>x</m> and <m>y</m> and both <m>f_x</m> and <m>f_y</m> exist and are continuous in an open disk containing the point <m>(x_0,y_0)</m>, then <m>f</m> is <em>continuously differentiable</em><idx><h>function</h><h>continuously differentiable</h></idx> at <m>(x_0,y_0)</m>.
-    </p>
+      <p>
+        If <m>f</m> is a function of the independent variables <m>x</m> and <m>y</m> and both <m>f_x</m> and <m>f_y</m> exist and are continuous in an open disk containing the point <m>(x_0,y_0)</m>, then <m>f</m> is <em>continuously differentiable</em><idx><h>function</h><h>continuously differentiable</h></idx> at <m>(x_0,y_0)</m>.
+      </p>
     </assemblage>
 
     <p>
-      As a consequence, whenever a function <m>z = f(x,y)</m> is continuously differentiable at a point <m>(x_0,y_0)</m>, it follows that the function has a tangent plane at <m>(x_0,y_0)</m>. Viewed up close, the tangent plane and the function are then virtually indistinguishable. (We won't formally define differentiability of multivariable functions here, and for our purposes continuous differentiability is the only condition we will ever need to use. It is important to note that continuous differentiability is a stronger condition than differentiability. All of the results we encounter will apply to differentiable functions, and so also apply to continuously differentiable functions.)  In addition, as in <xref ref="PA_10_4">Preview Activity</xref>, we find the following general formula for the tangent plane. 
+      Whenever a function <m>z = f(x,y)</m> is continuously differentiable at a point <m>(x_0,y_0)</m>, it follows that the function has a tangent plane at <m>(x_0,y_0)</m>. WHich means that when viewed up close, the tangent plane and the graph of the function are virtually indistinguishable. We won't formally define differentiability of multivariable functions in this text. For our purposes, continuous differentiability is the only condition we will need to use. It is important to note that continuous differentiability is a stronger condition than differentiability. All of the results we encounter will apply to differentiable functions, and so also apply to continuously differentiable functions.
+    </p>
+    <p>  
+       Now that we have a good set of conditions to check if it makes sense to give a tangent plane, we return to the result of <xref ref="PA_10_4">Preview Activity</xref> and  have the following general formula for the tangent plane. 
     </p>
 
     <assemblage xml:id="Tangent-plane">
       <title>The tangent plane</title>
-    <p>
-      If <m>f(x,y)</m> has continuous first-order partial derivatives, then the equation of the plane tangent to the graph of <m>f</m> at the point <m>(x_0,y_0,f(x_0,y_0))</m> is
-      <men xml:id="eq_10_4_tan_plane">
-        z = f(x_0,y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0).
-      </men>
-    </p>
+      <p>
+        If <m>f(x,y)</m> has continuous first-order partial derivatives, then the equation of the plane tangent to the graph of <m>f</m> at the point <m>(x_0,y_0,f(x_0,y_0))</m> is
+        <men xml:id="eq_10_4_tan_plane">
+          z = f(x_0,y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0).
+        </men>
+      </p>
     </assemblage>
-
     <p>
-        <em>Important Note:</em> As can be seen in <xref ref="Ez_10_4_0">Exercise</xref>, it is possible that <m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m> can exist for a function <m>f</m>, and so the plane <m>z = f(x_0,y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)</m> exists even though <m>f</m> is not locally linear at <m>(x_0,y_0)</m> (because the graph of <m>f</m> does not look linear when we zoom in around the point <m>(x_0,y_0)</m>). In such a case this plane is not tangent to the graph. Differentiability for a function of two variables implies the existence of a tangent plane, but the existence of the two first order partial derivatives of a function at a point does not imply differentiaility. This is quite different than what happens in single variable calculus. 
+        <em>Important Note:</em> As can be seen in <xref ref="Ez_10_4_0">Exercise</xref>, it is possible that <m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m> can exist for a function <m>f</m>, and so the plane <m>z = f(x_0,y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)</m> exists even though <m>f</m> is not locally linear at <m>(x_0,y_0)</m>. The graph of <m>f</m> (<xref ref="x13y13" />) does not look linear when we zoom in around the point <m>(x_0,y_0)</m>, so the plane given is not tangent to the graph. Differentiability for a function of two variables implies the existence of a tangent plane, but the existence of the two first order partial derivatives of a function at a point does not imply differentiaility. This is quite different than what happens in single variable calculus. 
     </p>
-
     <p>
-      Finally, one important note about the form of the equation for the tangent plane, <m>z = f(x_0,y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)</m>. Say, for example, that we have the particular tangent plane <m>z = 7 - 2(x-3) + 4(y+1)</m>. Observe that we can immediately read from this form that <m>f_x(3,-1) = -2</m> and <m>f_y(3,-1) = 4</m>; furthermore, <m>f_x(3,-1)=-2</m> is the slope of the trace to both <m>f</m> and the tangent plane in the <m>x</m>-direction at <m>(3,-1)</m>. In the same way, <m>f_y(3,-1) = 4</m> is the slope of the trace of both <m>f</m> and the tangent plane in the <m>y</m>-direction at <m>(3,-1)</m>.
+      Finally, one important note about the form of the equation for the tangent plane, <m>z = f(x_0,y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)</m>. Say, for example, that we have a particular tangent plane given by <m>z = 7 - 2(x-3) + 4(y+1)</m>. We can immediately read from this form that <m>f_x(3,-1) = -2</m> and <m>f_y(3,-1) = 4</m>; furthermore, <m>f_x(3,-1)=-2</m> is the slope of the trace to both <m>f</m> and the tangent plane in the <m>x</m>-direction at <m>(3,-1)</m>. In the same way, <m>f_y(3,-1) = 4</m> is the slope of the trace of both <m>f</m> and the tangent plane in the <m>y</m>-direction at <m>(3,-1)</m>.
     </p>
-
+    <!-- I don't really like this activity but this might be a nice low end thing to do after the heavier discussion of not locally linear -->
     <activity xml:id="A_10_4_1">
+    <task>
       <statement>
-        <ol marker="a.">
-          <li>
-            <p>
-                Find the equation of the tangent plane to <m>f(x,y) = 2 + 4x - 3y</m> at the point <m>(1,2)</m>. Simplify as much as possible. Does the result surprise you? Explain.  
-            </p>
-          </li>
-          <li>
-            <p>
-              Find the equation of the tangent plane to <m>f(x,y) = x^2y</m> at the point <m>(1,2)</m>.
-            </p>
-          </li>
-        </ol>
-      </statement>  
-
+        <p>
+          Find the equation of the tangent plane to <m>f(x,y) = 2 + 4x - 3y</m> at the point <m>(1,2)</m>. Simplify as much as possible. Does the result surprise you? Explain.  
+        </p>
+      </statement>
       <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              Since <m>\frac{\partial f}{\partial x} = 4</m> and <m>\frac{\partial f}{\partial y} = -3</m> we have
-              <m>f_x(1,2) = 4</m> and <m>f_y(1,2) = -3</m>.
-              So the equation of the plane tangent to <m>f</m> at <m>(1,2)</m> is
-              <me>
-                z = f_x(1,2)(x-1) + f_y(1,2)(y-2) + f(1,2)
-              </me>
-              or
-              <me>
-                z = 4(x-1) + (-3)(y-2) + 0
-              </me>.
-              Simplifying yields 
-              <me>
-                z = 4x -3y + 2
-              </me>, 
-              which is the same as the original function! However, note that the original function is the function of a plane. Since the tangent plane is the plane that is closest to (or best approximates) the original function at the point of tangency, it makes sense that the tangent plane to a plane is exactly the original plane itself.
-            </p>
-          </li>
-          <li>
-            <p>
-              Since <m>\frac{\partial f}{\partial x} = 2xy</m> and <m>\frac{\partial f}{\partial y} = x^2</m> we have
-              <m>f_x(1,2) = 4</m> and <m>f_y(1,2) =1</m>.
-              So the equation of the plane tangent to <m>f</m> at <m>(1,2)</m> is
-              <me>
-                z = f_x(1,2)(x-1) + f_y(1,2)(y-2) + f(1,2)
-              </me>
-              or
-              <me>
-                z = 4(x-1) + (y-2) + 2
-              </me>.
-            </p>
-          </li>  
-        </ol>  
+        <p>
+          Since <m>\frac{\partial f}{\partial x} = 4</m> and <m>\frac{\partial f}{\partial y} = -3</m> we have <m>f_x(1,2) = 4</m> and <m>f_y(1,2) = -3</m>. So the equation of the plane tangent to <m>f</m> at <m>(1,2)</m> is
+          <me>
+            z = f_x(1,2)(x-1) + f_y(1,2)(y-2) + f(1,2)
+          </me>
+          or
+          <me>
+            z = 4(x-1) + (-3)(y-2) + 0
+          </me>.
+          Simplifying yields 
+          <me>
+            z = 4x -3y + 2
+          </me>, 
+          which is the same as the original function! However, note that the original function is the function of a plane. Since the tangent plane is the plane that is closest to (or best approximates) the original function at the point of tangency, it makes sense that the tangent plane to a plane is exactly the original plane itself.
+        </p>
       </answer>
-
       <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              Since <m>\frac{\partial f}{\partial x} = 4</m> and <m>\frac{\partial f}{\partial y} = -3</m> we have
-              <m>f_x(1,2) = 4</m> and <m>f_y(1,2) = -3</m>.
-              So the equation of the plane tangent to <m>f</m> at <m>(1,2)</m> is
-              <me>
-                z = f_x(1,2)(x-1) + f_y(1,2)(y-2) + f(1,2)
-              </me>
-              or
-              <me>
-                z = 4(x-1) + (-3)(y-2) + 0
-              </me>.
-              Simplifying yields 
-              <me>
-                z = 4x -3y + 2
-              </me>, 
-              which is the same as the original function! However, note that the original function is the function of a plane. Since the tangent plane is the plane that is closest to (or best approximates) the original function at the point of tangency, it makes sense that the tangent plane to a plane is exactly the original plane itself.
-            </p>
-          </li>
-          <li>
-            <p>
-              Since <m>\frac{\partial f}{\partial x} = 2xy</m> and <m>\frac{\partial f}{\partial y} = x^2</m> we have
-              <m>f_x(1,2) = 4</m> and <m>f_y(1,2) =1</m>.
-              So the equation of the plane tangent to <m>f</m> at <m>(1,2)</m> is
-              <me>
-                z = f_x(1,2)(x-1) + f_y(1,2)(y-2) + f(1,2)
-              </me>
-              or
-              <me>
-                z = 4(x-1) + (y-2) + 2
-              </me>.
-            </p>
-          </li>  
-        </ol>  
+        <p>
+          Since <m>\frac{\partial f}{\partial x} = 4</m> and <m>\frac{\partial f}{\partial y} = -3</m> we have <m>f_x(1,2) = 4</m> and <m>f_y(1,2) = -3</m>. So the equation of the plane tangent to <m>f</m> at <m>(1,2)</m> is
+          <me>
+            z = f_x(1,2)(x-1) + f_y(1,2)(y-2) + f(1,2)
+          </me>
+          or
+          <me>
+            z = 4(x-1) + (-3)(y-2) + 0
+          </me>.
+          Simplifying yields 
+          <me>
+            z = 4x -3y + 2
+          </me>, 
+          which is the same as the original function! However, note that the original function is the function of a plane. Since the tangent plane is the plane that is closest to (or best approximates) the original function at the point of tangency, it makes sense that the tangent plane to a plane is exactly the original plane itself.
+        </p>
       </solution>
-
-
+    </task>
+    <task>
+      <statement>
+        <p>
+          Find the equation of the tangent plane to <m>f(x,y) = x^2y</m> at the point <m>(1,2)</m>.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          Since <m>\frac{\partial f}{\partial x} = 2xy</m> and <m>\frac{\partial f}{\partial y} = x^2</m> we have <m>f_x(1,2) = 4</m> and <m>f_y(1,2) =1</m>. So the equation of the plane tangent to <m>f</m> at <m>(1,2)</m> is
+          <me>
+            z = f_x(1,2)(x-1) + f_y(1,2)(y-2) + f(1,2)
+          </me>
+          or
+          <me>
+            z = 4(x-1) + (y-2) + 2
+          </me>
+        </p>
+      </answer>
+      <solution>
+        <p>
+          Since <m>\frac{\partial f}{\partial x} = 2xy</m> and <m>\frac{\partial f}{\partial y} = x^2</m> we have <m>f_x(1,2) = 4</m> and <m>f_y(1,2) =1</m>. So the equation of the plane tangent to <m>f</m> at <m>(1,2)</m> is
+          <me>
+            z = f_x(1,2)(x-1) + f_y(1,2)(y-2) + f(1,2)
+          </me>
+          or
+          <me>
+            z = 4(x-1) + (y-2) + 2
+          </me>
+        </p>
+      </solution>
+    </task>  
     </activity>
   </subsection>
-
-
   <subsection>
     <title>Linearization</title>
     <p>
-      In single variable calculus, an important use of the tangent line is
-      to approximate the value of a differentiable function. Near the point <m>x_0</m>, the
-      tangent line to the graph of <m>f</m> at <m>x_0</m> is close to the
-      graph of <m>f</m> near <m>x_0</m>, as shown in <xref ref="F_10_4_2d_linear">Figure</xref>.
+      In single variable calculus, an important use of the tangent line is to approximate the value of a differentiable function. Near the point <m>x_0</m>, the tangent line to the graph of <m>f</m> at <m>x_0</m> is close to the graph of <m>f</m> near <m>x_0</m>, as shown in <xref ref="LL2">Figure</xref>. You can see how the tangent line is a good approximation for a small region around the highlighted point and the smaller the scale around the point, the better the approximation is. 
     </p>
-
-    <figure xml:id="F_10_4_2d_linear">
+    <figure xml:id="LL2">
+      <caption>A plot of a locally linear function <m>f</m> </caption>
+      <interactive label="interactive-LL2" platform="sage" width="100%" aspect="1:1">
+        <slate surface="sage">
+          @interact
+          def LL2D(zoom=slider(0,8,1,default=0,label="Zoom")):
+            var('x')
+            val=1
+            s=0.8
+            f(x)=x*cos(pi*x)
+            df(x)=diff(f,x)
+            fv=f(val)
+            dfv=df(val)
+            plot1=plot(f(x),(x,-4,4),color="black",gridlines=True,thickness=2)
+            plot1+=line([(1-s,fv-dfv*s),(1+s,fv+s*dfv)],color="red",thickness=2)
+            plot1+=point((val,fv),color="black",size=40,xmin=val-2^(-zoom+1),xmax=val+2^(-zoom+1),ymin=fv-2^(-zoom+1),ymax=fv+2^(-zoom+1))
+            show(plot1)
+        </slate>
+      </interactive>
+    </figure>
+    <!-- <figure xml:id="F_10_4_2d_linear">
       <caption>The linearization of the single-variable function <m>f(x)</m>.</caption>
       <sidebyside widths="50% 50%">
       <image source="images/fig_10_4_2d_linear"/>
       <image source="images/fig_10_4_2d_linear_gray"/>
       </sidebyside>
-    </figure>
+    </figure> -->
 
     <p>
       In this single-variable setting, we let <m>L</m> denote the function whose graph is the tangent line, and thus
       <me>
         L(x) = f(x_0) + f'(x_0)(x-x_0)
       </me>
+      Furthermore, observe that <m>f(x) \approx L(x)</m> near <m>x_0</m>. We call <m>L</m> the <em>linearization</em> of <m>f</m>.
     </p>
-
     <p>
-      Furthermore, observe that <m>f(x) \approx L(x)</m> near <m>x_0</m>. We call <m>L</m> the
-      <em>linearization</em> of <m>f</m>.
-    </p>
-
-    <p>
-      In the same way, the tangent plane to the graph of a differentiable function <m>z = f(x,y)</m> at a point
-      <m>(x_0,y_0)</m> provides a good approximation of <m>f(x,y)</m> near <m>(x_0,
-      y_0)</m>. Here, we define the linearization, <m>L</m>, to be the two-variable function whose
-      graph is the tangent plane, and thus
+      In the same way, the tangent plane to the graph of a differentiable function <m>z = f(x,y)</m> at a point <m>(x_0,y_0)</m> provides a good approximation of <m>f(x,y)</m> near <m>(x_0, y_0)</m>. Here, we define the <term>linearization</term>, <m>L</m>, to be the two-variable function whose graph is the tangent plane, and thus
       <me>
-        L(x,y) = f(x_0,y_0) + f_x(x_0,y_0)(x-x_0) +
-        f_y(x_0,y_0)(y-y_0).
+        L(x,y) = f(x_0,y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)
       </me>
+      Finally, note that <m>f(x,y)\approx L(x,y)</m> for points near <m>(x_0, y_0)</m>, which is illustrated in <xref ref="F_10_4_tangent_9">Figure</xref>.
     </p>
-
-    <p>
-      Finally, note that <m>f(x,y)\approx L(x,y)</m> for points near <m>(x_0,
-      y_0)</m>. This is illustrated in <xref ref="F_10_4_tangent_9">Figure</xref>.
-    </p>
-
     <figure xml:id="F_10_4_tangent_9">
+      <caption>A plot of a locally linear function <m>f(x,y)</m> </caption>
+      <interactive label="interactive-F_10_4_tangent_9" platform="sage" width="100%" aspect="1:1">
+        <slate surface="sage">
+          var('x,y,s,t')
+          a=2
+          z=2*2^(-a)
+          plot6=plot3d(6-x^2/2-y^2,(x,1-z,1+z),(y,1-z,1+z),color="blue",plot_points=13,opacity=0.4,mesh=True)
+          plot6+=point((1,1,4.5),color="black",size=30*z)
+          plot6+=parametric_plot3d((1-s,1-t,4.5+s+2*t),(s,-z,z),(t,-z,z),color="red",opacity=0.3,plot_points=5,mesh=True)
+          show(plot6,viewpoint=[[-0.5332,-0.5677,-0.6272],119],camera_position=[1.1679,1.0105,2.2664],aspect_ratio=(1,1,0.3))
+        </slate>
+      </interactive>
+    </figure>
+    <!-- <figure xml:id="F_10_4_tangent_9">
       <caption>The linearization of <m>f(x,y)</m>.</caption>
       <image width="50%" source="images/fig_10_4_tangent_9"/>
-    </figure>
-
+    </figure> -->
     <activity xml:id="A_10_4_11">
+    <introduction>
+      <p>
+        In this activity, we will find the linearization of several different functions that are given in algebraic, tabular, or graphical form.
+      </p>
+    </introduction>
+    <task>
       <statement>
         <p>
-          In what follows, we find the linearization of several different functions that are given in algebraic, tabular, or graphical form.
-          <ol marker="a.">
-            <li>
-              <p>
-                Find the linearization <m>L(x,y)</m> for the function <m>g</m> defined by
-                <me>
-                  g(x,y) = \frac{x}{x^2+y^2}
-                </me>
-                at the point <m>(1,2)</m>.  Then use the linearization to estimate the value of
-                <m>g(0.8, 2.3)</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <xref ref="T_10_4_wind_chill">Table</xref> provides a collection of values of the wind chill <m>w(v,T)</m>, in degrees Fahrenheit, as a function of  wind speed, in miles per hour, and temperature, also in degrees Fahrenheit.
-
-                <table xml:id="T_10_4_wind_chill">
-                  <title>Wind chill as a function of wind speed and temperature.</title>
-                  <tabular halign="center" bottom="minor" top="minor">
-                    <row bottom="medium">
-                      <cell><m>v \backslash T</m></cell>
-                      <cell><m>-30</m></cell>
-                      <cell><m>-25</m></cell>
-                      <cell><m>-20</m></cell>
-                      <cell><m>-15</m></cell>
-                      <cell><m>-10</m></cell>
-                      <cell><m>-5</m></cell>
-                      <cell><m>0</m></cell>
-                      <cell><m>5</m></cell>
-                      <cell><m>10</m></cell>
-                      <cell><m>15</m></cell>
-                      <cell><m>20</m></cell>
-                    </row>
-                    <row>
-                      <cell><m>5</m></cell>
-                      <cell><m>-46</m></cell>
-                      <cell><m>-40</m></cell>
-                      <cell><m>-34</m></cell>
-                      <cell><m>-28</m></cell>
-                      <cell><m>-22</m></cell>
-                      <cell><m>-16</m></cell>
-                      <cell><m>-11</m></cell>
-                      <cell><m>-5</m></cell>
-                      <cell><m>1</m></cell>
-                      <cell><m>7</m></cell>
-                      <cell><m>13</m></cell>
-                    </row>
-                    <row>
-                      <cell><m>10</m></cell>
-                      <cell><m>-53</m></cell>
-                      <cell><m>-47</m></cell>
-                      <cell><m>-41</m></cell>
-                      <cell><m>-35</m></cell>
-                      <cell><m>-28</m></cell>
-                      <cell><m>-22</m></cell>
-                      <cell><m>-16</m></cell>
-                      <cell><m>-10</m></cell>
-                      <cell><m>-4</m></cell>
-                      <cell><m>3</m></cell>
-                      <cell><m>9</m></cell>
-                    </row>
-                    <row>
-                      <cell><m>15</m></cell>
-                      <cell><m>-58</m></cell>
-                      <cell><m>-51</m></cell>
-                      <cell><m>-45</m></cell>
-                      <cell><m>-39</m></cell>
-                      <cell><m>-32</m></cell>
-                      <cell><m>-26</m></cell>
-                      <cell><m>-19</m></cell>
-                      <cell><m>-13</m></cell>
-                      <cell><m>-7</m></cell>
-                      <cell><m>0</m></cell>
-                      <cell><m>6</m></cell>
-                    </row>
-                    <row>
-                      <cell><m>20</m></cell>
-                      <cell><m>-61</m></cell>
-                      <cell><m>-55</m></cell>
-                      <cell><m>-48</m></cell>
-                      <cell><m>-42</m></cell>
-                      <cell><m>-35</m></cell>
-                      <cell><m>-29</m></cell>
-                      <cell><m>-22</m></cell>
-                      <cell><m>-15</m></cell>
-                      <cell><m>-9</m></cell>
-                      <cell><m>-2</m></cell>
-                      <cell><m>4</m></cell>
-                    </row>
-                    <row>
-                      <cell><m>25</m></cell>
-                      <cell><m>-64</m></cell>
-                      <cell><m>-58</m></cell>
-                      <cell><m>-51</m></cell>
-                      <cell><m>-44</m></cell>
-                      <cell><m>-37</m></cell>
-                      <cell><m>-31</m></cell>
-                      <cell><m>-24</m></cell>
-                      <cell><m>-17</m></cell>
-                      <cell><m>-11</m></cell>
-                      <cell><m>-4</m></cell>
-                      <cell><m>3</m></cell>
-                    </row>
-                    <row>
-                      <cell><m>30</m></cell>
-                      <cell><m>-67</m></cell>
-                      <cell><m>-60</m></cell>
-                      <cell><m>-53</m></cell>
-                      <cell><m>-46</m></cell>
-                      <cell><m>-39</m></cell>
-                      <cell><m>-33</m></cell>
-                      <cell><m>-26</m></cell>
-                      <cell><m>-19</m></cell>
-                      <cell><m>-12</m></cell>
-                      <cell><m>-5</m></cell>
-                      <cell><m>1</m></cell>
-                    </row>
-                    <row>
-                      <cell><m>35</m></cell>
-                      <cell><m>-69</m></cell>
-                      <cell><m>-62</m></cell>
-                      <cell><m>-55</m></cell>
-                      <cell><m>-48</m></cell>
-                      <cell><m>-41</m></cell>
-                      <cell><m>-34</m></cell>
-                      <cell><m>-27</m></cell>
-                      <cell><m>-21</m></cell>
-                      <cell><m>-14</m></cell>
-                      <cell><m>-7</m></cell>
-                      <cell><m>0</m></cell>
-                    </row>
-                    <row>
-                      <cell><m>40</m></cell>
-                      <cell><m>-71</m></cell>
-                      <cell><m>-64</m></cell>
-                      <cell><m>-57</m></cell>
-                      <cell><m>-50</m></cell>
-                      <cell><m>-43</m></cell>
-                      <cell><m>-36</m></cell>
-                      <cell><m>-29</m></cell>
-                      <cell><m>-22</m></cell>
-                      <cell><m>-15</m></cell>
-                      <cell><m>-8</m></cell>
-                      <cell><m>-1</m></cell>
-                    </row>
-                  </tabular>
-                </table>
-
-                Use the data to first estimate the appropriate partial derivatives, and then find the linearization <m>L(v,T)</m> at the point <m>(20,-10)</m>.  Finally, use the linearization to estimate <m>w(10,-10)</m>, <m>w(20,-12)</m>, and <m>w(18,-12)</m>. Compare your results to what you obtained in <xref ref="A_10_2_12">Activity</xref>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <xref ref="F_10_4_activity_contour">Figure</xref> gives a contour
-                  plot of a continuously differentiable function <m>f</m>.
-
-                <figure xml:id="F_10_4_activity_contour">
-                  <caption>A contour plot of <m>f(x,y)</m>.</caption>
-                  <image width="50%" source="images/fig_10_3_activity_contour"/>
-                </figure>
-
-                After estimating appropriate partial derivatives, determine the linearization <m>L(x,y)</m> at the point <m>(2,1)</m>, and use it to
-                  estimate <m>f(2.2, 1)</m>, <m>f(2, 0.8)</m>, and <m>f(2.2, 0.8)</m>.
-              </p>
-            </li>
-          </ol>
+          Find the linearization <m>L(x,y)</m> for the function <m>g</m> defined by
+          <me>
+            g(x,y) = \frac{x}{x^2+y^2}
+          </me>
+          at the point <m>(1,2)</m>.  Then use the linearization to estimate the value of <m>g(0.8, 2.3)</m>.
         </p>
       </statement>
-
       <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              To find the linearization of <m>g</m> we need the first order partials.
-              Now
-              <md>
-                <mrow>g_x(x,y) \amp = \frac{(x^2+y^2)-2x^2}{(x^2+y^2)^2} = \frac{y^2-x^2}{(x^2+y^2)^2}</mrow>
-                <mrow>g_y(x,y) \amp = \frac{-2xy}{(x^2+y^2)^2}</mrow>
-              </md>.
-              So the linearization of <m>g</m> at the point (1,2) is
-              <md>
-                <mrow> L(x,y) \amp = g(1,2) +g_x(1,2)(x-1) + g_y(1,2)(y-2)</mrow>
-                <mrow> \amp = \frac{1}{5} + \frac{3}{25}(x-1) - \frac{4}{25}(y-2) </mrow>
-              </md>.
-              It follows that
-              <me>
-                g(0.8,2.3) \approx L(0.8,2.3) = \frac{1}{5} - \frac{3}{25}(0.2) - \frac{4}{25}(0.3) = 0.128
-              </me>.
-              Since <m>g(0.8,2.3) \approx 0.135</m>,
-              we have a fair approximation.
-              This should be expected since the step sizes of 0.2 and 0.3 are not that small.
-            </p>
-          </li>
-          <li>
-            <p>
-              We need <m>w_v(25,-10)</m> and
-              <m>w_T(25,-10)</m> to find the linearization.
-              Using the symmetric difference quotients gives us
-              <md>
-                <mrow>w_v(25,-10) \amp \approx \frac{w(30,-10)-w(20,-10)}{10} = \frac{-39-(-35)}{10} = -0.4</mrow>
-                <mrow>w_T(25,-10) \amp \approx \frac{w(25,-5)-w(25,-15)}{10} = \frac{-31-(-44)}{10} = 0.7</mrow>
-              </md>.
-              So the linearization of <m>w</m> at <m>(25, -10)</m> is
-              <me>
-                L(v,T) \approx -37 - 0.4(v-25) + 0.7(T+10)
-              </me>.
-              Thus,
-              <md>
-                <mrow>w(25,-12) \amp \approx L(25,-12) \approx -37 - 0.4(0) + 0.7(-2) = -38.4</mrow>
-                <mrow>w(23, -10) \amp \approx L(23,-10) \approx -37 - 0.4(-2) + 0.7(0) = -36.2</mrow>
-                <mrow>w(23, -12) \amp \approx L(23,-12) \approx -37 - 0.4(-2) + 0.7(-2) = -37.6</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-              We need <m>f_x(2,1)</m> and
-              <m>f_y(2,1)</m> to find the linearization.
-              Using the symmetric difference quotients gives us
-              <md>
-                <mrow>f_x(2,1) \amp \approx \frac{f(3,1)-f(1,1)}{2} \approx \frac{1.9-4.8)}{2} = -1.45</mrow>
-                <mrow>f_y(2,1) \amp \approx \frac{f(2,2)-f(2,0)}{2} \approx \frac{4.3-1.8}{10} = 1.25</mrow>
-              </md>.
-              So the linearization of <m>f</m> at <m>(2, 1)</m> is
-              <me>
-                L(x,y) \approx 3 - 1.45(x-2) + 1.25(y-1)
-              </me>.
-              Thus,
-              <md>
-                <mrow>f(2.2,1) \amp \approx L(2.2,1) \approx 3 - 1.45(0.2) + 1.25(0) = 2.71</mrow>
-                <mrow>f(2, 0.8) \amp \approx L(2, 0.8) \approx 3 - 1.45(0) + 1.25(-0.2) = 2.75</mrow>
-                <mrow>f(-1.8, 2.1) \amp \approx L(2.2, 0.8) \approx 3 - 1.45(0.2) + 1.25(-0.2) = 2.46</mrow>
-              </md>.
-              The last two should be poor approximations since we are approximating quite far from the base point of <m>(2,1)</m>.
-            </p>
-          </li>
-        </ol>
+        <p>
+          To find the linearization of <m>g</m> we need the first order partials. Now
+          <md>
+            <mrow>g_x(x,y) \amp = \frac{(x^2+y^2)-2x^2}{(x^2+y^2)^2} = \frac{y^2-x^2}{(x^2+y^2)^2}</mrow>
+            <mrow>g_y(x,y) \amp = \frac{-2xy}{(x^2+y^2)^2}</mrow>
+          </md>.
+          So the linearization of <m>g</m> at the point (1,2) is
+          <md>
+            <mrow> L(x,y) \amp = g(1,2) +g_x(1,2)(x-1) + g_y(1,2)(y-2)</mrow>
+            <mrow> \amp = \frac{1}{5} + \frac{3}{25}(x-1) - \frac{4}{25}(y-2) </mrow>
+          </md>.
+          It follows that
+          <me>
+            g(0.8,2.3) \approx L(0.8,2.3) = \frac{1}{5} - \frac{3}{25}(0.2) - \frac{4}{25}(0.3) = 0.128
+          </me>.
+          Since <m>g(0.8,2.3) \approx 0.135</m>, we have a fair approximation. This should be expected since the step sizes of 0.2 and 0.3 are not that small.
+        </p>
       </answer>
-
       <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              To find the linearization of <m>g</m> we need the first order partials.
-              Now
-              <md>
-                <mrow>g_x(x,y) \amp = \frac{(x^2+y^2)-2x^2}{(x^2+y^2)^2} = \frac{y^2-x^2}{(x^2+y^2)^2}</mrow>
-                <mrow>g_y(x,y) \amp = \frac{-2xy}{(x^2+y^2)^2}</mrow>
-              </md>.
-              So the linearization of <m>g</m> at the point (1,2) is
-              <md>
-                <mrow> L(x,y) \amp = g(1,2) +g_x(1,2)(x-1) + g_y(1,2)(y-2)</mrow>
-                <mrow> \amp = \frac{1}{5} + \frac{3}{25}(x-1) - \frac{4}{25}(y-2) </mrow>
-              </md>.
-              It follows that
-              <me>
-                g(0.8,2.3) \approx L(0.8,2.3) = \frac{1}{5} - \frac{3}{25}(0.2) - \frac{4}{25}(0.3) = 0.128
-              </me>.
-              Since <m>g(0.8,2.3) \approx 0.135</m>,
-              we have a fair approximation.
-              This should be expected since the step sizes of 0.2 and 0.3 are not that small.
-            </p>
-          </li>
-          <li>
-            <p>
-              We need <m>w_v(25,-10)</m> and
-              <m>w_T(25,-10)</m> to find the linearization.
-              Using the symmetric difference quotients gives us
-              <md>
-                <mrow>w_v(25,-10) \amp \approx \frac{w(30,-10)-w(20,-10)}{10} = \frac{-39-(-35)}{10} = -0.4</mrow>
-                <mrow>w_T(25,-10) \amp \approx \frac{w(25,-5)-w(25,-15)}{10} = \frac{-31-(-44)}{10} = 0.7</mrow>
-              </md>.
-              So the linearization of <m>w</m> at <m>(25, -10)</m> is
-              <me>
-                L(v,T) \approx -37 - 0.4(v-25) + 0.7(T+10)
-              </me>.
-              Thus,
-              <md>
-                <mrow>w(25,-12) \amp \approx L(25,-12) \approx -37 - 0.4(0) + 0.7(-2) = -38.4</mrow>
-                <mrow>w(23, -10) \amp \approx L(23,-10) \approx -37 - 0.4(-2) + 0.7(0) = -36.2</mrow>
-                <mrow>w(23, -12) \amp \approx L(23,-12) \approx -37 - 0.4(-2) + 0.7(-2) = -37.6</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-              We need <m>f_x(2,1)</m> and
-              <m>f_y(2,1)</m> to find the linearization.
-              Using the symmetric difference quotients gives us
-              <md>
-                <mrow>f_x(2,1) \amp \approx \frac{f(3,1)-f(1,1)}{2} \approx \frac{1.9-4.8)}{2} = -1.45</mrow>
-                <mrow>f_y(2,1) \amp \approx \frac{f(2,2)-f(2,0)}{2} \approx \frac{4.3-1.8}{10} = 1.25</mrow>
-              </md>.
-              So the linearization of <m>f</m> at <m>(2, 1)</m> is
-              <me>
-                L(x,y) \approx 3 - 1.45(x-2) + 1.25(y-1)
-              </me>.
-              Thus,
-              <md>
-                <mrow>f(2.2,1) \amp \approx L(2.2,1) \approx 3 - 1.45(0.2) + 1.25(0) = 2.71</mrow>
-                <mrow>f(2, 0.8) \amp \approx L(2, 0.8) \approx 3 - 1.45(0) + 1.25(-0.2) = 2.75</mrow>
-                <mrow>f(-1.8, 2.1) \amp \approx L(2.2, 0.8) \approx 3 - 1.45(0.2) + 1.25(-0.2) = 2.46</mrow>
-              </md>.
-              The last two should be poor approximations since we are approximating quite far from the base point of <m>(2,1)</m>.
-            </p>
-          </li>
-        </ol>
+        <p>
+          To find the linearization of <m>g</m> we need the first order partials. Now
+          <md>
+            <mrow>g_x(x,y) \amp = \frac{(x^2+y^2)-2x^2}{(x^2+y^2)^2} = \frac{y^2-x^2}{(x^2+y^2)^2}</mrow>
+            <mrow>g_y(x,y) \amp = \frac{-2xy}{(x^2+y^2)^2}</mrow>
+          </md>.
+          So the linearization of <m>g</m> at the point (1,2) is
+          <md>
+            <mrow> L(x,y) \amp = g(1,2) +g_x(1,2)(x-1) + g_y(1,2)(y-2)</mrow>
+            <mrow> \amp = \frac{1}{5} + \frac{3}{25}(x-1) - \frac{4}{25}(y-2) </mrow>
+          </md>.
+          It follows that
+          <me>
+            g(0.8,2.3) \approx L(0.8,2.3) = \frac{1}{5} - \frac{3}{25}(0.2) - \frac{4}{25}(0.3) = 0.128
+          </me>.
+          Since <m>g(0.8,2.3) \approx 0.135</m>, we have a fair approximation. This should be expected since the step sizes of 0.2 and 0.3 are not that small.
+        </p>
       </solution>
-
+    </task>  
+    <task>
+      <statement>
+        <p>
+          <xref ref="T_10_4_wind_chill">Table</xref> provides a collection of values of the wind chill <m>w(v,T)</m>, in degrees Fahrenheit, as a function of  wind speed, in miles per hour, and temperature, also in degrees Fahrenheit.
+        </p>
+        <table xml:id="T_10_4_wind_chill">
+          <title>Wind chill as a function of wind speed and temperature</title>
+          <tabular halign="center">
+            <row>
+              <cell><m>v \backslash T</m></cell>
+              <!-- <cell bottom="medium"><m>-30</m></cell>
+              <cell bottom="medium"><m>-25</m></cell> -->
+              <cell bottom="medium"><m>-20</m></cell>
+              <cell bottom="medium"><m>-15</m></cell>
+              <cell bottom="medium"><m>-10</m></cell>
+              <cell bottom="medium"><m>-5</m></cell>
+              <cell bottom="medium"><m>0</m></cell>
+              <cell bottom="medium"><m>5</m></cell>
+              <cell bottom="medium"><m>10</m></cell>
+             <!--  <cell bottom="medium"><m>15</m></cell>
+              <cell bottom="medium"><m>20</m></cell> -->
+            </row>
+            <!-- <row>
+              <cell right="medium"><m>5</m></cell>
+              <cell><m>-46</m></cell>
+              <cell><m>-40</m></cell>
+              <cell><m>-34</m></cell>
+              <cell><m>-28</m></cell>
+              <cell><m>-22</m></cell>
+              <cell><m>-16</m></cell>
+              <cell><m>-11</m></cell>
+              <cell><m>-5</m></cell>
+              <cell><m>1</m></cell>
+              <cell><m>7</m></cell>
+              <cell><m>13</m></cell>
+            </row> -->
+            <row>
+              <cell right="medium"><m>10</m></cell>
+              <!-- <cell><m>-53</m></cell>
+              <cell><m>-47</m></cell> -->
+              <cell><m>-41</m></cell>
+              <cell><m>-35</m></cell>
+              <cell><m>-28</m></cell>
+              <cell><m>-22</m></cell>
+              <cell><m>-16</m></cell>
+              <cell><m>-10</m></cell>
+              <cell><m>-4</m></cell>
+              <!-- <cell><m>3</m></cell>
+              <cell><m>9</m></cell> -->
+            </row>
+            <row>
+              <cell right="medium"><m>15</m></cell>
+              <!-- <cell><m>-58</m></cell>
+              <cell><m>-51</m></cell> -->
+              <cell><m>-45</m></cell>
+              <cell><m>-39</m></cell>
+              <cell><m>-32</m></cell>
+              <cell><m>-26</m></cell>
+              <cell><m>-19</m></cell>
+              <cell><m>-13</m></cell>
+              <cell><m>-7</m></cell>
+              <!-- <cell><m>0</m></cell>
+              <cell><m>6</m></cell> -->
+            </row>
+            <row>
+              <cell right="medium"><m>20</m></cell>
+              <!-- <cell><m>-61</m></cell>
+              <cell><m>-55</m></cell> -->
+              <cell><m>-48</m></cell>
+              <cell><m>-42</m></cell>
+              <cell><m>-35</m></cell>
+              <cell><m>-29</m></cell>
+              <cell><m>-22</m></cell>
+              <cell><m>-15</m></cell>
+              <cell><m>-9</m></cell>
+              <!-- <cell><m>-2</m></cell>
+              <cell><m>4</m></cell> -->
+            </row>
+            <row>
+              <cell right="medium"><m>25</m></cell>
+              <!-- <cell><m>-64</m></cell>
+              <cell><m>-58</m></cell> -->
+              <cell><m>-51</m></cell>
+              <cell><m>-44</m></cell>
+              <cell><m>-37</m></cell>
+              <cell><m>-31</m></cell>
+              <cell><m>-24</m></cell>
+              <cell><m>-17</m></cell>
+              <cell><m>-11</m></cell>
+              <!-- <cell><m>-4</m></cell>
+              <cell><m>3</m></cell> -->
+            </row>
+            <row>
+              <cell right="medium"><m>30</m></cell>
+              <!-- <cell><m>-67</m></cell>
+              <cell><m>-60</m></cell> -->
+              <cell><m>-53</m></cell>
+              <cell><m>-46</m></cell>
+              <cell><m>-39</m></cell>
+              <cell><m>-33</m></cell>
+              <cell><m>-26</m></cell>
+              <cell><m>-19</m></cell>
+              <cell><m>-12</m></cell>
+             <!--  <cell><m>-5</m></cell>
+              <cell><m>1</m></cell> -->
+            </row>
+            <row>
+              <cell right="medium"><m>35</m></cell>
+              <!-- <cell><m>-69</m></cell>
+              <cell><m>-62</m></cell> -->
+              <cell><m>-55</m></cell>
+              <cell><m>-48</m></cell>
+              <cell><m>-41</m></cell>
+              <cell><m>-34</m></cell>
+              <cell><m>-27</m></cell>
+              <cell><m>-21</m></cell>
+              <cell><m>-14</m></cell>
+              <!-- <cell><m>-7</m></cell>
+              <cell><m>0</m></cell> -->
+            </row>
+            <!-- <row>
+              <cell right="medium"><m>40</m></cell>
+              <cell><m>-71</m></cell>
+              <cell><m>-64</m></cell>
+              <cell><m>-57</m></cell>
+              <cell><m>-50</m></cell>
+              <cell><m>-43</m></cell>
+              <cell><m>-36</m></cell>
+              <cell><m>-29</m></cell>
+              <cell><m>-22</m></cell>
+              <cell><m>-15</m></cell>
+              <cell><m>-8</m></cell>
+              <cell><m>-1</m></cell>
+            </row> -->
+          </tabular>
+        </table>
+        <p>
+          Use the data to first estimate the appropriate partial derivatives, and then find the linearization <m>L(v,T)</m> at the point <m>(20,-10)</m>.  Finally, use the linearization to estimate <m>w(10,-10)</m>, <m>w(20,-12)</m>, and <m>w(18,-12)</m>. Compare your results to what you obtained in <xref ref="A_10_2_12">Activity</xref>.
+        </p>
+      </statement>
+      <answer>
+        <p>
+           We need <m>w_v(25,-10)</m> and <m>w_T(25,-10)</m> to find the linearization. Using the symmetric difference quotients gives us
+          <md>
+            <mrow>w_v(25,-10) \amp \approx \frac{w(30,-10)-w(20,-10)}{10} = \frac{-39-(-35)}{10} = -0.4</mrow>
+            <mrow>w_T(25,-10) \amp \approx \frac{w(25,-5)-w(25,-15)}{10} = \frac{-31-(-44)}{10} = 0.7</mrow>
+          </md>.
+          So the linearization of <m>w</m> at <m>(25, -10)</m> is
+          <me>
+            L(v,T) \approx -37 - 0.4(v-25) + 0.7(T+10)
+          </me>.
+          Thus,
+          <md>
+            <mrow>w(25,-12) \amp \approx L(25,-12) \approx -37 - 0.4(0) + 0.7(-2) = -38.4</mrow>
+            <mrow>w(23, -10) \amp \approx L(23,-10) \approx -37 - 0.4(-2) + 0.7(0) = -36.2</mrow>
+            <mrow>w(23, -12) \amp \approx L(23,-12) \approx -37 - 0.4(-2) + 0.7(-2) = -37.6</mrow>
+          </md>
+        </p>
+      </answer>
+      <solution>
+        <p>
+           We need <m>w_v(25,-10)</m> and <m>w_T(25,-10)</m> to find the linearization. Using the symmetric difference quotients gives us
+          <md>
+            <mrow>w_v(25,-10) \amp \approx \frac{w(30,-10)-w(20,-10)}{10} = \frac{-39-(-35)}{10} = -0.4</mrow>
+            <mrow>w_T(25,-10) \amp \approx \frac{w(25,-5)-w(25,-15)}{10} = \frac{-31-(-44)}{10} = 0.7</mrow>
+          </md>.
+          So the linearization of <m>w</m> at <m>(25, -10)</m> is
+          <me>
+            L(v,T) \approx -37 - 0.4(v-25) + 0.7(T+10)
+          </me>.
+          Thus,
+          <md>
+            <mrow>w(25,-12) \amp \approx L(25,-12) \approx -37 - 0.4(0) + 0.7(-2) = -38.4</mrow>
+            <mrow>w(23, -10) \amp \approx L(23,-10) \approx -37 - 0.4(-2) + 0.7(0) = -36.2</mrow>
+            <mrow>w(23, -12) \amp \approx L(23,-12) \approx -37 - 0.4(-2) + 0.7(-2) = -37.6</mrow>
+          </md>
+        </p>
+      </solution>
+    </task>  
+    <task>
+      <statement>
+        <p>
+          <xref ref="F_10_4_activity_contour">Figure</xref> gives a contour  plot of a continuously differentiable function <m>f</m>. After estimating appropriate partial derivatives, determine the linearization <m>L(x,y)</m> at the point <m>(2,1)</m>, and use it to estimate <m>f(2.2, 1)</m>, <m>f(2, 0.8)</m>, and <m>f(2.2, 0.8)</m>.
+        </p>
+          <figure xml:id="F_10_4_activity_contour">
+            <caption>A contour plot of <m>f(x,y)</m></caption>
+            <image width="50%" source="images/fig_10_3_activity_contour"/>
+          </figure>
+      </statement>
+      <answer>
+        <p>
+          We need <m>f_x(2,1)</m> and <m>f_y(2,1)</m> to find the linearization. Using the symmetric difference quotients gives us
+          <md>
+            <mrow>f_x(2,1) \amp \approx \frac{f(3,1)-f(1,1)}{2} \approx \frac{1.9-4.8)}{2} = -1.45</mrow>
+            <mrow>f_y(2,1) \amp \approx \frac{f(2,2)-f(2,0)}{2} \approx \frac{4.3-1.8}{10} = 1.25</mrow>
+          </md>.
+          So the linearization of <m>f</m> at <m>(2, 1)</m> is
+          <me>
+            L(x,y) \approx 3 - 1.45(x-2) + 1.25(y-1)
+          </me>.
+          Thus,
+          <md>
+            <mrow>f(2.2,1) \amp \approx L(2.2,1) \approx 3 - 1.45(0.2) + 1.25(0) = 2.71</mrow>
+            <mrow>f(2, 0.8) \amp \approx L(2, 0.8) \approx 3 - 1.45(0) + 1.25(-0.2) = 2.75</mrow>
+            <mrow>f(-1.8, 2.1) \amp \approx L(2.2, 0.8) \approx 3 - 1.45(0.2) + 1.25(-0.2) = 2.46</mrow>
+          </md>.
+          The last two should be poor approximations since we are approximating quite far from the base point of <m>(2,1)</m>.
+        </p>
+      </answer>
+    </task>
     </activity>
   </subsection>
-
-
   <subsection>
     <title>Differentials</title>
     <p>
-      As we have seen, the linearization <m>L(x,y)</m> enables us to estimate the value of <m>f(x,y)</m> for points <m>(x,y)</m> near the base point
-      <m>(x_0, y_0)</m>.
-      Sometimes, however, we are more interested in the <em>change</em> in <m>f</m> as we move from the base point <m>(x_0,y_0)</m> to another
+      As we have seen, the linearization <m>L(x,y)</m> allows us to estimate the value of <m>f(x,y)</m> for points <m>(x,y)</m> near the base point <m>(x_0, y_0)</m>. Sometimes, however, we are more interested in the <em>change</em> in <m>f</m> as we move from the base point <m>(x_0,y_0)</m> to another
       point <m>(x,y)</m>.
     </p>
-
     <figure xml:id="F_10_4_differential">
-      <caption>The differential <m>df</m> approximates the change in
-          <m>f(x,y)</m>.</caption>
-      <image width="50%" source="images/fig_10_4_tangent_10"/>
+      <caption>A plot of a locally linear function <m>f(x,y)</m> </caption>
+      <interactive label="interactive-F_10_4_differential" platform="sage" width="100%" aspect="1:1">
+        <slate surface="sage">
+          from sage.plot.plot3d.plot3d import axes
+          var('t,s,x,y')
+          a1=2/3; a2=9/3; b1=2/2; b2=5/2; c1=2.5
+          f(x,y)=2.5-5*(x/10)^2-7*(y/7)^2
+          dfx(x,y)=diff(f,x);dfxv=dfx(x=a1,y=b1)
+          dfy(x,y)=diff(f,y);dfyv=dfy(x=a1,y=b1)
+          L(x,y)=f(a1,b1)+dfxv*(x-a1)+dfyv*(y-b1)
+          plot5=axes(c1,1,color="gray",opacity=0.5)+text3d("x",(c1+0.2,0,0),fontsize=30)+text3d("y",(0,c1+0.2,0),fontsize=30)+text3d("z",(0,0,c1+0.2),fontsize=30)
+          plot5+=plot3d(f(x,y),(x,a1,a2),(y,b1,b2),color="blue",opacity=0.6,plot_points=13,mesh=true,frame=False)
+          plot5+=point((a1,b1,f(a1,b1)),color="black",size=20)
+          #plot5+=point((a1,b1,f(a1,b1)),color="black",size=20)+text3d("(x\u2080,y\u2080,f(x\u2080,y\u2080))",(a1-0.25,b1-0.25,f(a1,b1)+0.2),color="black",fontsize=20)
+          plot5+=point((a1,b1,f(a1,b1)),color="black",size=20)+text3d("f(x\u2080,y\u2080)",(a1-0.4,b1-0.4,f(a1,b1)/2+0.2),color="black",fontsize=20)
+          plot5+=point((a2,b2,f(a2,b2)),color="blue",size=15)
+          plot5+=point((a2,b2,L(a2,b2)),color="red",size=15)
+          #plot5+=point((a2,b2,0),color="black",size=20)+text3d("(x,y,0)",(a2+0.25,b2+0.25,-0.2),color="black",fontsize=20)
+          plot5+=line([(a2,b2,f(a1,b1)),(a2,b2,0),(a2,b1,0),(a1,b1,0),(a1,b1,f(a1,b1)),(a1,b1,0),(a1,b2,0),(a2,b2,0)],color="black",thickness=2)
+          plot5+=plot3d(L(x,y),(x,a1,a2),(y,b1,b2),color="red",opacity=0.6,plot_points=13,mesh=true)
+          plot5+=line([(a2,b2,f(a2,b2)),(a2+0.5,b2+0.5,f(a2,b2))],color="blue",thickness=2)
+          plot5+=line([(a2,b2,L(a1,b1)),(a2+0.5,b2+0.55,L(a1,b1))],color="blue",thickness=2)
+          plot5+=text3d("\u0394f",(a2+0.5,b2+0.5,(f(a2,b2)+f(a1,b1))/2),color="blue",fontsize=25)
+          plot5+=text3d("dx=\u0394x",((a1+a2)/2,b1-0.5,0),color="black",fontsize=25)
+          plot5+=text3d("dy=\u0394y",(a2+0.5,(b1+b2)/2,0),color="black",fontsize=25)
+          plot5+=line([(a2,b2,f(a1,b1)),(a2+0.25,b2+0.25,f(a1,b1))],color="red",thickness=2)
+          plot5+=line([(a2,b2,L(a2,b2)),(a2+0.25,b2+0.25,L(a2,b2))],color="red",thickness=2)
+          plot5+=text3d("df",(a2+0.2,b2+0.2,(L(a2,b2)+f(a1,b1))/2),color="red",fontsize=25)
+          plot5+=line([(a1,b2,0),(a1,b2,f(a1,b1))],color="black")
+          plot5+=line([(a2,b1,0),(a2,b1,f(a1,b1))],color="black")
+          plot5+=polygon([(a2,b1,f(a1,b1)),(a2,b2,f(a1,b1)),(a1,b2,f(a1,b1)),(a1,b1,f(a1,b1))],color="gray",opacity=0.2,mesh=True,plot_points=3)
+          show(plot5,viewpoint=[[-0.6212,-0.4439,-0.6459],95.78],camera_position=[7.005,-0.3801,2.98])
+        </slate>
+      </interactive>
     </figure>
+    <!-- <figure xml:id="F_10_4_differential">
+      <caption>The differential <m>df</m> approximates the change in <m>f(x,y)</m>.</caption>
+      <image width="50%" source="images/fig_10_4_tangent_10"/>
+    </figure> -->
 
     <p>
       <xref ref="F_10_4_differential">Figure</xref> illustrates this situation. Suppose
