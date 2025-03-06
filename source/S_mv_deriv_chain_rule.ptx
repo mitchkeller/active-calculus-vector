@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- **********************************************************************-->
-<!-- Copyright 2013-2018                                                   -->
-<!-- Steven Schlicker                                                      -->
+<!-- Copyright 2013-2025                                                   -->
+<!-- Nicholas Long, Mitchel Keller, Steven Schlicker                       -->
 <!--                                                                       -->
 <!-- This file is part of Active Calculus Multivariable.                   -->
 <!--                                                                       -->
@@ -14,21 +14,19 @@
 <!-- their respective owners.                                              -->
 <!-- **********************************************************************-->
 <section xml:id="S-10-5-Chain-Rule">
-  <title>The Chain Rule</title>
+  <title>Measuring Change and Compositions of Multivariable Functions</title>
   
     <objectives>
         <ul>
           <li>
             <p>
-              What is the Chain Rule and how do we use it to
-                find a derivative?
+              How can we take partial derivatives when working with compositions of multivariable functions?
             </p>
           </li>
 
           <li>
             <p>
-              How can we use a tree diagram to guide us in applying the Chain
-                Rule?
+              For locally linear functions, how can a partial derivative of a composition of multivariable functions separate into dependence on the composing variables?
             </p>
           </li>
         </ul>
@@ -36,24 +34,38 @@
 
     <introduction>
     <p>
-      In single-variable calculus, we encountered situations in
-      which some quantity <m>z</m> depends on <m>y</m> and, in turn, <m>y</m> depends on
-      <m>x</m>. A change in <m>x</m> produces a change in <m>y</m>, which consequently
-      produces a change in <m>z</m>. Using the language of differentials that we saw
-      in the previous section, these changes are naturally related by
+      In single-variable calculus, we encountered situations in which some quantity <m>z</m> depends on <m>y</m> and <m>y</m> in turn depends on <m>x</m>. A change in <m>x</m> produces a change in <m>y</m>, which consequently produces a change in <m>z</m>. This means that we can write <m>z</m> as a function of <m>y</m> and <m>y</m> as a function of <m>x</m>, which means we can express <m>z</m>'s dependence on <m>x</m> by a composition of functions:
+    </p> 
+    <figure xml:id="compositionoffns">
+      <caption>Composition of <m>z(y)</m> and <m>y(x)</m> </caption>
+      <image width="50%">
+        <shortdescription></shortdescription>
+        <latex-image>
+          \begin{tikzpicture}
+          \node[font=\large] (X) at (0, 4) {\(X\)};
+          \begin{scope}[xshift=4cm]
+          \node[font=\large] (Y) at (0, 4) {\(Y\)};
+          \end{scope}
+          \begin{scope}[xshift=8cm]
+          \node[font=\large] (Z) at (0, 4) {\(Z\)};
+          \end{scope}
+          \draw [->] (X) -- (Y) node [pos=0.5, above] {\(y(x)\)};
+          \draw [->] (Y) -- (Z) node [pos=0.5, above] {\(z(y)\)};
+          \draw [->,out=60, in=120, line width=1.5pt, red!80!black] (X) .. controls ++(1, 1) and ++(-1, 1) .. (Z) node [pos=0.5, above] {\(z(y(x))= (z \circ y) (x)\)};
+          \end{tikzpicture}    
+        </latex-image>
+      </image>
+    </figure>
+    <p>  
+      Using the language of differentials that we saw in the previous section, these changes are naturally related by
       <me>
-        dz = \frac{dz}{dy}~dy 
-        \ 
-        \mbox{and} 
-        \ 
-        dy = \frac{dy}{dx}~dx.
+        dz = \frac{dz}{dy} dy \mbox{  and  }  dy = \frac{dy}{dx} dx
       </me>
     </p>
-
     <p>
       In terms of instantaneous rates of change, we then have
       <me>
-        dz = \frac{dz}{dy}\frac{dy}{dx}~dx = \frac{dz}{dx}~dx
+        dz = \frac{dz}{dy}\frac{dy}{dx} dx = \frac{dz}{dx} dx
       </me>
       and thus
       <me>
@@ -62,14 +74,82 @@
     </p>
 
     <p>
-      This most recent equation we call the <em>Chain Rule</em>.
+      This most recent equation we call the <em>Chain Rule</em>. You may have seen this <url href="https://activecalculus.org/single/sec-2-5-chain.html#chain-rule" >stated</url> as: If <m>C</m> is the composition of functions <m>f</m> and <m>g</m> such <m>C(x)=f(g(x))</m>, <m>f</m> is differentiable at <m>g(x)</m>, and <m>g</m> is differentiable at <m>x</m>, then 
+      <me>C'(x)=f'(g(x)) g'(x)</me>
     </p>
 
     <p>
       In the case of a function <m>f</m> of two variables where <m>z = f(x,y)</m>, it might be that both <m>x</m> and <m>y</m> depend on another variable <m>t</m>. A change in <m>t</m> then produces changes in both <m>x</m> and <m>y</m>, which then cause <m>z</m> to change. In this section we will see how to find the change in <m>z</m> that is caused by a change in <m>t</m>, leading us to multivariable versions of the Chain Rule involving both regular and partial derivatives.
     </p>
-
-    <exploration xml:id="PA_10_5">
+    <exploration>
+      <introduction>
+        <p>
+          Your self driving car company, <em>Steer Clear</em>, is doing well and almost ready to launch its first car. Some of your engineers have reported that the car has problems when the air intake encounters too much large particulate matter in the air (like sand, dust, large pollen, smog, etc.). In order to fix this issue, you have created a new type of filter that uses a sophisticated mesh and gravity to filter out large particulate matter, but this new type of filter gets clogged if exposed to too much large particulate matter too quickly. So we will need to measure the rate at which your car's intake will be exposed to large particulate matter per unit time. 
+        </p>
+        <p>
+          You consult a friend Alex who does atmospheric modeling of large particulate matter in your area. Alex created <m>P(x,y)=10-\frac{1}{2} x^2-\frac{1}{5}y^2</m>, a function that describes the amount of large particular matter in the air in terms of location relative to Alex's lab. In particular, the <m>x</m> coordinate is the distance East/West of from Alex's lab in kilometers and the <m>y</m>-coordinate is the distance North/South from Alex's lab in kilometers. 
+        </p>
+        <p>
+          Since you have completed the self driving part of your car, you know that your car will move along a test course as a function of time given by 
+          <me>
+            \vr(t) = \langle x(t), y(t) \rangle = \langle 2-t^2, t^3 + 1\rangle.
+          </me>
+          where the <m>x</m> and <m>y</m> coordinates are the same as measured by Alex's function and <m>t</m> is measured in minutes. 
+        </p>
+      </introduction>
+      <task xml:id="PA-chain-t1">
+        <statement>
+          <p>
+            Substitute <m>x(t)</m> and <m>y(t)</m> (from your self driving car path) into your expression for <m>P(x,y)</m> to get an expression for <m>P(t)</m>, the amount of large particulate matter encountered at each location on your test course as a function of time driven. Do not simplify your expression for <m>P(t)</m>.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement xml:id="PA-chain-t2">
+          <p>
+            Use your derivative rules from single variable calculus to find <m>P'(t)=\frac{dP}{dt}</m>. Note that this is not a partial derivative because <m>P(t)</m> only has one dependent variable. You should NOT simplify your expression for <m>P'(t)</m>. 
+          </p>
+        </statement>
+      </task>
+      <task xml:id="PA-chain-t3">
+        <statement>
+          <p>
+            Alex has told you that the amount of large particulate matter in the air changes in the <m>y</m>-direction (North/South) because of the proximity to industrial pollution from a factory complex. Also, the amount of large particulate matter in the air changes in the <m>x</m>-direction (East/West) because of a particular kind of tree in a nearby national forest. We would like to understand how the rate of large particulate matter encountered on our drive is split into these two factor (industrial pollution and trees).
+          </p>
+          <p>
+            Alex suggests that you measure <m>\frac{dP}{dt}</m> at a location <m>(x,y)=(a,b)</m> by taking the derivative of the linearization for <m>P</m> at <m>(a,b)</m>. The linearization of <m>P</m> at <m>(a,b)</m> is given by
+            <me> L(x,y)=P(a,b)+P_x(a,b)(x-a)+P_y(a,b)(y-b)</me>
+            and treating <m>x</m> and <m>y</m> as functions of time.
+          </p>
+          <p>
+            Write a few sentences to explain why 
+            <men xml:id="dLinear">\frac{dP}{dt}\approx\frac{dL}{dt} = 0 + P_x(a,b) \frac{dx}{dt}+P_y(a,b) \frac{dy}{dt}</men> 
+            and how each of <m>P_x(a,b) \frac{dx}{dt}</m> and <m>P_y(a,b) \frac{dy}{dt}</m> measure the amount of 
+          </p>
+        </statement>
+      </task>
+      <task xml:id="PA-chain-t4">
+        <statement>
+          <p>
+            Compute each of the following and substitute your expressions into <xref ref="dLinear"/>, Alex's approximation. Do NOT simplify your expression, just substitute in the values for each element below.
+            <ul>
+              <li><m>P_x(a,b) </m></li>
+              <li><m>P_x(a,b) </m></li>
+              <li><m>\frac{dx}{dt} </m></li>
+              <li><m>\frac{dy}{dt} </m></li>
+            </ul>
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Compare your results for <xref ref="PA-chain-t2"/> and <xref ref="PA-chain-t4"/> and write a few sentences that identifies how each part of your answer for <xref ref="PA-chain-t4"/> corresponds to different parts of <xref ref="PA-chain-t2"/>. Remember your work for <xref ref="PA-chain-t2"/> is completely in terms of <m>t</m> so you will need to translate some terms from <m>t</m> into its meaning in <m>x</m>, <m>y</m>, or others.
+          </p>
+        </statement>
+      </task>
+    </exploration>
+    <!-- <exploration xml:id="PA_10_5">
       <statement>
         <p>
           Suppose you are driving around in the
@@ -233,25 +313,22 @@
         </ol>
       </solution>
   
-    </exploration>
+    </exploration> -->
   </introduction>
-
   <subsection>
     <title>The Chain Rule</title>
     <p>
       As <xref ref="PA_10_3">Preview Activity</xref> suggests, the following version of the Chain Rule holds in general.
     </p>
-
     <assemblage xml:id="Chain-rule">
       <title>The Chain Rule</title>
-     <p>
-      Let <m>z = f(x,y)</m>, where <m>f</m> is a differentiable function of the independent variables <m>x</m> and <m>y</m>, and let <m>x</m> and <m>y</m> each be differentiable functions of an independent variable <m>t</m>. Then
-      <men xml:id="E_10_5_chain_rule">
-        \frac{dz}{dt} = \frac{\partial z}{\partial x} \frac{dx}{dt} + \frac{\partial z}{\partial y} \frac{dy}{dt}.
-      </men>
-    </p>
+      <p>
+        Let <m>z = f(x,y)</m>, where <m>f</m> is a differentiable function of the independent variables <m>x</m> and <m>y</m>, and let <m>x</m> and <m>y</m> each be differentiable functions of an independent variable <m>t</m>. Then
+        <men xml:id="E_10_5_chain_rule">
+          \frac{dz}{dt} = \frac{\partial z}{\partial x} \frac{dx}{dt} + \frac{\partial z}{\partial y} \frac{dy}{dt}.
+        </men>
+      </p>
     </assemblage>
-
     <p>
       It is important to note the differences among the derivatives in <xref ref="E_10_5_chain_rule"/>. Since <m>z</m> is a function of the two variables <m>x</m> and <m>y</m>, the derivatives in the Chain Rule for <m>z</m> with respect to <m>x</m> and <m>y</m> are partial derivatives. However, since <m>x = x(t)</m> and <m>y = y(t)</m> are functions of the single variable <m>t</m>, their derivatives are the standard derivatives of functions of one variable. When we compose <m>z</m> with <m>x(t)</m> and <m>y(t)</m>, we then have <m>z</m> as a function of the single variable <m>t</m>, making the derivative of <m>z</m> with respect to <m>t</m> a standard derivative from single variable calculus as well.
     </p>
@@ -260,7 +337,7 @@
       To understand why this Chain Rule works in general, suppose that some quantity <m>z</m> depends on <m>x</m> and <m>y</m> so
       that
       <men xml:id="E_10_5_1">
-        dz = \frac{\partial z}{\partial x}~dx + \frac{\partial z}{\partial
+        dz = \frac{\partial z}{\partial x}dx + \frac{\partial z}{\partial
             y}~dy.
       </men>
     </p>
