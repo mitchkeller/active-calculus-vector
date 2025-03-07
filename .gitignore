@@ -1,6 +1,9 @@
 ## Ignore the output directory for upload purposes
 /output/
 
+## Ignore cached versions of generated files 
+/.cache/
+
 ## Ignore Nick's old batch file directory
 /windows_batch_files/
 
