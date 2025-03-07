@@ -2269,8 +2269,8 @@
                 we need the second order partial derivatives of <m>C</m>.
                 Note that
                 <md>
-                  <mrow>\frac{\partial^2 C}{\partial \ell^2}(2,2) \amp = \frac{8}{\ell^3}\biggm|_{(2,2)} = 1</mrow>
-                  <mrow>\frac{\partial^2 C}{\partial w^2}(2,2) \amp = \frac{8}{w^3}\biggm|_{(2,2)} = 1</mrow>
+                  <mrow>\frac{\partial^2 C}{\partial \ell^2}(2,2) \amp = \frac{8}{\ell^3}\restrict{(2,2)} = 1</mrow>
+                  <mrow>\frac{\partial^2 C}{\partial w^2}(2,2) \amp = \frac{8}{w^3}\restrict{(2,2)} = 1</mrow>
                   <mrow>\frac{\partial^2 C}{\partial w \partial \ell}(2,2) \amp = 0.5</mrow>
                 </md>,
                 so the discriminant of <m>C</m> at point <m>(2,2)</m> is
