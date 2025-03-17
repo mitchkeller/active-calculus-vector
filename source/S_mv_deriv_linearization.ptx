@@ -1051,6 +1051,9 @@
         </answer>
       </task>
     </activity>
+    <p>
+      W will take a moment here to point out an idea that was used throughout this section and will be used time and again in this chapter. For a <q>nice</q> function (locally linear/differentiable/continuously differentiable), the rate of change in the output of the function as you approach a point will be the rate of change along the linearization. In other words, we can approximate change near a point by looking at the change on the linearization or we can evaluate the limit of rates of changes by evaluating the corresponding change on the linearization.
+    </p>
   </subsection>
   <subsection>
     <title>Summary</title>
