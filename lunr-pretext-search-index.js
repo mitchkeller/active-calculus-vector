@@ -4861,9 +4861,9 @@ var ptx_lunr_docs = [
   "body": "   The partial derivatives of a function tell us the rate of change of in the direction of the coordinate axes. How can we measure the rate of change of in other directions?    What is the gradient of a function and what does it tell us?    "
 },
 {
-  "id": "PA_10_6",
+  "id": "PA-DD",
   "level": "2",
-  "url": "S-10-6-Directional-Derivative.html#PA_10_6",
+  "url": "S-10-6-Directional-Derivative.html#PA-DD",
   "type": "Preview Activity",
   "number": "11.7.1",
   "title": "",
