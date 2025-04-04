@@ -95,7 +95,7 @@
       If we had a function of two variables, <m>f(x,y)</m>, then a level set would correspond to a contour or a level curve of the form <m>f(x,y)=k</m>. Notice that the level set in this case is a set of points in the <m>xy</m>-plane (the space of inputs for our function <m>f</m>). As we saw in <xref ref="S-MV-Functions"/>, we can make a contour plot by graphing a collection of these level curves or contours on the same 2D-plot, which will give us an idea of what the surface corresponding to <m>z=f(x,y)</m> would look like. In other words, we were able to give enough information in a 2D-plot to describe a figure in three dimensions.
     </p>
     <p>
-      If we look at a function of three variables, <m>g(x,y,z)</m>, a graph of this function would require four dimensions (three dimensions for the inputs and one dimension for the output). Drawing plots in three dimensions is hard enough; four dimensions feels like too much to attempt. Similiar to how we used contour plots to express a higher dimensional plot in a lower dimensional setting, we would like to use level sets of <m>g(x,y,z)</m> to understand a graph of <m>w=g(x,y,z)</m> and help us measure change involving the function <m>g</m>.
+      If we look at a function of three variables, <m>g(x,y,z)</m>, a graph of this function would require four dimensions (three dimensions for the inputs and one dimension for the output). Drawing plots in three dimensions is hard enough; four dimensions feels like too much to attempt. Similar to how we used contour plots to express a higher dimensional plot in a lower dimensional setting, we would like to use level sets of <m>g(x,y,z)</m> to understand a graph of <m>w=g(x,y,z)</m> and help us measure change involving the function <m>g</m>.
     </p>
     <p>
       The level set of our function <m>g</m> would correspond to a surface of the form <m>g(x,y,z)=k</m>. A level set of <m>g</m> is a collection of points in <m>xyz</m>-space, the set of inputs for our function <m>g</m>. As you saw in <xref ref="PA-MV-HD"/>, the level sets of a function of three variables will often be a surface. For example, if <m>g(x,y,z)=x^2+y^2+z^2</m>, then the level surface corresponding to the value 1 will be given by the equation <m>x^2+y^2+z^2=1</m>, which graphically will be a sphere of radius one centered at the origin. 
@@ -113,7 +113,7 @@
     </p>
     <example xml:id="implicitex1">
       <p>
-        Analagous to how a 2D contour plot give us a lot of information about a 3D plot, we would like to see if we can plot multiple level sets of a three variable function to understand the 4D graph of a function of the form <m>w=g(x,y,z)</m>. In this example, we will explore the three variable function <m>g(x,y,z)=x^2+y^2-z^2</m>.
+        Analogous to how a 2D contour plot give us a lot of information about a 3D plot, we would like to see if we can plot multiple level sets of a three variable function to understand the 4D graph of a function of the form <m>w=g(x,y,z)</m>. In this example, we will explore the three variable function <m>g(x,y,z)=x^2+y^2-z^2</m>.
       </p>
       <p>
         If we consider the level sets corresponding to the values <m>k=\{-4,-1,0,1,4\}</m>, we get the following level surfaces:
@@ -372,39 +372,86 @@
         </interactive>
       </figure>
       <p>
-        It may be a bit weird to think that all three of the surfaces that can be a level surface of <m>g</m> where the algebraic form of <m>\nabla g</m> is not changing. 
+        It may be a bit weird to think that all three of the surfaces that can be a level surface of <m>g</m> where the algebraic form of <m>\nabla g</m> is not changing. If you select the checkbox in <xref ref="gradhypcone"/> to plot gradient vectors at points along your level surface, you will see that the gradient vectors will be perpendicular to the level surface. You can use the slider to change the value of the level surface, which will also change the shape of the level surface when you go from positive to negative or viceversa. 
+      </p>
+      <p>
+        Returning to the function <m>g(x,y,z)=x^2+y^2-z^2</m>, we can ask <q>For an input point <m>(a,b,c)</m>, in what direction will the output of <m>g</m> be increasing at the greatest rate?</q> We can group the output of <m>g</m> into two terms <m>x^2+y^2</m> which increases as you move away from the <m>z</m>-axis and <m>-z^2</m> which increases as you get closer to the <m>xy</m>-plane (<m>z=0</m>). An input point of <m>(a,b,c)</m> for the gradient vector gives <m>\nabla g (a,b,c)=\langle 2a,2b,-2c\rangle</m>. Notice that for any point in our space, this gradient vector will point away from the <m>z</m>-axis and toward the <m>xy</m>-plane, as demonstrated by the red vectors in <xref ref="gradhypcone"/>. Note that our arguments are rotationally symmetric about the <m>z</m>-axis. 
       </p>
       </example>
+      <activity>
+        <introduction>
+          <p>
+            In this activity, we will look at the calculation and interpretation of the gradient for <m>f(x,y,z)=x+y-z</m> and <m>g(x,y,z)=z-x^2-y^2</m>.
+          </p>
+        </introduction>
+        <task>
+          <statement>
+            <p>
+              Calculate <m>\nabla f</m> and <m>\nabla g</m>.
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Draw the level surfaces of <m>f</m> for the values <m>k=\{-2,-1,0,1,2\}</m>. Write a few sentences about the shape of each of these level surfaces and describe how the level surfaces is changing in terms of the value of <m>k</m>.
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Write a few sentences about how the direction and magnitude of <m>\nabla f</m> is related to the level surfaces from the previous task. 
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Draw the level surfaces of <m>g</m> for the values <m>k=\{-2,-1,0,1,2\}</m>. Write a few sentences about the shape of each of these level surfaces and describe how the level surfaces is changing in terms of the value of <m>k</m>. Note here that each of the level surfaces can be expressed with <m>z</m> as a function of <m>x</m> and <m>y</m>.
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Write a few sentences about how the direction and magnitude of <m>\nabla g</m> is related to the level surfaces from the previous task. 
+            </p>
+          </statement>
+        </task>
+      </activity>
+      <p>
+        The level surfaces of the function <m>g(x)=z-x^2-y^2</m> from the previous activity were of the form <m>z=x^2+y^2+C</m> for some constant <m>C</m>, which meant that the gradient of <m>g</m> gives a convenient way of calculating a vector that will be perpendicular to the surface <m>z=x^2+y^2+C</m>. In fact, if we have a surface of the form <m>z=h(x,y)</m>, then the same surface will be a level surface of the three variable function <m>g(x,y,z)=z-h(x,y)</m>.
+      </p>
   </subsection>
   <subsection>
     <title>Summary</title>
     <ul>
       <li>
         <p>
-          1
+          The set of points <m>(x,y,z)</m> for which a function of three variables, <m>f(x,y,z)</m>, has a constant output, <m>k</m>, is called the level surface and gives the implicit equation of the surface as <m>f(x,y,z)=k</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The partial derivatives for functions of functions three or more variables are calculated by measuring the rate of change in one input variable while holding all other inputs constant. The gradient of a function of three or more variables is a vector valued, multivariable function where each component is the first partial derivative of with respect to a different coordinate. If <m>g(x_1,x_2, \ldots,x_n)</m>, then the gradient of <m>g</m> has <m>n</m> components and is given by <m>\nabla g = \left\langle \frac{\partial g}{\partial x_1}, \frac{\partial g}{\partial x_2},\ldots,\frac{\partial g}{\partial x_m}\right\rangle</m>.
         </p>
       </li>
 
       <li>
         <p>
-          2
+          The directional derivative of a function of three or more variables measures the rate of change of the output when the input variables are changed in a particular direction. If <m>g</m> is a multivariable function and <m>\vu</m> is the unit vector in the direction we want to look, then the directional derivative of <m>g</m> in direction <m>\vu</m> at the input <m>P</m> can be calculated by <m>Dg_{\vu}(P)=\nabla g(P) \cdot \vu</m>.
         </p>
       </li>
 
       <li>
         <p>
-          3
-        </p>
-      </li>
-
-      <li>
-        <p>
-          4
+          The gradient of a multivariable function <m>g</m> at an input <m>P</m> points in the direction of greatest rate of increase for the output of <m>g</m>, which also means that the gradient at <m>P</m>, <m>\nabla g(P)</m> will be perpendicular to the level surface corresponding to the value <m>k=g(P)</m>. The direction opposite of the gradient, <m>-\nabla g (P)</m>, will be the direction of greatest rate of decrease at <m>P</m>. The greatest rate of increase and decrease are <m>\vecmag{\nabla g(P)}</m> and <m>-\vecmag{\nabla g(P)}</m>, respectively.
         </p>
       </li>
     </ul>
 
     </subsection>
-
+    <xi:include href="./exercises/ez-S_mv_HD.ptx" />
       
 </section>
