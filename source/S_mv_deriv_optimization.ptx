@@ -416,7 +416,7 @@
             var('x,y,z')
             d=0.25
             @interact
-            def critvalcheck(p=input_grid(1,2,default=[[0,0]],label="\\( (a,b)= \\)"),func=input_box(default=x-y,label="\(f(x,y)=\)"),auto_update=False):
+            def critvalcheck(p=input_grid(1,2,default=[[0,0]],label="(a,b)="),func=input_box(default=x-y,label="\\(f(x,y)=\\)"),auto_update=False):
               a=p[0][0];b=p[0][1];
               f(x,y)=func
               plot1=plot3d(f(x,y),(x,a-d,a+d),(y,b-d,b+d),color="blue",opacity=0.6,plot_points=31,mesh=True)
@@ -770,6 +770,21 @@
         </ol>    
       </solution>
     </activity> -->
+    <p>
+      If we have a critical point for a function of two variables, we will need to look at the concavity all of the different directions around our point. In <xref ref="critpoints2"/>, you can use the dropdown box to select three different types of critical points (local maximum, local minimum, and saddle point) to examine graphically. You can also use the slider to change the direction in which the trace is plotted (in red). Notice that no matter what kind of critical point behavior is selected, the tangent plane (shown in blue) is horizontal and the trace curve (shown in red) will be tangent to the blue plane. 
+    </p>
+    <p>
+      If you look at the local maximum critical point in <xref ref="critpoints2"/>, you can use the slider to look at all the different directions in which you can move away from the critical point. In EVERY direction, the trace curves are concave down at our local maximum. If you look at the local minimum critical point in <xref ref="critpoints2"/>, you can use the slider to look at all the different directions in which you can move away from the critical point. In EVERY direction, the trace curves are concave up at our local minimum. However, if you look at the saddle point and you change the direction that you move away from the critical point, then you will have some directions that are concave up and some directions where the trace curve is concave down. 
+    </p>
+    <p>
+      The inverse of these patterns should also make sense to you geometrically:
+      <ul>
+        <li>If every direction is concave up for a critical point, then the critical point is a local minimum.</li>
+        <li>If every direction is concave down for a critical point, then the critical point is a local maximum.</li>
+        <li>If the concavity changes from up to down in different directions, then the critical point is a saddle.</li>
+      </ul>
+      In order to classify our critical points, we will need to figure out if the behavior around our critical point is always concave up, always concave down, or if there is a directional dependence on concave up/down.
+    </p>
     <figure xml:id="critpoints2">
     <caption>Possible Critical Points and concavity</caption>
       <interactive title="interactive-critpoints2" platform="sage" width="100%" aspect="1:1">
@@ -809,239 +824,238 @@
       </interactive>
     </figure>
     <p>
+      The good news is that we have a couple of convenient directions to look at concavity in (parallel to the <m>x</m> and <m>y</m> axes). Recall from <xref ref="S-10-3-Second-Order-Partial-Derivatives"/> that <m>f_{xx}</m> and <m>f_{yy}</m> will measure the concavity of the traces in the <m>x</m> and <m>y</m> directions, respectively. If <m>f_{xx} \gt 0</m> at our critical point, then in the direction parallel to the <m>x</m>-axis, the trace curve will be concave up. If <m>f_{xx} \lt 0</m> at our critical point, then in the direction parallel to the <m>x</m>-axis, the trace curve will be concave down. Similar statements hold for <m>f_{yy}</m>. 
+    </p>
+    <p>
+      Suppose that <m>f_{xx} (a,b) \lt</m> and <m>f_{yy} \gt 0</m> at a critical point <m>(a,b)</m>. Because the concavity is different (up/down) for two different direction, the critical point <m>(a,b)</m> must be a saddle point. Unfortunately, if <m>f_{xx} (a,b) \gt 0</m> and <m>f_{yy} \gt 0</m> at a critical point <m>(a,b)</m>, then we do not necessarily have a local minimum, as shown in <xref ref="critpoints3"/>.
+    </p>
+    <figure xml:id="critpoints3">
+    <caption>A surface plot where <m>f_{xx} (a,b) \gt 0</m> and <m>f_{yy} \gt 0</m> at the origin.</caption>
+      <interactive title="interactive-critpoints3" platform="sage" width="100%" aspect="1:1">
+        <slate surface="sage">
+          var('x,y,z,t,s')
+          from sage.plot.plot3d.plot3d import axes
+          scale=1.5
+          plot6=axes(scale,2,color="black",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+          plot6+=parametric_plot3d((s,t,0),(s,-2,2),(t,-2,2),color="gray",opacity=0.05,mesh=True,plot_points=5)
+          param(s,t)=(s*cos(t),s*sin(t),s^2*cos(4*t))
+          #set up grid      n is number of steps in s    m is number of steps in t  
+          #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+          n=7;m=7;a1=0;a2=1.5;b1=0;b2=2*pi; 
+          #c1 is surface color     o1 is surface opacity
+          #c2 and o2 are for constant t value traces
+          #c3 and o3 are for constant s value traces
+          c1="blue"; c2="black"; c3="black"; o1=0.4; o2=0.5; o3=0.5;
+          plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,plot_points=50)
+          for i in range(n+1):
+              sv=a1+i/n*(a2-a1)
+              plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+          for i in range(m+1):
+              tv=b1+i/m*(b2-b1)
+              plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+          plot6+=parametric_plot3d((s,0,s^2),(s,-1,1),color="red",thickness=5)
+          plot6+=parametric_plot3d((0,s,s^2),(s,-1,1),color="red",thickness=5)
+          show(plot6+plot99,aspect_ratio=(1,1,0.6),viewpoint=[[-0.1958,-0.5867,-0.7858],150.62],camera_position=[6.2458,8.2356,2.958])
+        </slate>
+      </interactive>
+    </figure>
+    <p>
+      As the plot in <xref ref="critpoints3"/> shows, we will need to look at the concavity in more than the coordinate axes directions. Recall from <xref ref="A_10_3_2a">Activities</xref> and <xref ref="A_10_3_6"/>, our mixed second partial derivative <m>f_{xy}</m> measures the <q>twist</q> of the graph as we increase <m>y</m> along a particular trace where <m>x</m> is held constant. In the same way, <m>f_{yx}</m> measures how the graph twists as we increase <m>x</m>. For our nice functions, remember that Clairaut's theorem tells us that <m>f_{xy} = f_{yx}</m>, so we will see that the amount of twisting is the same in both directions. These mixed second partial derivatives will be used to see if there is enough <q>twist</q> to change the concavity in the directions between the coordinate axes. 
+    </p>
+    <!-- <p>
       <xref ref="A_10_7_4">Activity</xref> provides the basic ideas for the Second Derivative Test for functions of two variables. 
+    </p> -->
+    <p>
+      We introduce the discriminant of a function of two variables as 
+      <me>  D = f_{xx}(x_0,y_0) f_{yy}(x_0,y_0) - f_{xy}(x_0,y_0)^2 </me>
+      We claim here that if the discriminant is negative, then the concavity will change depending on direction and that if the discriminant is positive, then all directions have the same concavity. Let's look at a few cases here.
+    </p>
+    <p>
+      If <m>f_{xx}(x_0,y_0)</m> and <m>f_{yy}(x_0,y_0)</m> are not both positive or both negative, then the discriminant must be negative because the second term in <m>D</m> is always negative. This is the case of the saddle shown above; one coordinate direction is concave up and one is concave down, thus we do not have an extreme point. 
+    </p>
+    <p>  
+      If <m>f_{xx}(x_0,y_0)</m> and <m>f_{yy}(x_0,y_0)</m> are both positive or both negative, then the first term will be positive. If our coordinate directions have the same concavity, then we will need to see if there is enough <q>twist</q> in our surface to change the concavity for directions between the coordinate axes. In other words, if <m>f_{xx}(x_0,y_0) f_{yy}(x_0,y_0) \lt f_{xy}(x_0,y_0)^2</m> there will be enough twist to have some direction to have different concavity from the coordinate directions. If <m>f_{xx}(x_0,y_0) f_{yy}(x_0,y_0) \gt f_{xy}(x_0,y_0)^2</m>, then there will not be enough twist between the coordinate directions and every direction has the same concavity. This conceptual argument is summarized in the following.
     </p>
 
     <assemblage xml:id="Second-derivative-test">
-      <title>The Second Derivative Test</title>
-    <p>
-      Suppose <m>(x_0,y_0)</m> is a critical point of
-      the function <m>f</m> for which <m>f_x(x_0,y_0) = 0</m> and
-      <m>f_y(x_0,y_0) = 0</m>. Let <m>D</m> be the quantity defined by
-      <me>
-        D = f_{xx}(x_0,y_0) f_{yy}(x_0,y_0) - f_{xy}(x_0,y_0)^2.
-      </me>
-      <ul>
-        <li>
-          <p>
-            If <m>D&gt;0</m> and <m>f_{xx}(x_0,y_0) \lt  0</m>, then <m>f</m> has a local maximum at <m>(x_0,y_0)</m>.
-          </p>
-        </li>
-
-        <li>
-          <p>
-            If <m>D&gt;0</m> and <m>f_{xx}(x_0,y_0) &gt; 0</m>, then <m>f</m> has a local minimum at <m>(x_0,y_0)</m>.
-          </p>
-        </li>
-
-        <li>
-          <p>
-            If <m>D \lt  0</m>, then <m>f</m> has a saddle point at <m>(x_0,y_0)</m>.
-          </p>
-        </li>
-
-        <li>
-          <p>
-            If <m>D = 0</m>, then this test yields no information about what happens at <m>(x_0,y_0)</m>.
-          </p>
-        </li>
-      </ul>
-    </p>
-
-    <p>
-      The quantity <m>D</m> is called the
-      <em>discriminant</em><idx><h>discriminant</h></idx> of the function <m>f</m> at
-      <m>(x_0,y_0)</m>.
-    </p>
+      <title>The Second Partials Derivative Test</title>
+      <p>
+        Suppose <m>(x_0,y_0)</m> is a critical point of the function <m>f</m> for which <m>f_x(x_0,y_0) = 0</m> and <m>f_y(x_0,y_0) = 0</m>. Let <m>D</m> be the quantity defined by
+        <me>
+          D = f_{xx}(x_0,y_0) f_{yy}(x_0,y_0) - f_{xy}(x_0,y_0)^2.
+        </me>
+        <ul>
+          <li>
+            <p>
+              If <m>D \gt 0</m> and <m>f_{xx}(x_0,y_0) \lt  0</m>, then <m>f</m> has a local maximum at <m>(x_0,y_0)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>D \gt 0</m> and <m>f_{xx}(x_0,y_0) \gt 0</m>, then <m>f</m> has a local minimum at <m>(x_0,y_0)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>D \lt  0</m>, then <m>f</m> has a saddle point at <m>(x_0,y_0)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>D = 0</m>, then this test yields no information about what happens at <m>(x_0,y_0)</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        The quantity <m>D</m> is called the <em>discriminant</em><idx><h>discriminant</h></idx> of the function <m>f</m> at <m>(x_0,y_0)</m>.
+      </p>
     </assemblage>
-
-    
-
     <p>
-      To properly understand the origin of the Second Derivative Test, we could introduce a <q>second-order directional derivative.</q> If this second-order directional derivative were negative in every direction, for instance, we could guarantee that the critical point is a local maximum. A complete justification of the Second Derivative Test requires key ideas from linear algebra that are beyond the scope of this course, so instead of presenting a detailed explanation, we will accept this test as stated. In <xref ref="A_10_7_5">Activity</xref>, we apply the test to more complicated examples. 
+      A key idea of the Second Partial Derivative Test is that if the discriminant is positive, all directions have the same concavity and if the discriminant is negative, then the concavity changes from up to down depending on the direction. The last case of the Second Partial Derivative Test is similar to the inconclusive case for the Second Derivative Test from single variable calculus. 
     </p>
-
-       
-      
-        
+    <p>
+      To properly understand the origin of the Second Partial Derivative Test, we would need to introduce a <q>second-order directional derivative.</q> If this second-order directional derivative were negative in every direction, for instance, we could guarantee that the critical point is a local maximum. A complete justification of the Second Partial Derivative Test requires key ideas from linear algebra that are beyond the scope of this course, so instead of presenting a detailed explanation, we will accept the conceptual description given. 
+    </p>
+    <p>  
+      In <xref ref="A_10_7_5">Activity</xref>, we apply the test to more complicated examples.
+    </p>
     <activity xml:id="A_10_7_5">
+    <introduction>
+      <p>
+        For each of the functions given below:
+        <ol>
+          <li>Find the critical points of the function  </li>
+          <li>Use the Second Derivative Test to classify the critical points</li>
+        </ol> 
+      </p>
+    </introduction>
+    <task>
       <statement>
         <p>
-          Find the critical points of the
-          following functions and use the Second Derivative Test to classify
-          the critical points.
-          <ol marker="a.">
-            <li>
-              <p>
-                <m>f(x,y) = 3x^3+y^2-9x+4y</m>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <m>f(x,y) = xy + \frac{2}{x} + \frac{4}{y}</m>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <m>f(x,y) = x^3 + y^3 - 3xy</m>.
-              </p>
-            </li>
-          </ol>
+          <m>f(x,y) = 3x^3+y^2-9x+4y</m>
         </p>
       </statement>
-
       <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-               <m>f</m> has a relative minimum at <m>(1,-2)</m> and a saddle point at <m>(-1,-2)</m>
-            </p>
-          </li>
-          <li>
-            <p>
-               <m>f</m> has a relative minimum at <m>(1,2)</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>f</m> has a saddle point at <m>(0, 0)</m> and a relative minimum at <m>(1,1)</m> 
-            </p>
-          </li>
-        </ol>
+        <p>
+          <m>f</m> has a relative minimum at <m>(1,-2)</m> and a saddle point at <m>(-1,-2)</m>
+        </p>
       </answer>
-
-
       <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              To find the critical points,
-              we determine the points in the domain of <m>f</m> where
-              <m>\nabla f = \vzero</m> or <m>\nabla f</m> does not exist.
-              Now
-              <me>
-                \nabla f = \langle 9x^2-9, 2y+4 \rangle
-              </me>,
-              and so <m>\nabla f = \vzero</m> when <m>9x^2-9 = 0</m> and <m>2y+4 = 0</m>.
-              The critical points of <m>f</m> are then <m>(1,-2)</m> and <m>(-1,-2)</m>.
-              To classify these critical points with the Second Derivative Test,
-              we need the second order partial derivatives of <m>f</m>.
-              Differentiating the first order partial derivatives gives us
-              <me>
-                \frac{\partial^2 f}{\partial x^2} = 18x, \ \ \ \frac{\partial^2 f}{\partial y^2} = 2, \ \ \text{ and }  \ \ \frac{\partial^2 f}{\partial x \partial y} = 0
-              </me>.
-              Then
-              <me>
-                D(1,-2) = f_{xx}(1,-2)f_{yy}(1,-2) - \left(f_{xy}(1,-2)\right)^2 = (18)(2) - (0)^2 = 36
-              </me>.
-              That <m>D(1,-2) \gt 0</m> and
-              <m>f_{xx}(1,-2) \gt 0</m> tells us that <m>f</m> has a relative minimum at <m>(1,-2)</m>.
-              Also,
-              <me>
-                D(-1,-2) = f_{xx}(-1,-2)f_{yy}(-1,-2) - \left(f_{xy}(-1,-2)\right)^2 = (-18)(2) - (0)^2 = -36
-              </me>.
-              That <m>D(-1,-2) \lt  0</m> tells us that <m>f</m> has a saddle point at <m>(-1,-2)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              To find the critical points,
-              we determine the points in the domain of <m>f</m> (<m>x \neq 0</m> and <m>y \neq 0</m>) where
-              <m>\nabla f = \vzero</m> or <m>\nabla f</m> does not exist.
-              Now
-              <me>
-                \nabla f = \left\langle y-\frac{2}{x^2}, x-\frac{4}{y^2} \right\rangle
-              </me>,
-              and so <m>\nabla f = \vzero</m> when
-              <md>
-                <mrow>y-\frac{2}{x^2} \amp = 0</mrow>
-                <mrow>x-\frac{4}{y^2} \amp = 0</mrow>
-              </md>.
-              The first equation tells us that <m>y = \frac{2}{x^2}</m>.
-              Substituting into the second equation shows that
-              <md>
-                <mrow>x - \frac{4}{\left(\frac{2}{x^2}\right)^2} \amp = 0</mrow>
-                <mrow>x - \frac{4x^4}{4} \amp = 0</mrow>
-                <mrow>x - x^4 \amp = 0</mrow>
-                <mrow>x(1-x^3) \amp = 0</mrow>
-              </md>.
-              So <m>x = 0</m> or <m>1-x^3 = 1</m>.
-              This gives us <m>x=0</m> or <m>x=1</m>.
-              Now <m>x=0</m> is not in the domain of <m>f</m>,
-              so we only consider <m>x=1</m>.
-              Then <m>y = \frac{2}{1^2} = 2</m>.
-              Thus, the only critical point of <m>f</m> is <m>(1,2)</m>.
-              To classify this critical point with the Second Derivative Test,
-              we need the second order partial derivatives of <m>f</m>.
-              Differentiating the first order partial derivatives gives us
-              <me>
-                \frac{\partial^2 f}{\partial x^2} = \frac{4}{x^3}, \ \ \ \frac{\partial^2 f}{\partial y^2} = \frac{8}{y^3}, \ \ \text{ and }  \ \ \frac{\partial^2 f}{\partial x \partial y} = 1
-              </me>.
-              Then
-              <me>
-                D(1,2) = f_{xx}(1,2)f_{yy}(1,2) - \left(f_{xy}(1,2)\right)^2 = (4)(1) - (1)^2 = 3
-              </me>.
-              That <m>D(1,2) \gt 0</m> and
-              <m>f_{xx}(1,2) \gt 0</m> tells us that <m>f</m> has a relative minimum at <m>(1,2)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              To find the critical points,
-              we determine the points in the domain of <m>f</m> where
-              <m>\nabla f = \vzero</m> or <m>\nabla f</m> does not exist.
-              Now
-              <me>
-                \nabla f = \langle 3x^2-3y, 3y^2 - 3x \rangle
-              </me>,
-              and so <m>\nabla f = \vzero</m> when <m>3x^2-3y = 0</m> and <m>3y^2 - 3x = 0</m>. Solving these equations simultaneously yields the critical points of <m>(0, 0)</m> and <m>(1, 1)</m>.
-              To classify these critical points with the Second Derivative Test,
-              we need the second order partial derivatives of <m>f</m>.
-              Differentiating the first order partial derivatives gives us
-              <me>
-                \frac{\partial^2 f}{\partial x^2} = 6x, \ \ \ \frac{\partial^2 f}{\partial y^2} = 6y, \ \ \text{ and }  \ \ \frac{\partial^2 f}{\partial x \partial y} = -3
-              </me>.
-              Then
-              <me>
-                D(0, 0) = f_{xx}(0, 0)f_{yy}(0 0) - \left(f_{xy}(0, 0)\right)^2 = (0)(0) - (-3)^2 = -9
-              </me>.
-              That <m>D(0, 0) \lt 0</m> tells us that <m>f</m> has a saddle point at <m>(0, 0)</m>.
-              Also, 
-              <me>
-                D(1,1) = f_{xx}(1, 1)f_{yy}(1, 1) - \left(f_{xy}(1, 1)\right)^2 = (6)(6) - (-3)^2 = 36 - 9 = 27
-              </me>.
-              Since <m>D(1, 1) \gt  0</m>   and
-              <m>f_{xx}(1,1) \gt 0</m>, we determine that <m>f</m> has a local minimum at <m>(1, 1)</m>.
-            </p>
-          </li>
-        </ol>
+        <p>
+          To find the critical points, we determine the points in the domain of <m>f</m> where <m>\nabla f = \vzero</m> or <m>\nabla f</m> does not exist.
+          Now
+          <me>
+            \nabla f = \langle 9x^2-9, 2y+4 \rangle
+          </me>,
+          and so <m>\nabla f = \vzero</m> when <m>9x^2-9 = 0</m> and <m>2y+4 = 0</m>. The critical points of <m>f</m> are then <m>(1,-2)</m> and <m>(-1,-2)</m>. To classify these critical points with the Second Derivative Test, we need the second order partial derivatives of <m>f</m>. Differentiating the first order partial derivatives gives us
+          <me>
+            \frac{\partial^2 f}{\partial x^2} = 18x, \ \ \ \frac{\partial^2 f}{\partial y^2} = 2, \ \ \text{ and }  \ \ \frac{\partial^2 f}{\partial x \partial y} = 0
+          </me>
+          Then
+          <me>
+            D(1,-2) = f_{xx}(1,-2)f_{yy}(1,-2) - \left(f_{xy}(1,-2)\right)^2 = (18)(2) - (0)^2 = 36
+          </me>.
+          That <m>D(1,-2) \gt 0</m> and <m>f_{xx}(1,-2) \gt 0</m> tells us that <m>f</m> has a relative minimum at <m>(1,-2)</m>. Also,
+          <me>
+            D(-1,-2) = f_{xx}(-1,-2)f_{yy}(-1,-2) - \left(f_{xy}(-1,-2)\right)^2 = (-18)(2) - (0)^2 = -36
+          </me>.
+          That <m>D(-1,-2) \lt  0</m> tells us that <m>f</m> has a saddle point at <m>(-1,-2)</m>.
+        </p>
       </solution>
-
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>f(x,y) = xy + \frac{2}{x} + \frac{4}{y}</m>
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>f</m> has a relative minimum at <m>(1,2)</m>
+        </p>
+      </answer>
+      <solution>
+        <p>
+          To find the critical points, we determine the points in the domain of <m>f</m> (<m>x \neq 0</m> and <m>y \neq 0</m>) where <m>\nabla f = \vzero</m> or <m>\nabla f</m> does not exist. Now
+          <me>
+            \nabla f = \left\langle y-\frac{2}{x^2}, x-\frac{4}{y^2} \right\rangle
+          </me>,
+          and so <m>\nabla f = \vzero</m> when
+          <md>
+            <mrow>y-\frac{2}{x^2} \amp = 0</mrow>
+            <mrow>x-\frac{4}{y^2} \amp = 0</mrow>
+          </md>.
+          The first equation tells us that <m>y = \frac{2}{x^2}</m>. Substituting into the second equation shows that
+          <md>
+            <mrow>x - \frac{4}{\left(\frac{2}{x^2}\right)^2} \amp = 0</mrow>
+            <mrow>x - \frac{4x^4}{4} \amp = 0</mrow>
+            <mrow>x - x^4 \amp = 0</mrow>
+            <mrow>x(1-x^3) \amp = 0</mrow>
+          </md>.
+          So <m>x = 0</m> or <m>1-x^3 = 1</m>. This gives us <m>x=0</m> or <m>x=1</m>. Now <m>x=0</m> is not in the domain of <m>f</m>, so we only consider <m>x=1</m>.
+          Then <m>y = \frac{2}{1^2} = 2</m>. Thus, the only critical point of <m>f</m> is <m>(1,2)</m>. To classify this critical point with the Second Derivative Test,
+          we need the second order partial derivatives of <m>f</m>. Differentiating the first order partial derivatives gives us
+          <me>
+            \frac{\partial^2 f}{\partial x^2} = \frac{4}{x^3}, \ \ \ \frac{\partial^2 f}{\partial y^2} = \frac{8}{y^3}, \ \ \text{ and }  \ \ \frac{\partial^2 f}{\partial x \partial y} = 1
+          </me>.
+          Then
+          <me>
+            D(1,2) = f_{xx}(1,2)f_{yy}(1,2) - \left(f_{xy}(1,2)\right)^2 = (4)(1) - (1)^2 = 3
+          </me>.
+          That <m>D(1,2) \gt 0</m> and <m>f_{xx}(1,2) \gt 0</m> tells us that <m>f</m> has a relative minimum at <m>(1,2)</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>f(x,y) = x^3 + y^3 - 3xy</m>
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <m>f</m> has a saddle point at <m>(0, 0)</m> and a relative minimum at <m>(1,1)</m> 
+        </p>
+      </answer>
+      <solution>
+        <p>
+          To find the critical points, we determine the points in the domain of <m>f</m> where <m>\nabla f = \vzero</m> or <m>\nabla f</m> does not exist. Now
+          <me>
+            \nabla f = \langle 3x^2-3y, 3y^2 - 3x \rangle
+          </me>,
+          and so <m>\nabla f = \vzero</m> when <m>3x^2-3y = 0</m> and <m>3y^2 - 3x = 0</m>. Solving these equations simultaneously yields the critical points of <m>(0, 0)</m> and <m>(1, 1)</m>. To classify these critical points with the Second Derivative Test, we need the second order partial derivatives of <m>f</m>. Differentiating the first order partial derivatives gives us
+          <me>
+            \frac{\partial^2 f}{\partial x^2} = 6x, \ \ \ \frac{\partial^2 f}{\partial y^2} = 6y, \ \ \text{ and }  \ \ \frac{\partial^2 f}{\partial x \partial y} = -3
+          </me>.
+          Then
+          <me>
+            D(0, 0) = f_{xx}(0, 0)f_{yy}(0 0) - \left(f_{xy}(0, 0)\right)^2 = (0)(0) - (-3)^2 = -9
+          </me>.
+          That <m>D(0, 0) \lt 0</m> tells us that <m>f</m> has a saddle point at <m>(0, 0)</m>. Also, 
+          <me>
+            D(1,1) = f_{xx}(1, 1)f_{yy}(1, 1) - \left(f_{xy}(1, 1)\right)^2 = (6)(6) - (-3)^2 = 36 - 9 = 27
+          </me>.
+          Since <m>D(1, 1) \gt  0</m> and <m>f_{xx}(1,1) \gt 0</m>, we determine that <m>f</m> has a local minimum at <m>(1, 1)</m>.
+        </p>
+      </solution>
+    </task>
     </activity>
-
     <p>
       As we learned in single-variable calculus, finding extremal values of functions can be particularly useful in applied settings. For instance, we can often use calculus to determine the least expensive way to construct something or to find the most efficient route between two locations. The same possibility holds in settings with two or more variables.
     </p>
-
     <activity xml:id="A_10_7_10">
-      <statement>
+      <introduction>
         <p>
+          <p>
           While the quantity of a product demanded by consumers is often a function of the price of the product, the demand for a product may also depend on the price of other products. For instance, the demand for blue jeans at Old Navy may be affected not only by the price of the jeans themselves, but also by the price of khakis.
         </p>
 
         <p>
-          Suppose we have two goods whose respective prices are <m>p_1</m> and
-          <m>p_2</m>. The demand for these goods, <m>q_1</m> and <m>q_2</m>, depend on the
-          prices as
+          Suppose we have two goods whose respective prices are <m>p_1</m> and <m>p_2</m>. The demand for these goods, <m>q_1</m> and <m>q_2</m>, depend on the prices as
           <mdn>
-          <mrow xml:id="eq_good1">
-          q_1 \amp = 150 - 2p_1 - p_2 
-          </mrow>
-          <mrow xml:id="eq_good2">
-          q_2 \amp = 200 - p_1 - 3p_2. 
-          </mrow>
+            <mrow xml:id="eq_good1"> q_1 \amp = 150 - 2p_1 - p_2 </mrow>
+            <mrow xml:id="eq_good2"> q_2 \amp = 200 - p_1 - 3p_2 </mrow>
           </mdn>
         </p>
 
@@ -1068,117 +1082,127 @@
         <p>
           A graph of <m>R</m> as a function of <m>p_1</m> and <m>p_2</m> is shown in <xref ref="F_10_7_Optimize1">Figure</xref>.
         </p>
-
-        <figure xml:id="F_10_7_Optimize1">
+      <figure xml:id="F_10_7_Optimize1">
+      <caption>A plot of the revenue function <m>R(p_1,p_2)</m></caption>
+        <interactive title="interactive-F_10_7_Optimize1" platform="sage" width="100%" aspect="1:1">
+          <slate surface="sage">
+            var('x,y,z,t,s')
+            f(x,y)=150*x+200*y-2*x*y-2*x^2-3*y^2
+            param(s,t)=(s,t,f(s,t))
+            #set up grid      n is number of steps in s    m is number of steps in t  
+            #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+            n=21;m=21;a1=0;a2=60;b1=0;b2=60; 
+            #c1 is surface color     o1 is surface opacity
+            #c2 and o2 are for constant t value traces
+            #c3 and o3 are for constant s value traces
+            c1="gray"; c2="black"; c3="black"; o1=0.5; o2=0.3; o3=0.3;
+            plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+            for i in range(n+1):
+              sv=a1+i/n*(a2-a1)
+              plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+            for i in range(m+1):
+              tv=b1+i/m*(b2-b1)
+              plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+            show(plot99,aspect_ratio=(1,1,100/14000),viewpoint=[[-0.1958,-0.5867,-0.7858],150.62],camera_position=[6.2458,8.2356,2.958])
+          </slate>
+        </interactive>
+      </figure>
+       <!--  <figure xml:id="F_10_7_Optimize1">
           <caption>A revenue function.</caption>
           <image width="50%" source="images/fig_10_7_revenue"/>
-        </figure>
-
-        <ol marker="a.">
-          <li>
-            <p>
-              Find all critical points of the revenue function, <m>R</m>. (Hint: You should obtain a system of two equations in two unknowns which can be solved by elimination or substitution.)
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Apply the Second Derivative Test to determine the type of any critical point(s).
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Where should the seller set the prices <m>p_1</m> and <m>p_2</m> to maximize the
-                  revenue?
-            </p>
-          </li>
-        </ol>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              critical point is <m>(25, 25)</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>R</m> has a relative maximum at the critical point
-            </p>
-          </li>
-          <li>
-            <p>
-              The price for each item should be set at 25 dollars to maximize the revenue.
-              Note that the maximum revenue is <m>R(25,25) = 4375</m>.
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              To find the critical points we determine where <m>R_{p_1}</m> and <m>R_{p_2}</m> are simultaneously 0
-              (since <m>R</m> is a polynomial function,
-              the partial derivatives of <m>R</m> exist everywhere).
-              Now
-              <me>
-                R_{p_1}(p_1,p_2) = 150 - 2p_2 - 4p_1 \ \ \text{ and }  \ \ R_{p_2}(p_1,p_2) = 200 - 2p_1 - 6p_2
-              </me>.
-              The system
-              <md>
-                <mrow>R_{p_1}(p_1,p_2) \amp = 0</mrow>
-                <mrow>R_{p_2}(p_1,p_2) \amp = 0</mrow>
-              </md>
-              or
-              <md>
-                <mrow>150 - 2p_2 - 4p_1 \amp = 0</mrow>
-                <mrow>200 - 2p_1 - 6p_2 \amp = 0</mrow>
-              </md>
-              is a system of two linear equations in two unknowns.
-              Multiplying both sides of the second equation by <m>-2</m> and then adding corresponding sides of this new equation with the first equation yields the equation
-              <me>
-                -250 + 10p_2 = 0
-              </me>
-              or
-              <me>
-                p_2 = 25
-              </me>.
-              Substituting back into the first equation shows that
-              <me>
-                p_1 = 25
-              </me>.
-              Thus, our only critical point occurs at <m>(25, 25)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              To apply the second derivative test,
-              we need the second order partial derivatives:
-              <me>
-                R_{p_1p_1}(p_1,p_2) = -4, \ \ R_{p_1p_2}(p_1,p_2) = -2, \ \ R_{p_2p_2}(p_2,p_2) = -6
-              </me>.
-              So the discriminant of <m>R</m> at the critical point <m>(25,25)</m> is
-              <me>
-                D = R_{p_1p_1}(25,25) R_{p_2p_2}(25,25) - R_{p_1p_2}(25,25)^2 = 24-4=20 \gt 0
-              </me>,
-              and <m>R</m> has a relative maximum at the critical point. The graph of <m>R</m> indicates an absolute maximum as well at the critical point.
-            </p>
-          </li>
-          <li>
-            <p>
-              Since <m>R</m> has a relative maximum at the critical point, the price for each item should be set at 25 dollars to maximize the revenue.
-              Note that the maximum revenue is <m>R(25,25) = 4375</m>.
-            </p>
-          </li>
-        </ol>
-      </solution>
-
-
+        </figure> -->
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Find all critical points of the revenue function, <m>R</m>. 
+          </p>
+        </statement>
+        <hint>
+          <p>
+            You should obtain a system of two equations in two unknowns which can be solved by elimination or substitution.
+          </p>
+        </hint>
+        <answer>
+          <p>
+            critical point is <m>(25, 25)</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            To find the critical points we determine where <m>R_{p_1}</m> and <m>R_{p_2}</m> are simultaneously 0 (since <m>R</m> is a polynomial function, the partial derivatives of <m>R</m> exist everywhere). Now
+            <me>
+              R_{p_1}(p_1,p_2) = 150 - 2p_2 - 4p_1 \ \ \text{ and }  \ \ R_{p_2}(p_1,p_2) = 200 - 2p_1 - 6p_2
+            </me>.
+            The system
+            <md>
+              <mrow>R_{p_1}(p_1,p_2) \amp = 0</mrow>
+              <mrow>R_{p_2}(p_1,p_2) \amp = 0</mrow>
+            </md>
+            or
+            <md>
+              <mrow>150 - 2p_2 - 4p_1 \amp = 0</mrow>
+              <mrow>200 - 2p_1 - 6p_2 \amp = 0</mrow>
+            </md>
+            is a system of two linear equations in two unknowns. Multiplying both sides of the second equation by <m>-2</m> and then adding corresponding sides of this new equation with the first equation yields the equation
+            <me>
+              -250 + 10p_2 = 0
+            </me>
+            or
+            <me>
+            p_2 = 25
+            </me>.
+            Substituting back into the first equation shows that
+            <me>
+              p_1 = 25
+            </me>
+            Thus, our only critical point occurs at <m>(25, 25)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Apply the Second Derivative Test to determine the type of any critical point(s).
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>R</m> has a relative maximum at the critical point
+          </p>
+        </answer>
+        <solution>
+          <p>
+            To apply the second derivative test, we need the second order partial derivatives:
+            <me>
+              R_{p_1p_1}(p_1,p_2) = -4, \ \ R_{p_1p_2}(p_1,p_2) = -2, \ \ R_{p_2p_2}(p_2,p_2) = -6
+            </me>.
+            So the discriminant of <m>R</m> at the critical point <m>(25,25)</m> is
+            <me>
+              D = R_{p_1p_1}(25,25) R_{p_2p_2}(25,25) - R_{p_1p_2}(25,25)^2 = 24-4=20 \gt 0
+            </me>,
+            and <m>R</m> has a relative maximum at the critical point. The graph of <m>R</m> indicates an absolute maximum as well at the critical point.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Where should the seller set the prices <m>p_1</m> and <m>p_2</m> to maximize the revenue?
+          </p>
+        </statement>
+        <answer>
+          <p>
+            The price for each item should be set at 25 dollars to maximize the revenue. Note that the maximum revenue is <m>R(25,25) = 4375</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Since <m>R</m> has a relative maximum at the critical point, the price for each item should be set at 25 dollars to maximize the revenue. Note that the maximum revenue is <m>R(25,25) = 4375</m>.
+          </p>
+        </solution>
+      </task>
     </activity>
   </subsection>
 
@@ -1187,82 +1211,92 @@
   <subsection>
     <title>Optimization on a Restricted Domain</title>
     <p>
-      The Second Derivative Test helps us classify critical points of a
-      function, but it does not tell us if the function actually has an
-      absolute maximum or minimum at each such point. For single-variable functions, the
-      Extreme Value Theorem told us that a continuous function on a
-      closed interval <m>[a, b]</m> always has both an absolute maximum and minimum on
-      that interval, and that these absolute extremes must occur at either an endpoint or at a critical point. Thus, to find the absolute maximum and minimum, we determine the
-      critical points in the interval and then evaluate the function at these
-      critical points and at the endpoints of the interval. A similar approach works for functions of two variables.
+      The Second Partials Derivative Test helps us classify critical points for a function of two variables, but it does not tell us if the function actually has an absolute maximum or minimum at each such point. For single-variable functions, the <url href="https://activecalculus.org/single/sec-3-3-optimization.html#extreme-value-theorem">Extreme Value Theorem</url> told us that a continuous function on a closed interval <m>[a, b]</m> always has both an absolute maximum and minimum on that interval, and that these absolute extremes must occur at either an endpoint or at a critical point. Thus, to find the absolute maximum and minimum, we determine the critical points in the interval and then evaluate the function at these critical points and at the endpoints of the interval. A similar approach works for functions of two variables. 
     </p>
-
     <p>
-      For functions of two variables, closed and bounded regions play the
-      role that closed intervals did for functions of a single variable. A
-      closed region is a region that contains its boundary (the unit disk <m>x^2+y^2 \leq 1</m> is closed, while its interior <m>x^2+y^2 \lt  1</m> is not, for example), while a bounded region is
-      one that does not stretch to infinity in any direction. Just as for
-      functions of a single variable, continuous functions of several
-      variables that are defined on closed, bounded regions must have
-      absolute maxima and minima in those regions.
+      For functions of two variables, closed and bounded regions play the role that closed intervals did for functions of a single variable. A closed region is a region that contains its boundary (the unit disk <m>x^2+y^2 \leq 1</m> is closed, while its interior <m>x^2+y^2 \lt  1</m> is not, for example), while a bounded region is one that does not stretch to infinity in any direction. Just as for functions of a single variable, continuous functions of several variables that are defined on closed, bounded regions must have absolute maxima and minima in those regions.
     </p>
-
     <assemblage xml:id="Extreme-value-theorem">
       <title>The Extreme Value Theorem</title>
-    <p>
-      Let <m>f= f(x,y)</m>
-      be a continuous function on a closed and bounded region <m>R</m>. Then
-      <m>f</m> has an absolute maximum and an absolute minimum in <m>R</m>.
-    </p>
+      <p>
+        Let <m>f= f(x,y)</m> be a continuous function on a closed and bounded region <m>R</m>. Then <m>f</m> has an absolute maximum and an absolute minimum in <m>R</m>.
+      </p>
     </assemblage>
-
-    
-
     <p>
-      The absolute extremes must occur at either a critical point in the interior of
-      <m>R</m> or at a boundary point of <m>R</m>. We
-      therefore must test both possibilities, as we demonstrate in the following example.
+      If you wanted to find the highest point in your state, you need to look up the elevations for the tops of the hills/mountains and compare those values to the elevation along the borders. Note that the elevation along a border of your state is a one-dimensional maximization problem and you can use your tools from single variable calculus. The single variable 
     </p>
-
+    <p>
+      The absolute extremes must occur at either a critical point in the interior of <m>R</m> or at a boundary point of <m>R</m>. We therefore must test both possibilities, as we demonstrate in the following example.
+    </p>
     <example>
       <statement>
         <p>
-          Suppose the temperature <m>T</m> at each point on the
-          circular plate <m>x^2+y^2 \leq 1</m> is given by
+          For this example we will be looking to find the maximum and minimum temperature values on a heated circular plate. The plate has a 1 meter radius and we will measure the location on the plate from the center. The domain <m>R=\{(x,y):x^2+y^2 \leq 1\}</m> of our temperature function is a closed and bounded region, as shown in <xref ref="plate1">Figure</xref>.
+        </p>
+        <figure xml:id="plate1">
+          <caption>A plot of the circular plate as the domain of our temperature function</caption>
+          <image width="60%" xml:id="img-plate1">
+            <sageplot>
+              var('x,y,t,s')
+              plot21=circle((0,0),1,edgecolor="gray",fill=True,facecolor="mediumturquoise",gridlines=True,xmin=-1.5,xmax=1.5,ymin=-1.5,ymax=1.5,thickness=2,axes_labels=["$x$","$y$"])
+              plot21
+            </sageplot>
+          </image>
+        </figure>  
+        <p>
+          Suppose the temperature <m>T</m> at each point on the circular plate <m>x^2+y^2 \leq 1</m> is given by
           <me>
-            T(x,y) = 2x^2+y^2-y.
+            T(x,y) = 2x^2+y^2-y
           </me>
         </p>
 
         <p>
-          The domain <m>R=\{(x,y):x^2+y^2 \leq 1\}</m> is
-          a closed and bounded region, as shown on the left of <xref ref="F_10_7_temperature">Figure</xref>, so the Extreme Value Theorem assures us
-          that <m>T</m> has an absolute maximum and minimum on the plate. The
-          graph of <m>T</m> over its domain <m>R</m> is shown in <xref ref="F_10_7_temperature">Figure</xref>. We will find the hottest and coldest
-          points on the plate.
+          Because our domain for <m>T</m> is closed and bounded, the Extreme Value Theorem guarantees that <m>T</m> has an absolute maximum and minimum on the plate. The graph of <m>T</m> over its domain <m>R</m> is shown in <xref ref="F_10_7_temperature">Figure</xref>. We will find the hottest and coldest points on the plate.
         </p>
-
         <figure xml:id="F_10_7_temperature">
+          <caption>A plot of the temperature across the circular metal plate</caption>
+          <interactive title="interactive-F_10_7_temperature" platform="sage" width="100%" aspect="1:1">
+            <slate surface="sage">
+              var('x,y,z,t,s')
+              f(x,y)=2*x^2+y^2-y
+              param(s,t)=(s*cos(t),s*sin(t),f(s*cos(t),s*sin(t)))
+              #set up grid      n is number of steps in s    m is number of steps in t  
+              #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+              n=21;m=21;a1=0;a2=1;b1=0;b2=2*pi; 
+              #c1 is surface color     o1 is surface opacity
+              #c2 and o2 are for constant t value traces
+              #c3 and o3 are for constant s value traces
+              c1="gray"; c2="black"; c3="black"; o1=0.5; o2=0.3; o3=0.3;
+              plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+              for i in range(n+1):
+                sv=a1+i/n*(a2-a1)
+                plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+              for i in range(m+1):
+                tv=b1+i/m*(b2-b1)
+                plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+              plot99+=parametric_plot3d(param(1,t),(t,0,2*pi),color="mediumturquoise",thickness=3)
+              show(plot99,viewpoint=[[-0.0928,-0.691,-0.7169],169],camera_position=[1.3005,4.752,1.1816])
+            </slate>
+          </interactive>
+        </figure>
+        <!-- <figure xml:id="F_10_7_temperature">
           <caption>Domain of the temperature <m>T(x,y) = 2x^2+y^2-y</m> and its graph.</caption>
           <sidebyside widths="50% 50%">
           <image source="images/fig_10_7_temperature_domain"/>
           <image source="images/fig_10_7_temperature"/>
           </sidebyside>
-        </figure>
-
+        </figure> -->
         <p>
-          If the absolute maximum or minimum occurs inside the disk, it will be at a critical point so we begin by looking for critical points inside the disk. To do this, notice that critical points are given by the conditions <m>T_x= 4x=0</m> and <m>T_y=2y - 1=0</m>. This means that there is one critical point of the function at the point <m>(x_0,y_0) =(0,1/2)</m>, which lies inside the disk.
+          If the absolute maximum or minimum occurs inside the disk, then the absolute extreme point will be at a critical point, so we begin by looking for critical points inside the disk. To do this, notice that critical points are given by the conditions <m>T_x= 4x=0</m> and <m>T_y=2y - 1=0</m>. This means that there is one critical point of the function at the point <m>(x_0,y_0) =(0,1/2)</m>, which lies inside the disk.
         </p>
-
         <p>
-          We now find the hottest and coldest points on the boundary of the
-          disk, which is the circle of radius 1. As we have seen, the points on the unit circle can be parametrized as
+          We now find the hottest and coldest points on the boundary of the disk, which is the circle of radius 1. As we have seen, the points on the unit circle can be parametrized as
           <me>
             x(t) = \cos(t), \ y(t) = \sin(t),
           </me>
           where <m>0\leq t \leq 2\pi</m>. The temperature at a point on the circle is then described by
           <me>
-            T(x(t), y(t)) = 2\cos^2(t) + \sin^2(t) - \sin(t).
+            T(x(t), y(t)) = 2\cos^2(t) + \sin^2(t) - \sin(t)
           </me>
         </p>
 
@@ -1277,7 +1311,7 @@
              \amp  = -2\cos(t)\sin(t) - \cos(t) = \cos(t) (-2\sin(t) - 1) 
              </mrow>
              <mrow>
-              \amp = 0.
+              \amp = 0
               </mrow>
           </md>
         </p>
@@ -1289,71 +1323,58 @@
         <sidebyside>
           <tabular>
           <row>
-            <cell><m>\bullet\ \ (x,y) = (0,1)</m> when <m>t = \frac{\pi}{2}</m>,</cell>
+            <cell><m>\bullet\ \ (x,y) = (0,1)</m> when <m>t = \frac{\pi}{2}</m></cell>
           </row>
           <row>
-            <cell><m>\bullet\ \ (x,y) = \left(\frac{\sqrt{3}}{2},-\frac{1}{2}\right)</m> when <m>t =
-                \frac{11\pi}{6}</m>. </cell>
+            <cell><m>\bullet\ \ (x,y) = \left(\frac{\sqrt{3}}{2},-\frac{1}{2}\right)</m> when <m>t = \frac{11\pi}{6}</m></cell>
           </row>
           </tabular>
-
           <tabular>
             <row>
-              <cell><m>\bullet\ \ (x,y) = (0,-1)</m> when <m>t = \frac{3\pi}{2}</m>,<nbsp/></cell>
+              <cell><m>\bullet\ \ (x,y) = (0,-1)</m> when <m>t = \frac{3\pi}{2}</m></cell>
             </row>
             <row>
-              <cell><m>\bullet\ \ (x,y) = \left(-\frac{\sqrt{3}}{2},-\frac{1}{2}\right)</m> when <m>t
-                = \frac{7\pi}{6}</m>.</cell>
+              <cell><m>\bullet\ \ (x,y) = \left(-\frac{\sqrt{3}}{2},-\frac{1}{2}\right)</m> when <m>t = \frac{7\pi}{6}</m></cell>
           </row>
           </tabular>
         </sidebyside>
-
-
         <p>
           These are the critical points of <m>T</m> on the boundary and so this collection of points includes the hottest and coldest points on the boundary.
         </p>
 
         <p>
-          We now have a list of candidates for the hottest and coldest points:
-          the critical point in the interior of the disk and the critical points on the boundary. We find the hottest and coldest points by evaluating the temperature at each of these points, and find that
+          We now have a list of candidates for the hottest and coldest points: the critical point in the interior of the disk and the critical points on the boundary. We find the hottest and coldest points by evaluating the temperature at each of these points, and find that
        </p>
 
     <sidebyside>
         <tabular>
           <row>
-            <cell><m>\bullet\ \  T\left(0,\frac{1}{2}\right) = -\frac{1}{4}</m>, <nbsp/></cell>
+            <cell><m>\bullet\ \  T\left(0,\frac{1}{2}\right) = -\frac{1}{4}</m></cell>
           </row>
           <row>
-            <cell><m>\bullet\ \  T\left(-\frac{\sqrt{3}}{2},-\frac{1}{2}\right) =
-                \frac{9}{4}</m>, <nbsp/></cell>
+            <cell><m>\bullet\ \  T\left(-\frac{\sqrt{3}}{2},-\frac{1}{2}\right) = \frac{9}{4}</m> </cell>
           </row>
         </tabular>
 
         <tabular>
           <row>
-            <cell><m>\bullet\ \  T\left(0,1\right) = 0</m>, <nbsp/></cell>
+            <cell><m>\bullet\ \  T\left(0,1\right) = 0</m> </cell>
           </row>
           <row>
-            <cell><m>\bullet\ \  T\left(-\frac{\sqrt{3}}{2},-\frac{1}{2}\right) =
-                \frac{9}{4}</m>. <nbsp/></cell>
+            <cell><m>\bullet\ \  T\left(-\frac{\sqrt{3}}{2},-\frac{1}{2}\right) = \frac{9}{4}</m></cell>
           </row>          
         </tabular>
 
         <tabular>
           <row>
-            <cell><m>\bullet\ \  T\left(0,-1\right) = 2</m>,</cell>
+            <cell><m>\bullet\ \  T\left(0,-1\right) = 2</m></cell>
           </row>
-<!--          <row> <m>?</m>
-          </row>
--->          
         </tabular>
 
       </sidebyside>
 
         <p>
-          So the maximum value of <m>T</m> on the disk <m>x^2+y^2\leq 1</m> is
-          <m>\frac{9}{4}</m>, which occurs at the two points <m>\left(\pm\frac{\sqrt{3}}{2},-\frac{1}{2}\right)</m> on
-          the boundary, and the minimum value of <m>T</m> on the disk is <m>-\frac{1}{4}</m> which occurs at the critical point <m>\left(0,\frac{1}{2}\right)</m> in the interior of <m>R</m>.
+          So the maximum temperature on the disk <m>x^2+y^2\leq 1</m> is <m>\frac{9}{4}</m>, which occurs at the two points <m>\left(\pm\frac{\sqrt{3}}{2},-\frac{1}{2}\right)</m> on the boundary, and the minimum value of <m>T</m> on the disk is <m>-\frac{1}{4}</m> which occurs at the critical point <m>\left(0,\frac{1}{2}\right)</m> in the interior of <m>R</m>.
         </p>
       </statement>
     </example>
@@ -1367,21 +1388,18 @@
             Find all critical points of the function in the interior of the domain.
           </p>
         </li>
-
         <li>
           <title>Step 2:</title>
           <p>
             Find all the critical points of the function on the boundary of the domain. Working on the boundary of the domain reduces this part of the problem to one or more single variable optimization problems. Note that there may be endpoints on portions of the boundary that need to be considered. 
           </p>
         </li>
-
         <li>
           <title>Step 3:</title>
           <p>
             Evaluate the function at each of the points found in Steps 1 and 2.
           </p>
         </li>
-
         <li>
           <title>Step 4:</title>
           <p>
@@ -1390,207 +1408,207 @@
         </li>
       </ul>
     </p>
-
     <activity xml:id="A_10_7_6">
-      <statement>
+      <introduction>
         <p>
-          Let <m>f(x,y) = x^2-3y^2-4x+6y</m> with
-          triangular domain <m>R</m> whose vertices are at <m>(0,0)</m>, <m>(4,0)</m>, and
-          <m>(0,4)</m>. The domain <m>R</m> and a graph of <m>f</m> on the domain appear
-          in <xref ref="F_10_7_Optimize_ex2">Figure</xref>.
+          Let <m>f(x,y) = x^2-3y^2-4x+6y</m> with triangular domain <m>R</m> whose vertices are at <m>(0,0)</m>, <m>(4,0)</m>, and <m>(0,4)</m>. The domain <m>R</m> appears in <xref ref="triangleregion1">Figure</xref>. In this activity, we will go through the steps to find the absolute maximum and minimum of <m>f</m> on <m>R</m>.
         </p>
-
-        <figure xml:id="F_10_7_Optimize_ex2">
-          <caption>The domain of <m>f(x,y) = x^2-3y^2-4x+6y</m> and
-                its graph.</caption>
-          <sidebyside widths="50% 50%">
-          <image source="images/fig_10_7_activity_optim_domain"/>
-          <image source="images/fig_10_7_activity_optim"/>
-          </sidebyside>
+        <figure xml:id="triangleregion1">
+          <caption> A plot of <m>R</m>, the domain of <m>f(x,y) = x^2-3y^2-4x+6y</m></caption>
+            <image width="60%" xml:id="img-triangleregion1">
+              <sageplot>
+                var('x,y,t,s')
+                plot22=polygon([(0,0),(4,0),(0,4),(0,0)],edgecolor="gray",fill=True,color="mediumturquoise",gridlines=True,xmin=0,xmax=4.5,ymin=0,ymax=4.5,thickness=2,axes_labels=["$x$","$y$"])
+                plot22            
+              </sageplot>
+            </image>
         </figure>
-
-        <ol marker="a.">
-          <li>
-            <p>
-              Find all of the critical points of <m>f</m> in <m>R</m>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Parameterize the horizontal leg of the triangular domain, and find the critical points of <m>f</m> on that leg. (Hint: You may need to consider endpoints.)
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Parameterize the vertical leg of the triangular domain, and find the critical points of <m>f</m> on that leg. (Hint: You may need to consider endpoints.)
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Parameterize the hypotenuse of the triangular domain, and find the critical points of <m>f</m> on the hypotenuse. (Hint: You may need to consider endpoints.)
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Find the absolute maximum and absolute minimum values of <m>f</m> on <m>R</m>.
-            </p>
-          </li>
-        </ol>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              <m>(2, 1)</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>(2,0)</m>, <m>(0,0)</m>, and <m>(4,0)</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>(0,1)</m>, <m>(0,0)</m>, and <m>(0,4)</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>(0,4)</m> and <m>(4,0)</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              maximum value of <m>f</m> on <m>R</m> is 3, minimum value of <m>f</m> on <m>R</m> is <m>-24</m>
-            </p>  
-          </li>
-        </ol>
-      </answer>
-
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              A direct calculation shows that
-              <m>f_x = 2x-4</m> and <m>f_y = -6y+6</m>.
-              So <m>\nabla f = \vzero</m> when <m>x=2</m> and <m>y = 1</m>.
-              This point is in the domain <m>R</m> and is the only critical point of <m>f</m> in <m>R</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The base of the triangular domain can be parameterized by <m>x_1(t) = t</m>,
-              <m>y_1(t) = 0</m> with <m>t \in [0,4]</m>.
-              Now
-              <me>
-                f_1(t) = f(x_1(t),y_1(t)) = f(t,0) = t^2-4t
-              </me>.
-              The critical points of <m>f_1</m> are the roots of <m>f_1'(t)</m>.
-              Now
-              <me>
-                f_1'(t) = 2t-4 = 0
-              </me>
-              when <m>t=2</m>.
-              This give a critical point of <m>(2,0)</m> on the base.
-              We also need to consider the endpoints <m>t=0</m> and <m>t=4</m>.
-              When <m>t=0</m> we have <m>(x,y) = (0,0)</m> and when <m>t=4</m> we have <m>(x,y) = (4,0)</m>.
-              So there are three points at which <m>f_1</m> can attain a maximum or minimum on the base of the triangular domain:
-              <m>(2,0)</m>, <m>(0,0)</m>, and <m>(4,0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The vertical leg of the triangular domain can be parameterized by <m>x_2(t) = 0</m>,
-              <m>y_2(t) = t</m> with <m>t \in [0,4]</m>.
-              Now
-              <me>
-                f_2(t) = f(x_2(t),y_2(t)) = f(0,t) = -3t^2+6t
-              </me>.
-              The critical points of <m>f_2</m> are the roots of <m>f_2'(t)</m>.
-              Now
-              <me>
-                f_2'(t) = -6t+6 = 0
-              </me>
-              when <m>t=1</m>.
-              This give a critical point of <m>(0,1)</m> on the leg.
-              We also need to consider the endpoints <m>t=0</m> and <m>t=4</m>.
-              When <m>t=0</m> we have <m>(x,y) = (0,0)</m> and when <m>t=4</m> we have <m>(x,y) = (0,4)</m>.
-              So there are three points at which <m>f_2</m> can attain a maximum or minimum on the leg of the triangular domain:
-              <m>(0,1)</m>, <m>(0,0)</m>, and <m>(0,4)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The hypotenuse of the triangular domain can be parameterized by <m>x_3(t) = t</m>,
-              <m>y_3(t) = 4-t</m> with <m>t \in [0,4]</m>.
-              Now
-              <me>
-                f_3(t) = f(x_3(t),y_3(t)) = f(t,4-t) = t^2-3(4-t)^2-4t+6(4-t)
-              </me>.
-              The critical points of <m>f_3</m> are the roots of <m>f_3'(t)</m>.
-              Now
-              <me>
-                f_3'(t) = 2t+6(4-t)-4-6 = 8t+14 = 0
-              </me>
-              when <m>t=-\frac{7}{4}</m>.
-              This give a critical point of
-              <m>\left(-\frac{7}{4},\frac{23}{4}\right)</m> which is not in our domain.
-              We also need to consider the endpoints <m>t=0</m> and <m>t=4</m>.
-              When <m>t=0</m> we have <m>(x,y) = (0,4)</m> and when <m>t=4</m> we have <m>(x,y) = (4,0)</m>.
-              So there are two points at which <m>f_3</m> can attain a maximum or minimum on the hypotenuse of the triangular domain:
-              <m>(0,4)</m> and <m>(4,0)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              We now only need to compare the values of <m>f</m> at the critical points in the interior of <m>R</m> and on the boundary of <m>R</m>.
-              Now
-              <ul>
-                <li>
-                  <p>
-                    <m>f(2,1) = -1</m>,
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>f(2,0) = -4</m>,
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>f(0,0) = 0</m>,
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>f(4,0) = 0</m>,
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>f(0,1) = 3</m>,
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <m>f(0,4) = -24</m>,
-                  </p>
-                </li>
-              </ul>
-              so the maximum value of <m>f</m> on <m>R</m> is 3, occurring at the point <m>(0,1)</m> and the minimum value of <m>f</m> on <m>R</m> is <m>-24</m>,
-              occurring at the point <m>(0,4)</m>.
-            </p>  
-          </li>
-        </ol>
-      </solution>
-
-
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Find all of the critical points of <m>f</m> in <m>R</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>(2, 1)</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            A direct calculation shows that <m>f_x = 2x-4</m> and <m>f_y = -6y+6</m>. So <m>\nabla f = \vzero</m> when <m>x=2</m> and <m>y = 1</m>. This point is in the domain <m>R</m> and is the only critical point of <m>f</m> in <m>R</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Parameterize the edge of <m>R</m> that is on the <m>x</m>-axis and find the critical points of <m>f</m> on that edge. 
+          </p>
+        </statement>
+        <hint>
+          <p>
+            You may need to consider endpoints
+          </p>
+        </hint>
+        <answer>
+          <p>
+            <m>(2,0)</m>, <m>(0,0)</m>, and <m>(4,0)</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            The base of the triangular domain can be parameterized by <m>x_1(t) = t</m>, <m>y_1(t) = 0</m> with <m>t \in [0,4]</m>. Now
+            <me>
+              f_1(t) = f(x_1(t),y_1(t)) = f(t,0) = t^2-4t
+            </me>.
+            The critical points of <m>f_1</m> are the roots of <m>f_1'(t)</m>. Now
+            <me>
+              f_1'(t) = 2t-4 = 0
+            </me>
+            when <m>t=2</m>. This give a critical point of <m>(2,0)</m> on the base. We also need to consider the endpoints <m>t=0</m> and <m>t=4</m>. When <m>t=0</m> we have <m>(x,y) = (0,0)</m> and when <m>t=4</m> we have <m>(x,y) = (4,0)</m>. So there are three points at which <m>f_1</m> can attain a maximum or minimum on the base of the triangular domain: <m>(2,0)</m>, <m>(0,0)</m>, and <m>(4,0)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Parameterize the edge of <m>R</m> that is on the <m>y</m>-axis and find the critical points of <m>f</m> on that edge. 
+          </p>
+        </statement>
+        <hint>
+          <p>
+            You may need to consider endpoints
+          </p>
+        </hint>
+        <answer>
+          <p>
+            <m>(0,1)</m>, <m>(0,0)</m>, and <m>(0,4)</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            The vertical leg of the triangular domain can be parameterized by <m>x_2(t) = 0</m>, <m>y_2(t) = t</m> with <m>t \in [0,4]</m>. Now
+            <me>
+              f_2(t) = f(x_2(t),y_2(t)) = f(0,t) = -3t^2+6t
+            </me>.
+            The critical points of <m>f_2</m> are the roots of <m>f_2'(t)</m>. Now
+            <me>
+              f_2'(t) = -6t+6 = 0
+            </me>
+            when <m>t=1</m>. This give a critical point of <m>(0,1)</m> on the leg. We also need to consider the endpoints <m>t=0</m> and <m>t=4</m>. When <m>t=0</m> we have <m>(x,y) = (0,0)</m> and when <m>t=4</m> we have <m>(x,y) = (0,4)</m>. So there are three points at which <m>f_2</m> can attain a maximum or minimum on the leg of the triangular domain: <m>(0,1)</m>, <m>(0,0)</m>, and <m>(0,4)</m>.
+          </p>
+        </solution>
+      </task>    
+      <task>
+        <statement>
+          <p>
+            Parameterize the diagonal edge of <m>R</m> and find the critical points of <m>f</m> on that edge. 
+          </p>
+        </statement>
+        <hint>
+          <p>
+            You may need to consider endpoints
+          </p>
+        </hint>
+        <answer>
+          <p>
+            <m>(0,4)</m> and <m>(4,0)</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            The hypotenuse of the triangular domain can be parameterized by <m>x_3(t) = t</m>, <m>y_3(t) = 4-t</m> with <m>t \in [0,4]</m>. Now
+            <me>
+              f_3(t) = f(x_3(t),y_3(t)) = f(t,4-t) = t^2-3(4-t)^2-4t+6(4-t)
+            </me>
+            The critical points of <m>f_3</m> are the roots of <m>f_3'(t)</m>. Now
+            <me>
+              f_3'(t) = 2t+6(4-t)-4-6 = 8t+14 = 0
+            </me>
+            when <m>t=-\frac{7}{4}</m>. This give a critical point of <m>\left(-\frac{7}{4},\frac{23}{4}\right)</m> which is not in our domain. We also need to consider the endpoints <m>t=0</m> and <m>t=4</m>. When <m>t=0</m> we have <m>(x,y) = (0,4)</m> and when <m>t=4</m> we have <m>(x,y) = (4,0)</m>. So there are two points at which <m>f_3</m> can attain a maximum or minimum on the hypotenuse of the triangular domain: <m>(0,4)</m> and <m>(4,0)</m>.
+          </p>
+        </solution>
+      </task>  
+      <task>
+        <statement>
+          <p>
+            Find the absolute maximum and absolute minimum values of <m>f</m> on <m>R</m> and write a couple of sentences to compare your results to the surface plot 
+          </p>
+          <figure xml:id="surface-triangle1">
+            <caption> </caption>
+              <interactive title="interactive-surface-triangle1" platform="sage" width="100%" aspect="1:1">
+                <slate surface="sage">
+                  var('x,y,z,t,s')
+                  f(x,y)=x^2-3*y^2-4*x+6*y
+                  param(s,t)=(t,s*(4-t),f(t,s*(4-t)))
+                  #set up grid      n is number of steps in s    m is number of steps in t  
+                  #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+                  n=21;m=21;a1=0;a2=1;b1=0;b2=4; 
+                  #c1 is surface color     o1 is surface opacity
+                  #c2 and o2 are for constant t value traces
+                  #c3 and o3 are for constant s value traces
+                  c1="gray"; c2="black"; c3="black"; o1=0.5; o2=0.3; o3=0.3;
+                  plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+                  for i in range(n+1):
+                    sv=a1+i/n*(a2-a1)
+                    plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+                  for i in range(m+1):
+                    tv=b1+i/m*(b2-b1)
+                    plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+                  plot99+=parametric_plot3d(param(1,t),(t,b1,b2),color="mediumturquoise",thickness=3)
+                  plot99+=parametric_plot3d(param(0,t),(t,b1,b2),color="mediumturquoise",thickness=3)
+                  plot99+=parametric_plot3d(param(s,0),(s,a1,a2),color="mediumturquoise",thickness=3)
+                  show(plot99,aspect_ratio=(1,1,5/25),viewpoint=[[-0.0928,-0.691,-0.7169],169],camera_position=[1.3005,4.752,1.1816]) 
+                </slate>
+              </interactive>
+          </figure>
+        </statement>
+        <answer>
+          <p>
+            maximum value of <m>f</m> on <m>R</m> is 3, minimum value of <m>f</m> on <m>R</m> is <m>-24</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            We now only need to compare the values of <m>f</m> at the critical points in the interior of <m>R</m> and on the boundary of <m>R</m>. Now
+            <ul>
+              <li>
+                <p>
+                  <m>f(2,1) = -1</m>,
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>f(2,0) = -4</m>,
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>f(0,0) = 0</m>,
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>f(4,0) = 0</m>,
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>f(0,1) = 3</m>,
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>f(0,4) = -24</m>,
+                </p>
+              </li>
+            </ul>
+            so the maximum value of <m>f</m> on <m>R</m> is 3, occurring at the point <m>(0,1)</m> and the minimum value of <m>f</m> on <m>R</m> is <m>-24</m>, occurring at the point <m>(0,4)</m>.
+          </p>
+        </solution>
+      </task>
     </activity>
   </subsection>
 
@@ -1600,25 +1618,19 @@
     <ul>
       <li>
         <p>
-          To find the extrema of a function <m>f=f(x,y)</m>, we first find the
-            critical points, which are points where one of the partials of <m>f</m>
-            fails to exist, or where <m>f_x = 0</m> and <m>f_y=0</m>.
+          To find the extrema of a function <m>f=f(x,y)</m>, we first find the critical points, which are points where one of the partials of <m>f</m> fails to exist, or where <m>f_x = 0</m> and <m>f_y=0</m>.
         </p>
       </li>
 
       <li>
         <p>
-          The Second Derivative Test helps determine whether a critical
-            point is a local maximum, local minimum, or saddle point.
+          The Second Partial Derivative Test helps determine whether a critical point is a local maximum, local minimum, or saddle point.
         </p>
       </li>
 
       <li>
         <p>
-          If <m>f</m> is defined on a closed and bounded domain, we find
-            the absolute maxima and minima by finding the critical points in the
-            interior of the domain, finding the critical points on the boundary,
-            and testing the value of <m>f</m> at both sets of critical points.
+          If <m>f</m> is defined on a closed and bounded domain, we find the absolute maxima and minima by finding the critical points in the interior of the domain, finding the critical points on the boundary, and testing the value of <m>f</m> at both sets of critical points.
         </p>
       </li>
     </ul>
