@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exercises xmlns:xi="http://www.w3.org/2001/XInclude">
+      <exercise label="Library__272__setStewart14_6__problem_4.pg" xml:id="ex-10-6-WW-DD-gradiant">
+      <!--<title>Calculating a directional derivative and gradient</title>-->
+         <webwork source="Library/272/setStewart14_6/problem_4.pg"/>
+      </exercise>
+
+      <exercise label="Library__maCalcDB__setVmultivariable6Gradient__ur_vc_6_11.pg" xml:id="ex-10-6-WW-DD-calculation-1">
+      <!--<title>Calculating a directional derivative at a point</title>-->
+         <webwork source="Library/maCalcDB/setVmultivariable6Gradient/ur_vc_6_11.pg"/>
+      </exercise>
+
+      <exercise label="Library__FortLewis__Calc3__14-5-Gradients-in-space__HGM4-14-5-16-Gradients-etc.pg" xml:id="ex-10-6-WW-DD-max">
+      <!--<title>Derivative in the direction of maximum rate of change</title>-->
+         <webwork source="Library/FortLewis/Calc3/14-5-Gradients-in-space/HGM4-14-5-16-Gradients-etc.pg"/>
+      </exercise>
+
+      <exercise label="Library__FortLewis__Calc3__14-4-Gradients-in-plane__HGM4-14-4-66-Gradients-etc.pg" xml:id="ex-10-6-WW-DD-temperature">
+      <!--<title>Gradient and temperature</title>-->
+         <webwork source="Library/FortLewis/Calc3/14-4-Gradients-in-plane/HGM4-14-4-66-Gradients-etc.pg"/>
+      </exercise>
+
+      <exercise label="Library__Dartmouth__setStewartCh15S6__problem_10.pg" xml:id="ex-10-6-WW-DD-Grad-temperature">
+      <!--<title>Directional derivative, gradient, and temperature</title>-->
+         <webwork source="Library/Dartmouth/setStewartCh15S6/problem_10.pg"/>
+      </exercise>
+
+      <exercise label="Library__FortLewis__Calc3__14-5-Gradients-in-space__HGM4-14-5-09-Gradients-etc.pg" xml:id="ex-10-6-WW-DD-Grad-calculation">
+      <!--<title>Gradient calculation</title>-->
+         <webwork source="Library/FortLewis/Calc3/14-5-Gradients-in-space/HGM4-14-5-09-Gradients-etc.pg"/>
+      </exercise>
+
+      <exercise label="Library__Michigan__Chap14Sec5__Q53.pg" xml:id="ex-10-6-WW-DD-3-variable">
+      <!--<title>A three-variable example</title>-->
+         <webwork source="Library/Michigan/Chap14Sec5/Q53.pg"/>
+      </exercise>
+
+      <exercise label="Library__FortLewis__Calc3__14-4-Gradients-in-plane__HGM4-14-4-67-Gradients-etc.pg" xml:id="ex-10-6-WW-DD-DD-Grad-calculation">
+      <!--<title>A directional derivative given a gradient</title>-->
+         <webwork source="Library/FortLewis/Calc3/14-4-Gradients-in-plane/HGM4-14-4-67-Gradients-etc.pg"/>
+      </exercise>
+
+      <exercise label="Library__Dartmouth__setStewartCh15S6__problem_11.pg" xml:id="ex-10-6-WW-DD-hill">
+      <!--<title>Climbing a hill</title>-->
+         <webwork source="Library/Dartmouth/setStewartCh15S6/problem_11.pg"/>
+      </exercise>
+      
+      <exercise label="Library__FortLewis__Calc3__14-5-Gradients-in-space__HGM4-14-CYU-01-Gradients-etc.pg" xml:id="ex-10-6-WW-DD-TF">
+      <!--<title>Directional derivative true/false</title>-->
+         <webwork source="Library/FortLewis/Calc3/14-5-Gradients-in-space/HGM4-14-CYU-01-Gradients-etc.pg"/>
+      </exercise>
+
+      <!-- MBX exception
+      <exercise xml:id="ex-10-6-WW-DD-contours">
+      <title>Directional derivatives from contours</title>
+         <webwork source="Library/FortLewis/Calc3/14-4-Gradients-in-plane/HGM4-14-4-40-Gradients-etc/HGM4-14-4-40-Gradients-etc.pg" />
+      </exercise> 
+
+      <exercise xml:id="ex-10-6-WW-DD-surface">
+      <title>Directional derivatives from a surface</title>
+         <webwork source="Library/FortLewis/Calc3/14-4-Gradients-in-plane/HGM4-14-4-48-Gradients-etc/HGM4-14-4-48-Gradients-etc.pg" />
+      </exercise> 
+
+      <exercise xml:id="ex-10-6-WW-DD-TF-2">
+      <title>Another directional derivative true/false</title>
+         <webwork source="Library/FortLewis/Calc3/14-4-Gradients-in-plane/HGM4-14-Review-46-Gradients-etc/HGM4-14-Review-46-Gradients-etc.pg" />
+      </exercise> -->
+
+      <!--PTX issue
+      <exercise xml:id="ex-10-6-WW-DD-3-variable">
+      <title>A three-variable example</title>
+         <webwork source="Library/Union/setMVderivatives/an14_6_5.pg" />
+      </exercise>
+      -->
+
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>E(x,y) = \frac{100}{1+(x-5)^2 + 4(y-2.5)^2}</m> represent the elevation on a land mass at location <m>(x,y)</m>. Suppose that <m>E</m>, <m>x</m>, and <m>y</m> are all measured in meters.
+            <ol marker="a.">
+              <li>
+                <p>
+                  Find <m>E_x(x,y)</m> and <m>E_y(x,y)</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Let <m>\vu</m> be a unit vector in the direction of <m>\langle -4,3 \rangle</m>.  Determine <m>D_{\vu} E(3,4)</m>.  What is the practical meaning of <m>D_{\vu} E(3,4)</m> and what are its units?
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Find the direction of greatest increase in <m>E</m> at the point <m>(3,4)</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Find the instantaneous rate of change of <m>E</m> in the direction of greatest decrease at the point <m>(3,4)</m>.  Include units on your answer.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  At the point <m>(3,4)</m>, find a direction <m>\vw</m> in which the instantaneous rate of change of <m>E</m> is 0.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+
+        <answer>
+          <ol marker="a.">
+            <li>
+              <p>
+                <me>
+                  E_x(x,y) = -\frac{200(x-5)}{(1+(x-5)^2 + 4(y-2.5)^2)^2} \ \ \text{ and }  \ \ E_y(x,y) = -\frac{800(y-2.5)}{(1+(x-5)^2 + 4(y-2.5)^2)^2}
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                <me>
+                  D_{\vu} E(3,4) = -\frac{260}{49} \approx -5.306 \ \frac{\text{ meters } }{\text{ meter } }
+                </me>
+                For every one meter change in the direction of <m>\vu</m> from the point <m>(3,4)</m>,
+                the elevation decreases by <m>\frac{260}{49}</m> meters.
+              </p>
+            </li>
+            <li>
+              <p>
+                <me>
+                  \nabla E (3,4) = \frac{100}{49} \langle 1, -3 \rangle \approx \langle 2.04, -6.12 \rangle
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                <me>
+                  -|\nabla E(3,4)| = -\frac{100}{49}\sqrt{10} \approx -6.454 \ \frac{\text{ meters } }{\text{ meter } }
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                one possible answer: <m>\langle 3, 1 \rangle</m> 
+              </p>
+            </li>
+          </ol>
+        </answer>
+
+        <solution>
+          <ol marker="a.">
+            <li>
+              <p>
+                For this function <m>E</m> we have
+                <me>
+                  E_x(x,y) = -\frac{200(x-5)}{(1+(x-5)^2 + 4(y-2.5)^2)^2} \ \ \text{ and }  \ \ E_y(x,y) = -\frac{800(y-2.5)}{(1+(x-5)^2 + 4(y-2.5)^2)^2}
+                </me>.
+              </p>
+            </li>
+            <li>
+              <p>
+                A unit vector in the direction of
+                <m>\langle -4,3 \rangle</m> is <m>\vu = \frac{1}{5} \langle -4, 3 \rangle</m>.
+                Since
+                <me>
+                  E_x(3,4) = \frac{100}{49} \ \ \text{ and }  \ \ E_y(3,4) = -\frac{300}{49}
+                </me>,
+                we have
+                <me>
+                  D_{\vu} E(3,4) = \nabla E(3,4) \cdot \vu = \left\langle \frac{100}{49}, -\frac{300}{49} \right\rangle \cdot \frac{1}{5} \langle -4,3 \rangle = \frac{20}{49} (-4 - 9) = -\frac{260}{49} \approx -5.306 \ \frac{\text{ meters } }{\text{ meter } }
+                </me>.
+                For every one meter change in the direction of <m>\vu</m> from the point <m>(3,4)</m>,
+                the elevation decreases by <m>\frac{260}{49}</m> meters.
+              </p>
+            </li>
+            <li>
+              <p>
+                The direction of greatest increase of <m>E</m> at the point <m>(3,4)</m> is
+                <me>
+                  \nabla E (3,4) = \langle E_x(3,4), E_y(3,4) \rangle = \frac{100}{49} \langle 1, -3 \rangle \approx \langle 2.04, -6.12 \rangle
+                </me>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The direction of greatest decrease of <m>E</m> at <m>(3,4)</m> is <m>-\nabla E(3,4)</m>.
+                The instantaneous rate of change of <m>E</m> in the direction of greatest decrease at the point <m>(3,4)</m> is
+                <me>
+                  -|\nabla E(3,4)| = -\frac{100}{49}\sqrt{1+9} = -\frac{100}{49}\sqrt{10} \approx -6.454 \ \frac{\text{ meters } }{\text{ meter } }
+                </me>.
+              </p>
+            </li>
+            <li>
+              <p>
+                We want a direction vector <m>\vw = \langle w_1, w_2 \rangle</m> so that
+                <me>
+                  0 = D_{\vw} E(3,4) = \nabla E(3,4) \cdot \vw = \left\langle \frac{100}{49}, -\frac{300}{49} \right\rangle \cdot \langle w_1, w_2 \rangle = \frac{100}{49}(w_1-3w_2)
+                </me>.
+                So the vector <m>\langle 3, 1 \rangle</m> is a direction in which <m>E</m> does not change at the point <m>(3,4)</m>.
+              </p>
+            </li>
+          </ol>
+        </solution>
+
+
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Find all directions in which the directional derivative of <m>f(x,y) = ye^{-xy}</m> is 1 at the point <m>(0,2)</m>. 
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+           Any positive scalar multiple of <m>\langle 0, 1 \rangle</m> or <m>\langle  -\frac{8}{17},  -\frac{15}{17}\rangle </m> will give a direction in which the directional derivative is 1.
+          </p>
+        </answer>
+
+        <solution>
+          <p>
+            We have  
+            <me>
+              f_x(x, y) = -y^2 e^{-xy}
+            </me>
+            and 
+            <me>
+              f_y(x, y) = y(-x e^{-xy}) + e^{-xy}
+            </me>,
+            so  
+            <me>
+              f_x(0, 2) = -(2)^2 e^{-(0)(2)} = -4e^0 = -4
+            </me>
+            and 
+            <me>
+              f_y(0, 2) = 2(-0 \cdot e^{-(0)(2)}) + e^{-(0)(2)} = 0 + e^0 = 1
+            </me>.
+            For a unit vector <m>\vu = \langle a, b \rangle</m>, 
+              <me>
+                D_{\vu} f(0, 2) = \nabla f(0,2) \cdot \vu = \left\langle f_x(0, 2), f_y(0, 2)\right\rangle \cdot \langle a, b \rangle = -4a + (1) b
+              </me>.
+            We want <m>D_{\vu} f(0, 2) = 1</m>, so we want a unit direction vector <m>\langle a, b \rangle</m> with <m>-4a + b = 1</m>. Note that since <m>\langle a, b \rangle</m> is a unit vector we have <m>1 = \sqrt{a^2 + b^2}</m>. Solving these equations simultaneously yields <m>a=0, b = 1</m> or <m>a = -\frac{8}{17}, b = -\frac{15}{17}</m>. Thus any positive scalar multiple of <m>\langle 0, 1 \rangle</m> or <m>\langle  -\frac{8}{17},  -\frac{15}{17} \rangle</m> will give a direction in which the directional derivative is 1.
+          </p>
+        </solution>
+
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Find, if possible, a function <m>f</m> such that 
+            <me> 
+              \nabla f = \left\langle \sin(yz), xz\cos(yz)+2y, xy\cos(yz)+\frac{5}{z} \right\rangle
+            </me>. 
+            If not possible, explain why. 
+          </p>
+        </statement>
+
+        <answer>
+          <p>
+            <me>
+              f(x, y, z) = x \sin(yz) + y^2 + 5 \ln |z| + c
+            </me>,
+            where <m>c</m> is a constant (and <m>x \neq 0</m>)
+          </p>
+        </answer>
+
+
+        <solution>
+          <p>
+            Recall 
+            <me>
+              \nabla f(x, y, z) = \langle f_x(x, y, z), f_y(x, y, z), f_z(x, y, z) \rangle
+            </me>.
+            If <m>f_x (x, y, z) = \sin(yz)</m>, we must have
+             <me>
+              f(x, y, z) = x \sin(yz) + k_1(y, z)
+             </me>,
+            where <m>k_1(y, z)</m> is a function of <m>y</m> and <m>z</m> only. If <m>f_y(x, y, z) = \sin(yz) + 2y</m>, we must have
+             <me>
+              f(x, y, z) = x \sin(yz) + y^2 + k_2(x, z)
+             </me>,
+              where <m>k_2(x, z)</m> is a function of <m>x</m> and <m>z</m> only. Finally, if <m>f_z (x, y, z) = xy \cos(yz) + \frac{5}{z}</m>, we must have
+               <me>
+                f(x, y, z) = x \sin(yz) + 5 \ln |z| + k_3(x, y)
+               </me>,
+               where <m>k_3(x, y)</m> is a function of <m>x</m> and <m>y</m> only. A function that satisfies all three of these possibilities is  
+            <me>
+              f(x, y, z) = x \sin(yz) + y^2 + 5 \ln |z| + c
+            </me>,
+            where <m>c</m> is a constant (and <m>x \neq 0</m>).
+          </p>
+        </solution>
+
+
+
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            Let <m>f(x,y) = x^2+3y^2</m>.
+            <ol marker="a.">
+              <li>
+                <p>
+                  Find <m>\nabla f(x,y)</m> and <m>\nabla f(1,2)</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Find the direction of greatest increase in <m>f</m> at the point <m>(1,2)</m>. Explain. A graph of the surface defined by <m>f</m> is shown at left in <xref ref="F_10_6_Grad_ex_1">Figure</xref>. Illustrate this direction on the surface.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  A contour diagram of <m>f</m> is shown at right in <xref ref="F_10_6_Grad_ex_1">Figure</xref>. Illustrate your calculation from (b) on this contour diagram.
+
+                  <figure xml:id="F_10_6_Grad_ex_1">
+                    <caption>Left: Graph of <m>f(x,y) = x^2+3y^2</m>. Right: Contours.</caption>
+                    <sidebyside widths="50% 50%">
+                      <image source="images/fig_10_6_exercise_graph"/>
+                      <image source="images/fig_10_6_exercise_contour"/>
+                      </sidebyside>
+                  </figure>
+                  
+
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Find a direction <m>\vw</m> for which the derivative of <m>f</m> in the direction of <m>\vw</m> is zero.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+
+        <answer>
+          <ol marker="a.">
+            <li>
+              <p>
+                <me>
+                  \nabla f (x, y) = \langle 2x, 6y \rangle
+                </me>,
+                <me>
+                  \nabla f(1,2) = \langle 2, 12 \rangle
+                </me>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The gradient shows the direction of greatest increase of <m>f</m> at a point.
+                An illustration of this direction at the point
+                <m>(1,2,f(1,2))</m> is shown in the figure below,
+                with the gradient vector scaled appropriately to make it easier to plot.
+                <image width="73%" source="images/fig_10_6_Ex_surface_gradient"/>
+              </p>
+            </li>
+            <li>
+              <p>
+                The gradient shows the direction of greatest increase of <m>f</m> at a point.
+                The gradient is perpendicular to the level curves,
+                and a picture of the unit vector in the direction of the gradient at <m>(1,2)</m> is shown in the figure below,
+                with the gradient vector scaled appropriately to make it easier to plot.
+                <image width="73%" source="images/fig_10_6_Ex_contour_gradient"/>
+              </p>
+            </li>
+            <li>
+              <p> 
+                one possible answer: <m>\langle -3,1 \rangle</m>
+              </p>
+            </li>
+          </ol>
+        </answer>
+
+
+        <solution>
+          <ol marker="a.">
+            <li>
+              <p>
+                In this case we have
+                <me>
+                  \nabla f = \langle f_x, f_y \rangle = \langle 2x, 6y \rangle
+                </me>.
+                Evaluating <m>\nabla f</m> at <m>(1,2)</m> gives us
+                <me>
+                  \nabla f(1,2) = \langle 2, 12 \rangle
+                </me>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The gradient shows the direction of greatest increase of <m>f</m> at a point.
+                An illustration of this direction at the point
+                <m>(1,2,f(1,2))</m> is shown in the figure below,
+                with the gradient vector scaled appropriately to make it easier to plot.
+                <image width="73%" source="images/fig_10_6_Ex_surface_gradient"/>
+              </p>
+            </li>
+            <li>
+              <p>
+                The gradient shows the direction of greatest increase of <m>f</m> at a point.
+                The gradient is perpendicular to the level curves,
+                and a picture of the unit vector in the direction of the gradient at <m>(1,2)</m> is shown in the figure below,
+                with the gradient vector scaled appropriately to make it easier to plot.
+                <image width="73%" source="images/fig_10_6_Ex_contour_gradient"/>
+              </p>
+            </li>
+            <li>
+              <p>
+                We need to find a direction
+                <m>\vw = \langle w_1, w_2 \rangle</m> so that <m>D_{\vw} f(1,2) = \nabla f(1,2) \cdot \vw = 0</m>.
+                Since <m>\nabla f (1,2)= \langle 2, 6 \rangle</m>,
+                we need <m>w_1</m> and <m>w_2</m> to satisfy <m>2w_1+6w_2=0</m>.
+                So <m>w_1=-3w_2</m> and a direction for which the slope of the tangent line to the surface generated by <m>f</m> at the point <m>(1,2)</m> is zero in the direction <m>\vw</m> is <m>\langle -3,1 \rangle</m>.
+              </p>
+            </li>
+          </ol>
+        </solution>
+
+
+      </exercise>
+
+
+      <exercise>
+        <statement>
+          <p>
+            The properties of the gradient that we have observed for functions of two variables also hold for functions of more variables. In this problem, we consider a situation where there are three independent variables. Suppose that the temperature in a region of space is described by
+            <me>
+              T(x,y,z) = 100e^{-x^2-y^2-z^2}
+            </me>
+            and that you are standing at the point <m>(1,2,-1)</m>.
+            <ol marker="a.">
+              <li>
+                <p>
+                  Find the instantaneous rate of change of the temperature in the direction of
+                    <m>\vv=\langle 0, 1, 2\rangle</m> at the point <m>(1,2,-1)</m>.  Remember that you should first find a
+                    <em>unit</em> vector in the direction of <m>\vv</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  In what direction from the point <m>(1,2,-1)</m> would you move to cause the temperature to
+                    decrease as quickly as possible?
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  How fast does the temperature decrease in this direction?
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Find a direction in which the temperature does
+                    not change at <m>(1,2,-1)</m>.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+
+        <answer>
+          <ol marker="a.">
+            <nbsp/>
+            <li>
+              <p>
+                <m>0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <me>
+                  -\nabla T(1,2,-1) = \left\langle 200e^{-6}, 400e^{-6}, -200e^{-6} \right\rangle \approx \langle 0.5, 1, -0.5 \rangle
+                </me>
+              </p>
+            </li>
+            <li>
+              <p>
+                The rate of change of the temperature in this direction is
+                <me>
+                  -\left|\nabla T(1,2,-1) \right| = -200 \sqrt{6}e^{-6} \approx -1.21
+                </me>
+                So the temperature decreases at approximately 1.21 units of temperature per one unit of distance in this direction.
+              </p>
+            </li>
+            <li>
+              <p>
+               possible answers: <m>\langle -1,1,1 \rangle</m> or in the direction of
+                <m>\langle 0,1,2\rangle</m> as shown in part (a)
+              </p>
+            </li>
+          </ol>
+        </answer>
+
+        <solution>
+          <ol marker="a.">
+            <li>
+              <p>
+                A unit vector in the direction of <m>\vv</m> is <m>\vu = \frac{1}{\sqrt{5}} \vv</m>.
+                Since
+                <me>
+                  T_x(x,y,z) = -200xe^{-x^2-y^2-z^2} \ , T_y(x,y,z) = -200ye^{-x^2-y^2-z^2},  \ \text{ and }  \ T_z(x,y,z) = -200ze^{-x^2-y^2-z^2}
+                </me>,
+                the instantaneous rate of change of the temperature in the direction of <m>\vv=\langle 0, 1, 2\rangle</m> is then
+                <md>
+                  <mrow>D_{\vu}T(1,2,1) \amp = \nabla T(1,2,-1) \cdot \vu</mrow>
+                  <mrow>\amp =  \langle T_x(1,2,-1), T_y(1,2,-1), T_z(1,2,-1) \rangle \cdot \vu</mrow>
+                  <mrow>\amp =\left\langle -200e^{-6}, -400e^{-6}, 200e^{-6} \right\rangle \cdot \frac{1}{\sqrt{5}} \langle 0,1,2\rangle</mrow>
+                  <mrow>\amp =-\frac{200}{\sqrt{5}}e^{-6}(0+4-4)</mrow>
+                  <mrow>\amp = 0</mrow>
+                </md>.
+              </p>
+            </li>
+            <li>
+              <p>
+                To cause the temperature to decrease as quickly as possible we move in the direction of
+                <me>
+                  -\nabla T(1,2,-1) = \left\langle 200e^{-6}, 400e^{-6}, -200e^{-6} \right\rangle \approx \langle 0.5, 1, -0.5 \rangle
+                </me>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The rate of change of the temperature in this direction is
+                <me>
+                  -\left|\nabla T(1,2,-1) \right| =  -\sqrt{\left(200e^{-6}\right)^2 + \left(400e^{-6}\right)^2 + \left(-200e^{-6}\right)^2} = -200 \sqrt{6}e^{-6} \approx -1.21
+                </me>.
+                So the temperature decreases at approximately 1.21 in this direction.
+              </p>
+            </li>
+            <li>
+              <p>
+                Let <m>\vu = \langle u_1, u_2, u_3 \rangle</m> be a vector in a direction in which the temperature does not change.
+                Then
+                <md>
+                  <mrow>0 \amp = \nabla T(1,2,-1) \cdot \vu</mrow>
+                  <mrow>\amp = \left\langle -200e^{-6}, -400e^{-6}, 200e^{-6} \right\rangle \cdot \langle u_1, u_2, u_3 \rangle</mrow>
+                  <mrow>\amp = -200e^{-6}(u_1+2u_2-u_3)</mrow>
+                </md>.
+                So a direction in which the temperature does not change is the direction of the vector
+                <m>\langle -1,1,1 \rangle</m> (or in the direction of
+                <m>\langle 0,1,2\rangle</m> as shown in part (a)).
+              </p>
+            </li>
+          </ol>
+        </solution>
+
+ 
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <xref ref="F_10_6_gradient_field">Figure</xref> shows a plot of the gradient
+            <m>\nabla f</m> at several points for some function <m>f=f(x,y)</m>.
+          </p>
+
+          <figure xml:id="F_10_6_gradient_field">
+            <caption>The gradient <m>\nabla f</m>.</caption>
+            <image width="50%" source="images/fig_10_6_gradient_field"/>
+          </figure>
+
+          <ol marker="a.">
+            <li>
+              <p>
+                Consider each of the three indicated points, and draw, as best
+                  as you can, the contour through that point.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Beginning at each point, draw a curve on which <m>f</m> is continually
+                  decreasing.
+              </p>
+            </li>
+          </ol>
+        </statement>
+
+        <answer>
+          <ol marker="a.">
+            <li>
+              <p>
+                Since the gradient at a point is orthogonal to the contour at that point,
+                the contours through the indicated points are drawn orthogonal to the gradients.
+                This is illustrated in the figures below.
+                <image width="73%" source="images/fig_10_6_Ex_4_a_1"/> <image width="73%" source="images/fig_10_6_Ex_4_b_1"/> <image width="73%" source="images/fig_10_6_Ex_4_c_1"/>
+              </p>
+            </li>
+            <li>
+              <p>
+                The gradient points in the direction of the greatest increase of the function,
+                so a curve that moves in the direction opposite the gradient is a curve on which <m>f</m> is decreasing.
+                This is illustrated in the figures below.
+                <image width="73%" source="images/fig_10_6_Ex_4_a_2"/> <image width="73%" source="images/fig_10_6_Ex_4_b_2"/> <image width="73%" source="images/fig_10_6_Ex_4_c_2"/>
+              </p>
+            </li>
+          </ol>
+        </answer>
+
+        <solution>
+          <ol marker="a.">
+            <li>
+              <p>
+                Since the gradient at a point is orthogonal to the contour at that point,
+                the contours through the indicated points are drawn orthogonal to the gradients.
+                This is illustrated in the figures below.
+                <image width="73%" source="images/fig_10_6_Ex_4_a_1"/> <image width="73%" source="images/fig_10_6_Ex_4_b_1"/> <image width="73%" source="images/fig_10_6_Ex_4_c_1"/>
+              </p>
+            </li>
+            <li>
+              <p>
+                The gradient points in the direction of the greatest increase of the function,
+                so a curve that moves in the direction opposite the gradient is a curve on which <m>f</m> is decreasing.
+                This is illustrated in the figures below.
+                <image width="73%" source="images/fig_10_6_Ex_4_a_2"/> <image width="73%" source="images/fig_10_6_Ex_4_b_2"/> <image width="73%" source="images/fig_10_6_Ex_4_c_2"/>
+              </p>
+            </li>
+          </ol>
+        </solution>
+
+ 
+      </exercise>
+    </exercises>

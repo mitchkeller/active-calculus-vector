@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- **********************************************************************-->
-<!-- Copyright 2013-2024                                                   -->
+<!-- Copyright 2013-2025                                                   -->
 <!-- Nicholas Long, Mitchel Keller, Steven Schlicker                       -->
 <!--                                                                       -->
 <!-- This file is part of Active Calculus Multivariable.                   -->
@@ -36,25 +36,25 @@
   <introduction>
     <p>
       In single variable calculus, we learn that a differentiable function is <em>locally linear</em>. <idx><h>locally linear</h></idx> In other words, if we zoom in on the graph of a differentiable function around a point, the graph will look like the tangent line to the function at that point. In <xref ref="LLline" /> you can look at the graph of a curve and zoom in around a point on that curve to see that eventually the graph of the function will look linear. You can use the sliders at the top of change how zoomed in the plot is displayed or change the location on the curve that you are examining. You should visually verify at a several points that this function is differentiable because at any point shown, the graph is locally linear.
-      </p>
-      <figure xml:id="LLline">
-        <caption>A plot with the ability to zoom in on a point of <m>y=f(x)</m>, where <m>f</m> is a nonlinear, differentiable function</caption>
-        <interactive title="interactive-LLline" platform="sage" width="100%" aspect="1:1">
-          <slate surface="sage">
-            @interact
-            def LLline(zoom=slider(0,8,1,default=0,label="Zoom"),val=slider(0,2,0.05,default=0.75,label="Location")):
-                var('x')
-                f(x)=x*cos(pi*x)
-                fv=f(val)
-                plot1=plot(f(x),(x,-4,4),color="black",gridlines=True)
-                plot1+=point((val,fv),color="black",size=25,xmin=val-2^(-zoom+1),xmax=val+2^(-zoom+1),ymin=fv-2^(-zoom+1),ymax=fv+2^(-zoom+1))
-                show(plot1)
-          </slate>
-        </interactive>
-      </figure>
-      <p>
-        Recall that linear functions have the form <m>f(x)=ax+b</m>. These functions play important roles in single variable calculus and are useful in approximating differentiable functions, in approximating roots of functions (Newton's Method), and approximating solutions to first order differential equations (Euler's Method). In multivariable calculus, we will study curves in space and we will see that connection between local linearity and differentiability exists for curves in three (or more) dimensions. As we extend our study of functions to include those of two variables in <xref ref="C_MVF"/>, we will see that a function is locally linear at a point if the surface defined by the function looks like a plane (the tangent plane) as we zoom in on the graph.
-      </p>
+    </p>
+    <figure xml:id="LLline">
+      <caption>A plot with the ability to zoom in on a point of <m>y=f(x)</m>, where <m>f</m> is a nonlinear, differentiable function</caption>
+      <interactive title="interactive-LLline" platform="sage" width="100%" aspect="1:1">
+        <slate surface="sage">
+          @interact
+          def LLline(zoom=slider(0,8,1,default=0,label="Zoom"),val=slider(0,2,0.05,default=0.75,label="Location")):
+            var('x')
+            f(x)=x*cos(pi*x)
+            fv=f(val)
+            plot1=plot(f(x),(x,-4,4),color="black",gridlines=True)
+            plot1+=point((val,fv),color="black",size=25,xmin=val-2^(-zoom+1),xmax=val+2^(-zoom+1),ymin=fv-2^(-zoom+1),ymax=fv+2^(-zoom+1))
+            show(plot1)
+        </slate>
+      </interactive>
+    </figure>
+    <p>
+      Recall that linear functions have the form <m>f(x)=ax+b</m>. These functions play important roles in single variable calculus and are useful in approximating differentiable functions, in approximating roots of functions (Newton's Method), and approximating solutions to first order differential equations (Euler's Method). In multivariable calculus, we will study curves in space and we will see that connection between local linearity and differentiability exists for curves in three (or more) dimensions. As we extend our study of functions to include those of two variables in <xref ref="C_MVF"/>, we will see that a function is locally linear at a point if the surface defined by the function looks like a plane (the tangent plane) as we zoom in on the graph.
+    </p>
 
     <p>
       Because of their important role in understanding curves and surfaces in <m>\R^3</m>, it is important for us to understand both lines and planes in space, as can both be thought of as generalizations of lines in two dimensions to three-dimensional space. 
