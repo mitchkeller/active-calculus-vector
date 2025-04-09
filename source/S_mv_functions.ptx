@@ -40,261 +40,244 @@
 
     <introduction> 
     <p>
-      For much of your study of algebra, precalculus, and calculus you have been focused on working with functions that have a scalar input and a scalar output, like <m>y=f(x)</m>. In <xref ref="C_VVF"/>, we used vector valued functions of one variable as our first case of multivariable functions. Vector valued functions of one variable have a single scalar input and an output corresponding to multiple variables that we either organized as parametric functions (<m>x(t)</m>, <m>y(t)</m>, and <m>z(t)</m>) or as a vector output, <m>\vr(t)=\langle x(t),y(t),z(t) \rangle</m>. Our work in <xref ref="C_VVF" /> was very focused on paths in space and the motion of an object on these paths. This narrow focus was because we had just one direction to move (and stay on our path). We worked with vector valued functions of one variable as our first new class of functions because the calculus of these object was relatively easy. We applied limits, derivatives, and integrals to these functions componentwise, but we saw how useful a combination of vector tools and calculus measurements was for describing many features of vector valued functions of one variable and their graphs as paths in space. 
+      For much of your study of algebra, precalculus, and calculus you have been focused on working with functions that have a scalar input and a scalar output, like <m>y=f(x)</m>. In <xref ref="C_VVF"/>, we used vector valued functions of one variable as our first case of multivariable functions. Vector valued functions of one variable have a single scalar input and an output corresponding to multiple variables that we either organized as a vector output, <m>\vr(t)=\langle x(t),y(t),z(t) \rangle</m> or as parametric functions (<m>x(t)</m>, <m>y(t)</m>, and <m>z(t)</m>) . Our work in <xref ref="C_VVF" /> was very focused on paths in space and the motion of an object on these paths. This narrow focus was because we had just one direction to move (while staying on the path). We worked with vector valued functions of one variable as our first new class of functions because the calculus of these object was relatively easy. We applied limits, derivatives, and integrals to these functions componentwise, but we saw how useful a combination of vector tools and calculus measurements was for describing many features of vector valued functions of one variable and their graphs as paths in space. 
     </p>
   
     <p>
-      Many problems involve a much larger space of inputs and outputs. For instance, when studying weather patterns and behavior it is useful to measure temperature or atmospheric pressure. Both temperature and pressure are scalar measurements (measured by a single number) that will vary over three dimensions (north/south, east/west, and over elevation). Temperature can be given by a function with a location in three dimensions as the input and the temperature at that location (a scalar) as an output. Wind direction and strength are also very important when working with weather patterns. Wind is measured with a vector (magnitude and direction) and also varies with location in a three dimensional space. So wind would be given by a function with a location in space as the input and a vector as the output. We would call both the temperature and the wind functions <term>functions of several variables</term> because each of these functions has multiple scalar inputs. We will look at the calculus of multivariable functions with scalar outputs (like temperature and pressure) in the next couple of chapters and will look at studying functions with multivariable inputs and outputs in <xref ref="C_Vector"/>.
+      Many problems (both theoretical and applied) involve a much larger space of inputs and outputs. For instance, when studying weather patterns and behavior it is useful to measure temperature or atmospheric pressure. Both temperature and pressure are scalar measurements (measured by a single number) that will vary over three dimensions (north/south, east/west, and over elevation). Temperature can be given by a function with a location in three dimensions as the input and the temperature at that location (a scalar) as an output. Wind direction and strength are also very important when working with weather patterns. Wind is measured with a vector (magnitude and direction) that varies with location in a three dimensional space. So wind would be given by a function with a location in space as the input and a vector as the output. We would call both the temperature and the wind functions <term>functions of several variables</term> because each of these functions has multiple scalar inputs. We will look at the calculus of multivariable functions with scalar outputs (like temperature and pressure) in the next couple of chapters and will look at studying functions with multivariable inputs and outputs in <xref ref="C_Vector"/>.
     </p>
     <p>
-      In <xref ref="C_VVF"/>, all of the applications and analogies were centered around an object moving along a curve in space. When working with functions of several variables, we will want to use a few different types of functions for our applications and examples because of the possibilities between conceptual relationships between inputs and outputs. For instance, the first type of example we will consider is thinking of the elevation or height of land as being a function of map coordinates. In this case, the input and output are connected to make the surface and have the same units. In other words the input and outputs are each the same type of measurement and would be easily understood by the plot of a surface. 
+      In <xref ref="C_VVF"/>, all of the applications and analogies were centered around an object moving along a curve in space. When working with functions of several variables, we will want to use a few different types of functions for our applications and examples because of the possible conceptual relationships between inputs and outputs. For instance, the first type of example we will consider is thinking of the elevation or height of land as being a function of map coordinates. In this case, the input and output are connected to make the surface and have the same units. In other words the input and outputs are each the same type of measurement and would be easily understood by the plot of a surface. 
     </p>
     <p>
-      Our example of temperature above gives a different kind of interpretation where the output is a different kind of measurement than the inputs. For instance, think of a function whose input is the (x,y) location on a heated metal plate and the output is the temperature of the metal plate at this location. In this case, the input is thought of as a point or location and the output is a measure of thermal energy at that location. The inputs and outputs are different kinds of measurements, but a plot of the different temperature values across the different (x,y) locations would still visually make sense. 
+      The example of temperature as a multivariable function as described above gives a different kind of interpretation where the output is a different kind of measurement than the inputs. For instance, think of a function whose input is the (x,y) location on a heated metal plate and the output is the temperature of the metal plate at this location. In this case, the input is thought of as a point or location and the output is a measure of thermal energy at that location. The inputs and outputs are different kinds of measurements, but a plot of the different temperature values across the different (x,y) locations would still visually make sense. 
     </p>
     <p>
       We can also consider a function that describes the horizontal distance traveled by a arrow before the arrow hits the ground as determined by the angle at which the arrow is shot and the initial speed of the arrow. In this case, the inputs to our function are an angle and a speed where as the output is a distance (horizontal displacement). In this case, the units and types of measurements for the inputs and outputs are all quite different and a plot of the corresponding surface of displacement, angle, and speed values would be a more abstract visual representation as compared to the temperature and elevation examples. 
+    </p>
+    <p>
+      In the next few chapters, we will use these types of examples, as well as applications to economics, to motivate our study of functions of several variables. Our preview activity will use a basic finance example to get you used to the notation and descriptions of different aspects of functions of several variables. 
     </p>
     <!-- <p>
       Throughout our mathematical careers we have studied functions of a single variable. We define a function of one variable as a rule that assigns exactly one output to each input. We analyze these functions by looking at their graphs, calculating limits, differentiating, integrating, and more. Functions of several variables will be the main focus of Chapters 10 and 11, where we will analyze these functions by looking at their graphs, calculating limits, differentiating, integrating, and more. We will see that many of the ideas from single variable calculus translate well to functions of several variables, but we will have to make some adjustments as well. In this chapter we introduce functions of several variables and then discuss some of the tools (vectors and vector-valued functions) that will help us understand and analyze functions of several variables. 
     </p> -->
     <!-- This preview activity is about getting students used to evaluating the function of several variables. I think this needs to be less generic and an introduction to one of the functions we will use as examples and applications throughout this chapter. Don't know that I care which one. -->
     <exploration xml:id="PA-9-1">
-      <statement>
-       <p>
-          Suppose you invest money in an account that pays 5% interest compounded continuously. If you invest <m>P</m> dollars in the account, the amount <m>A</m> of money in the account after <m>t</m> years is given by 
+      <introduction>
+        <p>
+          Suppose you invest money in an account that pays 5% interest compounded continuously. If you have an initial investment of <m>P</m> dollars in the account, then <m>A</m>, the amount of money in the account after <m>t</m> years is given by 
           <me>
             A = Pe^{0.05t}.
           </me>
         </p>
-
         <p>
           The variables <m>P</m> and <m>t</m> are independent of each other, so using functional notation we write
           <me>
            A(P,t) = Pe^{0.05t}.
           </me>
-          <ol marker="a.">
-            <li>
-              <p>
-                Find the amount of money in the account after 7 years if you originally invest 1000 dollars. 
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Evaluate <m>A(5000,8)</m>. Explain in words what this calculation represents.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Now consider only the situation where the amount invested is fixed at 1000 dollars. Calculate the amount of money in the account after <m>t</m> years as indicated in <xref ref="T-9-1-Fixed-Investment">Table</xref>. Round payments to the nearest penny.
-
-                <table xml:id="T-9-1-Fixed-Investment">
-                  <title>Amount of money in an account with an initial investment of 1000 dollars.</title>
-                  <tabular bottom="minor" top="minor">
-                    <row bottom="medium">
-                      <cell>Duration (in years)</cell>
-                      <cell> <nbsp/><nbsp/>2 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>3 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>4 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>5 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>6 <nbsp/><nbsp/></cell>
-                    </row>
-                  
-                    <row>
-                      <cell>Amount (dollars)</cell>
-                      <cell/>
-                      <cell/>
-                      <cell/>
-                      <cell/>
-                      <cell/>
-                    </row>
-                 
-                  </tabular>
-                </table>
-
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Now consider the situation where we want to know the amount of money in the account after 10 years given various initial investments. Calculate the amount of money in the account as indicated in <xref ref="T-9-1-Payments-years">Table</xref>. Round payments to the nearest penny.
-
-                <table xml:id="T-9-1-Payments-years">
-                  <title>Amount of money in an account after 10 years.</title>
-                  <tabular bottom="minor" top="minor">
-                    <row bottom="medium">
-                      <cell>Initial investment (dollars)</cell>
-                      <cell><nbsp/><nbsp/> 500 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>1000 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>5000 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>7500 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>10000 <nbsp/><nbsp/></cell>
-                    </row>
-                    <row>
-                      <cell>Amount (dollars)</cell>
-                      <cell/>
-                      <cell/>
-                      <cell/>
-                      <cell/>
-                      <cell/>
-                    </row>
-                  </tabular>
-                </table>
-
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Describe as best you can the combinations of initial investments and time that result in an account containing $10,000.
-              </p>
-            </li>
-          </ol>
         </p>
-      </statement>
-
-      <answer>
-        <p>
-          <ol marker="a.">
-           <li>
-              <p>
-                <m>A(1000,7) = $1,419.07</m>.
-              </p>
-            </li>
-  
-            <li>
-              <p>
-                <m>A(5000,8) = $7,459.12</m>. If you invest $5,000 in an account earning 5% interest compounded continuously, at the end of 8 years you will have $7,459.12.  
-              </p>
-            </li>
-  
-            <li>
-              <p>
-                <table>
-                  <title>Amount of money in an account with an initial investment of 1000 dollars.</title>
-                  <tabular bottom="minor" top="minor">
-                    <row bottom="medium">
-                      <cell>Duration (in years)</cell>
-                      <cell><nbsp/><nbsp/>2 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>3 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>4 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>5 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>6 <nbsp/><nbsp/></cell>
-                    </row>
-                    <row>
-                      <cell>Amount (dollars)</cell>
-                      <cell> <nbsp/><nbsp/>1,105.17 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>1,161.83 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>1,221.40 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>1,284.03 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>1,349.86 <nbsp/><nbsp/></cell>
-                    </row>
-                  </tabular>
-                </table> 
-              </p>
-            </li>
-  
-            <li>
-              <p>
-                <table>
-                  <title>Amount of money in an account after 10 years.</title>
-                  <tabular bottom="minor" top="minor">
-                    <row bottom="medium">
-                      <cell>Initial investment (dollars)</cell>
-                      <cell><nbsp/><nbsp/>500 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>1000 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>5000 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>7500 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>10000 <nbsp/><nbsp/></cell>
-                    </row>
-                    <row>
-                      <cell>Amount (dollars)</cell>
-                      <cell><nbsp/><nbsp/>824.36  <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>1648.72 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>8243.61 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>12365.41 <nbsp/><nbsp/></cell>
-                      <cell><nbsp/><nbsp/>16487.21 <nbsp/><nbsp/></cell>
-                    </row>
-                  </tabular>
-                </table>
-              </p>
-            </li>
-  
-            <li>
-              <p>
-                As the amount of money initially invested increases, the length in time for the investment to reach $10,000 is less and less. Using Table 9.1.2, if the initial investment is around $6,000, it will take 10 years for the investment to reach $10,000.  
-              </p>
-            </li>
-          </ol>
-        </p>
-      </answer>
-
-      <solution>
-        <p>
-          <ol marker="a.">
-            <li>
-              <m>A(1000,7) = 1000e^{0.05(7)} = \$1,419.07</m>.
-            </li>
-
-            <li>
-              <p>
-                <m>A(5000,8) = 5000e^{0.05(8)} = \$7,459.12</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <m>A(1000,2) = 1000e^{0.05(2)} = \$1,105.17</m>.
-              </p>
-              <p>
-                <m>A(1000,3) = 1000e^{0.05(3)} = \$1,161.83</m>.
-              </p>
-              <p>
-                <m>A(1000,4) = 1000e^{0.05(4)} = \$1,221.40</m>.
-              </p>
-              <p>
-                <m>A(1000,5) = 1000e^{0.05(5)} = \$1,284.03</m>.
-              </p>
-              <p>
-                <m>A(1000,6) = 1000e^{0.05(6)} = \$1,349.86</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <m>A(500,10) = 500e^{0.05(10)} = \$824.36</m>.
-              </p>
-              <p>
-                <m>A(1000,10) = 1000e^{0.05(10)} = \$1,648.72</m>.
-              </p>
-              <p>
-                <m>A(5000,10) = 5000e^{0.05(10)} = \$8,243.61</m>.
-              </p>
-              <p>
-                <m>A(7500,10) = 7500e^{0.05(10)} = \$12,365.41</m>.
-              </p>
-              <p>
-                <m>A(10000,10) = 10000e^{0.05(10)} = \$16,487.21</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <m>10,000=xe^{0.05(10)}</m>. <m>x=$6065.31</m>.
-              </p>
-            </li>
-          </ol>
-        </p>
-      </solution> 
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Find the amount of money in the account after 7 years if you originally invest 1000 dollars.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>A(1000,7) = $1,419.07</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            <m>A(1000,7) = 1000e^{0.05(7)} = \$1,419.07</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Evaluate <m>A(5000,8)</m>. Write a sentence to explain what this calculation represents.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>A(5000,8) = $7,459.12</m>. If you invest $5,000 in an account earning 5% interest compounded continuously, at the end of 8 years you will have $7,459.12.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            <m>A(5000,8) = $7,459.12</m>. If you invest $5,000 in an account earning 5% interest compounded continuously, at the end of 8 years you will have $7,459.12.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Now consider only the situation where the amount invested is fixed at 1000 dollars. Calculate the amount of money in the account after <m>t</m> years as indicated in <xref ref="T-9-1-Fixed-Investment">Table</xref>. Round payments to the nearest penny.
+            <table xml:id="T-9-1-Fixed-Investment">
+              <title>Amount of money in an account with an initial investment of 1000 dollars.</title>
+              <tabular bottom="minor" top="minor">
+                <row bottom="medium">
+                  <cell>Duration (in years)</cell>
+                  <cell>   2   </cell>
+                  <cell>  3   </cell>
+                  <cell>  4   </cell>
+                  <cell>  5   </cell>
+                  <cell>  6   </cell>
+                </row>
+                <row>
+                  <cell>Amount (dollars)</cell>
+                  <cell/>
+                  <cell/>
+                  <cell/>
+                  <cell/>
+                  <cell/>
+                </row>
+              </tabular>
+            </table>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <table>
+              <title>Amount of money in an account with an initial investment of 1000 dollars.</title>
+              <tabular  top="minor">
+                <row bottom="medium">
+                  <cell right="medium">Duration (in years)</cell>
+                  <cell>  2   </cell>
+                  <cell>  3   </cell>
+                  <cell>  4   </cell>
+                  <cell>  5   </cell>
+                  <cell>  6   </cell>
+                </row>
+                <row bottom="minor">
+                  <cell right="medium">Amount (dollars)</cell>
+                  <cell>   1,105.17   </cell>
+                  <cell>  1,161.83   </cell>
+                  <cell>  1,221.40   </cell>
+                  <cell>  1,284.03   </cell>
+                  <cell>  1,349.86   </cell>
+                </row>
+              </tabular>
+            </table> 
+          </p>
+        </answer>
+        <solution>
+          <p>
+            <m>A(1000,2) = 1000e^{0.05(2)} = \$1,105.17</m>
+          </p>
+          <p>
+            <m>A(1000,3) = 1000e^{0.05(3)} = \$1,161.83</m>
+          </p>
+          <p>
+            <m>A(1000,4) = 1000e^{0.05(4)} = \$1,221.40</m>
+          </p>
+          <p>
+            <m>A(1000,5) = 1000e^{0.05(5)} = \$1,284.03</m>
+          </p>
+          <p>
+            <m>A(1000,6) = 1000e^{0.05(6)} = \$1,349.86</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Now consider the situation where we want to know the amount of money in the account after 10 years given various initial investments. Calculate the amount of money in the account as indicated in <xref ref="T-9-1-Payments-years">Table</xref>. Round payments to the nearest penny.
+            <table xml:id="T-9-1-Payments-years">
+              <title>Amount of money in an account after 10 years</title>
+              <tabular top="minor">
+                <row bottom="medium">
+                  <cell right="medium">Initial investment (dollars)</cell>
+                  <cell> 500  </cell>
+                  <cell> 1000   </cell>
+                  <cell> 5000   </cell>
+                  <cell> 7500   </cell>
+                  <cell> 10000   </cell>
+                </row>
+                <row bottom="minor">
+                  <cell right="medium">Amount (dollars)</cell>
+                  <cell/>
+                  <cell/>
+                  <cell/>
+                  <cell/>
+                  <cell/>
+                </row>
+              </tabular>
+            </table>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <table>
+              <title>Amount of money in an account after 10 years</title>
+              <tabular top="minor">
+                <row bottom="medium">
+                  <cell right="medium">Initial investment (dollars)</cell>
+                  <cell> 500  </cell>
+                  <cell> 1000  </cell>
+                  <cell> 5000  </cell>
+                  <cell> 7500  </cell>
+                  <cell> 10000  </cell>
+                </row>
+                <row bottom="minor">
+                  <cell right="medium">Amount (dollars)</cell>
+                  <cell> 824.36    </cell>
+                  <cell>  1648.72   </cell>
+                  <cell>  8243.61   </cell>
+                  <cell>  12365.41   </cell>
+                  <cell>  16487.21   </cell>
+                </row>
+              </tabular>
+            </table>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            <m>A(500,10) = 500e^{0.05(10)} = \$824.36</m>
+          </p>
+          <p>
+            <m>A(1000,10) = 1000e^{0.05(10)} = \$1,648.72</m>
+          </p>
+          <p>
+            <m>A(5000,10) = 5000e^{0.05(10)} = \$8,243.61</m>
+          </p>
+          <p>
+            <m>A(7500,10) = 7500e^{0.05(10)} = \$12,365.41</m>
+          </p>
+          <p>
+            <m>A(10000,10) = 10000e^{0.05(10)} = \$16,487.21</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Describe as best you can what combinations of initial investments and time will result in an account containing $10,000.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            As the amount of money initially invested increases, the length in time for the investment to reach $10,000 is less and less. Using Table 9.1.2, if the initial investment is around $6,000, it will take 10 years for the investment to reach $10,000. Algebraically, we can write this as <m>P=\frac{10,000}{e^{0.05t}}</m>. Conversely, if we want to think of the time to get $10,000 in terms of the initial investment we get <m>t=20 ln(\frac{10,000}{P})</m>.  
+          </p>
+        </answer>
+        <solution>
+          <p>
+            As the amount of money initially invested increases, the length in time for the investment to reach $10,000 is less and less. Using Table 9.1.2, if the initial investment is around $6,000, it will take 10 years for the investment to reach $10,000 (<m>10,000=xe^{0.05(10)} \Rightarrow x=6065.31</m>). Algebraically, we can write this as <m>P=\frac{10,000}{e^{0.05t}}</m>. Conversely, if we want to think of the time to get $10,000 in terms of the initial investment we get <m>t=20 ln(\frac{10,000}{P})</m>.
+          </p>
+        </solution>
+      </task>
     </exploration>   
    </introduction>
 
   <subsection>
     <title>Functions of Several Variables</title>
     <p>
-      Up to this point we have been concerned with functions of a single variable. What defined such a function is that every input in the domain produced a unique output in the range. We saw similar behavior in <xref ref="PA-9-1">Preview Activity</xref>, where each pair <m>(P,t)</m> of inputs produces a unique output <m>A(P,t)</m>. Additionally, the two variables <m>P</m> and <m>t</m> had no real relation to each other. That is, we could choose any value of <m>P</m> without considering what value <m>t</m> might have, and we could select any value of <m>t</m> to use without regard to what value <m>P</m> might have. For that reason we say that the variables <m>t</m> and <m>P</m> are <em>independent</em> of each other. Thus, we call <m>A = A(P,t)</m> a function of the two independent variables <m>P</m> and <m>t</m>. This is the key idea in defining a function of two independent variables. 
+      Up to this Chapter, we have primarily been concerned with functions of a single variable. Remember that a function is a rule that assigns exactly one output for each allowed input. For instance, the rule that assigns a student ID number to each student at your school is a function because each student (input) gets assigned one and only one ID number. The rule that assigns the classrooms for your courses this semester is NOT a function because you likely have more than one classroom (multiple outputs) for each student (a single input).
+    </p>
+    <p>
+      We saw the behavior of a function in <xref ref="PA-9-1">Preview Activity</xref>, where each pair of inputs, <m>(P,t)</m>, produces a unique output <m>A(P,t)</m>. Additionally, the two variables <m>P</m> and <m>t</m> had no real relation to each other. That is, we could choose any value of <m>P</m> without limiting what value <m>t</m> might have, and we could select any value of <m>t</m> to use without regard to what value <m>P</m> might have. For that reason we say that the variables <m>t</m> and <m>P</m> are <em>independent</em> of each other. Thus, we call <m>A = A(P,t)</m> a function of the two independent variables <m>P</m> and <m>t</m>. This is the key idea in defining a function of two independent variables. 
     </p>
 
     <definition>
@@ -306,11 +289,12 @@
     </definition>
 
     <p>
-      There is, of course, no reason to restrict ourselves to functions of only two variables<mdash/>we can use any number of variables we like. For example,
+      There is no reason to restrict ourselves to functions of only two variables; we can use any number of variables we like. For example,
       <me>
         f(x,y,z) = x^2 - 2xz + \cos(y)
       </me>
       defines <m>f</m> as a function of the three variables <m>x</m>, <m>y</m>, and <m>z</m>. In general, a function of <m>n</m> independent variables is a rule that assigns to an ordered <m>n</m>-tuple <m>(x_1, x_2, \ldots, x_n)</m> in some set <m>D</m> exactly one real number.
+        <fn>You may notice that we use variable names like <m>x,y,z</m> when using three variables but when there are more than three variables, it will be convienent to index the variables like <m>x_i</m> so that we can refer to the variables by index. For example the fifth variable in <m>(x_1, x_2, \ldots, x_n)</m> will be <m>x_5</m> and the last two variables will be <m>x_{n-1}</m> and <m>x_n</m>. </fn>
     </p>
 
     <p>
@@ -320,7 +304,7 @@
     <definition xml:id="domainrange_defn" >
       <statement>
         <p>
-          The <term>domain</term><idx><h>function</h><h>domain</h></idx> of a function <m>f</m> is the set of all inputs at which the function is defined.
+          The <term>domain</term><idx><h>function</h><h>domain</h></idx> of a function <m>f</m> is the set of all inputs for which the function is defined.
         </p>
         <p>
           The <term>range</term><idx><h>function</h><h>range</h></idx> of a function <m>f</m> is the set of all actual outputs for the function.
@@ -336,42 +320,46 @@
       </ul>
     </p>
     <example>
-      <p>
-        In this example, we will look at the domain and range of a couple of functions. Our first function will be given by <m>f(x,y)=\sqrt{xy}</m>. For the domain of <m>f</m> we can only use <m>(x,y)</m>-inputs where the square root of <m>xy</m> is non-negative. We will use set-builder notation to describe this domain. The domain of <m>f</m> is <m>\{(x,y)\in\mathbb{R}^2|xy \geq 0\}</m>. This notation is read as <q>the set of <m>(x,y)</m> coordinates in the cartesian plane such that x times y is greater than zero</q>. Set builder notation is very flexible because this follows the form <m>\{\text{kind of objects}|\text{conditions on objects}\}</m>. The symbol <m>|</m> is read as <q>such that</q>. Note that the domain of <m>f</m> does not say that <m>x</m> and <m>y</m> are both positive (quadrant I), but rather that the product of <m>x</m> amd <m>y</m> needs to be positive (quadrants I and III). 
-      </p>
-      <figure xml:id="domainmv1">
-        <caption>A plot of the domain of <m>f(x,y)=\sqrt{xy}</m></caption>
-        <image width="55%" label="img-domainmv1">
-          <shortdescription>A plot highlighting the first and third quadrants which includes both coordinate axes</shortdescription>
-          <description><p>A plot highlighting the first and third quadrants which includes both coordinate axes</p></description>
-          <sageplot>
-            plot1=polygon([(0,0),(2,0),(2,2),(0,2),(0,0)],color="yellow",ticks=[[],[]],xmin=-1.1,xmax=1.1,ymin=-1.1,ymax=1.1,gridlines=True,aspect_ratio=1,axes=true,axes_labels=["$x$","$y$"])
-            plot1+=polygon([(0,0),(-2,0),(-2,-2),(0,-2),(0,0)],color="yellow")
-            plot1        
-          </sageplot>
-        </image>
-      </figure>
-      <p>
-        When we consider the range of <m>f(x,y)=\sqrt{xy}</m> we need to think about what values can actually be outputs of <m>f</m>. You may be tempted to say that outputs are scalars so the range should be <m>\mathbb{R}</m>, all real numbers. There is no way to get a negative output for <m>f</m> so all not all real numbers are actual outputs of <m>f</m>. Instead, the range of <m>f</m> will be the interval <m>[0,\infty)</m> because those are the values you can actually get as an output from <m>f</m>.
-      </p>
-      <p>
-        For our second example, we will look at the domain and range of <m>g(x,y)=\frac{\arcsin(y)}{2x}</m>. First we need to recall the domain and range of the arcsin function are <m>[-1,1]</m> and <m>[-\frac{\pi}{2},\frac{\pi}{2}]</m>, respectively. So we will only be allowed to use inputs with <m>y</m>-values in the interval <m>[-1,1]</m> and <m>x\neq0</m>. Thus the domain of <m>g</m> is <m>\{(x,y)\in\mathbb{R}^2 | x \neq 0 \text{ and } -1 \leq y \leq 1\}</m>.
-      </p>
-      <figure xml:id="domainmv2">
-        <caption>A plot of the domain of <m>g(x,y)=\frac{\arcsin(y)}{2x}</m></caption>
-        <image width="55%" label="img-domainmv2">
-          <shortdescription>A plot highlighting the first and third quadrants which includes both coordinate axes</shortdescription>
-          <description><p>A plot highlighting the first and third quadrants which includes both coordinate axes</p></description>
-          <sageplot>
-            plot2=polygon([(2.5,-1),(2.5,1),(-2.5,1),(-2.5,-1)],color="yellow",xmin=-2.1,xmax=2.1,ymin=-2.1,ymax=2.1,gridlines=True,aspect_ratio=1,axes=true,axes_labels=["$x$","$y$"])
-            plot2+=line([(0,1),(0,-1)],linestyle="--",thickness=3)
-            plot2       
-          </sageplot>
-        </image>
-      </figure>
-      <p>
-        The range of arcsin is <m>[-\frac{\pi}{2},\frac{\pi}{2}]</m> but since the output of <m>g</m> will be <m>\frac{\arcsin(y)}{2x}</m>, the range of <m>g</m> will be <m>\mathbb{R}</m>, all real numbers. The input <m>(\frac{\pi}{2},\frac{1}{2a})</m> will be sent to <m>a</m> for any value of <m>a\neq 0</m> and <m>g(0,1)=0</m>. 
-      </p>
+      <task>
+        <p>
+          In this example, we will look at the domain and range of a couple of functions. Our first function will be given by <m>f(x,y)=\sqrt{xy}</m>. For the domain of <m>f</m> we can only use <m>(x,y)</m>-inputs where the square root of <m>xy</m> is non-negative. We will use set-builder notation to describe this domain. The domain of <m>f</m> is <m>\{(x,y)\in\mathbb{R}^2|xy \geq 0\}</m>. This notation is read as <q>the set of <m>(x,y)</m> coordinates in the cartesian plane such that x times y is greater than zero</q>. Set builder notation is very flexible because this follows the form <m>\{\text{kind of objects}|\text{conditions on objects}\}</m>. The symbol <m>|</m> is read as <q>such that</q>. Note that the domain of <m>f</m> does not say that <m>x</m> and <m>y</m> are both positive (quadrant I), but rather that the product of <m>x</m> amd <m>y</m> needs to be positive (quadrants I and III). 
+        </p>
+        <figure xml:id="domainmv1">
+          <caption>A plot of the domain of <m>f(x,y)=\sqrt{xy}</m></caption>
+          <image width="55%" label="img-domainmv1">
+            <shortdescription>A plot highlighting the first and third quadrants which includes both coordinate axes</shortdescription>
+            <description><p>A plot highlighting the first and third quadrants which includes both coordinate axes</p></description>
+            <sageplot>
+              plot1=polygon([(0,0),(2,0),(2,2),(0,2),(0,0)],color="yellow",ticks=[[],[]],xmin=-1.1,xmax=1.1,ymin=-1.1,ymax=1.1,gridlines=True,aspect_ratio=1,axes=true,axes_labels=["$x$","$y$"])
+              plot1+=polygon([(0,0),(-2,0),(-2,-2),(0,-2),(0,0)],color="yellow")
+              plot1        
+            </sageplot>
+          </image>
+        </figure>
+        <p>
+          When we consider the range of <m>f(x,y)=\sqrt{xy}</m> we need to think about what values can actually be outputs of <m>f</m>. You may be tempted to say that outputs are scalars so the range should be <m>\mathbb{R}</m>, all real numbers. There is no way to get a negative output for <m>f</m> so all not all real numbers are actual outputs of <m>f</m>. Instead, the range of <m>f</m> will be the interval <m>[0,\infty)</m> because those are the values you can actually get as an output from <m>f</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          For our second example, we will look at the domain and range of <m>g(x,y)=\frac{\arcsin(y)}{2x}</m>. First we need to recall the domain and range of the arcsin function are <m>[-1,1]</m> and <m>[-\frac{\pi}{2},\frac{\pi}{2}]</m>, respectively. So we will only be allowed to use inputs with <m>y</m>-values in the interval <m>[-1,1]</m> and <m>x\neq0</m>. Thus the domain of <m>g</m> is <m>\{(x,y)\in\mathbb{R}^2 | x \neq 0 \text{ and } -1 \leq y \leq 1\}</m>.
+        </p>
+        <figure xml:id="domainmv2">
+          <caption>A plot of the domain of <m>g(x,y)=\frac{\arcsin(y)}{2x}</m></caption>
+          <image width="55%" label="img-domainmv2">
+            <shortdescription>A plot highlighting the first and third quadrants which includes both coordinate axes</shortdescription>
+            <description><p>A plot highlighting the first and third quadrants which includes both coordinate axes</p></description>
+            <sageplot>
+              plot2=polygon([(2.5,-1),(2.5,1),(-2.5,1),(-2.5,-1)],color="yellow",xmin=-2.1,xmax=2.1,ymin=-2.1,ymax=2.1,gridlines=True,aspect_ratio=1,axes=true,axes_labels=["$x$","$y$"])
+              plot2+=line([(0,1),(0,-1)],linestyle="--",thickness=3)
+              plot2       
+            </sageplot>
+          </image>
+        </figure>
+        <p>
+          The range of arcsin is <m>[-\frac{\pi}{2},\frac{\pi}{2}]</m> but since the output of <m>g</m> will be <m>\frac{\arcsin(y)}{2x}</m>, the range of <m>g</m> will be <m>\mathbb{R}</m>, all real numbers. The input <m>(\frac{\pi}{2},\frac{1}{2a})</m> will be sent to <m>a</m> for any value of <m>a\neq 0</m> and <m>g(0,1)=0</m>. 
+        </p>
+      </task>
     </example>
     <activity xml:id="A-9-1-1">
     <introduction>
