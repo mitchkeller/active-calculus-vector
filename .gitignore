@@ -1,8 +1,10 @@
 ## Ignore the output directory for upload purposes
 /output/
 
-## Ignore Nick's old batch file directory
-/windows_batch_files/
+## Ignore cached versions of generated files 
+/.cache/
+
+
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

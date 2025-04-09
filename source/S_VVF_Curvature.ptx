@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- **********************************************************************-->
-<!-- Copyright 2013-2024                                                   -->
+<!-- Copyright 2013-2025                                                   -->
 <!-- Nicholas Long, Mitchel Keller, Steven Schlicker                       -->
 <!--                                                                       -->
 <!-- This file is part of Active Calculus Multivariable.                   -->
@@ -47,7 +47,7 @@
       <task>
         <statement>
           <p>
-            <xref ref="PA-curvatureplot1" /> shows a map of a section of road on your testing route for your self-driving car with points labeled <m>P_0</m> and <m>P_1</m> which are 10 meters apart. Draw a vector in the direction of travel at <m>P_0</m> and <m>P_1</m> and use these vectors to describe how the direction of travel is changing on the path from <m>P_0</m> to <m>P_1</m>.
+            <xref ref="PA-curvatureplot1" /> shows a map of a section of road on your testing route for your self-driving car with points labeled <m>P_0</m> and <m>P_1</m> which are 10 meters apart (along the road). Draw a vector in the direction of travel at <m>P_0</m> and <m>P_1</m> and use these vectors to describe how the direction of travel is changing on the path from <m>P_0</m> to <m>P_1</m>.
           </p>
           <figure xml:id="PA-curvatureplot1">
             <caption> A plot of the section of road with points <m>P_0</m> and <m>P_1</m> separated by 10 meters</caption>
@@ -75,7 +75,7 @@
       <task>
         <statement>
           <p>
-            <xref ref="PA-curvatureplot2" /> shows a map of a section of road on your testing route for your self-driving car with points labeled <m>Q_0</m> and <m>Q_1</m> which are 10 meters apart. Draw a vector in the direction of travel at <m>Q_0</m> and <m>Q_1</m> and use these vectors to describe how the direction of travel is changing on the path from <m>Q_0</m> to <m>Q_1</m>.
+            <xref ref="PA-curvatureplot2" /> shows a map of a section of road on your testing route for your self-driving car with points labeled <m>Q_0</m> and <m>Q_1</m> which are 10 meters apart (along the road). Draw a vector in the direction of travel at <m>Q_0</m> and <m>Q_1</m> and use these vectors to describe how the direction of travel is changing on the path from <m>Q_0</m> to <m>Q_1</m>.
           </p>
           <figure xml:id="PA-curvatureplot2">
             <caption> A plot of the section of road with points <m>Q_0</m> and <m>Q_1</m> separated by 10 meters</caption>
@@ -110,7 +110,7 @@
       <task>
         <statement>
           <p>
-            Let <m>P_2</m> be the point on the path that is 5 meters ahead of <m>P_0</m> and <m>Q_2</m> be the point on the path that is 5 meters ahead of <m>Q_0</m>. Would your answer to the previous question change if you compared the path from <m>P_0</m> to <m>P_2</m> to the path from <m>Q_0</m> to <m>Q_2</m>? Explain your reasoning.
+            Let <m>P_2</m> be the point on the path that is 5 meters ahead of <m>P_0</m> and <m>Q_2</m> be the point on the path that is 5 meters ahead of <m>Q_0</m>. Draw the points <m>P_2</m> and <m>Q_2</m> on your plots above. Is the direction of travel changing faster over the path from <m>P_0</m> to <m>P_2</m> or to the path from <m>Q_0</m> to <m>Q_2</m>? Explain your reasoning and compare your answer to the previous question.
           </p>
         </statement>
       </task>
