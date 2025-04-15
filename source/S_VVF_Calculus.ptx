@@ -391,7 +391,7 @@
         </p>
       </statement>
     </definition>
-    <p>
+    <p xml:id="changeform">
       We will take a moment here to note that both the single variable calculus definition of derivative and <xref ref="vvf-derivative-defn" /> have the form of the classic calculus approach described above. In particular, both definitions are of the form
       <me>\text{derivative}=\lim_{stepsize\rightarrow0} \frac{\text{change in output of function}}{\text{change in input of function}}</me>
     </p>

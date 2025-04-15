@@ -36,22 +36,24 @@
   </objectives>
   <introduction>
   <p>
-    In this section, we want to study limits of functions of several variables, and will primarily look at limits of functions of two variables. In single variable calculus, we studied the notion of limit, which turned out to be a critical concept that served as the critical third step in the classic calculus approach when understanding the derivative and the definite integral. In this section, we will begin to understand how the concept of limit for functions of two variables is similar to what we encountered for functions of a single variable. We will use the notion of the limit of a function of several variables as the last step in understanding and defining important concepts related to differentiability later in this chapter. 
+    In this section, we want to study limits of functions of several variables and will primarily look at limits of functions of two variables. In single variable calculus, we studied the idea of a limit, which turned out to be a critical concept which served as the critical third step in the classic calculus approach 
+    <fn>Remember the steps to the classic calculus approach: 1) approximate the measurement, 2) quantify how the approximation changes on a finer scale, and 3) use a limit to show how the approximation converges to the measurement of interest </fn>
+    to understanding the derivative and the definite integral. In this section, we will begin to understand how the concept of limit for functions of two variables is similar to what we encountered for functions of a single variable. We will use the notion of the limit of a function of several variables as the last step in understanding and defining important concepts related to differentiability later in this chapter. 
   </p>
   <p>
-   We did not need to generalize our ideas related to limits when we looked at vector valued functions of one variable (in <xref ref="C_VVF" />) because we can apply our 1 variable limits componentwise. The limit of a of function like <m>\vr(t)=\langle x(t),y(t),z(t) \rangle</m> is evaluated as three separate 1 variable limits. 
+   We did not need to generalize our ideas related to limits when we looked at vector valued functions of one variable (in <xref ref="C_VVF" />) because we applied our one variable limits componentwise. The limit of a of function like <m>\vr(t)=\langle x(t),y(t),z(t) \rangle</m> is evaluated as three separate one variable limits. 
   </p>
   <p>
     Let's begin by reviewing the idea behind a limit of a function of one variable. We say that a function <m>f</m> has a limit <m>L</m> as <m>x</m> approaches <m>a</m> provided that we can make the values <m>f(x)</m> as close to <m>L</m> as we like by taking <m>x</m> sufficiently close (but not equal) to <m>a</m>. We denote this behavior by writing
     <me>
-      \lim_{x\to a}f(x) = L.
+      \lim_{x\to a}f(x) = L
     </me>
-    Remember that you may need to look at how the outputs of the function <m>f</m> as you approach the input <m>x=a</m> from the right and left separately in order to ensure that the limit exists. 
+    Remember that you may need to look at the outputs of the function <m>f</m> as you approach the input <m>x=a</m> from the right and left separately in order to ensure that the limit exists. 
   </p>
 <exploration xml:id="PA_10_1">
   <introduction>
     <p>
-      In this Preview Activity, we will look at limits of several functions by working with tables, graphs, and the algebraic forms of these functions. 
+      In this Preview Activity, we will relook at several ideas related to limits of (single variable) functions by working with tables, graphs, and the algebraic forms of these functions. 
     </p>
   </introduction>
   <task>
@@ -60,9 +62,9 @@
         Let <m>f</m> defined by <m> f(x) = 3-x</m>. Complete <xref ref="T-10-1-PA1_a">Table</xref>. 
         <table xml:id="T-10-1-PA1_a">
           <title>Values of <m>f(x) = 3-x</m>.</title>
-          <tabular halign="center" bottom="minor" top="minor">
+          <tabular halign="center">
           <row bottom="medium">
-            <cell><m> x</m></cell>
+            <cell right="medium"><m> x</m></cell>
             <cell><nbsp/> <m>-0.2</m> <nbsp/></cell>
             <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
             <cell><nbsp/> <m>-0.01</m> <nbsp/></cell>
@@ -71,7 +73,7 @@
             <cell><nbsp/> <m>0.2</m> <nbsp/></cell>
           </row>
           <row>
-            <cell><m>f(x)</m></cell>
+            <cell right="medium"><m>f(x)</m></cell>
             <cell/>
             <cell/>
             <cell/>
@@ -85,11 +87,11 @@
     </statement>
     <answer>
       <p>
-        <table >
+        <table>
           <title>Values of <m>f(x) = 3-x</m>.</title>
-          <tabular halign="center" bottom="minor" top="minor">
+          <tabular halign="center" >
             <row bottom="medium">
-              <cell><m> x</m></cell>
+              <cell right="medium"><m> x</m></cell>
               <cell><nbsp/> <m>-0.2</m> <nbsp/></cell>
               <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
               <cell><nbsp/> <m>0.0</m> <nbsp/></cell>
@@ -97,7 +99,7 @@
               <cell><nbsp/> <m>0.2</m> <nbsp/></cell>
             </row>
             <row>
-              <cell><m>f(x)</m></cell>
+              <cell right="medium"><m>f(x)</m></cell>
               <cell><nbsp/> <m>-3.2</m> <nbsp/></cell>
               <cell><nbsp/> <m>-3.1</m> <nbsp/></cell>
               <cell><nbsp/> <m>3</m> <nbsp/></cell>
@@ -112,9 +114,9 @@
       <p>
         <table >
           <title>Values of <m>f(x) = 3-x</m>.</title>
-          <tabular halign="center" bottom="minor" top="minor">
+          <tabular halign="center" >
             <row bottom="medium">
-              <cell><m> x</m></cell>
+              <cell right="medium"><m> x</m></cell>
               <cell><nbsp/> <m>-0.2</m> <nbsp/></cell>
               <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
               <cell><nbsp/> <m>0.0</m> <nbsp/></cell>
@@ -122,7 +124,7 @@
               <cell><nbsp/> <m>0.2</m> <nbsp/></cell>
             </row>
             <row>
-              <cell><m>f(x)</m></cell>
+              <cell right="medium"><m>f(x)</m></cell>
               <cell><nbsp/> <m>-3.2</m> <nbsp/></cell>
               <cell><nbsp/> <m>-3.1</m> <nbsp/></cell>
               <cell><nbsp/> <m>3</m> <nbsp/></cell>
@@ -142,12 +144,12 @@
     </statement>
     <answer>
       <p>
-        <m>\lim_{x\to 0}f(x) = 3 </m>
+        <m>\lim_{x \to 0}f(x) = 3 </m>
       </p>
     </answer>
     <solution>
       <p>
-        <m>\lim_{x\to 0}f(x) = 3 </m>
+        <m>\lim_{x \to 0}f(x) = 3 </m>
       </p>
     </solution>
   </task>  
@@ -157,7 +159,7 @@
         Write a couple of sentences to explain how your values in <xref ref="T-10-1-PA1_a">Table</xref> and the <me>\lim_{x\to 0}f(x)</me> are demonstrated in <xref ref="F_10_1_activity_1">Figure</xref>.
       </p>
       <figure xml:id="F_10_1_activity_1">
-        <caption>A plot of <m>f(x,0.6) = \frac{x^2}{32}\sin(2\cdot 0.6)</m> on left and <m>f(150,y) = \frac{150^2 \sin(2y)}{32}</m> on right</caption>
+        <caption>A plot of <m>f(x)=3-x</m> </caption>
         <image width="50%" xml:id="img-F_10_1_activity_1">
           <sageplot>
             var('t')
@@ -185,39 +187,13 @@
   <task>
     <statement>
       <p>
-        Let <me>g(x) = \frac{x}{|x|}</me>. Complete <xref ref="T-10-1-PA1_b">Table</xref> with values near <m>x = 0</m>, the point at which <m>g</m> is not defined.
+        Let <me>g(x) = \frac{x}{|x|}</me>. Fill in the blanks of <xref ref="T-10-1-PA1_b">Table</xref> with the appropriate outputs of <m>g</m> for values near <m>x = 0</m>. Note that <m>g</m> is not defined at <m>x=0</m>.
       </p>
       <table xml:id="T-10-1-PA1_b">
         <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
-      <tabular halign="center" bottom="minor" top="minor">
-        <row bottom="medium">
-          <cell><m> x</m></cell>
-          <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
-          <cell><nbsp/> <m>-0.01</m> <nbsp/></cell>
-          <cell><nbsp/> <m>-0.001</m> <nbsp/></cell>
-          <cell><nbsp/> <m>0.001</m> <nbsp/></cell>
-          <cell><nbsp/> <m>0.01</m> <nbsp/></cell>
-          <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
-        </row>
-        <row>
-          <cell><m>g(x)</m></cell>
-          <cell/>
-          <cell/>
-          <cell/>
-          <cell/>
-          <cell/>
-          <cell/>
-        </row>              
-      </tabular>
-      </table>
-    </statement>
-    <answer>
-      <p>
-        <table >
-          <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
-          <tabular halign="center" bottom="minor" top="minor">
+        <tabular halign="center" >
           <row bottom="medium">
-            <cell><m> x</m></cell>
+            <cell right="medium"><m> x</m></cell>
             <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
             <cell><nbsp/> <m>-0.01</m> <nbsp/></cell>
             <cell><nbsp/> <m>-0.001</m> <nbsp/></cell>
@@ -226,7 +202,33 @@
             <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
           </row>
           <row>
-            <cell><m>g(x)</m></cell>
+            <cell right="medium"><m>g(x)</m></cell>
+            <cell/>
+            <cell/>
+            <cell/>
+            <cell/>
+            <cell/>
+            <cell/>
+          </row>              
+        </tabular>
+      </table>
+    </statement>
+    <answer>
+      <p>
+        <table >
+          <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
+          <tabular halign="center">
+          <row bottom="medium">
+            <cell right="medium"><m> x</m></cell>
+            <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
+            <cell><nbsp/> <m>-0.01</m> <nbsp/></cell>
+            <cell><nbsp/> <m>-0.001</m> <nbsp/></cell>
+            <cell><nbsp/> <m>0.001</m> <nbsp/></cell>
+            <cell><nbsp/> <m>0.01</m> <nbsp/></cell>
+            <cell><nbsp/> <m>0.1</m> <nbsp/></cell>
+          </row>
+          <row>
+            <cell right="medium"><m>g(x)</m></cell>
             <cell><nbsp/> <m>-1</m> <nbsp/></cell>
             <cell><nbsp/> <m>-1</m> <nbsp/></cell>
             <cell><nbsp/> <m>-1</m> <nbsp/></cell>
@@ -242,7 +244,7 @@
       <p>
         <table >
           <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
-          <tabular halign="center" bottom="minor" top="minor">
+          <tabular halign="center" >
           <row bottom="medium">
             <cell><m> x</m></cell>
             <cell><nbsp/> <m>-0.1</m> <nbsp/></cell>
@@ -269,12 +271,12 @@
   <task xml:id="PA-limit-LR">
     <statement>
       <p>
-        Write a few sentences about what the values in <xref ref="T-10-1-PA1_b">Table</xref> suggests about <m>\lim_{x\to 0}g(x)</m>.
+        Write a few sentences about what the values in <xref ref="T-10-1-PA1_b">Table</xref> suggests about <m>\lim_{x \to 0}g(x)</m>.
       </p>
     </statement>
     <answer>
       <p>
-        <m>\lim_{x\to 0}g(x) </m> does not exist because from the left, the output of g goes to -1 and from the right, the output of g is 1.
+        <m>\lim_{x \to 0}g(x) </m> does not exist because from the left, the output of g goes to -1 and from the right, the output of g is 1.
       </p>
     </answer>
     <solution>
@@ -286,10 +288,10 @@
   <task>
     <statement>
       <p>
-        Write a couple of sentences to explain how your values in <xref ref="T-10-1-PA1_b">Table</xref> and the <me>\lim_{x\to 0}f(x)</me> are demonstrated in <xref ref="F_10_1_activity_2">Figure</xref>.
+        Write a couple of sentences to explain how your values in <xref ref="T-10-1-PA1_b">Table</xref> and the <me>\lim_{x\to 0} g(x)</me> are demonstrated in <xref ref="F_10_1_activity_2">Figure</xref>.
       </p>
       <figure xml:id="F_10_1_activity_2">
-        <caption>A plot of <m>g(x)=\frac{x}{|x|}</m> on right</caption>
+        <caption>A plot of <m>g(x)=\frac{x}{|x|}</m></caption>
         <image width="50%" xml:id="img-F_10_1_activity_2">
           <sageplot>
             var('t')
@@ -320,7 +322,7 @@
   <task>
     <statement>
       <p>
-        Let <m>h(x)=\frac{1-x^2}{x+1}</m>. At what points is <m>h</m> undefined? 
+        Let <m>h(x)=\frac{1-x^2}{x+1}</m>. At what point(s) is <m>h</m> undefined? 
       </p>
     </statement>
     <answer>
@@ -337,7 +339,7 @@
   <task>
     <statement>
       <p>
-        Show that the limit as x goes to <m>-1</m> of <m>h(x)</m> exists and write a sentence about why <m>h(-1)</m> does not exist but the limit as x goes to <m>-1</m> does exist. 
+        Show that the limit as <m>x</m> goes to <m>-1</m> of <m>h(x)</m> exists. Write a sentence or two about why <m>h(-1)</m> does not exist but the limit as <m>x</m> goes to <m>-1</m> does exist. 
       </p>
     </statement>
     <answer>
@@ -661,7 +663,7 @@
             </answer>
  -->
   <p>
-    In <xref ref="PA_10_1">Preview Activity</xref>, we recalled the notion of limit from single variable calculus. Specifically, the limit  <m>\displaystyle{\lim_{x \rightarrow a} f(x)}</m> (if it exists) will be the value that the output of <m>f</m> approaches as the inputs (<m>x</m>-values) get closer to <m>a</m>. We needed to look at whether the same values for the output of <m>f</m> was approached as the input values approach <m>x=a</m> from different directions. Tables of values for the function can give evidence that a limit will either exist or not but will not have enough evidence to show a limit exists. Similarly, we can use graphs to visually represent the behavior of the output values as we approach a particular input from different directions.
+    In <xref ref="PA_10_1">Preview Activity</xref>, we used the notion of limit from single variable calculus and saw several different outcomes for limits in terms of tables and graphs. Specifically, the limit <m>\displaystyle{\lim_{x \rightarrow a} f(x)}</m> (if it exists) will be the value that the output of <m>f</m> approaches as the inputs (<m>x</m>-values) get closer to <m>a</m>. We must look at whether the output of <m>f</m> approaches the same value for as the input values approach <m>x=a</m> from different directions. Tables of values for the function can give evidence that a limit will either exist or not but will not have enough evidence to show a limit exists. Similarly, we can use graphs to visually represent the behavior of the output values as we approach a particular input from different directions.
   </p>
 </introduction>
 
@@ -671,7 +673,7 @@
     In this section, we will look at how the concepts of limits on single variable functions can be expanded to work with functions of two variables. We will focus on two variables here because tools like tables and graphs readily make sense for a function of the form <m>f(x,y)</m> but become more difficult to use for functions of more than two variables. All of the concepts of limits and continuity can be expanded to functions of any number of variables but that kind of generalization involves a lot of mathematical tools that are not appropriate at this time. <!-- In a natural followup to our work in <xref ref="PA_10_1">Preview Activity</xref>, we now formally define what it means for a function of two variables to have a limit at a point. -->
   </p>
   <p>
-    The biggest difference between limits of single variable functions and multivariable functions is the number of ways we can approach a particular input. For a single variable function, there are only two ways in which we can approach an input like <m>x=a</m>, which we call approaching from the left and approaching from the right, as shown in <xref ref="LR1" />. When considering a limit of a single variable function, you only have to evaluate and compare the output of your function in these two directions. If the output of your function did not agree as you approach from the left and right, then the limit did not exist (like in <xref ref="PA-limit-LR" />)
+    The biggest difference between limits of single variable functions and multivariable functions is the number of ways we can approach a particular input. For a single variable function, there are only two directions in which we can approach an input like <m>x=a</m>, which we call approaching from the left and approaching from the right, as shown in <xref ref="LR1" />. When considering a limit of a single variable function, you only have to evaluate and compare the output of your function in these two directions. If the output of your function did not agree as you approach from the left and right, then the limit did not exist (like in <xref ref="PA-limit-LR" />)
   </p> 
   <figure xml:id="LR1">
     <caption>The two ways to approach an input in 1D </caption>
@@ -691,7 +693,7 @@
     </image>
   </figure> 
   <p>
-    In contrast to the single variable case, there are <alert>A LOT</alert> of different ways to approach an input for a function like <m>f(x,y)</m>. In <xref ref="LR2">Figure</xref>, you can see a variety of different ways to approach the point <m>(a,b)</m>. When we look at how to get close to a input in two dimensions, we will need to think about more than just the straightline directions; we have to consider curved paths and other collections of points that aren't even a continuous path. In the next example, we will explore how we can think about the various representations of a multivariable function and what it would mean look at the output of the function as the inputs get close to a particular value. 
+    In contrast to the single variable case, there are <alert>A LOT</alert> of different ways to approach a point like <m>(a,b)</m>, the input for a function like <m>f(x,y)</m>. In <xref ref="LR2">Figure</xref>, you can see a plot of seven different ways to approach the point <m>(a,b)</m>. When we look at how to get close to a input in two dimensions, we will need to think about more than just the straight-line directions; we have to consider curved paths and other collections of points that aren't even a continuous path. In the next example, we will explore how we can think about the various representations of a multivariable function and what it would mean to examine the output of a multivariable function as the inputs get close to a particular value. 
   </p>
   <figure xml:id="LR2">
     <caption>Seven different ways to approach a point in 2D</caption>
@@ -768,7 +770,7 @@
       </tabular>
     </table>
     <p>
-      As you can see in <xref ref="tableE1"/>, as the inputs, <m>(x,y)</m>, get closer to <m>(0,0)</m> the output of <m>f(x,y)</m> gets closer to 3. We can look at some aspect of directionality using a table, like how the row corresponding to <m>x=0</m> shows values of <m>f</m> for inputs on the <m>y</m>-axis and the values on the diagonal (from top left to bottom right) shows values of <m>f</m> for inputs with the same <m>x</m>- and <m>y</m>-coordinates. 
+      <xref ref="tableE1"/> shows that as the inputs, <m>(x,y)</m>, get closer to <m>(0,0)</m> the output of <m>f(x,y)</m> gets closer to 3. We can look at some aspect of directionality using a table, like how the row corresponding to <m>x=0</m> shows values of <m>f</m> for inputs on the <m>y</m>-axis and the values on the diagonal (from top left to bottom right) shows values of <m>f</m> for inputs with the same <m>x</m>- and <m>y</m>-coordinates. 
     </p>
     <p>
       Visual representations like contour graphs and surface plots will give more information with respect to the different directions we can approach <m>(0,0)</m>. <xref ref="contourE1"/> shows a contour plot of <m>f(x,y)=3-x-2y</m> where you can use the slider to change the number of contours used in the plot. The input point <m>(0,0)</m> is highlighted in red and you can see that regardless of how many contours are displayed, the output value of <m>f</m> seems to approach 3 near the red point. Just as with the table, you can get some idea on the directionality of how the outputs will approach 3 but because the contour plot does not give information about what is happening in-between contours, you are left to mentally fill in this information. 
@@ -789,11 +791,11 @@
       </interactive>  
     </figure>
     <p>
-      A plot of the surface <m>z=f(x,y)=3-x-2y</m> will give the more information about what is happening in different directions as the inputs approach <m>(0,0)</m>. The drawback to using surface plots is that they are very difficult to create by hand;Even computer generated plots of surfaces can be difficult to interpret and are prone to errors because of imprecise numerical calculations. In our case, the plot of <m>z=f(x,y)=3-x-2y</m> is quite straightforward because the surface is a plane. We can see in <xref ref="Limitplot1"/> that if we approach the input point <m>(0,0)</m> in any direction or along any path, then the output of <m>f</m> (as shown by the z-coordinate on the plot) will get closer to 3.
+      A plot of the surface <m>z=f(x,y)=3-x-2y</m> will give more information about what is happening in different directions as the inputs approach <m>(0,0)</m>. The drawback to using surface plots is that they are very difficult to create by hand; Even computer generated plots of surfaces can be difficult to interpret and are prone to errors because of imprecise numerical calculations. In our case, the plot of <m>z=f(x,y)=3-x-2y</m> is quite straightforward because the surface is a plane. We can see in <xref ref="Limitplot1"/> that if we approach the input point <m>(0,0)</m> in any direction or along any path, then the output of <m>f</m> (as shown by the z-coordinate on the plot) will get closer to 3.
     </p>
     <figure xml:id="Limitplot1">
       <caption>A plot of <m>z=f(x,y) = 3-x-2y</m> with several paths approaching the input <m>(0,0)</m></caption>
-      <interactive title="interactive-contourE1" platform="sage" width="100%" aspect="1:1.25">
+      <interactive title="interactive-contourE1" platform="sage" width="100%" aspect="1:1">
         <slate surface="sage">
           from sage.plot.plot3d.plot3d import axes
           @interact
@@ -841,7 +843,7 @@
       </md>
     </p>
     <p>
-      Remember that you will never be able to test all possible paths that approach this limit point, so while this idea to reduce down to a particular path is helpful, we will not be able to exhaust all possible ways to approach our limit point. 
+      Remember that you will <em>never</em> be able to test all possible paths that approach this limit point, so while this idea to reduce down to a particular path is helpful, we will not be able to exhaust all possible ways to approach our limit point and show a limit exists. 
     </p>
     <p>
       In all of our representations, we see evidence that if the input of our function, <m>(x,y)</m>, approaches <m>(0,0)</m>, then the output of our function goes to 3, regardless of the direction or way we approach <m>(0,0)</m>. We generalize this idea with the following definition.
@@ -1061,8 +1063,7 @@
         </p>
       </solution>
     </task>    
-  </activity>
-          
+  </activity> 
            <!--  <p>
               Shown below in <xref ref="F_10_1_limit_contour_2">Figure</xref> is a set of contour lines of the function <m>f</m>.
 
@@ -1070,27 +1071,22 @@
                 <caption>Contour lines of <m>f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m>.</caption>
                 <image width="50%" source="images/fig_10_1_limit_contour_2"/>
               </figure> -->
-
-     
-
-      
-
-    <p>
-      As we have seen in <xref ref="A_10_1_1">Activity</xref>, if along two different paths as <m>(x,y)</m> approaches <m>(a,b)</m> we find that <m>f(x,y)</m> has two different limits, we can conclude that <m>\displaystyle{\lim_{(x,y)\to(a,b)}f(x,y)}</m> does not exist. This is similar to the one-variable example <m>g(x)=x/|x|</m> as shown in <xref ref="F_10_1_one_variable">Figure</xref>; <m>\displaystyle{\lim_{x \to 0}g(x)}</m> does not exist because we see different limits as <m>x</m> approaches 0 from the left and the right.
-    </p>
-    <figure xml:id="F_10_1_one_variable">
-      <caption>A plot of <m>g(x)=\frac{x}{|x|}</m> on right</caption>
-      <image width="50%" xml:id="img-F_10_1_one_variable">
-        <sageplot>
-          var('t')
-          plot9=parametric_plot((t,-1),(t,-1.5,0),thickness=2,color="blue",axes=True,axes_labels=["$x$","$y$"],gridlines=True,xmin=-1.5,xmax=1.5,ymin=-1.5,ymax=1.5)
-          plot9+=circle((0,-1),radius=0.05,thickness=2,edgecolor="black",fill=True,facecolor="white",zorder=5)
-          plot9+=parametric_plot((t,1),(t,0,1.5),thickness=2,color="blue")
-          plot9+=circle((0,1),radius=0.05,thickness=2,edgecolor="black",fill=True,facecolor="white",zorder=5)
-          plot9
-        </sageplot>
-      </image>
-    </figure>
+  <p>
+    As we have seen in <xref ref="A_10_1_1">Activity</xref>, if <m>f(x,y)</m> has two different limits along two different paths as <m>(x,y)</m> approaches <m>(a,b)</m>, then we can conclude that <m>\displaystyle{\lim_{(x,y)\to(a,b)}f(x,y)}</m> does not exist. This is similar to the one-variable example <m>g(x)=x/|x|</m> as shown in <xref ref="F_10_1_one_variable">Figure</xref>; <m>\displaystyle{\lim_{x \to 0}g(x)}</m> does not exist because we see different limits as <m>x</m> approaches 0 from the left and the right.
+  </p>
+  <figure xml:id="F_10_1_one_variable">
+    <caption>A plot of <m>g(x)=\frac{x}{|x|}</m> on right</caption>
+    <image width="50%" xml:id="img-F_10_1_one_variable">
+      <sageplot>
+        var('t')
+        plot9=parametric_plot((t,-1),(t,-1.5,0),thickness=2,color="blue",axes=True,axes_labels=["$x$","$y$"],gridlines=True,xmin=-1.5,xmax=1.5,ymin=-1.5,ymax=1.5)
+        plot9+=circle((0,-1),radius=0.05,thickness=2,edgecolor="black",fill=True,facecolor="white",zorder=5)
+        plot9+=parametric_plot((t,1),(t,0,1.5),thickness=2,color="blue")
+        plot9+=circle((0,1),radius=0.05,thickness=2,edgecolor="black",fill=True,facecolor="white",zorder=5)
+        plot9
+      </sageplot>
+    </image>
+  </figure>
     <!-- <figure xml:id="F_10_1_one_variable">
       <caption>The graph of <m>g(x) = \frac{x}{|x|}</m>.</caption>
       <image width="50%" source="images/fig_10_1_activity_2"/>
@@ -1207,7 +1203,7 @@
     <task>
       <statement>
         <p>
-          State whether the limit <m>\displaystyle{\lim_{(x,y)\to(0,0)} g(x,y)}</m> exists or not and provide a justification of your statement.
+          State whether you think the limit <m>\displaystyle{\lim_{(x,y)\to(0,0)} g(x,y)}</m> exists or not and provide a justification of your statement.
         </p>
       </statement>
       <answer>
@@ -1226,44 +1222,43 @@
     This activity shows that we need to be careful when studying the limit of a two-variable functions by considering its behavior along different paths. If we find two different paths that result in two different limits, then we may conclude that the limit does not exist. However, we can never conclude that the limit of a function exists only by considering its behavior along different paths.
   </p>
   <p>
-    Generally speaking, concluding that a limit, <m>\displaystyle{\lim_{(x,y)\to(a,b)}f(x,y)}</m>, exists requires a more careful argument. 
+    Generally speaking, demonstrating that a limit, <m>\displaystyle{\lim_{(x,y)\to(a,b)}f(x,y)}</m>, exists requires a more careful argument. 
   </p>
   <example xml:id="A_10_1_Limit_exists">
     <p>
-      Consider the function <m>f</m> defined by
+      We will consider the function <m>f</m> defined by
       <me>
         f(x,y) = \frac{x^2y^2}{x^2+y^2}.
       </me>
-      We want to know  whether <m>\displaystyle{\lim_{(x,y)\to(0,0)}f(x,y)}</m> exists.
+      and we will try to determine whether <m>\displaystyle{\lim_{(x,y)\to(0,0)}f(x,y)}</m> exists or not.
     </p>
     <p>
-      Note that if either <m>x</m> or <m>y</m> is 0, then <m>f(x,y) = 0</m>. Therefore, if <m>f</m> has a limit at <m>(0,0)</m>, it must be 0. We will therefore argue
-      that
+      Note that if either <m>x</m> or <m>y</m> is 0, then <m>f(x,y) = 0</m>. Therefore, if <m>f</m> has a limit at <m>(0,0)</m>, it must be 0. We will therefore argue that
       <me>
-        \lim_{(x,y)\to(0,0)}f(x,y) = 0,
+        \lim_{(x,y)\to(0,0)}f(x,y) = 0
       </me>
-      by showing that we can make <m>f(x,y)</m> as close to <m>0</m> as we wish by taking <m>(x,y)</m> sufficiently close (but not equal) to <m>(0,0)</m>. In what follows, we view <m>x</m> and <m>y</m> as being real numbers that are close, but not equal, to 0.
+      by showing that we can make <m>f(x,y)</m> as close to <m>0</m> as we wish by taking <m>(x,y)</m> sufficiently close (but not equal) to <m>(0,0)</m>. In the following arguments, we view <m>x</m> and <m>y</m> as being real numbers that are close, but not equal, to 0.
     </p>
     <p>
       Since <m>0 \leq x^2</m>, we have
       <me>
-        y^2 \leq x^2+y^2,
+        y^2 \leq x^2+y^2
       </me>
       which implies that
       <me>
-        \frac{y^2}{x^2+y^2} \leq 1.
+        \frac{y^2}{x^2+y^2} \leq 1
       </me>
     </p>
     <p>
       Multiplying both sides by <m>x^2</m> and observing that <m>f(x,y) \ge 0</m> for all <m>(x,y)</m> gives
       <me>
-        0\leq f(x,y) = \frac{x^2y^2}{x^2+y^2} = x^2\left(\frac{y^2}{x^2+y^2}\right) \leq x^2.
+        0\leq f(x,y) = \frac{x^2y^2}{x^2+y^2} = x^2\left(\frac{y^2}{x^2+y^2}\right) \leq x^2
       </me>
     </p>
     <p>
-      Thus, <m> 0 \leq f(x,y) \leq x^2</m>. Since <m>x^2 \to 0</m> as <m>x \to 0</m>, we can make <m>f(x,y)</m> as close to <m>0</m> as we like by taking <m>x</m> sufficiently close to <m>0</m> (for this example, it turns out that we don't even need to worry about making <m>y</m> close to 0). Therefore,
+      Thus, <m> 0 \leq f(x,y) \leq x^2</m>. Since <m>x^2 \to 0</m> as <m>x \to 0</m>, we can make <m>f(x,y)</m> as close to <m>0</m> as we like by taking <m>x</m> sufficiently close to <m>0</m>. For this example, it turns out that we don't even need to worry about making <m>y</m> close to 0. Therefore,
       <me>
-        \lim_{(x,y) \to (0,0)} \frac{x^2y^2}{x^2+y^2} = 0.
+        \lim_{(x,y) \to (0,0)} \frac{x^2y^2}{x^2+y^2} = 0
       </me>
     </p>
   </example>
@@ -1327,27 +1322,27 @@
     <p>
       One tool that will work well for functions with two independent input variables is polar coordinates. If we convert our problem (both the function and the limit) to polar coordinates with the point of interest at the origin, then we can evaluate our limit in terms of <m>r</m> going to zero. Remember from <xref ref="subsec-polar" /> that polar coordinates allow us to separate the distance from the origin and the rotation around the origin. In other words, the <m>r</m>-coordinate measures how far we are from the origin (our limit point) and <m>\theta</m> will describe the direction with which we are approaching the origin (our limit point). In <xref ref="subsec-polar" />, there are several examples of converting points and equations into polar coordinates so will refer you there to review as necessary.
     </p>
-    <example>
+    <example xml:id="polarlimitex">
       <introduction>
         <p>
-          In this example we will look at how polar coordinates can give some additional algebraic tools to our explorations in <xref ref="A_10_1_1"/> and <xref ref="A_10_1_Limit_exists" />.
+          In this example, we will look at how polar coordinates can give some additional algebraic tools with respect to the functions explored in <xref ref="A_10_1_1"/> and <xref ref="A_10_1_Limit_exists" />.
         </p>
       </introduction>
       <task>
         <statement>
           <p>
-            For this part, we will look at converting the limit from <xref ref="A_10_1_1"/> to polar coordinates and seeing how this algebra will give the same determination of our limit. In particular, we want to understand the following limit.
+            For this part, we will look at converting the limit from <xref ref="A_10_1_1"/> to polar coordinates and seeing how this algebra will give the same determination of our limit. In particular, we want to understand the following limit:
             <me>
               \lim_{(x,y) \to (0,0)} \frac{y}{\sqrt{x^2+y^2}}
             </me>
-            First, we will convert our function to polar coordinates, which is pretty straighforward because we have <m>x</m> and <m>y</m> in terms of <m>r</m> and <m>\theta</m>. Substituting in <m>x=r\cos(\theta)</m> and <m>y=r\sin(\theta)</m> (and <m>r^2=x^2+y^2</m>) into our function we get:
+            First, we will convert our function to polar coordinates, which is pretty straighforward because we can write <m>x</m> and <m>y</m> in terms of <m>r</m> and <m>\theta</m>. Substituting in <m>x=r \cos(\theta)</m> and <m>y=r \sin(\theta)</m> (as well as <m>r^2=x^2+y^2</m>) into our function we get:
             <me>\frac{y}{\sqrt{x^2+y^2}} = \frac{r\sin(\theta)}{\sqrt{r^2}} = \sin(\theta) </me>
             Note that we can can simplify our expression to <m>\sin(\theta)</m>.
           </p>
           <p>
             We now convert the limit expression from <m>(x,y) \to (0,0)</m> to <m>r \to 0</m>. The whole conversion of the limit looks like 
             <me>\lim_{(x,y) \to (0,0)} \frac{y}{\sqrt{x^2+y^2}} = \lim_{r \to 0} \sin(\theta) </me>
-            Evaluating the limit of <m>\sin(\theta)</m> as <m>r</m> goes to 0 will give a result of <m>\sin(\theta)</m>, which may seem different to you because the limit of a function should either be a scalar or not exist. The conversion from rectangular to polar coordinates means you need to interpret your result in terms of rectangular coordinates. We found that the limit of our function had a dependence on the direction in which we approached the origin. Specifically, if you approach the origin from an angle <m>\theta</m>, then the output of our function will approach <m>\sin(\theta)</m>. In terms of rectangular coordinates, we say that the limit of <m>\frac{y}{\sqrt{x^2+y^2}}</m> does not exist because the limits along different paths going to the origin do not agree with each other.
+            Evaluating the limit of <m>\sin(\theta)</m> as <m>r</m> goes to 0 will give a result of <m>\sin(\theta)</m>. The result of our algebraic limit calculation may seem weird to you because the limit of a function should either be a scalar or not exist. The conversion from rectangular to polar coordinates means you must to interpret your result in terms of rectangular coordinates. We found that the limit of our function had a dependence on the direction in which we approached the origin. Specifically, if you approach the origin along an angle <m>\theta</m>, then the output of our function will approach <m>\sin(\theta)</m>. In terms of rectangular coordinates, we say that the limit of <m>\frac{y}{\sqrt{x^2+y^2}}</m> does not exist because the limits along different paths going to the origin do not agree with each other.
           </p> 
           <figure xml:id="limpaths2">
             <caption>A plot of <m>z=f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m> with a variety of paths approaching the origin</caption>
@@ -1375,7 +1370,7 @@
             </interactive>  
           </figure>
           <p>  
-            <xref ref="limpaths2" /> shows a collection of paths in the <m>xy</m>-plane that approach the origin (shown in blue). Each of these paths is shown on the surface given by <m>z=f(x,y)=\frac{y}{\sqrt{x^2+y^2}}</m> in red to demonstrate how the height/output of <m>f</m> will approach different values as these paths each approach <m>(0,0)</m>. Note that the limit along each of these paths exists but because the values of the limit along every path is not the same, the limit as <m>(x,y) \to (0,0)</m> does not exist. This should give you a greater appreciation for a surface plot like <xref ref="F_10_1_disc_2"/>. Computer generated plots will create a surface plot but it is important for you to identify features on that plot that will have behaviour quite different than the smooth, continuous appearance. 
+            <xref ref="limpaths2" /> shows a collection of paths in the <m>xy</m>-plane that approach the origin (shown in blue). Each of these paths is shown on the surface given by <m>z=f(x,y)=\frac{y}{\sqrt{x^2+y^2}}</m> in red to demonstrate how the height/output of <m>f</m> will approach different values as these paths each approach <m>(0,0)</m>. Note that the limit along each of these paths exists, but because the values of the limit along every path is not the same, the limit as <m>(x,y) \to (0,0)</m> does not exist. This should give you a greater appreciation for a surface plot like <xref ref="F_10_1_disc_2"/>. Computer generated plots will create a surface plot but it is important for you to identify features on that plot that will have behaviour quite different than the smooth, continuous appearance. 
           </p>
         </statement>
       </task>
@@ -1390,7 +1385,7 @@
             <me>
               \lim_{(x,y) \to (0,0) } \frac{x^2y^2}{x^2+y^2}= \lim_{r \to 0} r^2 (\cos(\theta)\sin(\theta))^2 = 0
             </me>
-            So as we approach the origin (from any direction), the output of <m>g</m> will approach 0. You can see how the different dependence on <m>r</m> of the output of our function has a different result on the limit. As we showed in <xref ref="A_10_1_Limit_exists" />, 
+            So as we approach the origin (from any direction), the output of <m>g</m> will approach 0. You can see how the different dependence on <m>r</m> of the output of our function causes there to be a different result on the limit (as compared to part (a) of this example). As we showed in <xref ref="A_10_1_Limit_exists" />, 
              <me>
               \lim_{(x,y) \to (0,0) } \frac{x^2y^2}{x^2+y^2}= 0
             </me>
@@ -1401,7 +1396,7 @@
       </task>
     </example>
     <p>
-      These examples may seem like the only tool you need is to convert to polar coordinates but that misses how convienent the conversions to polar coordinates was for the expressions we were taking the limit of. If you were examining an expression that did not have a convienent form in polar coordinates or the algebra to simplify and evaluate your limit in polar coordinates was difficult, then polar coordinates is not a great tool for evaluating limits. Polar coordinates as a tool is presented here because it highlights how to geometrically separate your measurements in two dimensions into a distance and a measure of directionality. These ideas come up in many places throughout this text and have already been used in our work on vectors. Remember that we often analyze the magnitude of vector measurements differently than we analyze direction aspects of vectors.
+      These examples may seem like the only tool you need is to convert to polar coordinates but that simplification misses how convienent the conversions to polar coordinates were for the expressions used in <xref ref="polarlimitex"/>. If you were examining an expression that did not have a convienent conversion to polar coordinates or the algebra to simplify and evaluate your limit in polar coordinates was difficult, then polar coordinates will not be a great tool for evaluating limits. Polar coordinates as a tool is presented here because it highlights how to geometrically separate your measurements in two dimensions into a distance and a measure of directionality. These ideas come up in many places throughout this text and have already been used in our work on vectors. For instance, we often analyze the magnitude of vector measurements differently than we analyze direction aspects of vectors.
     </p>
   </subsection>
 
@@ -1503,31 +1498,25 @@
     <ul>
       <li>
         <p>
-          A function <m>f = f(x,y)</m> has a limit <m>L</m> at a point <m>(a,b)</m> provided that we
-            can make <m>f(x,y)</m> as close to <m>L</m> as we like by taking <m>(x,y)</m>
-            sufficiently close (but not equal) to <m>(a,b)</m>.
+          A function <m>f = f(x,y)</m> has a limit <m>L</m> at a point <m>(a,b)</m> provided that we can make <m>f(x,y)</m> as close to <m>L</m> as we like by taking <m>(x,y)</m> sufficiently close (but not equal) to <m>(a,b)</m>.
         </p>
       </li>
 
       <li>
         <p>
-          If <m>(x,y)</m> has two different limits as <m>(x,y)</m> approaches
-            <m>(a,b)</m> along two different paths, we can conclude that
-            <m>\lim_{(x,y)\to(a,b)}f(x,y)</m> does not exist.
+          If <m>(x,y)</m> has two different limits as <m>(x,y)</m> approaches <m>(a,b)</m> along two different paths, we can conclude that <m>\lim_{(x,y)\to(a,b)}f(x,y)</m> does not exist.
         </p>
       </li>
 
       <li>
         <p>
-          Properties similar to those for one-variable functions allow us
-            to conclude that many limits exist and to evaluate them.
+          Properties similar to those for one-variable functions allow us to conclude that many limits exist and to evaluate them.
         </p>
       </li>
 
       <li>
         <p>
-          A function <m>f = f(x,y)</m> is continuous at a point <m>(a,b)</m> in its
-            domain if <m>f</m> has a limit at <m>(a,b)</m> and
+          A function <m>f = f(x,y)</m> is continuous at a point <m>(a,b)</m> in its domain if <m>f</m> has a limit at <m>(a,b)</m> and
           <me>
             f(a,b) = \lim_{(x,y) \to (a,b)} f(x,y).
           </me>
