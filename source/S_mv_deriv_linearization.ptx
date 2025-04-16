@@ -47,12 +47,16 @@
         <slate surface="sage">
           @interact
           def LLline(zoom=slider(0,8,1,default=0,label="Zoom"),val=slider(0,2,0.05,default=1.00,label="Location")):
-            var('x')
-            f(x)=x*cos(pi*x)
-            fv=f(val)
-            plot1=plot(f(x),(x,-4,4),color="black",gridlines=True,thickness=2)
-            plot1+=point((val,fv),color="black",size=40,xmin=val-2^(-zoom+1),xmax=val+2^(-zoom+1),ymin=fv-2^(-zoom+1),ymax=fv+2^(-zoom+1))
-            show(plot1)
+              var('x')
+              f(x)=x*cos(pi*x)
+              fv=f(val)
+              if(zoom==0):
+                  xtop=4;xbottom=-4;
+              else:
+                  xbottom=val-2^(-zoom+1);xtop=val+2^(-zoom+1);
+              plot1=plot(f(x),(x,xbottom,xtop),color="black",gridlines=True,thickness=2)
+              plot1+=point((val,fv),color="black",size=40)
+              show(plot1)
         </slate>
       </interactive>
     </figure>
@@ -429,8 +433,8 @@
     <p>
       It would take us too far afield to provide a rigorous discussion of differentiability of functions of more than one variable (but <xref ref="Ez_10_4_4">Exercise</xref> covers some of these details). We will be content to define a stronger, but more easily verified, set of conditions that ensure local linearity. 
     </p>
-    <assemblage xml:id="Differentiablity">
-      <title>Differentiablity</title>
+    <assemblage xml:id="Differentiability">
+      <title>Differentiability</title>
       <p>
         If <m>f</m> is a function of the independent variables <m>x</m> and <m>y</m> and both <m>f_x</m> and <m>f_y</m> exist and are continuous in an open disk containing the point <m>(x_0,y_0)</m>, then <m>f</m> is <em>continuously differentiable</em><idx><h>function</h><h>continuously differentiable</h></idx> at <m>(x_0,y_0)</m>.
       </p>
@@ -456,7 +460,7 @@
       </p>
     </assemblage>
     <p>
-        <em>Important Note:</em> As can be seen in <xref ref="Ez_10_4_0">Exercise</xref>, it is possible that <m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m> can exist for a function <m>f</m>, and so the plane <m>z = f(x_0,y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)</m> exists even though <m>f</m> is not locally linear at <m>(x_0,y_0)</m>. The graph of <m>f</m> (<xref ref="x13y13" />) does not look linear when we zoom in around the point <m>(x_0,y_0)</m>, so the plane given is not tangent to the graph. Differentiability for a function of two variables implies the existence of a tangent plane, but the existence of the two first order partial derivatives of a function at a point does not imply differentiaility. This is quite different than what happens in single variable calculus. 
+        <em>Important Note:</em> As can be seen in <xref ref="Ez_10_4_0">Exercise</xref>, it is possible that <m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m> can exist for a function <m>f</m>, and so the plane <m>z = f(x_0,y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)</m> exists even though <m>f</m> is not locally linear at <m>(x_0,y_0)</m>. The graph of <m>f</m> (<xref ref="x13y13" />) does not look linear when we zoom in around the point <m>(x_0,y_0)</m>, so the plane given is not tangent to the graph. Differentiability for a function of two variables implies the existence of a tangent plane, but the existence of the two first order partial derivatives of a function at a point does not imply differentiability. This is quite different than what happens in single variable calculus. 
     </p>
     <p>
       Finally, one important note about the form of the equation for the tangent plane, <m>z = f(x_0,y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)</m>. Say, for example, that we have a particular tangent plane given by <m>z = 7 - 2(x-3) + 4(y+1)</m>. We can immediately read from this form that <m>f_x(3,-1) = -2</m> and <m>f_y(3,-1) = 4</m>; furthermore, <m>f_x(3,-1)=-2</m> is the slope of the trace to both <m>f</m> and the tangent plane in the <m>x</m>-direction at <m>(3,-1)</m>. In the same way, <m>f_y(3,-1) = 4</m> is the slope of the trace of both <m>f</m> and the tangent plane in the <m>y</m>-direction at <m>(3,-1)</m>.
@@ -548,17 +552,21 @@
         <slate surface="sage">
           @interact
           def LL2D(zoom=slider(0,8,1,default=0,label="Zoom")):
-            var('x')
-            val=1
-            s=0.8
-            f(x)=x*cos(pi*x)
-            df(x)=diff(f,x)
-            fv=f(val)
-            dfv=df(val)
-            plot1=plot(f(x),(x,-4,4),color="black",gridlines=True,thickness=2)
-            plot1+=line([(1-s,fv-dfv*s),(1+s,fv+s*dfv)],color="red",thickness=2)
-            plot1+=point((val,fv),color="black",size=40,xmin=val-2^(-zoom+1),xmax=val+2^(-zoom+1),ymin=fv-2^(-zoom+1),ymax=fv+2^(-zoom+1))
-            show(plot1)
+              var('x')
+              val=1
+              s=0.8
+              f(x)=x*cos(pi*x)
+              df(x)=diff(f,x)
+              fv=f(val)
+              dfv=df(val)
+              if(zoom==0):
+                xtop=4;xbottom=-4;
+              else:
+                xbottom=val-2^(-zoom+1);xtop=val+2^(-zoom+1);
+              plot1=plot(f(x),(x,xbottom,xtop),color="black",gridlines=True,thickness=2)
+              plot1+=point((val,fv),color="black",size=40)
+              plot1+=line([(xbottom,fv-dfv*(1-xbottom)),(xtop,fv+(xtop-1)*dfv)],color="red",thickness=2)
+              show(plot1)
         </slate>
       </interactive>
     </figure>
@@ -603,7 +611,7 @@
       <image width="50%" source="images/fig_10_4_tangent_9"/>
     </figure> -->
     <p>
-      Using the linearization may seem like a needless complication to your life, but in many applications the actual function you are interested in is unknown. For instance, if you were working for a mining company and were trying to map a pocket of some resource underground, it would be <em>very</em> expensive to drill out a bunch of samples to make a chart with amounts of the resource at a grid of locations. You would want to get the most information possible and be able to estimate between the locations where you took data. This is where the linearization is a valuable first step in determining a way to estimate between different input locations. In later courses (like differential equations), you may encounter more sophistocated ways to estimate between data points and discuss the advantages and drawbacks of these ideas. 
+      Using the linearization may seem like a needless complication to your life, but in many applications the actual function you are interested in is unknown. For instance, if you were working for a mining company and were trying to map a pocket of some resource underground, it would be <em>very</em> expensive to drill out a bunch of samples to make a chart with amounts of the resource at a grid of locations. You would want to get the most information possible and be able to estimate between the locations where you took data. This is where the linearization is a valuable first step in determining a way to estimate between different input locations. In later courses (like differential equations), you may encounter more sophisticated ways to estimate between data points and discuss the advantages and drawbacks of these ideas. 
     </p>
     <activity xml:id="A_10_4_11">
     <introduction>
