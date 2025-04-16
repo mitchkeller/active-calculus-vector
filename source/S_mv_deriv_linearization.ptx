@@ -142,7 +142,7 @@
       </sidebyside>
     </figure> -->
     <p>
-      Just as the graph of a differentiable single-variable function (or a differentiable vector valued function of one variable) looks like a line when viewed on a small scale, we see that the graph of this particular two-variable function looks like a plane, as seen in <xref ref="F_10_4_tangent_4">Figure</xref>. In the following preview activity, we will explore how to give the equation of this plane in terms of values related to our function <m>f(x,y)</m>.
+      Just as the graph of a differentiable single-variable function (or a differentiable vector valued function of one variable) looks like a line when viewed on a small scale, we see that the graph of this particular two-variable function looks like a plane, as seen in <xref ref="F_10_4_tangent_4">Figure</xref>. In the following preview activity, we will explore how to give the equation of this plane in terms of values related to our function <m>f(x,y)</m>, but first we will state a key idea that will be helpful algebraic form for use to use when thinking about tangent planes to surfaces of the form <m>z=f(x,y)</m>.
     </p>
     <!-- <figure xml:id="F_10_4_tangent_4">
       <caption>A plot of <m>f(x,y)=6-\frac{x^2}{2}-y^2</m> with tangent plane at the point <m>(1,1,\frac{9}{2})</m> drawn and the option to zoom in around <m>(1,1,\frac{9}{2})</m></caption>
@@ -186,7 +186,7 @@
     <exploration xml:id="PA_10_4">
     <introduction>
       <p>
-        We want to find the equation of the plane (of the form given in <xref ref="nvplaneeqn"/>) that best describes the surface given by <m>z=f(x,y)=6-\frac{x^2}2 - y^2</m>, around the input <m>(x_0,y_0) = (1,1)</m>. In particular, we will need to find the proper values of <m>z_0</m>, <m>a</m>, and <m>b</m>. 
+        We want to find the equation of the plane (using the form given in <xref ref="nvplaneeqn"/>) that best describes the surface given by <m>z=f(x,y)=6-\frac{x^2}2 - y^2</m> for input values around <m>(x_0,y_0) = (1,1)</m>. In particular, we will need to find the proper values of <m>z_0</m>, <m>a</m>, and <m>b</m>. 
       </p>
     </introduction>
     <task>
@@ -209,7 +209,7 @@
     <task>
       <statement>
         <p>
-          The value <m>z_0</m> from <xref ref="nvplaneeqn"/> will need to be the <m>z</m>-coordinate value where our plane will intersect the surface. What is the <m>z</m>-coordinate of the point where the plane and the surface intersect?
+          We want our plane to match the height of our surface at <m>(x_0,y_0)</m> and the value <m>z_0</m> from <xref ref="nvplaneeqn"/> will need to be the <m>z</m>-coordinate value where our plane will intersect the surface. What is the <m>z</m>-coordinate of the point where the plane and the surface should intersect?
           <!-- We know one point on the tangent plane;  namely, the <m>z</m>-value of the tangent plane agrees with the <m>z</m>-value on the graph of <m>f(x,y) = 6 - \frac{x^2}2 - y^2</m> at the point <m>(x_0, y_0)</m>.  In other words, both the tangent plane and the graph of the function <m>f</m> contain the point <m>(x_0, y_0, z_0)</m>. Use this observation to determine <m>z_0</m> in the expression <m>z = z_0 + a(x-x_0) + b(y-y_0)</m>. -->
         </p>
       </statement>
@@ -227,7 +227,7 @@
     <task>
       <statement>
         <p>
-          If our plane will best describe the surface near our input <m>(x_0,y_0)</m>, then the plane will also fit the behavior of the traces <m>x=1</m> and <m>y=1</m> near our point of interest.
+          If we want our plane to best describe the surface <m>z=f(x,y)</m> near our input <m>(x_0,y_0)</m>, then the plane will also need to match the behavior of the traces <m>x=1</m> and <m>y=1</m> near our point of interest.
         </p>
         <p>
           Sketch the traces of <m>f(x,y) = 6 - \frac{x^2}2 - y^2</m> for <m>y=y_0=1</m> and <m>x=x_0=1</m> below in <xref ref="F_10_4_traces">Figure</xref>. Draw the tangent lines to the each of the traces when the input (either <m>x</m> or <m>y</m> as appropriate) is 1. 
@@ -272,11 +272,11 @@
               param2(s,t)=(s,t,4.5-(s-1)-2*(t-1))
               #set up grid      n is number of steps in s    m is number of steps in t  
               #a1 is min s    a2 is max s   b1 is min t    b2 is max t
-              n=6;m=6;a1=1/2;a2=1.5;b1=1/2;b2=1.5; 
+              n=5;m=5;a1=1/2;a2=1.5;b1=1/2;b2=1.5; 
               #c1 is surface color     o1 is surface opacity
               #c2 and o2 are for constant t value traces
               #c3 and o3 are for constant s value traces
-              c1="blue"; c2="black"; c3="black"; o1=0.3; o2=0.8; o3=0.8;
+              c1="blue"; c2="black"; c3="black"; o1=0.3; o2=0.4; o3=0.4;
               plot6=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
               plot6+=parametric_plot3d(param2,(s,a1,a2),(t,b1,b2),color="red",opacity=o1)
               for i in range(n+1):
@@ -288,10 +288,10 @@
                 plot6+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
                 plot6+=parametric_plot3d(param2(s,tv),(s,a1,a2),color=c3,opacity=o3)
               plot6+=point((1,1,4.5),color="black",size=10)
-              sv=1; plot6+=parametric_plot3d(param(sv,t),(t,b1,b2),color="blue",opacity=1,thickness=3)
-              tv=1; plot6+=parametric_plot3d(param(s,tv),(s,a1,a2),color="blue",opacity=1,thickness=3)
-              sv=1; plot6+=parametric_plot3d(param2(sv,t),(t,b1,b2),color="red",opacity=1,thickness=3)
-              tv=1; plot6+=parametric_plot3d(param2(s,tv),(s,a1,a2),color="red",opacity=1,thickness=3)
+              sv=1; plot6+=parametric_plot3d(param(sv,t),(t,b1,b2),color="blue",thickness=3)
+              tv=1; plot6+=parametric_plot3d(param(s,tv),(s,a1,a2),color="blue",thickness=3)
+              sv=1; plot6+=parametric_plot3d(param2(sv,t),(t,b1,b2),color="red",thickness=3)
+              tv=1; plot6+=parametric_plot3d(param2(s,tv),(s,a1,a2),color="red",thickness=3)
               show(plot6,aspect_ratio=(1,1,0.35),viewpoint=[[-0.396,-0.6577,-0.6407],137.81],camera_position=[3.2568,2.1949,1.6581])
             </slate>
           </interactive>
@@ -371,10 +371,9 @@
   </introduction>
 
   <subsection>
-    <title>The Tangent Plane</title>
+    <title>Differentiability and Local Linearity</title>
     <p>
-      Before we state a general formula for the equation of the tangent plane at a particular point on the graph of <m>z=f(x,y)</m>, we need to discuss a technical
-      condition and look at a couple of examples of functions that are NOT locally linear.
+      Before we state a general formula for the equation of the tangent plane at a particular point on the graph of <m>z=f(x,y)</m>, we need to discuss a technical condition and look at a couple of examples of functions that are NOT locally linear.
     </p>
     <p>  
       As we have noted, when we look at the graph of a <q>nice</q> single-variable function on a small scale near a point <m>x_0</m>, we expect to see a line; in this case, we say that <em><m>f</m> is locally linear near <m>x_0</m></em> since the graph looks like a linear function locally around <m>x_0</m>. Of course, there are functions, such as the absolute value function given by <m>f(x)=|x|</m>, that are not locally linear at every point. In single-variable calculus, we learn that if the derivative of a function exists at a point, then the function is guaranteed to be locally linear there.
@@ -440,8 +439,11 @@
     <p>
       Whenever a function <m>z = f(x,y)</m> is continuously differentiable at a point <m>(x_0,y_0)</m>, it follows that the function has a tangent plane at <m>(x_0,y_0)</m>. WHich means that when viewed up close, the tangent plane and the graph of the function are virtually indistinguishable. We won't formally define differentiability of multivariable functions in this text. For our purposes, continuous differentiability is the only condition we will need to use. It is important to note that continuous differentiability is a stronger condition than differentiability. All of the results we encounter will apply to differentiable functions, and so also apply to continuously differentiable functions.
     </p>
+    </subsection>
+    <subsection xml:id="subsec-tangentplane">
+      <title>The Tangent Plane</title>
     <p>  
-       Now that we have a good set of conditions to check if it makes sense to give a tangent plane, we return to the result of <xref ref="PA_10_4">Preview Activity</xref> and  have the following general formula for the tangent plane. 
+       Now that we have a good set of conditions to check if it makes sense to give a tangent plane, we return to the result of <xref ref="PA_10_4">Preview Activity</xref> and have the following general formula for the tangent plane. 
     </p>
 
     <assemblage xml:id="Tangent-plane">
