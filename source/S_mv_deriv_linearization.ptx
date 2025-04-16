@@ -36,6 +36,40 @@
   </objectives>
   <introduction>
     <p>
+      Throughout your work in single variable calculus, the tangent line served as a geometric and conceptual tool to understand and use the derivative at a point. While the value of a derivative at a point measures the instantaneous rate of change, we visualized the value of the derivative as the slope of the line tangent to the graph of our function. This allowed use to <q>see</q> the value of the derivative in terms of an important behavior of the graph of the function.
+    </p>
+    <p>
+      Additionally, we saw the correspondence between a function's graph being <em>locally linear</em><idx><h>locally linear</h></idx> and the function being differentiable. If we zoom in on the graph of a differentiable function around a point, the graph will look like the tangent line to the function at that point. <xref ref="LLline2" /> shows the graph of a curve with sliders that allow you to to zoom in around a point on that curve or change the labeled point on the curve. The displayed function's graph is differentiable because at every point on the curve, you can zoom-in around the labeled point and the graph of the function will look linear (for a small region around the point). You should visually verify at several points that this function is differentiable at the labeled point by verifying the graph is locally linear.
+    </p>
+    <figure xml:id="LLline2">
+      <caption>A plot with the ability to zoom in on a point of <m>y=f(x)</m>, where <m>f</m> is a nonlinear, differentiable function</caption>
+      <interactive title="interactive-LLline" platform="sage" width="100%" aspect="1:1">
+        <slate surface="sage">
+          @interact
+          def LLline(zoom=slider(0,8,1,default=0,label="Zoom"),val=slider(0,2,0.05,default=1.00,label="Location")):
+            var('x')
+            f(x)=x*cos(pi*x)
+            fv=f(val)
+            plot1=plot(f(x),(x,-4,4),color="black",gridlines=True,thickness=2)
+            plot1+=point((val,fv),color="black",size=40,xmin=val-2^(-zoom+1),xmax=val+2^(-zoom+1),ymin=fv-2^(-zoom+1),ymax=fv+2^(-zoom+1))
+            show(plot1)
+        </slate>
+      </interactive>
+    </figure>
+    <p>
+      When viewing our differentiable function on a very small scale, the graph will be very close to the graph of the tangent line. Remember that we can use the derivative of our function to find the slope of our tangent line as a measure of how tilted the graph is on a small scale. Because the graph of the function and the tangent line are so similar for a small region around the given point, the tangent line will allow us to approximate the output value of the function or the change in the output value for inputs near the given point. Tangent lines were used in many different applications and extensions of derivatives; For example, horizontal tangent lines gave critical points for optimization problems and tangent lines were used to approximate zeros or roots of functions when developing the Newton-Raphson.Method. 
+    </p> 
+    <p>
+      In <xref ref="tangentlines"/>, we saw that a curve in space, as the graph of a vector valued function of one variable, would be locally linear and approximated well by a tangent line if the function was differentiable. So a curve in space/vector valued function will be differentiable if the graph looks like a line on a small scale.
+    </p>  
+    <p>
+      In this section, we will explore the various ways in which we can extend the ideas described above to a function of two variables. Geometrically, this means we will use a tangent plane as a <q>flat</q> analog for surfaces of the form <m>z=f(x,y)</m>.
+      <fn>
+        For graphs in the cartesian plane, there was only one type of flat graph, i.e. a line. When we generalized to higher dimensions, we saw how lines and planes would be considered flat graphs but lines would be considered a 1-dimensional flat graph (because there is only direction to move along the graph) and planes would be considered a 2-dimensional flat graph.
+      </fn>
+      We will also introduce a couple of new tools to help us describe change in the output of <m>f(x,y)</m> algebraically and numerically.
+    </p>
+    <!-- <p>
       In single variable calculus, we learned that a differentiable function is <em>locally linear</em>. <idx><h>locally linear</h></idx> In other words, if we zoom in on the graph of a differentiable function around a point, the graph will look like the tangent line to the function at that point. In <xref ref="LLline2" /> you can look at the graph of a curve and zoom in around a point on that curve to see that eventually the graph of the function will look linear. You can use the sliders above the plot to change how closely zoomed in the plot will be or change the location on the curve that you are examining. You should visually verify at a several points that this function is differentiable because at any point shown, the graph is locally linear.
     </p>
     <figure xml:id="LLline2">
@@ -55,21 +89,15 @@
     </figure>
     <p>
       When viewing our differentiable function on a very small scale, the graph will be very close to the graph of the tangent line. Remember that we can use the derivative of our function to find the slope of our tangent line as a measure of how tilted the graph is on a small scale. 
-    </p>
-    <p>
-      For graphs in the cartesian plane, there was only one type of flat graph, i.e. a line. When we generalized to higher dimensions, we saw how lines and planes would be considered flat graphs but lines would be considered a 1-dimensional flat graph (because there is only direction to move along the graph) and planes would be considered a 2 dimensional flat graph.
-    </p>
-    <p>
-      In <xref ref="tangentlines"/>, we saw that a curve, as the graph of a vector valued function of one variable, would be locally linear and approximated well by a tangent line if the function was differentiable. So a curve/vector valued function will be differentiable if the graph looks like a line on a small scale. Similarly, we will try to generalize our idea of local linearity and differentiability to the graph of a multivariable function by asking if the graph of the surface given by <m>z=f(x,y)</m> will look like a plane on a very small scale. 
-    </p>
+    </p> -->
     <p>
       To start our investigation, let's see what happens when we look at the graph of a <q>nice</q> two-variable function on a small scale. We will look at
       <me>
         f(x,y) = 6 - \frac{x^2}{2} - y^2,
       </me>
-      whose graph is shown in <xref ref="F_10_4_tangent_1">Figure</xref>.
+      whose graph is shown in <xref ref="F_10_4_tangent_4">Figure</xref>.
     </p>
-    <figure xml:id="F_10_4_tangent_1">
+    <!-- <figure xml:id="F_10_4_tangent_1">
       <caption>A plot of <m>f(x,y)=6-\frac{x^2}{2}-y^2</m> with the point <m>(1,1,\frac{9}{2})</m> highlighted</caption>
       <interactive label="interactive-F_10_4_tangent_1" platform="sage" width="100%" aspect="1:1">
         <slate surface="sage">
@@ -82,25 +110,27 @@
           show(plot2,viewpoint=[[-0.3161,-0.525,-0.7902],129.11],camera_position=[7.2388,3.9416,3.9252],aspect_ratio=(1,1,0.5))
         </slate>
       </interactive>
-    </figure>
+    </figure> -->
     <!-- <figure xml:id="F_10_4_tangent_1">
       <caption>The graph of <m>f(x,y)=6-x^2/2 - y^2</m>.</caption>
       <image width="50%" source="images/fig_10_4_tangent_1"/>
     </figure> -->
     <p>
-      We will examine the behavior of this function near the point <m>(x_0,y_0) = (1,1)</m> which has <m>f(1,1)=4.5</m>. In particular, we wish to view the graph on an increasingly small scale around the point <m>(1,1,4.5)</m>. In <xref ref="F_10_4_tangent_2">Figure</xref> you can use the slider labeled <q>Zoom</q> to change the scale on the plot. With a zoom of 0, you can see how the surface is curved very easily, but as you get past zoom level 3, the surface looks like a tilted plane. On plots like <xref ref="F_10_4_tangent_2">Figure</xref>, you should pay attention to the scale on the edge of the plot to see how small of a scale you are viewing around your point. 
+      We will examine the behavior of <m>f</m> near the point <m>(x_0,y_0) = (1,1)</m> which has <m>f(1,1)=4.5</m>. In particular, we wish to view the graph on smaller and smaller scales around the point <m>(1,1,4.5)</m>. In <xref ref="F_10_4_tangent_4">Figure</xref> you can use the slider labeled <q>Zoom</q> to change the scale on the plot. With a zoom of 0, you can see how the surface is curved very easily, but as you get past zoom level 3, the surface looks like a tilted plane. On plots like <xref ref="F_10_4_tangent_4">Figure</xref>, you should pay attention to the scale on the edge of the plot to see how small of a scale you are viewing around your point. 
     </p>
-    <figure xml:id="F_10_4_tangent_2">
+    <figure xml:id="F_10_4_tangent_4">
       <caption>A plot of <m>f(x,y)=6-\frac{x^2}{2}-y^2</m> with the point <m>(1,1,\frac{9}{2})</m> highlighted and the option to zoom in around the highlighted point.</caption>
-      <interactive label="interactive-F_10_4_tangent_2" platform="sage" width="100%" aspect="1:1">
+      <interactive label="interactive-F_10_4_tangent_4" platform="sage" width="100%" aspect="1:1.15">
         <slate surface="sage">
-          var('x,y')
+          var('x,y,s,t')
           @interact
-          def LLsurface(a=slider(0,6,1,default=0,label="Zoom")):
-            z=2*2^(-a)
-            plot3=plot3d(6-x^2/2-y^2,(x,1-z,1+z),(y,1-z,1+z),color="blue",plot_points=13,opacity=0.4,mesh=True)
-            plot3+=point((1,1,4.5),color="black",size=30*z)
-            show(plot3,viewpoint=[[-0.3161,-0.525,-0.7902],129.11],camera_position=[7.2388,3.9416,3.9252],aspect_ratio=(1,1,0.5))
+          def LLsurface(a=slider(0,8,1,default=0,label="Zoom"),s1=checkbox(False,label="Show Tangent Plane:")):
+              z=2*2^(-a)
+              plot4=plot3d(6-x^2/2-y^2,(x,1-z,1+z),(y,1-z,1+z),color="blue",plot_points=21,opacity=0.4,mesh=True)
+              plot4+=point((1,1,4.5),color="black",size=30*z)
+              if(s1):
+                  plot4+=parametric_plot3d((1-s,1-t,4.5+s+2*t),(s,-z,z),(t,-z,z),color="red",opacity=0.3,plot_points=5,mesh=True)
+              show(plot4,viewpoint=[[-0.2344,-0.6058,-0.7603],147.21],camera_position=[8.2585,8.9748,2.9946],aspect_ratio=(1,1,0.35))
         </slate>
       </interactive>
     </figure>
@@ -111,11 +141,10 @@
       <image source="images/fig_10_4_tangent_3"/>
       </sidebyside>
     </figure> -->
-
     <p>
       Just as the graph of a differentiable single-variable function (or a differentiable vector valued function of one variable) looks like a line when viewed on a small scale, we see that the graph of this particular two-variable function looks like a plane, as seen in <xref ref="F_10_4_tangent_4">Figure</xref>. In the following preview activity, we will explore how to give the equation of this plane in terms of values related to our function <m>f(x,y)</m>.
     </p>
-    <figure xml:id="F_10_4_tangent_4">
+    <!-- <figure xml:id="F_10_4_tangent_4">
       <caption>A plot of <m>f(x,y)=6-\frac{x^2}{2}-y^2</m> with tangent plane at the point <m>(1,1,\frac{9}{2})</m> drawn and the option to zoom in around <m>(1,1,\frac{9}{2})</m></caption>
       <interactive label="interactive-F_10_4_tangent_4" platform="sage" width="100%" aspect="1:1">
         <slate surface="sage">
@@ -129,7 +158,7 @@
             show(plot4,viewpoint=[[-0.5332,-0.5677,-0.6272],119],camera_position=[1.1679,1.0105,2.2664],aspect_ratio=(1,1,0.5))
         </slate>
       </interactive>
-    </figure>
+    </figure> -->
     <!-- <figure xml:id="F_10_4_tangent_4">
       <caption>The graph of <m>f(x,y)=6-x^2/2 - y^2</m>.</caption>
       <image width="50%" source="images/fig_10_4_tangent_4"/>
