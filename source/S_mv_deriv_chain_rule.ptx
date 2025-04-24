@@ -14,19 +14,19 @@
 <!-- their respective owners.                                              -->
 <!-- **********************************************************************-->
 <section xml:id="S-10-5-Chain-Rule" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Measuring Change and Compositions of Multivariable Functions</title>
+  <title>The Multivariable Chain Rule</title>
   
     <objectives>
         <ul>
           <li>
             <p>
-              How can we take partial derivatives of compositions of multivariable functions?
+              How can we take derivatives involving compositions of multivariable functions?
             </p>
           </li>
 
           <li>
             <p>
-              For locally linear functions, how can a partial derivative of a composition of multivariable functions separate into dependence on the composing variables?
+              For locally linear functions, how can a partial derivative of a composition of multivariable functions separate into dependence on the input variables?
             </p>
           </li>
         </ul>
@@ -34,7 +34,7 @@
 
     <introduction>
     <p>
-      In single-variable calculus, we encountered situations in which some quantity was related through a composition of related quantities. For instance, let <m>P</m> be the price of a product and <m>P</m> depends on <m>x</m>, the wages of people making the product. The wages of people making the product will also change over time, denoted <m>t</m>, because of seasonal availability and other factors. So a change in the value of <m>t</m> will produce a change in the value of <m>x</m>, which will produce a change in the value of <m>P</m>. This means that we can write <m>P</m> as a function of <m>x</m> and <m>x</m> as a function of <m>t</m>, which means we can express <m>P</m>'s dependence on <m>t</m> by a composition of functions:
+      In single-variable calculus, we encountered situations in which some quantity was related through a composition of related quantities. For instance, let <m>P</m> be the price of a product and <m>P</m> depends on <m>x</m>, the wages of people making the product. The wages of people making the product will also change over time, denoted <m>t</m>, because of seasonal availability and other factors. So a change in the value of <m>t</m> will produce a change in the value of <m>x</m>, which will produce a change in the value of <m>P</m>. This means that we can write <m>P</m> as a function of <m>x</m> and <m>x</m> as a function of <m>t</m>, thus we can express <m>P</m>'s dependence on <m>t</m> by a composition of functions:
     </p> 
     <figure xml:id="compositionoffns">
       <caption>Composition of <m>P(x)</m> and <m>x(t)</m> </caption>
@@ -60,7 +60,7 @@
       Using the language of differentials that we saw in the previous section and the ideas of local linearity we can express these changes as follows. 
       For a small change in <m>x</m>, the change in the price of the product will be approximately proportional to the change in <m>x</m>
       <me> dP = (m) dx  </me>
-      with <m>m</m> being the value of <m>\frac{dP}{dx}</m> at the current value of <m>x</m>, which we will call <m>x_0</m>. So <m>m=\frac{dP}{dx}\restrict{x=x_0}</m> because <m>m</m> is current instantaneous rate of change in the product price per unit of labor cost. 
+      with <m>m</m> being the value of <m>\frac{dP}{dx}</m> at <m>x_0</m>, the current value of <m>x</m>. We can write <m>v</m> as <m>m=\frac{dP}{dx}\restrict{x=x_0}</m> because <m>m</m> is current instantaneous rate of change in the product price per unit of labor cost. 
     </p>
     <p>  
       A small change in the value of <m>t</m> will also cause a proportional change in the value of <m>x</m>.
@@ -73,11 +73,11 @@
       In particular, this says that a change in the price of our product will the current instantaneous rate of change of the price per step in <m>x</m> times the current rate of change in the price of labor times the step in time. 
     </p>
     <p>
-      The previous equation is called the <em>Chain Rule</em>. You may have seen the <url href="https://activecalculus.org/single/sec-2-5-chain.html#chain-rule" >Chain Rule</url> stated as: If <m>C</m> is the composition of functions <m>f</m> and <m>g</m> such <m>C(x)=f(g(x))</m>, <m>f</m> is differentiable at <m>g(x)</m>, and <m>g</m> is differentiable at <m>x</m>, then 
+      The previous equation is called the <em>Chain Rule</em>. In single variable calculus, you likely saw the <url href="https://activecalculus.org/single/sec-2-5-chain.html#chain-rule" >Chain Rule</url> stated as: If <m>C</m> is the composition of functions <m>f</m> and <m>g</m> such <m>C(x)=f(g(x))</m>, <m>f</m> is differentiable at <m>g(x)</m>, and <m>g</m> is differentiable at <m>x</m>, then 
       <me>C'(x)=f'(g(x)) g'(x)</me>
     </p>
     <p>
-      In the case of <m>f</m>, a function of two variables where <m>z = f(x,y)</m>, it might be that both <m>x</m> and <m>y</m> depend on another variable <m>t</m>. A change in <m>t</m> then produces changes in <em>both</em> <m>x</m> and <m>y</m>, which then causes <m>z</m> to change. In this section, we will see how to describe the change in <m>z</m> that is caused by a change in <m>t</m>, leading us to multivariable versions of the Chain Rule involving both regular and partial derivatives.
+      If we look at a function of two variables where <m>z = f(x,y)</m>, it might be that both <m>x</m> and <m>y</m> depend on another variable <m>t</m>. A change in <m>t</m> then produces changes in <em>both</em> <m>x</m> and <m>y</m>, which then causes <m>z</m> to change. In this section, we will see how to describe the change in <m>z</m> that is caused by a change in <m>t</m>, leading us to multivariable versions of the Chain Rule involving both regular and partial derivatives.
     </p>
     <exploration xml:id="PA-chain">
       <introduction>
@@ -105,24 +105,24 @@
       <task xml:id="PA-chain-t2">
         <statement>
           <p>
-            Use your derivative rules from single variable calculus to find <m>P'(t)=\frac{dP}{dt}</m>. Note that this is not a partial derivative because <m>P(t)</m> only has one dependent variable. You should NOT simplify your expression for <m>P'(t)</m>. 
+            Use your derivative rules from single variable calculus to find <m>P'(t)=\frac{dP}{dt}</m>. Note that this is not a partial derivative because <m>P(t)</m> only has <em>one</em> dependent variable. You should NOT simplify your expression for <m>P'(t)</m>. 
           </p>
         </statement>
       </task>
       <task xml:id="PA-chain-t3">
         <statement>
           <p>
-            Alex has told you that the amount of large particulate matter in the air changes in the <m>y</m>-direction (North/South) because of the proximity to industrial pollution from a factory complex. Also, the amount of large particulate matter in the air changes in the <m>x</m>-direction (East/West) because of tree pollen from a particular kind of tree in a nearby national forest. We would like to understand how the rate of large particulate matter encountered on our drive is split into these two factor (industrial pollution and trees).
+            Alex has told you that the amount of large particulate matter in the air changes in the <m>y</m>-direction (North/South) because of the proximity to industrial pollution from a factory complex. Also, the amount of large particulate matter in the air changes in the <m>x</m>-direction (East/West) because of tree pollen from a particular kind of tree in a nearby forest. We would like to understand how the rate of large particulate matter encountered on our drive is split into these two factor (industrial pollution and tree pollen).
           </p>
           <p>
             Alex suggests that you measure <m>\frac{dP}{dt}</m> at a location <m>(x,y)=(a,b)</m> by taking the derivative of the linearization for <m>P</m> at <m>(a,b)</m>. The linearization of <m>P</m> at <m>(a,b)</m> is given by
             <me> L(x,y)=P(a,b)+P_x(a,b)(x-a)+P_y(a,b)(y-b)</me>
-            and treating <m>x</m> and <m>y</m> as functions of time.
+            Remember that we will need to treat <m>x</m> and <m>y</m> as functions of time.
           </p>
           <p>
             Write a few sentences to explain why 
             <men xml:id="dLinear">\frac{dP}{dt}\approx\frac{dL}{dt} = 0 + P_x(a,b) \frac{dx}{dt}+P_y(a,b) \frac{dy}{dt}</men> 
-            and how each of <m>P_x(a,b) \frac{dx}{dt}</m> and <m>P_y(a,b) \frac{dy}{dt}</m> measure the amount of 
+            and how each of <m>P_x(a,b) \frac{dx}{dt}</m> and <m>P_y(a,b) \frac{dy}{dt}</m> measure the rate of change in pollution coming from tree pollen and industrial pollution. 
           </p>
         </statement>
       </task>
@@ -333,10 +333,10 @@
 
     <p>
       To understand why this Chain Rule works in general, suppose that some quantity <m>z</m> depends on <m>x</m> and <m>y</m> so
-      that
+      that we can express the change in <m>z</m> in terms of the differential as
       <men xml:id="E_10_5_1">
-        dz = \frac{\partial z}{\partial x}dx + \frac{\partial z}{\partial
-            y}~dy.
+        dz = \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial
+            y} dy.
       </men>
     </p>
 
@@ -362,7 +362,7 @@
     <p>
       This approach to understanding the change in z using the differential or linearization also has the added benefit that we have separated how much of the change in <m>x</m> is coming through each of the intermediate variables <m>x</m> and <m>y</m>. Let's go back to the context of our <xref ref="PA-chain">Preview Activity</xref> where <m>P</m> is the amount of the large particulate matter in the air as function of location <m>(x,y)</m> and our location is changing according to time along the path <m>\vr(t)=\langle x(t),y(t)\rangle </m>. The chain rule will express the rate of change in <m>P</m> as a function of time as 
       <me>\frac{dP}{dt} =  \frac{\partial P}{\partial x} \frac{dx}{dt}+ \frac{\partial P}{\partial y} \frac{dy}{dt}</me>
-      Because the amount of LPM in the <m>x</m> coordinate is governed by tree pollen, the first term (<m>\frac{\partial P}{\partial x} \frac{dx}{dt}</m>) describes the rate of change in the LPM along our drive due to tree pollen. Similarly, the amount of LPM in the <m>y</m> coordinate is governed by industrial pollution, the second term (<m>\frac{\partial P}{\partial y} \frac{dy}{dt}</m>) describes the rate of change in the LPM along our drive due to industrial pollution. Because our function is locally linear, the total rate of change in LPM is the sum of these individual rates of change. 
+      Because the amount of large particulate matter in terms of the <m>x</m> coordinate is governed by tree pollen, the term <m>\frac{\partial P}{\partial x} \frac{dx}{dt}</m> describes the rate of change in the large particulate matter per unit time along our drive due to tree pollen. Similarly, the amount of large particulate matter in terms of the <m>y</m> coordinate is governed by industrial pollution, so the second term, <m>\frac{\partial P}{\partial y} \frac{dy}{dt}</m>, describes the rate of change in the large particulate matter per unit time along our drive due to industrial pollution. Because our function is locally linear, the total rate of change in large particulate matter is the sum of these individual rates of change. 
     </p>
 
     <activity xml:id="PA_10_11">
@@ -384,7 +384,12 @@
             </li>
             <li>
               <p>
-                Substitute <m>x(t)</m> for <m>x</m> and <m>y(t)</m> for <m>y</m> in the rule for <m>z</m> to write <m>z</m> in terms of <m>t</m> and calculate <m>\frac{dz}{dt}</m> directly. Compare to the result of part (i.).
+                Substitute <m>x(t)</m> for <m>x</m> and <m>y(t)</m> for <m>y</m> in the rule for <m>z</m> to write <m>z</m> in terms of <m>t</m> and calculate <m>\frac{dz}{dt}</m> directly. 
+              </p>
+            </li>
+            <li>
+              <p>
+                Write a couple of sentences comparing your answers to parts i. and ii.
               </p>
             </li>
           </ol>
@@ -589,15 +594,15 @@
   </p>
   <example>
     <p>
-      Let <m>C</m> be the cost to manufacture flibertygibbits. The cost to produce Flibertygibbits depends on the costs of two parts, which we will call <m>p</m> and <m>q</m>, and the cost of labor to construct the flibertygibbits, which we will call <m>L</m>. So <m>C</m> is a multivariable function of <m>p</m>, <m>q</m>, and <m>L</m>, which we will denote <m>C(p,q,L)</m>. The part costs (<m>p</m> and <m>q</m>) and the labor costs each depend on <m>s</m>, the distance to nearby suppliers and cities, and <m>t</m>, time. This means that <m>p</m>, <m>q</m>, and <m>L</m> are themselves multivariable functions of <m>s</m> and <m>t</m>; in other words we need to consider <m>p(s,t)</m>, <m>q(s,t)</m>, and <m>L(s,t)</m>.
+      Let <m>C</m> be the cost to manufacture flibertygibbits. The cost to produce flibertygibbits depends on the costs of two parts, which we will call <m>p</m> and <m>q</m>, and the cost of labor to construct the flibertygibbits, which we will call <m>L</m>. So <m>C</m> is a multivariable function of <m>p</m>, <m>q</m>, and <m>L</m>, which we will denote <m>C(p,q,L)</m>. The part costs (<m>p</m> and <m>q</m>) and the labor costs each depend on <m>s</m>, the distance to nearby suppliers and cities, and <m>t</m>, time. This means that <m>p</m>, <m>q</m>, and <m>L</m> are themselves multivariable functions of <m>s</m> and <m>t</m>; in other words we need to consider <m>p(s,t)</m>, <m>q(s,t)</m>, and <m>L(s,t)</m>.
     </p>
     <p>
-      All of these dependencies mean that <m>C</m> is dependent on <m>s</m> and <m>t</m> through composition with <m>p(s,t)</m>, <m>q(s,t)</m>, and <m>L(s,t)</m>. So we can ask how the cost to produce flibertygibbits depends on changes in <m>s</m> or <m>t</m>, which the Chain rule will allow us to describe. We can look at the differential of <m>C</m> in particular to see how these dependencies will affect each other. The differential 
+      All of these dependencies mean that <m>C</m> is dependent on <m>s</m> and <m>t</m> through composition with <m>p(s,t)</m>, <m>q(s,t)</m>, and <m>L(s,t)</m>. So we can ask how the cost to produce flibertygibbits depends on changes in <m>s</m> or <m>t</m>, which we can use the Chain Rule to describe. We can look at the differential of <m>C</m> in particular to see how these dependencies will affect each other. The differential 
       <me>dC = \frac{\partial C}{\partial p} dp + \frac{\partial C}{\partial q} dq + \frac{\partial C}{\partial L} dL</me>
       describes how a change in <m>C</m> will depend on changes in each variable <m>p</m>, <m>q</m>, and <m>L</m>.
     </p>
     <p>
-       We can look at how this change in <m>C</m> will depend on either <m>s</m> or <m>t</m> by taking the appropriate partial derivatives with respect to <m>s</m> or <m>t</m>. in particular, we get 
+       We can look at how this change in <m>C</m> will depend on either <m>s</m> or <m>t</m> by taking the appropriate partial derivatives with respect to <m>s</m> or <m>t</m>. In particular, we get 
        <me>\frac{\partial C}{\partial s} = \frac{\partial C}{\partial p} \frac{\partial p}{\partial s} + \frac{\partial C}{\partial q} \frac{\partial q}{\partial s} + \frac{\partial C}{\partial L} \frac{\partial L}{\partial s} </me> 
        and 
        <me>\frac{\partial C}{\partial t} = \frac{\partial C}{\partial p} \frac{\partial p}{\partial t} + \frac{\partial C}{\partial q} \frac{\partial q}{\partial t} + \frac{\partial C}{\partial L} \frac{\partial L}{\partial t} </me>
@@ -606,6 +611,9 @@
       These chain rule expressions have the same separation of intermediate variables as in our earlier discussion. For instance, the term <m>\frac{\partial C}{\partial q} \frac{\partial q}{\partial s} </m> describes the rate of change in the cost of making flibertygibbits per unit of distance from other cities that depends on the cost of part <m>q</m>. The term <m>\frac{\partial C}{\partial L} \frac{\partial L}{\partial t} </m> describes the rate of change in the cost of making flibertygibbits per unit time that depends on the cost of labor <m>L</m>. In both cases, the partial derivatives of <m>C</m> with respect to <m>s</m> and <m>t</m> are a linear combination of the changes through each of the intermediate variables <m>p</m>, <m>q</m>, and <m>L</m>.
     </p>
   </example>
+  <p>
+    We close this section with another statement on what linearity means in a bigger conceptual way. Every version of the chain rule we have looked at (including the chain rule from single variable calculus) states that the change in our output variable is a linear combination of the instantaneous rate of change in terms of each variable and the step size in that variable. The chain rule is simply an algebraic statement of this linear combination. As we said at the end of the previous section, if we are using a locally linear function then the instantaneous rate of change of the function will be the same as the corresponding measurement of change along the linearization/tangent plane.
+  </p>
   </subsection>
 
 

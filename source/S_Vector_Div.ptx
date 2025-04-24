@@ -166,7 +166,7 @@
   <statement>
     <p>
       The <term>divergence of a vector field</term>
-      <me>\vF(x,y)=\langle F_1(x,y),F_2(x,y), F_3(x,y)\rangle</me>
+      <me>\vF(x,y)=\langle F_1(x,y,z),F_2(x,y,z), F_3(x,y,z)\rangle</me>
       is given by
       <me>
         \divg(\vF)=\frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z}
