@@ -25,11 +25,6 @@
          <webwork source="Library/Dartmouth/setStewartCh15S3/problem_6.pg"/>
       </exercise>
 
-      <exercise label="Library__maCalcDB__setVmultivariable3ParDer__UR_VC_5_11.pg" xml:id="ex-10-2-WW-partial_ex_3">
-      <!--<title>Finding partial derivatives of an arctangent at a point</title>-->
-         <webwork source="Library/maCalcDB/setVmultivariable3ParDer/UR_VC_5_11.pg"/>
-      </exercise>
-
       <exercise label="Library__272__setStewart14_3__problem_4.pg" xml:id="ex-10-2-WW-partial_ex_6">
       <!--<title>Partial derivatives of an integral function</title>-->
          <webwork source="Library/272/setStewart14_3/problem_4.pg"/>
@@ -49,10 +44,7 @@
 
 
 
-      <exercise label="Library__Michigan__Chap14Sec1__Q05.pg" xml:id="ex-10-2-WW-payments">
-      <!--<title>Interpreting partial derivatives from a loan payment funtion</title>-->
-         <webwork source="Library/Michigan/Chap14Sec1/Q05.pg"/>
-      </exercise>
+      
 
       <exercise label="Library__Michigan__Chap14Sec1__Q19.pg" xml:id="ex-10-2-WW-toxicity">
       <!--<title>Estimating partial derivatives from data</title>-->
@@ -82,38 +74,38 @@
             The Heat Index, <m>I</m>, (measured in <em>apparent degrees F</em>) is a function of the actual temperature <m>T</m> outside (in degrees F) and the relative humidity <m>H</m> (measured as a percentage). A portion of the table which gives values for this function, <m>I=I(T,H)</m>, is reproduced in <xref ref="T_10_2_wind_chill_partial">Table</xref>.
           </p>
           <table xml:id="T_10_2_wind_chill_partial">
-          <title>A portion of the heat index data.</title>
-          <tabular halign="center" bottom="minor" top="minor">
+          <title>A portion of the heat index data</title>
+          <tabular halign="center" >
             <row bottom="medium">
-              <cell><em>T</em> <m>\downarrow \backslash</m> <em>H</em> <m>\rightarrow</m></cell>
+              <cell right="medium"><em>T</em> <m>\downarrow \backslash</m> <em>H</em> <m>\rightarrow</m></cell>
               <cell>70</cell>
               <cell>75</cell>
               <cell>80</cell>
               <cell>85</cell>
             </row>
             <row>
-              <cell>90</cell>
+              <cell right="medium">90</cell>
               <cell>106</cell>
               <cell>109</cell>
               <cell>112</cell>
               <cell>115</cell>
             </row>
             <row>
-              <cell>92</cell>
+              <cell right="medium">92</cell>
               <cell>112</cell>
               <cell>115</cell>
               <cell>119</cell>
               <cell>123</cell>
             </row>
             <row>
-              <cell>94</cell>
+              <cell right="medium">94</cell>
               <cell>118</cell>
               <cell>122</cell>
               <cell>127</cell>
               <cell>132</cell>
             </row>
             <row>
-              <cell>96</cell>
+              <cell right="medium">96</cell>
               <cell>125</cell>
               <cell>130</cell>
               <cell>135</cell>
