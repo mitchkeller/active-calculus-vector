@@ -322,7 +322,7 @@
       </p>
     </assemblage>
     <p>
-      The first idea above will be very important tool in finding an equation for the plane tangent to an implicit surface. Let <m>P_1</m> be a point on <m>S_1</m>, an implicit surface given by <m>F(P)=k</m>. The tools of <xref ref="S-MV-Linearization"/> will not work because our surface is not of the form <m>z=f(x,y)</m>. Because <m>\nabla F(P_1)</m> is perpendicular to the surface <m>S_1</m>, <m>\nabla F(P_1)</m> will be a normal vector for the tangent plane at <m>P_1</m>. This leads to the following key idea.
+      The first idea above will be very important tool in finding an equation for the plane tangent to an implicit surface. Let <m>P_1</m> be a point on <m>S_1</m>, an implicit surface given by <m>F(P)=k</m>. The tools of <xref ref="S-10-4-Linearization"/> will not work because our surface is not of the form <m>z=f(x,y)</m>. Because <m>\nabla F(P_1)</m> is perpendicular to the surface <m>S_1</m>, <m>\nabla F(P_1)</m> will be a normal vector for the tangent plane at <m>P_1</m>. This leads to the following key idea.
     </p>
     <proposition xml:id="implicittanplane">
       <statement>
@@ -432,6 +432,21 @@
       </p>
       <p>
         Returning to the function <m>g(x,y,z)=x^2+y^2-z^2</m>, we can ask <q>For an input point <m>(a,b,c)</m>, in what direction will the output of <m>g</m> be increasing at the greatest rate?</q> We can group the output of <m>g</m> into two terms <m>x^2+y^2</m> which increases as you move away from the <m>z</m>-axis and <m>-z^2</m> which increases as you get closer to the <m>xy</m>-plane (<m>z=0</m>). An input point of <m>(a,b,c)</m> for the gradient vector gives <m>\nabla g (a,b,c)=\langle 2a,2b,-2c\rangle</m>. Notice that for any point in our space, this gradient vector will point away from the <m>z</m>-axis and toward the <m>xy</m>-plane, as demonstrated by the red vectors in <xref ref="gradhypcone"/>. Note that our arguments are rotationally symmetric about the <m>z</m>-axis. 
+      </p>
+      <p>
+        We can use the gradient to find the tangent plane to the level surfaces of the form <m>g(x,y,z)=k</m>. Remember that for different values of <m>k</m> we will get different shapes for these implicit surfaces. We will look at the following points on the following level surfaces:
+        <ul>
+          <li><m>P_1=(-1,1,\sqrt{3})</m> will be on the surface with <m>g(x,y,z)=-1</m> </li>
+          <li><m>P_2=(-1,1,\sqrt{2})</m> will be on the surface with <m>g(x,y,z)=0</m> </li>
+          <li><m>P_3=(-1,1,1)</m> will be on the surface with <m>g(x,y,z)=1</m> </li>
+        </ul>
+        For each of these we can apply <xref ref="implicittanplane"/> to find the following tangent planes:
+        <ul>
+          <li><m>P_1=(-1,1,\sqrt{3})</m> will have a gradient <m>\nabla g(P_1)=\langle -2,2,-2\sqrt{3}\rangle</m> will have a tangent plane given by <m>(-2)(x+1)+(2)(y-1)+(-2\sqrt{3})(z-\sqrt{3})=0</m>, which will simplify to <m>-x+y-\sqrt{3}z=1</m>. </li>
+          <li><m>P_2=(-1,1,\sqrt{2})</m> will have a gradient <m>\nabla g(P_2)=\langle -2,2,-2\sqrt{2}\rangle</m> will have a tangent plane given by <m>(-2)(x+1)+(2)(y-1)+(-2\sqrt{2})(z-\sqrt{2})=0</m>, which will simplify to <m>-x+y-\sqrt{2}z=0</m>. </li>
+          <li><m>P_3=(-1,1,1)</m> will have a gradient <m>\nabla g(P_3)=\langle -2,2,-2\rangle</m> will have a tangent plane given by <m>(-2)(x+1)+(2)(y-1)+(-2)(z-1)=0</m>, which will simplify to <m>-x+y-z=-1</m>. </li>
+        </ul>
+        You can use the plot below to verify these results.
       </p>
       </example>
       <activity>
