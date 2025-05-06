@@ -27,126 +27,194 @@
   </objectives>
   <introduction> 
     <p>
-      In this section, we will introduce some examples of graphs in two and three dimensions that have nice algebraic properties and a variety of interesting geometric features. For our preview activity, we will recall some properties of graphs and equations that will be useful in describing our new examples. While students may have different levels of experience with graphs like circles, parabolas, ellipses, and hyperbolas, we will focus our work on the correspondence between the algebraic presentations of these shapes and the important geometric features. 
+      In this section, we will introduce some examples of graphs in three dimensions that have nice algebraic properties and a variety of interesting geometric features. In the Preview Activity, we ask you to practice identifying conic sections such as circles, parabolas, ellipses, and hyperbolas from their equations. The section will then help you see how to use your knowledge of conic sections to identify key properties of graphs in <em>three</em> dimensions. For a complete discussion of conic sections, see <xref ref="S-app-conics"/>.
     </p>
     <exploration xml:id="PA-Precalc-CG">
-      <introduction>
+      <statement>
        <p>
-          For each of the following equations, you should:
-          <ol>
+          For each equation below, identify its graph in <xref ref="fig-Precalc-CommonGraphs-conics-PA"/>. Note that there are more graphs than equations, so some graphs will not be selected. To help you with identification, you might consider looking for <m>x</m>-intercepts, <m>y</m>-intercepts, and values of a variable for which the graph contains no points.
+          <ol marker="i." cols="2">
             <li>
               <p>
-                Find all <m>x</m>-intercepts
+                <m>\frac{x^2}{9}+\frac{y^2}{25}=1</m>
               </p>
             </li>
             <li>
               <p>
-                Find all <m>y</m>-intercepts
+                <m>\frac{x}{3}+\frac{y}{5}=1</m>
               </p>
             </li>
             <li>
               <p>
-                Identify the shape of the graph (if you know it)
+                <m>\frac{y^2}{4}-\frac{x^2}{1}=1</m>
               </p>
             </li>
             <li>
               <p>
-                Identify all points where the graph will intersect with the vertical line <m>x=2</m>
+                <m>x=2y^2</m>
               </p>
             </li>
             <li>
               <p>
-                Identify all points where the graph will intersect with the horizontal line <m>y=-4</m>
+                <m>\frac{y^2}{9}-\frac{x^2}{25}=0</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\frac{x^2}{1}-\frac{y^2}{4}=1</m>
               </p>
             </li>
           </ol>
         </p>
-      </introduction>
-      <task>
-        <statement>
-          <p>
-            <m>\frac{x^2}{9}+\frac{y^2}{25}=1</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            
-          </p>
-        </answer>
-        <solution>
-          <p>
-            
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\frac{x}{3}+\frac{y}{5}=1</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            
-          </p>
-        </answer>
-        <solution>
-          <p>
-            
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\frac{y^2}{4}-\frac{x^2}{1}=1</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            
-          </p>
-        </answer>
-        <solution>
-          <p>
-            
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>x=2y^2</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            
-          </p>
-        </answer>
-        <solution>
-          <p>
-            
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\frac{y^2}{9}-\frac{x^2}{25}=0</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            
-          </p>
-        </answer>
-        <solution>
-          <p>
-            
-          </p>
-        </solution>
-      </task>
+        <figure xml:id="fig-Precalc-CommonGraphs-conics-PA">
+          <caption>A collection of graphs to match to equations</caption>
+          <sbsgroup widths="50% 50%">
+            <sidebyside>
+              <figure xml:id="fig-Precalc-CommonGraphs-conics-PA-a">
+                <caption/>
+                <image>
+                  <shortdescription>A curve to match</shortdescription>
+                  <prefigure xmlns="https://prefigure.org"
+                              label="Precalc-CommonGraphs-match1">
+                    <diagram dimensions="(300, 300)" margins="4">
+                      <definition>f(x,y) = y^2/4-x^2/1</definition>
+                      <coordinates bbox="[-6,-6,6,6]">
+                        <grid-axes />
+                        <implicit-curve function="f" k="1" stroke="blue" />
+                      </coordinates>
+                      
+                    </diagram>
+                  </prefigure>
+                </image>
+              </figure>
+              <figure xml:id="fig-Precalc-CommonGraphs-conics-PA-b">
+                <caption/>
+                <image>
+                  <shortdescription>A curve to match</shortdescription>
+                  <prefigure xmlns="https://prefigure.org"
+                              label="Precalc-CommonGraphs-match2">
+                    <diagram dimensions="(300, 300)" margins="5">
+                      <definition>f(x,y) = x^2/9 + y^2/25</definition>
+                      <coordinates bbox="[-6,-6,6,6]">
+                        <grid-axes />
+                        <implicit-curve function="f" k="1" stroke="blue" />
+                      </coordinates>
+                      
+                    </diagram>
+                  </prefigure>
+                </image>
+              </figure> 
+            </sidebyside>
+            <sidebyside>
+              <figure xml:id="fig-Precalc-CommonGraphs-conics-PA-c">
+                <caption/>
+                <image>
+                  <shortdescription>A curve to match</shortdescription>
+                  <prefigure xmlns="https://prefigure.org"
+                              label="Precalc-CommonGraphs-match3">
+                    <diagram dimensions="(300, 300)" margins="5">
+                      <definition>f(x)=2*x^2</definition> 
+                      <coordinates bbox="[-6,-6,6,6]">
+                        <grid-axes />
+                        <graph function="f"/>
+                      </coordinates>
+                    </diagram>
+                  </prefigure>
+                </image>
+              </figure>
+              <figure xml:id="fig-Precalc-CommonGraphs-conics-PA-d">
+                <caption/>
+                <image>
+                  <shortdescription>A curve to match</shortdescription>
+                  <prefigure xmlns="https://prefigure.org"
+                              label="Precalc-CommonGraphs-match4">
+                    <diagram dimensions="(300, 300)" margins="5">
+                      <definition>f(x,y) = y^2/9-x^2/25</definition>
+                      <coordinates bbox="[-6,-6,6,6]">
+                        <grid-axes />
+                        <implicit-curve function="f" k="0" stroke="blue" />
+                      </coordinates>
+                      
+                    </diagram>
+                  </prefigure>
+                </image>
+              </figure>
+            </sidebyside>
+            <sidebyside>
+              <figure xml:id="fig-Precalc-CommonGraphs-conics-PA-e">
+                <caption/>
+                <image>
+                  <shortdescription>A curve to match</shortdescription>
+                  <prefigure xmlns="https://prefigure.org"
+                              label="Precalc-CommonGraphs-match5">
+                    <diagram dimensions="(300, 300)" margins="5">
+                      <definition>f(x,y) = x-2*y^2</definition>
+                      <coordinates bbox="[-6,-6,6,6]">
+                        <grid-axes />
+                        <implicit-curve function="f" k="0" stroke="blue" />
+                      </coordinates>
+                      
+                    </diagram>
+                  </prefigure>
+                </image>
+              </figure> 
+              <figure xml:id="fig-Precalc-CommonGraphs-conics-PA-f">
+                <caption/>
+                <image>
+                  <shortdescription>A curve to match</shortdescription>
+                  <prefigure xmlns="https://prefigure.org"
+                              label="Precalc-CommonGraphs-match6">
+                    <diagram dimensions="(300, 300)" margins="5">
+                      <definition>f(x,y) = x^2/25 + y^2/9</definition>
+                      <coordinates bbox="[-6,-6,6,6]">
+                        <grid-axes />
+                        <implicit-curve function="f" k="1" stroke="blue" />
+                      </coordinates>
+                      
+                    </diagram>
+                  </prefigure>
+                </image>
+              </figure>
+            </sidebyside>
+            <sidebyside>
+              <figure xml:id="fig-Precalc-CommonGraphs-conics-PA-g">
+                <caption/>
+                <image>
+                  <shortdescription>A curve to match</shortdescription>
+                  <prefigure xmlns="https://prefigure.org"
+                              label="Precalc-CommonGraphs-match7">
+                    <diagram dimensions="(300, 300)" margins="5">
+                      <definition>f(x,y) = x/3+y/5</definition>
+                      <coordinates bbox="[-6,-6,6,6]">
+                        <grid-axes />
+                        <implicit-curve function="f" k="1" stroke="blue" />
+                      </coordinates>
+                      
+                    </diagram>
+                  </prefigure>
+                </image>
+              </figure>
+              <figure xml:id="fig-Precalc-CommonGraphs-conics-PA-h">
+                <caption/>
+                <image>
+                  <shortdescription>A curve to match</shortdescription>
+                  <prefigure xmlns="https://prefigure.org"
+                              label="Precalc-CommonGraphs-match8">
+                    <diagram dimensions="(300, 300)" margins="5">
+                      <definition>f(x,y) = x^2/1-y^2/4</definition>
+                      <coordinates bbox="[-6,-6,6,6]">
+                        <grid-axes />
+                        <implicit-curve function="f" k="1" stroke="blue" />
+                      </coordinates>
+                      
+                    </diagram>
+                  </prefigure>
+                </image>
+              </figure>
+            </sidebyside>
+          </sbsgroup>
+        </figure>
+      </statement>
     </exploration>
   </introduction>
   <subsection xml:id="subsec-cylsurf">
@@ -156,12 +224,13 @@
     </p>
     <example>
       <p> 
-        Let's consider <m>(x-1)=\frac{(y+2)^2}{2}</m>. If we consider the graph of <m>(x-1)=\frac{(y+2)^2}{2}</m> in 2D, then we get a parabola centered at <m>(1,-2)</m>. 
+        We start by considering <m>(x-1)=\frac{(y+2)^2}{2}</m>. The graph of <m>(x-1)=\frac{(y+2)^2}{2}</m> in two dimensions is a parabola centered at <m>(1,-2)</m>. 
       </p>
       <figure xml:id="para-ex2">
         <caption>A plot of <m>(x-1)=\frac{(y+2)^2}{2}</m> in the <m>xy</m>-plane with five points highlighted</caption>
         <image width="75%" xml:id="img-para-ex2">
-          <description><p>A plot of <m>(x-1)=\frac{(y+2)^2}{2}</m> in the <m>xy</m>-plane with five points highlighted </p> </description>
+          <shortdescription>A right-ward opening parabola</shortdescription>
+          <description><p>A plot of <m>(x-1)=\frac{(y+2)^2}{2}</m> in the <m>xy</m>-plane. The parabola opens to the right and has vertex at <m>(1,-2)</m>. Four additional points (two with smaller <m>y</m>-coordinate than the vertex and two with larger <m>y</m>-coordinate than the vertex) are marked on the graph. </p> </description>
           <sageplot>
             var('t')
             tvals=[-2,-1,0,1/2,5/3]
@@ -173,11 +242,11 @@
         </image>
       </figure>
       <p>
-        If we want to look at the graph of <m>(x-1)=\frac{(y+2)^2}{2}</m> in 3D, we are considering all of the <m>(x,y,z)</m> points that will satisfy this equation. So if we pick <m>x</m> and <m>y</m> values that satisfy <m>(x-1)=\frac{(y+2)^2}{2}</m>, then ANY choice of <m>z</m> will satisfy the given question. So for the each of the highlighted points on <xref ref="para-ex2" />, we can extend the graph of <m>(x-1)=\frac{(y+2)^2}{2}</m> parallel to the <m>z</m>-axis. <xref ref="cylsurfex1" /> shows how the points on the parabola (in black) can be extended to include any <m>z</m> coordinate.
+        If we want to consider the graph of <m>(x-1)=\frac{(y+2)^2}{2}</m> in three dimensions, then the graph must include all of the <m>(x,y,z)</m> points that will satisfy this equation. For any <m>x</m> and <m>y</m> values we pick that satisfy <m>(x-1)=\frac{(y+2)^2}{2}</m>, we can make <em>any</em> choice of <m>z</m> to determine a point that also satisfies the given question. Hence, for the each of the highlighted points on <xref ref="para-ex2" />, we can extend the graph of <m>(x-1)=\frac{(y+2)^2}{2}</m> parallel to the <m>z</m>-axis, forming a vertical line. <xref ref="cylsurfex1" /> shows how the points on the parabola (in black) can be extended to include any <m>z</m>-coordinate.
       </p>
       <figure xml:id="cylsurfex1">
         <caption>A plot of <m>(x-1)=\frac{(y+2)^2}{2}</m> generating curve and several rulings</caption>
-        <interactive title="interactive-cylsurfex1" platform="sage" width="100%" aspect="1:1">
+        <interactive label="interactive-cylsurfex1" platform="sage" width="100%" aspect="1:1">
           <slate surface="sage">
             from sage.plot.plot3d.plot3d import axes
             var('t')
@@ -193,11 +262,11 @@
         </interactive>
       </figure>
       <p>
-        Extending all points from the circle <m>(x-1)=\frac{(y+2)^2}{2}</m> in the <m>xy</m>-plane parallel to the <m>z</m>-axis will give a surface. This kind of surface is called a <term>cylinder surface</term>, the two dimensional curve you use to make the surface is called the <term>generating curve</term>, and the lines that extend in the direction of the missing variable are called <term>rulings</term>. In <xref ref="cylsurfex2" />, the surface is plotted in blue, the generating curve in black, and the rulings in green. This surface is called a parabolic cylinder surface because the generating curve is a parabola.
+        Extending all points from the parabola <m>(x-1)=\frac{(y+2)^2}{2}</m> in the <m>xy</m>-plane parallel to the <m>z</m>-axis will give a surface. This kind of surface is called a <term>cylinder surface</term>. We call the two-dimensional curve used to make the surface the <term>generating curve</term>, and the lines that extend in the direction of the missing variable are called <term>rulings</term>. In <xref ref="cylsurfex2" />, the surface is plotted in blue, the generating curve in black, and the rulings in green. This surface is called a <term>parabolic cylinder surface</term> because the generating curve is a parabola.
       </p>
       <figure xml:id="cylsurfex2">
         <caption>A plot of the cylinder surface <m>(x-1)=\frac{(y+2)^2}{2}</m> with generating curve and several rulings</caption>
-        <interactive title="interactive-cylsurfex2" platform="sage" width="100%" aspect="1:1">
+        <interactive label="interactive-cylsurfex2" platform="sage" width="100%" aspect="1:1">
           <slate surface="sage">
             from sage.plot.plot3d.plot3d import axes
             var('s,t')
@@ -215,25 +284,26 @@
         </interactive>
       </figure>
     </example>
+    <p>
+      The next activity prompts you to look at the most important cylinder surfaces. The conic sections that were reviewed in <xref ref="PA-Precalc-CG"/> will be helpful as you do this.
+    </p>
     <activity>
+      <introduction>
+        <p>
+          Each equation below is a cylinder surface in <m>\R^3</m>. To sketch the cylinder surfaces in <m>xyz</m>-space, you should first draw the generating curve in the <m>xy</m>-plane, <m>xz</m>-plane, or <m>yz</m>-plane (depending on which two variables appear in the equation) and then then sketch a three-dimensional cylinder surface by thinking about how the rulings will run.
+        </p>
+      </introduction>
       <task>
         <statement>
           <p>
-            Draw the graph of <m>2x-y+1=0</m> on the <m>xy</m>-plane.
+            <m>2x-y+1=0</m> is called a <term>linear cylinder surface</term>. 
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Draw the graph of <m>2x-y+1=0</m> in <m>xyz</m>-space. This is called a linear cylinder surface. 
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Draw the graph of <m>(x-1)^2+(y+2)^2=4</m> in <m>xyz</m>-space. This is called a right-circular cylinder surface.
+            <m>(x-1)^2+(y+2)^2=4</m> is called a <term>right-circular cylinder surface</term>.
           </p>
         </statement>
         <answer>
@@ -245,7 +315,7 @@
           <p>
             <figure xml:id="cylsurfex3">
               <caption>A plot of the cylinder surface <m>(x-1)^2+(y+2)^2=4</m> with generating curve and several rulings</caption>
-                <interactive title="interactive-cylsurfex3" platform="sage" width="100%" aspect="1:1">
+                <interactive label="interactive-cylsurfex3" platform="sage" width="100%" aspect="1:1">
                   <slate surface="sage">
                     from sage.plot.plot3d.plot3d import axes
                     var('t,s')
@@ -267,14 +337,14 @@
       <task>
         <statement>
           <p>
-            Draw the graph of <m>\frac{x^2}{9}+\frac{z^2}{4}=1</m> in <m>xyz</m>-space. This is called an elliptic cylinder surface.
+            <m>\frac{x^2}{9}+\frac{z^2}{4}=1</m> is called an <term>elliptic cylinder surface</term>.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Draw the graph of <m>x^2-y^2=1</m> in <m>xyz</m>-space. This is called an hyperbolic cylinder surface.
+            <m>x^2-y^2=1</m> is called an <term>hyperbolic cylinder surface</term>.
           </p>
         </statement>
       </task>
@@ -283,9 +353,9 @@
   <subsection xml:id="quadric-surfaces">
     <title>Quadric Surfaces</title>
     <p>
-      In this section, we will look at a set of surfaces with algebraic equations that are quadratic in <m>x</m>, <m>y</m>, and <m>z</m>. This will give us a category of example surfaces that are algebraically simple but exhibit a variety of interesting characteristics.
+      The defining characteristic of the equations of cylinder surfaces is that one variable is completely omitted from the equation. Now we will examine  surfaces with algebraic equations that are <em>quadratic</em> in <m>x</m>, <m>y</m>, and <m>z</m>. This will give us a category of example surfaces that are simple algebraically but exhibit a variety of interesting and important characteristics. To understand these <term>quadric surfaces</term>, we focus on the intercepts and two-dimensional graphs formed by the intersection of the quadric surface with fundamental planes. Next activity leads you through this process to help you learn to recognize and sketch quadric surfaces. After this, we will summarize the key ideas for recognizing and sketching quadric surfaces and then you will have the opportunity to apply those key ideas in additional activities.
     </p>
-    <activity>
+    <activity xml:id="act-hyperboloid-one">
       <introduction>
         <p>
           For this activity, we will be looking at a variety properties that will help us draw a graph of the surface described by <m>\frac{x^2}{4}+\frac{y^2}{9}-\frac{z^2}{1}=1</m>.
@@ -306,42 +376,63 @@
       <task>
         <statement>
           <p>
-            Find an equation for the curve given by the intersection of <m>\frac{x^2}{4}+\frac{y^2}{9}-\frac{z^2}{1}=1</m> with the <m>xy</m>-plane. Draw a plot of this intersection on the <m>xy</m>-plane (this should be a 2D plot).
+            Find an equation for the curve given by the intersection of <m>\frac{x^2}{4}+\frac{y^2}{9}-\frac{z^2}{1}=1</m> with the <m>xy</m>-plane, the <m>yz</m>-plane, and the <m>xz</m>-plane. Draw a two-dimensional plot of each intersection.
           </p>
         </statement>
       </task>
       <task>
-        <statement>
-          <p>
-            Find an equation for the curve given by the intersection of <m>\frac{x^2}{4}+\frac{y^2}{9}-\frac{z^2}{1}=1</m> with the <m>yz</m>-plane. Draw a plot of your intersection on the <m>yz</m>-plane (this should be a 2D plot).
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Find an equation for the curve given by the intersection of <m>\frac{x^2}{4}+\frac{y^2}{9}-\frac{z^2}{1}=1</m> with the <m>xz</m>-plane. Draw a plot of your intersection on the <m>xz</m>-plane (this should be a 2D plot). 
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
+        <introduction>
           <p>
             Find equations for the curve given by the intersection of <m>\frac{x^2}{4}+\frac{y^2}{9}-\frac{z^2}{1}=1</m> with the each of the following fundamental planes. You should state the shape and any other characteristics (like center or direction) for each of these intersections.
-            <ol>
-              <li><m>z=1</m></li>
-              <li><m>z=-2</m></li>
-              <li><m>z=\sqrt{3}</m></li>
-              <li><m>x=3</m></li>
-              <li><m>x=-1</m></li>
-            </ol>
           </p>
-        </statement>
+        </introduction>
+        <task>
+          <statement>
+            <p>
+              <m>z=\sqrt{3}</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>z=-2</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>x=3</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>x=-1</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>y=2</m>
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              <m>y=-4</m>
+            </p>
+          </statement>
+        </task>                                        
       </task>
       <task>
         <statement>
           <p>
-            Draw each of these intersections on the proper fundamental planes in 3D. 
+            Sketch each of these intersections on the proper fundamental planes in three dimensions. 
           </p>
         </statement>
       </task>
@@ -351,8 +442,8 @@
             Which of the following surface plots will correspond to <m>\frac{x^2}{4}+\frac{y^2}{9}-\frac{z^2}{1}=1</m>? You can determine this by comparing the features on your previous part to these options.
           </p>
           <figure xml:id="quadsurfex2">
-            <caption>A plot surfaces to select from</caption>
-            <interactive title="interactive-quadsurfex2" platform="sage" width="100%" aspect="1:1">
+            <caption>Choose the surface with equation <m>\frac{x^2}{4}+\frac{y^2}{9}-\frac{z^2}{1}=1</m></caption>
+            <interactive label="interactive-quadsurfex2" platform="sage" width="100%" aspect="1:1.1">
               <slate surface="sage">
                 from sage.plot.plot3d.plot3d import axes
                 var('x,y,z')
@@ -382,136 +473,162 @@
         </statement>
       </task>
     </activity>
-    <activity>
+    <p>
+      In designing <xref ref="act-hyperboloid-one"/>, we carefully chose the fundamental planes for which we asked you to find the intersection with the surface. By examining the equation that defines a surface, you can strategically select fundamental planes to investigate. Doing so will allow you to identify key characteristics of a quadric surface without needing to test an exceedingly large number of fundamental planes. In <xref ref="key-idea-quadrics"/>, we suggest some steps to follow. Afterward, you will have an activity that gives you a chance to practice implementing the steps.
+    </p>
+    <proposition xml:id="key-idea-quadrics">
+      <title>Recognizing Quadric Surfaces</title>
+      <statement>
+        <p>
+          <ol>
+            <li>
+              <p>
+                Identify the intercepts of the surface with the <m>x</m>-axis, <m>y</m>-axis, and <m>z</m>-axis, including noting if the surface does not intersect one or more of these coordinate axes. To find the intercepts, set two of the variables equal to <m>0</m> and solve for the third.
+              </p>
+            </li>
+            <li>
+              <p>
+                Identify the intersection curve of the surface with the <m>xy</m>-plane, <m>yz</m>-plane, and <m>xz</m>-plane, including noting if the surface does not intersect one or more of these coordinate planes. To find these intersections, set one variable equal to <m>0</m> and manipulate the equation so that you can recognize the shape of the curve. In most cases, the curve will be a conic section, and you should pay particular attention to the intercepts of the conic section.
+              </p>
+            </li>
+            <li>
+              <p>
+                Identify the intersection curve of the surface with at least two fundamental planes parallel to each of the three coordinate planes. To find these intersections, set a variable equal to a nonzero constant and manipulate the equation so that you can recognize the shape of the curve. In most cases, the curve will be a conic section, and you should pay particular attention to the intercepts of the conic section.
+              </p>
+              <p>
+                Practice will help you develop a strategy for choosing these constants, but the following suggestions will be helpful as you are practicing:
+                <ul>
+                  <li>
+                    <p>
+                      Use what you learned in the two prior steps. For example, if a surface doesn't intersect the <m>xy</m>-plane (<m>z=0</m>), find values of <m>z</m> that do create intersections with fundamental planes.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Identify if there are (other) values for a variable where the surface no longer intersects with the fundamental planes with that variable fixed.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Use a mixture of positive and negative values for the constants determining your fundamental planes.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Determine if the shape of the intersection varies depending on the value you choose for a fixed coordinate. For example, if all intersections with planes of the form <m>x=c</m> are hyperbolas, do some values of <m>c</m> cause the hyperbolas to have intercepts on one axis while other values of <m>c</m> cause the hyperbolas to have intercepts on another axis? If there variations of this form, identify them as best as you can.
+                    </p>
+                  </li>
+                </ul>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      To illustrate parts of <xref ref="key-idea-quadrics"/>, we can return to <xref ref="act-hyperboloid-one"/> and discuss some of our strategy in selecting the fundamental planes we asked you to consider:
+      <ul>
+        <li>
+          <p>
+            For planes of the form <m>z=c</m>, the intersection equation is always of the form <m>\frac{x^2}{4}+\frac{y^2}{9} = 1+c^2</m>, which gives an ellipse for all values of <m>c</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            For planes of the form <m>x=c</m>, the intersection equation is <m>\frac{y^2}{9}-z^2 = 1-\frac{c^2}{4}</m>. When <m>c^2/4 \lt 1, </m>, this is a hyperbola with positive coefficient on the <m>y^2</m> term. This hyperbola has intercepts on the <m>y</m>-axis. When <m>c^2/4\gt 1</m>, the right-hand side of the equation is negative, so a more standard form for the equation would be <m>z^2-\frac{y^2}{9} = \frac{c^2}{4}-1</m>, which is a hyperbola that has intercepts on the <m>z</m>-axis.
+          </p>
+        </li>
+        <li>
+          <p>
+            For planes of the form <m>y=c</m>, the intersection equation is <m>\frac{x^2}{4}-z^2 = 1-\frac{c^2}{9}</m>. As with planes of the form <m>x=c</m>, these are hyperbolas where the location of the intercepts depends on the sign of <m>1-\frac{c^2}{9}</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <activity xml:id="act-Precalc_CommonGraphs-quadric-describe">
+      <introduction>
+        <p>
+          For each equation below, use the process in <xref ref="key-idea-quadrics"/> to determine the shape of the quadric surface defined by the equation and identify the graph of the quadric surface in <xref ref="quadsurfex3"/>.
+        </p>
+      </introduction>
       <task>
         <statement>
           <p>
-            Find equations for the curve given by the intersection of <m>\frac{x^2}{4}-\frac{y^2}{9}-\frac{z^2}{1}=1</m> with the each of the following fundamental planes. You should state the shape and any other characteristics (like center or direction) for each of these intersections.
-            <ol>
-              <li><m>z=0</m></li>
-              <li><m>y=0</m></li>
-              <li><m>x=0</m></li>
-              <li><m>z=1</m></li>
-              <li><m>y=-2</m></li>
-              <li><m>z=\sqrt{3}</m></li>
-              <li><m>x=3</m></li>
-              <li><m>x=-1</m></li>
-            </ol>
+            <m>\displaystyle\frac{x^2}{4}-\frac{y^2}{9}-\frac{z^2}{1}=1</m> 
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Which of the following surface plots will correspond to <m>\frac{x^2}{4}-\frac{y^2}{9}-\frac{z^2}{1}=1</m>? You can determine this by comparing the features on your previous part to these options.
-          </p>
-          <figure xml:id="quadsurfex3">
-            <caption>A plot surfaces to select from</caption>
-            <interactive title="interactive-quadsurfex3" platform="sage" width="100%" aspect="1:1">
-              <slate surface="sage">
-                from sage.plot.plot3d.plot3d import axes
-                var('x,y,z')
-                @interact
-                def quadplotcompare(sb=selector(['Surface 1','Surface 2','Surface 3','Surface 4','Surface 5'],label="Surface Options:")):
-                  var('t,s')
-                  scale=3.5; d=0.03; op=0.25;
-                  plot13=axes(scale,1,color="black",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-                  if sb=='Surface 1':
-                    eqr=x^2/4+y^2/9+z^2; eql=1;
-                  if sb=='Surface 2':
-                    eqr=-x^2/4+y^2/9+z^2; eql=1;
-                  if sb=='Surface 3':
-                    eqr=x^2/4-y^2/9+z^2; eql=1;
-                  if sb=='Surface 4':
-                    eqr=x^2/4+y^2/9-z^2; eql=1;
-                  if sb=='Surface 5':
-                    eqr=x^2/4+y^2/9; eql=z^2;
-                  plot13+=implicit_plot3d(eqr==eql,(x,-scale,scale),(y,-scale,scale),(z,-scale,scale),color="blue",opacity=op)
-                  plot13+=implicit_plot3d(eqr==eql,(x,-scale,scale),(y,-scale,scale),(z,-d,d),color="red")
-                  plot13+=implicit_plot3d(eqr==eql,(x,-scale,scale),(y,-d,d),(z,-scale,scale),color="green")
-                  plot13+=implicit_plot3d(eqr==eql,(x,-d,d),(y,-scale,scale),(z,-scale,scale),color="blue")
-                  show(plot13,aspect_ratio=1)
-              </slate>
-            </interactive>
-          </figure>
-        </statement>
-      </task>
-    </activity>
-    <activity>
-      <task>
-        <statement>
-          <p>
-            Find equations for the curve given by the intersection of <m>\frac{x^2}{4}+\frac{y^2}{9}+\frac{z^2}{1}=1</m> with the each of the following fundamental planes. You should state the shape and any other characteristics (like center or direction) for each of these intersections.
-            <ol>
-              <li><m>z=0</m></li>
-              <li><m>y=0</m></li>
-              <li><m>x=0</m></li>
-              <li><m>z=1</m></li>
-              <li><m>z=-2</m></li>
-              <li><m>y=\sqrt{3}</m></li>
-              <li><m>x=3</m></li>
-              <li><m>x=-1</m></li>
-            </ol>
+            <m>\displaystyle\frac{x^2}{4}+\frac{y^2}{9}+\frac{z^2}{1}=1</m>
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Which of the following surface plots will correspond to <m>\frac{x^2}{4}+\frac{y^2}{9}+\frac{z^2}{1}=1</m>? You can determine this by comparing the features on your previous part to these options.
+            <m>\displaystyle\frac{x^2}{4}-\frac{y^2}{9}-\frac{z}{1}=1</m>
           </p>
-          <figure xml:id="quadsurfex4">
-            <caption>A plot surfaces to select from</caption>
-            <interactive title="interactive-quadsurfex4" platform="sage" width="100%" aspect="1:1">
-              <slate surface="sage">
-                from sage.plot.plot3d.plot3d import axes
-                var('x,y,z')
-                @interact
-                def quadplotcompare(sb=selector(['Surface 1','Surface 2','Surface 3','Surface 4','Surface 5'],label="Surface Options:")):
-                  var('t,s')
-                  scale=3.5; d=0.03; op=0.25;
-                  plot13=axes(scale,1,color="black",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-                  if sb=='Surface 1':
-                    eqr=x^2/4+y^2/9+z^2; eql=1;
-                  if sb=='Surface 2':
-                    eqr=-x^2/4+y^2/9+z^2; eql=1;
-                  if sb=='Surface 3':
-                    eqr=x^2/4-y^2/9+z^2; eql=1;
-                  if sb=='Surface 4':
-                    eqr=x^2/4+y^2/9-z^2; eql=1;
-                  if sb=='Surface 5':
-                    eqr=x^2/4+y^2/9; eql=z^2;
-                  plot13+=implicit_plot3d(eqr==eql,(x,-scale,scale),(y,-scale,scale),(z,-scale,scale),color="blue",opacity=op)
-                  plot13+=implicit_plot3d(eqr==eql,(x,-scale,scale),(y,-scale,scale),(z,-d,d),color="red")
-                  plot13+=implicit_plot3d(eqr==eql,(x,-scale,scale),(y,-d,d),(z,-scale,scale),color="green")
-                  plot13+=implicit_plot3d(eqr==eql,(x,-d,d),(y,-scale,scale),(z,-scale,scale),color="blue")
-                  show(plot13,aspect_ratio=1)
-              </slate>
-            </interactive>
-          </figure>
         </statement>
       </task>
+      <conclusion>
+        <figure xml:id="quadsurfex3">
+          <caption>A plot surfaces to select from</caption>
+          <interactive label="interactive-quadsurfex3" platform="sage" width="100%" aspect="1:1">
+            <slate surface="sage">
+              # Would be good to add a cone as a distractor when switching from implicit_plot
+              from sage.plot.plot3d.plot3d import axes
+              var('x,y,z')
+              @interact
+              def quadplotcompare(sb=selector(['Surface 1','Surface 2','Surface 3','Surface 4','Surface 5','Surface 6','Surface 7'],label="Surface Options:")):
+                var('t,s')
+                scale=3.5; d=0.03; op=0.25;
+                plot13=axes(scale,1,color="black",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+                if sb=='Surface 1':
+                  eqr=x^2/4-y^2/9-z^2; eql=1;
+                if sb=='Surface 2':
+                  eqr=-x/4+y^2/9+z^2/1; eql=-1/4;
+                if sb=='Surface 3':
+                  eqr=-x^2/4+y^2/9+z^2; eql=1;
+                if sb=='Surface 4':
+                  eqr=x^2/4+y^2/9+z^2; eql=1;
+                if sb=='Surface 5':
+                  eqr=-x/4-y^2/9+z^2/16; eql=0;
+                if sb=='Surface 6':
+                  eqr=x^2/4-y^2/9-z; eql=1;
+                if sb=='Surface 7':
+                  eqr=-x^2/4+y^2/9-z^2; eql=1;
+                plot13+=implicit_plot3d(eqr==eql,(x,-scale,scale),(y,-scale,scale),(z,-scale,scale),color="blue",opacity=op)
+                plot13+=implicit_plot3d(eqr==eql,(x,-scale,scale),(y,-scale,scale),(z,-d,d),color="red")
+                plot13+=implicit_plot3d(eqr==eql,(x,-scale,scale),(y,-d,d),(z,-scale,scale),color="green")
+                plot13+=implicit_plot3d(eqr==eql,(x,-d,d),(y,-scale,scale),(z,-scale,scale),color="blue")
+                show(plot13,aspect_ratio=1)
+            </slate>
+          </interactive>
+        </figure>
+      </conclusion>
     </activity>
     <p>
-      The surfaces given by <m>\frac{x^2}{4}+\frac{y^2}{9}+\frac{z^2}{1}=1</m>, <m>\frac{x^2}{4}+\frac{y^2}{9}-\frac{z^2}{1}=1</m>, and <m>\frac{x^2}{4}-\frac{y^2}{9}-\frac{z^2}{1}=1</m> are examples of <term>quadric surfaces</term>. Quadric surfaces are the surfaces generated by polynomials that are quadratic in the three coordinate variables <m>x</m>, <m>y</m>, and <m>z</m>. There are six main shapes of quadric surfaces; Below are plots of each of the main shapes with the algebraic form used to describe each shape. Note that all of these examples are oriented along the <m>z-axis</m> and centered at the origin, but in our later work, we will often consider versions of these oriented along other coordinate directions with the center not at the origin.
+      As mentioned before, the surfaces given by <m>\frac{x^2}{4}+\frac{y^2}{9}+\frac{z^2}{1}=1</m>, <m>\frac{x^2}{4}+\frac{y^2}{9}-\frac{z^2}{1}=1</m>,  <m>\frac{x^2}{4}-\frac{y^2}{9}-\frac{z^2}{1}=1</m>, and <m>\frac{x^2}{4}-\frac{y^2}{9}-\frac{z}{1}=1</m> are examples of <term>quadric surfaces</term>. Quadric surfaces are the surfaces generated by polynomials that are quadratic in at least one of the three coordinate variables: <m>x</m>, <m>y</m>, and <m>z</m>. There are six main shapes of quadric surfaces. The box below gives the forms of the equations of these. <xref ref="quadsurfaces"/> shows plots of each of the main shapes with the algebraic form used to describe each shape. Note that all of these examples are oriented along the <m>z</m>-axis and centered at the origin. However, as with conic sections, quadric surfaces can be oriented along other coordinate directions and/or centered away from the origin.
     </p>
     <assemblage xml:id="quadricsurfaces">
       <title>Quadric Surfaces</title>
       <p>
         The following is a list of the six types of quadric surfaces and their general algebraic form centered at the origin with stretches of <m>a</m>, <m>b</m>, and <m>c</m> in the respective coordinate directions. Each of these is oriented along the <m>z</m>-axes (when possible).
-        <ul>
-          <li>Ellipsoid: <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1</m>  </li>
-          <li>Hyperboloid of 1-Sheet: <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1</m>  </li>
-          <li>Hyperboloid of 2-Sheet: <m>-\frac{x^2}{a^2}-\frac{y^2}{b^2}+\frac{z^2}{c^2}=1 </m> </li>
-          <li>Elliptic Paraboloid: <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=z</m>  </li>
-          <li>Hyperbolic Paraboloid (Saddle): <m>\frac{x^2}{a^2}-\frac{y^2}{b^2}=z</m>  </li>
-          <li>Cone: <m>\frac{x^2}{a^2}-\frac{y^2}{b^2}=\frac{z^2}{c^2}</m>  </li>
-        </ul>
+        <dl width="wide">
+          <li><title>Ellipsoid</title><p> <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1</m> </p> </li>
+          <li><title>Hyperboloid of 1-Sheet</title><p> <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1</m> </p> </li>
+          <li><title>Hyperboloid of 2-Sheet</title><p> <m>-\frac{x^2}{a^2}-\frac{y^2}{b^2}+\frac{z^2}{c^2}=1 </m> </p></li>
+          <li><title>Elliptic Paraboloid</title><p> <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=z</m> </p> </li>
+          <li><title>Hyperbolic Paraboloid (Saddle)</title><p> <m>\frac{x^2}{a^2}-\frac{y^2}{b^2}=z</m> </p> </li>
+          <li><title>Cone</title><p> <m>\frac{x^2}{a^2}-\frac{y^2}{b^2}=\frac{z^2}{c^2}</m> </p> </li>
+        </dl>
       </p>
     </assemblage>
     <figure xml:id="quadsurfaces">
       <caption>Quadric Surfaces</caption>
-      <interactive title="interactive-quadsurfaces" platform="sage" width="100%" aspect="1:1">
+      <interactive label="interactive-quadsurfaces" platform="sage" width="100%" aspect="1:1">
         <slate surface="sage">
         from sage.plot.plot3d.plot3d import axes
         var('x,y,z,t,s')
@@ -624,10 +741,10 @@
       </interactive>
     </figure>
     <p>
-      In <xref ref="C_MVF" />, we will talk about surfaces where one coordinate can be expressed as a function of the others. This is an extension of the idea that graphs that pass the vertical line test can be expressed with <m>y</m> as a function of <m>x</m>. For instance, in the plot of the saddle surface <xref ref="quadsurfaces"/>, any vertical line (parallel to the <m>z</m>-axis) will intersect the saddle surface at only one place, thus the saddle surface can be expressed with <m>z</m> as a function of <m>x</m> and <m>y</m>. This is not surprising since the saddle surface is given by <m>\frac{x^2}{a^2}-\frac{y^2}{b^2}=z</m>.
+      In <xref ref="C_MVF" />, we will talk about surfaces where one coordinate can be expressed as a function of the others. This is an extension of the idea that graphs that pass the vertical line test can be expressed with <m>y</m> as a function of <m>x</m>. For instance, in the plot of the saddle surface shown in <xref ref="quadsurfaces"/>, any line parallel to the <m>z</m>-axis will intersect the saddle surface at only one place. This means that the saddle surface can be expressed with <m>z</m> as a function of <m>x</m> and <m>y</m>. This is not surprising since the saddle surface is given by <m>\frac{x^2}{a^2}-\frac{y^2}{b^2}=z</m>.
     </p>
     <p> 
-      Compare this to the graph of a Hyperboloid of 1-Sheet in <xref ref="quadsurfaces" />, where a line that is parallel to the <m>z</m>-axis will intersect our surface at two places. Lines parallel to the <m>x</m>- or <m>y</m>-axes will also intersect the hyperboloid of one sheet in more than one place. This means that you cannot express the graph of a hyperboloid of one sheet with none of the coordinates as a function of the other two. Algebraically, this corresponds to there being more than one solution when you try to solve the equation <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1</m> for one variable. In particular, the multiple solutions come from needing to consider the positive and negative square roots. We will return to this idea in <xref ref="C_MVF" />.
+      Compare this to the graph of a hyperboloid of one sheet in <xref ref="quadsurfaces" />, where a line that is parallel to the <m>z</m>-axis will intersect the surface at two places. Lines parallel to the <m>x</m>- or <m>y</m>-axes will also intersect the hyperboloid of one sheet in more than one place. This means that we <em>cannot</em> express the graph of a hyperboloid of one sheet with one of the coordinates as a function of the other two. Algebraically, this corresponds to there being more than one solution when you try to solve the equation <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1</m> for one variable. In particular, the multiple solutions come from needing to consider the positive and negative square roots. We will return to this idea in <xref ref="C_MVF" />.
     </p>
   </subsection>
   <subsection>
@@ -663,7 +780,10 @@
   <subsection component="instructor" >
     <title>Notes to Instructors and Dependencies</title>
     <p>
-      This section includes a lot of basic transformation ideas that students may have a range of experience with. We included these activities as a way to make sure that students have some exposure and they get to practice simple algebraic procedures that will be used with more complexity later in the text. A more thorough approach to the conic sections can be found at (insert link to IBL materials here). You may want to have students work through activities like <xref ref="coord-translation" /> and <xref ref="coord-scale" /> on their own during times where you don't have a preview activity to prepare for new material. 
+      If your course needs to teach conic sections in depth (or you have time and want to do so), <xref ref="S-app-conics" /> provides a comprehensive introduction for students in a course of this level.
+    </p>
+    <p>
+      This section is written with the assumption that students have sufficient background to be able to do the Preview Activity while consulting with <xref ref="S-app-conics"/> to refresh their memory on important aspects of conic sections. <xref ref="act-Precalc_CommonGraphs-quadric-describe"/> is likely too long to have every group of students work on all three surfaces. We suggest dividing students into groups and assigning each surface in the activity to one third of your groups. Save time for there to be a report on each surface by one of the groups that worked on that surface, allowing other groups who worked on the same surface to add factors they considered that were not brought up by the group that presented. If you have sufficient vertical non-permanent writing surfaces in your classroom, you could have groups rotate and see what a group who analyzed another surface did rather than having brief presentations to the full class.
     </p>
   </subsection>
 </section>

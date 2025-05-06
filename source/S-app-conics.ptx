@@ -18,288 +18,198 @@
 
   <introduction> 
     <p>
-      In this section, we will introduce some examples of graphs in two and three dimensions that have nice algebraic properties and a variety of interesting geometric features. For our preview activity, we will recall some properties of graphs and equations that will be useful in describing our new examples. While students may have different levels of experience with graphs like circles, parabolas, ellipses, and hyperbolas, we will focus our work on the correspondence between the algebraic presentations of these shapes and the important geometric features. 
+      In this section, we will introduce some examples of graphs in two dimensions that have nice algebraic properties and a variety of interesting geometric features. For our preview activity, we will recall some properties of graphs and equations that will be useful in describing our new examples. While students may have different levels of experience with graphs like circles, parabolas, ellipses, and hyperbolas, we will focus our work on the correspondence between the algebraic presentations of these shapes and the important geometric features. 
     </p>
-    <exploration xml:id="app-PA-Precalc-CG">
-      <introduction>
-       <p>
-          For each of the following equations, you should:
-          <ol>
-            <li>
-              <p>
-                Find all <m>x</m>-intercepts
-              </p>
-            </li>
-            <li>
-              <p>
-                Find all <m>y</m>-intercepts
-              </p>
-            </li>
-            <li>
-              <p>
-                Identify the shape of the graph (if you know it)
-              </p>
-            </li>
-            <li>
-              <p>
-                Identify all points where the graph will intersect with the vertical line <m>x=2</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                Identify all points where the graph will intersect with the horizontal line <m>y=-4</m>
-              </p>
-            </li>
-          </ol>
-        </p>
-      </introduction>
-      <task>
-        <statement>
-          <p>
-            <m>\frac{x^2}{9}+\frac{y^2}{25}=1</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            
-          </p>
-        </answer>
-        <solution>
-          <p>
-            
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\frac{x}{3}+\frac{y}{5}=1</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            
-          </p>
-        </answer>
-        <solution>
-          <p>
-            
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\frac{y^2}{4}-\frac{x^2}{1}=1</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            
-          </p>
-        </answer>
-        <solution>
-          <p>
-            
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>x=2y^2</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            
-          </p>
-        </answer>
-        <solution>
-          <p>
-            
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\frac{y^2}{9}-\frac{x^2}{25}=0</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            
-          </p>
-        </answer>
-        <solution>
-          <p>
-            
-          </p>
-        </solution>
-      </task>
-    </exploration>
   </introduction>
   <subsection xml:id="coordtransform">
     <title>Coordinate Transformations</title>
-  <p>
-    We have seen how the distance formula leads to the equation of a sphere and how the idea of flat one and two dimensional graphs gave rise to lines and planes. In this section, we will introduce some other curves and surfaces that will be used throughout the rest of this text as examples. These objects will allow us to have graphs with a variety of geometric features while still being algebraically simple. The next activity will go over a couple of basic coordinate transformation ideas that will be helpful in generalizing our common graphs. 
-  </p>
-  <activity xml:id="coord-translation">
-    <title>Translation of Coordinates</title>
-    <introduction>
-      <p>
-        In this activity we will look at how to translate coordinate systems, which means to use a new coordinate system with axes parallel to to the original set of axes and the same scale. In other words, the new coordinate system has a new origin but does not change the way coordinates are measured. This is very useful to simplify the equation of a graph by making the graph's center the new origin. 
-      </p>
-    </introduction>
-    <task xml:id="coord-translation1">
-      <statement>
+    <p>
+      We have seen at the end of <xref ref="S-Precalc-3Dcoord"/> how the distance formula leads to the equation of a sphere and how the idea of flat one and two dimensional graphs gave rise to lines (<xref ref="S-Precalc-Lines"/>) and planes (<xref ref="S-Precalc-Planes" />). Here we introduce some other curves that are used throughout the rest of this text as examples. These objects will allow us to have graphs with a variety of geometric features while still being algebraically simple. You may already be familiar with the curves studied in this section, in which case you can consider this section a review. However, if you have not studied these curves before, we have designed this section to help you understand their key properties.
+    </p>
+    <p>
+      The next activity will go over a couple of basic coordinate transformation ideas that will be helpful in generalizing our common graphs. 
+    </p>
+    <activity xml:id="coord-translation">
+      <title>Translation of Coordinates</title>
+      <introduction>
         <p>
-          On the axes below, draw and label the point <m> P=(4,-1)</m>. With a different color, draw a new set of axes that are centered at <m>P</m> and label these axes <m>x^*</m> and <m>y^*</m>. The <m>x^*</m> and <m>y^*</m> should parallel to the <m>x</m> and <m>y</m> axes and use the same scale.
+          In this activity we will look at how to translate coordinate systems, which means to use a new coordinate system with axes parallel to to the original set of axes and the same scale. In other words, the new coordinate system has a new origin but does not change the way coordinates are measured. This is useful to simplify the equation of a graph by making the graph's center the new origin. 
         </p>
-      </statement>
-    </task>
-    <task xml:id="coord-translation-p2">
-      <statement>
+      </introduction>
+      <task xml:id="coord-translation1">
+        <statement>
+          <p>
+            On the axes below, draw and label the point <m> P=(4,-1)</m>. With a different color, draw a new set of axes that are centered at <m>P</m> and label these axes <m>x^*</m> and <m>y^*</m>. The <m>x^*</m>- and <m>y^*</m>-axes should parallel to the <m>x</m>- and <m>y</m>-axes and use the same scale.
+          </p>
+          <image width="50%">
+            <shortdescription>A set of axes</shortdescription>
+            <prefigure xmlns="https://prefigure.org"
+                        label="app-conics-blank-axes">
+              <diagram dimensions="(300, 300)" margins="5">
+                <coordinates bbox="[-6,-6,6,6]">
+                  <grid-axes xlabel="x" ylabel="y"/>
+                </coordinates>
+              </diagram>
+            </prefigure>
+          </image>
+        </statement>
+      </task>
+      <task xml:id="coord-translation-p2">
+        <statement>
+          <p>
+            Use the plot of the <m>x^*</m> and <m>y^*</m> axes above to give the <m>(x^*,y^*)</m>-coordinates for each of the following points:
+            <ul cols="2">
+                <li><m>(x,y)=(4,-1)</m></li>
+                <li><m>(x,y)=(0,0)</m></li>
+                <li><m>(x,y)=(3,-2)</m></li>
+                <li><m>(x,y)=(6,3)</m></li>
+            </ul>
+            Remember that the locations of these points should not change, but rather the values of the measurements used to describe the location will change. 
+          </p>
+        </statement>
+      </task>
+      <task xml:id="coord-translation-p3">
+        <statement>
+          <p>
+            Generalize your work for <xref ref="coord-translation-p2" /> and write <m>x^*</m> and <m>y^*</m> in terms of <m>x</m>, <m>y</m>, and the coordinates of new center <m>(4,-1)</m>.
+            <md>
+              <mrow>x^*\amp = <fillin characters="9" /> \amp y^*\amp=<fillin characters="9" /></mrow>
+            </md>
+          </p>
+        </statement>
+      </task>
+      <task xml:id="coord-translation-p4">
+        <statement>
+          <p>
+            Using the same coordinate systems as in <xref ref="coord-translation1" text="type-local"/>, give the <m>(x,y)</m>-coordinates of the following points:
+            <ul cols="2">
+                <li><m>(x^*,y^*)=(0,0)</m></li>
+                <li><m>(x^*,y^*)=(4,-1)</m></li>
+                <li><m>(x^*,y^*)=(-5,7)</m></li>
+                <li><m>(x^*,y^*)=(6,3)</m></li>
+            </ul>
+          </p>
+        </statement>
+      </task>
+      <task xml:id="coord-translation-p5">
+        <statement>
+          <p>
+            Generalize your work for <xref ref="coord-translation-p4" text="type-local"/> and write <m>x</m> and <m>y</m> in terms of <m>x</m>, <m>y</m>, and the coordinates of new center <m>(4,-1)</m>.
+            <md>
+              <mrow>x\amp = <fillin characters="9" /> \amp y\amp=<fillin characters="9" /></mrow>
+            </md>
+          </p>
+        </statement>
+      </task>
+    </activity>
+    <activity xml:id="coord-scale">
+      <introduction>
         <p>
-          Use the plot of the <m>x^*</m> and <m>y^*</m> axes above to give the <m>(x^*,y^*)</m>-coordinates for each of the following points:
-          <ol>
-              <li><m>(x,y)=(4,-1)</m></li>
-              <li><m>(x,y)=(0,0)</m></li>
-              <li><m>(x,y)=(3,-2)</m></li>
-              <li><m>(x,y)=(6,3)</m></li>
-          </ol>
-          Remember that the locations of these points should not change, but rather the values of the measurements used to describe the location will change. 
+          In this activity, we look at how transform the coordinates of points when changing the scale of your coordinate system. 
         </p>
-      </statement>
-    </task>
-    <task xml:id="coord-translation-p3">
-      <statement>
-        <p>
-          Generalize your work for <xref ref="coord-translation-p2" /> and write <m>x^*</m> and <m>y^*</m> in terms of <m>x</m>, <m>y</m>, and the coordinates of new center <m>(4,-1)</m>.
-          <me> x^*=\underline{\hspace{4cm}} \hspace{4cm}  y^*=\underline{\hspace{4cm}} </me>
-        </p>
-      </statement>
-    </task>
-    <task xml:id="coord-translation-p4">
-      <statement>
-        <p>
-          Using the same coordinate systems as in <xref ref="coord-translation1" />, give the <m>(x,y)</m>-coordinates of the following points:
-          <ol>
-              <li><m>(x^*,y^*)=(0,0)</m></li>
-              <li><m>(x^*,y^*)=(4,-1)</m></li>
-              <li><m>(x^*,y^*)=(-5,7)</m></li>
-              <li><m>(x^*,y^*)=(6,3)</m></li>
-          </ol>
-        </p>
-      </statement>
-    </task>
-    <task xml:id="coord-translation-p5">
-      <statement>
-        <p>
-          Generalize your work for <xref ref="coord-translation-p4" /> and write <m>x</m> and <m>y</m> in terms of <m>x</m>, <m>y</m>, and the coordinates of new center <m>(4,-1)</m>.
-          <me> x=\underline{\hspace{4cm}} \hspace{4cm}  y=\underline{\hspace{4cm}} </me>
-        </p>
-      </statement>
-    </task>
-  </activity>
-  <activity xml:id="coord-scale">
-    <introduction>
-      <p>
-        In this activity, we look at how transform the coordinates of points when changing the scale of your coordinate system. 
-      </p>
-    </introduction>
-    <task xml:id="coord-translation-p6">
-      <statement>
         <p>
           While walking your dog, you notice that your dog takes three steps for every step of yours. When you sit down at home you realize that your coordinate system for your house is different than your dog's. You decide to make the origin of both your coordinate system and your dog's to be the entrance to your kitchen. Your dog's bed is eight of your steps south and four steps west of the entrance to the kitchen. The dog's water bowl is 5 of your steps north and 3 steps east from the entrace to your kitchen. The front door of your house is 15 of your steps south and 9 steps east of the entrance to the kitchen.
         </p>
-        <p>
-          Draw a set of axes and plot the location of your dog's bed, water bowl, and the front door in terms of your steps from the origin (the entrance to your kitchen). 
-        </p>
-      </statement>
-      </task>
-      <task>
+      </introduction>
+      <task xml:id="coord-translation-p6">
         <statement>
           <p>
-            State what the coordinates of your dog's bed, water bowl, and the front door in terms of your dog's steps from the origin will be. 
+            Draw a set of axes and plot the location of your dog's bed, water bowl, and the front door in terms of your steps from the origin (the entrance to your kitchen). 
           </p>
         </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            If your dog's favorite toy is 17 dog steps east and 5 dog steps north of the entrance to the kitchen and your dog's collar is 13 dog steps south and 7 dog steps west, give the coordinates of your dog's toy and collar in terms of your steps. 
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            If you denote the coordinates in your steps the <m>(x,y)</m>-coordinate system and your dog's steps with <m>(x',y')</m> coordinates, give the location in both coordinate systems for your dog's bed, water bowl, the front door, your dog's favorite toy, and your dog's collar. Generalize your findings into equations that tranform between <m>(x,y)</m>- and <m>(x',y')</m>-coordinates.
-          </p>
-        </statement>
-      </task>
-  </activity>
-  <p>
-    The results of the previous activities are probably not suprising but should offer some insight into why some aspects of coordinate transformations seem backwards. This is because the transformations are about converting back to the measurement of a different coordinate system.
-  </p>
+        </task>
+        <task>
+          <statement>
+            <p>
+              State what the coordinates of your dog's bed, water bowl, and the front door in terms of your dog's steps from the origin will be. 
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              If your dog's favorite toy is 17 dog steps east and 5 dog steps north of the entrance to the kitchen and your dog's collar is 13 dog steps south and 7 dog steps west, give the coordinates of your dog's toy and collar in terms of your steps. 
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              If you call the coordinates in your steps the <m>(x,y)</m>-coordinate system and refer to coordinates in your dog's steps as the <m>(x',y')</m>-coordinate system, give the location in both coordinate systems for your dog's bed, water bowl, the front door, your dog's favorite toy, and your dog's collar. 
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Generalize your findings from the previous part into equations that tranform between <m>(x,y)</m>- and <m>(x',y')</m>-coordinates.
+            </p>
+          </statement>
+        </task>
+    </activity>
+    <p>
+      The results of the previous activities are probably not suprising but should offer some insight into why some aspects of coordinate transformations seem backwards. This is because the transformations are about converting back to the measurement of a different coordinate system.
+    </p>
 </subsection>
 <subsection>
   <title>Conic Sections</title>
   <p>
-    You may have seen the ideas of coordinate transformation that were central to <xref ref="coord-translation" />, but hopefully you see precisely where the algebraic transformations come from and how they correspond to simple geometric transformations. For our basic shapes in 2D, we will give a very brief definition for the shape, but the focus of this presentation will be about applying transformations to a basic shape in order to generalize the possible usage of these shapes. 
+    You may have seen the ideas of coordinate transformation that were central to <xref ref="coord-translation" />, but hopefully you see precisely where the algebraic transformations come from and how they correspond to simple geometric transformations. For our basic shapes in two dimensions, we will give a brief definition for the shape, but the focus of this presentation will be about applying transformations to a basic shape in order to generalize the possible usage of these shapes. 
   </p>
   <p>
     A <term>circle</term> is the set of points that are a fixed distance (called the radius) away from a specific point (called the center). Most often, circles are introduced with the center at the origin and the radius given by a constant <m>R</m>. This means that a point <m>(x,y)</m> that is on the circle will satisfy 
-    <me>\sqrt{(x-0)^2+(y-0)^2}=R</me>
+    <me>\sqrt{(x-0)^2+(y-0)^2}=R</me>,
     which can be expressed as the equivalent equation
-    <me>x^2+y^2=R^2</me>
-    Applying the same idea to a circle with center <m>(h,k)</m> means you will get an equation like 
-    <me>(x-h)^2+(y-k)^2=R^2</me>
-    , which is often called the standard form of the circle. The standard form is convenient to use because the information needed to graph the circle can be read from this form without needing more algebra. For instance, the circle given by <me>(x-2)^2+(y+3)^2=6</me> would have center <m>(2,-3)</m> and radius <m>\sqrt{6}</m>. Notice that the transformation equations from <xref ref="coord-translation" /> show up in this example as we move a circle from being centered at the origin(<m>x^2+y^2=R^2</m>) to a point <m>(h,k)</m> (<m>(x-h)^2+(y-k)^2=R^2</m>).
+    <me>x^2+y^2=R^2</me>.
+    Applying the same idea to a circle with center <m>(h,k)</m> leads to the equation
+    <me>(x-h)^2+(y-k)^2=R^2</me>,
+    which is often called the standard form of the circle. The standard form is convenient to use because the information needed to graph the circle can be read from this form without needing more algebra. For instance, the circle given by <me>(x-2)^2+(y+3)^2=6</me> has center <m>(2,-3)</m> and radius <m>\sqrt{6}</m>. Notice that the transformation equations from <xref ref="coord-translation" /> show up in this example as we move a circle from being centered at the origin, where the equation is <m>x^2+y^2=R^2</m>, to the point <m>(h,k)</m>, where the equation is <m>(x-h)^2+(y-k)^2=R^2</m>.
   </p>
   <definition xml:id="def-ellipse">
     <statement>
       <p>
-        An <term>ellipse</term> is the set of all points such that the sum of the distances from the point <m>(x,y)</m> to a pair of distinct points (called foci) is a fixed constant. In the interact below, you can use the slider to change the location on the ellipse being displayed. You should see how as you move around the ellipse, the sum of the lengths of the blue and red segments remains constant, as shown compared to the green segment (which is a fixed length). 
+        An <term>ellipse</term> is the set of all points such that the sum of the distances from the point <m>(x,y)</m> to a pair of distinct points (called foci) is a fixed constant. 
       </p>
-      <figure xml:id="base-ellipse">
-        <caption>A plot of an ellipse with foci in green</caption>
-        <interactive title="interactive-base-ellipse" platform="sage" width="110%" aspect="1:1">
-          <slate surface="sage">
-            var('x,y,t')
-            @interact
-            def ellipseinteract(nval=slider(0,32,1,default=4,display_value=False,label="Angle")):
-              a=3
-              c=2
-              d=4
-              b=sqrt(a^2-c^2)
-              os=0.25
-              tval=nval/16*pi
-              plot1=point((c,0),color="green",size=20,axes=True,axes_labels=["$x$","$y$"],ticks=[[],[]])
-              plot1+=point((-c,0),color="green",size=20)
-              plot1+=line([(c,0),(a*cos(tval),b*sin(tval))],color="red")
-              plot1+=line([(-c,0),(a*cos(tval),b*sin(tval))],color="blue")
-              plot1+=point((a*cos(tval),b*sin(tval)),color="purple",size=20)
-              rv=sqrt((a*cos(tval)-c)^2+(b*sin(tval))^2)
-              bv=sqrt((a*cos(tval)+c)^2+(b*sin(tval))^2)
-              fr=str(simplify(nval/32))
-              txt="\u03B8 \u003D"+fr+" \u03C0"
-              #txt="$\\theta=\\frac{"+str(nval)+"}{32} \p\i$"
-              #plot1+=text(txt,(1.25*a*cos(tval),1.25*b*sin(tval)),color="purple",fontsize=15)
-              plot1+=text(txt,(3.5,3),color="purple",fontsize=15)
-              plot1+=parametric_plot((a*cos(t),b*sin(t)),(t,0,2*pi),color="black")
-              plot1+=line([(os,d),(os+rv,d)],color="red")+line([(os+rv,d),(os+rv+bv,d)],color="blue")
-              plot1+=line([(os,d+os),(os+2*a,d+os)],color="green")
-              show(plot1,aspect_ratio=1)
-          </slate>
-        </interactive>
-      </figure>
     </statement>
   </definition>
+  <p>
+    To help illustrate the definition of an ellipse, explore <xref ref="base-ellipse"/>. You can use the slider to change the location on the ellipse being displayed. You should see how as you move around the ellipse, the sum of the lengths of the blue and red segments remains constant, as shown compared to the green segment, which is a fixed length. 
+  </p>
+  <figure xml:id="base-ellipse">
+    <caption>A plot of an ellipse with foci in green</caption>
+    <!-- TODO: This does not need to be extra wide. Put the line segments above/below and bring the x-axis in so it's not so wide. -->
+    <interactive title="interactive-base-ellipse" platform="sage" width="110%" aspect="1.2:1">
+      <slate surface="sage">
+        var('x,y,t')
+        @interact
+        def ellipseinteract(nval=slider(0,32,1,default=4,display_value=False,label="Angle")):
+          a=3
+          c=2
+          d=4
+          b=sqrt(a^2-c^2)
+          os=0.25
+          tval=nval/16*pi
+          plot1=point((c,0),color="green",size=20,axes=True,axes_labels=["$x$","$y$"],ticks=[[],[]])
+          plot1+=point((-c,0),color="green",size=20)
+          plot1+=line([(c,0),(a*cos(tval),b*sin(tval))],color="red")
+          plot1+=line([(-c,0),(a*cos(tval),b*sin(tval))],color="blue")
+          plot1+=point((a*cos(tval),b*sin(tval)),color="purple",size=20)
+          rv=sqrt((a*cos(tval)-c)^2+(b*sin(tval))^2)
+          bv=sqrt((a*cos(tval)+c)^2+(b*sin(tval))^2)
+          fr=str(simplify(nval/32))
+          txt="\u03B8 \u003D"+fr+" \u03C0"
+          #txt="\\(\\theta=\\frac{"+str(nval)+"}{32} \\pi\\)"
+          #plot1+=text(txt,(1.25*a*cos(tval),1.25*b*sin(tval)),color="purple",fontsize=15)
+          plot1+=text(txt,(3.5,3),color="purple",fontsize=15)
+          plot1+=parametric_plot((a*cos(t),b*sin(t)),(t,0,2*pi),color="black")
+          plot1+=line([(os,d),(os+rv,d)],color="red")+line([(os+rv,d),(os+rv+bv,d)],color="blue")
+          plot1+=line([(os,d+os),(os+2*a,d+os)],color="green")
+          show(plot1,aspect_ratio=1)
+      </slate>
+    </interactive>
+  </figure>
    <p>
-    While the definition of the ellipse given above has some great applications in engineering, orbital mechanics, and optics, we will focus on the ellipse as a transformation of a circle. While this is not obvious and the details take a little while to prove, any ellipse in the plane can be obtained by transforming a circle (through translation, horizontal/vertical coordinate stretches that are not the same as each other, and rotations of the coordinate systems). 
+    While the definition of the ellipse given above has applications in engineering, orbital mechanics, and optics, we will focus on the ellipse as a transformation of a circle. While this is not obvious and the details take a little while to prove, any ellipse in the plane can be obtained by transforming a circle (through translation, horizontal/vertical coordinate stretches that are not the same as each other, and rotations of the coordinate systems). 
    </p>
    <activity>
     <task>
