@@ -6,17 +6,21 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>First-Order Partial Derivatives</title>
-<meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="book">
-<meta property="book:title" content="Active Calculus - Multivariable">
-<meta property="book:author" content="Steve Schlicker">
-<meta property="book:author" content="Mitchel T. Keller">
-<meta property="book:author" content="Nicholas Long">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
   "tex": {
@@ -88,13 +92,14 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="_static/pretext/js/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
-<script src="https://cdn.geogebra.org/apps/deployggb.js"></script><link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
-<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
-<!--** eBookCongig is necessary to configure interactive       **-->
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Active Calculus - Multivariable">
+<meta property="book:author" content="Nicholas Long">
+<meta property="book:author" content="Mitchel T. Keller">
+<meta property="book:author" content="Steve Schlicker">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -116,22 +121,24 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.5.10';
+eBookConfig.runestone_version = '7.6.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.c2d04816128ebb44.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f6bda0c0ccce4835.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.e0c6d4592e23c667.css">
+<script src="_static/prefix-runtime.11f2df1b38a61a3f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f7a03b209751032d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
 </head>
 <body id="acmulti" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
 <h1 class="heading"><a href="root-1-2.html"><span class="title">Active Calculus - Multivariable</span></a></h1>
-<p class="byline">Steve Schlicker, Mitchel T. Keller, Nicholas Long</p>
+<p class="byline">Nicholas Long, Mitchel T. Keller, Steve Schlicker</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="root-1-2-8-1.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="root-1-2-8-2.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -193,6 +200,7 @@ true);
 \newcommand{\nin}{}
 \newcommand{\vecmag}[1]{\left\lVert #1\right\rVert}
 \newcommand{\grad}{\nabla}
+\newcommand\restrict[1]{\raise-.5ex\hbox{$\Big|$}_{#1}}
 \DeclareMathOperator{\curl}{curl}
 \DeclareMathOperator{\divg}{div}
 \newcommand{\lt}{&lt;}
@@ -279,13 +287,11 @@ true);
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="S-Precalc-CommonGraphs.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Common Graphs in Two and Three Dimensions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-Precalc-CommonGraphs.html#coordtransform" class="internal"><span class="codenumber">9.7.1</span> <span class="title">Coordinate Transformations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-Precalc-CommonGraphs.html#S-Precalc-CommonGraphs-5" class="internal"><span class="codenumber">9.7.2</span> <span class="title">Conic Sections</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-Precalc-CommonGraphs.html#subsec-cylsurf" class="internal"><span class="codenumber">9.7.3</span> <span class="title">Cylinder Surfaces</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-Precalc-CommonGraphs.html#quadric-surfaces" class="internal"><span class="codenumber">9.7.4</span> <span class="title">Quadric Surfaces</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-Precalc-CommonGraphs.html#S-Precalc-CommonGraphs-8" class="internal"><span class="codenumber">9.7.5</span> <span class="title">Summary</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-Precalc-CommonGraphs.html#S-Precalc-CommonGraphs-9" class="internal"><span class="codenumber">9.7.6</span> <span class="title">Exercises</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-Precalc-CommonGraphs.html#S-Precalc-CommonGraphs-10" class="internal"><span class="codenumber">9.7.7</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-Precalc-CommonGraphs.html#subsec-cylsurf" class="internal"><span class="codenumber">9.7.1</span> <span class="title">Cylinder Surfaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-Precalc-CommonGraphs.html#quadric-surfaces" class="internal"><span class="codenumber">9.7.2</span> <span class="title">Quadric Surfaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-Precalc-CommonGraphs.html#S-Precalc-CommonGraphs-6" class="internal"><span class="codenumber">9.7.3</span> <span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-Precalc-CommonGraphs.html#S-Precalc-CommonGraphs-7" class="internal"><span class="codenumber">9.7.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-Precalc-CommonGraphs.html#S-Precalc-CommonGraphs-8" class="internal"><span class="codenumber">9.7.5</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -316,7 +322,7 @@ true);
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-VVF-Calculus.html#vvf-derivative" class="internal"><span class="codenumber">10.2.1</span> <span class="title">The Derivative</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-VVF-Calculus.html#S-VVF-Calculus-5" class="internal"><span class="codenumber">10.2.2</span> <span class="title">Computing Derivatives</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-VVF-Calculus.html#S-VVF-Calculus-6" class="internal"><span class="codenumber">10.2.3</span> <span class="title">Tangent Lines</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-VVF-Calculus.html#tangentlines" class="internal"><span class="codenumber">10.2.3</span> <span class="title">Tangent Lines</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-VVF-Calculus.html#S-VVF-Calculus-7" class="internal"><span class="codenumber">10.2.4</span> <span class="title">Integrating a Vector-Valued Function</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-VVF-Calculus.html#S-VVF-Calculus-8" class="internal"><span class="codenumber">10.2.5</span> <span class="title">Summary</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-VVF-Calculus.html#S-VVF-Calculus-9" class="internal"><span class="codenumber">10.2.6</span> <span class="title">Exercises</span></a></div></li>
@@ -370,21 +376,21 @@ true);
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-Functions.html#S-MV-Functions-4" class="internal"><span class="codenumber">11.1.1</span> <span class="title">Functions of Several Variables</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-Functions.html#S-MV-Functions-5" class="internal"><span class="codenumber">11.1.2</span> <span class="title">Representing Functions of Two Variables</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-Functions.html#S-MV-Functions-6" class="internal"><span class="codenumber">11.1.3</span> <span class="title">Some Standard Equations in Three-Space</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-Functions.html#S-MV-Functions-7" class="internal"><span class="codenumber">11.1.4</span> <span class="title">Traces</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-Functions.html#S-MV-Functions-8" class="internal"><span class="codenumber">11.1.5</span> <span class="title">Contour Maps and Level Curves</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-Functions.html#S-MV-Functions-9" class="internal"><span class="codenumber">11.1.6</span> <span class="title">A gallery of functions</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-Functions.html#S-MV-Functions-10" class="internal"><span class="codenumber">11.1.7</span> <span class="title">Summary</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-MV-Functions.html#S-MV-Functions-11" class="internal"><span class="codenumber">11.1.8</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-Functions.html#S-MV-Functions-6" class="internal"><span class="codenumber">11.1.3</span> <span class="title">Traces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-Functions.html#S-MV-Functions-7" class="internal"><span class="codenumber">11.1.4</span> <span class="title">Contour Maps and Level Curves</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-Functions.html#S-MV-Functions-8" class="internal"><span class="codenumber">11.1.5</span> <span class="title">A gallery of functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-Functions.html#S-MV-Functions-9" class="internal"><span class="codenumber">11.1.6</span> <span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-MV-Functions.html#S-MV-Functions-10" class="internal"><span class="codenumber">11.1.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="S-10-1-Limits.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Limits</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-1-Limits.html#S-10-1-Limits-4" class="internal"><span class="codenumber">11.2.1</span> <span class="title">Limits of Functions of Two Variables</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-1-Limits.html#S-10-1-Limits-5" class="internal"><span class="codenumber">11.2.2</span> <span class="title">Continuity</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-1-Limits.html#S-10-1-Limits-6" class="internal"><span class="codenumber">11.2.3</span> <span class="title">Summary</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-10-1-Limits.html#S-10-1-Limits-7" class="internal"><span class="codenumber">11.2.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-1-Limits.html#subsec-polarlimit" class="internal"><span class="codenumber">11.2.2</span> <span class="title">Using Polar Coordinates in Limits</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-1-Limits.html#S-10-1-Limits-6" class="internal"><span class="codenumber">11.2.3</span> <span class="title">Continuity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-1-Limits.html#S-10-1-Limits-7" class="internal"><span class="codenumber">11.2.4</span> <span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-10-1-Limits.html#S-10-1-Limits-8" class="internal"><span class="codenumber">11.2.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section contains-active">
@@ -392,7 +398,7 @@ true);
 <ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-2-First-Order-Partial-Derivatives.html#S-10-2-First-Order-Partial-Derivatives-4" class="internal"><span class="codenumber">11.3.1</span> <span class="title">First-Order Partial Derivatives</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-2-First-Order-Partial-Derivatives.html#S-10-2-First-Order-Partial-Derivatives-5" class="internal"><span class="codenumber">11.3.2</span> <span class="title">Interpretations of First-Order Partial Derivatives</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-2-First-Order-Partial-Derivatives.html#S-10-2-First-Order-Partial-Derivatives-6" class="internal"><span class="codenumber">11.3.3</span> <span class="title">Using tables and contours to estimate partial derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-2-First-Order-Partial-Derivatives.html#S-10-2-First-Order-Partial-Derivatives-6" class="internal"><span class="codenumber">11.3.3</span> <span class="title">Using Tables and Contour Plots to Estimate Partial Derivatives</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-2-First-Order-Partial-Derivatives.html#S-10-2-First-Order-Partial-Derivatives-7" class="internal"><span class="codenumber">11.3.4</span> <span class="title">Summary</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-10-2-First-Order-Partial-Derivatives.html#S-10-2-First-Order-Partial-Derivatives-8" class="internal"><span class="codenumber">11.3.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
@@ -417,12 +423,11 @@ true);
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="S-10-5-Chain-Rule.html" class="internal"><span class="codenumber">11.6</span> <span class="title">The Chain Rule</span></a></div>
+<div class="toc-title-box"><a href="S-10-5-Chain-Rule.html" class="internal"><span class="codenumber">11.6</span> <span class="title">Measuring Change and Compositions of Multivariable Functions</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-5-Chain-Rule.html#S-10-5-Chain-Rule-4" class="internal"><span class="codenumber">11.6.1</span> <span class="title">The Chain Rule</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-5-Chain-Rule.html#S-10-5-Chain-Rule-5" class="internal"><span class="codenumber">11.6.2</span> <span class="title">Tree Diagrams</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-5-Chain-Rule.html#S-10-5-Chain-Rule-6" class="internal"><span class="codenumber">11.6.3</span> <span class="title">Summary</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-10-5-Chain-Rule.html#S-10-5-Chain-Rule-7" class="internal"><span class="codenumber">11.6.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-5-Chain-Rule.html#S-10-5-Chain-Rule-5" class="internal"><span class="codenumber">11.6.2</span> <span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-10-5-Chain-Rule.html#S-10-5-Chain-Rule-6" class="internal"><span class="codenumber">11.6.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -431,29 +436,39 @@ true);
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-6-Directional-Derivative.html#S-10-6-Directional-Derivative-4" class="internal"><span class="codenumber">11.7.1</span> <span class="title">Directional Derivatives</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-6-Directional-Derivative.html#S-10-6-Directional-Derivative-5" class="internal"><span class="codenumber">11.7.2</span> <span class="title">Computing the Directional Derivative</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-6-Directional-Derivative.html#gradient_ss" class="internal"><span class="codenumber">11.7.3</span> <span class="title">The Gradient</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-6-Directional-Derivative.html#S-10-6-Directional-Derivative-7" class="internal"><span class="codenumber">11.7.4</span> <span class="title">The Direction of the Gradient</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-6-Directional-Derivative.html#S-10-6-Directional-Derivative-8" class="internal"><span class="codenumber">11.7.5</span> <span class="title">The Length of the Gradient</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-6-Directional-Derivative.html#S-10-6-Directional-Derivative-9" class="internal"><span class="codenumber">11.7.6</span> <span class="title">Applications</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-6-Directional-Derivative.html#S-10-6-Directional-Derivative-10" class="internal"><span class="codenumber">11.7.7</span> <span class="title">Summary</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-10-6-Directional-Derivative.html#S-10-6-Directional-Derivative-11" class="internal"><span class="codenumber">11.7.8</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-6-Directional-Derivative.html#vec-grad" class="internal"><span class="codenumber">11.7.4</span> <span class="title">Vector Properties of the Gradient</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-6-Directional-Derivative.html#S-10-6-Directional-Derivative-8" class="internal"><span class="codenumber">11.7.5</span> <span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-6-Directional-Derivative.html#S-10-6-Directional-Derivative-9" class="internal"><span class="codenumber">11.7.6</span> <span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-10-6-Directional-Derivative.html#S-10-6-Directional-Derivative-10" class="internal"><span class="codenumber">11.7.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="S-10-7-Optimization.html" class="internal"><span class="codenumber">11.8</span> <span class="title">Optimization</span></a></div>
+<div class="toc-title-box"><a href="S-MV-HD.html" class="internal"><span class="codenumber">11.8</span> <span class="title">Higher Dimensions</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-7-Optimization.html#S-10-7-Optimization-4" class="internal"><span class="codenumber">11.8.1</span> <span class="title">Extrema and Critical Points</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-7-Optimization.html#S-10-7-Optimization-5" class="internal"><span class="codenumber">11.8.2</span> <span class="title">Classifying Critical Points: The Second Derivative Test</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-7-Optimization.html#S-10-7-Optimization-6" class="internal"><span class="codenumber">11.8.3</span> <span class="title">Optimization on a Restricted Domain</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-7-Optimization.html#S-10-7-Optimization-7" class="internal"><span class="codenumber">11.8.4</span> <span class="title">Summary</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-10-7-Optimization.html#S-10-7-Optimization-8" class="internal"><span class="codenumber">11.8.5</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-HD.html#S-MV-HD-4" class="internal"><span class="codenumber">11.8.1</span> <span class="title">Inputs and Outputs with Functions of Three or More Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-HD.html#S-MV-HD-5" class="internal"><span class="codenumber">11.8.2</span> <span class="title">Attempting to Graph Functions of Three or More Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-HD.html#subsec-3plusdiff" class="internal"><span class="codenumber">11.8.3</span> <span class="title">Measuring Change with Functions of Three or More Variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-HD.html#HD-gradient" class="internal"><span class="codenumber">11.8.4</span> <span class="title">Directional Derivatives and Gradients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-MV-HD.html#S-MV-HD-8" class="internal"><span class="codenumber">11.8.5</span> <span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-MV-HD.html#S-MV-HD-9" class="internal"><span class="codenumber">11.8.6</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="S-10-8-Lagrange-Multipliers.html" class="internal"><span class="codenumber">11.9</span> <span class="title">Constrained Optimization: Lagrange Multipliers</span></a></div>
+<div class="toc-title-box"><a href="S-10-7-Optimization.html" class="internal"><span class="codenumber">11.9</span> <span class="title">Optimization</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-8-Lagrange-Multipliers.html#S-10-8-Lagrange-Multipliers-4" class="internal"><span class="codenumber">11.9.1</span> <span class="title">Constrained Optimization and Lagrange Multipliers</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-8-Lagrange-Multipliers.html#S-10-8-Lagrange-Multipliers-5" class="internal"><span class="codenumber">11.9.2</span> <span class="title">Summary</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-10-8-Lagrange-Multipliers.html#S-10-8-Lagrange-Multipliers-6" class="internal"><span class="codenumber">11.9.3</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-7-Optimization.html#S-10-7-Optimization-4" class="internal"><span class="codenumber">11.9.1</span> <span class="title">Extrema and Critical Points</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-7-Optimization.html#S-10-7-Optimization-5" class="internal"><span class="codenumber">11.9.2</span> <span class="title">Classifying Critical Points: The Second Derivative Test</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-7-Optimization.html#S-10-7-Optimization-6" class="internal"><span class="codenumber">11.9.3</span> <span class="title">Optimization on a Restricted Domain</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-7-Optimization.html#S-10-7-Optimization-7" class="internal"><span class="codenumber">11.9.4</span> <span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-10-7-Optimization.html#S-10-7-Optimization-8" class="internal"><span class="codenumber">11.9.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="S-10-8-Lagrange-Multipliers.html" class="internal"><span class="codenumber">11.10</span> <span class="title">Constrained Optimization: Lagrange Multipliers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-8-Lagrange-Multipliers.html#S-10-8-Lagrange-Multipliers-4" class="internal"><span class="codenumber">11.10.1</span> <span class="title">Constrained Optimization and Lagrange Multipliers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-10-8-Lagrange-Multipliers.html#S-10-8-Lagrange-Multipliers-5" class="internal"><span class="codenumber">11.10.2</span> <span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="S-10-8-Lagrange-Multipliers.html#S-10-8-Lagrange-Multipliers-6" class="internal"><span class="codenumber">11.10.3</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -683,7 +698,20 @@ true);
 </li>
 <li class="toc-item toc-backmatter">
 <div class="toc-title-box"><a href="root-1-2-8.html" class="internal"><span class="title">Back Matter</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-index"><div class="toc-title-box"><a href="root-1-2-8-1.html" class="internal"><span class="title">Index</span></a></div></li></ul>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="root-1-2-8-1.html" class="internal"><span class="codenumber">A</span> <span class="title">Supplementary Materials</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="S-app-conics.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Conic Sections</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-app-conics.html#coordtransform" class="internal"><span class="codenumber">A.1.1</span> <span class="title">Coordinate Transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-app-conics.html#S-app-conics-4" class="internal"><span class="codenumber">A.1.2</span> <span class="title">Conic Sections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="S-app-conics.html#S-app-conics-5" class="internal"><span class="codenumber">A.1.3</span> <span class="title">Notes to Instructors and Dependencies</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="root-1-2-8-2.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="S-10-2-First-Order-Partial-Derivatives"><h2 class="heading hide-type">
@@ -691,54 +719,48 @@ true);
 </h2>
 <article class="objectives goal-like" id="S-10-2-First-Order-Partial-Derivatives-2"><h3 class="heading"><span class="type">Motivating Questions</span></h3>
 <ul class="disc" id="S-10-2-First-Order-Partial-Derivatives-2-1">
-<li id="S-10-2-First-Order-Partial-Derivatives-2-1-1"><div class="para" id="S-10-2-First-Order-Partial-Derivatives-2-1-1-1">How are the first-order partial derivatives of a function <span class="process-math">\(f\)</span> of the independent variables <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> defined?</div></li>
-<li id="S-10-2-First-Order-Partial-Derivatives-2-1-2"><div class="para" id="S-10-2-First-Order-Partial-Derivatives-2-1-2-1">Given a function <span class="process-math">\(f\)</span> of the independent variables <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> what do the first-order partial derivatives <span class="process-math">\(\frac{\partial
-f}{\partial x}\)</span> and <span class="process-math">\(\frac{\partial f}{\partial y}\)</span> tell us about <span class="process-math">\(f\text{?}\)</span>
+<li id="S-10-2-First-Order-Partial-Derivatives-2-1-1"><div class="para" id="S-10-2-First-Order-Partial-Derivatives-2-1-1-1">Given a function to two variables, <span class="process-math">\(f(x,y)\text{,}\)</span> how can we measure the rate of change with respect to one of the input variables?</div></li>
+<li id="S-10-2-First-Order-Partial-Derivatives-2-1-2"><div class="para" id="S-10-2-First-Order-Partial-Derivatives-2-1-2-1">Given a function <span class="process-math">\(f\)</span> of the independent variables <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{,}\)</span> what what does the rate of change with respect to either <span class="process-math">\(x\)</span> or <span class="process-math">\(y\)</span> tell us about the graph of <span class="process-math">\(z=f(x,y)\text{?}\)</span>
 </div></li>
-</ul></article><section class="introduction" id="S-10-2-First-Order-Partial-Derivatives-3"><div class="para" id="S-10-2-First-Order-Partial-Derivatives-3-1">The derivative plays a central role in first semester calculus because it provides important information about a function. Thinking graphically, for instance, the derivative at a point tells us the slope of the tangent line to the graph at that point. In addition, the derivative at a point also provides the instantaneous rate of change of the function with respect to changes in the independent variable.</div>
-<div class="para" id="S-10-2-First-Order-Partial-Derivatives-3-2">Now that we are investigating functions of two or more variables, we can still ask how fast the function is changing, though we have to be careful about what we mean. Thinking graphically again, we can try to measure how steep the graph of the function is in a particular direction. Alternatively, we may want to know how fast a function’s output changes in response to a change in one of the inputs. Over the next few sections, we will develop tools for addressing issues such as these. Preview <a href="S-10-2-First-Order-Partial-Derivatives.html#PA_10_2" class="xref" data-knowl="./knowl/xref/PA_10_2.html" data-reveal-label="Reveal" data-close-label="Close" title="Preview Activity 11.3.1">Activity 11.3.1</a> explores some issues with what we will come to call <em class="emphasis">partial derivatives</em>.</div>
+</ul></article><section class="introduction" id="S-10-2-First-Order-Partial-Derivatives-3"><div class="para" id="S-10-2-First-Order-Partial-Derivatives-3-1">The derivative plays a central role in single variable calculus because it provides important information about a function in terms of each of the representations of the function. Thinking graphically, the derivative at a point tells us the slope of the line tangent to the graph at the given point. Numerically, the derivative at a point also provides the instantaneous rate of change of the function with respect to a change in the independent variable. Algebraically, we can calculate the derivative as a function of the same input variable, which is useful as a tool to examine where the function is increasing or decreasing, as well as the concavity of graph.</div>
+<div class="para" id="S-10-2-First-Order-Partial-Derivatives-3-2">In this chapter, we are investigating functions of two or more variables. While we can still ask how fast a function of several variables is changing, we have to be careful about what we mean. Thinking graphically again, we can try to measure how steep the graph of the function is in a particular direction. As we saw in <a href="S-10-1-Limits.html" class="internal" title="Section 11.2: Limits">Section 11.2</a>, the idea of measuring in a particular direction and generalizing is a much deeper idea when you have multiple input variables. Alternatively, we may want to know how quickly a function’s output is changing in response to varying only one of the inputs. Over the next few sections, we will develop tools for addressing these questions and more. In the following preview activity, we will look at how we can apply our single variable calculus knowledge to measure the rate of change when we hold all but one input variable constant. </div>
 <article class="exploration project-like" id="PA_10_2"><h3 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">11.3.1</span><span class="period">.</span>
 </h3>
-<div class="para logical" id="PA_10_2-1-1">
+<div class="introduction" id="PA_10_2-1"><div class="para logical" id="PA_10_2-1-1">
 <div class="para">Suppose we take out an $18,000 car loan at interest rate <span class="process-math">\(r\)</span> and we agree to pay off the loan in <span class="process-math">\(t\)</span> years. The monthly payment, in dollars, is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/F_10_2_preview_1.html ./knowl/xref/F_10_2_preview_1.html">
+<div class="displaymath process-math">
 \begin{equation*}
 M(r,t) =
 \frac{1500r}{1-\left(1+\frac{r}{12}\right)^{-12t}}.
 \end{equation*}
 </div>
-<ol class="lower-alpha ol-marker-2" id="PA_10_2-1-1-4">
-<li id="PA_10_2-1-1-4-1"><div class="para" id="PA_10_2-1-1-4-1-1">What is the monthly payment if the interest rate is <span class="process-math">\(3\%\)</span> so that <span class="process-math">\(r =
-0.03\text{,}\)</span> and we pay the loan off in <span class="process-math">\(t=4\)</span> years?</div></li>
-<li id="PA_10_2-1-1-4-2"><div class="para" id="PA_10_2-1-1-4-2-1">Suppose the interest rate is fixed at <span class="process-math">\(3\%\text{.}\)</span>  Express <span class="process-math">\(M\)</span> as a function <span class="process-math">\(f\)</span> of <span class="process-math">\(t\)</span> alone using <span class="process-math">\(r=0.03\text{.}\)</span> That is, let <span class="process-math">\(f(t) = M(0.03, t)\text{.}\)</span> Sketch the graph of <span class="process-math">\(f\)</span> on the left of <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_preview_1" class="xref" data-knowl="./knowl/xref/F_10_2_preview_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.1">Figure 11.3.1</a>.  Explain the meaning of the function <span class="process-math">\(f\text{.}\)</span> <figure class="figure figure-like" id="F_10_2_preview_1"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_10_2_preview_1.svg" role="img" class="contained"></div>
-<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_10_2_preview_2.svg" role="img" class="contained"></div>
 </div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.1<span class="period">.</span></span><span class="space"> </span>Left: Graphs <span class="process-math">\(f(t)= M(0.03, t)\text{.}\)</span> Right: Graph <span class="process-math">\(g(r) = M(r,4)\text{.}\)</span></figcaption></figure>
-</div></li>
-<li id="PA_10_2-1-1-4-3"><div class="para" id="PA_10_2-1-1-4-3-1">Find the instantaneous rate of change <span class="process-math">\(f'(4)\)</span> and state the units on this quantity.  What information does <span class="process-math">\(f'(4)\)</span> tell us about our car loan?  What information does <span class="process-math">\(f'(4)\)</span> tell us about the graph you sketched in (b)?</div></li>
-<li id="PA_10_2-1-1-4-4"><div class="para" id="PA_10_2-1-1-4-4-1">Express <span class="process-math">\(M\)</span> as a function of <span class="process-math">\(r\)</span> alone, using a fixed time of <span class="process-math">\(t=4\text{.}\)</span>  That is, let <span class="process-math">\(g(r) = M(r, 4)\text{.}\)</span> Sketch the graph of <span class="process-math">\(g\)</span> on the right of <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_preview_1" class="xref" data-knowl="./knowl/xref/F_10_2_preview_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.1">Figure 11.3.1</a>.  Explain the meaning of the function <span class="process-math">\(g\text{.}\)</span>
-</div></li>
-<li id="PA_10_2-1-1-4-5"><div class="para" id="PA_10_2-1-1-4-5-1">Find the instantaneous rate of change <span class="process-math">\(g'(0.03)\)</span> and state the units on this quantity.  What information does <span class="process-math">\(g'(0.03)\)</span> tell us about our car loan?  What information does <span class="process-math">\(g'(0.03)\)</span> tell us about the graph you sketched in (d)?</div></li>
-</ol>
-</div></article></section><section class="subsection" id="S-10-2-First-Order-Partial-Derivatives-4"><h3 class="heading hide-type">
+<article class="task exercise-like" id="PA_10_2-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="PA_10_2-2-1-1">What is the monthly payment if the interest rate is <span class="process-math">\(3\%\)</span> (so <span class="process-math">\(r = 0.03\)</span>) and we pay the loan off in <span class="process-math">\(t=4\)</span> years?</div></article><article class="task exercise-like" id="PA_10_2-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="PA_10_2-3-1-1">Suppose the interest rate is fixed at <span class="process-math">\(3\%\text{.}\)</span>  Express <span class="process-math">\(M\)</span> as a function <span class="process-math">\(f\)</span> of <span class="process-math">\(t\)</span> alone using <span class="process-math">\(r=0.03\text{.}\)</span> That is, let <span class="process-math">\(f(t) = M(0.03, t)\text{.}\)</span> Sketch the graph of <span class="process-math">\(f\)</span> on <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_preview_1" class="xref" data-knowl="./knowl/xref/F_10_2_preview_1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.1">Figure 11.3.1</a>. Write a couple of sentences to explain the meaning of the function <span class="process-math">\(f\text{.}\)</span>
+</div> <figure class="figure figure-like" id="F_10_2_preview_1"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/img-F_10_2_preview_1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.1<span class="period">.</span></span><span class="space"> </span>A plot of <span class="process-math">\(f(t)=M(0.03,t)\)</span></figcaption></figure></article><article class="task exercise-like" id="PA_10_2-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="PA_10_2-4-1-1">Find the instantaneous rate of change <span class="process-math">\(f'(4)\)</span> and state the units on this quantity.  What information does <span class="process-math">\(f'(4)\)</span> tell us about our car loan? What information does <span class="process-math">\(f'(4)\)</span> tell us about the graph you sketched in (b)?</div></article><article class="task exercise-like" id="PA_10_2-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="PA_10_2-5-1-1">Suppose that we want to examine how the monthly payment will change if we plan to take 4 years to pay off the loan. Express <span class="process-math">\(M\)</span> as a function of the interest rate <span class="process-math">\(r\)</span> with a fixed loan term of <span class="process-math">\(t=4\text{.}\)</span> That is, let <span class="process-math">\(g(r) = M(r, 4)\text{.}\)</span> Give the function <span class="process-math">\(g(r)\)</span> and sketch a graph of <span class="process-math">\(g\)</span> on <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_preview_2" class="xref" data-knowl="./knowl/xref/F_10_2_preview_2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.2">Figure 11.3.2</a>. Write a couple of sentences to explain the meaning of the function <span class="process-math">\(g\text{.}\)</span>
+</div> <figure class="figure figure-like" id="F_10_2_preview_2"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/img-F_10_2_preview_2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.2<span class="period">.</span></span><span class="space"> </span>A plot of <span class="process-math">\(f(t)=M(0.03,t)\)</span></figcaption></figure></article><article class="task exercise-like" id="PA_10_2-6"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<div class="para" id="PA_10_2-6-1-1">Find the instantaneous rate of change <span class="process-math">\(g'(0.03)\)</span> and state the units on this quantity.  Write a couple of sentences to explain what information does <span class="process-math">\(g'(0.03)\)</span> tell us about our car loan.  What information does <span class="process-math">\(g'(0.03)\)</span> tell us about the graph you sketched in (d)?</div></article></article></section><section class="subsection" id="S-10-2-First-Order-Partial-Derivatives-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.3.1</span><span class="space"> </span><span class="title">First-Order Partial Derivatives</span>
 </h3>
 <div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-2">
 <div class="para">In <a href="S-MV-Functions.html" class="internal" title="Section 11.1: Functions of Several Variables">Section 11.1</a>, we studied the behavior of a function of two or more variables by considering the <em class="emphasis">traces</em> of the function. Recall that in one example, we considered the function <span class="process-math">\(f\)</span> defined by</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/S-MV-Functions.html ./knowl/xref/F_10_2_trace_y.html ./knowl/xref/F_10_2_trace_y.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/S-MV-Functions.html ./knowl/xref/zfnxy2.html">
 \begin{equation*}
 f(x,y) = \frac{x^2 \sin(2 y)}{32},
 \end{equation*}
 </div>
-<div class="para">which measures the range, or horizontal distance, in feet, traveled by a projectile launched with an initial speed of <span class="process-math">\(x\)</span> feet per second at an angle <span class="process-math">\(y\)</span> radians to the horizontal. The graph of this function is given again on the left in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_trace_y" class="xref" data-knowl="./knowl/xref/F_10_2_trace_y.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.2">Figure 11.3.2</a>. Moreover, if we fix the angle <span class="process-math">\(y = 0.6\text{,}\)</span> we may view the trace <span class="process-math">\(f(x,0.6)\)</span> as a function of <span class="process-math">\(x\)</span> alone, as seen at right in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_trace_y" class="xref" data-knowl="./knowl/xref/F_10_2_trace_y.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.2">Figure 11.3.2</a>.</div>
+<div class="para">which measures the range, or horizontal distance, in feet, traveled by a projectile launched with an initial speed of <span class="process-math">\(x\)</span> feet per second at an angle <span class="process-math">\(y\)</span> radians to the horizontal. The graph of this function is given again in <a href="S-10-2-First-Order-Partial-Derivatives.html#zfnxy2" class="xref" data-knowl="./knowl/xref/zfnxy2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.3">Figure 11.3.3</a> with traces plotted on the surface for <span class="process-math">\(x=150\)</span> and <span class="process-math">\(y=0.6\text{.}\)</span>
 </div>
-<figure class="figure figure-like" id="F_10_2_trace_y"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_10_2_trace_y_a.svg" role="img" class="contained"></div>
-<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_10_2_trace_y.svg" role="img" class="contained"></div>
-</div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.2<span class="period">.</span></span><span class="space"> </span>Left: The trace of <span class="process-math">\(z=\frac{x^2 \sin(2 y)}{32}\)</span> with <span class="process-math">\(y = 0.6\text{.}\)</span></figcaption></figure><div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-4">
+</div>
+<figure class="figure figure-like" id="zfnxy2"><iframe id="zfnxy2-2" width="510" height="510" src="zfnxy2-2-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.3<span class="period">.</span></span><span class="space"> </span>The distance surface given by <span class="process-math">\(z=f(x,y) = \frac{x^2 \sin(2y)}{g}\)</span></figcaption></figure><div class="para" id="S-10-2-First-Order-Partial-Derivatives-4-4">Moreover, if we fix the angle <span class="process-math">\(y = 0.6\text{,}\)</span> we may view the trace <span class="process-math">\(f(x,0.6)\)</span> as a function of <span class="process-math">\(x\)</span> alone, as seen in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_trace_y" class="xref" data-knowl="./knowl/xref/F_10_2_trace_y.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.4">Figure 11.3.4</a>.</div>
+<figure class="figure figure-like" id="F_10_2_trace_y"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/img-F_10_2_trace_y.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.4<span class="period">.</span></span><span class="space"> </span>A plot of <span class="process-math">\(f(x,0.6)\)</span></figcaption></figure><div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-6">
 <div class="para">Since the trace is a one-variable function, we may consider its derivative just as we did in the first semester of calculus. With <span class="process-math">\(y=0.6\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -748,30 +770,28 @@ f(x,0.6) = \frac{\sin(1.2)}{32}x^2,
 <div class="para">and therefore</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{d}{dx}[f(x,0.6)] = \frac{\sin(1.2)}{16}x.
-\end{equation*}
-</div>
-</div>
-<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-5">
-<div class="para">When <span class="process-math">\(x=150\text{,}\)</span> this gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/F_10_2_trace_y.html">
-\begin{equation*}
-\frac{d}{dx}[f(x,0.6)]|_{x=150} = \frac{\sin(1.2)}{16}150 \approx
-8.74~\mbox{feet per feet per second} ,
-\end{equation*}
-</div>
-<div class="para">which gives the slope of the tangent line shown on the right of <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_trace_y" class="xref" data-knowl="./knowl/xref/F_10_2_trace_y.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.2">Figure 11.3.2</a>. Thinking of this derivative as an instantaneous rate of change implies that if we increase the initial speed of the projectile by one foot per second, we expect the horizontal distance traveled to increase by approximately 8.74 feet if we hold the launch angle constant at <span class="process-math">\(0.6\)</span> radians.</div>
-</div>
-<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-6">
-<div class="para">By holding <span class="process-math">\(y\)</span> fixed and differentiating with respect to <span class="process-math">\(x\text{,}\)</span> we obtain the first-order <em class="emphasis">partial derivative of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(x\)</span></em>. Denoting this partial derivative as <span class="process-math">\(f_x\text{,}\)</span> we have seen that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-f_x(150, 0.6) = \frac{d}{dx}f(x,0.6)|_{x=150} = \lim_{h\to
-0}\frac{f(150+h, 0.6) - f(150, 0.6)}{h}.
+\frac{d}{dx}\Bigl[ f(x,0.6) \Bigr] = \frac{\sin(1.2)}{16}x.
 \end{equation*}
 </div>
 </div>
 <div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-7">
+<div class="para">When <span class="process-math">\(x=150\text{,}\)</span> this gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/F_10_2_trace_y.html">
+\begin{equation*}
+\frac{d}{dx}\Bigr[ f(x,0.6) \Bigr]\restrict{x=150} = \frac{\sin(1.2)}{16}150 \approx 8.74~\mbox{feet per feet per second} ,
+\end{equation*}
+</div>
+<div class="para">which gives the slope of the tangent line shown in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_trace_y" class="xref" data-knowl="./knowl/xref/F_10_2_trace_y.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.4">Figure 11.3.4</a>. Thinking of this derivative as an instantaneous rate of change implies that if we increase the initial speed of the projectile by one foot per second, we expect the horizontal distance traveled to increase by approximately 8.74 feet if we hold the launch angle constant at <span class="process-math">\(0.6\)</span> radians. Note here that the sign of the derivative of the trace is positive, which is why there would be an increase to the range of the projectile if we increased the initial speed (above <span class="process-math">\(150 ft/s\)</span>) while holding the launch angle constant at <span class="process-math">\(0.6\)</span> radians.</div>
+</div>
+<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-8">
+<div class="para">By holding <span class="process-math">\(y\)</span> fixed and differentiating with respect to <span class="process-math">\(x\text{,}\)</span> we obtain the first-order <em class="emphasis">partial derivative of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(x\)</span></em>. Denoting this partial derivative as <span class="process-math">\(f_x\text{,}\)</span> we have seen that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_x(150, 0.6) = \frac{d}{dx} \Bigl[ f(x,0.6) \Bigr] \restrict{x=150} = \lim_{h\to 0}\frac{f(150+h, 0.6) - f(150, 0.6)}{h}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-9">
 <div class="para">More generally, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -780,12 +800,9 @@ f_x(a,b) = \lim_{h\to0} \frac{f(a+h, b)-f(a,b)}{h},
 </div>
 <div class="para">provided this limit exists.</div>
 </div>
-<div class="para" id="S-10-2-First-Order-Partial-Derivatives-4-8">In the same way, we may obtain a trace by setting, say, <span class="process-math">\(x=150\)</span> as shown in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_trace_x" class="xref" data-knowl="./knowl/xref/F_10_2_trace_x.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.3">Figure 11.3.3</a>.</div>
-<figure class="figure figure-like" id="F_10_2_trace_x"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_10_2_trace_x_a.svg" role="img" class="contained"></div>
-<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_10_2_trace_x.svg" role="img" class="contained"></div>
-</div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.3<span class="period">.</span></span><span class="space"> </span>The trace of <span class="process-math">\(z=\frac{x^2 \sin(2 y)}{32}\)</span> with <span class="process-math">\(x = 150\text{.}\)</span></figcaption></figure><div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-10">
+<div class="para" id="S-10-2-First-Order-Partial-Derivatives-4-10">In the same way, we may obtain a trace by setting, say, <span class="process-math">\(x=150\)</span> as shown in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_trace_x" class="xref" data-knowl="./knowl/xref/F_10_2_trace_x.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.5">Figure 11.3.5</a>.</div>
+<figure class="figure figure-like" id="F_10_2_trace_x"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/img-F_10_2_trace_x.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.5<span class="period">.</span></span><span class="space"> </span>A plot of <span class="process-math">\(f(x,0.6)\)</span></figcaption></figure><div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-12">
 <div class="para">This gives</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -799,64 +816,58 @@ f(150, y) = \frac{150^2}{32}\sin(2y),
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-11">
+<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-13">
 <div class="para">If we evaluate this quantity at <span class="process-math">\(y=0.6\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{d}{dy}[f(150,y)]|_{y=0.6} = \frac{150^2}{16}\cos(1.2) \approx 509.5
-~\mbox{feet per radian} .
+\frac{d}{dy}\Bigl[ f(150,y) \Bigr]\restrict{y=0.6} = \frac{150^2}{16}\cos(1.2) \approx 509.5
+~\mbox{feet per radian} 
 \end{equation*}
 </div>
 </div>
-<div class="para" id="S-10-2-First-Order-Partial-Derivatives-4-12">Once again, the derivative gives the slope of the tangent line shown on the right in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_trace_x" class="xref" data-knowl="./knowl/xref/F_10_2_trace_x.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.3">Figure 11.3.3</a>. Thinking of the derivative as an instantaneous rate of change, we expect that the range of the projectile increases by 509.5 feet for every radian we increase the launch angle <span class="process-math">\(y\)</span> if we keep the initial speed of the projectile constant at 150 feet per second.</div>
-<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-13">
+<div class="para" id="S-10-2-First-Order-Partial-Derivatives-4-14">Once again, the derivative gives the slope of the tangent line shown on the right in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_trace_x" class="xref" data-knowl="./knowl/xref/F_10_2_trace_x.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.5">Figure 11.3.5</a>. Thinking of the derivative as an instantaneous rate of change, we expect that the range of the projectile increases by 509.5 feet for every radian we increase the launch angle <span class="process-math">\(y\)</span> if we keep the initial speed of the projectile constant at 150 feet per second.</div>
+<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-15">
 <div class="para">By holding <span class="process-math">\(x\)</span> fixed and differentiating with respect to <span class="process-math">\(y\text{,}\)</span> we obtain the first-order <em class="emphasis">partial derivative of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(y\)</span></em>. As before, we denote this partial derivative as <span class="process-math">\(f_y\)</span> and write</div>
 <div class="displaymath process-math">
 \begin{equation*}
-f_y(150, 0.6) = \frac{d}{dy}f(150,y)|_{y=0.6} = \lim_{h\to
-0}\frac{f(150, 0.6+h) - f(150, 0.6)}{h}.
+f_y(150, 0.6) = \frac{d}{dy} \Bigl[ f(150,y) \Bigr]\restrict{y=0.6} = \lim_{h \to 0}\frac{f(150, 0.6+h) - f(150, 0.6)}{h}.
 \end{equation*}
 </div>
 </div>
-<div class="para" id="S-10-2-First-Order-Partial-Derivatives-4-14">As with the partial derivative with respect to <span class="process-math">\(x\text{,}\)</span> we may express this quantity more generally at an arbitrary point <span class="process-math">\((a,b)\text{.}\)</span> To recap, we have now arrived at the formal definition of the first-order partial derivatives of a function of two variables.</div>
-<article class="definition definition-like" id="S-10-2-First-Order-Partial-Derivatives-4-15"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.3.4</span><span class="period">.</span>
+<div class="para" id="S-10-2-First-Order-Partial-Derivatives-4-16">As with the partial derivative with respect to <span class="process-math">\(x\text{,}\)</span> we may express this quantity more generally at an arbitrary point <span class="process-math">\((a,b)\text{.}\)</span> To recap, we have now arrived at the formal definition of the first-order partial derivatives of a function of two variables.</div>
+<article class="definition definition-like" id="S-10-2-First-Order-Partial-Derivatives-4-17"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.3.6</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-15-1-1">
-<div class="para">The first-order <dfn class="terminology">partial derivatives of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span></dfn> at a point <span class="process-math">\((a,b)\)</span> are, respectively,</div>
-<div class="displaymath process-math" id="S-10-2-First-Order-Partial-Derivatives-4-15-1-1-4">
+<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-17-1-1">
+<div class="para">The first-order <dfn class="terminology">partial derivatives of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span></dfn> at a point <span class="process-math">\((a,b)\)</span> are (provided the limits exist), respectively,</div>
+<div class="displaymath process-math" id="S-10-2-First-Order-Partial-Derivatives-4-17-1-1-4">
 \begin{align*}
-f_x(a,b) \amp  = \lim_{h \to 0} \frac{f(a+h,b)-f(a,b)}{h}, \ \mbox{and}\\
-f_y(a,b) \amp  = \lim_{h \to 0} \frac{f(a,b+h)-f(a,b)}{h},
+f_x(a,b) \amp = \frac{\partial f}{\partial x} \amp = \lim_{h \to 0} \frac{f(a+h,b)-f(a,b)}{h}\\
+f_y(a,b) \amp = \frac{\partial f}{\partial y} \amp = \lim_{h \to 0} \frac{f(a,b+h)-f(a,b)}{h}
 \end{align*}
 </div>
-<div class="para">provided the limits exist.</div>
 </div></article><article class="activity project-like" id="A_10_2_10"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">11.3.2</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="A_10_2_10-1-1">
-<div class="para">Consider the function <span class="process-math">\(f\)</span> defined by</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/F_10_2_activity_trace.html ./knowl/xref/F_10_2_activity_trace.html">
+<div class="introduction" id="A_10_2_10-1"><div class="para logical" id="A_10_2_10-1-1">
+<div class="para">In this activity, we will be examining the function <span class="process-math">\(f\)</span> defined by</div>
+<div class="displaymath process-math">
 \begin{equation*}
-f(x,y) = \frac{xy^2}{x+1}
+f(x,y) = \frac{x y^2}{x+1}
 \end{equation*}
 </div>
-<div class="para">at the point <span class="process-math">\((1,2)\text{.}\)</span>
-</div>
-<ol class="lower-alpha ol-marker-2" id="A_10_2_10-1-1-4">
-<li id="A_10_2_10-1-1-4-1"><div class="para" id="A_10_2_10-1-1-4-1-1">Write the trace <span class="process-math">\(f(x,2)\)</span> at the fixed value <span class="process-math">\(y=2\text{.}\)</span> On the left side of <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_activity_trace" class="xref" data-knowl="./knowl/xref/F_10_2_activity_trace.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.5">Figure 11.3.5</a>, draw the graph of the trace with <span class="process-math">\(y=2\)</span> around the point where <span class="process-math">\(x=1\text{,}\)</span> indicating the scale and labels on the axes.  Also, sketch the tangent line at the point <span class="process-math">\(x=1\text{.}\)</span> <figure class="figure figure-like" id="F_10_2_activity_trace"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_10_2_empty.svg" role="img" class="contained"></div>
-<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_10_2_empty.svg" role="img" class="contained"></div>
+<div class="para">at the point <span class="process-math">\((1,2)\text{.}\)</span> Specifically, we will be looking how the traces of this function will be related to the values of the partial derivatives.</div>
 </div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.5<span class="period">.</span></span><span class="space"> </span>Traces of <span class="process-math">\(f(x,y) = \frac{xy^2}{x+1}\text{.}\)</span></figcaption></figure>
-</div></li>
-<li id="A_10_2_10-1-1-4-2"><div class="para" id="A_10_2_10-1-1-4-2-1">Find the partial derivative <span class="process-math">\(f_x(1,2)\)</span> and relate its value to the sketch you just made.</div></li>
-<li id="A_10_2_10-1-1-4-3"><div class="para" id="A_10_2_10-1-1-4-3-1">Write the trace <span class="process-math">\(f(1,y)\)</span> at the fixed value <span class="process-math">\(x=1\text{.}\)</span> On the right side of <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_activity_trace" class="xref" data-knowl="./knowl/xref/F_10_2_activity_trace.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.5">Figure 11.3.5</a>, draw the graph of the trace with <span class="process-math">\(x=1\)</span> indicating the scale and labels on the axes.  Also, sketch the tangent line at the point <span class="process-math">\(y=2\text{.}\)</span>
-</div></li>
-<li id="A_10_2_10-1-1-4-4"><div class="para" id="A_10_2_10-1-1-4-4-1">Find the partial derivative <span class="process-math">\(f_y(1,2)\)</span> and relate its value to the sketch you just made.</div></li>
-</ol>
-</div></article><div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-17">
-<div class="para">As these examples show, each partial derivative at a point arises as the derivative of a one-variable function defined by fixing one of the coordinates. In addition, we may consider each partial derivative as defining a new function of the point <span class="process-math">\((x,y)\text{,}\)</span> just as the derivative <span class="process-math">\(f'(x)\)</span> defines a new function of <span class="process-math">\(x\)</span> in single-variable calculus. Due to the connection between one-variable derivatives and partial derivatives, we will often use Leibniz-style notation to denote partial derivatives by writing</div>
+<article class="task exercise-like" id="A_10_2_10-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="A_10_2_10-2-1-1">Write the trace <span class="process-math">\(f(x,2)\)</span> at the fixed value <span class="process-math">\(y=2\text{.}\)</span> On <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_activity_trace1" class="xref" data-knowl="./knowl/xref/F_10_2_activity_trace1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.7">Figure 11.3.7</a>, draw the graph of the trace with <span class="process-math">\(y=2\)</span> around the point where <span class="process-math">\(x=1\text{,}\)</span> indicating the scale and labels on the axes. Also, sketch the tangent line at the point <span class="process-math">\(x=1\text{.}\)</span>
+</div> <figure class="figure figure-like" id="F_10_2_activity_trace1"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/img-F_10_2_trace1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.7<span class="period">.</span></span><span class="space"> </span>A plot of <span class="process-math">\(f(x,2)\)</span></figcaption></figure></article><article class="task exercise-like" id="A_10_2_10-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="A_10_2_10-3-1-1">Find the partial derivative <span class="process-math">\(f_x(1,2)\)</span> and relate its value to the sketch you just made.</div></article><article class="task exercise-like" id="A_10_2_10-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="A_10_2_10-4-1-1">Write the trace <span class="process-math">\(f(1,y)\)</span> at the fixed value <span class="process-math">\(x=1\text{.}\)</span> On the right side of <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_activity_trace2" class="xref" data-knowl="./knowl/xref/F_10_2_activity_trace2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.8">Figure 11.3.8</a>, draw the graph of the trace with <span class="process-math">\(x=1\)</span> indicating the scale and labels on the axes. Also, sketch the tangent line at the point <span class="process-math">\(y=2\text{.}\)</span>
+</div> <figure class="figure figure-like" id="F_10_2_activity_trace2"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/img-F_10_2_trace2.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.8<span class="period">.</span></span><span class="space"> </span>A plot of <span class="process-math">\(f(x,2)\)</span></figcaption></figure></article><article class="task exercise-like" id="A_10_2_10-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="A_10_2_10-5-1-1">Find the partial derivative <span class="process-math">\(f_y(1,2)\)</span> and relate its value to the sketch you just made.</div></article></article><div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-19">
+<div class="para">As these examples show, each partial derivative at a point arises as the derivative of a one-variable function defined by fixing all other coordinates. In addition, we may consider each partial derivative as defining a new function of the point <span class="process-math">\((x,y)\text{,}\)</span> just as the derivative <span class="process-math">\(f'(x)\)</span> defines a new function of <span class="process-math">\(x\)</span> in single-variable calculus. Due to the connection between one-variable derivatives and partial derivatives, we will often use Leibniz-style notation to denote partial derivatives by writing</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \frac{\partial f}{\partial x}(a, b) = f_x(a,b),
@@ -867,245 +878,184 @@ f(x,y) = \frac{xy^2}{x+1}
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-18">
+<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-20">
 <div class="para">To calculate the partial derivative <span class="process-math">\(f_x\text{,}\)</span> we hold <span class="process-math">\(y\)</span> fixed and thus we treat <span class="process-math">\(y\)</span> as a constant. In Leibniz notation, observe that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial }{\partial x} (x) = 1
-\ 
-\mbox{and} 
-\ 
-\frac{\partial }{\partial x}(y) = 0.
+\frac{\partial }{\partial x} (x) = 1  \  \mbox{and}  \  \frac{\partial }{\partial x}(y) = 0.
 \end{equation*}
 </div>
 </div>
-<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-19">
-<div class="para">To see the contrast between how we calculate single variable derivatives and partial derivatives, and the difference between the notations <span class="process-math">\(\frac{d}{dx}[ \ ]\)</span> and <span class="process-math">\(\frac{\partial}{\partial x}[ \ ]\text{,}\)</span> observe that</div>
-<div class="displaymath process-math" id="S-10-2-First-Order-Partial-Derivatives-4-19-3">
-\begin{align*}
-\amp  \frac{d}{dx}[3x^2 - 2x + 3] = 3\frac{d}{dx}[x^2] - 2\frac{d}{dx}[x]
-+ \frac{d}{dx}[3] = 3\cdot 2x - 2,\\
-\mbox{and} \  \amp  \frac{\partial}{\partial x}[x^2y - xy + 2y] =
-y\frac{\partial}{\partial x}[x^2] -
-y\frac{\partial}{\partial x}[x]
-+ \frac{\partial}{\partial x}[2y] = y\cdot 2x - y
-\end{align*}
+<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-21">
+<div class="para">To see the contrast between how we calculate single variable derivatives and partial derivatives, and the difference between the notations <span class="process-math">\(\frac{d}{dx}\bigl[ \ \bigr]\)</span> and <span class="process-math">\(\frac{\partial}{\partial x}\bigl[ \ \bigr]\text{,}\)</span> observe that</div>
+<div class="displaymath process-math" id="S-10-2-First-Order-Partial-Derivatives-4-21-3">
+\begin{gather*}
+\frac{d}{dx}\Bigl[ 3x^2 - 2x + 3 \Bigr] = 3\frac{d}{dx} \Bigl[ x^2 \Bigr] - 2\frac{d}{dx} \Bigl[ x \Bigr] + \frac{d}{dx} \Bigl[ 3 \Bigr] = 3\cdot 2x - 2 \\
+\frac{\partial}{\partial x}\Bigl[ x^2y - xy + 2y \Bigr] = y\frac{\partial}{\partial x} \Bigl[ x^2 \Bigr] - y\frac{\partial}{\partial x} \Bigl[ x \Bigr] + \frac{\partial}{\partial x} \Bigl[ 2y \Bigr] = y\cdot 2x - y
+\end{gather*}
 </div>
 </div>
-<div class="para" id="S-10-2-First-Order-Partial-Derivatives-4-20">Thus, computing partial derivatives is straightforward: we use the standard rules of single variable calculus, but do so while holding one (or more) of the variables constant.</div>
+<div class="para logical" id="S-10-2-First-Order-Partial-Derivatives-4-22">
+<div class="para">We will highlight a few terms of the above calculations for emphasis. Note that when we are interested in taking the partial derivative with respect to <span class="process-math">\(x\)</span> of a term like <span class="process-math">\(x^2y\)</span> we can factor out the <span class="process-math">\(y\)</span> like it was a coefficient because <span class="process-math">\(y\)</span> is constant with respect to changes in <span class="process-math">\(x\text{.}\)</span> Algebraically, this looks like</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial}{\partial x} \Bigl[ x^2y \Bigr] = y\frac{\partial}{\partial x} \Bigl[ x^2 \Bigr] 
+\end{equation*}
+</div>
+<div class="para">Similarly, when we are taking the partial derivative with respect to <span class="process-math">\(x\)</span> of a term like <span class="process-math">\(2y\text{,}\)</span> the entire term is constant (with respect to <span class="process-math">\(x\)</span>), so</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial}{\partial x} \Bigl[ 2y \Bigr] = 0 
+\end{equation*}
+</div>
+</div>
+<div class="para" id="S-10-2-First-Order-Partial-Derivatives-4-23">Thus, computing partial derivatives is straightforward: we use the standard algebraic rules from single variable calculus, but do so while holding all but one of the variables constant.</div>
 <article class="activity project-like" id="A_10_2_2"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">11.3.3</span><span class="period">.</span>
 </h4>
-<ol class="lower-alpha ol-marker-2" id="A_10_2_2-1-1">
-<li id="A_10_2_2-1-1-1"><div class="para" id="A_10_2_2-1-1-1-1">If <span class="process-math">\(f(x,y) = 3x^3 - 2x^2y^5\text{,}\)</span> find the partial derivatives <span class="process-math">\(f_x\)</span> and <span class="process-math">\(f_y\text{.}\)</span>
-</div></li>
-<li id="A_10_2_2-1-1-2"><div class="para" id="A_10_2_2-1-1-2-1">If <span class="process-math">\(f(x,y) = \displaystyle\frac{xy^2}{x+1}\text{,}\)</span> find the partial derivatives <span class="process-math">\(f_x\)</span> and <span class="process-math">\(f_y\text{.}\)</span>
-</div></li>
-<li id="A_10_2_2-1-1-3"><div class="para" id="A_10_2_2-1-1-3-1">If <span class="process-math">\(g(r,s) = rs\cos(r)\text{,}\)</span> find the partial derivatives <span class="process-math">\(g_r\)</span> and <span class="process-math">\(g_s\text{.}\)</span>
-</div></li>
-<li id="A_10_2_2-1-1-4"><div class="para" id="A_10_2_2-1-1-4-1">Assuming <span class="process-math">\(f(w,x,y) = (6w+1)\cos(3x^2+4xy^3+y)\text{,}\)</span> find the partial derivatives <span class="process-math">\(f_w\text{,}\)</span> <span class="process-math">\(f_x\text{,}\)</span> and <span class="process-math">\(f_y\text{.}\)</span>
-</div></li>
-<li id="A_10_2_2-1-1-5"><div class="para" id="A_10_2_2-1-1-5-1">Find all possible first-order partial derivatives of <span class="process-math">\(q(x,t,z) =
-\displaystyle \frac{x2^tz^3}{1+x^2}.\)</span>
-</div></li>
-</ol></article></section><section class="subsection" id="S-10-2-First-Order-Partial-Derivatives-5"><h3 class="heading hide-type">
+<article class="task exercise-like" id="A_10_2_2-1"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="A_10_2_2-1-1-1">If <span class="process-math">\(f(x,y) = 3x^3 - 2x^2y^5\text{,}\)</span> find the partial derivatives <span class="process-math">\(f_x\)</span> and <span class="process-math">\(f_y\text{.}\)</span>
+</div></article><article class="task exercise-like" id="A_10_2_2-2"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="A_10_2_2-2-1-1">If <span class="process-math">\(f(x,y) = \displaystyle\frac{xy^2}{x+1}\text{,}\)</span> find the partial derivatives <span class="process-math">\(f_x\)</span> and <span class="process-math">\(f_y\text{.}\)</span>
+</div></article><article class="task exercise-like" id="A_10_2_2-3"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="A_10_2_2-3-1-1">If <span class="process-math">\(g(r,s) = rs\cos(r)\text{,}\)</span> find the partial derivatives <span class="process-math">\(g_r\)</span> and <span class="process-math">\(g_s\text{.}\)</span>
+</div></article><article class="task exercise-like" id="A_10_2_2-4"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="A_10_2_2-4-1-1">Assuming <span class="process-math">\(f(w,x,y) = (6w+1)\cos(3x^2+4xy^3+y)\text{,}\)</span> find the partial derivatives <span class="process-math">\(f_w\text{,}\)</span> <span class="process-math">\(f_x\text{,}\)</span> and <span class="process-math">\(f_y\text{.}\)</span>
+</div></article><article class="task exercise-like" id="A_10_2_2-5"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para" id="A_10_2_2-5-1-1">Find all possible first-order partial derivatives of <span class="process-math">\(q(x,t,z) = \displaystyle \frac{x2^tz^3}{1+x^2}.\)</span>
+</div></article></article></section><section class="subsection" id="S-10-2-First-Order-Partial-Derivatives-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.3.2</span><span class="space"> </span><span class="title">Interpretations of First-Order Partial Derivatives</span>
 </h3>
-<div class="para" id="S-10-2-First-Order-Partial-Derivatives-5-2">Recall that the derivative of a single variable function has a geometric interpretation as the slope of the line tangent to the graph at a given point. Similarly, we have seen that the partial derivatives measure the slope of a line tangent to a trace of a function of two variables as shown in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_trace_tangent" class="xref" data-knowl="./knowl/xref/F_10_2_trace_tangent.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.6">Figure 11.3.6</a>.</div>
-<figure class="figure figure-like" id="F_10_2_trace_tangent"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_10_2_trace_tangent_y.svg" role="img" class="contained"></div>
-<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_10_2_trace_tangent_x.svg" role="img" class="contained"></div>
-</div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.6<span class="period">.</span></span><span class="space"> </span>Tangent lines to two traces of the distance function.</figcaption></figure><div class="para" id="S-10-2-First-Order-Partial-Derivatives-5-4">Now we consider the first-order partial derivatives in context. Recall that the difference quotient <span class="process-math">\(\frac{f(a+h)-f(a)}{h}\)</span> for a function <span class="process-math">\(f\)</span> of a single variable <span class="process-math">\(x\)</span> at a point where <span class="process-math">\(x=a\)</span> tells us the average rate of change of <span class="process-math">\(f\)</span> over the interval <span class="process-math">\([a,a+h]\text{,}\)</span> while the derivative <span class="process-math">\(f'(a)\)</span> tells us the instantaneous rate of change of <span class="process-math">\(f\)</span> at <span class="process-math">\(x=a\text{.}\)</span> We can use these same concepts to explain the meanings of the partial derivatives in context.</div>
+<div class="para" id="S-10-2-First-Order-Partial-Derivatives-5-2">Recall that the derivative of a single variable function has a geometric interpretation as the slope of the line tangent to the graph at a given point. Similarly, we have seen that the partial derivatives measure the slope of a line tangent to a trace of a function of two variables as shown in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_trace_tangent" class="xref" data-knowl="./knowl/xref/F_10_2_trace_tangent.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.9">Figure 11.3.9</a>.</div>
+<figure class="figure figure-like" id="F_10_2_trace_tangent"><iframe id="F_10_2_trace_tangent-2" width="510" height="587" src="F_10_2_trace_tangent-2-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.9<span class="period">.</span></span><span class="space"> </span>The surface given by <span class="process-math">\(z=f(x,y) = \frac{x^2 \sin(2y)}{g}\)</span> with traces <span class="process-math">\(y=0.6\)</span> (in red) and <span class="process-math">\(x=150\)</span> (in blue)</figcaption></figure><div class="para" id="S-10-2-First-Order-Partial-Derivatives-5-4">Now we consider the first-order partial derivatives in context. Recall that the difference quotient <span class="process-math">\(\frac{f(a+h)-f(a)}{h}\)</span> for a function <span class="process-math">\(f\)</span> of a single variable <span class="process-math">\(x\)</span> at a point where <span class="process-math">\(x=a\)</span> tells us the average rate of change of <span class="process-math">\(f\)</span> over the interval <span class="process-math">\([a,a+h]\text{,}\)</span> while the derivative <span class="process-math">\(f'(a)\)</span> tells us the instantaneous rate of change of <span class="process-math">\(f\)</span> at <span class="process-math">\(x=a\text{.}\)</span> We can use these same concepts to explain the meanings of the partial derivatives in context.</div>
 <article class="activity project-like" id="A_10_2_11"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">11.3.4</span><span class="period">.</span>
 </h4>
-<div class="para logical" id="A_10_2_11-1-1">
+<div class="introduction" id="A_10_2_11-1"><div class="para logical" id="A_10_2_11-1-1">
 <div class="para">The speed of sound <span class="process-math">\(C\)</span> traveling through ocean water is a function of temperature, salinity and depth. It may be modeled by the function</div>
 <div class="displaymath process-math">
 \begin{equation*}
 C=1449.2+4.6T-0.055T^2+0.00029T^3+(1.34-0.01T)(S-35)+0.016D.
 \end{equation*}
 </div>
-</div> <div class="para logical" id="A_10_2_11-1-2">
 <div class="para">Here <span class="process-math">\(C\)</span> is the speed of sound in meters/second, <span class="process-math">\(T\)</span> is the temperature in degrees Celsius, <span class="process-math">\(S\)</span> is the salinity in grams/liter of water, and <span class="process-math">\(D\)</span> is the depth below the ocean surface in meters.</div>
-<ol class="lower-alpha ol-marker-2" id="A_10_2_11-1-2-5">
-<li id="A_10_2_11-1-2-5-1"><div class="para" id="A_10_2_11-1-2-5-1-1">State the units in which each of the partial derivatives, <span class="process-math">\(C_T\text{,}\)</span> <span class="process-math">\(C_S\)</span> and <span class="process-math">\(C_D\text{,}\)</span> are expressed and explain the physical meaning of each.</div></li>
-<li id="A_10_2_11-1-2-5-2"><div class="para" id="A_10_2_11-1-2-5-2-1">Find the partial derivatives <span class="process-math">\(C_T\text{,}\)</span> <span class="process-math">\(C_S\)</span> and <span class="process-math">\(C_D\text{.}\)</span>
-</div></li>
-<li id="A_10_2_11-1-2-5-3"><div class="para" id="A_10_2_11-1-2-5-3-1">Evaluate each of the three partial derivatives at the point where <span class="process-math">\(T=10\text{,}\)</span> <span class="process-math">\(S=35\)</span> and <span class="process-math">\(D=100\text{.}\)</span>  What does the sign of each partial derivatives tell us about the behavior of the function <span class="process-math">\(C\)</span> at the point <span class="process-math">\((10,35, 100)\text{?}\)</span>
-</div></li>
-</ol>
-</div></article></section><section class="subsection" id="S-10-2-First-Order-Partial-Derivatives-6"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.3.3</span><span class="space"> </span><span class="title">Using tables and contours to estimate partial derivatives</span>
+</div></div>
+<article class="task exercise-like" id="A_10_2_11-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="A_10_2_11-2-1-1">State the units in which each of the partial derivatives, <span class="process-math">\(C_T\text{,}\)</span> <span class="process-math">\(C_S\)</span> and <span class="process-math">\(C_D\text{,}\)</span> are expressed and explain the physical meaning of each.</div></article><article class="task exercise-like" id="A_10_2_11-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="A_10_2_11-3-1-1">Find the partial derivatives <span class="process-math">\(C_T\text{,}\)</span> <span class="process-math">\(C_S\)</span> and <span class="process-math">\(C_D\text{.}\)</span>
+</div></article><article class="task exercise-like" id="A_10_2_11-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="A_10_2_11-4-1-1">Evaluate each of the three partial derivatives at the point where <span class="process-math">\(T=10\text{,}\)</span> <span class="process-math">\(S=35\)</span> and <span class="process-math">\(D=100\text{.}\)</span> What does the sign of each partial derivatives tell us about the behavior of the function <span class="process-math">\(C\)</span> at the point <span class="process-math">\((10,35, 100)\text{?}\)</span>
+</div></article></article></section><section class="subsection" id="S-10-2-First-Order-Partial-Derivatives-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.3.3</span><span class="space"> </span><span class="title">Using Tables and Contour Plots to Estimate Partial Derivatives</span>
 </h3>
-<div class="para" id="S-10-2-First-Order-Partial-Derivatives-6-2">Remember that functions of two variables are often represented as either a table of data or a contour plot. In single variable calculus, we saw how we can use the difference quotient to approximate derivatives if, instead of an algebraic formula, we only know the value of the function at a few points. The same idea applies to partial derivatives.</div>
+<div class="para" id="S-10-2-First-Order-Partial-Derivatives-6-2">Remember that functions of two variables can be represented numerical or graphically as either a table of data or a contour plot. In single variable calculus, we saw how we can use the difference quotient to approximate derivatives if, instead of an algebraic formula, we only know the value of the function at a few points. The same idea applies to partial derivatives. The next two activities are focused on the meaning of partial derivatives using a table as a numerical representation of a multivariable function (<a href="S-10-2-First-Order-Partial-Derivatives.html#A_10_2_11" class="xref" data-knowl="./knowl/xref/A_10_2_11.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 11.3.4">Activity 11.3.4</a>) and using a contour plot as a graphical representation of a multivariable function (<a href="S-10-2-First-Order-Partial-Derivatives.html#A_10_2_12" class="xref" data-knowl="./knowl/xref/A_10_2_12.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 11.3.5">Activity 11.3.5</a>).</div>
 <article class="activity project-like" id="A_10_2_12"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">11.3.5</span><span class="period">.</span>
 </h4>
-<div class="para" id="A_10_2_12-1-1">The wind chill, as frequently reported, is a measure of how cold it feels outside when the wind is blowing. In <a href="S-10-2-First-Order-Partial-Derivatives.html#T_10_2_wind_chill" class="xref" data-knowl="./knowl/xref/T_10_2_wind_chill.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.3.7: Wind chill as a function of wind speed and temperature.">Table 11.3.7</a>, the wind chill <span class="process-math">\(w\text{,}\)</span> measured in degrees Fahrenheit, is a function of the wind speed <span class="process-math">\(v\text{,}\)</span> measured in miles per hour, and the ambient air temperature <span class="process-math">\(T\text{,}\)</span> also measured in degrees Fahrenheit. We thus view <span class="process-math">\(w\)</span> as being of the form <span class="process-math">\(w = w(v, T)\text{.}\)</span>
-</div> <figure class="table table-like" id="T_10_2_wind_chill"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">11.3.7<span class="period">.</span></span><span class="space"> </span>Wind chill as a function of wind speed and temperature.</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<div class="introduction" id="A_10_2_12-1">
+<div class="para" id="A_10_2_12-1-1">The wind chill, as frequently reported, is a measure of how cold it feels outside when the wind is blowing. In <a href="S-10-2-First-Order-Partial-Derivatives.html#T_10_2_wind_chill" class="xref" data-knowl="./knowl/xref/T_10_2_wind_chill.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.3.10: Wind chill as a function of wind speed and temperature">Table 11.3.10</a>, the wind chill <span class="process-math">\(w\text{,}\)</span> measured in degrees Fahrenheit, is a function of the wind speed <span class="process-math">\(v\text{,}\)</span> measured in miles per hour, and the ambient air temperature <span class="process-math">\(T\text{,}\)</span> also measured in degrees Fahrenheit. We thus view <span class="process-math">\(w\)</span> as being of the form <span class="process-math">\(w = w(v, T)\text{.}\)</span>
+</div>
+<figure class="table table-like" id="T_10_2_wind_chill"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">11.3.10<span class="period">.</span></span><span class="space"> </span>Wind chill as a function of wind speed and temperature</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(v \backslash T\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(-30\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(-25\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(-20\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(-15\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(-10\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(-5\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(0\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(5\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(10\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(15\)</span></td>
-<td class="c m b2 r0 l0 t1 lines"><span class="process-math">\(20\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(v \backslash T\)</span></td>
+<td class="c m b2 r0 l0 t0 lines"><span class="process-math">\(-20\)</span></td>
+<td class="c m b2 r0 l0 t0 lines"><span class="process-math">\(-15\)</span></td>
+<td class="c m b2 r0 l0 t0 lines"><span class="process-math">\(-10\)</span></td>
+<td class="c m b2 r0 l0 t0 lines"><span class="process-math">\(-5\)</span></td>
+<td class="c m b2 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b2 r0 l0 t0 lines"><span class="process-math">\(5\)</span></td>
+<td class="c m b2 r0 l0 t0 lines"><span class="process-math">\(10\)</span></td>
 </tr>
 <tr>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(5\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-46\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-40\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-34\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-28\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-22\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-16\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-11\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-5\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(7\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(13\)</span></td>
+<td class="c m b0 r2 l0 t0 lines"><span class="process-math">\(10\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-41\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-35\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-28\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-22\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-16\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-10\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-4\)</span></td>
 </tr>
 <tr>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(10\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-53\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-47\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-41\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-35\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-28\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-22\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-16\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-10\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-4\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(9\)</span></td>
+<td class="c m b0 r2 l0 t0 lines"><span class="process-math">\(15\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-45\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-39\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-32\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-26\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-19\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-13\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-7\)</span></td>
 </tr>
 <tr>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(15\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-58\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-51\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-45\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-39\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-32\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-26\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-19\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-13\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-7\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(6\)</span></td>
+<td class="c m b0 r2 l0 t0 lines"><span class="process-math">\(20\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-48\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-42\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-35\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-29\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-22\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-15\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-9\)</span></td>
 </tr>
 <tr>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(20\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-61\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-55\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-48\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-42\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-35\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-29\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-22\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-15\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-9\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-2\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(4\)</span></td>
+<td class="c m b0 r2 l0 t0 lines"><span class="process-math">\(25\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-51\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-44\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-37\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-31\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-24\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-17\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-11\)</span></td>
 </tr>
 <tr>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(25\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-64\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-58\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-51\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-44\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-37\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-31\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-24\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-17\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-11\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-4\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(3\)</span></td>
+<td class="c m b0 r2 l0 t0 lines"><span class="process-math">\(30\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-53\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-46\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-39\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-33\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-26\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-19\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-12\)</span></td>
 </tr>
 <tr>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(30\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-67\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-60\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-53\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-46\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-39\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-33\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-26\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-19\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-12\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-5\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b0 r2 l0 t0 lines"><span class="process-math">\(35\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-55\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-48\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-41\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-34\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-27\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-21\)</span></td>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(-14\)</span></td>
 </tr>
-<tr>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(35\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-69\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-62\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-55\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-48\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-41\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-34\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-27\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-21\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-14\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-7\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(0\)</span></td>
-</tr>
-<tr>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(40\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-71\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-64\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-57\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-50\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-43\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-36\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-29\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-22\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-15\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-8\)</span></td>
-<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-1\)</span></td>
-</tr>
-</table></div></figure> <ol class="lower-alpha ol-marker-2" id="A_10_2_12-1-3">
-<li id="A_10_2_12-1-3-1"><div class="para" id="A_10_2_12-1-3-1-1">Estimate the partial derivative <span class="process-math">\(w_v(20,-10)\text{.}\)</span>  What are the units on this quantity and what does it mean? (Recall that we can estimate a partial derivative of a single variable function <span class="process-math">\(f\)</span> using the symmetric difference quotient <span class="process-math">\(\frac{f(x+h)-f(x-h)}{2h}\)</span> for small values of <span class="process-math">\(h\text{.}\)</span> A partial derivative is a derivative of an appropriate trace.)</div></li>
-<li id="A_10_2_12-1-3-2"><div class="para" id="A_10_2_12-1-3-2-1">Estimate the partial derivative <span class="process-math">\(w_T(20,-10)\text{.}\)</span>  What are the units on this quantity and what does it mean?</div></li>
-<li id="A_10_2_12-1-3-3"><div class="para" id="A_10_2_12-1-3-3-1">Use your results to estimate the wind chill <span class="process-math">\(w(18, -10)\text{.}\)</span> (Recall from single variable calculus that for a function <span class="process-math">\(f\)</span> of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(f(x+h) \approx f(x) + hf'(x)\text{.}\)</span>)</div></li>
-<li id="A_10_2_12-1-3-4"><div class="para" id="A_10_2_12-1-3-4-1">Use your results to estimate the wind chill <span class="process-math">\(w(20, -12)\text{.}\)</span>
-</div></li>
-<li id="A_10_2_12-1-3-5"><div class="para" id="A_10_2_12-1-3-5-1">Consider how you might combine your previous results to estimate the wind chill <span class="process-math">\(w(18, -12)\text{.}\)</span> Explain your process.</div></li>
-</ol></article><article class="activity project-like" id="A_10_2_13"><h4 class="heading">
+</table></div></figure>
+</div>
+<article class="task exercise-like" id="A_10_2_12-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="A_10_2_12-2-1-1">Do you think <span class="process-math">\(w_v\text{,}\)</span> the partial derivative with respect to wind speed, is positive, negative, or zero at <span class="process-math">\((v,T)=(20,-10)\text{?}\)</span> Write a couple of sentences to justify why you think the partial derivative is +/-/0 and remember to pay attention to which variable will be changing and which variable will be constant.</div></article><article class="task exercise-like" id="A_10_2_12-5"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="A_10_2_12-5-1-1">Do you think <span class="process-math">\(w_T\text{,}\)</span> the partial derivative with respect to wind speed, is positive, negative, or zero at <span class="process-math">\((v,T)=(20,-10)\text{?}\)</span> Write a couple of sentences to justify why you think the partial derivative is +/-/0 and remember to pay attention to which variable will be changing and which variable will be constant.</div></article><article class="task exercise-like" id="A_10_2_12-6"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="A_10_2_12-6-1-1">Estimate the partial derivative <span class="process-math">\(w_v(20,-10)\text{.}\)</span>  What are the units on this quantity and what does it mean? (Recall that we can estimate a partial derivative of a single variable function <span class="process-math">\(f\)</span> using the symmetric difference quotient <span class="process-math">\(\frac{f(x+h)-f(x-h)}{2h}\)</span> for small values of <span class="process-math">\(h\text{.}\)</span> A partial derivative is a derivative of an appropriate trace.)</div></article><article class="task exercise-like" id="A_10_2_12-7"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="A_10_2_12-7-1-1">Estimate the partial derivative <span class="process-math">\(w_T(20,-10)\text{.}\)</span>  What are the units on this quantity and what does it mean?</div></article><article class="task exercise-like" id="A_10_2_12-8"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para" id="A_10_2_12-8-1-1">Use your results to estimate the wind chill <span class="process-math">\(w(18, -10)\text{.}\)</span> (Recall from single variable calculus that for a function <span class="process-math">\(f\)</span> of <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(f(x+h) \approx f(x) + hf'(x)\text{.}\)</span>)</div></article><article class="task exercise-like" id="A_10_2_12-9"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="para" id="A_10_2_12-9-1-1">Use your results to estimate the wind chill <span class="process-math">\(w(20, -12)\text{.}\)</span>
+</div></article><article class="task exercise-like" id="A_10_2_12-10"><h5 class="heading"><span class="codenumber">(g)</span></h5>
+<div class="para" id="A_10_2_12-10-1-1">Consider how you might combine your previous results to estimate the wind chill <span class="process-math">\(w(18, -12)\text{.}\)</span> Explain your process.</div></article></article><article class="activity project-like" id="A_10_2_13"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">11.3.6</span><span class="period">.</span>
 </h4>
-<div class="para" id="A_10_2_13-1-1">Shown below in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_activity_contour" class="xref" data-knowl="./knowl/xref/F_10_2_activity_contour.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.8">Figure 11.3.8</a> is a contour plot of a function <span class="process-math">\(f\text{.}\)</span> The values of the function on a few of the contours are indicated to the left of the figure.</div> <figure class="figure figure-like" id="F_10_2_activity_contour"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/fig_10_2_activity_contours.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.8<span class="period">.</span></span><span class="space"> </span>A contour plot of <span class="process-math">\(f\text{.}\)</span></figcaption></figure> <ol class="lower-alpha ol-marker-2" id="A_10_2_13-1-3">
-<li id="A_10_2_13-1-3-1"><div class="para" id="A_10_2_13-1-3-1-1">Estimate the partial derivative <span class="process-math">\(f_x(-2,-1)\text{.}\)</span> (Hint: How can you find values of <span class="process-math">\(f\)</span> that are of the form <span class="process-math">\(f(-2+h)\)</span> and <span class="process-math">\(f(-2-h)\)</span> so that you can use a symmetric difference quotient?)</div></li>
-<li id="A_10_2_13-1-3-2"><div class="para" id="A_10_2_13-1-3-2-1">Estimate the partial derivative <span class="process-math">\(f_y(-2,-1)\text{.}\)</span>
-</div></li>
-<li id="A_10_2_13-1-3-3"><div class="para" id="A_10_2_13-1-3-3-1">Estimate the partial derivatives <span class="process-math">\(f_x(-1,2)\)</span> and <span class="process-math">\(f_y(-1,2)\text{.}\)</span>
-</div></li>
-<li id="A_10_2_13-1-3-4"><div class="para" id="A_10_2_13-1-3-4-1">Locate, if possible, one point <span class="process-math">\((x,y)\)</span> where <span class="process-math">\(f_x(x,y)=
-0\text{.}\)</span>
-</div></li>
-<li id="A_10_2_13-1-3-5"><div class="para" id="A_10_2_13-1-3-5-1">Locate, if possible, one point <span class="process-math">\((x,y)\)</span> where <span class="process-math">\(f_x(x,y)\lt 0\text{.}\)</span>
-</div></li>
-<li id="A_10_2_13-1-3-6"><div class="para" id="A_10_2_13-1-3-6-1">Locate, if possible, one point <span class="process-math">\((x,y)\)</span> where <span class="process-math">\(f_y(x,y)&gt;0\text{.}\)</span>
-</div></li>
-<li id="A_10_2_13-1-3-7"><div class="para" id="A_10_2_13-1-3-7-1">Suppose you have a different function <span class="process-math">\(g\text{,}\)</span> and you know that <span class="process-math">\(g(2,2) =
-4\text{,}\)</span> <span class="process-math">\(g_x(2,2) &gt; 0\text{,}\)</span> and <span class="process-math">\(g_y(2,2) &gt; 0\text{.}\)</span>  Using this information, sketch a possibility for the contour <span class="process-math">\(g(x,y)=4\)</span> passing through <span class="process-math">\((2,2)\)</span> on the left side of <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_activity_grad" class="xref" data-knowl="./knowl/xref/F_10_2_activity_grad.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.9">Figure 11.3.9</a>.  Then include possible contours <span class="process-math">\(g(x,y) = 3\)</span> and <span class="process-math">\(g(x,y) = 5\text{.}\)</span> <figure class="figure figure-like" id="F_10_2_activity_grad"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_10_2_activity_grad.svg" role="img" class="contained"></div>
-<div class="sbspanel top" style="width:50%;"><img src="external/images/fig_10_2_activity_grad.svg" role="img" class="contained"></div>
-</div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.9<span class="period">.</span></span><span class="space"> </span>Plots for contours of <span class="process-math">\(g\)</span> and <span class="process-math">\(h\text{.}\)</span></figcaption></figure>
-</div></li>
-<li id="A_10_2_13-1-3-8"><div class="para" id="A_10_2_13-1-3-8-1">Suppose you have yet another function <span class="process-math">\(h\text{,}\)</span> and you know that <span class="process-math">\(h(2,2) =
-4\text{,}\)</span> <span class="process-math">\(h_x(2,2) \lt  0\text{,}\)</span> and <span class="process-math">\(h_y(2,2) &gt; 0\text{.}\)</span>  Using this information, sketch a possible contour <span class="process-math">\(h(x,y)=4\)</span> passing through <span class="process-math">\((2,2)\)</span> on the right side of <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_activity_grad" class="xref" data-knowl="./knowl/xref/F_10_2_activity_grad.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.9">Figure 11.3.9</a>. Then include possible contours <span class="process-math">\(h(x,y) = 3\)</span> and <span class="process-math">\(h(x,y) = 5\text{.}\)</span>
-</div></li>
-</ol></article></section><section class="subsection" id="S-10-2-First-Order-Partial-Derivatives-7"><h3 class="heading hide-type">
+<div class="introduction" id="A_10_2_13-1">
+<div class="para" id="A_10_2_13-1-1">Shown below in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_activity_contour" class="xref" data-knowl="./knowl/xref/F_10_2_activity_contour.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.11">Figure 11.3.11</a> is a contour plot of a function <span class="process-math">\(f\text{.}\)</span> The values of the function on a few of the contours are indicated to the left of the figure.</div>
+<figure class="figure figure-like" id="F_10_2_activity_contour"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/sageplot/img-F_10_2_activity_contour.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.11<span class="period">.</span></span><span class="space"> </span>A plot of <span class="process-math">\(f(t)=M(0.03,t)\)</span></figcaption></figure>
+</div>
+<article class="task exercise-like" id="A_10_2_13-2"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="A_10_2_13-2-1-1">Estimate the partial derivative <span class="process-math">\(f_x(-2,-1)\text{.}\)</span> (Hint: How can you find values of <span class="process-math">\(f\)</span> that are of the form <span class="process-math">\(f(-2+h)\)</span> and <span class="process-math">\(f(-2-h)\)</span> so that you can use a symmetric difference quotient?)</div></article><article class="task exercise-like" id="A_10_2_13-3"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="A_10_2_13-3-1-1">Estimate the partial derivative <span class="process-math">\(f_y(-2,-1)\text{.}\)</span>
+</div></article><article class="task exercise-like" id="A_10_2_13-4"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="A_10_2_13-4-1-1">Estimate the partial derivatives <span class="process-math">\(f_x(-1,2)\)</span> and <span class="process-math">\(f_y(-1,2)\text{.}\)</span>
+</div></article><article class="task exercise-like" id="A_10_2_13-5"><h5 class="heading"><span class="codenumber">(d)</span></h5>
+<div class="para" id="A_10_2_13-5-1-1">Locate, if possible, one point <span class="process-math">\((x,y)\)</span> where <span class="process-math">\(f_x(x,y)= 0\text{.}\)</span>
+</div></article><article class="task exercise-like" id="A_10_2_13-6"><h5 class="heading"><span class="codenumber">(e)</span></h5>
+<div class="para" id="A_10_2_13-6-1-1">Locate, if possible, one point <span class="process-math">\((x,y)\)</span> where <span class="process-math">\(f_x(x,y)\lt 0\text{.}\)</span>
+</div></article><article class="task exercise-like" id="A_10_2_13-7"><h5 class="heading"><span class="codenumber">(f)</span></h5>
+<div class="para" id="A_10_2_13-7-1-1">Locate, if possible, one point <span class="process-math">\((x,y)\)</span> where <span class="process-math">\(f_y(x,y)&gt;0\text{.}\)</span>
+</div></article></article></section><section class="subsection" id="S-10-2-First-Order-Partial-Derivatives-7"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">11.3.4</span><span class="space"> </span><span class="title">Summary</span>
 </h3>
 <ul class="disc" id="S-10-2-First-Order-Partial-Derivatives-7-2">
@@ -1114,16 +1064,14 @@ C=1449.2+4.6T-0.055T^2+0.00029T^3+(1.34-0.01T)(S-35)+0.016D.
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial f}{\partial x}(x,y) = f_x(x,y) = \lim_{h \to 0}
-\frac{f(x+h,y) - f(x,y)}{h},
+\frac{\partial f}{\partial x}(x,y) = f_x(x,y) = \lim_{h \to 0} \frac{f(x+h,y) - f(x,y)}{h}
 \end{equation*}
 </div>
-<div class="para">and the partial derivative of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(y\text{,}\)</span>
+<div class="para">and the partial derivative of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(y\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\frac{\partial f}{\partial y}(x,y) = f_y(x,y) = \lim_{h \to 0}
-\frac{f(x,y+h) - f(x,y)}{h},
+\frac{\partial f}{\partial y}(x,y) = f_y(x,y) = \lim_{h \to 0} \frac{f(x,y+h) - f(x,y)}{h},
 \end{equation*}
 </div>
 <div class="para">where each partial derivative exists only at those points <span class="process-math">\((x,y)\)</span> for which the limit exists.</div>
@@ -1411,7 +1359,7 @@ f(x,y) = \int_y^x \cos(7 t^2 + 5 t  - 7)\, dt
 </div> <div class="para" id="extracted-webwork-121-1-1-16"><em class="emphasis">(Be sure you can interpret this partial derivative in practical terms.)</em></div>
 </div>
 </div></article><article class="exercise exercise-like" id="Ez_10_2_1"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
-<div class="para" id="Ez_10_2_1-1-1">The Heat Index, <span class="process-math">\(I\text{,}\)</span> (measured in <em class="emphasis">apparent degrees F</em>) is a function of the actual temperature <span class="process-math">\(T\)</span> outside (in degrees F) and the relative humidity <span class="process-math">\(H\)</span> (measured as a percentage). A portion of the table which gives values for this function, <span class="process-math">\(I=I(T,H)\text{,}\)</span> is reproduced in <a href="S-10-2-First-Order-Partial-Derivatives.html#T_10_2_wind_chill_partial" class="xref" data-knowl="./knowl/xref/T_10_2_wind_chill_partial.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.3.10: A portion of the heat index data.">Table 11.3.10</a>.</div> <figure class="table table-like" id="T_10_2_wind_chill_partial"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">11.3.10<span class="period">.</span></span><span class="space"> </span>A portion of the heat index data.</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="Ez_10_2_1-1-1">The Heat Index, <span class="process-math">\(I\text{,}\)</span> (measured in <em class="emphasis">apparent degrees F</em>) is a function of the actual temperature <span class="process-math">\(T\)</span> outside (in degrees F) and the relative humidity <span class="process-math">\(H\)</span> (measured as a percentage). A portion of the table which gives values for this function, <span class="process-math">\(I=I(T,H)\text{,}\)</span> is reproduced in <a href="S-10-2-First-Order-Partial-Derivatives.html#T_10_2_wind_chill_partial" class="xref" data-knowl="./knowl/xref/T_10_2_wind_chill_partial.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 11.3.12: A portion of the heat index data.">Table 11.3.12</a>.</div> <figure class="table table-like" id="T_10_2_wind_chill_partial"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">11.3.12<span class="period">.</span></span><span class="space"> </span>A portion of the heat index data.</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="c m b2 r0 l0 t1 lines">
 <em class="emphasis">T</em> <span class="process-math">\(\downarrow \backslash\)</span> <em class="emphasis">H</em> <span class="process-math">\(\rightarrow\)</span>
@@ -1481,8 +1429,8 @@ f_y(a,b) = \lim_{h \to 0} \frac{f(a,b+h) - f(a,b)}{h}
 </div>
 <div class="para">tells us about kinetic energy.</div>
 </div></li>
-<li id="Ez_10_2_1_5-1-1-7-5"><div class="para" id="Ez_10_2_1_5-1-1-7-5-1">Often we are given certain graphical information about a function instead of a rule. We can use that information to approximate partial derivatives. For example, suppose that we are given a contour plot of the kinetic energy function (as in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_pd_contour" class="xref" data-knowl="./knowl/xref/F_10_2_pd_contour.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.11">Figure 11.3.11</a>) instead of a formula. Use this contour plot to approximate <span class="process-math">\(f_x(4,5)\)</span> and <span class="process-math">\(f_y(4,5)\)</span> as best you can. Compare to your calculations from earlier parts of this exercise. <figure class="figure figure-like" id="F_10_2_pd_contour"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/fig_10_2_ke_contour.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.11<span class="period">.</span></span><span class="space"> </span>The graph of <span class="process-math">\(f(x,y) = \frac{1}{2}xy^2\text{.}\)</span></figcaption></figure>
+<li id="Ez_10_2_1_5-1-1-7-5"><div class="para" id="Ez_10_2_1_5-1-1-7-5-1">Often we are given certain graphical information about a function instead of a rule. We can use that information to approximate partial derivatives. For example, suppose that we are given a contour plot of the kinetic energy function (as in <a href="S-10-2-First-Order-Partial-Derivatives.html#F_10_2_pd_contour" class="xref" data-knowl="./knowl/xref/F_10_2_pd_contour.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 11.3.13">Figure 11.3.13</a>) instead of a formula. Use this contour plot to approximate <span class="process-math">\(f_x(4,5)\)</span> and <span class="process-math">\(f_y(4,5)\)</span> as best you can. Compare to your calculations from earlier parts of this exercise. <figure class="figure figure-like" id="F_10_2_pd_contour"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/fig_10_2_ke_contour.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">11.3.13<span class="period">.</span></span><span class="space"> </span>The graph of <span class="process-math">\(f(x,y) = \frac{1}{2}xy^2\text{.}\)</span></figcaption></figure>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="Ez_10_2_2"><h4 class="heading"><span class="codenumber">15<span class="period">.</span></span></h4>
@@ -1496,7 +1444,7 @@ C(x,y) = \frac{25xy+25}{(x-1)^2 + (y-1)^2 + 1}.
 </div> <div class="para logical" id="Ez_10_2_2-1-2">
 <div class="para">Assume that temperature is measured in degrees Celsius and that <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> are each measured in inches. (<em class="emphasis">Note:</em> At no point in the following questions should you expand the denominator of <span class="process-math">\(C(x,y)\text{.}\)</span>)</div>
 <ol class="lower-alpha ol-marker-2" id="Ez_10_2_2-1-2-5">
-<li id="Ez_10_2_2-1-2-5-1"><div class="para" id="Ez_10_2_2-1-2-5-1-1">Determine <span class="process-math">\(\frac{\partial C}{\partial x}|_{(x,y)}\)</span> and <span class="process-math">\(\frac{\partial C}{\partial y}|_{(x,y)}\text{.}\)</span>
+<li id="Ez_10_2_2-1-2-5-1"><div class="para" id="Ez_10_2_2-1-2-5-1-1">Determine <span class="process-math">\(\frac{\partial C}{\partial x}\restrict{(x,y)}\)</span> and <span class="process-math">\(\frac{\partial C}{\partial y}\restrict{(x,y)}\text{.}\)</span>
 </div></li>
 <li id="Ez_10_2_2-1-2-5-2"><div class="para" id="Ez_10_2_2-1-2-5-2-1">If an ant is on the metal plate, standing at the point <span class="process-math">\((2,3)\text{,}\)</span> and starts walking in the direction parallel to the positive <span class="process-math">\(y\)</span> axis, at what rate will the temperature the ant is experiencing change?  Explain, and include appropriate units.</div></li>
 <li id="Ez_10_2_2-1-2-5-3"><div class="para" id="Ez_10_2_2-1-2-5-3-1">If an ant is walking along the line <span class="process-math">\(y = 3\)</span> in the positive <span class="process-math">\(x\)</span> direction, at what instantaneous rate will the temperature the ant is experiencing change when the ant passes the point <span class="process-math">\((1,3)\text{?}\)</span>
@@ -1528,7 +1476,7 @@ C(x,y) = \frac{25xy+25}{(x-1)^2 + (y-1)^2 + 1}.
 <li id="Ez_10_2_4-1-1-5-3"><div class="para" id="Ez_10_2_4-1-1-5-3-1">Complete the problem by determining the specific function <span class="process-math">\(f\)</span> that satisfies the given conditions.</div></li>
 </ol>
 </div></article></section></section></div>
-<div class="ptx-content-footer">
+<div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="S-10-1-Limits.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="S-10-3-Second-Order-Partial-Derivatives.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
