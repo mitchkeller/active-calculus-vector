@@ -322,7 +322,7 @@
       </p>
     </assemblage>
     <p>
-      The first idea above will be very important tool in finding an equation for the plane tangent to an implicit surface. Let <m>P_1</m> be a point on <m>S_1</m>, an implicit surface given by <m>F(P)=k</m>. The tools of <xref ref="S-MV-Linearization"/> will not work because our surface is not of the form <m>z=f(x,y)</m>. Because <m>\nabla F(P_1)</m> is perpendicular to the surface <m>S_1</m>, <m>\nabla F(P_1)</m> will be a normal vector for the tangent plane at <m>P_1</m>. This leads to the following key idea.
+      The first idea above will be very important tool in finding an equation for the plane tangent to an implicit surface. Let <m>P_1</m> be a point on <m>S_1</m>, an implicit surface given by <m>F(P)=k</m>. The tools of <xref ref="S-10-4-Linearization"/> will not work because our surface is not of the form <m>z=f(x,y)</m>. Because <m>\nabla F(P_1)</m> is perpendicular to the surface <m>S_1</m>, <m>\nabla F(P_1)</m> will be a normal vector for the tangent plane at <m>P_1</m>. This leads to the following key idea.
     </p>
     <proposition xml:id="implicittanplane">
       <statement>
@@ -376,11 +376,21 @@
       <p>
         We can verify <xref ref="implicittanplane"/> by looking at tangent points for a few points on these spheres as level surfaces. Let <m>S_1</m> be the level surface with value 1, <m>f(x,y,z)=1=x^2+y^2+z^2</m>. Note that <m>P_0=(0,-1,0)</m> is on <m>S_1</m> and <m>\nabla f(P_0)=\langle 0,-2,0\rangle</m>. So by <xref ref="implicittanplane"/>, the tangent plane to <m>S_1</m> at <m>P_0</m> will be given by 
         <me> (0)(x-0)+(-2)(y+1)+(0)(z-0)=0 \rightarrow y=-1</me>
+        This point, normal vector, and tangent plane is shown in red for <xref ref="spheretanplanes"/>.
       </p>
+      <figure xml:id="spheretanplanes">
+        <caption> </caption>
+          <interactive title="interactive-spheretanplanes" platform="sage" width="100%" aspect="1:1">
+            <slate surface="sage">
+              <xi:include href="interacts/sphtanplanes.txt" parse="text" />
+            </slate>
+          </interactive>
+      </figure>
       <p>
         If we look at another point on <m>S_1</m> like <m>P_1=(\frac{\sqrt{2}}{2},0,-\frac{\sqrt{2}}{2}) </m>, we can apply the same argument. Note that <m> \nabla f(P_1)=\langle \sqrt{2},0,-\sqrt{2}\rangle</m>, so our tangent plane will be given by
         <me> (\sqrt{2})\left(x-\frac{\sqrt{2}}{2}\right)+(0)(y-0)+(-\sqrt{2})\left(z-\frac{\sqrt{2}}{2}\right)=0 \rightarrow x-z=\sqrt{2}</me>
-        </p>
+        This point, normal vector, and tangent plane is shown in green for <xref ref="spheretanplanes"/>.
+      </p>
       </example>
       <example>
         <p>
@@ -426,12 +436,34 @@
               show(plot3,viewpoint=[[-0.2556,-0.5906,-0.7655],143.35],camera_position=[22.801,21.411,8.8665])
           </slate>
         </interactive>
+        <p>
+          We can use the same type of argument as the previous example to create tangent planes to the implicit surfaces of the form <m>g(x,y,z)=k</m>. Remember that <m>\nabla g=\langle 2x,2y,-2z\rangle </m>. We will describe a tangent plane at each of the following points on each of the following surfaces:
+          <ul>
+            <li>The tangent plane to the surface with <m>k=-1</m> at the point <m>P_1=(-1,1,\sqrt{3})</m> will be given by </li>
+          </ul>
+        </p>
       </figure>
       <p>
         It may be a bit weird to think that all three of these surfaces are a level surface of <m>g</m> where the algebraic form of <m>\nabla g</m> is not changing. If you select the checkbox in <xref ref="gradhypcone"/> to plot gradient vectors at points along your level surface, you will see that the gradient vectors will be perpendicular to the level surface. You can use the slider to change the value of the level surface, which will also change the shape of the level surface when you go from positive to negative or viceversa. 
       </p>
       <p>
         Returning to the function <m>g(x,y,z)=x^2+y^2-z^2</m>, we can ask <q>For an input point <m>(a,b,c)</m>, in what direction will the output of <m>g</m> be increasing at the greatest rate?</q> We can group the output of <m>g</m> into two terms <m>x^2+y^2</m> which increases as you move away from the <m>z</m>-axis and <m>-z^2</m> which increases as you get closer to the <m>xy</m>-plane (<m>z=0</m>). An input point of <m>(a,b,c)</m> for the gradient vector gives <m>\nabla g (a,b,c)=\langle 2a,2b,-2c\rangle</m>. Notice that for any point in our space, this gradient vector will point away from the <m>z</m>-axis and toward the <m>xy</m>-plane, as demonstrated by the red vectors in <xref ref="gradhypcone"/>. Note that our arguments are rotationally symmetric about the <m>z</m>-axis. 
+      </p>
+      <p>
+        We can verify <xref ref="implicittanplane"/> by looking at tangent points for a point on these level surfaces. Let <m>S_k</m> be the level surface with value k, <m>g(x,y,z)=1=x^2+y^2-z^2</m> where <m>P_k=(-1,1,\sqrt{2-k})</m> is on <m>S_k</m> and <m>\nabla g(P_k)=\langle -2,2,-2\sqrt{2-k}\rangle</m>. So by <xref ref="implicittanplane"/>, the tangent plane to <m>S_k</m> at <m>P_k</m> will be given by 
+        <me> (-2)(x+1)+(2)(y-1)+(-2\sqrt{2-k})(z-\sqrt{2-k})=0</me>
+        This point, the gradient vector (drawn at half length), and tangent plane are shown in red for <xref ref="hypconetanplanes"/>.
+      </p>
+      <figure xml:id="hypconetanplanes">
+        <caption> </caption>
+          <interactive title="interactive-hypconetanplanes" platform="sage" width="100%" aspect="1:1">
+            <slate surface="sage">
+              <xi:include href="interacts/hypconetanplanes.txt" parse="text" />
+            </slate>
+          </interactive>
+      </figure>
+      <p>
+        You can use the slider to change the value of <m>k</m> using the slider at the top of <xref ref="hypconetanplanes"/> to see how even though the shape of the level surface changes, the gradient vector at <m>P_k</m> will still be orthogonal to the surface and will serve as a normal vector for our tangent plane.
       </p>
       </example>
       <activity>
