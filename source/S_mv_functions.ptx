@@ -579,7 +579,7 @@
     </figure> -->
     <figure xml:id="zfnxy">
       <caption>The distance surface given by <m>z=f(x,y) = \frac{x^2 \sin(2y)}{g}</m></caption>
-      <interactive title="interactive-zfnxy" platform="sage" width="85%" aspect="1:1">
+      <interactive title="interactive-zfnxy" platform="sage" width="100%" aspect="1:1">
         <slate surface="sage">
           var('x,y')
           g(x,y)=x^2*sin(2*y)/32
@@ -596,7 +596,7 @@
     </p>
     <figure xml:id="yfnxz">
       <caption>The surface given by <m>y=g(x,z) = \frac{x^2}{5}+z^2</m></caption>
-      <interactive title="interactive-yfnxz" platform="sage" width="85%" aspect="1:1">
+      <interactive title="interactive-yfnxz" platform="sage" width="100%" aspect="1:1">
         <slate surface="sage">
           var('x,y,z,r,t')
           g(x,z)=x^2/5+z^2
@@ -664,7 +664,7 @@
     </p>
     <figure xml:id="trace1">
       <caption>The surface given by <m>z=f(x,y) = \frac{x^2 \sin(2y)}{g}</m> with traces <m>y=0.6</m> (in red) and <m>x=150</m> (in blue)</caption>
-      <interactive title="interactive-trace1" platform="sage" width="85%" aspect="1:1">
+      <interactive title="interactive-trace1" platform="sage" width="100%" aspect="1:1">
         <slate surface="sage">
           scale=100
           plot11=line([(0,0,0),(scale,0,0)],color="black",thickness=3)+line([(0,0,0),(0,scale/100,0)],color="black",thickness=3)+line([(0,0,0),(0,0,scale*20)],color="black",thickness=3)
@@ -757,7 +757,7 @@
           </p>
           <figure xml:id="tracey1">
             <caption>A bounding box for the region with <m>-1 \leq x,y,z \leq 1</m></caption>
-            <interactive title="interactive-tracey1" platform="sage" width="85%" aspect="1:1">
+            <interactive title="interactive-tracey1" platform="sage" width="100%" aspect="1:1">
               <slate surface="sage">
                 var('t,s')
                 plot15=parametric_plot3d((1,s,t),(s,-1,1),(t,-1,1),color="gray",opacity=0.2,mesh=True,plot_points=5,aspect_ratio=[1,1,0.5])
@@ -795,7 +795,7 @@
     </p>
     <figure xml:id="traceonoff">
       <caption>A plot of the distance surface with or without traces for perspective</caption>
-      <interactive title="interactive-traceonoff" platform="sage" width="85%" aspect="1:1">
+      <interactive title="interactive-traceonoff" platform="sage" width="100%" aspect="1:1">
         <slate surface="sage">
           var('x,y')
           g(x,y)=x^2*sin(2*y)/32
@@ -1106,7 +1106,7 @@
     </p>
     <figure xml:id="contour3">
       <caption>A plot of the contours and traces of <m>f(x,y) = \frac{x^2 \sin(2y)}{32}</m> at the appropriate values</caption>
-      <interactive title="interactive-contour3" platform="sage" width="85%" aspect="1:1">
+      <interactive title="interactive-contour3" platform="sage" width="100%" aspect="1:1">
         <slate surface="sage">
           var('x,y,z,t,s')
           g(x,y)=x^2*sin(2*y)/32
