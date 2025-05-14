@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- **********************************************************************-->
-<!-- Copyright 2013-2018                                                   -->
-<!-- Steven Schlicker                                                      -->
+<!-- Copyright 2013-2025                                                   -->
+<!-- Nicholas Long, Mitchel Keller, Steven Schlicker                       -->
 <!--                                                                       -->
 <!-- This file is part of Active Calculus Multivariable.                   -->
 <!--                                                                       -->
@@ -13,15 +13,15 @@
 <!-- derivatives for profit.  All trademarks are the registered marks of   -->
 <!-- their respective owners.                                              -->
 <!-- **********************************************************************-->
-<section xml:id="S-11-1-Double-Integrals-Rectangles">
+<section xml:id="S-11-1-Double-Integrals-Rectangles" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Double Riemann Sums and Double Integrals over Rectangles</title>
       <objectives>
         <ul>
-          <li>
+          <!-- <li>
             <p>
               What is a double Riemann sum?
             </p>
-          </li>
+          </li> -->
 
           <li>
             <p>
@@ -31,7 +31,7 @@
 
           <li>
             <p>
-              What are two things the double integral of a function can tell us?
+              What are three things the double integral of a function can tell us?
             </p>
           </li>
         </ul>
@@ -40,10 +40,86 @@
     <introduction>
 
     <p>
-      In single-variable calculus, recall that we approximated the area under the graph of a positive function <m>f</m> on an interval <m>[a,b]</m> by adding areas of rectangles whose heights are determined by the curve. The general process involved subdividing the interval <m>[a,b]</m> into smaller subintervals, constructing rectangles on each of these smaller intervals to approximate the region under the curve on that subinterval, then summing the areas of these rectangles to approximate the area under the curve. We will extend this process in this section to its three-dimensional analogs, double Riemann sums and double integrals over rectangles.
+      In single-variable calculus, recall that we used the classic calculus approach to define the definite integral as the area under a graph. Specifically, we approximated the area under the graph of a positive function <m>f</m> on an interval <m>[a,b]</m> by adding areas of rectangles whose heights are determined by the curve. We then broke the interval <m>[a,b]</m> into smaller subintervals, constructing rectangles on each of these smaller intervals to approximate the region under the curve on that subinterval, then summing the areas of these rectangles to approximate the area under the curve. We defined the definite integral of <m>f</m> using the limit of this Riemann sum as the size of all of the subintervals goes to zero.
     </p>
-
+    <p>
+      In the Preview Activity, we will review a few ideas from integrals in single variable calculus. The rest of this section will then be used to extend the ideas of integration and its interpretations to functions of two variables over a rectangular region. 
+      <!-- We will extend this process in this section to its three-dimensional analogs, double Riemann sums and double integrals over rectangles. -->
+    </p>
     <exploration xml:id="PA_11_1">
+      <task>
+        <statement>
+          <p>
+            A plot of <m>f</m> for inputs in the interval <m>[0,2]</m> is shown in <xref ref="PA-Int1"/>. Break the interval <m>[0,2]</m> into four equally sized subintervals and draw the rectangles that would be used to construct a Riemann sum to approximate the area under <m>f</m> on the interval <m>[0,2]</m>. You can use whichever point you want on each subinterval to evaluate the height the of the rectangles.
+          </p>
+          <figure xml:id="PA-Int1">
+            <caption></caption>
+              <image width="60%" xml:id="img-PA-Int1">
+                <sageplot>
+                  var('x,t')
+                  plot10=plot(x^2-(x-1)^3,(x,0,2),color="black",gridlines=True,thickness=3,xmin=0,xmax=2,ymin=0,ymax=3)
+                  plot10            
+                </sageplot>
+              </image>
+          </figure>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Estimate the heights of the rectangles used in your Riemann sum above to estimate <m>\displaystyle{\int_0^2 f(x)\enspace dx}</m>. Write a couple of sentences about why you think your estimate for the definite integral of <m>f</m> is either an overestimate, an underestimate, or close to the true value.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Explain why it doesn't matter what method (left endpoint, right endpoint, midpoint, etc.) you use for selecting which point is evaluated on each of the subintervals in the definition of the definite integral.
+            <me>\int_a^b f(x) \enspace dx = \lim_{\Delta x_i \to 0} \sum_{i=1}^n f(x_i^*)\Delta x_i</me>
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            For each of the following functions plotted below, determine if the definite integral over the region shown will be positive, negative, or zero and write a sentence to justify your answer.
+          </p>
+          <sidebyside widths="33% 33% 33%">
+            <figure xml:id="PA-Int2">
+              <caption></caption>
+                <image xml:id="img-PA-Int2">
+                  <sageplot>
+                    var('x,t')
+                    plot11=plot(x^3-x^2-1.25,(x,0,2),color="black",gridlines=True,thickness=3,xmin=0,xmax=2,ymin=-2,ymax=3)
+                    plot11                
+                  </sageplot>
+                </image>
+            </figure>
+            <figure xml:id="PA-Int3">
+              <caption></caption>
+                <image xml:id="img-PA-Int3">
+                  <sageplot>
+                    var('x,t')
+                    plot13=plot(2*cos(2*pi*x)*sin(3*pi*x),(x,0,2),color="black",gridlines=True,thickness=3,xmin=0,xmax=2,ymin=-2,ymax=3)
+                    plot13         
+                  </sageplot>
+                </image>
+            </figure>
+            <figure xml:id="PA-Int4">
+              <caption></caption>
+                <image xml:id="img-PA-Int4">
+                  <sageplot>
+                    var('x,t')
+                    plot12=plot(-x^2+2.25,(x,0,2),color="black",gridlines=True,thickness=3,xmin=0,xmax=2,ymin=-2,ymax=3)
+                    plot12               
+                  </sageplot>
+                </image>
+            </figure>
+          </sidebyside>
+        </statement>
+      </task>
+    </exploration>
+    <!-- <exploration xml:id="PA_11_1">
       <statement>
         <p>
           In this activity we introduce the concept of a double Riemann sum.
@@ -259,21 +335,185 @@
         </ol>
       </solution>
 
-    </exploration>
+    </exploration> -->
+    <p>
+      In this section, we will use the classic calculus approach to define and understand the definite integral for a function of two variables over a rectangular region of inputs. Just as you did in single variable calculus, we will develop some algebraic rules to help efficiently evaluate these integrals. Later in this chapter we will will generalize to regions that are not rectangular and work with functions of three or more variables. 
+    </p>
   </introduction>
 
   <subsection>
     <title>Double Riemann Sums over Rectangles</title>
     <p>
+      The motivating interpretation of a definite integral for a function of one variable was the area under a curve (over a particular interval of inputs). We will use the same motivating interpretation for the definie integral of function of two variables; The definite integral of a function of two variables will the size of the region beneath the graph of <m>f</m> over a set of inputs. We can show this geometrically as the volume of the region below the surface given by <m>z=f(x,y)</m> in <xref ref="basedblint"/>. The surface given by <m>z=f(x,y)</m> is shown in blue and the set of inputs we want to look at is shown (on the <m>xy</m>-plane) in red. So we want the double integral to measure the volume of the region shaded in gray.
+    </p>
+    <figure xml:id="basedblint">
+      <caption> </caption>
+        <interactive title="interactive-basedblint" platform="sage" width="100%" aspect="1:1">
+          <slate surface="sage">
+            var('t,s,x,y,z')
+            from sage.plot.plot3d.plot3d import axes
+            scale=3
+            plot1=axes(scale,2,color="black",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+            f(x,y)=3-(0.5+x)^2/2-(1-y)^2/1.5
+            x0=2.1;y0=1.75;
+            x1(t)=(cos(t)^3+1)*sin(t)/1.5
+            y1(t)=(sin(t)+1.5)*cos(t)/2
+            plot1+=parametric_plot3d((x1(t)+x0,y1(t)+y0,0),(t,0,2*pi),thickness=3,color="red")
+            plot1+=parametric_plot3d((x1(t)+x0,y1(t)+y0,f(x1(t),y1(t))*s) ,(t,0,2*pi),(s,0,1),color="gray",opacity=0.6)
+            plot1+=parametric_plot3d((s*x1(t)+x0,s*y1(t)+y0,f(s*x1(t),s*y1(t))),(t,0,2*pi),(s,0,1),color="blue",opacity=0.7)
+            plot1+=parametric_plot3d((s*x1(t)+x0,s*y1(t)+y0,0),(t,0,2*pi),(s,0,1),color="red",opacity=0.5)
+            step=1
+            #plot1+=plot3d(f(x-x0,y-y0),(x,x0-step,x0+step),(y,y0-step,y0+step),color="blue",opacity=0.15,mesh=True,plot_points=13)
+            param(s,t)=(s,t,f(s-x0,t-y0))
+            #set up grid      n is number of steps in s    m is number of steps in t  
+            #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+            n=7;m=7;a1=x0-step;a2=x0+step;b1=y0-step;b2=y0+step; 
+            #c1 is surface color     o1 is surface opacity
+            #c2 and o2 are for constant t value traces
+            #c3 and o3 are for constant s value traces
+            c1="blue"; c2="black"; c3="black"; o1=0.15; o2=0.2; o3=0.2;
+            plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+            for i in range(n+1):
+              sv=a1+i/n*(a2-a1)
+              plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+            for i in range(m+1):
+              tv=b1+i/m*(b2-b1)
+              plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+            plot1+=plot99
+            show(plot1,viewpoint=[[-0.9793,-0.1081,-0.1713],65.59],camera_position=[3.6055,-6.2764,4.3523])        
+          </slate>
+        </interactive>
+    </figure>
+    <p>
+      The region of integration shown shaded red in <xref ref="basedblint"/> is irregular in our coordinates (<m>x</m> and <m>y</m>) and we will tackle this kind of problem in <xref ref="S-11-3-Double-Integrals-General"/> once we have some intuition and tools from looking at a nicer shape for a region of integration. 
+    </p>
+    <p>
+      We will apply our classic calculus approach to the region shown in <xref ref="rectdblint"/>. In particular, we have a rectangular region of inputs to examine and we want to 1) estimate the volume between the surface plot (in blue) and the <m>xy</m>-plane, 2) quantify how our estimate for the region under the graph of <m>f(x,y)</m> changes when we use a smaller scale, and 3) use a limit to evaluate the true value of the volume under the surface. In order to estimate the volume under our graph, we will use rectangular prisms because their volume is easy to compute: <m>\text{Volume of rectangular prism}= (\text{length})(\text{width})(\text{height})</m>. In the next activity, we will go through these steps for a particular function and rectangular region of integration and introduce some of the notation used in our development of double integrals. 
+    </p>
+    <figure xml:id="rectdblint">
+      <caption> </caption>
+        <interactive title="interactive-rectdblint" platform="sage" width="100%" aspect="1:1">
+          <slate surface="sage">
+            var('t,s,x,y,z')
+            from sage.plot.plot3d.plot3d import axes
+            scale=3
+            plot2=axes(scale,2,color="black",frame=False,aspect_ratio=1,opacity=0.2)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+            f(x,y)=(3-(-1.5+x)^2/2-(1-y)^2/1.5)*(3+sin(1.6*x*y))/4
+            x1=1.5;x2=2.5; y1=0.75;y2=2;
+            plot2+=polygon([(x1,y1,0),(x2,y1,0),(x2,y2,0),(x1,y2,0)],thickness=3,color="red",opacity=0.5)
+            plot2+=line([(x1,y2,0),(x1,0,0)],color="black",thickness=2)+text3d("x=x\u2080",(x1,-0.5,0),color="black",fontsize=20)
+            plot2+=line([(x2,y2,0),(x2,0,0)],color="black",thickness=2)+text3d("x=x\u2081",(x2,-0.5,0),color="black",fontsize=20)
+            plot2+=line([(x2,y1,0),(0,y1,0)],color="black",thickness=2)+text3d("y=y\u2080",(-0.5,y1,0),color="black",fontsize=20)
+            plot2+=line([(x2,y2,0),(0,y2,0)],color="black",thickness=2)+text3d("y=y\u2080",(-0.5,y2,0),color="black",fontsize=20)
+            plot2+=parametric_plot3d((x1+t*(x2-x1),y1,s*f(x1+t*(x2-x1),y1)),(t,0,1),(s,0,1),color="gray",opacity=0.3)
+            plot2+=parametric_plot3d((x1+t*(x2-x1),y2,s*f(x1+t*(x2-x1),y2)),(t,0,1),(s,0,1),color="gray",opacity=0.3)
+            plot2+=parametric_plot3d((x1,y1+t*(y2-y1),s*f(x1,y1+t*(y2-y1))),(t,0,1),(s,0,1),color="gray",opacity=0.3)
+            plot2+=parametric_plot3d((x2,y1+t*(y2-y1),s*f(x2,y1+t*(y2-y1))),(t,0,1),(s,0,1),color="gray",opacity=0.3)
+            param(s,t)=(s,t,f(s,t))
+            n=7;m=7;a1=x1;a2=x2;b1=y1;b2=y2
+            c1="blue"; c2="black"; c3="black"; o1=0.3; o2=0.5; o3=0.5;
+            plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+            for i in range(n+1):
+              sv=a1+i/n*(a2-a1)
+              plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+            for i in range(m+1):
+              tv=b1+i/m*(b2-b1)
+              plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+            plot2+=plot99
+            show(plot2,viewpoint=[[-0.9793,-0.1081,-0.1713],65.59],camera_position=[3.6055,-6.2764,4.3523])          
+          </slate>
+        </interactive>
+    </figure>
+    <!-- <p>
       For the definite integral in single-variable calculus, we considered a continuous function over a closed, bounded interval <m>[a,b]</m>. In multivariable calculus, we will eventually develop the idea of a definite integral over a closed, bounded region (such as the interior of a circle). We begin with a simpler situation by thinking only about rectangular domains, and will address more complicated domains in <xref ref="S-11-3-Double-Integrals-General">Section</xref>.
     </p>
 
     <p>
       Let <m>f = f(x,y)</m> be a continuous function defined on a rectangular domain <m>R = \{(x,y) : a \leq x \leq b, c \leq y \leq d\}</m>. As we saw in <xref ref="PA_11_1">Preview Activity</xref>, the domain is a rectangle <m>R</m> and we want to partition <m>R</m> into subrectangles. We do this by partitioning each of the intervals <m>[a,b]</m> and <m>[c,d]</m> into subintervals and using those subintervals to create a partition of <m>R</m> into subrectangles. In the first activity, we address the quantities and notations we will use in order to define double Riemann sums and double integrals.
-    </p>
+    </p> -->
 
     <activity xml:id="A_11_1_1">
-      <statement>
+      <introduction>
+        <p>
+          In this activity, we will be going through the first two steps of the classic calculus approach to defining the definite integral of <m>f(x,y) = 100 - x^2-y^2</m> on the rectangular domain <m>R = [0,8] \times [2,6]</m>. Remember that we are trying to measure the volume below the graph of <m>f</m> over the region <m>R</m> and we will start with estimating this volume. 
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            We want to understand the numerical calculations involved in the classic calculus approach, so we will not look a graph of <m>z=f(x,y)</m>, but we will need to understand our region of integration. On <xref ref="blank1010"/>, outline <m>R</m>, the rectangle that corresponds to the region of integration.
+          </p>
+          <figure xml:id="blank1010">
+            <caption></caption>
+              <image width="60%" xml:id="img-blank1010">
+                <sageplot>
+                  plot14=point((0,0),size=0,color="black",xmin=0,xmax=10,ymin=0,ymax=10,gridlines=True,axes_labels=["$x$","$y$"],aspect_ratio=1)
+                  plot14         
+                </sageplot>
+              </image>
+          </figure>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            We will break the interval of <m>x</m>-coordinates into four equally sized subintervals and we will break the interval of <m>y</m>-coordinates into three equally sized subintervals. How large will the subintervals be in the <m>x</m>-direction and the <m>y</m>-direction?
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Because all of the regions and subregions we are looking at will be rectangles, we can break up the <m>x</m> and <m>y</m> coordinates into pieces separately. Let <m>\Delta x_i</m> be the <m>i</m>-th subinterval for <m>x</m>. We want to state the endpoints of each of the <m>\Delta x_i</m>. The first subinterval, <m>\Delta x_1</m>, will go from <m>x_0</m> to <m>x_1</m>, the second subinterval, <m>\Delta x_2</m>, will go from <m>x_1</m> to <m>x_2</m>, the third subinterval, <m>\Delta x_3</m>, will go from <m>x_2</m> to <m>x_3</m>, and the fourth subinterval, <m>\Delta x_4</m>, will go from <m>x_3</m> to <m>x_4</m>.
+          </p>
+          <p>
+            Give the values for <m>x_0</m>, <m>x_1</m>, <m>x_2</m>, <m>x_3</m>, and <m>x_4</m> and add these as tick marks on the <m>x</m>-axis of <xref ref="blank1010"/> to make sure your subintervals are equally sized. 
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Let <m>\Delta y_i</m> be the <m>i</m>-th subinterval for <m>y</m>. Give the values for <m>y_0</m>, <m>y_1</m>, <m>y_2</m>, and <m>y_3</m> and add these as tick marks on the <m>y</m>-axis of <xref ref="blank1010"/> to make sure your subintervals are equally sized.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Now that we have our subintervals in <m>x</m> and <m>y</m> coordinates, we want to state the smaller rectangles we will use for our approximation. Let <m>R_{i j}</m> be the rectangle corresponding to <m>\Delta x_i \times \Delta y_j</m>. 
+            <ol>
+              <li>How many smaller rectangles are there in our partition? </li>
+              <li>Outline each of the smaller rectangles on <xref ref="blank1010"/> and label each rectangle as either <m>R_{1 1}, R_{1 2} , ...</m>. </li>
+              <li>Let <m>\Delta A</m> be the area of each of these smaller rectangles (<m>R_{i j}</m>). <m>\Delta A = </m> </li>
+            </ol>
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            We will estimate the height of each of the rectangular prisms over our <m>R_{i j}</m> by evaluating <m>f</m> at the upper right point of each smaller rectangle. State the point at the upper right of each smaller rectangle and evaluate <m>f</m> at each of these points. 
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Write a sentence about why the volume of our approximation on each smaller rectangle would be 
+            <me> f(x_i,y_j) \Delta A</me>
+            then write a couple sentences about how you would find your approximation of the volume under the surface <m>z=f(x,y)</m> over the region <m>R</m>. (You do not need to do this calculuation but rather explain what calculation is being done.)
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            We used the upper right point to approximate the heights of our rectangular prisms on each <m>R_{i j}</m>. Write a sentence or two about whether you think the upper right point provides an overestimate, an underestimate, or approximately the average value for <m>f</m> on each <m>R_{i j}</m>. Explain how this suggests that your estimate for the volume under the surface <m>z=f(x,y)</m> over the region <m>R</m> is either an overestimate, an underestimate, or approximately the correct value. 
+          </p>
+        </statement>
+      </task>
+      <!-- <statement>
        <p>
           Let <m>f(x,y) = 100 - x^2-y^2</m> be defined on the rectangular domain <m>R = [a,b] \times [c,d]</m>. Partition the interval <m>[a,b]</m> into four uniformly sized subintervals and the interval <m>[c,d]</m> into three evenly sized subintervals as shown in <xref ref="F_11_1_Domain2">Figure</xref>. As we did in <xref ref="PA_11_1">Preview Activity</xref>, we will need a method for identifying the endpoints of each subinterval and the resulting subrectangles.
         </p>
@@ -542,43 +782,38 @@
           </li>
         </ol>
       </solution>
-
+ -->
     </activity>
+
   </subsection>
 
 
   <subsection>
     <title>Double Riemann Sums and Double Integrals</title>
     <p>
-      Now we use the process from the most recent activity to formally define double Riemann sums and double integrals.
+      Every part of the previous activity can be generalized to work on any finite rectangular region and any number of subintervals (in either the <m>x</m> or <m>y</m> directions), so we will state these steps in general below and note that using more subintervals corresponds to estimating on a smaller scale (step 2 of the classic calculus approach!).
     </p>
 
     <definition>
       <statement>
         <p>
           Let <m>f</m> be a continuous function on a rectangle <m>R = \{(x,y) : a \leq x \leq b, c \leq y \leq d\}</m>. A <term>double Riemann sum for <m>f</m> over <m>R</m></term><idx><h>double Riemann sum</h></idx> is created as follows.
-          <ul>
+          <ol>
             <li>
-              <title>-</title>
               <p>
                 Partition the interval <m>[a, b]</m> into <m>m</m> subintervals of equal length <m>\Delta x = \frac{b-a}{m}</m>. Let <m>x_0</m>, <m>x_1</m>, <m>\ldots</m>, <m>x_m</m> be the endpoints of these subintervals, where <m>a = x_0\lt x_1\lt x_2 \lt  \cdots \lt  x_m = b</m>.
               </p>
             </li>
-
             <li>
-              <title>-</title>
               <p>
                 Partition the interval <m>[c, d]</m> into <m>n</m> subintervals of equal length <m>\Delta y = \frac{d-c}{n}</m>. Let <m>y_0</m>, <m>y_1</m>, <m>\ldots</m>, <m>y_n</m> be the endpoints of these subintervals, where <m>c = y_0\lt y_1\lt y_2 \lt  \cdots \lt  y_n = d</m>.
               </p>
             </li>
-
             <li>
-              <title>-</title>
               <p>
                 These two partitions create a partition of the rectangle <m>R</m> into <m>mn</m> subrectangles <m>R_{ij}</m> with opposite vertices <m>(x_{i-1},y_{j-1})</m> and <m>(x_i, y_j)</m> for <m>i</m> between <m>1</m> and <m>m</m> and <m>j</m> between <m>1</m> and <m>n</m>. These rectangles all have equal area <m>\Delta A = \Delta x \cdot \Delta y</m>.
               </p>
             </li>
-
             <li>
               <p>
                 Choose a point <m>(x_{ij}^*, y_{ij}^*)</m> in each rectangle <m>R_{ij}</m>. Then, a double Riemann sum for <m>f</m> over <m>R</m> is given by
@@ -587,46 +822,114 @@
                 </me>
               </p>
             </li>
-          </ul>
+          </ol>
         </p>
       </statement>
     </definition>
 
     <p>
-      If <m>f(x,y) \geq 0</m> on the rectangle <m>R</m>, we may ask to find the volume
-      of the solid bounded above by <m>f</m> over
-      <m>R</m>, as illustrated on the left of <xref ref="F_11_1_volume">Figure</xref>.
-      This volume is approximated by a
-      Riemann sum, which sums the volumes of the rectangular
-      boxes shown on the right of <xref ref="F_11_1_volume">Figure</xref>.
+      If <m>f(x,y) \geq 0</m> on the rectangle <m>R</m>, we may ask to find the volume of the solid bounded above by <m>f</m> over
+      <m>R</m>, as illustrated in <xref ref="F_11_1_volume">Figure</xref>. 
     </p>
-
     <figure xml:id="F_11_1_volume">
+      <caption> </caption>
+        <interactive title="interactive-F_11_1_volume" platform="sage" width="100%" aspect="1:1">
+          <slate surface="sage">
+            var('t,s,x,y,z')
+            from sage.plot.plot3d.plot3d import axes
+            scale=2
+            plot2=axes(scale,2,color="black",frame=False,aspect_ratio=1,opacity=0.2)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+            scale=2
+            f(x,y)=1-x/3+y^2/9
+            x1=0.5;x2=2; y1=0.5;y2=2;
+            tc="black";sc="orange";bc="red"
+            plot2+=polygon([(x1,y1,0),(x2,y1,0),(x2,y2,0),(x1,y2,0)],thickness=3,color=bc,opacity=0.5)
+            plot2+=parametric_plot3d((x1+t*(x2-x1),y1,s*f(x1+t*(x2-x1),y1)),(t,0,1),(s,0,1),color=sc,opacity=0.4)
+            plot2+=parametric_plot3d((x1+t*(x2-x1),y2,s*f(x1+t*(x2-x1),y2)),(t,0,1),(s,0,1),color=sc,opacity=0.4)
+            plot2+=parametric_plot3d((x1,y1+t*(y2-y1),s*f(x1,y1+t*(y2-y1))),(t,0,1),(s,0,1),color=sc,opacity=0.4)
+            plot2+=parametric_plot3d((x2,y1+t*(y2-y1),s*f(x2,y1+t*(y2-y1))),(t,0,1),(s,0,1),color=sc,opacity=0.4)
+            param(s,t)=(s,t,f(s,t))
+            #set up grid      n is number of steps in s    m is number of steps in t  
+            #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+            n=7;m=7;a1=x1;a2=x2;b1=y1;b2=y2; 
+            #c1 is surface color     o1 is surface opacity
+            #c2 and o2 are for constant t value traces
+            #c3 and o3 are for constant s value traces
+            c1="pink"; c2="gray"; c3="gray"; o1=0.3; o2=0.5; o3=0.5;
+            plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+            for i in range(n+1):
+              sv=a1+i/n*(a2-a1)
+              plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+            for i in range(m+1):
+              tv=b1+i/m*(b2-b1)
+              plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+            plot2+=plot99
+            show(plot2,viewpoint=[[-0.4427,-0.4917,-0.7498],111.96],camera_position=[6.088,1.5166,2.6543])          
+          </slate>
+        </interactive>
+    </figure>
+    <!-- <figure xml:id="F_11_1_volume">
       <caption>The volume under a graph approximated by a Riemann Sum.</caption>
       <sidebyside widths="50% 50%">
       <image source="images/fig_11_1_volume"/>
       <image source="images/fig_11_1_riemann_3_2"/>
       </sidebyside>
-    </figure>
-
+    </figure> -->
     <p>
-      As we let the number of
-      subrectangles increase without bound (in other words, as both <m>m</m> and
-      <m>n</m> in a double Riemann sum go to infinity), as illustrated in
-      <xref ref="F_11_1_rs">Figure</xref>, the sum of the volumes of the rectangular boxes
-      approaches the volume of the solid bounded above by <m>f</m> over
-      <m>R</m>. The value of this limit, provided it exists, is the double integral.
+      This volume is approximated by a Riemann sum, which sums the volumes of the rectangular prisms shown in <xref ref="F_11_1_volume2">Figure</xref>. As we let the number of subrectangles increase without bound (in other words, as both <m>m</m> and <m>n</m> in a double Riemann sum go to infinity), as illustrated in <xref ref="F_11_1_volume2">Figure</xref>, the sum of the volumes of the rectangular boxes approaches the true volume of the solid bounded above by <m>z=f(x,y)</m> over the region <m>R</m>. You can use the sliders at the top of <xref ref="F_11_1_volume2">Figure</xref> to change the number of subintervals used in Riemann sum and verify geometrically how the volume estimate will approach true volume under <m>f</m> as <m>n</m> and <m>m</m> become arbitrarily large. The value of this limit (the third step in our classic calculus approach), provided it exists, is the double integral we have been seeking.
     </p>
+    <figure xml:id="F_11_1_volume2">
+      <caption> </caption>
+        <interactive title="interactive-F_11_1_volume2" platform="sage" width="100%" aspect="1:1">
+          <slate surface="sage">
+            var('t,s,x,y,z')
+            from sage.plot.plot3d.plot3d import axes
+            from sage.plot.plot3d.shapes import Box
+            from sage.plot.plot3d.shapes import ColorCube
+            scale=2
+            @interact
+            def dblRS(nx=slider(2,15,1,default=3,label="m="),ny=slider(2,15,1,default=2,label="n=")):
+              plot3=axes(scale,2,color="black",frame=False,aspect_ratio=1,opacity=0.2)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+              f(x,y)=1-x/3+y^2/9
+              x1=0.5;x2=2; y1=0.5;y2=2;
+              dx=(x2-x1)/nx; dy=(y2-y1)/ny;
+              tc="black";sc="orange";bc="red"
+              for i in range(nx):
+                xa=x1+i*dx; xb=x1+(i+1)*dx;
+                for j in range(ny):
+                  ya=y1+j*dy;yb=y1+(j+1)*dy;
+                  h=f(xa+dx,ya)
+                  plot3+=ColorCube([dx/2,dy/2,h/2],[tc,sc,sc,bc,sc,sc],opacity=0.5).translate((xa+dx/2,ya+dy/2,h/2))
+              param(s,t)=(s,t,f(s,t))
+              #set up grid      n is number of steps in s    m is number of steps in t  
+              #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+              n=7;m=7;a1=x1;a2=x2;b1=y1;b2=y2; 
+              #c1 is surface color     o1 is surface opacity
+              #c2 and o2 are for constant t value traces
+              #c3 and o3 are for constant s value traces
+              c1="pink"; c2="black"; c3="black"; o1=0.5; o2=0.2; o3=0.2;
+              plot3+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+              for i in range(n+1):
+                sv=a1+i/n*(a2-a1)
+                plot3+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+              for i in range(m+1):
+                tv=b1+i/m*(b2-b1)
+                plot3+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+              show(plot3,viewpoint=[[-0.4427,-0.4917,-0.7498],111.96],camera_position=[6.088,1.5166,2.6543])   
+          </slate>
+        </interactive>
+    </figure>
+    
 
-    <figure xml:id="F_11_1_rs">
+    <!-- <figure xml:id="F_11_1_rs">
       <caption>Finding better approximations by using smaller subrectangles.</caption>
       <sidebyside widths="50% 50%">
       <image source="images/fig_11_1_riemann_4_4"/>
       <image source="images/fig_11_1_riemann_8_8"/>
       </sidebyside>
-    </figure>
+    </figure> -->
 
-    <definition>
+    <definition xml:id="def-dblint">
       <statement>
         <p>
           Let <m>R</m> be a rectangular region in the <m>xy</m>-plane and <m>f</m> a continuous function over <m>R</m>. With terms defined as in a double Riemann sum, the <term>double integral of <m>f</m> over <m>R</m></term><idx><h>double integral</h><h>definition</h></idx> is
@@ -638,56 +941,91 @@
     </definition>
 
     <p>
-    Some textbooks use the notation <m>\int_R f(x,y) \, dA</m> for a double integral. You will see this in some of the WeBWorK problems. 
+    Some textbooks use the notation <m>\displaystyle{\int_R f(x,y) \, dA}</m> for a double integral. You will see this in some of the WeBWorK problems. 
     </p>
-
+    <p>
+      Before we move on to the interpretations of double integrals, we will talk about a couple of simplifying ideas used in our developement of the double integral that are not strictly necessary. Many times we will use equally sized subintervals or pieces of our region of integration but that is not strictly necessary. The most general form of a double integral would just require that as we take the limit, the size of <em>every</em> smaller piece must go to zero. In <xref ref="A_11_1_1"/>, we used the upper right point of each smaller rectangle to evaluate <m>f</m> and in <xref ref="def-dblint" /> there is not a particular point in each smaller rectangle used. Remember that if the size of all the smaller rectangles are going to zero then there will be smaller and smaller differences between the output of <m>f</m> on the points in the smaller rectangle.
+    </p>
   </subsection>
 
 
   <subsection>
     <title>Interpretation of Double Riemann Sums and Double integrals.</title>
     <p>
-      At the moment, there are two ways we can interpret the value of the double integral.
+      At the moment, there are three ways we can interpret the value of the double integral, where each of these corresponds to the same three interpretations of integrals from single variable calculus: the area under the curve, the average value of the function, and the accumulation of some density function.
       <ul>
         <li>
           <p>
-            Suppose that <m>f(x,y)</m> assumes both positive and negatives
-              values on the rectangle <m>R</m>, as shown on the left of <xref ref="F_11_1_signed">Figure</xref>.  When constructing a Riemann sum, for each <m>i</m> and <m>j</m>, the product <m>f(x_{ij}^*, y_{ij}^*) \cdot \Delta A</m>
-            can be interpreted as a <q>signed</q> volume of a box with base area <m>\Delta A</m> and <q>signed</q> height <m>f(x_{ij}^*, y_{ij}^*)</m>. Since <m>f</m> can have negative values, this <q>height</q> could be negative. The sum
+            Suppose that <m>f(x,y)</m> assumes both positive and negatives values on the rectangle <m>R</m>, as shown in <xref ref="F_11_1_signed">Figure</xref>.  When constructing a Riemann sum, for each <m>i</m> and <m>j</m>, the product <m>f(x_{ij}^*, y_{ij}^*) \enspace \Delta A</m> can be interpreted as a <q>signed</q> volume of a box with base area <m>\Delta A</m> and <q>signed</q> height <m>f(x_{ij}^*, y_{ij}^*)</m>. Since <m>f</m> can have negative values, this <q>height</q> could be negative. The sum
             <me>
-              \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A
+              \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \enspace \Delta A
             </me>
-            can then be interpreted as a sum of <q>signed</q> volumes of boxes, with a
-            negative sign attached to those boxes whose heights are below the
-            <m>xy</m>-plane.
-
-            <figure xml:id="F_11_1_signed">
-              <caption>The integral measures signed volume.</caption>
-              <sidebyside widths="50% 50%">
-              <image source="images/fig_11_1_signed_graph"/>
-              <image source="images/fig_11_1_signed_volume"/>
-              </sidebyside>
-            </figure>
-
-            We can then realize the double integral <m>\iint_R
-            f(x,y) \, dA</m> as a difference in volumes<idx><h>double
-              integral</h><h>difference in volumes</h></idx>: <m>\iint_R f(x,y) \, dA</m> tells us
-            the volume of the solids the graph of <m>f</m> bounds above the <m>xy</m>-plane
-            over the rectangle <m>R</m> minus the volume of the solids the graph of <m>f</m>
-            bounds below the <m>xy</m>-plane under the rectangle <m>R</m>.  This is shown on
-            the right of <xref ref="F_11_1_signed">Figure</xref>.
+            can then be interpreted as a sum of <q>signed</q> volumes of boxes, with a negative sign attached to those boxes whose heights are below the <m>xy</m>-plane.
           </p>
+          <figure xml:id="F_11_1_signed">
+            <caption> </caption>
+              <interactive title="interactive-F_11_1_signed" platform="sage" width="100%" aspect="1:1">
+                <slate surface="sage">
+                  var('t,s,x,y,z')
+                  from sage.plot.plot3d.plot3d import axes
+                  scale=1.5
+                  plot7=axes(scale,1,color="black",frame=False,aspect_ratio=1,opacity=0.35)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+                  f(x,y)=(x-0.5)*(y-0.5)
+                  x1=-1;x2=1; y1=-1;y2=1;
+                  tc="black";sc="orange";bc="red"
+                  param(s,t)=(s,t,f(s,t))
+                  #set up grid      n is number of steps in s    m is number of steps in t  
+                  #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+                  n=7;m=7;a1=x1;a2=x2;b1=y1;b2=y2; 
+                  #c1 is surface color     o1 is surface opacity
+                  #c2 and o2 are for constant t value traces
+                  #c3 and o3 are for constant s value traces
+                  c1="blue"; c2="black"; c3="black"; o1=0.5; o2=0.5; o3=0.5;
+                  plot7+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+                  for i in range(n+1):
+                    sv=a1+i/n*(a2-a1)
+                    plot7+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+                  for i in range(m+1):
+                    tv=b1+i/m*(b2-b1)
+                    plot7+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+                  for i in range(-4,5):
+                    val=i*3/8;
+                    plot7+=parametric_plot3d((s,val,0),(s,-1.5,1.5),color="gray",opacity=.6)
+                    plot7+=parametric_plot3d((val,s,0),(s,-1.5,1.5),color="gray",opacity=.6)
+                  plot7+=parametric_plot3d((s,t,0),(s,-1.5,1.5),(t,-1.5,1.5),color="gray",opacity=0.2)
+                  show(plot7,viewpoint=[[-0.4427,-0.4917,-0.7498],111.96],camera_position=[6.088,1.5166,2.6543])   
+                </slate>
+              </interactive>
+          </figure>
+          <!-- <figure xml:id="F_11_1_signed">
+            <caption>The integral measures signed volume.</caption>
+            <sidebyside widths="50% 50%">
+            <image source="images/fig_11_1_signed_graph"/>
+            <image source="images/fig_11_1_signed_volume"/>
+            </sidebyside>
+          </figure> -->
+          <p>
+            We can then realize the double integral <m>\iint_R f(x,y) \, dA</m> as a difference in volumes<idx><h>double integral</h><h>difference in volumes</h></idx>: <m>\iint_R f(x,y) \, dA</m> tells us the volume of the solids the graph of <m>f</m> bounds above the <m>xy</m>-plane over the rectangle <m>R</m> minus the volume of the solids the graph of <m>f</m> bounds below the <m>xy</m>-plane under the rectangle <m>R</m>.  This is shown in <xref ref="F_11_1_signed2">Figure</xref>.
+          </p>
+          <figure xml:id="F_11_1_signed2">
+          <caption> </caption>
+            <interactive title="interactive-F_11_1_signed2" platform="sage" width="100%" aspect="1:1">
+              <slate surface="sage">
+                <xi:include href="interacts/signedvol.txt" parse="text" />
+              </slate>
+            </interactive>
+        </figure>
         </li>
-
+        
         <li>
           <p>
-            The average of the finitely many <m>mn</m> values <m>f(x_{ij}^*, y_{ij}^*)</m> that we take in a double Riemann sum is given by
+            The average of the finitely many (<m>mn</m>) values <m>f(x_{ij}^*, y_{ij}^*)</m> that we take in a double Riemann sum is given by
             <me>
               \mbox{Avg} _{mn} = \frac{1}{mn} \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*).
             </me>
-            If we take the limit as <m>m</m> and <m>n</m> go to infinity, we obtain what we define as the average value<idx><h>double integral</h><h>average value</h></idx> of <m>f</m> over the region <m>R</m>, which is connected to the value of the double integral. First, to view <m>\text{ Avg } _{mn}</m> as a double Riemann sum, note that
+            If we take the limit as <m>m</m> and <m>n</m> go to infinity, we obtain what we can define as the average value<idx><h>double integral</h><h>average value</h></idx> of <m>f</m> over the region <m>R</m>, which is connected to the value of the double integral. First, to view <m>\text{ Avg } _{mn}</m> as a double Riemann sum, note that
             <me>
-              \Delta x = \frac{b-a}{m} \ \ \ \ \ \text{ and }  \ \ \ \ \ \Delta y = \frac{d-c}{n}.
+              \Delta x = \frac{b-a}{m} \quad \quad \text{ and }  \quad \quad \Delta y = \frac{d-c}{n}
             </me>
             Thus,
             <me>
@@ -702,394 +1040,351 @@
             Therefore, the double integral of <m>f</m> over <m>R</m> divided by the area of <m>R</m> gives us the average value of the function <m>f</m> on <m>R</m>. Finally, if <m>f(x, y) \geq  0</m> on <m>R</m>, we can interpret this average value of <m>f</m> on <m>R</m> as the height of the box with base <m>R</m> that has the same volume as the volume of the surface defined by <m>f</m> over <m>R</m>.
           </p>
         </li>
+        <li>
+          <p>
+            If the function being integrated is a density function, then integral measures how much of the thing being measured is in the region of integration. You can see a single variable calculus explaination of this in <xref ref="accumulation"/>. For example, if our function measures the density of some mineral on some plot of land, then the double integral of this function will measure the total amount of that mineral on the plot of land. The function (<m>f(x,y)</m>) will have units of mass (of the minearl) per unit area and the Riemann sum
+            <me> \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \Delta A </me>
+            will have units of mass. This idea is used for the laminar masses given in <xref ref="S-11-4-Double-Integrals-Applications"/> and applies to many other settings including electric charge (which has the possibility of negative values for both the density and total amount).
+          </p>
+        </li>
       </ul>
     </p>
 
     <activity xml:id="A_11_1_2">
-      <statement>
+      <introduction>
         <p>
-          Let <m>f(x,y) = x+2y</m> and let <m>R = [0,2] \times [1,3]</m>.
-          <ol marker="a.">
-            <li>
-              <p>
-                Draw a picture of <m>R</m>. Partition <m>[0,2]</m> into 2 subintervals of equal length and the interval <m>[1,3]</m> into two subintervals of equal length. Draw these partitions on your picture of <m>R</m> and label the resulting subrectangles using the labeling scheme we established in the definition of a double Riemann sum.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                For each <m>i</m> and <m>j</m>, let <m>(x_{ij}^*, y_{ij}^*)</m> be the midpoint of the rectangle <m>R_{ij}</m>. Identify the coordinates of each <m>(x_{ij}^*, y_{ij}^*)</m>. Draw these points on your picture of <m>R</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Calculate the Riemann sum
-                <me>
-                  \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A
-                </me>
-                using the partitions we have described. If we let <m>(x_{ij}^*, y_{ij}^*)</m> be the midpoint of the rectangle <m>R_{ij}</m> for each <m>i</m> and <m>j</m>, then the resulting Riemann sum is called a <em>midpoint sum</em>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Give two interpretations for the meaning of the sum you just calculated.
-              </p>
-            </li>
-          </ol>
+           Let <m>f(x,y) = x+2y</m> and let <m>R = [0,2] \times [1,3]</m>.
         </p>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              The partition of <m>[0,2]</m> into 2 subintervals of equal length yields endpoints <m>0</m>,
-              <m>1</m> and <m>2</m>,
-              while the partition of the interval <m>[1,3]</m> into two subintervals of equal length produces endpoints <m>1</m>, <m>2</m>,
-              and <m>3</m>.
-              The partitions of the intervals divide the rectangle <m>R</m> into <m>4</m> subrectangles of area 1 as shown in the figure below.
-            </p>
-            <image source="images/xygrid1.png"/>
-          </li>
-          <li>
-            <p>
-              The point <m>(x_{11}^*, y_{11}^*)</m> is the midpoint of the rectangle <m>[0,1] \times [1,2]</m>,
-              and so <m>(x_{11}^*, y_{11}^*) = (0.5, 1.5)</m>.
-              Similarly, we have <m>(x_{21}^*, y_{21}^*) = (1.5, 1.5)</m>,
-              <m>(x_{12}^*, y_{12}^*) = (0.5, 2.5)</m>,
-              and <m>(x_{22}^*, y_{22}^*) = (1.5, 2.5)</m>.
-              These points are shown in the figure below.
-            </p>
-            <image source="images/xygrid2.png"/>
-          </li>
-          <li>
-            <p>
-                <m>20</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              Since <m>f(x,y) \geq 0</m> on <m>R</m>,
-              the sum in part (b) approximates the volume of the solid bounded above by the graph of <m>f</m> and below by the rectangle <m>R</m>.
-              In addition,
-              the sum also approximates the average value of <m>f</m> on <m>R</m> times the area of <m>R</m>.
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              The partition of <m>[0,2]</m> into 2 subintervals of equal length yields endpoints <m>0</m>,
-              <m>1</m> and <m>2</m>,
-              while the partition of the interval <m>[1,3]</m> into two subintervals of equal length produces endpoints <m>1</m>, <m>2</m>,
-              and <m>3</m>.
-              The partitions of the intervals divide the rectangle <m>R</m> into <m>4</m> subrectangles of area 1 as shown in the figure below.
-            </p>
-            <image source="images/xygrid1.png"/>
-          </li>
-          <li>
-            <p>
-              The point <m>(x_{11}^*, y_{11}^*)</m> is the midpoint of the rectangle <m>[0,1] \times [1,2]</m>,
-              and so <m>(x_{11}^*, y_{11}^*) = (0.5, 1.5)</m>.
-              Similarly, we have <m>(x_{21}^*, y_{21}^*) = (1.5, 1.5)</m>,
-              <m>(x_{12}^*, y_{12}^*) = (0.5, 2.5)</m>,
-              and <m>(x_{22}^*, y_{22}^*) = (1.5, 2.5)</m>.
-              These points are shown in the figure below.
-            </p>
-            <image source="images/xygrid2.png"/>
-          </li>
-          <li>
-            <p>
-              Writing out the terms and calculating yields
-              <md>
-                <mrow>\sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A \amp = f(0.5, 1.5)(1) + f(1.5, 1.5)(1) + f(0.5, 2.5)(1) + f(1.5, 2.5)(1)</mrow>
-                <mrow>\amp = 3.5+4.5+5.5+6.5</mrow>
-                <mrow>\amp = 20</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Since <m>f(x,y) \geq 0</m> on <m>R</m>,
-              the sum in part (b) approximates the volume of the solid bounded above by the graph of <m>f</m> and below by the rectangle <m>R</m>.
-              In addition,
-              the sum also approximates the average value of <m>f</m> on <m>R</m> times the area of <m>R</m>.
-            </p>
-          </li>
-        </ol>
-      </solution>
-
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Draw a picture of <m>R</m>. Partition <m>[0,2]</m> into 2 subintervals of equal length and the interval <m>[1,3]</m> into two subintervals of equal length. Draw these partitions on your picture of <m>R</m> and label the resulting subrectangles using the labeling scheme we established in the definition of a double Riemann sum.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            The partition of <m>[0,2]</m> into 2 subintervals of equal length yields endpoints <m>0</m>,
+            <m>1</m> and <m>2</m>,
+            while the partition of the interval <m>[1,3]</m> into two subintervals of equal length produces endpoints <m>1</m>, <m>2</m>,
+            and <m>3</m>.
+            The partitions of the intervals divide the rectangle <m>R</m> into <m>4</m> subrectangles of area 1 as shown in the figure below.
+          </p>
+          <image source="images/xygrid1.png"/>
+        </answer>
+        <solution>
+          <p>
+            The partition of <m>[0,2]</m> into 2 subintervals of equal length yields endpoints <m>0</m>,
+            <m>1</m> and <m>2</m>,
+            while the partition of the interval <m>[1,3]</m> into two subintervals of equal length produces endpoints <m>1</m>, <m>2</m>,
+            and <m>3</m>.
+            The partitions of the intervals divide the rectangle <m>R</m> into <m>4</m> subrectangles of area 1 as shown in the figure below.
+          </p>
+          <image source="images/xygrid1.png"/>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            For each <m>i</m> and <m>j</m>, let <m>(x_{ij}^*, y_{ij}^*)</m> be the midpoint of the rectangle <m>R_{ij}</m>. Identify the coordinates of each <m>(x_{ij}^*, y_{ij}^*)</m>. Draw these points on your picture of <m>R</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            The point <m>(x_{11}^*, y_{11}^*)</m> is the midpoint of the rectangle <m>[0,1] \times [1,2]</m>, and so <m>(x_{11}^*, y_{11}^*) = (0.5, 1.5)</m>. Similarly, we have <m>(x_{21}^*, y_{21}^*) = (1.5, 1.5)</m>, <m>(x_{12}^*, y_{12}^*) = (0.5, 2.5)</m>, and <m>(x_{22}^*, y_{22}^*) = (1.5, 2.5)</m>. These points are shown in the figure below.
+          </p>
+          <image source="images/xygrid2.png"/>
+        </answer>
+        <solution>
+          <p>
+            The point <m>(x_{11}^*, y_{11}^*)</m> is the midpoint of the rectangle <m>[0,1] \times [1,2]</m>, and so <m>(x_{11}^*, y_{11}^*) = (0.5, 1.5)</m>. Similarly, we have <m>(x_{21}^*, y_{21}^*) = (1.5, 1.5)</m>, <m>(x_{12}^*, y_{12}^*) = (0.5, 2.5)</m>, and <m>(x_{22}^*, y_{22}^*) = (1.5, 2.5)</m>. These points are shown in the figure below.
+          </p>
+          <image source="images/xygrid2.png"/>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Calculate the Riemann sum
+            <me>
+              \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A
+            </me>
+            using the partitions we have described. If we let <m>(x_{ij}^*, y_{ij}^*)</m> be the midpoint of the rectangle <m>R_{ij}</m> for each <m>i</m> and <m>j</m>, then the resulting Riemann sum is called a <em>midpoint sum</em>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>20</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Writing out the terms and calculating yields
+            <md>
+              <mrow>\sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A \amp = f(0.5, 1.5)(1) + f(1.5, 1.5)(1) + f(0.5, 2.5)(1) + f(1.5, 2.5)(1)</mrow>
+              <mrow>\amp = 3.5+4.5+5.5+6.5</mrow>
+              <mrow>\amp = 20</mrow>
+            </md>
+          </p>
+        </solution>
+      </task>      
+      <task>
+        <statement>
+          <p>
+            Explain the meaning of the sum you just calculated using the preceding three interpretations. 
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Since <m>f(x,y) \geq 0</m> on <m>R</m>, the sum in part (b) approximates the volume of the solid bounded above by the graph of <m>f</m> and below by the rectangle <m>R</m>. In addition, the sum also approximates the average value of <m>f</m> on <m>R</m> times the area of <m>R</m>. 
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Since <m>f(x,y) \geq 0</m> on <m>R</m>, the sum in part (b) approximates the volume of the solid bounded above by the graph of <m>f</m> and below by the rectangle <m>R</m>. In addition, the sum also approximates the average value of <m>f</m> on <m>R</m> times the area of <m>R</m>.
+          </p>
+        </solution>
+      </task>      
     </activity>
 
     <activity xml:id="A_11_1_3">
-      <statement>
+      <introduction>
         <p>
-          Let <m>f(x,y) = \sqrt{4-y^2}</m> on the rectangular domain <m>R = [1,7] \times [-2,2]</m>. Partition <m>[1,7]</m> into 3 equal length subintervals and <m>[-2,2]</m> into 2 equal length subintervals. A table of values of <m>f</m> at some points in <m>R</m> is given in <xref ref="DI_11_1_TOV">Table</xref>, and a graph of <m>f</m> with the indicated partitions is shown in <xref ref="F_11_1_DI_example">Figure</xref>.
+          Let <m>f(x,y) = \sqrt{4-y^2}</m> on the rectangular domain <m>R = [1,7] \times [-2,2]</m> where we partition <m>[1,7]</m> into 3 equal length subintervals and <m>[-2,2]</m> into 2 equal length subintervals. A table of values of <m>f</m> at some points in <m>R</m> is given in <xref ref="DI_11_1_TOV">Table</xref>, and a graph of <m>f</m> with the indicated partitions is shown in <xref ref="F_11_1_DI_example">Figure</xref>.
         </p>
-        
-
-          <sidebyside>
-          <table xml:id="DI_11_1_TOV">
+        <table xml:id="DI_11_1_TOV">
           <title>Table of values of <m>f(x,y) =  \sqrt{4-y^2}</m>.</title>
-            <tabular halign="center" bottom="minor" top="minor">
-              <row bottom="medium">
-                <cell/>
-                <cell><m>-2</m></cell>
-                <cell><m>-1</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>1</m></cell>
-                <cell><m>2</m></cell>
-              </row>
-              <row>
-                <cell>
-                <m>1</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>2</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>0</m></cell>
-              </row>
-              <row>
-                <cell><m>2</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>2</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>0</m></cell>
-              </row>
-              <row>
-                <cell><m>3</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>2</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>0</m></cell>
-              </row>
-              <row>
-                <cell><m>4</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>2</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>0</m></cell>
-              </row>
-              <row>
-                <cell><m>5</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>2</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>0</m></cell>
-              </row>
-              <row>
-                <cell><m>6</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>2</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>0</m></cell>
-              </row>
-              <row>
-                <cell><m>7</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>2</m></cell>
-                <cell><m>\sqrt{3}</m></cell>
-                <cell><m>0</m></cell>
-              </row>
-            </tabular>
-          </table>
-          
+          <tabular halign="center" >
+            <row bottom="medium">
+              <cell right="medium"><m> x \\ y</m> </cell>
+              <cell><m>-2</m></cell>
+              <cell><m>-1</m></cell>
+              <cell><m>0</m></cell>
+              <cell><m>1</m></cell>
+              <cell><m>2</m></cell>
+            </row>
+            <row>
+              <cell right="medium"><m>1</m></cell>
+              <cell><m>0</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>2</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>0</m></cell>
+            </row>
+            <row>
+              <cell right="medium"><m>2</m></cell>
+              <cell><m>0</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>2</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>0</m></cell>
+            </row>
+            <row>
+              <cell right="medium"><m>3</m></cell>
+              <cell><m>0</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>2</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>0</m></cell>
+            </row>
+            <row>
+              <cell right="medium"><m>4</m></cell>
+              <cell><m>0</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>2</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>0</m></cell>
+            </row>
+            <row>
+              <cell right="medium"><m>5</m></cell>
+              <cell><m>0</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>2</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>0</m></cell>
+            </row>
+            <row>
+              <cell right="medium"><m>6</m></cell>
+              <cell><m>0</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>2</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>0</m></cell>
+            </row>
+            <row>
+              <cell right="medium"><m>7</m></cell>
+              <cell><m>0</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>2</m></cell>
+              <cell><m>\sqrt{3}</m></cell>
+              <cell><m>0</m></cell>
+            </row>
+          </tabular>
+        </table>
         <figure xml:id="F_11_1_DI_example">
-          <caption>Graph of <m>f(x,y) =  \sqrt{4-y^2}</m> on <m>R</m>.</caption>
-
-            <image width="100%" source="images/fig_11_1_cylinder"/>
+          <caption> </caption>
+            <interactive title="interactive-F_11_1_DI_example" platform="sage" width="100%" aspect="1:1">
+              <slate surface="sage">
+                var('t,s,x,y,z')
+                scale=1.5
+                f(x,y)=sqrt(4-y^2)
+                x1=1;x2=7; y1=-2;y2=2;
+                param(s,t)=(s,t,f(s,t))
+                #set up grid      n is number of steps in s    m is number of steps in t  
+                #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+                n=7;m=7;a1=x1;a2=x2;b1=y1;b2=y2; 
+                #c1 is surface color     o1 is surface opacity
+                #c2 and o2 are for constant t value traces
+                #c3 and o3 are for constant s value traces
+                c1="blue"; c2="black"; c3="black"; o1=0.6; o2=0.5; o3=0.5;
+                plot9=polygon([(x1,y1,0),(x2,y1,0),(x2,y2,0),(x1,y2,0),(x1,y1,0)],thickness=3,color="gray",opacity=0.2)
+                plot9+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+                for i in range(n+1):
+                  sv=a1+i/n*(a2-a1)
+                  plot9+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+                for i in range(m+1):
+                  tv=b1+i/m*(b2-b1)
+                  plot9+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+                show(plot9,viewpoint=[[-0.2826,-0.473,-0.8345],127],camera_position=[12.059,4.802,5.3817])          
+              </slate>
+            </interactive>
         </figure>
-          </sidebyside>
-
-
-        <ol marker="a.">
-          <li>
-            <p>
-              Sketch the region <m>R</m> in the plane using the values in <xref ref="DI_11_1_TOV">Table</xref> as the partitions. 
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Calculate the double Riemann sum using the given partition of <m>R</m> and the values of <m>f</m> in the upper right corner of each subrectangle.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Use geometry to calculate the exact value of <m>\iint_R f(x,y) \, dA</m> and compare it to your approximation. Describe one way we could obtain a better approximation using the given data.  
-            </p>
-          </li>
-        </ol>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              The endpoints of the partition of <m>[1,7]</m> are <m>1</m>,
-              <m>3</m>, <m>5</m>, and <m>7</m>,
-              while the endpoints of the partition of <m>[-2,2]</m> are <m>-2</m>,
-              <m>0</m>,
-              and <m>2</m>.
-              This makes subrectangles <m>R_{11} = [1,3] \times [-2,0]</m>,
-              <m>R_{21} = [3,5] \times [-2,0]</m>,
-              <m>R_{31} = [5,7] \times [-2,0]</m>,
-              <m>R_{12} = [1,3] \times [0,2]</m>,
-              <m>R_{22} = [3,5] \times [0,2]</m>,
-              <m>R_{32} = [5,7] \times [0,2]</m>.
-              These subrectangles are outlined in the table below.
-            </p>
-            <image source="images/A_11_1_3_parta.png"/>
-          </li>
-          <li>
-            <p>
-              <m>24</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              Since the cross sections parallel to the <m>yz</m>-plane are semi-circles of radius 2, we can multiply the area of a cross section by the width to obtain the volume.
-              So the exact volume of this object is <m>4 \pi (6) = 24 \pi</m>.
-              We could get a better approximation by using finer partitions.
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              The endpoints of the partition of <m>[1,7]</m> are <m>1</m>,
-              <m>3</m>, <m>5</m>, and <m>7</m>,
-              while the endpoints of the partition of <m>[-2,2]</m> are <m>-2</m>,
-              <m>0</m>,
-              and <m>2</m>.
-              This makes subrectangles <m>R_{11} = [1,3] \times [-2,0]</m>,
-              <m>R_{21} = [3,5] \times [-2,0]</m>,
-              <m>R_{31} = [5,7] \times [-2,0]</m>,
-              <m>R_{12} = [1,3] \times [0,2]</m>,
-              <m>R_{22} = [3,5] \times [0,2]</m>,
-              <m>R_{32} = [5,7] \times [0,2]</m>.
-              These subrectangles are outlined in the table below.
-            </p>
-            <image source="images/A_11_1_3_parta.png"/>
-          </li>
-          <li>
-            <p>
-              Choosing points in the upper right corner of each subrectangle gives us <m>(x_{11}^*, y_{11}^*) = (3,0)</m>,
-              <m>(x_{21}^*, y_{21}^*) = (5,0)</m>,
-              <m>(x_{31}^*, y_{31}^*) = (7,0)</m>,
-              <m>(x_{12}^*, y_{12}^*) = (3,2)</m>,
-              <m>(x_{22}^*, y_{22}^*) = (5,2)</m>,
-              and <m>(x_{32}^*, y_{32}^*) = (7,2)</m>.
-              So
-              <md>
-                <mrow>\sum_{j=1}^n \sum_{i=1}^m f\left(x_{ij}^*, y_{ij}^*\right) \cdot \Delta A \amp = f(3,0)(4) + f(5,0)(4) + f(7,0)(4) + f(3,2)(4) + f(5,3)(4) + f(7,2)(4)</mrow>
-                <mrow>\amp = 24</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Since the cross sections parallel to the <m>yz</m>-plane are semi-circles of radius 2, we can multiply the area of a cross section by the width to obtain the volume.
-              So the exact volume of this object is <m>4 \pi (6) = 24 \pi</m>.
-              We could get a better approximation by using finer partitions.
-            </p>
-          </li>
-        </ol>
-      </solution>
-
+      </introduction>
+    <!-- <figure xml:id="F_11_1_DI_example">
+      <caption>Graph of <m>f(x,y) =  \sqrt{4-y^2}</m> on <m>R</m>.</caption>
+      <image width="100%" source="images/fig_11_1_cylinder"/>
+    </figure> -->
+      <task>
+        <statement>
+          <p>
+            Sketch the region <m>R</m> in the plane using the values in <xref ref="DI_11_1_TOV">Table</xref> as the partitions.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            The endpoints of the partition of <m>[1,7]</m> are <m>1</m>, <m>3</m>, <m>5</m>, and <m>7</m>, while the endpoints of the partition of <m>[-2,2]</m> are <m>-2</m>, <m>0</m>, and <m>2</m>. This makes subrectangles <m>R_{11} = [1,3] \times [-2,0]</m>,
+            <m>R_{21} = [3,5] \times [-2,0]</m>,
+            <m>R_{31} = [5,7] \times [-2,0]</m>,
+            <m>R_{12} = [1,3] \times [0,2]</m>,
+            <m>R_{22} = [3,5] \times [0,2]</m>,
+            <m>R_{32} = [5,7] \times [0,2]</m>.
+            These subrectangles are outlined in the table below.
+          </p>
+          <image source="images/A_11_1_3_parta.png"/>
+        </answer>
+        <solution>
+          <p>
+            The endpoints of the partition of <m>[1,7]</m> are <m>1</m>, <m>3</m>, <m>5</m>, and <m>7</m>, while the endpoints of the partition of <m>[-2,2]</m> are <m>-2</m>, <m>0</m>, and <m>2</m>. This makes subrectangles <m>R_{11} = [1,3] \times [-2,0]</m>,
+            <m>R_{21} = [3,5] \times [-2,0]</m>,
+            <m>R_{31} = [5,7] \times [-2,0]</m>,
+            <m>R_{12} = [1,3] \times [0,2]</m>,
+            <m>R_{22} = [3,5] \times [0,2]</m>,
+            <m>R_{32} = [5,7] \times [0,2]</m>.
+            These subrectangles are outlined in the table below.
+          </p>
+          <image source="images/A_11_1_3_parta.png"/>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Calculate the double Riemann sum using the given partition of <m>R</m> and the values of <m>f</m> in the upper right corner of each subrectangle.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>24</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Choosing points in the upper right corner of each subrectangle gives us <m>(x_{11}^*, y_{11}^*) = (3,0)</m>, <m>(x_{21}^*, y_{21}^*) = (5,0)</m>, <m>(x_{31}^*, y_{31}^*) = (7,0)</m>, <m>(x_{12}^*, y_{12}^*) = (3,2)</m>, <m>(x_{22}^*, y_{22}^*) = (5,2)</m>, and <m>(x_{32}^*, y_{32}^*) = (7,2)</m>. So
+            <md>
+              <mrow>\sum_{j=1}^n \sum_{i=1}^m f\left(x_{ij}^*, y_{ij}^*\right) \cdot \Delta A \amp = f(3,0)(4) + f(5,0)(4) + f(7,0)(4) + f(3,2)(4) + f(5,3)(4) + f(7,2)(4)</mrow>
+              <mrow>\amp = 24</mrow>
+            </md>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use geometry to calculate the exact value of <m>\iint_R f(x,y) \, dA</m> and compare it to your approximation. Describe one way we could obtain a better approximation using the given data.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Since the cross sections parallel to the <m>yz</m>-plane are semi-circles of radius 2, we can multiply the area of a cross section by the width to obtain the volume. So the exact volume of this object is <m>4 \pi (6) = 24 \pi</m>. We could get a better approximation by using finer partitions.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Since the cross sections parallel to the <m>yz</m>-plane are semi-circles of radius 2, we can multiply the area of a cross section by the width to obtain the volume. So the exact volume of this object is <m>4 \pi (6) = 24 \pi</m>. We could get a better approximation by using finer partitions.
+          </p>
+        </solution>
+      </task>
     </activity>
-
     <p>
       We conclude this section with a list of properties of double integrals. Since similar properties are satisfied by single-variable integrals and the arguments for double integrals are essentially the same, we omit their justification.
     </p>
-
     <assemblage xml:id="Double-integral-properties">
       <title>Properties of Double Integrals</title>
-    <p>
-      Let <m>f</m> and <m>g</m> be continuous functions on a rectangle <m>R = \{(x,y) : a \leq x \leq b, c \leq y \leq d\}</m>, and let <m>k</m> be a constant. Then
-      <ol>
-        <li>
-          <p>
-            <m>\iint_R (f(x,y) + g(x,y)) \, dA = \iint_R f(x,y) \, dA + \iint_R g(x,y) \, dA</m>.
-          </p>
-        </li>
-
-        <li>
-          <p>
-            <m>\iint_R kf(x,y) \, dA = k \iint_R f(x,y) \, dA</m>.
-          </p>
-        </li>
-
-        <li>
-          <p>
-            If <m>f(x,y) \geq g(x,y)</m> on <m>R</m>, then <m>\iint_R f(x,y) \, dA \geq \iint_R g(x,y) \, dA</m>.
-          </p>
-        </li>
-      </ol>
-    </p>
+      <p>
+        Let <m>f</m> and <m>g</m> be continuous functions on a rectangle <m>R = \{(x,y) : a \leq x \leq b, c \leq y \leq d\}</m>, and let <m>k</m> be a constant. Then
+        <ol>
+          <li>
+            <p>
+              <m>\iint_R (f(x,y) + g(x,y)) \, dA = \iint_R f(x,y) \, dA + \iint_R g(x,y) \, dA</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\iint_R kf(x,y) \, dA = k \iint_R f(x,y) \, dA</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>f(x,y) \geq g(x,y)</m> on <m>R</m>, then <m>\iint_R f(x,y) \, dA \geq \iint_R g(x,y) \, dA</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
     </assemblage>
-
-    
   </subsection>
-
-
-
   <subsection>
     <title>Summary</title>
     <ul>
-    <li>
+      <li>
       <p>
         Let <m>f</m> be a continuous function on a rectangle <m>R = \{(x,y) : a \leq x \leq b, c \leq y \leq d\}</m>. The double Riemann sum for <m>f</m> over <m>R</m> is created as follows.
-        <ul>
+        <ol>
           <li>
-            <title>-</title>
             <p>
               Partition the interval <m>[a, b]</m> into <m>m</m> subintervals of equal length <m>\Delta x = \frac{b-a}{m}</m>. Let <m>x_0</m>, <m>x_1</m>, <m>\ldots</m>, <m>x_m</m> be the endpoints of these subintervals, where <m>a = x_0\lt x_1\lt x_2 \lt  \cdots \lt  x_m = b</m>.
             </p>
           </li>
-
           <li>
-            <title>-</title>
             <p>
               Partition the interval <m>[c, d]</m> into <m>n</m> subintervals of equal length <m>\Delta y = \frac{d-c}{n}</m>. Let <m>y_0</m>, <m>y_1</m>, <m>\ldots</m>, <m>y_n</m> be the endpoints of these subintervals, where <m>c = y_0\lt y_1\lt y_2 \lt  \cdots \lt  y_n = d</m>.
             </p>
           </li>
-
           <li>
-            <title>-</title>
             <p>
               These two partitions create a partition of the rectangle <m>R</m> into <m>mn</m> subrectangles <m>R_{ij}</m> with opposite vertices <m>(x_{i-1},y_{j-1})</m> and <m>(x_i, y_j)</m> for <m>i</m> between <m>1</m> and <m>m</m> and <m>j</m> between <m>1</m> and <m>n</m>. These rectangles all have equal area <m>\Delta A = \Delta x \cdot \Delta y</m>.
             </p>
           </li>
-
           <li>
-            <title>-</title>
             <p>
-              Choose a point <m>(x_{ij}^*, y_{ij}^*)</m> in each rectangle <m>R_{ij}</m>. Then a double Riemann sum for <m>f</m> over <m>R</m> is given by
-              <me>
-                \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A.
-              </me>
+              Choose a point <m>(x_{ij}^*, y_{ij}^*)</m> in each rectangle <m>R_{ij}</m>. 
             </p>
           </li>
-        </ul>
+        </ol>
+        Then a double Riemann sum for <m>f</m> over <m>R</m> is given by
+        <me>
+          \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A.
+        </me>
       </p>
     </li>
-
     <li>
       <p>
         With terms defined as in the Double Riemann Sum, the double integral of <m>f</m> over <m>R</m> is
@@ -1098,553 +1393,30 @@
         </me>
       </p>
     </li>
-
     <li>
       <p>
-        Two interpretations of the double integral <m>\iint_R f(x,y) \, dA</m> are:
+        Interpretations of the double integral <m>\iint_R f(x,y) \, dA</m> are:
         <ul>
           <li>
-            <title>-</title>
             <p>
               The volume of the solids the graph of <m>f</m> bounds above the <m>xy</m>-plane over the rectangle <m>R</m> minus the volume of the solids the graph of <m>f</m> bounds below the <m>xy</m>-plane under the rectangle <m>R</m>;
             </p>
           </li>
-
           <li>
-            <title>-</title>
             <p>
               Dividing the double integral of <m>f</m> over <m>R</m> by the area of <m>R</m> gives us the average value of the function <m>f</m> on <m>R</m>. If <m>f(x, y) \geq  0</m> on <m>R</m>, we can interpret this average value of <m>f</m> on <m>R</m> as the height of the box with base <m>R</m> that has the same volume as the volume of the surface defined by <m>f</m> over <m>R</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>f(x,y)</m> is the density of a substance over some area <m>R</m>, then the double integral of <m>f</m> over <m>R</m> will measure the total amount of the substance in <m>R</m>. 
             </p>
           </li>
         </ul>
       </p>
     </li>
     </ul>
-
-    </subsection>
-
-    <exercises>
-
-     <exercise label="Library__FortLewis__Calc3__16-1-Double-integrals__HGM4-16-1-00-Double-integrals.pg" xml:id="ex-11-1-WW-polynoimial">
-      <!--<title>Estimating a double integral of a polynomial over a rectangle</title>-->
-         <webwork source="Library/FortLewis/Calc3/16-1-Double-integrals/HGM4-16-1-00-Double-integrals.pg"/>
-      </exercise>
-
-     <exercise label="Library__272__setStewart15_1__problem_2.pg" xml:id="ex-11-1-WW-9-squares">
-      <!--<title>Estimating a double integral using 9 squares</title>-->
-         <webwork source="Library/272/setStewart15_1/problem_2.pg"/>
-      </exercise>
-
-      <exercise label="Library__Michigan__Chap16Sec1__Q05.pg" xml:id="ex-11-1-WW-radical">
-      <!--<title>Estimating a double integral of a radical function over a rectangle</title>-->
-         <webwork source="Library/Michigan/Chap16Sec1/Q05.pg"/>
-      </exercise>
-
-
-      <exercise label="Library__Michigan__Chap16Sec1__Q07.pg" xml:id="ex-11-1-WW-bounds-2">
-      <!--<title>Estimating upper and lower bounds for a double integral</title>-->
-         <webwork source="Library/Michigan/Chap16Sec1/Q07.pg"/>
-      </exercise>
-
-      <exercise label="Library__272__setStewart15_1__problem_1.pg" xml:id="ex-11-1-WW-average">
-      <!--<title>Average of double integral estimates</title>-->
-         <webwork source="Library/272/setStewart15_1/problem_1.pg"/>
-      </exercise>
-      
-      <exercise label="Library__Michigan__Chap16Sec1__Q03.pg" xml:id="ex-11-1-WW-contour">
-      <!--<title>Estimating a double integral from a contour diagram</title>-->
-         <webwork source="Library/Michigan/Chap16Sec1/Q03.pg"/>
-      </exercise>
-
-      <exercise label="Library__Michigan__Chap16Sec1__Q27.pg" xml:id="ex-11-1-WW-temperature">
-      <!--<title>Estimating the temperature of a room</title>-->
-         <webwork source="Library/Michigan/Chap16Sec1/Q27.pg"/>
-      </exercise>
-
-      <exercise label="Library__FortLewis__Calc3__16-1-Double-integrals__HGM5-16-1-1-Double-integrals.pg" xml:id="ex-11-1-WW-table">
-      <!--<title>Estimating a double integral from a table of values</title>-->
-         <webwork source="Library/FortLewis/Calc3/16-1-Double-integrals/HGM5-16-1-1-Double-integrals.pg"/>
-      </exercise>
-
-
-      <exercise label="Library__Michigan__Chap16Sec1__Q01.pg" xml:id="ex-11-1-WW-table-over-under">
-      <!--<title>Over and underestimates of a double integral from a table of values</title>-->
-         <webwork source="Library/Michigan/Chap16Sec1/Q01.pg"/>
-      </exercise>
-
-      <!--PTX issue
-      <exercise xml:id="ex-11-1-WW-order">
-      <title>Ordering values of double integrals</title>
-         <webwork source="Library/Michigan/Chap16Sec1/Q31.pg" />
-      </exercise>
-      -->
-
-      <!--PTX issue
-      <exercise xml:id="ex-11-1-WW-bounds">
-      title>Estimating upper and lower bounds</title>
-         <webwork source="Library/272/setStewart15_1/ur_vc_8_8.pg" />
-      </exercise>
-      -->
-
-      <exercise>
-        <statement>
-          <p>
-            The temperature at any point on a metal plate in the <m>xy</m> plane is given by <m>T(x,y) = 100-4x^2 - y^2</m>, where <m>x</m> and <m>y</m> are measured in inches and <m>T</m> in degrees Celsius. Consider the portion of the plate that lies on the rectangular region <m>R = [1,5] \times [3,6]</m>.
-            <ol marker="a.">
-              <li>
-                <p>
-                  Estimate the value of <m>\iint_R T(x,y) \, dA</m> by using a double Riemann sum with two subintervals in each direction and choosing <m>(x_i^*, y_j^*)</m> to be the point that lies in the upper right corner of each subrectangle.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Determine the area of the rectangle <m>R</m>.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Estimate the average temperature, <m>T_{\operatorname{AVG}(R)}</m>, over the region <m>R</m>.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Do you think your estimate in (c) is an over- or under-estimate of the true temperature?  Why?
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-
-        <answer>
-          <ol marker="a.">
-            <li>
-              <p>
-                <me>
-                  \iint_R T(x,y) \, dA \approx 46.5
-                </me>
-              </p>
-            </li>
-            <li>
-              <p>
-                The area of the rectangle <m>R</m> is <m>12</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                <me>
-                  T_{\operatorname{AVG}(R)} \approx \frac{46.5}{12} = 3.875
-                </me>
-              </p>
-            </li>
-            <li>
-              <p>
-                The temperature function is decreasing in both the <m>x</m> and <m>y</m> directions,
-                so the value at the upper right corner of each subrectangle is the smallest temperature on that subrectangle.
-                So our approximation is an underestimate.
-              </p>
-            </li>
-          </ol>
-        </answer>
-
-        <solution>
-          <ol marker="a.">
-            <li>
-              <p>
-                The partition points in the <m>x</m> direction are <m>1</m>,
-                <m>3</m>,
-                and <m>5</m> and the partition points in the <m>y</m> direction are <m>3</m>, <m>4.5</m>,
-                and <m>6</m>.
-                Using the points that lie in the upper right corner of each subrectangle we have
-                <me>
-                  \iint_R T(x,y) \, dA \approx T(3,4.5)(3) + T(5,4.5)(3) + T(3,6)(3) + T(5,6)(3) = 46.5
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The area of the rectangle <m>R</m> is <m>(4)(3) = 12</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Using the result of part (a) we approximate the average temperature over <m>R</m> as
-                <me>
-                  T_{\operatorname{AVG}(R)} = \frac{1}{\text{ Area } (R)} \iint_R T(x,y) \approx \frac{46.5}{12} = 3.875
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The temperature function is decreasing in both the <m>x</m> and <m>y</m> directions,
-                so the value at the upper right corner of each subrectangle is the smallest temperature on that subrectangle.
-                So our approximation is an underestimate.
-              </p>
-            </li>
-          </ol>
-        </solution>
-
-        
-      </exercise>
-
-      <exercise>
-        <statement>
-          <p>
-            Let <m>f</m> be a function of independent variables <m>x</m> and <m>y</m> that is increasing in both the positive <m>x</m> and <m>y</m> directions on a rectangular domain <m>R</m>. For each of the following situations, determine if the double Riemann sum of <m>f</m> over <m>R</m> is an overestimate or underestimate of the double integral <m>\iint_R f(x,y) \, dA</m>, or if it impossible to determine definitively. Provide justification for your responses. 
-            <ol marker="a.">
-              <li>
-                <p>
-                  The double Riemann sum of <m>f</m> over <m>R</m> where <m>f</m> is evaluated at the lower left point of each subrectangle.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  The double Riemann sum of <m>f</m> over <m>R</m> where <m>f</m> is evaluated at the upper right point of each subrectangle.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  The double Riemann sum of <m>f</m> over <m>R</m> where <m>f</m> is evaluated at the midpoint of each subrectangle.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  The double Riemann sum of <m>f</m> over <m>R</m> where <m>f</m> is evaluated at the lower right point of each subrectangle.
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-
-        <answer>
-          <ol marker="a.">
-            <li>
-              <p>
-                underestimate 
-              </p>
-            </li>
-            <li>
-              <p>
-                overestimate 
-              </p>
-            </li>
-            <li>
-              <p>
-                impossible to determine
-              </p>
-            </li>
-            <li>
-              <p>
-                impossible to determine 
-              </p>
-            </li>
-          </ol>
-        </answer>
-
-        <solution>
-          <ol marker="a.">
-            <li>
-              <p>
-                The function <m>f</m> is increasing in both the <m>x</m> and <m>y</m> directions,
-                so the value at the lower left corner of each subrectangle is the smallest function value on that subrectangle. Thus the double Riemann sum of <m>f</m> over <m>R</m> is 
-                an underestimate of the double integral.
-              </p>
-            </li>
-            <li>
-              <p>
-                The function <m>f</m> is increasing in both the <m>x</m> and <m>y</m> directions,
-                so the value at the upper right corner of each subrectangle is the largest function value on that subrectangle. Thus the double Riemann sum of <m>f</m> over <m>R</m> is 
-                an overestimate of the double integral.
-              </p>
-            </li>
-            <li>
-              <p>
-                While the function <m>f</m> is increasing in both the <m>x</m> and <m>y</m> directions,
-                we do not know exactly how it grows. Thus we cannot determine how the value at the midpoint of each subrectangle compares to other function values on that subrectangle. We cannot determine definitively whether the Riemann sum is an overestimate or an underestimate of the double integral.
-              </p>
-            </li>
-            <li>
-              <p>
-                While the function <m>f</m> is increasing in both the <m>x</m> and <m>y</m> directions,
-                we do not know exactly how it grows. Thus we cannot determine how the value at the midpoint of each subrectangle compares to other function values on that subrectangle. (For two specific examples, consider <m>f_1(x, y) = xe^y</m> and <m>f_2(x, y) = ye^x</m>.) It is impossible to determine definitively whether the Riemann sum is an overestimate or an underestimate of the double integral.
-              </p>
-            </li>
-          </ol>
-        </solution>
-        
-      </exercise>
-
-      <exercise>
-        <statement>
-          <p>
-            The wind chill, as frequently reported, is a measure of how cold it feels outside when the wind is blowing. In <xref ref="T_11_1_Ex_wind_chill">Table</xref>, the wind chill <m>w=w(v,T)</m>, measured in degrees Fahrenheit, is a function of the wind speed <m>v</m>, measured in miles per hour, and the ambient air temperature <m>T</m>, also measured in degrees Fahrenheit. Approximate the average wind chill on the rectangle <m>[5,35] \times [-20,20]</m> using 3 subintervals in the <m>v</m> direction, 4 subintervals in the <m>T</m> direction, and the point in the lower left corner in each subrectangle.
-          </p>
-
-          <table xml:id="T_11_1_Ex_wind_chill">
-            <title>Wind chill as a function of wind speed and temperature.</title>
-            <tabular halign="center" bottom="minor" top="minor">
-              <row bottom="medium">
-                <cell><m>v \backslash T</m></cell>
-                <cell><m>-20</m></cell>
-                <cell><m>-15</m></cell>
-                <cell><m>-10</m></cell>
-                <cell><m>-5</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>5</m></cell>
-                <cell><m>10</m></cell>
-                <cell><m>15</m></cell>
-                <cell><m>20</m></cell>
-              </row>
-              <row>
-                <cell><m>5</m></cell>
-                <cell><m>-34</m></cell>
-                <cell><m>-28</m></cell>
-                <cell><m>-22</m></cell>
-                <cell><m>-16</m></cell>
-                <cell><m>-11</m></cell>
-                <cell><m>-5</m></cell>
-                <cell><m>1</m></cell>
-                <cell><m>7</m></cell>
-                <cell><m>13</m></cell>
-              </row>
-              <row>
-                <cell><m>10</m></cell>
-                <cell><m>-41</m></cell>
-                <cell><m>-35</m></cell>
-                <cell><m>-28</m></cell>
-                <cell><m>-22</m></cell>
-                <cell><m>-16</m></cell>
-                <cell><m>-10</m></cell>
-                <cell><m>-4</m></cell>
-                <cell><m>3</m></cell>
-                <cell><m>9</m></cell>
-              </row>
-              <row>
-                <cell><m>15</m></cell>
-                <cell><m>-45</m></cell>
-                <cell><m>-39</m></cell>
-                <cell><m>-32</m></cell>
-                <cell><m>-26</m></cell>
-                <cell><m>-19</m></cell>
-                <cell><m>-13</m></cell>
-                <cell><m>-7</m></cell>
-                <cell><m>0</m></cell>
-                <cell><m>6</m></cell>
-              </row>
-              <row>
-                <cell><m>20</m></cell>
-                <cell><m>-48</m></cell>
-                <cell><m>-42</m></cell>
-                <cell><m>-35</m></cell>
-                <cell><m>-29</m></cell>
-                <cell><m>-22</m></cell>
-                <cell><m>-15</m></cell>
-                <cell><m>-9</m></cell>
-                <cell><m>-2</m></cell>
-                <cell><m>4</m></cell>
-              </row>
-              <row>
-                <cell><m>25</m></cell>
-                <cell><m>-51</m></cell>
-                <cell><m>-44</m></cell>
-                <cell><m>-37</m></cell>
-                <cell><m>-31</m></cell>
-                <cell><m>-24</m></cell>
-                <cell><m>-17</m></cell>
-                <cell><m>-11</m></cell>
-                <cell><m>-4</m></cell>
-                <cell><m>3</m></cell>
-              </row>
-              <row>
-                <cell><m>30</m></cell>
-                <cell><m>-53</m></cell>
-                <cell><m>-46</m></cell>
-                <cell><m>-39</m></cell>
-                <cell><m>-33</m></cell>
-                <cell><m>-26</m></cell>
-                <cell><m>-19</m></cell>
-                <cell><m>-12</m></cell>
-                <cell><m>-5</m></cell>
-                <cell><m>1</m></cell>
-              </row>
-              <row>
-                <cell><m>35</m></cell>
-                <cell><m>-55</m></cell>
-                <cell><m>-48</m></cell>
-                <cell><m>-41</m></cell>
-                <cell><m>-34</m></cell>
-                <cell><m>-27</m></cell>
-                <cell><m>-21</m></cell>
-                <cell><m>-14</m></cell>
-                <cell><m>-7</m></cell>
-                <cell><m>0</m></cell>
-              </row>
-            </tabular>
-          </table>
-        </statement>
-
-        <answer>
-          <p>
-            The length of each subinterval in the <m>v</m> direction is <m>\frac{35-5}{3} = 10</m>,
-            so our partition points in the <m>v</m> direction are <m>5</m>,
-            <m>15</m>, <m>25</m>, and <m>35</m>.
-            The length of each subinterval in the <m>T</m> direction is <m>\frac{20-(-20)}{4} = 10</m>,
-            so our partition points in the <m>T</m> direction are <m>-20</m>,
-            <m>-10</m>,
-            <m>0</m>, <m>10</m>, and <m>20</m>.
-            So
-            <md>
-              <mrow>\iint w(v,t) \, dA \amp \approx w(5,-20)(100) + w(15,-20)(100) + w(25,-20)(100)</mrow>
-              <mrow>\amp \qquad + w(5,-10)(100) + w(15,-10)(100) + w(25,-10)(100)</mrow>
-              <mrow>\amp \qquad + w(5,0)(100) + w(15,0)(100) + w(25,0)(100)</mrow>
-              <mrow>\amp \qquad + w(5,10)(100) + w(15,10)(100) + w(25,10)(100)</mrow>
-              <mrow>\amp = -29200</mrow>
-            </md>.
-          </p>
-          <p>
-            So the average wind chill on <m>R</m> is approximately
-            <me>
-              \frac{1}{\text{ Area } (R)} \iint_R w(v,T) \approx -\frac{29200}{(30)(40)} = -\frac{73}{3} \approx -24.33
-            </me>.
-          </p>
-        </answer>
-
-        <solution>
-          <p>
-            The length of each subinterval in the <m>v</m> direction is <m>\frac{35-5}{3} = 10</m>,
-            so our partition points in the <m>v</m> direction are <m>5</m>,
-            <m>15</m>, <m>25</m>, and <m>35</m>.
-            The length of each subinterval in the <m>T</m> direction is <m>\frac{20-(-20)}{4} = 10</m>,
-            so our partition points in the <m>T</m> direction are <m>-20</m>,
-            <m>-10</m>,
-            <m>0</m>, <m>10</m>, and <m>20</m>.
-            So
-            <md>
-              <mrow>\iint w(v,t) \, dA \amp \approx w(5,-20)(100) + w(15,-20)(100) + w(25,-20)(100)</mrow>
-              <mrow>\amp \qquad + w(5,-10)(100) + w(15,-10)(100) + w(25,-10)(100)</mrow>
-              <mrow>\amp \qquad + w(5,0)(100) + w(15,0)(100) + w(25,0)(100)</mrow>
-              <mrow>\amp \qquad + w(5,10)(100) + w(15,10)(100) + w(25,10)(100)</mrow>
-              <mrow>\amp = -29200</mrow>
-            </md>.
-          </p>
-          <p>
-            So the average wind chill on <m>R</m> is approximately
-            <me>
-              \frac{1}{\text{ Area } (R)} \iint_R w(v,T) \approx -\frac{29200}{(30)(40)} = -\frac{73}{3} \approx -24.33 \text{ degrees Fahrenheit}
-            </me>.
-          </p>
-        </solution>
-
-
-      </exercise>
-
-        <exercise>
-        <statement>
-          <p>
-            Consider the box with a sloped top that is given by the following description: the base is the rectangle <m>R = [0,4] \times [0,3]</m>, while the top is given by the plane <m>z = p(x,y) = 20 - 2x - 3y</m>.
-            <ol marker="a.">
-              <li>
-                <p>
-                  Estimate the value of <m>\iint_R p(x,y) \, dA</m> by using a double Riemann sum with four subintervals in the <m>x</m> direction and three subintervals in the <m>y</m> direction, and choosing <m>(x_i^*, y_j^*)</m> to be the point that is the midpoint of each subrectangle.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  What important quantity does your double Riemann sum in (a) estimate?
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Suppose it can be determined that <m>\iint_R p(x,y) \, dA = 138</m>.  What is the exact average value of <m>p</m> over <m>R</m>?
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  If you wanted to build a rectangular box (with the same base) that has the same volume as the box with the sloped top described here, how tall would the rectangular box have to be?
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-
-        <answer>
-          <ol marker="a.">
-            <li>
-              <p>
-                <me>
-                 \iint_R p(x,y) \, dA \approx 138
-                </me>
-              </p>
-            </li>
-            <li>
-              <p>
-                Since <m>p(x,y) \geq 0</m> on <m>R</m>,
-                the geometric quantity our double Riemann sum approximates is the volume of the surface with the plane defined by <m>p</m> as the top and with base <m>R</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>11.5</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>11.5</m>
-              </p>
-            </li>
-          </ol>
-        </answer>
-
-        <solution>
-          <ol marker="a.">
-            <li>
-              <p>
-                Our partition points in the <m>x</m> direction are <m>0</m>,
-                <m>1</m>, <m>2</m>, <m>3</m>,
-                and <m>4</m> while the partition points in the <m>y</m> direction are <m>0</m>,
-                <m>1</m>, <m>2</m>, and <m>3</m>.
-                So
-                <md>
-                  <mrow>\iint_R p(x,y) \, dA \approx p(0.5,0.5)(1) \amp + p(1.5, 0.5)(1) + p(2.5,0.5)(1) + p(3.5,0.5)(1)</mrow>
-                  <mrow>\amp \qquad + p(0.5,1.5)(1) + p(1.5, 1.5)(1) + p(2.5,1.5)(1) + p(3.5,1.5)(1)</mrow>
-                  <mrow>\amp \qquad + p(0.5,2.5)(1) + p(1.5, 2.5)(1) + p(2.5,2.5)(1) + p(3.5,2.5)(1)</mrow>
-                  <mrow>\amp =  138</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Since <m>p(x,y) \geq 0</m> on <m>R</m>,
-                the geometric quantity our double Riemann sum approximates is the volume of the surface with the plane defined by <m>p</m> as the top and with base <m>R</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The area of <m>R</m> is 12,
-                so the exact average value of <m>p</m> over <m>R</m> is
-                <me>
-                  \frac{1}{\text{ Area } (R)} \iint_R p(x,y) \approx \frac{138}{12} = 11.5
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                If <m>h</m> is the height of the box,
-                then we would need to have <m>12h=138</m>, or <m>h = 11.5</m>.
-                This is the average value of <m>p</m> over <m>R</m>.
-              </p>
-            </li>
-          </ol>
-        </solution>
-
-      </exercise>
-    </exercises>
+  </subsection>
+  <xi:include href="exercises/ez-S_multi_ints_double_ints_rect.ptx" />
+    
 </section>
