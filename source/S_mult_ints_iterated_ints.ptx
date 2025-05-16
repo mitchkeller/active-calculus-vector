@@ -28,142 +28,186 @@
 
     <introduction>
     <p>
-      Recall that we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as
+      In <xref ref="S-11-1-Double-Integrals-Rectangles">Section</xref>, we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as
       <me>
         \iint_R f(x,y) \, dA = \lim_{m,n \to \infty} \sum_{j=1}^n \sum_{i=1}^m f\left(x_{ij}^*, y_{ij}^*\right) \cdot \Delta A,
       </me>
-      where the different variables and notation are as described in <xref ref="S-11-1-Double-Integrals-Rectangles">Section</xref>. Thus <m>\iint_R f(x,y) \, dA</m> is a limit of double Riemann sums, but while this definition tells us exactly what a double integral is, it is not very helpful for determining the value of a double integral. Fortunately, there is a way to view a double integral as an <em>iterated integral</em><idx><h>iterated integral</h><h>rectangular coordinates</h></idx>, which will make computations feasible in many cases.
+      using the classic calculus approach. Thus <m>\iint_R f(x,y) \, dA</m> is a limit of double Riemann sums, but while this definition tells us exactly what a double integral is, it is not very helpful for determining the value of a double integral. Fortunately, there is a way to view a double integral as an <em>iterated integral</em><idx><h>iterated integral</h><h>rectangular coordinates</h></idx>, which will make computations feasible in many cases.
     </p>
 
     <p>
-      The viewpoint of an iterated integral is closely connected to an important idea from single-variable calculus. When we studied solids of revolution, such as the one shown in <xref ref="F_6_2_Ex1">Figure</xref>, we saw that in some circumstances we could slice the solid perpendicular to an axis and have each slice be approximately a circular disk. From there, we were able to find the volume of each disk, and then use an integral to add the volumes of the slices. In what follows, we are able to use single integrals to generalize this approach to handle even more general geometric shapes.
+      The viewpoint of an iterated integral is closely connected to an important idea from single-variable calculus. When we studied solids of revolution, such as the one shown in <xref ref="F_6_2_Ex1">Figure</xref>, we saw that in some circumstances we could slice the solid perpendicular to an axis and approximate the volume using circular disks. From there, we were able to find the volume of each disk, and then use an integral to add the volumes of the slices to find the total volume of the rotated solid. 
+    </p>
+    <p>  
+      We will look at an example of this approach in the following Preview Activity, we will look at how use single variable integrals along traces in a similar way to the rotation volume described above. We will generalize this approach in this section for double integrals over rectangular regions. In <xref ref="S-11-3-Double-Integrals-General"/>, we will look at using this technique on non-rectangular regions. 
     </p>
 
-    <figure xml:id="F_6_2_Ex1">
+    <!-- <figure xml:id="F_6_2_Ex1">
       <caption>A solid of revolution.</caption>
       <image width="50%" source="images/fig_11_2_volume_revolve"/>
+    </figure> -->
+    <figure xml:id="F_6_2_Ex1">
+      <caption> </caption>
+        <interactive title="interactive-F_6_2_Ex1" platform="sage" width="100%" aspect="1:1">
+          <slate surface="sage">
+            <xi:include href="interact/surfrot.txt" parse="text" />     
+          </slate>
+        </interactive>
     </figure>
 
     <exploration xml:id="PA_11_2">
-      <statement>
+      <introduction>
         <p>
-          Let <m>f(x,y) = 25-x^2-y^2</m> on the rectangular domain <m>R = [-3,3] \times [-4,4]</m>.
+          In this activity we will explore the double integral of <m>f(x,y) = 25-x^2-y^2</m> on the rectangular domain <m>R = [-3,3] \times [-4,4]</m>.
         </p>
-
         <p>
-          As with partial derivatives, we may treat one of the variables in <m>f</m> as constant and think of the resulting function as a function of a single variable. Now we investigate what happens if we integrate instead of differentiate.
-          <ol marker="a.">
-            <li>
-              <p>
-                Choose a fixed value of <m>x</m> in the interior of <m>[-3,3]</m>. Let
-                <me>
-                  A(x) = \int_{-4}^4 f(x,y) \, dy.
-                </me>
-                What is the geometric meaning of the value of <m>A(x)</m> relative to the surface defined by <m>f</m>. (Hint: Think about the trace determined by the fixed value of <m>x</m>, and consider how <m>A(x)</m> is related to the image at left in <xref ref="F_11_2_Cross_section_PA_y">Figure</xref>.)
-
-                <figure xml:id="F_11_2_Cross_section_PA_y">
-                  <caption>Left: A cross section with fixed <m>x</m>. Right: A cross section with fixed <m>x</m> and <m>\Delta x</m>.</caption>
-                  <sidebyside widths="50% 50%">
-                    <image source="images/fig_11_2_preview_slice"/>
-                    <image source="images/fig_11_2_preview_thick"/>
-                    </sidebyside>
-                </figure>
-                
-
-              </p>
-            </li>
-
-            <li>
-              <p>
-                For a fixed value of <m>x</m>, say <m>x_i^*</m>, what is the geometric meaning of <m>A(x_i^*) \ \Delta x</m>?  (Hint: Consider how <m>A(x_i^*) \Delta x</m> is related to the image at right in <xref ref="F_11_2_Cross_section_PA_y">Figure</xref>.)
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Since <m>f</m> is continuous on <m>R</m>, we can define the function <m>A = A(x)</m> at every value of <m>x</m> in <m>[-3,3]</m>. Now think about subdividing the <m>x</m>-interval <m>[-3,3]</m> into <m>m</m> subintervals, and choosing a value <m>x_i^*</m> in each of those subintervals.  What will be the meaning of the sum <m>\sum_{i=1}^m A(x_i^*) \ \Delta x</m>?
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Explain why <m>\int_{-3}^3 A(x) \, dx</m> will determine the exact value of the volume under the surface <m>z = f(x,y)</m> over the rectangle <m>R</m>.
-              </p>
-            </li>
-          </ol>
+          As with partial derivatives, we may treat one of the variables in <m>f</m> as constant and think of the resulting function as a function of a single variable. We will now investigate what this means geometrically and algebraically when we integrate with one input variable fixed. 
         </p>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              Since <m>f(x,y) \geq 0</m> on the given domain,
-              the value of <m>A(x)</m> tells us the area under the <m>y</m>-trace curve for that fixed value of <m>x</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Since <m>A(x_i^*)</m> is an area under the <m>y</m>-trace for the value <m>x = x_i^*</m>,
-              when we multiply that area by a constant width <m>\Delta x</m>,
-              we obtain the volume of a slab obtained by thickening the region under the <m>x=x_i^*</m> trace by a uniform thickness <m>\Delta x</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              This sum will give us the sum of volumes of slabs with constant cross sections parallel to the <m>yz</m>-plane,
-              where the cross sections look like the areas under the graphs of the <m>x_i^*</m> traces.
-            </p>
-          </li>
-          <li>
-            <p>
-              As we let <m>m</m> go to infinity,
-              the thickness of the slabs goes to 0 and we are just adding up all of the cross sectional areas of the surface parallel to the <m>yz</m>-plane, and so
-              <me>
-                \int_{-3}^3 A(x) \, dx = \lim_{m \to \infty} \sum_{i=1}^m A(x_i^*) \ \Delta x
-              </me>
-              gives us the volume of the solid under the surface
-              <m>z = f(x,y)</m> over the rectangle <m>R</m>.
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              Since <m>f(x,y) \geq 0</m> on the given domain,
-              the value of <m>A(x)</m> tells us the area under the <m>y</m>-trace curve for that fixed value of <m>x</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Since <m>A(x_i^*)</m> is an area under the <m>y</m>-trace for the value <m>x = x_i^*</m>,
-              when we multiply that area by a constant width <m>\Delta x</m>,
-              we obtain the volume of a slab obtained by thickening the region under the <m>x=x_i^*</m> trace by a uniform thickness <m>\Delta x</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              This sum will give us the sum of volumes of slabs with constant cross sections parallel to the <m>yz</m>-plane,
-              where the cross sections look like the areas under the graphs of the <m>x_i^*</m> traces.
-            </p>
-          </li>
-          <li>
-            <p>
-              As we let <m>m</m> go to infinity,
-              the thickness of the slabs goes to 0 and we are just adding up all of the cross sectional areas of the surface parallel to the <m>yz</m>-plane, and so
-              <me>
-                \int_{-3}^3 A(x) \, dx = \lim_{m \to \infty} \sum_{i=1}^m A(x_i^*) \ \Delta x
-              </me>
-              gives us the volume of the solid under the surface
-              <m>z = f(x,y)</m> over the rectangle <m>R</m>.
-            </p>
-          </li>
-        </ol>
-      </solution>  
-  
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Let <m>a</m> be a fixed value in the interval <m>[-3,3]</m>. Compute 
+            <me>\int_{-4}^4 f(a,y) dy </me>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>200-8a^2-128/3</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            We will integrate in terms of <m>y</m> to get
+            <me>\int_{-4}{^4} 25-a^2-y^2 \, dy = 25 (8)-8a^2-y^3/3 \restrict_{-4}^4 = 200-8a^2-128/3</me>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            The answer of your previous task depended on the value of <m>a</m> but the process would be the exact same set of steps for every <m>a</m>, so we can define a function <m>A(x)</m> as 
+            <me>
+              A(x) = \int_{-4}^4 f(x,y) \, dy
+            </me>
+          </p>
+          <p>
+            Explain the geometric meaning of the value of <m>A(x)</m> relative to the surface defined by <m>f</m> in the context of the trace determined by the fixed value of <m>x</m>. Your explanation should refer to differ parts of <xref ref=""/>
+          </p> 
+          <figure xml:id="surftrace">
+            <caption> </caption>
+              <interactive title="interactive-surftrace" platform="sage" width="100%" aspect="1:1">
+                <slate surface="sage">
+                  var('s,t,x,y,z')
+                  f(x,y)=25-x^2-y^2
+                  x1=-3;x2=3;y1=-4;y2=4;
+                  param(s,t)=(s,t,f(s,t))
+                  #set up grid      n is number of steps in s    m is number of steps in t  
+                  #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+                  n=7;m=7;a1=x1;a2=x2;b1=y1;b2=y2; 
+                  #c1 is surface color     o1 is surface opacity
+                  #c2 and o2 are for constant t value traces
+                  #c3 and o3 are for constant s value traces
+                  c1="lightblue"; c2="black"; c3="black"; o1=0.2; o2=0.3; o3=0.3;
+                  plot1=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+                  for i in range(n+1):
+                    sv=a1+i/n*(a2-a1)
+                    plot1+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+                  for i in range(m+1):
+                    tv=b1+i/m*(b2-b1)
+                    plot1+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+                  a=0.75;
+                  plot1+=parametric_plot3d((a,t,s*f(a,t)),(t,b1,b2),(s,0,1),color="blue",opacity=0.6)
+                  show(plot1,viewpoint=[[-0.2251,-0.5901,-0.7753],147.05],camera_position=[7.5902,13.4964,5.4958],aspect_ratio=(1,1,.2))
+                </slate>
+              </interactive>
+          </figure>
+        </statement>
+        <answer>
+          <p>
+            Since <m>f(x,y) \geq 0</m> on the given domain, the value of <m>A(x)</m> tells us the area under the <m>y</m>-trace curve for that fixed value of <m>x</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Since <m>f(x,y) \geq 0</m> on the given domain, the value of <m>A(x)</m> tells us the area under the <m>y</m>-trace curve for that fixed value of <m>x</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            For a fixed value of <m>x</m>, say <m>x_i^*</m>, write a few sentences to explain the geometric meaning of <m>A(x_i^*) \ \Delta x</m>. Your explanation of <m>A(x_i^*) \Delta x</m> should refer to the parts of  <xref ref="F_11_2_Cross_section_PA_y">Figure</xref>.)
+          </p>
+          <figure xml:id="F_11_2_Cross_section_PA_y">
+            <caption> </caption>
+              <interactive title="interactive-F_11_2_Cross_section_PA_y" platform="sage" width="100%" aspect="1:1">
+                <slate surface="sage">
+                  <xi:include href="interact/surftrace2.txt" parse="text" />     
+                </slate>
+              </interactive>
+          </figure>
+        </statement>
+        <answer>
+          <p>
+            Since <m>A(x_i^*)</m> is an area under the <m>y</m>-trace for the value <m>x = x_i^*</m>, when we multiply that area by a constant width <m>\Delta x</m>, we obtain the volume of a slab obtained by thickening the region under the <m>x=x_i^*</m> trace by a uniform thickness <m>\Delta x</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Since <m>A(x_i^*)</m> is an area under the <m>y</m>-trace for the value <m>x = x_i^*</m>, when we multiply that area by a constant width <m>\Delta x</m>, we obtain the volume of a slab obtained by thickening the region under the <m>x=x_i^*</m> trace by a uniform thickness <m>\Delta x</m>.
+          </p>
+        </solution>
+      </task>     
+      <!-- <figure xml:id="F_11_2_Cross_section_PA_y">
+        <caption>Left: A cross section with fixed <m>x</m>. Right: A cross section with fixed <m>x</m> and <m>\Delta x</m>.</caption>
+        <sidebyside widths="50% 50%">
+          <image source="images/fig_11_2_preview_slice"/>
+          <image source="images/fig_11_2_preview_thick"/>
+          </sidebyside>
+      </figure> -->
+      <task>
+        <statement>
+          <p>
+            Since <m>f</m> is continuous on <m>R</m>, we can define the function <m>A = A(x)</m> at every value of <m>x</m> in <m>[-3,3]</m>. Now think about subdividing the <m>x</m>-interval <m>[-3,3]</m> into <m>m</m> subintervals, and choosing a value <m>x_i^*</m> in each of those subintervals.  What will be the meaning of the sum <m>\sum_{i=1}^m A(x_i^*) \ \Delta x</m>?
+          </p>
+        </statement>
+        <answer>
+          <p>
+            This sum will give us the sum of volumes of slabs with constant cross sections parallel to the <m>yz</m>-plane, where the cross sections look like the areas under the graphs of the <m>x_i^*</m> traces.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            This sum will give us the sum of volumes of slabs with constant cross sections parallel to the <m>yz</m>-plane, where the cross sections look like the areas under the graphs of the <m>x_i^*</m> traces.
+          </p>
+        </solution>
+      </task>         
+      <task>
+        <statement>
+          <p>
+            Explain why <m>\int_{-3}^3 A(x) \, dx</m> will determine the exact value of the volume under the surface <m>z = f(x,y)</m> over the rectangle <m>R</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            As we let <m>m</m> go to infinity, the thickness of the slabs goes to 0 and we are just adding up all of the cross sectional areas of the surface parallel to the <m>yz</m>-plane, and so
+            <me>
+              \int_{-3}^3 A(x) \, dx = \lim_{m \to \infty} \sum_{i=1}^m A(x_i^*) \ \Delta x
+            </me>
+            gives us the volume of the solid under the surface <m>z = f(x,y)</m> over the rectangle <m>R</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            As we let <m>m</m> go to infinity, the thickness of the slabs goes to 0 and we are just adding up all of the cross sectional areas of the surface parallel to the <m>yz</m>-plane, and so
+            <me>
+              \int_{-3}^3 A(x) \, dx = \lim_{m \to \infty} \sum_{i=1}^m A(x_i^*) \ \Delta x
+            </me>
+            gives us the volume of the solid under the surface <m>z = f(x,y)</m> over the rectangle <m>R</m>.
+          </p>
+        </solution>
+      </task>
     </exploration>
   </introduction>
 
@@ -179,15 +223,41 @@
     <p>
       The function <m>A = A(x)</m> determines the value of the cross sectional area (by area we mean <q>signed</q> area) in the <m>y</m> direction for the fixed value of <m>x</m> of the solid bounded between the surface defined by <m>f</m> and the <m>xy</m>-plane.
     </p>
-
     <figure xml:id="F_11_2_Cross_section_y_slab_sum">
-      <caption>Summing volumes of cross section slices.</caption>
+      <caption> </caption>
+        <interactive title="interactive-F_11_2_Cross_section_y_slab_sum" platform="sage" width="100%" aspect="1:1">
+          <slate surface="sage">
+            var('s,t,x,y,z')
+            f(x,y)=25-x^2-y^2
+            x1=-3;x2=3;y1=-4;y2=4;
+            param(s,t)=(s,t,f(s,t))
+            @interact
+            def slicesinteract(ns=slider(3,25,1,default=5,label="Number of slices to use")):
+              a1=x1;a2=x2;b1=y1;b2=y2; 
+              xscale=5;yscale=5;zscale=30
+              plot1=arrow((0,0,0),(xscale,0,0),color="black",opacity=0.5,width=2)+text3d("x",(xscale+0.5,0,0),fontsize=30)+text3d("y",(0,yscale+0.5,0),fontsize=30)+text3d("z",(0,0,zscale+0.5),fontsize=30)
+              plot1+=arrow((0,0,0),(0,yscale,0),color="black",opacity=0.5)+arrow((0,0,0),(0,0,zscale),color="black",opacity=0.5)
+              dx=6/ns;sc="pink";o4=.8;
+              for i in range(ns+1):
+                a=-3+i*dx
+                plot1+=parametric_plot3d((a,t,s*f(a,t)),(t,b1,b2),(s,0,1),color=sc,opacity=o4)
+                plot1+=parametric_plot3d((a+dx,t,s*f(a,t)),(t,b1,b2),(s,0,1),color=sc,opacity=o4)
+                plot1+=parametric_plot3d((a+s,t,f(a,t)),(t,b1,b2),(s,0,dx),color="purple",opacity=o4)
+                plot1+=parametric_plot3d((a+s,t,0),(t,b1,b2),(s,0,dx),color=sc,opacity=o4)
+                plot1+=parametric_plot3d((a+s,4,t*f(a,4)),(t,0,1),(s,0,dx),color=sc,opacity=o4)
+                plot1+=parametric_plot3d((a+s,-4,t*f(a,-4)),(t,0,1),(s,0,dx),color=sc,opacity=o4)
+              show(plot1,viewpoint=[[-0.099,-0.6027,-0.7918],165.17],camera_position=[4.2065,9.5131,4.0273],aspect_ratio=(1,1,.2))
+          </slate>
+        </interactive>
+    </figure>
+    <!-- <figure xml:id="F_11_2_Cross_section_y_slab_sum">
+      <caption>Summing volumes of cross section slices</caption>
       <sidebyside widths="33% 33% 33%">
       <image source="images/fig_11_2_preview_animate_0"/>
       <image source="images/fig_11_2_preview_animate_2"/>
       <image source="images/fig_11_2_preview_animate_5"/>
       </sidebyside>
-    </figure>
+    </figure> -->
 
     <p>
       The value of this cross sectional area is determined by the input <m>x</m> in <m>A</m>. Since <m>A</m> is a function of <m>x</m>, it follows that we can integrate <m>A</m> with respect to <m>x</m>. In doing so, we use a partition of <m>[a, b]</m> and make an approximation to the integral given by
