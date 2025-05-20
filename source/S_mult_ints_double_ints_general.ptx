@@ -23,10 +23,9 @@
               How do we define a double integral over a non-rectangular region?
             </p>
           </li>
-
           <li>
             <p>
-              What general form does an iterated integral over a non-rectangular region have?
+              What general forms do iterated integrals over a non-rectangular region have?
             </p>
           </li>
         </ul>
@@ -34,127 +33,240 @@
 
     <introduction>
     <p>
-      Recall that we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as
+      Recall in <xref ref="S-11-1-Double-Integrals-Rectangles">Section</xref> that we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as
       <me>
-        \iint_R f(x,y) \, dA = \lim_{m,n \to \infty} \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A,
+        \iint_R f(x,y) \, dA = \lim_{m,n \to \infty} \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A.
       </me>
-      where the notation is as described in <xref ref="S-11-1-Double-Integrals-Rectangles">Section</xref>. Furthermore, we have seen that we can evaluate a double integral <m>\iint_R f(x,y) \, dA</m> over <m>R</m> as an iterated integral of either of the forms
+      Furthermore, we have seen that we can evaluate a double integral <m>\iint_R f(x,y) \, dA</m> over <m>R</m> as an iterated integral of either of the forms
       <me>
-        \int_a^b \int_c^d f(x,y) \, dy \, dx \ \ \ \ \ \text{ or }  \ \ \ \ \ \int_c^d \int_a^b f(x,y) \, dx \, dy.
+        \int_a^b \int_c^d f(x,y) \, dy \, dx \quad \quad \text{ or }  \quad \quad \int_c^d \int_a^b f(x,y) \, dx \, dy.
       </me>
     </p>
 
     <p>
-      It is natural to wonder how we might define and evaluate a double integral over a non-rectangular region; we explore one such example in the following preview activity.
+      It is very rare to have applied or theoretical problems that apply to a rectangular region, so we would like to extend the idea of using iterated integrals to evaluate non-rectangular regions; we explore one such example in the following preview activity.
     </p>
 
     <exploration xml:id="PA_11_3">
-      <statement>
+      <introduction>
         <p>
-          A tetrahedron is a three-dimensional figure with four faces, each of which is a triangle. A picture of the tetrahedron <m>T</m> with vertices <m>(0,0,0)</m>, <m>(1,0,0)</m>, <m>(0,1,0)</m>, and <m>(0,0,1)</m> is shown at left in <xref ref="F_11_3_Tetrahedron_PA">Figure</xref>. If we place one vertex at the origin and let vectors <m>\va</m>, <m>\vb</m>, and <m>\vc</m> be determined by the edges of the tetrahedron that have one end at the origin, then a formula that tells us the volume <m>V</m> of the tetrahedron is
+          A tetrahedron is a three-dimensional figure with four faces, each of which is a triangle. A picture of the tetrahedron <m>T</m> with vertices <m>(0,0,0)</m>, <m>(1,0,0)</m>, <m>(0,1,0)</m>, and <m>(0,0,1)</m> is shown at in <xref ref="F_11_3_Tetrahedron_PA">Figure</xref>. If we place one vertex at the origin and let vectors <m>\va</m>, <m>\vb</m>, and <m>\vc</m> be determined by the edges of the tetrahedron that have one end at the origin, then a formula that tells us the volume <m>V</m> of the tetrahedron is
           <men xml:id="eq_11_3_tetrahedron_volume">
             V = \frac{1}{6} \lvert \va \cdot (\vb \times \vc) \rvert.
           </men>
         </p>
-
-        
         <figure xml:id="F_11_3_Tetrahedron_PA">
+          <caption> </caption>
+            <interactive title="interactive-F_11_3_Tetrahedron_PA" platform="sage" width="100%" aspect="1:1">
+              <slate surface="sage">
+                var('t,s,x,y,z')
+                from sage.plot.plot3d.plot3d import axes
+                scale=1.5; ao=0.5;aoff=0.25;
+                plot1=axes(scale,1,color="black",frame=False,aspect_ratio=1,opacity=ao)+text3d("x",(scale+aoff,0,0),fontsize=30)+text3d("y",(0,scale+aoff,0),fontsize=30)+text3d("z",(0,0,scale+aoff),fontsize=30)
+                f(x,y)=1-x-y
+                plot1+=polygon([(1,0,0),(0,1,0),(0,0,0)],color="pink",opacity=0.3,mesh=True)
+                plot1+=polygon([(1,0,0),(0,0,1),(0,0,0)],color="pink",opacity=0.3,mesh=True)
+                plot1+=polygon([(0,0,1),(0,1,0),(0,0,0)],color="pink",opacity=0.3,mesh=True)
+                param(s,t)=(s,t*(1-s),f(s,t*(1-s)))
+                #set up grid      n is number of steps in s    m is number of steps in t  
+                #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+                n=4;m=5;a1=0;a2=1;b1=0;b2=1; 
+                #c1 is surface color     o1 is surface opacity
+                #c2 and o2 are for constant t value traces
+                #c3 and o3 are for constant s value traces
+                c1="pink"; c2="black"; c3="black"; o1=0.4; o2=0.4; o3=0.4;
+                plot1+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+                for i in range(n+1):
+                  sv=a1+i/n*(a2-a1)
+                  plot1+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+                for i in range(m+1):
+                  tv=b1+i/m*(b2-b1)
+                  plot1+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+                plot1
+              </slate>
+            </interactive>
+        </figure>
+      </introduction>
+      
+        <!-- <figure xml:id="F_11_3_Tetrahedron_PA">
           <caption>Left: The tetrahedron <m>T</m>. Right: Projecting <m>T</m> onto the <m>xy</m>-plane.</caption>
           <sidebyside widths="50% 50%">
             <image source="images/fig_11_3_tetrahedron"/>
             <image source="images/fig_11_3_tetra_project"/>
             </sidebyside>
-        </figure>
-        
-
-        <ol marker="a.">
-          <li>
-            <p>
-              Use the formula <xref ref="eq_11_3_tetrahedron_volume"/> to find the volume of the tetrahedron <m>T</m>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Instead of memorizing or looking up the formula for the volume of a tetrahedron, we can use a double integral to calculate the volume of the tetrahedron <m>T</m>. To see how, notice that the top face of the tetrahedron <m>T</m> is the plane whose equation is
+        </figure> -->
+      <task>
+        <statement>
+          <p>
+            State the vectors <m>\va</m>, <m>\vb</m>, and <m>\vc</m> used for our tetrahedron <m>T</m>. Use these vectors in formula <xref ref="eq_11_3_tetrahedron_volume"/> to find the volume of the tetrahedron <m>T</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <me>
+              \va = \langle 1,0,0 \rangle, \ \ \ \vb = \langle 0,1,0 \rangle, \ \ \ \text{ and }  \ \ \ \vc = \langle 0,0,1 \rangle,
+            </me> and
+            <m>V=\frac{1}{6}</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Let <m>O=(0,0,0)</m>, <m>P=(1,0,0)</m>,
+              <m>Q=(0,1,0)</m>, and <m>R=(0,0,1)</m>.
+              With these points as the vertices of the tetrahedron we have
               <me>
-                z = 1-(x+y).
-              </me>
-              Provided that we can use an iterated integral on a non-rectangular region, the volume of the tetrahedron will be given by an iterated integral of the form
-              <me>
-                \int_{x=?}^{x=?} \int_{y=?}^{y=?} 1-(x+y) \, dy \, dx.
-              </me>
-              The issue that is new here is how we find the limits on the integrals; note that the outer integral's limits are in <m>x</m>, while the inner ones are in <m>y</m>, since we have chosen <m>dA = dy \, dx</m>. To see the domain over which we need to integrate, think of standing way above the tetrahedron looking straight down on it, which means we are projecting the entire tetrahedron onto the <m>xy</m>-plane. The resulting domain is the triangular region shown at right in <xref ref="F_11_3_Tetrahedron_PA">Figure</xref>. 
-
-
-              Explain why we can represent the triangular region with the inequalities
-              <me>
-                0 \leq y \leq 1-x \ \ \ \text{ and }  \ \ \ 0 \leq x \leq 1.
-              </me>
-              (Hint: Consider the cross sectional slice shown at right in <xref ref="F_11_3_Tetrahedron_PA">Figure</xref>.)
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Explain why it makes sense to now write
-              the volume integral in the form
-              <me>
-                \int_{x=?}^{x=?} \int_{y=?}^{y=?} 1-(x+y) \, dy \, dx = \int_{x=0}^{x=1} \int_{y=0}^{y=1-x} 1-(x+y) \, dy \, dx.
-              </me>
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Use the Fundamental Theorem of Calculus to evaluate the iterated integral
+                \va = \langle 1,0,0 \rangle, \ \ \ \vb = \langle 0,1,0 \rangle, \ \ \ \text{ and }  \ \ \ \vc = \langle 0,0,1 \rangle,
+              </me>.
+              Using the formula we obtain
+              <md>
+                <mrow>\frac{\va \cdot (\vb \times \vc)}{6} \amp = \frac{\vi \cdot (\vj \times \vk)}{6}</mrow>
+                <mrow>\amp = \frac{\vi \cdot \vi}{6}</mrow>
+                <mrow>\amp = \frac{1}{6}</mrow>
+              </md>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Instead of memorizing or looking up the formula for the volume of a tetrahedron, we can use a double integral to calculate the volume of the tetrahedron <m>T</m>. To see how, notice that the top face of the tetrahedron <m>T</m> is the plane whose equation is
+            <me>
+              z = 1-(x+y).
+            </me>
+            We will want to evaluate a pair of iterated integrals on on a non-rectangular region to calculate the volume of the region below this plane and in the first octant region. Reminder: the first octant is the part of <m>\mathbb{R}^3</m> that has positive <m>x</m>-, <m>y</m>-, and <m>z</m>-coordinates.
+          </p>
+          <figure xml:id="tetrahedron_base">
+            <caption></caption>
+              <image width="80%" xml:id="img-tetrahedron_base">
+                <sageplot>
+                  plot2=polygon([(1,0),(0,1),(0,0),(1,0)],color="pink",axes_labels=["$x$","$y$"],edgecolor="black")
+                  plot2+=text("$R$",(0.8,0.1),color="black",fontsize=20,ticks=[[0,1],[0,1]])
+                  plot2+=line([(0.3,0),(0.3,0.7)],color="red",zorder=10,thickness=2)+text("$x=a$",(0.375,0.75),fontsize=20,color="red")
+                  plot2                
+                </sageplot>
+              </image>
+          </figure>
+          <p>  
+            The volume of the tetrahedron will be given by double integral 
+            <me>\iint_R 1-(x+y) dA</me>
+            where the region of integration will the triangle at the base of our tetrahedron (in the <m>xy</m>-plane) as shown in <xref ref="tetrahedron_base"/>. We will need to understand how to express this double integral as an iterated integral using our cross sectional ideas from <xref ref="S-11-2-Iterated-Integrals"/>.
+          </p>
+          <p>
+            We will look at a cross sectional idea along a constant value of <m>x=a</m> which will give an iterated integral of the form
+            <me>
+              \int_{x=?}^{x=?} \int_{y=?}^{y=?} 1-(x+y) \, dy \, dx.
+            </me>
+            So, we need to know if we look at <m>R</m> along the trace <m>x=a</m>, what will be the upper and lower bounds on the corresponding <m>y</m> coordinates? 
+            <me>\text{If }x=a\text{,then } \underline{\hspace{1.0in}} \leq y \leq \underline{\hspace{1.0in}}</me>
+            The lower bound will not depend on the value of <m>a</m> used but the upper bound will, so the expression for the upper bound will be written in terms of <m>a</m>. You should write a couple of sentences to describe how you gave your upper and lower bounds.
+          <p> 
+        </statement>
+        <answer>
+          <p>
+            If we take a cross section of the domain for a fixed value of <m>x</m> as shown in <xref ref="F_11_3_Tetrahedron_PA">Figure</xref>,
+            we can see that the <m>y</m> values on the cross section all have a lowest value of 0, but their highest values lie on the line <m>y=1-x</m>.
+            We can construct these cross sections for any value of <m>x</m> between 0 and 1, so this triangular region is described by the inequalities
+            <m>0 \leq y \leq 1-x</m> and <m>0 \leq x \leq 1</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            If we take a cross section of the domain for a fixed value of <m>x</m> as shown in <xref ref="F_11_3_Tetrahedron_PA">Figure</xref>,
+            we can see that the <m>y</m> values on the cross section all have a lowest value of 0, but their highest values lie on the line <m>y=1-x</m>.
+            We can construct these cross sections for any value of <m>x</m> between 0 and 1, so this triangular region is described by the inequalities
+            <m>0 \leq y \leq 1-x</m> and <m>0 \leq x \leq 1</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Explain which part of the iterated integral
+            <me>
+              \int_{x=0}^{x=1} \int_{y=0}^{y=1-x} 1-(x+y) \, dy \, dx
+            </me>
+            will correspond to the blue cross section in <xref ref="PAcross_section"/>.
+          </p>
+          <figure xml:id="PAcross_section">
+            <caption> </caption>
+              <interactive title="interactive-PAcross_section" platform="sage" width="100%" aspect="1:1">
+                <slate surface="sage">
+                  var('t,s,x,y,z')
+                  from sage.plot.plot3d.plot3d import axes
+                  scale=1.5; ao=0.5;aoff=0.25;
+                  plot3=axes(scale,1,color="black",frame=False,aspect_ratio=1,opacity=ao)+text3d("x",(scale+aoff,0,0),fontsize=30)+text3d("y",(0,scale+aoff,0),fontsize=30)+text3d("z",(0,0,scale+aoff),fontsize=30)
+                  f(x,y)=1-x-y
+                  plot3+=polygon([(1,0,0),(0,1,0),(0,0,0)],color="pink",opacity=0.3,mesh=True)
+                  plot3+=polygon([(1,0,0),(0,0,1),(0,0,0)],color="pink",opacity=0.3,mesh=True)
+                  plot3+=polygon([(0,0,1),(0,1,0),(0,0,0)],color="pink",opacity=0.3,mesh=True)
+                  param(s,t)=(s,t*(1-s),f(s,t*(1-s)))
+                  #set up grid      n is number of steps in s    m is number of steps in t  
+                  #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+                  n=4;m=5;a1=0;a2=1;b1=0;b2=1; 
+                  #c1 is surface color     o1 is surface opacity
+                  #c2 and o2 are for constant t value traces
+                  #c3 and o3 are for constant s value traces
+                  c1="pink"; c2="black"; c3="black"; o1=0.4; o2=0.4; o3=0.4;
+                  plot3+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+                  for i in range(n+1):
+                    sv=a1+i/n*(a2-a1)
+                    plot3+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+                  for i in range(m+1):
+                    tv=b1+i/m*(b2-b1)
+                    plot3+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+                  plot3+=parametric_plot3d((0.3,t,f(0.3,t)*s),(t,0,0.7),(s,0,1),color="blue")
+                  plot3+=text3d("x=a",(0.35,0.8,0),color="blue",fontsize=20)
+                  show(plot3,viewpoint=[[-0.2235,-0.5755,-0.7867],146.02],camera_position=[3.4744,3.7236,2.082])
+                </slate>
+              </interactive>
+          </figure>
+        </statement>
+        <answer>
+          <p>
+            When we slice vertically along <m>x=a</m>, each slice runs from the <m>x</m>-axis to the line <m>y=1-x</m>. The inner integral 
+            <me>
+               \int_{y=0}^{y=1-x} 1-(x+y) \, dy 
+            </me>
+            calculates the area of the cross section shown in blue. The limits on <m>y</m> are <m>0 \leq y \leq 1-x</m> for a fixed value of <m>x</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            When we slice vertically along <m>x=a</m>, each slice runs from the <m>x</m>-axis to the line <m>y=1-x</m>. The inner integral 
+            <me>
+               \int_{y=0}^{y=1-x} 1-(x+y) \, dy 
+            </me>
+            calculates the area of the cross section shown in blue. The limits on <m>y</m> are <m>0 \leq y \leq 1-x</m> for a fixed value of <m>x</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use the Fundamental Theorem of Calculus (twice!) to evaluate the iterated integral
               <me>
                 \int_{x=0}^{x=1} \int_{y=0}^{y=1-x} 1-(x+y) \, dy \, dx
               </me>
               and compare to your result from part (a).  (As with iterated integrals over rectangular regions, start with the inner integral.)
-            </p>
-          </li>
-        </ol>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              Let <m>O=(0,0,0)</m>, <m>P=(1,0,0)</m>,
-              <m>Q=(0,1,0)</m>, and <m>R=(0,0,1)</m>.
-              With these points as the vertices of the tetrahedron we have
-              <me>
-                \va = \langle 1,0,0 \rangle, \ \ \ \vb = \langle 0,1,0 \rangle, \ \ \ \text{ and }  \ \ \ \vc = \langle 0,0,1 \rangle,
-              </me>.
-              Using the formula we obtain
-              <md>
-                <mrow>\frac{\va \cdot (\vb \times \vc)}{6} \amp = \frac{\vi \cdot (\vj \times \vk)}{6}</mrow>
-                <mrow>\amp = \frac{\vi \cdot \vi}{6}</mrow>
-                <mrow>\amp = \frac{1}{6}</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-              If we take a cross section of the domain for a fixed value of <m>x</m> as shown in <xref ref="F_11_3_Tetrahedron_PA">Figure</xref>,
-              we can see that the <m>y</m> values on the cross section all have a lowest value of 0, but their highest values lie on the line <m>y=1-x</m>.
-              We can construct these cross sections for any value of <m>x</m> between 0 and 1, so this triangular region is described by the inequalities
-              <m>0 \leq y \leq 1-x</m> and <m>0 \leq x \leq 1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              When we slice vertically,
-              each slice runs from the <m>x</m>-axis to the line <m>y=1-x</m>.
-              So the limits on <m>y</m> are <m>0 \leq y \leq 1-x</m>.
-              The triangular region has <m>x</m> values that run from <m>0</m> to <m>1</m>,
-              so the limits on the integral as as shown.
-            </p>
-          </li>
-          <li>
-            <p>
-              Using basic integration techniques we have
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Using basic integration techniques we have
+            <md>
+              <mrow>\int_{0}^{1} \int_{0}^{1-x} 1-(x+y) \, dy \, dx \amp = \int_0^1 \left(y - xy - \frac{y^2}{2} \right)\mid_0^{1-x} \, dx</mrow>
+              <mrow>\amp = \int_0^1 (1-x) - x(1-x) - \frac{1}{2}(1-x)^2 \, dx</mrow>
+              <mrow>\amp = \frac{1}{2} \int_0^1 x^2-2x+1 \, dx</mrow>
+              <mrow>\amp = \frac{1}{2}\left(\frac{x^3}{3} - x^2 + x \right)\mid_0^1</mrow>
+              <mrow>\amp = \frac{1}{2}\left(\frac{1}{3}\right)</mrow>
+              <mrow>\amp = \frac{1}{6}</mrow>
+            </md>.
+            This is the same result we obtained from the formula in part (a).
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Using basic integration techniques we have
               <md>
                 <mrow>\int_{0}^{1} \int_{0}^{1-x} 1-(x+y) \, dy \, dx \amp = \int_0^1 \left(y - xy - \frac{y^2}{2} \right)\mid_0^{1-x} \, dx</mrow>
                 <mrow>\amp = \int_0^1 (1-x) - x(1-x) - \frac{1}{2}(1-x)^2 \, dx</mrow>
@@ -164,95 +276,42 @@
                 <mrow>\amp = \frac{1}{6}</mrow>
               </md>.
               This is the same result we obtained from the formula in part (a).
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              Let <m>O=(0,0,0)</m>, <m>P=(1,0,0)</m>,
-              <m>Q=(0,1,0)</m>, and <m>R=(0,0,1)</m>.
-              With these points as the vertices of the tetrahedron we have
-              <me>
-                \va = \langle 1,0,0 \rangle, \ \ \ \vb = \langle 0,1,0 \rangle, \ \ \ \text{ and }  \ \ \ \vc = \langle 0,0,1 \rangle,
-              </me>.
-              Using the formula we obtain
-              <md>
-                <mrow>\frac{\va \cdot (\vb \times \vc)}{6} \amp = \frac{\vi \cdot (\vj \times \vk)}{6}</mrow>
-                <mrow>\amp = \frac{\vi \cdot \vi}{6}</mrow>
-                <mrow>\amp = \frac{1}{6}</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-              If we take a cross section of the domain for a fixed value of <m>x</m> as shown in <xref ref="F_11_3_Tetrahedron_PA">Figure</xref>,
-              we can see that the <m>y</m> values on the cross section all have a lowest value of 0, but their highest values lie on the line <m>y=1-x</m>.
-              We can construct these cross sections for any value of <m>x</m> between 0 and 1, so this triangular region is described by the inequalities
-              <m>0 \leq y \leq 1-x</m> and <m>0 \leq x \leq 1</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              When we slice vertically,
-              each slice runs from the <m>x</m>-axis to the line <m>y=1-x</m>.
-              So the limits on <m>y</m> are <m>0 \leq y \leq 1-x</m>.
-              The triangular region has <m>x</m> values that run from <m>0</m> to <m>1</m>,
-              so the limits on the integral as as shown.
-            </p>
-          </li>
-          <li>
-            <p>
-              Using basic integration techniques we have
-              <md>
-                <mrow>\int_{0}^{1} \int_{0}^{1-x} 1-(x+y) \, dy \, dx \amp = \int_0^1 \left(y - xy - \frac{y^2}{2} \right)\mid_0^{1-x} \, dx</mrow>
-                <mrow>\amp = \int_0^1 (1-x) - x(1-x) - \frac{1}{2}(1-x)^2 \, dx</mrow>
-                <mrow>\amp = \frac{1}{2} \int_0^1 x^2-2x+1 \, dx</mrow>
-                <mrow>\amp = \frac{1}{2}\left(\frac{x^3}{3} - x^2 + x \right)\mid_0^1</mrow>
-                <mrow>\amp = \frac{1}{2}\left(\frac{1}{3}\right)</mrow>
-                <mrow>\amp = \frac{1}{6}</mrow>
-              </md>.
-              This is the same result we obtained from the formula in part (a).
-            </p>
-          </li>
-        </ol>
-      </solution>
-
+          </p>
+        </solution>
+      </task>
     </exploration>
-
   </introduction>
 
   <subsection>
     <title>Double Integrals over General Regions</title>
     <p>
-      So far, we have learned that a double integral over a rectangular region may be interpreted in one of two ways:
+      So far, we have learned that a double integral over a rectangular region may be interpreted in one of three ways:
       <ul>
         <li>
           <p>
-            <m>\iint_R f(x,y) \, dA</m> tells us the volume of the solids the graph of <m>f</m> bounds above the <m>xy</m>-plane over the rectangle <m>R</m> minus the volume of the solids the graph of <m>f</m> bounds below the <m>xy</m>-plane under the rectangle <m>R</m>;
+            <m>\iint_R f(x,y) \, dA</m> tells us the volume of the solid bounded by the graph of <m>f</m> above and the <m>xy</m>-plane below and over the rectangle <m>R</m> minus the volume of the solids the graph of <m>f</m> bounds below the <m>xy</m>-plane under the rectangle <m>R</m>;
           </p>
         </li>
-
         <li>
           <p>
             <m>\frac{1}{A(R)} \iint_R f(x,y) \, dA</m>, where <m>A(R)</m> is the area of <m>R</m> tells us the average value of the function <m>f</m> on <m>R</m>. If <m>f(x, y) \geq  0</m> on <m>R</m>, we can interpret this average value of <m>f</m> on <m>R</m> as the height of the box with base <m>R</m> that has the same volume as the volume of the surface defined by <m>f</m> over <m>R</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>f(x,y)</m> measure the density (in amount per unit area) of a material in the region <m>R</m>, then <m>\frac{1}{A(R)} \iint_R f(x,y) \, dA</m> will give the total amount of material in <m>R</m>. 
           </p>
         </li>
       </ul>
     </p>
 
     <p>
-      As we saw in <xref ref="PA_11_1">Preview Activity</xref>, a function <m>f = f(x,y)</m> may be considered over regions other than rectangular ones, and thus we want to understand how to set up and evaluate double integrals over non-rectangular regions. Note that if we can, then the two interpretations of the double integral noted above will naturally extend to solid regions with non-rectangular bases.
+      As we saw in <xref ref="PA_11_1">Preview Activity</xref>, a function <m>f = f(x,y)</m> may be considered over regions other than rectangular ones, and thus we want to understand how to set up double integrals as iterated integrals over non-rectangular regions. Note that if we can, then the three interpretations of the double integral noted above will naturally extend to solid regions with non-rectangular bases.
     </p>
 
-    <p>
+   <!--  <p>
       So, suppose <m>f</m> is a continuous function on a closed, bounded domain <m>D</m>. For example, consider <m>D</m> as the circular domain shown at left in <xref ref="F_11_3_nonrect_domain_1">Figure</xref>.
     </p>
-
-    
     <figure xml:id="F_11_3_nonrect_domain_1">
       <caption>Left: A non-rectangular domain. Right: Enclosing this domain in a rectangle.</caption>
       <sidebyside widths="50% 50%">
@@ -260,8 +319,6 @@
         <image source="images/fig_11_3_circular_rect"/>
         </sidebyside>
     </figure>
-    
-
     <p>
       We can enclose <m>D</m> in a rectangular domain <m>R</m> as shown at right in <xref ref="F_11_3_nonrect_domain_1">Figure</xref> and extend the function <m>f</m> to be defined over <m>R</m> in order to be able to use the definition of the double integral over a rectangle. We extend <m>f</m> in such a way that its values at the points in <m>R</m> that are not in <m>D</m> contribute 0 to the value of the integral. In other words, define a function <m>F = F(x, y)</m> on <m>R</m> as
       <me>
@@ -269,25 +326,67 @@
         \end{cases} .
       </me>
     </p>
-
     <p>
       We then say that the double integral of <m>f</m> over <m>D</m><idx><h>double integral over a general region</h></idx> is the same as the double integral of <m>F</m> over <m>R</m>, and thus
       <me>
         \iint_D f(x,y) \, dA = \iint_R F(x,y) \, dA.
       </me>
     </p>
-
     <p>
       In practice, we just ignore everything that is in <m>R</m> but not in <m>D</m>, since these regions contribute 0 to the value of the integral.
+    </p> -->
+    <p>
+      The key idea to writing double integrals as iterated integrals (as shown in <xref ref="S-11-2-Iterated-Integrals"/> and <xref ref="PA_11_3"/>) is to slice the region of integration along a trace (with one of the coordinates held constant) and express the range of the other coordinate in terms of an inequality. In <xref ref="PA_11_3"/>, we saw how the region given in <xref ref="tetrahedron_base"/> can be described by the inequalities <m>0 \leq x \leq 1</m> and <m>0 \leq y \leq 1-x</m>. Notice how for different values of <m>x</m> there is a different range of values for <m>y</m>, which means our region is NOT rectangular. Compare this to the rectangular regions of integration from <xref ref="S-11-2-Iterated-Integrals"/> which were all of the form <m>a \leq x \leq b</m> and <m>c \leq y \leq d</m> (with <m>a,b,c,d</m> constants).
     </p>
-
+    <p>
+      Both of these forms for the inequalities leads to a nice way to write the corresponding double integral as an iterated integral by considering the inner integral to evaluate the cross section area while the outer integral sums up the corresponding cross section volumes as the width of the slices goes to zero (demonstrated in  <xref ref="F_11_2_Cross_section_y_slab_sum"/>).
+    </p>
+    <p>
+      What kind of 2D regions can we express using this slicing/inequality idea? The key here is that we need the same upper and lower bound expressions for each slice.
+    </p>
+    <proposition xml:id="prop-verticallysimple">
+      <statement>
+        <p>
+          A region is called vertically simple if it can be described by a set of inequalities of the form
+          <md>
+            <mrow> a \amp x \amp b</mrow>
+            <mrow> f(x) \amp y \amp g(x)</mrow>
+          </md>
+          which corresponds geometrically to the region in <xref ref=""/>
+        </p>
+        <figure xml:id="  ">
+          <caption></caption>
+            <image width="60%" xml:id="img- ">
+              <sageplot>
+                var('x,y,t,s')
+                f(x)=(x-2)^2/5+0.5-0.25*sin(4*x); g(x)= 0.25*cos(7*x)+0.2*x+1.5;
+                a=0.5; b=1.5; dx=b-a; n=25;
+                bottom=[(a+i*dx/n,f(a+i*dx/n)) for i in range(n+1)]
+                top=[(b-i*dx/n,g(b-i*dx/n)) for i in range(n+1)]
+                points=bottom+top
+                plot4=polygon(points,color="pink",edgecolor="black",xmin=0,xmax=1.75,ymin=0,ymax=2,axes_labels=["$x$","$y$"])
+                m=6;xv=[0.5+i/m for i in range(1,m)]
+                for xval in xv:
+                  plot4+=line([(xval,f(xval)),(xval,g(xval))],color="orange",thickness=2,linestyle="--")
+                plot4+=plot(f(x),(x,a,b),color="red",thickness=3,ticks=[[a,b],[]],tick_formatter=[["$x=a$","$x=b$"],[]],fontsize=15)
+                plot4+=plot(g(x),(x,a,b),color="blue",thickness=3)
+                plot4+=line([(a,g(a)),(a,0)],color="gray",thickness=1)+line([(b,g(b)),(b,0)],color="gray",thickness=1)
+                plot4+=text("$f(x)$",(1,0.7),color="red",fontsize=20)+text("$g(x)$",(1,2.1),color="blue",fontsize=20)
+                plot4  
+              </sageplot>
+            </image>
+        </figure>
+      </statement>
+    </proposition>
+    <p>
+      A vertically simple region is one that can be sliced into vertical slices (of the form <m>x=constant</m> for <m>x</m> in the range <m>[a,b]</m>) where every vertical slice corresponds to the range <m>f(x) \leq y \leq g(x)</m>. 
+    </p>
     <p>
       Just as with double integrals over rectangles, a double integral over a domain <m>D</m> can be evaluated as an iterated integral. If the region <m>D</m> can be described by the inequalities <m>g_1(x) \leq y \leq g_2(x)</m> and <m>a \leq x \leq b</m>, where <m>g_1=g_1(x)</m> and <m>g_2=g_2(x)</m> are functions of only <m>x</m>, then
       <me>
         \iint_D f(x,y) \, dA = \int_{x=a}^{x=b} \int_{y=g_1(x)}^{y=g_2(x)} f(x,y) \, dy \, dx.
       </me>
     </p>
-
     <p>
       Alternatively, if the region <m>D</m> is described by the inequalities <m>h_1(y) \leq x \leq h_2(y)</m> and <m>c \leq y \leq d</m>, where <m>h_1=h_1(y)</m> and <m>h_2=h_2(y)</m> are functions of only <m>y</m>, we have
       <me>
