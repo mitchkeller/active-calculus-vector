@@ -430,7 +430,7 @@
       <task>
         <p>
           Remember that a vertical line will correspond algebraically to <m>x=constant</m>. We want to know if every vertical slice in the region <m>D</m> will have the same upper and lower bounds (which may depend on the value of <m>x</m>). Several vertical slices in the region <m>D</m> are shown in <xref ref="vertsimple-tri"/> where you can see that the lower bound (of the <m>y</m>-variable) for every vertical slice is given by <m>y=0</m>. The upper bound (of the <m>y</m>-variable) for every vertical slice is given by <m>y=\frac{3}{2} x</m>. Algebraically, if you take any constant value, <m>k</m>, in the interval <m>[0,2]</m>, then the following statement describes the vertical strips of the region <m>D</m>:
-          <me>\text{Along }x=k\text{ the }y\text{-coordinates will go from }0\text{ to }\frac{3}{2}x</me>
+          <me>\text{Along }x=k\text{ the }y\text{-coordinates go from }0\text{ to }\frac{3}{2}k</me>
           which corresponds to the inequalities 
           <me> 0\leq x \leq 2 \quad \quad 0 \leq y \leq \frac{3}{2} x</me>
           as a descriptions for <m>D</m>. Thus, the region <m>D</m> is vertically simple.
@@ -455,7 +455,7 @@
         <statement>
           <p>
             Remember that a horizontal line will correspond algebraically to <m>y=constant</m>. We want to know if every horizontal slice in the region <m>D</m> will have the same upper and lower bounds (which may depend on the value of <m>y</m>). Several horizontal slices in the region <m>D</m> are shown in <xref ref="horzsimple-tri"/> where you can see that the lower bound (of the <m>x</m>-variable) for every horizontal slice is given by <m>x=\frac{2}{3} y</m>. The upper bound (of the <m>x</m>-variable) for every horizontal slice is given by <m>x=2</m>. Algebraically, if you take any constant value, <m>k</m>, in the interval <m>[0,3]</m>, then the following statement describes the horizontal strips of the region <m>D</m>:
-            <me>\text{Along }y=k\text{ the }x\text{-coordinates will go from }\frac{2}{3} x\text{ to }2</me>
+            <me>\text{Along }y=k\text{ the }x\text{-coordinates go from }\frac{2}{3} k\text{ to }2</me>
             which corresponds to the inequalities 
             <me> 0\leq y \leq 3 \quad \quad \frac{2}{3} \leq y \leq 2 x</me>
             as a descriptions for <m>D</m>. Thus, the region <m>D</m> is horizontally simple.
@@ -630,15 +630,49 @@
       </statement>
     </task>
   </activity>
-  
   <p>
-    The process for describing a 2D region as either horizontally or vertically simple is exactly the procedure needed to set up iterated integral that will allow us to evaluate a double integral. If the region <m>D</m> can be described by the inequalities <m>g_1(x) \leq y \leq g_2(x)</m> and <m>a \leq x \leq b</m>, where <m>g_1=g_1(x)</m> and <m>g_2=g_2(x)</m> are functions of only <m>x</m>, then
+    In single variable calculus, we were able to split integrals into multiple parts. The integral of <m>f(x)</m> over <m>[a,b]</m> could be split to subintervals separately:
+    <me>\int^b_a f(x) \, dx = \int_a^c f(x) \, dx + \int_c^b f(x) \, dx</me>
+    Similarly, we can split a region of integration for a double integral into subregions. If a region <m>R</m> can be split into two sets <m>R_1</m> and <m>R_2</m> (where <m>R_1</m> and <m>R_2</m> do not overlap), then 
+    <me>\iint_R f(x,y) \, dA = \iint_{R_1} f(x,y) \, dA+\iint_{R_2} f(x,y) \, dA</me>
+    This property is especially useful for a region like <xref ref="hsimple3"/> where <m>D</m> is split into parts <m>H_1</m>, <m>H_2</m>, and <m>H_3</m> because
+    <me>\iint_D f(x,y) \, dA = \iint_{H_1} f(x,y) \, dA+\iint_{H_2} f(x,y) \, dA+\iint_{H_3} f(x,y) \, dA</me>
+    where each of the double integrals on the right can be written as an iterated integral using a horizontally simple description.
+  </p>
+  <activity>
+    <task>
+      <statement>
+        <p>
+          For each region, state whether the region is vertically simple, horizontally simple, both, or neither. State the appropriate inequalities to justify when each region is vertically simple or horizontally simple.
+        </p>
+        <figure>
+          <caption>Four Regions of the <m>xy</m>-plane</caption>
+          <image source="./images/regions.png" />
+        </figure>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Which of the following expressions do not make sense as an iterated integral used to compute a double integral? If the iterated integral does not make sense, explain your reasoning in a couple of sentences. If the iterated integral does make sense, draw a plot of the region of integration. 
+          <ol>
+            <li> <me> \int_0^1 \int_1^x f(x,y) \; dy \; dx </me></li>
+            <li> <me> \int_0^1 \int_1^y f(x,y) \; dy \; dx </me></li>
+            <li> <me> \int_0^1 \int_x^y f(x,y) \; dy \; dx </me></li>
+            <li> <me> \int_0^1 \int_x^1 f(x,y) \; dy \; dx </me></li>
+          </ol>
+        </p>
+      </statement>
+    </task>
+  </activity>
+  <p>
+    The process for describing a 2D region as either horizontally or vertically simple is exactly the procedure needed to set up iterated integral that will allow us to evaluate a double integral. If the region <m>D</m> can be described by the inequalities <m>a \leq x \leq b</m> and <m>g_1(x) \leq y \leq g_2(x)</m> (vertically simple), where <m>g_1=g_1(x)</m> and <m>g_2=g_2(x)</m> are functions of only <m>x</m>, then
     <me>
       \iint_D f(x,y) \, dA = \int_{x=a}^{x=b} \int_{y=g_1(x)}^{y=g_2(x)} f(x,y) \, dy \, dx.
     </me>
   </p>
   <p>
-    Alternatively, if the region <m>D</m> is described by the inequalities <m>h_1(y) \leq x \leq h_2(y)</m> and <m>c \leq y \leq d</m>, where <m>h_1=h_1(y)</m> and <m>h_2=h_2(y)</m> are functions of only <m>y</m>, we have
+    Alternatively, if the region <m>D</m> is described by the inequalities <m>c \leq y \leq d</m> and <m>h_1(y) \leq x \leq h_2(y)</m> (horizontally simple), where <m>h_1=h_1(y)</m> and <m>h_2=h_2(y)</m> are functions of only <m>y</m>, we have
     <me>
       \iint_D f(x,y) \, dA = \int_{y=c}^{y=d} \int_{x=h_1(y)}^{x=h_2(y)} f(x,y) \, dx \, dy.
     </me>
@@ -657,11 +691,8 @@
             the limits on the outer integral must be constants
           </p>
         </li>
-
-        
       </ul>
     </p>
-
 
     <example>
       <introduction>
@@ -692,542 +723,525 @@
         <p>
           To evaluate <m>\iint_D f(x,y) \, dA</m>, we must first describe the region <m>D</m> in terms of the variables <m>x</m> and <m>y</m>. We take two approaches corresponding to a vertically simple description, then a horizontally simple description. 
           We will use the inequalities from <xref ref="trianglesimple"/> that correspond to our vertically simple description:
-          <me>\text{Along }x=k\text{ the }y\text{-coordinates will go from }0\text{ to }\frac{3}{2}x</me>
+          <me>\text{Along }x=k\text{, the }y\text{-coordinates go from }0\text{ to }\frac{3}{2}k</me>
           which corresponds to the inequalities 
           <me> 0\leq x \leq 2 \quad \quad 0 \leq y \leq \frac{3}{2} x</me>
-          Using these inequalities corresponds to integrating with respect to <m>y</m> first.   
+          Using these inequalities corresponds to integrating with respect to <m>y</m> first (the inner integral).   
+        </p>
+        <p>
+          Therefore,
+          <me>
+            \iint_D x^2y \, dA = \int_{x=0}^{x=2} \int_{y=0}^{y = \frac32 x} x^2y \, dy \, dx.
+          </me>
+          We evaluate the iterated integral by applying the Fundamental Theorem of Calculus first to the inner integral, and then to the outer one, and find that
+          <md>
+            <mrow>\int_{x=0}^{x=2} \int_{y=0}^{y=\frac32 x} x^2y \, dy \, dx \amp = \int_{x=0}^{x=2} \left[x^2 \cdot \frac{y^2}{2}\right]\restrict{y=0}^{y=\frac32 x} \, dx</mrow>
+            <mrow>\amp = \int_{x=0}^{x=2} \frac{9}{8}x^4\, dx</mrow>
+            <mrow>\amp = \frac{9}{8}\frac{x^5}{5}\restrict{x=0}^{x=2}</mrow>
+            <mrow>\amp = \left(\frac{9}{8}\right) \left(\frac{32}{5}\right)</mrow>
+            <mrow>\amp = \frac{36}{5}</mrow>
+          </md>
+        </p>
+        <p>
+          We can visualize both the double integral and the iterated integral in <xref ref="dblintproj"/>. The double integral of <m>f(x,y)=x^2y</m> over our region <m>D</m> can be seen as the volume of the region below the surface <m>z=f(x,y)</m> and above the <m>xy</m>-plane on the region <m>D</m>, shown as the pink volume in <xref ref="dblintproj"/>. 
+        </p>
+        <figure xml:id="dblintproj">
+          <caption> </caption>
+            <interactive title="interactive-dblintproj" platform="sage" width="100%" aspect="1:1">
+              <slate surface="sage">
+                <xi:include href="interacts/projdblint.txt" parse="text" />
+              </slate>
+            </interactive>
+        </figure>
+        <p>
+          We can also use each of the iterated integrals to visualize our result. The inner integral corresponds to the area of a cross section along a slice with a fixed <m>x</m>-value, as shown by the blue cross section in <xref ref="dblintproj"/>. The result of the inner integral changes depending on which <m>x</m>-value is used. Algebraically, we see this from our work above that gave <m>\frac{9}{8}x^4</m> as the result of the inner integral. 
+        </p>
+        <p>  
+          To understand this result geometrically, you should use the slider at the top of <xref ref="dblintproj"/> to change the <m>x</m>-value at which the slice of our region is taken and observe that the area of the cross section increases with <m>x</m>. The graph of <m>\frac{9}{8}x^4</m> is projected on a plane and you should notice that as you used the slider to change the <m>x</m>-value of the slice, the highlighted point on the 2D graph shows the area of slice. The red 2D graph is a plot of the result of the inner integral, which measures the area of cross section at that particular <m>x</m>-value, which is why the red graph goes higher than the surface <m>z</m>-values. In fact the peak of the red graph occurs at <m>\frac{128}{9}</m> where as the highest surface value is <m>12</m>. The scale of <xref ref="dblintproj"/> has been adjusted to make these features easier to see. 
+        </p>
+        <p>
+          The result of the inner iterated integral is shown by the red graph, so the outer integral will evaluate to be the area under the red graph, which is shown in orange on the 2D graph portion of <xref ref="dblintproj"/>. Again, remember that the outer integral evaluates the Riemann sum corresponding to the cross sectional volumes (like in <xref ref="F_11_2_Cross_section_y_slab_sum"/>).
         </p>
       </task>
       <task>
-          <dl>
-            <li>
-              <title>Approach 1: Integrate first with respect to <m>y</m>.</title>
-              <p>
-                In this case we choose to evaluate the double integral as an iterated integral in the form
-                <me>
-                  \iint_D x^2y \, dA = \int_{x=a}^{x=b} \int_{y=g_1(x)}^{y=g_2(x)} x^2y \, dy \, dx,
-                </me>
-                and therefore we need to describe <m>D</m> in terms of inequalities
-                <me>
-                  g_1(x) \leq y \leq g_2(x) \ \ \ \ \ \text{ and }  \ \ \ \ \ a \leq x \leq b.
-                </me>
-                Since we are integrating with respect to <m>y</m> first, the iterated integral has the form
-                <me>
-                  \iint_D x^2y \, dA =\int_{x=a}^{x=b} A(x) \, dx,
-                </me>
-                where <m>A(x)</m> is a cross sectional area in the <m>y</m> direction. So we are slicing the domain perpendicular to the <m>x</m>-axis and want to understand what a cross sectional area of the overall solid will look like. Several slices of the domain are shown in the middle image in <xref ref="F_11_3_DI_1">Figure</xref>. On a slice with fixed <m>x</m> value, the <m>y</m> values are bounded below by 0 and above by the <m>y</m> coordinate on the hypotenuse of the right triangle. Thus, <m>g_1(x) = 0</m>;  to find <m>y = g_2(x)</m>, we need to write the hypotenuse as a function of <m>x</m>. The hypotenuse connects the points (0,0) and (2,3) and hence has equation <m>y = \frac{3}{2}x</m>. This gives the upper bound on <m>y</m> as <m>g_2(x) = \frac{3}{2}x</m>. The leftmost vertical cross section is at <m>x=0</m> and the rightmost one is at <m>x=2</m>, so we have <m>a=0</m> and <m>b=2</m>. Therefore,
-                <me>
-                  \iint_D x^2y \, dA = \int_{x=0}^{x=2} \int_{y=0}^{y = \frac32 x} x^2y \, dy \, dx.
-                </me>
-                We evaluate the iterated integral by applying the Fundamental Theorem of Calculus first to the inner integral, and then to the outer one, and find that
-                <md>
-                  <mrow>\int_{x=0}^{x=2} \int_{y=0}^{y=\frac32 x} x^2y \, dy \, dx \amp = \int_{x=0}^{x=2} \left[x^2 \cdot \frac{y^2}{2}\right]\restrict{y=0}^{y=\frac32 x} \, dx</mrow>
-                  <mrow>\amp = \int_{x=0}^{x=2} \frac{9}{8}x^4\, dx</mrow>
-                  <mrow>\amp = \frac{9}{8}\frac{x^5}{5}\restrict{x=0}^{x=2}</mrow>
-                  <mrow>\amp = \left(\frac{9}{8}\right) \left(\frac{32}{5}\right)</mrow>
-                  <mrow>\amp = \frac{36}{5}.</mrow>
-                </md>
-              </p>
-            </li>
-
-            <li>
-              <title>Approach 2: Integrate first with respect to <m>x</m>.</title>
-              <p>
-                In this case, we choose to evaluate the double integral as an iterated integral in the form
-                <me>
-                  \iint_D x^2y \, dA = \int_{y=c}^{y=d} \int_{x=h_1(y)}^{x=h_2(y)} x^2y \, dx \, dy
-                </me>
-                and thus need to describe <m>D</m> in terms of inequalities
-                <me>
-                  h_1(y) \leq x \leq h_2(y) \ \ \ \ \ \text{ and }   \ \ \ \ \  c \leq y \leq d.
-                </me>
-                Since we are integrating with respect to <m>x</m> first, the iterated integral has the form
-                <me>
-                  \iint_D x^2y \, dA = \int_c^d A(y) \, dy,
-                </me>
-                where <m>A(y)</m> is a cross sectional area of the solid in the <m>x</m> direction.  Several slices of the domain <mdash/> perpendicular to the <m>y</m>-axis <mdash/> are shown at right in <xref ref="F_11_3_DI_1">Figure</xref>.
-
-                On a slice with fixed <m>y</m> value, the <m>x</m> values are bounded below by the <m>x</m> coordinate on the hypotenuse of the right triangle and above by 2. So <m>h_2(y) = 2</m>; to find <m>h_1(y)</m>, we need to write the hypotenuse as a function of <m>y</m>. Solving the earlier equation we have for the hypotenuse (<m>y = \frac32 x</m>) for <m>x</m> gives us <m>x = \frac{2}{3}y</m>. This makes <m>h_1(y) = \frac{2}{3}y</m>. The lowest horizontal cross section is at <m>y=0</m> and the uppermost one is at <m>y=3</m>, so we have <m>c=0</m> and <m>d=3</m>. Therefore,
-                <me>
-                  \iint_D x^2y \, dA = \int_{y=0}^{y=3} \int_{x=(2/3)y}^{x=2} x^2y \, dx \, dy.
-                </me>
-                We evaluate the resulting iterated integral as before by twice applying the Fundamental Theorem of Calculus, and find that
-                <md>
-                  <mrow>\int_{y=0}^{y=3} \int_{x=\frac{2}{3}y}^{2} x^2y \, dx \, dy \amp = \int_{y=0}^{y=3} \left[\frac{x^3}{3}\right]\restrict{x=\frac{2}{3}y}^{x=2}y \, dx</mrow>
-                  <mrow>\amp = \int_{y=0}^{y=3} \left[\frac{8}{3}y - \frac{8}{81}y^4 \right] \, dy</mrow>
-                  <mrow>\amp = \left[\frac{8}{3}\frac{y^2}{2} - \frac{8}{81}\frac{y^5}{5}\right]\restrict{y=0}^{y=3}</mrow>
-                  <mrow>\amp = \left(\frac{8}{3}\right) \left(\frac{9}{2}\right) - \left(\frac{8}{81}\right) \left(\frac{243}{5}\right)</mrow>
-                  <mrow>\amp = 12 - \frac{24}{5}</mrow>
-                  <mrow>\amp = \frac{36}{5}.</mrow>
-                </md>
-              </p>
-            </li>
-          </dl>
-
-
         <p>
-          We see, of course, that in the situation where <m>D</m> can be described in two different ways, the order in which we choose to set up and evaluate the double integral doesn't matter, and the same value results in either case.
+          In the previous task, we use a vertically simple description for the region of integration <m>D</m>, which allowed use an iterated integral where we integrated with respect to <m>y</m> first (while treating <m>x</m> as a constant) and then integrating across the interval of relevent <m>x</m>-values. In this task, we will use a horizontally simple description for our region of integration and as a consequence the order in which we integrate our variables will be switched.
+        </p>
+        <p>
+          We will use the inequalities from <xref ref="trianglesimple"/> that correspond to our horizontally simple description:
+          <me>\text{Along }y=k\text{, the }x\text{-coordinates go from }\frac{2}{3}k\text{ to }2</me>
+          which corresponds to the inequalities 
+          <me> 0\leq y \leq 3 \quad \quad \frac{2}{3}y \leq x \leq 2</me>
+          Using these inequalities corresponds to integrating with respect to <m>x</m> first (the inner integral).  
+        </p>
+        <p>
+          Therefore,
+          <me>
+            \iint_D x^2y \, dA = \int_{y=0}^{y=3} \int_{x=(2/3)y}^{x=2} x^2y \, dx \, dy.
+          </me>
+          We evaluate the resulting iterated integral as before by twice applying the Fundamental Theorem of Calculus, and find that
+          <md>
+            <mrow>\int_{y=0}^{y=3} \int_{x=\frac{2}{3}y}^{2} x^2y \, dx \, dy \amp = \int_{y=0}^{y=3} \left[\frac{x^3}{3}\right]\restrict{x=\frac{2}{3}y}^{x=2}y \, dx</mrow>
+            <mrow>\amp = \int_{y=0}^{y=3} \left[\frac{8}{3}y - \frac{8}{81}y^4 \right] \, dy</mrow>
+            <mrow>\amp = \left[\frac{8}{3}\frac{y^2}{2} - \frac{8}{81}\frac{y^5}{5}\right]\restrict{y=0}^{y=3}</mrow>
+            <mrow>\amp = \left(\frac{8}{3}\right) \left(\frac{9}{2}\right) - \left(\frac{8}{81}\right) \left(\frac{243}{5}\right)</mrow>
+            <mrow>\amp = 12 - \frac{24}{5}</mrow>
+            <mrow>\amp = \frac{36}{5}</mrow>
+          </md>
+        </p>
+        <p>
+          Similar to our visualization description for the vertically simple case, we can look at our double integral from a different perspective to understand the different parts of our iterated integral. In <xref ref="dblintproj2"/>, you can see the same volume as before in pink which corresponds to the volume computed by the double integral. In this task, we used a horizontally simple description which means our slices correspond to constant values of <m>y</m>. The cross sectional area of this slice along a constant <m>y</m>-value is shown in blue on both the slice of our volume and on the 2D graph that shows the values of the inner integral (as a function of <m>y</m>). You can use the slider at the top of <xref ref="dblintproj2"/> to see how the area of cross section changes with respect to different values of <m>y</m>.
+        </p>
+        <figure xml:id="dblintproj2">
+          <caption> </caption>
+            <interactive title="interactive-dblintproj2" platform="sage" width="100%" aspect="1:1">
+              <slate surface="sage">
+                <xi:include href="interacts/projdblint2.txt" parse="text" />
+              </slate>
+            </interactive>
+        </figure>
+        <p>
+          You can see that as <m>y</m> increases from 0, the value of cross sectional area increases for a while, then decreases. While the height of our surface is increasing with respect to <m>y</m> over <m>[0,3]</m>, the length of the slice is getting smaller as <m>y</m> increases. This is captured algebraically by our inner integral in that the function we are integrating (<m>x^2y</m>) is increasing but the length of the interval we are integrating over (<m>\frac{2}{3}y\leq x\leq2</m>) is decreasing as we increase <m>y</m>. This is why our 2D graph in ends up having a concave down shape. 
+        </p>
+        <p>
+          Again, we can visualize the cross section areas as the height of red graph, which will allow us to consider the value the double integral to be the area under the red curve (in our 2D plot). While the orange area in <xref ref="dblintproj2"/> may look less than the orange area in <xref ref="dblintproj"/>, they are in fact the same. The width of the orange area in <xref ref="dblintproj2"/> is 3, whereas the width of the orange area in <xref ref="dblintproj"/> is two.
+        </p>
+        <p>
+          We see that in the situation where <m>D</m> can be described as horizontally simple or vertically simple, the order in which we choose to set up and evaluate the iterated integrals doesn't matter; the same value results in either case.
         </p>
       </task>
     </example>
-
+    <p>
+      The process of switching between a vertically simple description and a horizontally simple description for the region of integration is often called <term>switching the order of integation</term> because the corresponding iterated integrals used to calculate a double integral will have the order in which you integrate these variables switched. 
+    </p>
     <p>
       The meaning of a double integral over a non-rectangular region, <m>D</m>, parallels the meaning over a rectangular region. In particular,
       <ul>
         <li>
           <p>
-            <m>\iint_D f(x,y) \, dA</m> tells us the volume of the solids the graph of <m>f</m> bounds above the <m>xy</m>-plane over the closed, bounded region <m>D</m> minus the volume of the solids the graph of <m>f</m> bounds below the <m>xy</m>-plane under the region <m>D</m>;
+            <m>\displaystyle{\iint_D f(x,y) \, dA}</m> tells us the volume of the solids the graph of <m>f</m> bounds above the <m>xy</m>-plane over the closed, bounded region <m>D</m> minus the volume of the solids the graph of <m>f</m> bounds below the <m>xy</m>-plane under the region <m>D</m>;
           </p>
         </li>
 
         <li>
           <p>
-            <m>\frac{1}{A(D)} \iint_R f(x,y) \, dA</m>, where <m>A(D)</m> is the area of <m>D</m> tells us the average value of the function <m>f</m> on <m>D</m>. If <m>f(x, y) \geq  0</m> on <m>D</m>, we can interpret this average value of <m>f</m> on <m>D</m> as the height of the solid with base <m>D</m> and constant cross-sectional area <m>D</m> that has the same volume as the volume of the surface defined by <m>f</m> over <m>D</m>.
+            <m>\displaystyle{\frac{1}{A(D)} \iint_R f(x,y) \, dA}</m>, where <m>A(D)</m> is the area of <m>D</m> tells us the average value of the function <m>f</m> on <m>D</m>. If <m>f(x, y) \geq  0</m> on <m>D</m>, we can interpret this average value of <m>f</m> on <m>D</m> as the height of the solid with base <m>D</m> and constant cross-sectional area <m>D</m> that has the same volume as the volume of the surface defined by <m>f</m> over <m>D</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>f(x,y)</m> measure the density (in amount per unit area) of a material in the region <m>D</m>, then <m>\iint_D f(x,y) \, dA</m> will give the total amount of material in <m>D</m>. 
           </p>
         </li>
       </ul>
     </p>
-
+    <p>
+      In the next activity, we will practice the process of understanding a region of integration, using horizontally simple and vertically simple descriptions of the region, setting up and evaluating the corresponding iterated integrals. 
+    </p>
     <activity xml:id="A_11_3_1">
-      <statement>
+      <introduction>
         <p>
-          Consider the double integral <m>\iint_D (4-x-2y) \, dA</m>, where <m>D</m> is the triangular region with vertices (0,0), (4,0), and (0,2).
-          <ol marker="a.">
-            <li>
-              <p>
-                Write the given integral as an iterated integral of the form <m>\iint_D (4-x-2y) \, dy \, dx</m>. Draw a labeled picture of <m>D</m> with relevant cross sections.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Write the given integral as an iterated integral of the form <m>\iint_D (4-x-2y) \, dx \, dy</m>. Draw a labeled picture of <m>D</m> with relevant cross sections.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Evaluate the two iterated integrals from (a) and (b), and verify that they produce the same value. Give at least one interpretation of the meaning of your result.
-              </p>
-            </li>
-          </ol>
+          Consider the double integral <m>\displaystyle{\iint_D (4-x-2y) \, dA}</m>, where <m>D</m> is the triangular region with vertices (0,0), (4,0), and (0,2). 
         </p>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              <me>
-                \iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx = \int_{0}^{4} \int_{0}^{2-(1/2)x} \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx
-              </me>
-            </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Draw and label a plot of <m>D</m> with relevent cross sections for a vertically simple description. Give the inequalities that show <m>D</m> as vertically simple.
+          </p>
+        </statement>
+        <answer>
+          <p>
             <image source="images/A_11_3_1_parta.png"/>
-          </li>
-          <li>
-            <p>
-              <me>
-                \iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy = \int_{0}^{2} \int_{0}^{4-2y} \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy
-              </me>
-            </p>
+            <m>0 \leq x \leq 4 \quad \quad 0 \leq y \leq 2-0.5x</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+           Integrating with respect to <m>y</m> first means we take cross sections of <m>D</m> parallel to the <m>y</m>-axis. As the figure below illustrates, the lower end of any cross section is always on the <m>x</m>-axis (with <m>y=0</m>) and the upper limit is on the line joining <m>(4,0)</m> and <m>(0,2)</m>. The limits on <m>y</m> need to written in terms of <m>x</m>, so the upper limit is <m>y = 2-\frac{1}{2}x</m>. These cross sections run from <m>x=0</m> to <m>x=4</m>, so as an iterated integral we have
+            <me>
+              \iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx = \int_{0}^{4} \int_{0}^{2-(1/2)x} \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx
+            </me>
+          </p>
+          <image source="images/A_11_3_1_parta.png"/>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Draw and label a plot of <m>D</m> with relevent cross sections for a horizontally simple description. Give the inequalities that show <m>D</m> as horizontally simple.
+          </p>
+        </statement>
+        <answer>
+          <p>
             <image source="images/A_11_3_1_partb.png"/>
-          </li>
-          <li>
-            <p>
-              Evaluating the iterated integral with respect to <m>y</m> then <m>x</m> gives us
-              <md>
-                <mrow>\iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx \amp = \int_{0}^{4} \int_{0}^{2-(1/2)x} \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx</mrow>
-                <mrow>\amp = 4</mrow>
-              </md>.
-              Evaluating the iterated integral with respect to <m>x</m> then <m>y</m> gives us
-              <md>
-                <mrow>\iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy \amp = \int_{0}^{2} \int_{0}^{4-2y} \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy</mrow>
-                <mrow>\amp = 4</mrow>
-              </md>.
-              Since <m>f</m> is non-negative on the domain <m>D</m>,
-              these two iterated integrals tell us the volume of the solid bounded above by the graph of
-              <m>f(x,y) = \frac{3}{4}(4-x-2y)</m> and below by the triangular region <m>D</m>.
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              Integrating with respect to <m>y</m> first means we take cross sections of <m>D</m> parallel to the <m>y</m>-axis.
-              As the figure below illustrates,
-              the lower end of any cross section is always on the <m>x</m>-axis
-              (with <m>y=0</m>)
-              and the upper limit is on the line joining <m>(4,0)</m> and <m>(0,2)</m>.
-              The limits on <m>y</m> need to written in terms of <m>x</m>,
-              so the upper limit is <m>y = 2-\frac{1}{2}x</m>.
-              These cross sections run from <m>x=0</m> to <m>x=4</m>,
-              so as an iterated integral we have
-              <me>
-                \iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx = \int_{0}^{4} \int_{0}^{2-(1/2)x} \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx
-              </me>.
-            </p>
-            <image source="images/A_11_3_1_parta.png"/>
-          </li>
-          <li>
-            <p>
-              Integrating with respect to <m>x</m> first means we take cross sections of <m>D</m> parallel to the <m>x</m>-axis.
-              As the figure below illustrates,
-              the lower end of any cross section is always on the <m>y</m>-axis
-              (with <m>x=0</m>)
-              and the upper limit is on the line joining <m>(4,0)</m> and <m>(0,2)</m>.
-              The limits on <m>x</m> need to written in terms of <m>y</m>,
-              so the upper limit is <m>x = 4-2y</m>.
-              These cross sections run from <m>y=0</m> to <m>y=2</m>,
-              so as an iterated integral we have
-              <me>
-                \iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy = \int_{0}^{2} \int_{0}^{4-2y} \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy
-              </me>.
-            </p>
-            <image source="images/A_11_3_1_parta.png"/>
-          </li>
-          <li>
-            <p>
-              Evaluating the iterated integral with respect to <m>y</m> then <m>x</m> gives us
-              <md>
-                <mrow>\iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx \amp = \int_{0}^{4} \int_{0}^{2-(1/2)x} \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx</mrow>
-                <mrow>\amp = \frac{3}{4} \int_{0}^{4} \left[(4-x)y-y^2\right] \mid_{0}^{2-(1/2)x} \, dx</mrow>
-                <mrow>\amp = \frac{3}{4} \int_{0}^{4}  \left[(4-x)\left(2-\frac{1}{2}x\right)-\left(2-\frac{1}{2}x\right)^2\right] \, dx</mrow>
-                <mrow>\amp = \frac{3}{4} \int_{0}^{4}  \left[4-2x+\frac{1}{4}x^2\right] \, dx</mrow>
-                <mrow>\amp = \frac{3}{4} \left[4x-x^2+\frac{1}{12}x^3\right] \mid_{0}^{4}</mrow>
-                <mrow>\amp = \frac{3}{4} \left(\frac{16}{3}\right)</mrow>
-                <mrow>\amp = 4</mrow>
-              </md>.
-              Evaluating the iterated integral with respect to <m>x</m> then <m>y</m> gives us
-              <md>
-                <mrow>\iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy \amp = \int_{0}^{2} \int_{0}^{4-2y} \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy</mrow>
-                <mrow>\amp = \frac{3}{4} \int_{0}^{2}  \left[4x-\frac{x^2}{2}-2yx \right] \mid_{0}^{4-2y} \, dy</mrow>
-                <mrow>\amp = \frac{3}{4} \int_{0}^{2}   \left[4(4-2y)-\frac{(4-2y)^2}{2}-2y(4-2y) \right] \, dy</mrow>
-                <mrow>\amp = \frac{3}{4} \int_{0}^{2}   \left[8-8y+2y^2 \right] \, dy</mrow>
-                <mrow>\amp = \frac{3}{4} \left[8y-4y^2+\frac{2}{3}y^3 \right] \mid_{0}^{2}</mrow>
-                <mrow>\amp = \frac{3}{4} \left(\frac{16}{3}\right)</mrow>
-                <mrow>\amp = 4</mrow>
-              </md>.
-              Since <m>f</m> is non-negative on the domain <m>D</m>,
-              these two iterated integrals tell us the volume of the solid bounded above by the graph of
-              <m>f(x,y) = \frac{3}{4}(4-x-2y)</m> and below by the triangular region <m>D</m>.
-            </p>
-          </li>
-        </ol>
-      </solution>
-
+            <m>0 \leq y \leq 2 \quad \quad 0 \leq x \leq 4-2y</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Integrating with respect to <m>x</m> first means we take cross sections of <m>D</m> parallel to the <m>x</m>-axis. As the figure below illustrates, the lower end of any cross section is always on the <m>y</m>-axis (with <m>x=0</m>) and the upper limit is on the line joining <m>(4,0)</m> and <m>(0,2)</m>. The limits on <m>x</m> need to written in terms of <m>y</m>, so the upper limit is <m>x = 4-2y</m>. These cross sections run from <m>y=0</m> to <m>y=2</m>, so as an iterated integral we have
+            <me>
+              \iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy = \int_{0}^{2} \int_{0}^{4-2y} \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy
+            </me>
+          </p>
+          <image source="images/A_11_3_1_parta.png"/>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Write the double integral as an iterated integral of the form <m>\iint_D (4-x-2y) \, dy \, dx</m> and include bounds on both of your iterated integrals.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <me>
+              \iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx = \int_{0}^{4} \int_{0}^{2-(1/2)x} \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx
+            </me>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            <me>
+              \iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx = \int_{0}^{4} \int_{0}^{2-(1/2)x} \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx
+            </me>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Write the double integral as an iterated integral of the form <m>\iint_D (4-x-2y) \, dx \, dy</m> and include bounds on both of your iterated integrals.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <me>
+              \iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy = \int_{0}^{2} \int_{0}^{4-2y} \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy
+            </me>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            <me>
+              \iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy = \int_{0}^{2} \int_{0}^{4-2y} \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy
+            </me>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Evaluate the two iterated integrals from the previous two parts, and verify that they produce the same value. Give at least one interpretation of the meaning of your result.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Evaluating the iterated integral with respect to <m>y</m> then <m>x</m> gives us
+            <md>
+              <mrow>\iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx \amp = \int_{0}^{4} \int_{0}^{2-(1/2)x} \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx</mrow>
+              <mrow>\amp = 4</mrow>
+            </md>.
+            Evaluating the iterated integral with respect to <m>x</m> then <m>y</m> gives us
+            <md>
+              <mrow>\iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy \amp = \int_{0}^{2} \int_{0}^{4-2y} \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy</mrow>
+              <mrow>\amp = 4</mrow>
+            </md>.
+            Since <m>f</m> is non-negative on the domain <m>D</m>, these two iterated integrals tell us the volume of the solid bounded above by the graph of <m>f(x,y) = \frac{3}{4}(4-x-2y)</m> and below by the triangular region <m>D</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Evaluating the iterated integral with respect to <m>y</m> then <m>x</m> gives us
+            <md>
+              <mrow>\iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx \amp = \int_{0}^{4} \int_{0}^{2-(1/2)x} \left(\frac{3}{4}\right)(4-x-2y) \, dy \, dx</mrow>
+              <mrow>\amp = \frac{3}{4} \int_{0}^{4} \left[(4-x)y-y^2\right] \mid_{0}^{2-(1/2)x} \, dx</mrow>
+              <mrow>\amp = \frac{3}{4} \int_{0}^{4}  \left[(4-x)\left(2-\frac{1}{2}x\right)-\left(2-\frac{1}{2}x\right)^2\right] \, dx</mrow>
+              <mrow>\amp = \frac{3}{4} \int_{0}^{4}  \left[4-2x+\frac{1}{4}x^2\right] \, dx</mrow>
+              <mrow>\amp = \frac{3}{4} \left[4x-x^2+\frac{1}{12}x^3\right] \mid_{0}^{4}</mrow>
+              <mrow>\amp = \frac{3}{4} \left(\frac{16}{3}\right)</mrow>
+              <mrow>\amp = 4</mrow>
+            </md>
+            Evaluating the iterated integral with respect to <m>x</m> then <m>y</m> gives us
+            <md>
+              <mrow>\iint_D \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy \amp = \int_{0}^{2} \int_{0}^{4-2y} \left(\frac{3}{4}\right)(4-x-2y) \, dx \, dy</mrow>
+              <mrow>\amp = \frac{3}{4} \int_{0}^{2}  \left[4x-\frac{x^2}{2}-2yx \right] \mid_{0}^{4-2y} \, dy</mrow>
+              <mrow>\amp = \frac{3}{4} \int_{0}^{2}  \left[4(4-2y)-\frac{(4-2y)^2}{2}-2y(4-2y) \right] \, dy</mrow>
+              <mrow>\amp = \frac{3}{4} \int_{0}^{2}  \left[8-8y+2y^2 \right] \, dy</mrow>
+              <mrow>\amp = \frac{3}{4} \left[8y-4y^2+\frac{2}{3}y^3 \right] \mid_{0}^{2}</mrow>
+              <mrow>\amp = \frac{3}{4} \left(\frac{16}{3}\right)</mrow>
+              <mrow>\amp = 4</mrow>
+            </md>.
+            Since <m>f</m> is non-negative on the domain <m>D</m>, these two iterated integrals tell us the volume of the solid bounded above by the graph of <m>f(x,y) = \frac{3}{4}(4-x-2y)</m> and below by the triangular region <m>D</m>.
+          </p>
+        </solution>
+      </task>
     </activity>
-
+    <p>
+      In the next activity, we will explore to understand a region of integration, with some non-linear sides, given as bounds in an iterated integral, then we will switch the order of integration, evaluate which ever order is most convinient and finally interpret the result using the average value approach.
+    </p>
     <activity xml:id="A_11_3_2">
-      <statement>
+      <introduction>
         <p>
           Consider the iterated integral <m>\int_{x=0}^{x=1} \int_{y=x}^{y=\sqrt{x}} (4x+10y) \, dy \, dx</m>.
-          <ol marker="a.">
-            <li>
-              <p>
-                Sketch the region of integration, <m>D</m>, for which
-                <me>
-                  \iint_D (4x + 10y) \, dA = \int_{x=0}^{x=1} \int_{y=x}^{y=\sqrt{x}} (4x+10y) \, dy \, dx.
-                </me>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Determine the equivalent iterated integral that results from integrating in the opposite order (<m>dx \, dy</m>, instead of <m>dy \, dx</m>).  That is, determine the limits of integration for which
-                <me>
-                  \iint_D (4x + 10y) \, dA = \int_{y=?}^{y=?}  \int_{x=?}^{x=?} (4x+10y) \, dx \, dy.
-                </me>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Evaluate one of the two iterated integrals above. Explain what the value you obtained tells you.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Set up and evaluate a single definite integral to determine the exact area of <m>D</m>, <m>A(D)</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Determine the exact average value of <m>f(x,y) = 4x  + 10y</m> over <m>D</m>.
-              </p>
-            </li>
-          </ol>
         </p>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              The region <m>D</m> of integration has
-              <m>-x \leq y \leq x^2</m> and <m>3 \leq x \leq 5</m>.
-              This region is as shown in the figure below.
-              <image width="73%" source="images/11_3_Act_2"/>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Sketch the region of integration, <m>D</m>, for which
+            <me>
+              \iint_D (4x + 10y) \, dA = \int_{x=0}^{x=1} \int_{y=x}^{y=\sqrt{x}} (4x+10y) \, dy \, dx.
+            </me>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            The region <m>D</m> of integration has <m>-x \leq y \leq x^2</m> and <m>3 \leq x \leq 5</m>. This region is as shown in the figure below.
+            <image width="73%" source="images/11_3_Act_2"/>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            The region <m>D</m> of integration has <m>-x \leq y \leq x^2</m> and <m>3 \leq x \leq 5</m>. This region is as shown in the figure below.
+            <image width="73%" source="images/11_3_Act_2"/>
             </p>
-          </li>
-          <li>
-            <p>
-              <me>
-                \int_{-5}^{-3} \int_{-y}^{5} (4x+10y) \, dx \, dy + \int_{-3}^{9} \int_{3}^{5} (4x+10y) \, dx \, dy + \int_{9}^{25} \int_{\sqrt{y}}^{5} (4x+10y) \, dx \, dy
-              </me>
-            </p>
-          </li>
-          <li>
-            <p>
-              Evaluating the original integral yields
-              <m> \frac{10180}{3}</m>.
-              Since <m>4x+10y \geq 0</m> on this domain,
-              the value obtained tells us the volume of the solid bounded above by the graph of the plane <m>4x+10y</m> and below by the region of integration.
-            </p>
-          </li>
-          <li>
-            <p>
-              The area of <m>D</m> is found by integrating 1 over the domain <m>D</m>, or
-              <md>
-                <mrow>A(D) \amp = \iint_D 1 \, dA</mrow>
-                <mrow>\amp = \int_{x=3}^{x=5} \int_{y=-x}^{y=x^2} 1 \, dy \, dx</mrow>
-                <mrow>\amp = \frac{122}{3}</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-             <m> \frac{5090}{61} </m>
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              The region <m>D</m> of integration has
-              <m>-x \leq y \leq x^2</m> and <m>3 \leq x \leq 5</m>.
-              This region is as shown in the figure below.
-              <image width="73%" source="images/11_3_Act_2"/>
-            </p>
-          </li>
-          <li>
-            <p>
-              If we integrate with respect to <m>x</m> first, then <m>y</m>,
-              the cross sections in the <m>x</m>-direction will always have their right endpoints on the line <m>x=5</m>.
-              However, the left endpoints change as shown in the figure above.
-              At the bottom of the figure,
-              <m>x</m> runs from <m>-y</m> to <m>5</m> for <m>y</m> between <m>-3</m> and <m>-5</m>.
-              In the middle,
-              <m>x</m> runs between <m>x=3</m> and <m>x=5</m> for <m>y</m> between <m>-3</m> and <m>9</m>.
-              At the top, <m>x</m> runs from
-              <m>\sqrt{y}</m> to <m>x=5</m> for <m>y</m> between <m>9</m> and <m>25</m>.
-              So a sum of  iterated integrals that gives the same value as the given iterated integral is
-              <me>
-                \int_{-5}^{-3} \int_{-y}^{5} (4x+10y) \, dx \, dy + \int_{-3}^{9} \int_{3}^{5} (4x+10y) \, dx \, dy + \int_{9}^{25} \int_{\sqrt{y}}^{5} (4x+10y) \, dx \, dy
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Evaluating the original integral yields
-              <md>
-                <mrow>\int_3^5 \int_{-x}^{x^2} (4x+10y) \, dy \, dx \amp = \int_3^5 \left[4xy+5y^2\right] \mid_{-x}^{x^2} \, dx</mrow>
-                <mrow>\amp = \int_3^5  \left[\left(4x^3+5x^4\right) - \left(-4x^2+5x^2\right)\right] \, dx</mrow>
-                <mrow>\amp = \int_3^5  \left[5x^4+4x^3-x^2\right] \, dx</mrow>
-                <mrow>\amp =  \left[x^5+x^4-\frac{x^3}{3}\right] \mid_3^5</mrow>
-                <mrow>\amp = \frac{11125}{3} - 315</mrow>
-                <mrow>\amp = \frac{10180}{3}</mrow>
-              </md>.
-              Since <m>4x+10y \geq 0</m> on this domain,
-              the value obtained tells us the volume of the solid bounded above by the graph of the plane <m>4x+10y</m> and below by the region of integration.
-            </p>
-          </li>
-          <li>
-            <p>
-              The area of <m>D</m> is found by integrating 1 over the domain <m>D</m>, or
-              <md>
-                <mrow>A(D) \amp = \iint_D 1 \, dA</mrow>
-                <mrow>\amp = \int_{x=3}^{x=5} \int_{y=-x}^{y=x^2} 1 \, dy \, dx</mrow>
-                <mrow>\amp = \int_3^5  \left[x^2+x\right] \, dx</mrow>
-                <mrow>\amp = \left[\frac{x^3}{3}+\frac{x^2}{2}\right] \mid_3^5</mrow>
-                <mrow>\amp = \left[\frac{125}{3} + \frac{25}{2}\right] - \left[\frac{27}{3}+\frac{9}{2}\right]</mrow>
-                <mrow>\amp = \frac{122}{3}</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The average value of <m>f</m> on <m>D</m> is
-              <me>
-                \frac{1}{A(D)} \iint_D f(x,y) \, dA = \frac{3}{122}\left(\frac{10180}{3}\right) = \frac{5090}{61}
-              </me>.
-            </p>
-          </li>
-        </ol>
-      </solution>
-
+          
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Determine the equivalent iterated integral that results from integrating in the opposite order (<m>dx \, dy</m>, instead of <m>dy \, dx</m>).  That is, determine the limits of integration for which
+            <me>
+              \iint_D (4x + 10y) \, dA = \int_{y=?}^{y=?}  \int_{x=?}^{x=?} (4x+10y) \, dx \, dy.
+            </me>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <me>
+              \int_{-5}^{-3} \int_{-y}^{5} (4x+10y) \, dx \, dy + \int_{-3}^{9} \int_{3}^{5} (4x+10y) \, dx \, dy + \int_{9}^{25} \int_{\sqrt{y}}^{5} (4x+10y) \, dx \, dy
+            </me>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            If we integrate with respect to <m>x</m> first, then <m>y</m>, the cross sections in the <m>x</m>-direction will always have their right endpoints on the line <m>x=5</m>. However, the left endpoints change as shown in the figure above. At the bottom of the figure, <m>x</m> runs from <m>-y</m> to <m>5</m> for <m>y</m> between <m>-3</m> and <m>-5</m>. In the middle, <m>x</m> runs between <m>x=3</m> and <m>x=5</m> for <m>y</m> between <m>-3</m> and <m>9</m>. At the top, <m>x</m> runs from <m>\sqrt{y}</m> to <m>x=5</m> for <m>y</m> between <m>9</m> and <m>25</m>. So a sum of  iterated integrals that gives the same value as the given iterated integral is
+            <me>
+              \int_{-5}^{-3} \int_{-y}^{5} (4x+10y) \, dx \, dy + \int_{-3}^{9} \int_{3}^{5} (4x+10y) \, dx \, dy + \int_{9}^{25} \int_{\sqrt{y}}^{5} (4x+10y) \, dx \, dy
+            </me>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Evaluate which ever one of the two iterated integrals above you think will be easiest to compute. Explain what the value you obtained tells you.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Evaluating the original integral yields <m> \frac{10180}{3}</m>. Since <m>4x+10y \geq 0</m> on this domain, the value obtained tells us the volume of the solid bounded above by the graph of the plane <m>4x+10y</m> and below by the region of integration.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Evaluating the original integral yields
+            <md>
+              <mrow>\int_3^5 \int_{-x}^{x^2} (4x+10y) \, dy \, dx \amp = \int_3^5 \left[4xy+5y^2\right] \mid_{-x}^{x^2} \, dx</mrow>
+              <mrow>\amp = \int_3^5  \left[\left(4x^3+5x^4\right) - \left(-4x^2+5x^2\right)\right] \, dx</mrow>
+              <mrow>\amp = \int_3^5  \left[5x^4+4x^3-x^2\right] \, dx</mrow>
+              <mrow>\amp =  \left[x^5+x^4-\frac{x^3}{3}\right] \mid_3^5</mrow>
+              <mrow>\amp = \frac{11125}{3} - 315</mrow>
+              <mrow>\amp = \frac{10180}{3}</mrow>
+            </md>.
+            Since <m>4x+10y \geq 0</m> on this domain, the value obtained tells us the volume of the solid bounded above by the graph of the plane <m>4x+10y</m> and below by the region of integration.
+          </p>
+        </solution>
+      </task> 
+      <task>
+        <statement>
+          <p>
+            Set up and evaluate a single definite integral to determine the exact area of <m>D</m>, <m>A(D)</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            The area of <m>D</m> is found by integrating 1 over the domain <m>D</m>, or
+            <md>
+              <mrow>A(D) \amp = \iint_D 1 \, dA</mrow>
+              <mrow>\amp = \int_{x=3}^{x=5} \int_{y=-x}^{y=x^2} 1 \, dy \, dx</mrow>
+              <mrow>\amp = \frac{122}{3}</mrow>
+            </md>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            The area of <m>D</m> is found by integrating 1 over the domain <m>D</m>, or
+            <md>
+              <mrow>A(D) \amp = \iint_D 1 \, dA</mrow>
+              <mrow>\amp = \int_{x=3}^{x=5} \int_{y=-x}^{y=x^2} 1 \, dy \, dx</mrow>
+              <mrow>\amp = \int_3^5  \left[x^2+x\right] \, dx</mrow>
+              <mrow>\amp = \left[\frac{x^3}{3}+\frac{x^2}{2}\right] \mid_3^5</mrow>
+              <mrow>\amp = \left[\frac{125}{3} + \frac{25}{2}\right] - \left[\frac{27}{3}+\frac{9}{2}\right]</mrow>
+              <mrow>\amp = \frac{122}{3}</mrow>
+            </md>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Determine the exact average value of <m>f(x,y) = 4x  + 10y</m> over <m>D</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m> \frac{5090}{61} </m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            The average value of <m>f</m> on <m>D</m> is
+            <me>
+              \frac{1}{A(D)} \iint_D f(x,y) \, dA = \frac{3}{122}\left(\frac{10180}{3}\right) = \frac{5090}{61}
+            </me>
+          </p>
+        </solution>
+      </task>
     </activity>
-
+    <p>
+      In the following activity, we will explore how switching the order of integration can sometimes yield a much easier set of iterated integral to evaluate algebraically.
+    </p>
     <activity xml:id="A_11_3_3">
-      <statement>
+      <introduction>
         <p>
           Consider the iterated integral <m>\int_{x=0}^{x=4} \int_{y=x/2}^{y=2} e^{y^2} \, dy \, dx</m>.
-          <ol marker="a.">
-            <li>
-              <p>
-                Explain why we cannot find a simple antiderivative for <m>e^{y^2}</m> with respect to <m>y</m>, and thus are unable to evaluate <m>\int_{x=0}^{x=4} \int_{y=x/2}^{y=2} e^{y^2} \, dy \, dx</m> in the indicated order using the Fundamental Theorem of Calculus.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Given that <m>\iint_D e^{y^2} \, dA = \int_{x=0}^{x=4} \int_{y=x/2}^{y=2} e^{y^2} \, dy \, dx</m>, sketch the region of integration, <m>D</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Rewrite the given iterated integral in the opposite order, using <m>dA = dx \, dy</m>. (Hint: You may need more than one integral.)
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Use the Fundamental Theorem of Calculus to evaluate the iterated integral you developed in (c).  Write one sentence to explain the meaning of the value you found.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                What is the important lesson this activity offers regarding the order in which we set up an iterated integral?
-              </p>
-            </li>
-          </ol>
         </p>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              No substitution will work to integrate <m>e^{y^2}</m> because of the square in the exponent.
-              Using parts only makes the integral more complicated,
-              and we have no other techniques to apply to this integrand.
-            </p>
-          </li>
-          <li>
-            <p>
-              The domain <m>D</m> of integration is shown below.
-            </p>
-            <image source="images/A_11_3_3_parta.png"/>
-          </li>
-          <li>
-            <p>
-              <me>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Explain why we cannot find a simple antiderivative for <m>e^{y^2}</m> with respect to <m>y</m>, and thus are unable to evaluate <m>\int_{x=0}^{x=4} \int_{y=x/2}^{y=2} e^{y^2} \, dy \, dx</m> in the indicated order using the Fundamental Theorem of Calculus.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            No substitution will work to integrate <m>e^{y^2}</m> because of the square in the exponent. Using integration by parts only makes the integral more complicated, and we have no other techniques to apply to this integrand.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            No substitution will work to integrate <m>e^{y^2}</m> because of the square in the exponent. Using integration by parts only makes the integral more complicated, and we have no other techniques to apply to this integrand.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Given that <m>\iint_D e^{y^2} \, dA = \int_{x=0}^{x=4} \int_{y=x/2}^{y=2} e^{y^2} \, dy \, dx</m>, sketch the region of integration, <m>D</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            The domain <m>D</m> of integration is shown below.
+          </p>
+          <image source="images/A_11_3_3_parta.png"/>
+        </answer>
+        <solution>
+          <p>
+            The domain <m>D</m> of integration is shown below.
+          </p>
+          <image source="images/A_11_3_3_parta.png"/>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Rewrite the given iterated integral in the opposite order, using <m>dA = dx \, dy</m>. (Hint: You may need more than one integral.)
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <me>
                 \iint_D e^{y^2} \, d = \int_0^2 \int_{0}^{2y} e^{y^2} \, dx \, dy
               </me>
-            </p>
-          </li>
-          <li>
-            <p>
-              Evaluating the iterated integral yields
-              <m>e^4-1</m>.
-              Since <m>e^{y^2} \gt 0</m> on <m>D</m>,
-              this integral tells us the volume of the solid bounded above by the surface
-              <m>z=e^{y^2}</m> and below by the region <m>D</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              We need to be flexible when setting up iterated integrals <mdash/> sometimes one order of integration is very difficult
-              (or impossible)
-              while the other order is easier.
-              So it is important to practice changing the order of integration in iterated integrals.
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              No substitution will work to integrate <m>e^{y^2}</m> because of the square in the exponent.
-              Using parts only makes the integral more complicated,
-              and we have no other techniques to apply to this integrand.
-            </p>
-          </li>
-          <li>
-            <p>
-              The domain <m>D</m> of integration is shown below.
-            </p>
-            <image source="images/A_11_3_3_parta.png"/>
-          </li>
-          <li>
-            <p>
-              When we first integrate with respect to <m>x</m>,
-              we can see that the cross sections go from <m>x=0</m> to <m>x = 2y</m>.
-              The limits on <m>y</m> are then <m>0</m> to <m>2</m>, giving us
-              <me>
-                \iint_D e^{y^2} \, d = \int_0^2 \int_{0}^{2y} e^{y^2} \, dx \, dy
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Evaluating the iterated integral yields
-              <md>
-                <mrow>\int_0^4 \int_{0}^{x/2} e^{y^2} \, dy \, dx \amp = \int_0^2 \int_{0}^{2y} e^{y^2} \, dx \, dy</mrow>
-                <mrow>\amp = \int_0^2 xe^{y^2} \mid_{0}^{2y} \, dy</mrow>
-                <mrow>\amp = \int_0^2 2ye^{y^2} \, dy</mrow>
-                <mrow>\amp =  e^{y^2} \mid_0^2</mrow>
-                <mrow>\amp = e^4-1</mrow>
-              </md>.
-              Since <m>e^{y^2} \gt 0</m> on <m>D</m>,
-              this integral tells us the volume of the solid bounded above by the surface
-              <m>z=e^{y^2}</m> and below by the region <m>D</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              We need to be flexible when setting up iterated integrals <mdash/> sometimes one order of integration is very difficult
-              (or impossible)
-              while the other order is easier.
-              So it is important to practice changing the order of integration in iterated integrals.
-            </p>
-          </li>
-        </ol>
-      </solution>
-
-
+          </p>
+        </answer>
+        <solution>
+          <p>
+            When we first integrate with respect to <m>x</m>, we can see that the cross sections go from <m>x=0</m> to <m>x = 2y</m>. The limits on <m>y</m> are then <m>0</m> to <m>2</m>, giving us
+            <me>
+            \iint_D e^{y^2} \, d = \int_0^2 \int_{0}^{2y} e^{y^2} \, dx \, dy
+            </me>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use the Fundamental Theorem of Calculus to evaluate the iterated integral you developed in (c).  Write one sentence to explain the meaning of the value you found.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Evaluating the iterated integral yields <m>e^4-1</m>. Since <m>e^{y^2} \gt 0</m> on <m>D</m>, this integral tells us the volume of the solid bounded above by the surface <m>z=e^{y^2}</m> and below by the region <m>D</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Evaluating the iterated integral yields
+            <md>
+              <mrow>\int_0^4 \int_{0}^{x/2} e^{y^2} \, dy \, dx \amp = \int_0^2 \int_{0}^{2y} e^{y^2} \, dx \, dy</mrow>
+              <mrow>\amp = \int_0^2 xe^{y^2} \mid_{0}^{2y} \, dy</mrow>
+              <mrow>\amp = \int_0^2 2ye^{y^2} \, dy</mrow>
+              <mrow>\amp =  e^{y^2} \mid_0^2</mrow>
+              <mrow>\amp = e^4-1</mrow>
+            </md>.
+            Since <m>e^{y^2} \gt 0</m> on <m>D</m>, this integral tells us the volume of the solid bounded above by the surface <m>z=e^{y^2}</m> and below by the region <m>D</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What is the important lesson this activity offers regarding the order in which we set up an iterated integral?
+          </p>
+        </statement>
+        <answer>
+          <p>
+            We need to be flexible when setting up iterated integrals <mdash/> sometimes one order of integration is very difficult (or impossible) while the other order is easier. So it is important to practice changing the order of integration in iterated integrals.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            We need to be flexible when setting up iterated integrals <mdash/> sometimes one order of integration is very difficult (or impossible) while the other order is easier. So it is important to practice changing the order of integration in iterated integrals.
+          </p>
+        </solution>
+      </task>
     </activity>
   </subsection>
-
-
 
   <subsection>
     <title>Summary</title>
     <ul>
       <li>
         <p>
-          For a double integral <m>\iint_D f(x,y) \, dA</m> over a non-rectangular region <m>D</m>, we enclose <m>D</m> in a rectangle <m>R</m> and then extend integrand <m>f</m> to a function <m>F</m> so that <m>F(x,y) = 0</m> at all points in <m>R</m> outside of <m>D</m> and <m>F(x,y) = f(x,y)</m> for all points in <m>D</m>. We then define <m>\iint_D f(x,y) \, dA</m> to be equal to <m>\iint_R F(x,y) \, dA</m>.
+          For a double integral <m>\displaystyle{\iint_D f(x,y) \, dA}</m>, we can write appropriate iterated integrals if the region <m>D</m> is either horizontally or vertically simple. A horizontally simple region is described by the inequalities <m>c \leq y \leq d</m> and <m>h_1(y) \leq x \leq h_2(y)</m> . A vertically simple region is described by <m>a \leq x \leq b</m> and <m>g_1(x) \leq y \leq g_2(x)</m>.
+          
+         <!--  over a non-rectangular region <m>D</m>, we enclose <m>D</m> in a rectangle <m>R</m> and then extend integrand <m>f</m> to a function <m>F</m> so that <m>F(x,y) = 0</m> at all points in <m>R</m> outside of <m>D</m> and <m>F(x,y) = f(x,y)</m> for all points in <m>D</m>. We then define <m>\iint_D f(x,y) \, dA</m> to be equal to <m>\iint_R F(x,y) \, dA</m>. -->
         </p>
       </li>
 
       <li>
         <p>
-          In an iterated double integral, the limits on the outer integral must be constants while the limits on the inner integral must be constants or in terms of only the remaining variable. In other words, an iterated double integral has one of the following forms (which result in the same value):
+          In an iterated double integral, the limits on the outer integral must be constants while the limits on the inner integral must be constants or in terms of only the remaining variable. In other words, an iterated integral corresponding to a double integral has one of the following forms (which result in the same value):
           <me>
             \int_{x=a}^{x=b} \int_{y=g_1(x)}^{y=g_2(x)} f(x,y) \, dy \, dx,
           </me>
-          where <m>g_1=g_1(x)</m> and <m>g_2=g_2(x)</m> are functions of <m>x</m> only and the region <m>D</m> is described by the inequalities <m>g_1(x) \leq y \leq g_2(x)</m> and <m>a \leq x \leq b</m> or
+          where <m>g_1=g_1(x)</m> and <m>g_2=g_2(x)</m> are functions of <m>x</m> only and the region <m>D</m> is described by the inequalities > or
           <me>
             \int_{y=c}^{y=d} \int_{x=h_1(y)}^{x=h_2(y)} f(x,y) \, dx \, dy,
           </me>
@@ -1238,647 +1252,6 @@
 
     </subsection>
 
-    <exercises>
-
-      <exercise label="Library__maCalcDB__setVMultIntegrals1Double__ur_vc_8_10.pg" xml:id="ex-11-3-WW-triangle">
-      <!--<title>A double integral over a triangular domain</title>-->
-         <webwork source="Library/maCalcDB/setVMultIntegrals1Double/ur_vc_8_10.pg"/>
-         </exercise>
-
-      <exercise label="Library__272__setStewart15_3__problem_2.pg" xml:id="ex-11-3-WW-triangle-2">
-      <!--<title>Another double integral over a triangular domain</title>-->
-         <webwork source="Library/272/setStewart15_3/problem_2.pg"/>
-         </exercise>
-
-         <exercise label="Library__maCalcDB__setVMultIntegrals1Double__ur_vc_8_12.pg" xml:id="ex-11-3-WW-reverse">
-      <!--<title>Reverse the order of integration</title> -->
-         <webwork source="Library/maCalcDB/setVMultIntegrals1Double/ur_vc_8_12.pg"/>
-         </exercise>
-
-
-
-         <exercise label="Library__FortLewis__Calc3__16-1-Double-integrals__HGM4-16-1-15-Double-integrals.pg" xml:id="ex-11-3-WW-pos-neg">
-      <!--<title>Determine if values of double integrals are positive or negative</title>-->
-         <webwork source="Library/FortLewis/Calc3/16-1-Double-integrals/HGM4-16-1-15-Double-integrals.pg"/>
-         </exercise>
-
-         <exercise label="Library__Michigan__Chap16Sec2__Q41.pg" xml:id="ex-11-3-WW-disk">
-      <!--<title>Double integral over a disk</title>-->
-         <webwork source="Library/Michigan/Chap16Sec2/Q41.pg"/>
-         </exercise>
-
-
-         <exercise label="Library__FortLewis__Calc3__16-2-Iterated-integrals__HGM4-16-2-43-Iterated-integrals.pg" xml:id="ex-11-3-WW-paraboloid">
-      <!--<title>The volume of a paraboloid</title>-->
-         <webwork source="Library/FortLewis/Calc3/16-2-Iterated-integrals/HGM4-16-2-43-Iterated-integrals.pg"/>
-         </exercise>
-
-         <exercise label="Library__Rochester__setVMultIntegrals1Double__ur_vc_8_11.pg" xml:id="ex-11-3-WW-plane">
-      <!--<title>The volume of solid bounded by a plane</title>-->
-         <webwork source="Library/Rochester/setVMultIntegrals1Double/ur_vc_8_11.pg"/>
-         </exercise>
-
-         <exercise label="Library__ASU-topics__setCalculus__stef__stef15_3p3.pg" xml:id="ex-11-3-WW-change-order">
-      <!--<title>Changing the order of integration obtain two integrals</title>-->
-         <webwork source="Library/ASU-topics/setCalculus/stef/stef15_3p3.pg"/>
-         </exercise>
-
-        <exercise label="Library__FortLewis__Calc3__16-1-Double-integrals__HGM4-16-1-32-Double-integrals.pg" xml:id="ex-11-3-WW-dirt-pile">
-      <!--<title>Finding cross sectional areas and volume of a dirt pile</title>-->
-         <webwork source="Library/FortLewis/Calc3/16-1-Double-integrals/HGM4-16-1-32-Double-integrals.pg"/>
-         </exercise>
-
-         <exercise label="Library__Rochester__setVMultIntegrals1Double__ur_vc_8_13.pg" xml:id="ex-11-3-WW-matching">
-      <!--<title>Matching regions of integration to descriptions</title>-->
-         <webwork source="Library/Rochester/setVMultIntegrals1Double/ur_vc_8_13.pg"/>
-         </exercise>
-
-         <!--MBX exception
-         <exercise xml:id="ex-11-3-WW-both-orders">
-          <title>Determining both orders of integration with a triangular domain</title>
-         <webwork source="Library/FortLewis/Calc3/16-2-Iterated-integrals/HGM4-16-2-07-Iterated-integrals.pg" />
-         </exercise> 
-
-         <exercise xml:id="ex-11-3-WW-both-orders-2">
-      <title>Determining both orders of integration with a disk as the domain</title>
-         <webwork source="Library/FortLewis/Calc3/16-2-Iterated-integrals/HGM4-16-2-08-Iterated-integrals.pg" />
-         </exercise> -->
-
-         <!--MBX exception
-      <exercise xml:id="ex-11-3-WW-region">
-      <title>Identifying a region of integration</title>
-         <webwork source="Library/FortLewis/Calc3/16-2-Iterated-integrals/HGM4-16-2-19-Iterated-integrals.pg" />
-         </exercise> 
-         
-         <exercise xml:id="ex-11-3-WW-region-2">
-      <title>Identifying a quarter circle region of integration</title>
-         <webwork source="Library/FortLewis/Calc3/16-2-Iterated-integrals/HGM4-16-2-23-Iterated-integrals.pg" />
-         </exercise> -->
-
-
-
-
-      <exercise>
-        <statement>
-          <p>
-            For each of the following iterated integrals, 
-            <ul>
-              <li>
-                <p>
-                sketch the region of integration, 
-                </p>
-              </li>
-              <li>
-                <p>
-                write an equivalent iterated integral expression in the opposite order of integration,
-                </p>
-              </li>
-              <li>
-                <p>
-                choose one of the two orders and evaluate the integral.
-                </p>
-              </li>
-            </ul>
-                
-            <ol marker="a.">
-              <li>
-                <p>
-                  <m>\int_{x=0}^{x=1}  \int_{y=x^2}^{y=x} xy \, dy  \, dx</m>
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  <m>\int_{y=0}^{y=2}  \int_{x=-\sqrt{4-y^2}}^{x=0} xy \, dx  \, dy</m>
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  <m>\int_{x=0}^{x=1}  \int_{y=x^4}^{y=x^{1/4}} x+y \, dy  \, dx</m>
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  <m>\int_{y=0}^{y=2}  \int_{x=y/2}^{x=2y} x+y \, dx  \, dy</m>
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-
-        <answer>
-          <ol marker="a.">
-            <li>
-              <p>
-                Integrating in the reverse order gives us
-                <me>
-                  \int_{y=0}^{y=1}  \int_{x=y}^{x=\sqrt{y}} xy \, dy  \, dx
-                </me>.
-                We integrate first with respect to <m>y</m>:
-                <md>
-                  <mrow>\int_{x=0}^{x=1}  \int_{y=x^2}^{y=x} xy \, dy  \, dx \amp = \int_{x=0}^{x=1} \frac{1}{2}xy^2 \mid_{y=x^2}^{y=x}  \, dx</mrow>
-                  <mrow>\amp = \int_{x=0}^{x=1} \frac{1}{2}x\left(x^2-x^4\right) \, dx</mrow>
-                  <mrow>\amp = \int_{x=0}^{x=1} \frac{1}{2}\left(x^3-x^5\right) \, dx</mrow>
-                  <mrow>\amp = \frac{1}{2} \left(\frac{1}{4}x^4-\frac{1}{6}x^6\right)\mid_{x=0}^{x=1}</mrow>
-                  <mrow>\amp = \frac{1}{2} \left(\frac{1}{4}-\frac{1}{6}\right)</mrow>
-                  <mrow>\amp = \frac{1}{24}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Integrating in the reverse order gives us
-                <me>
-                  \int_{x=-2}^{x=0}  \int_{y=0}^{y=\sqrt{4-x^2}} xy \, dy  \, dx
-                </me>.
-                We integrate first with respect to <m>y</m>:
-                <md>
-                  <mrow>\int_{x=-2}^{x=0}  \int_{y=0}^{y=\sqrt{4-x^2}} xy \, dy  \, dx \amp = \int_{x=-2}^{x=0} \frac{1}{2}xy^2 \mid_{y=0}^{y=\sqrt{4-x^2}}  \, dx</mrow>
-                  <mrow>\amp = \frac{1}{2} \int_{x=-2}^{x=0} x\left(4-x^2\right) \, dx</mrow>
-                  <mrow>\amp = \frac{1}{2}\int_{x=-2}^{x=0} \left(4x-x^3\right) \, dx</mrow>
-                  <mrow>\amp = \frac{1}{2} \left(2x^2-\frac{1}{4}x^4\right)\mid_{x=-2}^{x=0}</mrow>
-                  <mrow>\amp = -\frac{1}{2} \left(8-4\right)</mrow>
-                  <mrow>\amp = -2</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Integrating in the reverse order gives us
-                <me>
-                  \int_{y=0}^{y=1}  \int_{x=y^{4}}^{x=y^{1/4}} x+y \, dx  \, dy
-                </me>.
-                We integrate first with respect to <m>y</m>:
-                <md>
-                  <mrow>\int_{x=0}^{x=1}  \int_{y=x^4}^{y=x^{1/4}} x+y \, dy  \, dx \amp = \int_{x=0}^{x=1} \left(xy + \frac{1}{2}y^2 \right) \mid_{y=x^4}^{y=x^{1/4}}  \, dx</mrow>
-                  <mrow>\amp = \int_{x=0}^{x=1} x\left(x^{1/4}-x^4\right) - \frac{1}{2}\left(x^{1/2}-x^8\right) \, dx</mrow>
-                  <mrow>\amp = \int_{x=0}^{x=1} \left(x^{5/4}-x^5\right) - \frac{1}{2}\left(x^{1/2}-x^8\right) \, dx</mrow>
-                  <mrow>\amp =\left(\frac{4}{9}x^{9/4} - \frac{1}{6}x^6 - \frac{1}{3}x^{3/2} - \frac{1}{18}x^9\right)\mid_{x=0}^{x=1}</mrow>
-                  <mrow>\amp = \frac{4}{9} - \frac{1}{6} - \frac{1}{3} - \frac{1}{18}</mrow>
-                  <mrow>\amp = \frac{5}{9}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                To integrate in the reverse order we need two integrals:
-                <me>
-                  \int_{y=x/2}^{y=2x}  \int_{x=0}^{x=1} x+y \, dy  \, dx + \int_{y=x/2}^{y=2}  \int_{x=1}^{x=4} x+y \, dy  \, dx
-                </me>.
-                We integrate first with respect to <m>x</m>:
-                <md>
-                  <mrow>\int_{y=0}^{y=2}  \int_{x=y/2}^{x=2y} x+y \, dx  \, dy \amp = \int_{y=0}^{y=2} \left(\frac{1}{2}x^2 +xy\right) \mid_{x=y/2}^{x=2y}  \, dx</mrow>
-                  <mrow>\amp = \int_{y=0}^{y=2} \left[\left(2y^2+2y^2\right) - \left(\frac{1}{8}y^2 + \frac{1}{2}y^2\right)\right] \, dy</mrow>
-                  <mrow>\amp = \frac{27}{8} \int_{y=0}^{y=2} y^2 \, dy</mrow>
-                  <mrow>\amp = \frac{27}{8} \left(\frac{1}{3}y^3\right)\mid_{y=0}^{y=2}</mrow>
-                  <mrow>\amp = \frac{9}{8}(8)</mrow>
-                  <mrow>\amp = 9</mrow>
-                </md>.
-              </p>
-            </li>
-          </ol>
-        </answer>
-
-        <solution>
-          <ol marker="a.">
-            <li>
-              <p>
-                Integrating in the reverse order gives us
-                <me>
-                  \int_{y=0}^{y=1}  \int_{x=y}^{x=\sqrt{y}} xy \, dy  \, dx
-                </me>.
-                We integrate first with respect to <m>y</m>:
-                <md>
-                  <mrow>\int_{x=0}^{x=1}  \int_{y=x^2}^{y=x} xy \, dy  \, dx \amp = \int_{x=0}^{x=1} \frac{1}{2}xy^2 \mid_{y=x^2}^{y=x}  \, dx</mrow>
-                  <mrow>\amp = \int_{x=0}^{x=1} \frac{1}{2}x\left(x^2-x^4\right) \, dx</mrow>
-                  <mrow>\amp = \int_{x=0}^{x=1} \frac{1}{2}\left(x^3-x^5\right) \, dx</mrow>
-                  <mrow>\amp = \frac{1}{2} \left(\frac{1}{4}x^4-\frac{1}{6}x^6\right)\mid_{x=0}^{x=1}</mrow>
-                  <mrow>\amp = \frac{1}{2} \left(\frac{1}{4}-\frac{1}{6}\right)</mrow>
-                  <mrow>\amp = \frac{1}{24}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Integrating in the reverse order gives us
-                <me>
-                  \int_{x=-2}^{x=0}  \int_{y=0}^{y=\sqrt{4-x^2}} xy \, dy  \, dx
-                </me>.
-                We integrate first with respect to <m>y</m>:
-                <md>
-                  <mrow>\int_{x=-2}^{x=0}  \int_{y=0}^{y=\sqrt{4-x^2}} xy \, dy  \, dx \amp = \int_{x=-2}^{x=0} \frac{1}{2}xy^2 \mid_{y=0}^{y=\sqrt{4-x^2}}  \, dx</mrow>
-                  <mrow>\amp = \frac{1}{2} \int_{x=-2}^{x=0} x\left(4-x^2\right) \, dx</mrow>
-                  <mrow>\amp = \frac{1}{2}\int_{x=-2}^{x=0} \left(4x-x^3\right) \, dx</mrow>
-                  <mrow>\amp = \frac{1}{2} \left(2x^2-\frac{1}{4}x^4\right)\mid_{x=-2}^{x=0}</mrow>
-                  <mrow>\amp = -\frac{1}{2} \left(8-4\right)</mrow>
-                  <mrow>\amp = -2</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Integrating in the reverse order gives us
-                <me>
-                  \int_{y=0}^{y=1}  \int_{x=y^{4}}^{x=y^{1/4}} x+y \, dx  \, dy
-                </me>.
-                We integrate first with respect to <m>y</m>:
-                <md>
-                  <mrow>\int_{x=0}^{x=1}  \int_{y=x^4}^{y=x^{1/4}} x+y \, dy  \, dx \amp = \int_{x=0}^{x=1} \left(xy + \frac{1}{2}y^2 \right) \mid_{y=x^4}^{y=x^{1/4}}  \, dx</mrow>
-                  <mrow>\amp = \int_{x=0}^{x=1} x\left(x^{1/4}-x^4\right) - \frac{1}{2}\left(x^{1/2}-x^8\right) \, dx</mrow>
-                  <mrow>\amp = \int_{x=0}^{x=1} \left(x^{5/4}-x^5\right) - \frac{1}{2}\left(x^{1/2}-x^8\right) \, dx</mrow>
-                  <mrow>\amp =\left(\frac{4}{9}x^{9/4} - \frac{1}{6}x^6 - \frac{1}{3}x^{3/2} - \frac{1}{18}x^9\right)\mid_{x=0}^{x=1}</mrow>
-                  <mrow>\amp = \frac{4}{9} - \frac{1}{6} - \frac{1}{3} - \frac{1}{18}</mrow>
-                  <mrow>\amp = \frac{5}{9}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                To integrate in the reverse order we need two integrals:
-                <me>
-                  \int_{y=x/2}^{y=2x}  \int_{x=0}^{x=1} x+y \, dy  \, dx + \int_{y=x/2}^{y=2}  \int_{x=1}^{x=4} x+y \, dy  \, dx
-                </me>.
-                We integrate first with respect to <m>x</m>:
-                <md>
-                  <mrow>\int_{y=0}^{y=2}  \int_{x=y/2}^{x=2y} x+y \, dx  \, dy \amp = \int_{y=0}^{y=2} \left(\frac{1}{2}x^2 +xy\right) \mid_{x=y/2}^{x=2y}  \, dx</mrow>
-                  <mrow>\amp = \int_{y=0}^{y=2} \left[\left(2y^2+2y^2\right) - \left(\frac{1}{8}y^2 + \frac{1}{2}y^2\right)\right] \, dy</mrow>
-                  <mrow>\amp = \frac{27}{8} \int_{y=0}^{y=2} y^2 \, dy</mrow>
-                  <mrow>\amp = \frac{27}{8} \left(\frac{1}{3}y^3\right)\mid_{y=0}^{y=2}</mrow>
-                  <mrow>\amp = \frac{9}{8}(8)</mrow>
-                  <mrow>\amp = 9</mrow>
-                </md>.
-              </p>
-            </li>
-          </ol>
-        </solution>
-
-      </exercise>
-
-
-      <exercise>
-        <statement>
-          <p>
-            The temperature at any point on a metal plate in the <m>xy</m>-plane is given by <m>T(x,y) = 100-4x^2 - y^2</m>, where <m>x</m> and <m>y</m> are measured in inches and <m>T</m> in degrees Celsius. Consider the portion of the plate that lies on the region <m>D</m> that is the finite region that lies between the parabolas <m>x = y^2</m> and <m>x = 3 - 2y^2</m>.
-            <ol marker="a.">
-              <li>
-                <p>
-                  Construct a labeled sketch of the region <m>D</m>.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Set up an iterated integral whose value is <m>\iint_D T(x,y) \, dA</m>, using <m>dA = dx dy</m>. (Hint: It is possible that more than one integral is needed.)
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Set up an integrated integral whose value is <m>\iint_D T(x,y) \, dA</m>, using <m>dA = dy dx</m>. (Hint: It is possible that more than one integral is needed.)
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Use the Fundamental Theorem of Calculus to evaluate the integrals you determined in (b) and (c).
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Determine the exact average temperature, <m>T_{\operatorname{AVG}(D)}</m>, over the region <m>D</m>.
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-
-        <answer>
-          <ol marker="a.">
-            <li>
-              <p>
-                Use appropriate technology to draw the surface.
-              </p>
-            </li>
-            <li>
-              <p>
-                The area of <m>D</m> is given by
-                <me>
-                  A(D) = \int_{y=-1}^{y=1}  (3-2y^2) - y^2 \, dy
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                An integrated integral whose value is <m>\iint_D T(x,y) \, dA</m> is
-                <me>
-                  \int_{y=-1}^{y=1} \int_{x=y^2}^{x=3-2y^2} 100-4x^2 - y^2 \, dx \, dy
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The area of <m>D</m> is
-                <m> 4</m>.
-                The value of <m>\iint_D T(x,y) \, dA</m> is
-                <m>\frac{2516}{7}</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> \frac{2516}{28}</m>
-              </p>
-            </li>
-          </ol>
-        </answer>
-
-        <solution>
-          <ol marker="a.">
-            <li>
-              <p>
-                Use appropriate technology to draw the surface.
-              </p>
-            </li>
-            <li>
-              <p>
-                The area of <m>D</m> is given by
-                <me>
-                  A(D) = \int_{y=-1}^{y=1}  (3-2y^2) - y^2 \, dy
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                An integrated integral whose value is <m>\iint_D T(x,y) \, dA</m> is
-                <me>
-                  \int_{y=-1}^{y=1} \int_{x=y^2}^{x=3-2y^2} 100-4x^2 - y^2 \, dx \, dy
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The area of <m>D</m> is
-                <md>
-                  <mrow>\int_{y=-1}^{y=1}  (3-2y^2) - y^2 \, dy \amp = \left(3y-y^3 \right)\mid_{y=-1}^{y=1}</mrow>
-                  <mrow>\amp = (3-1)-((-3)-(-1))</mrow>
-                  <mrow>\amp = 4</mrow>
-                </md>.
-                The value of <m>\iint_D T(x,y) \, dA</m> is
-                <md>
-                  <mrow>\int_{y=-1}^{y=1} \int_{x=y^2}^{x=3-2y^2} 100-4x^2 - y^2 \, dx \, dy \amp = \int_{y=-1}^{y=1} \left[(100-y^2)x - \frac{4}{3}x^3\right] \mid_{x=y^2}^{x=3-2y^2}  \, dy</mrow>
-                  <mrow>\amp = \int_{y=-1}^{y=1} \left[(100-y^2)(3-3y^2) - \frac{4}{3}\left(3-2y^2\right)^3 + \frac{4}{3}y^6\right]  \, dy</mrow>
-                  <mrow>\amp = \int_{y=-1}^{y=1} \left[264-231y^2-45y^4+12y^6\right]  \, dy</mrow>
-                  <mrow>\amp = \left[264y-77y^3-9y^5+\frac{12}{7}y^7\right] \mid_{y=-1}^{y=1}</mrow>
-                  <mrow>\amp = \left[264-77-9+\frac{12}{7}\right] - \left[-264y+77+9-\frac{12}{7}\right]</mrow>
-                  <mrow>\amp = \frac{2516}{7}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The exact average temperature,
-                <m>T_{\operatorname{AVG}(D)}</m>,
-                over the region <m>D</m> is
-                <me>
-                  T_{\operatorname{AVG}(D)}= \frac{1}{\text{ Area } (D)} \iint_D T(x,y) \, dA = \frac{2516}{28}
-                </me>.
-              </p>
-            </li>
-          </ol>
-        </solution>
- 
-      </exercise>
-
-
-      <exercise>
-        <statement>
-          <p>
-            Consider the solid that is given by the following description: the base is the given region <m>D</m>, while the top is given by the surface <m>z = p(x,y)</m>. In each setting below, set up, but do not evaluate, an iterated integral whose value is the exact volume of the solid. Include a labeled sketch of <m>D</m> in each case.
-            <ol marker="a.">
-              <li>
-                <p>
-                  <m>D</m> is the interior of the quarter circle of radius 2, centered at the origin, that lies in the second quadrant of the plane; <m>p(x,y) = 16-x^2-y^2</m>.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  <m>D</m> is the finite region between the line <m>y = x + 1</m> and the parabola <m>y = x^2</m>; 
-                   <m>p(x,y) = 10-x-2y</m>.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  <m>D</m> is the triangular region with vertices <m>(1,1)</m>, <m>(2,2)</m>, and <m>(2,3)</m>; <m>p(x,y) = e^{-xy}</m>.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  <m>D</m> is the region bounded by the <m>y</m>-axis, <m>y = 4</m> and <m>x = \sqrt{y}</m>; <m>p(x,y) = \sqrt{1 + x^2 + y^2}</m>.
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-
-        <answer>
-          <ol marker="a.">
-            <li>
-              <p>
-                The volume of the solid bounded above by the graph of <m>p</m> and below by the region <m>D</m> is given by
-                <me>
-                  \int_{x=-2}^{x=0} \int_{y=0}^{y=\sqrt{4-x^2}} 16-x^2-y^2 \, dy \, dx
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The volume of the solid bounded above by the graph of <m>p</m> and below by the region <m>D</m> is given by
-                <me>
-                  \int_{x=1/2(1-\sqrt{5})}^{x=1/2(1+\sqrt{5})} \int_{y=x^2}^{y=x+1} 10-x-2y \, dy \, dx
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The volume of the solid bounded above by the graph of <m>p</m> and below by the region <m>D</m> is given by
-                <me>
-                  \int_{x=1}^{x=2} \int_{y=x+1}^{y=2x-1} e^{-xy} \, dy \, dx
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The volume of the solid bounded above by the graph of <m>p</m> and below by the region <m>D</m> is given by
-                <me>
-                  \int_{y=0}^{y=4} \int_{x=0}^{x=\sqrt{y}} \sqrt{1 + x^2 + y^2} \, dx \, dy
-                </me>.
-              </p>
-            </li>
-          </ol>
-        </answer>
-
-        <solution>
-          <ol marker="a.">
-            <li>
-              <p>
-                The volume of the solid bounded above by the graph of <m>p</m> and below by the region <m>D</m> is given by
-                <me>
-                  \int_{x=-2}^{x=0} \int_{y=0}^{y=\sqrt{4-x^2}} 16-x^2-y^2 \, dy \, dx
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The volume of the solid bounded above by the graph of <m>p</m> and below by the region <m>D</m> is given by
-                <me>
-                  \int_{x=1/2(1-\sqrt{5})}^{x=1/2(1+\sqrt{5})} \int_{y=x^2}^{y=x+1} 10-x-2y \, dy \, dx
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The volume of the solid bounded above by the graph of <m>p</m> and below by the region <m>D</m> is given by
-                <me>
-                  \int_{x=1}^{x=2} \int_{y=x+1}^{y=2x-1} e^{-xy} \, dy \, dx
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The volume of the solid bounded above by the graph of <m>p</m> and below by the region <m>D</m> is given by
-                <me>
-                  \int_{y=0}^{y=4} \int_{x=0}^{x=\sqrt{y}} \sqrt{1 + x^2 + y^2} \, dx \, dy
-                </me>.
-              </p>
-            </li>
-          </ol>
-        </solution>
-
-        
-      </exercise>
-
-
-      <exercise>
-        <statement>
-          <p>
-            Consider the iterated integral <m>\displaystyle I = \int_{x=0}^{x=4} \int_{y=\sqrt{x}}^{y=2} \cos(y^3) \, dy \, dx</m>.
-            <ol marker="a.">
-              <li>
-                <p>
-                  Sketch the region of integration.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Write an equivalent iterated integral with the order of integration reversed.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Choose one of the two orders of integration and evaluate the iterated integral you chose by hand.  Explain the reasoning behind your choice.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Determine the exact average value of <m>\cos(y^3)</m> over the region <m>D</m> that is determined by the iterated integral <m>I</m>.
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-
-        <answer>
-          <ol marker="a.">
-            <li>
-              <p>
-                Use appropriate technology to draw the surface.
-              </p>
-            </li>
-            <li>
-              <p>
-                An equivalent iterated integral with the order of integration reversed is
-                <me>
-                  \int_{y=0}^{y=2} \int_{x=0}^{x=y^2} \cos(y^3) \, dx \, dy
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Since we do not know how to integrate
-                <m>\cos(y^3)</m> with respect to <m>y</m>,
-                we choose to integrate first with respect to <m>x</m>:
-                <md>
-                  <mrow>\int_{y=0}^{y=2} \int_{x=0}^{x=y^2} \cos(y^3) \, dx \, dy \amp = \int_{y=0}^{y=2}  x\cos(y^3) \mid_{x=0}^{x=y^2}  \, dy</mrow>
-                  <mrow>\amp = \int_{y=0}^{y=2}  y^2\cos(y^3)   \, dy</mrow>
-                  <mrow>\amp = \frac{1}{3}\sin(y^3)\mid_{y=0}^{y=2}</mrow>
-                  <mrow>\amp = \frac{1}{3}\sin(8)</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> \frac{1}{8}\sin(8) </m>
-              </p>
-            </li>
-          </ol>
-        </answer>
-
-        <solution>
-          <ol marker="a.">
-            <li>
-              <p>
-                Use appropriate technology to draw the surface.
-              </p>
-            </li>
-            <li>
-              <p>
-                An equivalent iterated integral with the order of integration reversed is
-                <me>
-                  \int_{y=0}^{y=2} \int_{x=0}^{x=y^2} \cos(y^3) \, dx \, dy
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Since we do not know how to integrate
-                <m>\cos(y^3)</m> with respect to <m>y</m>,
-                we choose to integrate first with respect to <m>x</m>:
-                <md>
-                  <mrow>\int_{y=0}^{y=2} \int_{x=0}^{x=y^2} \cos(y^3) \, dx \, dy \amp = \int_{y=0}^{y=2}  x\cos(y^3) \mid_{x=0}^{x=y^2}  \, dy</mrow>
-                  <mrow>\amp = \int_{y=0}^{y=2}  y^2\cos(y^3)   \, dy</mrow>
-                  <mrow>\amp = \frac{1}{3}\sin(y^3)\mid_{y=0}^{y=2}</mrow>
-                  <mrow>\amp = \frac{1}{3}\sin(8)</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The area of the region <m>D</m> is
-                <md>
-                  <mrow>\text{ Area } (D) \amp = \int_0^2 y^2 \, dy</mrow>
-                  <mrow>\amp = \frac{1}{3}y^3 \mid_0^2</mrow>
-                  <mrow>\amp = \frac{8}{3}</mrow>
-                </md>.
-                So the exact average value of
-                <m>\cos(y^3)</m> over the region <m>D</m> is
-                <me>
-                  \frac{I}{\text{ Area } (D)} = \frac{\frac{\sin(8)}{3}}{\frac{8}{3}} = \frac{1}{8}\sin(8)
-                </me>.
-              </p>
-            </li>
-          </ol>
-        </solution>
-
-        
-      </exercise>
-    </exercises>
+   <xi:include href="exercises/ez-S_multi_ints_double_ints_general.ptx" />
 
 </section>
