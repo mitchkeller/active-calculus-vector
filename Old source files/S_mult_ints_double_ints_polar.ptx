@@ -20,9 +20,22 @@
         <ul>
           <li>
             <p>
+              What are the polar coordinates of a point in two-space?
+            </p>
+          </li>
+
+          <li>
+            <p>
+              How do we convert between polar coordinates and rectangular coordinates?
+            </p>
+          </li>
+
+          <li>
+            <p>
               What is the area element in polar coordinates?
             </p>
           </li>
+
           <li>
             <p>
               How do we convert a double integral in rectangular coordinates to a double integral in polar coordinates?
@@ -33,7 +46,7 @@
 
     <introduction>
     <p>
-      While we have naturally defined double integrals in the rectangular coordinate system, starting with domains that are rectangular regions, there are many of these integrals that are difficult, if not impossible, to evaluate. For example, consider the domain <m>D</m> that is the unit circle (centered at the origin) and <m>f(x,y) = e^{-x^2 - y^2}</m>. To integrate <m>f</m> over <m>D</m>, we would use the iterated integral
+      While we have naturally defined double integrals in the rectangular coordinate system, starting with domains that are rectangular regions, there are many of these integrals that are difficult, if not impossible, to evaluate. For example, consider the domain <m>D</m> that is the unit circle and <m>f(x,y) = e^{-x^2 - y^2}</m>. To integrate <m>f</m> over <m>D</m>, we would use the iterated integral
       <me>
         \iint_D f(x,y) \, dA = \int_{x = -1}^{x = 1} \int_{y = -\sqrt{1-x^2}}^{y = \sqrt{1-x^2}} e^{-x^2 - y^2} \, dy \, dx.
       </me>
@@ -44,128 +57,416 @@
     </p>
 
     <p>
-      It is useful, therefore, to be able to translate to other coordinate systems where the limits of integration <em>and</em> the evaluation of the iterated integrals are simpler. In this section we provide a reminder of polar coordinates and then introduce and investigate their ramifications for double integrals. For a more thorough discussion of polar coordinates, look at <xref ref="S-Precalc-OtherCoordSystems"/>. 
+      It is useful, therefore, to be able to translate to other coordinate systems where the limits of integration and evaluation of the involved integrals is simpler. In this section we provide a quick discussion of one such system <mdash/> polar coordinates <mdash/> and then introduce and investigate their ramifications for double integrals. The rectangular coordinate system allows us to consider domains and graphs relative to a rectangular grid. The polar coordinate system is an alternate coordinate system that allows us to consider domains less suited to rectangular coordinates, such as circles.
     </p>
+
+    <exploration xml:id="PA_11_5">
+      <statement>
+        <p>
+          The coordinates of a point determine its location. In particular, the rectangular coordinates of a point <m>P</m> are given by an ordered pair <m>(x,y)</m>, where <m>x</m> is the (signed) distance the point lies from the <m>y</m>-axis to <m>P</m> and <m>y</m> is the (signed) distance the point lies from the <m>x</m>-axis to <m>P</m>. In polar coordinates, we locate the point by considering the distance the point lies from the origin, <m>O = (0,0)</m>, and the angle the line segment from the origin to <m>P</m> forms with the positive <m>x</m>-axis.
+        </p>
+        <ol marker="a.">
+        <li>
+          <p>
+            Determine the rectangular coordinates of the following points:
+          </p>
+          <ol type="i">
+            <li>
+              <p>
+                The point <m>P</m> that lies 1 unit from the origin on the positive <m>x</m>-axis.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                The point <m>Q</m> that lies 2 units from the origin and such that <m>\overline{OQ}</m> makes an angle of <m>\frac{\pi}{2}</m> with the positive <m>x</m>-axis.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                The point <m>R</m> that lies 3 units from the origin such that <m>\overline{OR}</m> makes an angle of <m>\frac{2\pi}{3}</m> with the positive <m>x</m>-axis.
+              </p>
+            </li>
+          </ol>
+        </li>
+
+        <li>
+          <p>
+            Part (a) indicates that the two pieces of information completely determine the location of a point:  either the traditional <m>(x,y)</m> coordinates, or alternately, the distance <m>r</m> from the point to the origin along with the angle <m>\theta</m> that the line through the origin and the point makes with the positive <m>x</m>-axis. We write <q><m>(r, \theta)</m></q> to denote the point's location in its polar coordinate representation. Find polar coordinates for the points with the given rectangular coordinates.
+            <ol marker="i.">
+              <li>
+                <p>
+                  <m>(0,-1)</m>   ii.  <m>(-2,0)</m>   iii.  <m>(-1,1)</m>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            For each of the following points whose coordinates are given in polar form, determine the rectangular coordinates of the point.
+            <ol marker="i.">
+              <li>
+                <p>
+                  <m>(5, \frac{\pi}{4})</m>          ii. <m>(2, \frac{5\pi}{6})</m>    iii. <m>(\sqrt{3}, \frac{5\pi}{3})</m>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </li>
+        </ol>
+      </statement>
+
+      <answer>
+        <ol marker="a.">
+          <li>
+            <p>
+              We get the following points:
+              <ol marker="i">
+                <li>
+                  <p>
+                     <m>(1,0)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>(0,2)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\left(-\frac{3}{2}, \frac{3\sqrt{3}}{2}\right)</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+          <li>
+            <p>
+              We get the following polar coordinates:
+              <ol marker="i">
+                <li>
+                  <p>
+                     <m>\left(1,\frac{\pi}{2}\right)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                     <m>(2,\pi)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\left (\sqrt{2},\frac{3\pi}{4} \right)</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+          <li>
+            <p>
+              The rectangular coordinates are:
+              <ol marker="i">
+                <li>
+                  <p>
+                    <m>( \frac{5\sqrt{2}}{2}, \frac{5\sqrt{2}}{2})</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>( -\sqrt{3}, 1)</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\left ( \frac{\sqrt{3}}{2},  -\frac{3}{2} \right )</m>
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </answer>
+
+      <solution>
+        <ol marker="a.">
+          <li>
+            <p>
+              Determine the rectangular coordinates of the following points:
+              <ol marker="i">
+                <li>
+                  <p>
+                    This point has <m>y</m> coordinate 0, so the <m>x</m> coordinate must be 1 and the point is <m>(1,0)</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The angle of <m>\frac{\pi}{2}</m> with the positive <m>x</m>-axis places the point on the <m>y</m>-axis.
+                    The point on the <m>y</m>-axis a distance 2 from the origin is the point <m>(0,2)</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Draw a right triangle from the origin to <m>R</m> to the point on the <m>x</m>-axis below <m>R</m>.
+                    The acute angle at the origin has measure <m>\frac{\pi}{3}</m>.
+                    So <m>x = 3\cos\left(\frac{2\pi}{3}\right) = -\frac{3}{2}</m> and <m>y = 3\sin\left(\frac{2\pi}{3}\right) = \frac{3\sqrt{3}}{2}</m>.
+                    So this point has rectangular coordinates <m>\left(-\frac{3}{2}, \frac{3\sqrt{3}}{2}\right)</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+          <li>
+            <p>
+              Part (a) indicates that the two pieces of information completely determine the location of a point:
+              either the traditional <m>(x,y)</m> coordinates, or alternately,
+              the distance <m>r</m> from the point to the origin along with the angle <m>\theta</m> that the line through the origin and the point makes with the positive <m>x</m>-axis.
+              We write
+              <q><m>(r, \theta)</m></q>
+              to denote the point's location in its polar coordinate representation.
+              Find polar coordinates for the points with the given rectangular coordinates.
+              <ol marker="i">
+                <li>
+                  <p>
+                    The distance from the point with rectangular coordinates <m>(0,-1)</m> to the origin is 1, and the angle the line through the origin and this point makes with the positive <m>x</m>-axis is <m>\frac{\pi}{2}</m>,
+                    so the polar coordinate representation of this point is <m>\left(1,\frac{\pi}{2}\right)</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The distance from the point with rectangular coordinates <m>(-2,0)</m> to the origin is 2, and the angle the line through the origin and this point makes with the positive <m>x</m>-axis is <m>\pi</m>,
+                    so the polar coordinate representation of this point is <m>(2,\pi)</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The distance from the point with rectangular coordinates <m>(-1,1)</m> to the origin is <m>\sqrt{2}</m>,
+                    and the angle the line through the origin and this point makes with the positive <m>x</m>-axis is <m>\frac{3\pi}{4}</m>,
+                    so the polar coordinate representation of this point is <m>\left(\sqrt{2},\frac{3\pi}{4}\right)</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+          <li>
+            <p>
+              For each of the following points whose coordinates are given in polar form,
+              determine the rectangular coordinates of the point.
+              <ol marker="i">
+                <li>
+                  <p>
+                    The rectangular coordinates are
+                    <m>x = 5 \cos\left(\frac{\pi}{4}\right) = \frac{5\sqrt{2}}{2}</m> and <m>y = 5 \sin\left(\frac{\pi}{4}\right) = \frac{5\sqrt{2}}{2}</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The rectangular coordinates are
+                    <m>x = 2 \cos\left(\frac{5\pi}{6}\right) = -\sqrt{3}</m> and <m>y = 2 \sin\left(\frac{5\pi}{6}\right) = 1</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The rectangular coordinates are
+                    <m>x = \sqrt{3} \cos\left(\frac{5\pi}{3}\right) = \frac{\sqrt{3}}{2}</m> and <m>y = \sqrt{3} \sin\left(\frac{5\pi}{3}\right) = -\frac{3}{2}</m>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </solution>
+  
+    </exploration>
+  </introduction>
+
+  <subsection>
+    <title>Polar Coordinates</title>
     <p>
-      The rectangular coordinate system is best suited for graphs and regions that are naturally considered over a rectangular grid. The polar coordinate system is an alternative that offers good options for functions and domains that have more circular characteristics. A point <m>P</m> in rectangular coordinates that is described by an ordered pair <m>(x,y)</m>, where <m>x</m> is the displacement from <m>P</m> to the <m>y</m>-axis and <m>y</m> is the displacement from <m>P</m> to the <m>x</m>-axis can also be described with polar coordinates<idx><h>polar coordinates</h></idx> <m>(r,\theta)</m>, where <m>r</m> is the distance from <m>P</m> to the origin and <m>\theta</m> is the angle formed by the line segment <m>\overline{OP}</m> and the positive <m>x</m>-axis, as shown at left in <xref ref="F_11_5_Polar_coords">Figure</xref>.
+      The rectangular coordinate system is best suited for graphs and regions that are naturally considered over a rectangular grid. The polar coordinate system is an alternative that offers good options for functions and domains that have more circular characteristics. A point <m>P</m> in rectangular coordinates that is described by an ordered pair <m>(x,y)</m>, where <m>x</m> is the displacement from <m>P</m> to the <m>y</m>-axis and <m>y</m> is the displacement from <m>P</m> to the <m>x</m>-axis, as seen in <xref ref="PA_11_5">Preview Activity</xref>, can also be described with polar coordinates<idx><h>polar coordinates</h></idx> <m>(r,\theta)</m>, where <m>r</m> is the distance from <m>P</m> to the origin and <m>\theta</m> is the angle formed by the line segment <m>\overline{OP}</m> and the positive <m>x</m>-axis, as shown at left in <xref ref="F_11_5_Polar_coords">Figure</xref>.
     </p>
-    <figure xml:id="coord2d-3">
-    <caption>A plot with polar coordinate measurements labeled</caption>
-      <image width="70%" label="img-coord2d-3">
-        <description><p>A plot with polar coordinate measurements labeled for a point in the first quadrant </p></description>
-        <sageplot>
-          var('t') 
-          plot4=point((4,2),color="black",size=50,zorder=5,axes=True,axes_labels=["$x$","$y$"],ticks=[[],[]])
-          plot4+=line([(4,2),(0,0)],color="red",thickness=3)+text("$r$",(2,1.25),color="red",fontsize=25)
-          a=arctan(0.5)
-          plot4+=parametric_plot((1.5*cos(t),1.5*sin(t)),(t,0,a),color="blue",thickness=2)+text("$\\theta$",(1.75,0.5),color="blue",fontsize=25)
-          plot4+=text("$P=(r,\\theta)$",(4.5,2.3),color="black",fontsize=25)
-          plot4+=arrow((1.5*cos(a-.1),1.5*sin(a-.1)),(1.5*cos(a),1.5*sin(a)),color="blue",xmin=-1,xmax=5,ymin=-1,ymax=3)
-          plot4+=line([(4,0),(4,2)],color="gray",zorder=0,linestyle="--",thickness=2)
-          plot4+=line([(0,2),(4,2)],color="gray",zorder=0,linestyle="--",thickness=2)
-          plot4+=text("$x$",(2,2.25),color="gray",fontsize=20)
-          plot4+=text("$y$",(4.25,1),color="gray",fontsize=20)
-          plot4
-        </sageplot>
-      </image>
-    </figure>
-   <!--  <figure xml:id="F_11_5_Polar_coords">
+
+    
+    <figure xml:id="F_11_5_Polar_coords">
       <caption>The polar coordinates of a point and the polar coordinate grid.</caption>
       <sidebyside widths="50% 50%">
         <image source="images/fig_11_5_polar_def"/>
         <image source="images/fig_11_5_polar_grid"/>
         </sidebyside>
-    </figure> -->
-  
+    </figure>
+    
+
+
     <p>
       Trigonometry and the Pythagorean Theorem allow for straightforward conversion from rectangular to polar, and vice versa.
     </p>
 
 
-    <assemblage xml:id="PolarCoordinates">
+    <assemblage xml:id="Polar-coordinates">
       <title>Converting between rectangular and polar coordinates</title>
-      <p>
-        <dl>
-          <li>
-            <title>From polar to rectangular</title>
-            <p>
-              Given polar coordinates <m>(r,\theta)</m> of a point <m>P</m>, the rectangular coordinates <m>(x,y)</m> of <m>P</m> satisfy
-              <md>
-                <mrow>x \amp = r \cos(\theta) \amp  y \amp= r \sin(\theta)</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <title>From rectangular to polar</title>
-            <p>
-              Given rectangular coordinates <m>(x,y)</m> of a point <m>P</m>, the polar coordinates <m>(r,\theta)</m> of <m>P</m> satisfy
-              <md>
-                <mrow>r^2  \amp = x^2  + y^2 \amp \tan(\theta) \amp= \frac{y}{x} </mrow>
-              </md>,
-              assuming <m> x \neq 0</m>.
-            </p>
-          </li>
-        </dl>
-      </p>
-    </assemblage>
     <p>
-      Remember that you will need to interpret the results of <m>r</m> as being positive or negative along with interpreting the quadrant of <m>\theta</m>. You can look at <xref ref="polar-interpret"/> and later examples for different ways to interpret and make conversions between rectangular and polar coordinates. 
+      <ul>
+        <li>
+          <title>Converting from rectangular to polar.</title>
+          <p>
+            If we are given the rectangular coordinates <m>(x,y)</m> of a point <m>P</m>, then the polar coordinates <m>(r,\theta)</m> of <m>P</m> satisfy
+            <me>
+              r = \sqrt{x^2+y^2} \ \ \ \ \ \text{ and }  \ \ \ \ \ \tan(\theta) = \frac{y}{x}, \text{ assuming }  x \neq 0.
+            </me>
+          </p>
+        </li>
+
+        <li>
+          <title>Converting from polar to rectangular.</title>
+          <p>
+            If we are given the polar coordinates <m>(r,\theta)</m> of a point <m>P</m>, then the rectangular coordinates <m>(x,y)</m> of <m>P</m> satisfy
+            <me>
+              x = r\cos(\theta)  \ \ \ \ \ \text{ and }  \ \ \ \ \ y = r\sin(\theta).
+            </me>
+          </p>
+        </li>
+      </ul>
     </p>
 
+    </assemblage>
+    <p> 
+      <em>Note:</em> The angle <m>\theta</m> in the polar coordinates of a point is not unique. We could replace <m>\theta</m> with <m>\theta  + 2 \pi</m> and still be at the same terminal point. In addition, the sign of <m>\tan(\theta)</m> does not uniquely determine the quadrant in which <m>\theta</m> lies, so we have to determine the value of <m>\theta</m> from the location of the point. In other words, more care has to be paid when using polar coordinates than rectangular coordinates. 
+    </p>  
+    
     <p>
-      We can draw graphs of curves in polar coordinates in a similar way to how we do in rectangular coordinates. However, when plotting in polar coordinates, we use a grid that considers changes in angles and changes in distance from the origin. In particular, the angles <m>\theta</m> and distances <m>r</m> partition the plane into small wedges as shown in <xref ref="F_11_5_Polar_coords">Figure</xref>.
+      We can draw graphs of curves in polar coordinates in a similar way to how we do in rectangular coordinates. However, when plotting in polar coordinates, we use a grid that considers changes in angles and changes in distance from the origin. In particular, the angles <m>\theta</m> and distances <m>r</m> partition the plane into small wedges as shown at right in <xref ref="F_11_5_Polar_coords">Figure</xref>.
     </p>
-    <figure xml:id="F_11_5_Polar_coords">
-      <caption>The polar coordinate grid</caption>      
-      <image width="60%" source="images/fig_11_5_polar_grid"/>
-    </figure>
-    <exploration>
-      <introduction>
+
+    <activity xml:id="A_11_5_2">
+      <statement>
         <p>
-          In this Preview Activity, we will practice converting some equations and regions between rectangular and polar coordinates.
+          Most polar graphing devices can plot curves in polar coordinates of the form <m>r = f(\theta)</m>. Use such a device to complete this activity.
+          <ol marker="a.">
+            <li>
+              <p>
+                Before plotting the polar curve <m>r=1</m> (where <m>\theta</m> can have any value), think about what shape it should have, in light of how <m>r</m> is connected to <m>x</m> and <m>y</m>. Then use appropriate technology to draw the graph and test your intuition.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                The equation <m>\theta = 1</m> does not define <m>r</m> as a function of <m>\theta</m>, so we can't graph this equation on many polar plotters. What do you think the graph of the polar curve <m>\theta = 1</m> looks like? Why?
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Before plotting the polar curve <m>r = \theta</m>, what do you think the graph looks like? Why? Use technology to plot the curve and compare your intuition.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                What does the region defined by <m>1 \leq r \leq 3</m> (where <m>\theta</m> can have any value) look like? (Hint: Compare to your response from part (a).)
+              </p>
+            </li>
+
+            <li>
+              <p>
+                What does the region defined by <m>1 \leq r \leq 3</m> and <m> \pi/4 \leq \theta \leq \pi/2</m> look like? 
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Consider the curve <m>r = \sin(\theta)</m>. For some values of <m>\theta</m> we will have <m>r \lt 0</m>. In these situations, we plot the point <m>(r,\theta)</m> as <m>(|r|, \theta+\pi)</m> (in other words, when <m>r \lt 0</m>, we reflect the point through the origin). With that in mind, what do you think the graph of <m>r = \sin(\theta)</m> looks like? Plot this curve using technology and compare to your intuition. 
+              </p>
+            </li>
+          </ol>
         </p>
-      </introduction>
-      <task>
-        <statement>
-          <p>
-            Draw a plot of each of the curves in the plane described by each of the following polar equations and write a sentence for each graph to explain why the equation is satisfied.
-            <ol>
-              <li> <m>r=1</m></li>
-              <li> <m>r=3</m></li>
-              <li> <m>r=0</m></li>
-              <li> <m>\theta =1</m></li>
-              <li> <m>\theta = \frac{3\pi}{4}</m></li>
-            </ol>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Draw a plot of the region given by the following inequalities:
-            <ol>
-              <li> <m>1 \leq r \leq 3</m></li>
-              <li> <m>1 \leq \theta \leq \frac{3\pi}{4}</m></li>
-            </ol>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Convert the line given by <m>y=x</m> to polar coordinates and solve your equation in the form <m>\theta= \text{constant}</m>.
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Convert the line given by <m>x=2</m> to polar coordinates and solve your equation in the form <m>r= f(\theta)</m>.
-          </p>
-        </statement>
-      </task>
-    </exploration>
-  </introduction>
+      </statement>
+      
+      <answer>
+        <ol marker="a.">
+          <li>
+            <p>
+              Since <m>r</m> represents a distance from the origin,
+              any curve with a constant value of <m>r</m> should be a circle,
+              centered at the origin, with radius <m>r</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The set of points with a constant value of <m>\theta</m> all make the same angle with the positive <m>x</m>-axis.
+              This set of points should then form a line through the origin making an angle <m>\theta</m> with the positive <m>x</m>-axis.
+            </p>
+          </li>
+          <li>
+            <p>
+              As <m>\theta</m> increases, so does the value of <m>r</m>.
+              Thus, as the point <m>(r,r)</m> rotates around the origin,
+              its distance from the origin also increases in a uniform manner.
+              The set of these points should be a spiral,
+              spiraling away from the origin as it rotates counterclockwise around the origin.
+            </p>
+          </li>
+          <li>
+            <p>
+              As <m>\theta</m> increases,
+              the values of <m>r</m> will oscillate between <m>-1</m> and <m>1</m>.
+              When <m>r</m> is negative, we reflect around the origin.
+              So the resulting curve should look like a circle in the first and second quadrants.
+              Note that <m>r=\sin(\theta)</m> can also be represented as <m>r^2 = r\sin(\theta)</m>.
+              So in rectangular coordinates the curve
+              <m>r=\sin(\theta)</m> has equation <m>x^2+y^2 = y</m>,
+              or <m>x^2 + \left(y-\frac{1}{2}\right)^2 = \frac{1}{4}</m>.
+              This is a circle centered at
+              <m>\left(0,\frac{1}{2}\right)</m> with radius <m>\frac{1}{2}</m>.
+            </p>
+          </li>
+        </ol>
+      </answer>
+
+      <solution>
+        <ol marker="a.">
+          <li>
+            <p>
+              Since <m>r</m> represents a distance from the origin,
+              any curve with a constant value of <m>r</m> should be a circle,
+              centered at the origin, with radius <m>r</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The set of points with a constant value of <m>\theta</m> all make the same angle with the positive <m>x</m>-axis.
+              This set of points should then form a line through the origin making an angle <m>\theta</m> with the positive <m>x</m>-axis.
+            </p>
+          </li>
+          <li>
+            <p>
+              As <m>\theta</m> increases, so does the value of <m>r</m>.
+              Thus, as the point <m>(r,r)</m> rotates around the origin,
+              its distance from the origin also increases in a uniform manner.
+              The set of these points should be a spiral,
+              spiraling away from the origin as it rotates counterclockwise around the origin.
+            </p>
+          </li>
+          <li>
+            <p>
+              As <m>\theta</m> increases,
+              the values of <m>r</m> will oscillate between <m>-1</m> and <m>1</m>.
+              When <m>r</m> is negative, we reflect around the origin.
+              So the resulting curve should look like a circle in the first and second quadrants.
+              Note that <m>r=\sin(\theta)</m> can also be represented as <m>r^2 = r\sin(\theta)</m>.
+              So in rectangular coordinates the curve
+              <m>r=\sin(\theta)</m> has equation <m>x^2+y^2 = y</m>,
+              or <m>x^2 + \left(y-\frac{1}{2}\right)^2 = \frac{1}{4}</m>.
+              This is a circle centered at
+              <m>\left(0,\frac{1}{2}\right)</m> with radius <m>\frac{1}{2}</m>.
+            </p>
+          </li>
+        </ol>
+      </solution>
+
+    </activity>
+  </subsection>
 
 
   <subsection>
@@ -173,7 +474,7 @@
     <p>
       Consider the double integral
       <me>
-        \iint_D e^{x^2+y^2} \, dA
+        \iint_D e^{x^2+y^2} \, dA,
       </me>
       where <m>D</m> is the unit disk. While we cannot directly evaluate this integral in rectangular coordinates, a change to polar coordinates will convert it to one we can easily evaluate.
     </p>
@@ -183,17 +484,11 @@
       <me>
         \int_a^b \int_{g_1(x)}^{g_2(x)} f(x,y) \, dy \, dx
       </me>
-      in rectangular coordinates where <m>D</m> has a vertically simple description (<m>a\leq x \leq b \quad  g_1(x) \leq y \leq g_2(x)</m>). Note that the area element <m>dA</m> became <m>dy\, dx </m> in this conversion of the double integral into an iterated integral. We will need to transform the three different elements of this double integral into polar coordinates: 
-      <ol>
-        <li>convert the area element to polar coordinates</li>
-        <li>the region of integration described by inequalities that correspond to fixing one coordinate and bounding the other in a consistent way </li>
-        <li>convert the integrand, <m>f(x,y)</m>, to polar coordinates</li>    
-      </ol>
+      in rectangular coordinates, because we know that <m>dA = dy \, dx</m> in rectangular coordinates. To make the change to polar coordinates, we not only need to represent the variables <m>x</m> and <m>y</m> in polar coordinates, but we also must understand how to write the area element, <m>dA</m>, in polar coordinates. That is, we must determine how the area element <m>dA</m> can be written in terms of <m>dr</m> and <m>d\theta</m> in the context of polar coordinates. We address this question in the following activity.
     </p>
-    <p>  
-      To make the change to polar coordinates, we not only need to represent the variables <m>x</m> and <m>y</m> in polar coordinates, but we also must understand how to write the area element, <m>dA</m>, in polar coordinates. That is, we must determine how the area element <m>dA</m> can be written in terms of <m>dr</m> and <m>d\theta</m> in the context of polar coordinates. <!-- We address this question in the following activity. -->
-    </p>
-    <!-- <figure xml:id="F_11_5_Polar_area_a">
+
+    
+    <figure xml:id="F_11_5_Polar_area_a">
       <caption>Left: A polar rectangle. Right: An annulus.</caption>   
       <sidebyside widths="50% 50%">  
         <image source="images/fig_11_5_polar_rect"/>
@@ -373,161 +668,19 @@
       </solution>
 
 
-    </activity> -->
+    </activity>
+
     <p>
-      Remember that our classic calculus approach to defining the double integral involved breaking each coordinate into smaller pieces which created a collection of smaller areas that we used to create our Riemann sum. We can do the same procedure in terms of polar coordinates (instead of rectangular coordinates) and we could have our smaller pieces be in terms of some small changes in <m>r</m> and <m>\theta</m> (like the regions on the polar grid in <xref ref="F_11_5_Polar_coords"/>). We will now need to understand how to measure the area of a piece described by <m>R_0\leq r \leq R_1 \quad \theta_0 \leq \theta \leq \theta_1</m>, as shown in <xref ref="areapolar"/>. 
+      From the result of <xref ref="A_11_5_3">Activity</xref>, we see when we convert an integral from rectangular coordinates to polar coordinates, we must not only convert <m>x</m> and <m>y</m> to being in terms of <m>r</m> and <m>\theta</m>, but we also have to change the area element to <m>dA = r \, dr \, d\theta</m> in polar coordinates. As we saw in <xref ref="A_11_5_3">Activity</xref>, the reason the additional factor of <m>r</m> in the polar area element is due to the fact that in polar coordinates, the cross sectional area element increases as <m>r</m> increases, while the cross sectional area element in rectangular coordinates is constant. So, given a double integral <m>\iint_D f(x,y) \, dA</m> in rectangular coordinates, to write a corresponding iterated integral in polar coordinates, we replace <m>x</m> with <m>r \cos(\theta)</m>, <m>y</m> with <m>r \sin(\theta)</m> and <m>dA</m> with <m>r \, dr \, d\theta</m>. Of course, we need to describe the region <m>D</m> in polar coordinates as well. To summarize:
     </p>
-    <p>
-      We will first consider the area of the annulus between <m>r=R_0</m> and <m>r=R-1</m>, shown in <xref ref="annular-area"/>. The area of this region is the difference between the area of a disk of radius <m>R_1</m> and the area of a disk of radius <m>R_0</m>. 
-      <me>A(r=R_1)-A(r=R_0)= \pi R_1^2-\pi R_0^2=\pi\left(R_1^2-R_0^2\right)</me>
-    </p>
-    <figure xml:id="annular-area">
-      <caption></caption>
-      <image width="60%" xml:id="img-annular-area">
-        <sageplot>
-          var('x,y,t,s')
-          r1=1.2;r2=1.5;t1=0.6;t2=1;
-          plot2=parametric_plot((r1*cos(t),r1*sin(t)),(t,0,2*pi),color="black",thickness=3,axes=True,ticks=[[],[]])
-          plot2+=parametric_plot((r2*cos(t),r2*sin(t)),(t,0,2*pi),color="black",thickness=3)
-          dt=(2*pi)/200
-          p1=[(r1*cos(-i*dt),r1*sin(-i*dt)) for i in range(201)]
-          p2=[(r2*cos(i*dt),r2*sin(i*dt)) for i in range(201)]
-          pp=p1+p2
-          plot2+=polygon(pp,color="gray",zorder=0)
-          plot2+=text("$R_0$",(r1*cos(t1)+0.1,r1*sin(t1)+0.1),fontsize=20,color="black")
-          plot2+=text("$R_1$",(r2*cos(t2)+0.1,r2*sin(t2)+0.1),fontsize=20,color="black")
-          plot2+=line([(r2*cos(t2),r2*sin(t2)),(0,0),(r1*cos(t1),r1*sin(t1))],color="black",thickness=2)
-          plot2          
-        </sageplot>
-      </image>
-    </figure>
-    <p>
-      We want to measure the portion of the annulus that corresponds to <m>\theta_0 \leq \theta \leq \theta_1</m>. Let <m>\Delta \theta=\theta_1-\theta_0</m> be the change in the theta coordinate for the small piece we want to find the area of. Because we are using radian measures for our angles, the portion of the annulus we are using is <m>\frac{\Delta \theta}{2\pi}</m>. This means that the area of our small piece will be
-      <me>\Delta A = \frac{\Delta \theta}{2\pi} \left(\pi\left(R_1^2-R_0^2\right)\right)</me>
-    </p>
-    <figure xml:id="areapolar">
-      <caption>An area described by <m>R_0\leq r \leq R_1 \quad \theta_0 \leq \theta \leq \theta_1</m> </caption>
-      <image width="60%" xml:id="img-areapolar">
-        <sageplot>
-          var('x,y,t,s')
-          r1=1;r2=1.5;t1=0.6;t2=1;
-          plot1=line([(r1*cos(t2),r1*sin(t2)),(0,0),(r1*cos(t1),r1*sin(t1))],color="gray",thickness=2,axes=True,ticks=[[],[]])
-          dt=(t2-t1)/25
-          p1=[(r1*cos(t2-i*dt),r1*sin(t2-i*dt)) for i in range(26)]
-          p2=[(r2*cos(t1+i*dt),r2*sin(t1+i*dt)) for i in range(26)]
-          pp=p1+p2
-          plot1+=polygon(pp,color="gray",edgecolor="black",thickness=3,zorder=2)
-          plot1+=parametric_plot((0.5*cos(t),0.5*sin(t)),(t,0,t1),color="gray",thickness=2)+arrow((0.5*cos(t1-0.1),0.5*sin(t1-0.1)),(0.5*cos(t1),0.5*sin(t1)),color="gray")
-          plot1+=text("$\\theta_0$",(0.55,0.1),color="gray",fontsize=20)
-          plot1+=parametric_plot((0.25*cos(t),0.25*sin(t)),(t,0,t2),color="gray",thickness=2)+arrow((0.25*cos(t2-0.1),0.25*sin(t2-0.1)),(0.25*cos(t2),0.25*sin(t2)),color="gray")
-          plot1+=text("$\\theta_1$",(0.3,0.1),color="gray",fontsize=20)
-          plot1+=parametric_plot((0.4*cos(t),0.4*sin(t)),(t,t1,t2),color="black",thickness=2)+text("$\\Delta \\theta$",(0.35,0.35),color="black",fontsize=20)
-          plot1+=parametric_plot((r1*cos(t),r1*sin(t)),(t,t1-0.5,t2+0.5),color="gray",thickness=3,linestyle="--",zorder=1)
-          plot1+=parametric_plot((r2*cos(t),r2*sin(t)),(t,t1-0.5,t2+0.5),color="gray",thickness=3,linestyle="--",zorder=1)
-          plot1+=text("$R_0$",(r1*cos(t1),r1*sin(t1)-0.1),fontsize=20,color="gray")
-          plot1+=text("$R_1$",(r2*cos(t1),r2*sin(t1)-0.1),fontsize=20,color="gray")
-          plot1+=text("$\\Delta r$",((r1+r2)/2*cos(t2)-0.1,(r1+r2)/2*sin(t2)+0.05),fontsize=20,color="black")
-          plot1+=text("$s_0$",(r1*cos((t1+t2)/2)-0.05,r1*sin((t1+t2)/2)-0.05),fontsize=20,color="black")
-          plot1+=text("$s_1$",(r2*cos((t1+t2)/2)+0.05,r2*sin((t1+t2)/2)+0.05),fontsize=20,color="black")
-          plot1+=text("$\\Delta A$",((r1+r2)/2*cos((t1+t2)/2)-0.05,(r1+r2)/2*sin((t1+t2)/2)-0.05),fontsize=25,color="black")
-          plot1                
-        </sageplot>
-      </image>
-    </figure>
-    <p>
-      We will reorganize our expression for <m>\Delta A</m> by writing <m>R_1^2-R_0^2</m> as the difference of two squares to get
-      <md>
-        <mrow>\Delta A \amp= \frac{\Delta \theta}{2\pi} \left(\pi(R_1+R_0)(R_1-R_0)\right)</mrow>
-        <mrow> \amp= \Delta \theta \left(\frac{R_1+R_0}{2}\right) \Delta r</mrow>
-      </md>
-      where <m>\Delta r = R_1-R_0</m>. Note that as <m>\Delta r </m> gets smaller, <m>R_1</m> and <m>R_0</m> get closer to the same value and 
-      <me>\Delta A \approx R_1 \Delta r \, \Delta \theta</me>
-    </p>
-    <p>
-      Remember that we can easily convert our function <m>f(x,y)</m> to polar coordinates with <xref ref="PolarCoordinates"/> to be <m>f(r\cos(\theta),r\sin(\theta))</m>. We can then approximate a double integral <m>\iint_D f(x,y) \, dA</m> with a Riemann sum of the form 
-      <md>
-        <mrow>  \iint_D f(x,y) \, dA\amp= \sum_{j=1}^n \sum_{i=1}^m f(r_i^*\cos(\theta_j^*), r_i^* \sin(\theta_j^*)) \enspace \Delta A</mrow>
-        <mrow> \amp= \sum_{j=1}^n \sum_{i=1}^m f(r_i^*\cos(\theta_j^*), r_i^* \sin(\theta_j^*))  r_i^* \Delta r \, \Delta \theta</mrow>
-      </md>
-    </p>
-    <!-- <p>
-      From the result of above, we see when we convert an integral from rectangular coordinates to polar coordinates, we must not only convert <m>x</m> and <m>y</m> to being in terms of <m>r</m> and <m>\theta</m>, but we also have to change the area element to <m>dA = r \, dr \, d\theta</m> in polar coordinates. The reason the additional factor of <m>r</m> in the polar area element is due to the fact that in polar coordinates, the cross sectional area element increases as <m>r</m> increases, while the cross sectional area element in rectangular coordinates is constant. So, given a double integral <m>\iint_D f(x,y) \, dA</m> in rectangular coordinates, to write a corresponding iterated integral in polar coordinates, we replace <m>x</m> with <m>r \cos(\theta)</m>, <m>y</m> with <m>r \sin(\theta)</m> and <m>dA</m> with <m>r \, dr \, d\theta</m>. Of course, we need to describe the region <m>D</m> in polar coordinates as well. To summarize:
-    </p> -->
-    <p>
-      We only have the second step of our conversion left above: convert the region of integration described by inequalities that correspond to fixing one coordinate and bounding the other in a consistent way. Similar to how we used vertically simple and horizontally simple descriptions for rectangular regions, we want to set up inequalities by hold one of our coordinates constant and setting boundary functions for the other coordinate.  
-    </p>
-    <proposition xml:id="prop-verticallysimple">
-      <statement>
-        <p>
-          A region is called radially-simple if it can be described by a set of inequalities of the form
-          <md>
-            <mrow> a \leq \theta \leq b</mrow>
-            <mrow> g_1(\theta) \leq  r \leq g_2(\theta)</mrow>
-          </md>
-          which corresponds geometrically to the region in <xref ref="radiallysimple"/>
-        </p>
-        <figure xml:id="vertsimple">
-          <caption></caption>
-          <image width="60%" xml:id="img-vertsimple">
-            <sageplot>
-              var('x,y,t,s')
-              f(x)=(x-2)^2/5+0.5-0.25*sin(4*x); g(x)= 0.25*cos(7*x)+0.2*x+1.5;
-              a=0.5; b=1.5; dx=b-a; n=25;
-              bottom=[(a+i*dx/n,f(a+i*dx/n)) for i in range(n+1)]
-              top=[(b-i*dx/n,g(b-i*dx/n)) for i in range(n+1)]
-              points=bottom+top
-              plot4=polygon(points,color="pink",edgecolor="black",xmin=0,xmax=1.75,ymin=0,ymax=2,axes_labels=["$x$","$y$"])
-              m=6;xv=[0.5+i/m for i in range(1,m)]
-              for xval in xv:
-                plot4+=line([(xval,f(xval)),(xval,g(xval))],color="orange",thickness=2,linestyle="--")
-              plot4+=plot(f(x),(x,a,b),color="red",thickness=3,ticks=[[a,b],[]],tick_formatter=[["$x=a$","$x=b$"],[]],fontsize=15)
-              plot4+=plot(g(x),(x,a,b),color="blue",thickness=3)
-              plot4+=line([(a,g(a)),(a,0)],color="gray",thickness=1)+line([(b,g(b)),(b,0)],color="gray",thickness=1)
-              plot4+=text("$g_1(x)$",(1,0.7),color="red",fontsize=20)+text("$g_2(x)$",(1,2.1),color="blue",fontsize=20)
-              plot4  
-            </sageplot>
-          </image>
-        </figure>
-        <p>
-          A region is called vertically simple if it can be described by a set of inequalities of the form
-          <md>
-            <mrow> c \leq y \leq d</mrow>
-            <mrow> h_1(y) \leq  x \leq h_2(y)</mrow>
-          </md>
-          which corresponds geometrically to the region in <xref ref="horzsimple"/>
-        </p>
-        <figure xml:id="horzsimple">
-          <caption></caption>
-          <image width="60%" xml:id="img-horzsimple">
-            <sageplot>
-              var('x,y,t,s')
-              f(x)=(x-1.5)^2/4+0.5-0.15*sin(5*x); g(x)= 0.25*cos(3*x)+0.2*x+1.5;
-              a=0.5; b=1.5; dx=b-a; n=25;
-              bottom=[(f(a+i*dx/n),a+i*dx/n) for i in range(n+1)]
-              top=[(g(b-i*dx/n),b-i*dx/n) for i in range(n+1)]
-              points=bottom+top
-              plot5=polygon(points,color="pink",edgecolor="black",xmin=0,xmax=2,ymin=0,ymax=2,axes_labels=["$x$","$y$"])
-              m=6;xv=[0.5+i/m for i in range(1,m)]
-              for xval in xv:
-                plot5+=line([(f(xval),xval),(g(xval),xval)],color="orange",thickness=2,linestyle="--")
-              plot5+=parametric_plot((f(x),x),(x,a,b),color="red",thickness=3,ticks=[[],[a,b]],tick_formatter=[[],["$y=c$","$y=d$"]],fontsize=15)
-              plot5+=parametric_plot((g(x),x),(x,a,b),color="blue",thickness=3)
-              plot5+=line([(g(a),a),(0,a)],color="gray",thickness=1)+line([(g(b),b),(0,b)],color="gray",thickness=1)
-              plot5+=text("$x=h_1(y)$",(0.5,1.6),color="red",fontsize=20)+text("$x=h_2(y)$",(1.5,1.6),color="blue",fontsize=20)
-              plot5 
-            </sageplot>
-          </image>
-        </figure>
-      </statement>
-    </proposition>
 
     <assemblage xml:id="Double-integral-polar">
       <title>Double integrals in polar coordinates</title>
-      <p>
-        The double integral <m>\iint_D f(x,y) \, dA</m> in rectangular coordinates can be converted to a double integral in polar coordinates<idx><h>iterated integral</h><h>polar coordinates</h></idx> as <m>\iint_D f(r\cos(\theta), r\sin(\theta)) \, r \, dr \, d\theta</m>.
-      </p>
+    <p>
+      The double integral <m>\iint_D f(x,y) \, dA</m> in rectangular coordinates can be converted to a double integral in polar coordinates<idx><h>iterated integral</h><h>polar coordinates</h></idx> as <m>\iint_D f(r\cos(\theta), r\sin(\theta)) \, r \, dr \, d\theta</m>.
+    </p>
     </assemblage>
-    
+
     <example>
       <statement>
         <p>
