@@ -456,7 +456,7 @@
     <p>
       We only have the second step of our conversion left above: convert the region of integration described by inequalities that correspond to fixing one coordinate and bounding the other in a consistent way. Similar to how we used vertically simple and horizontally simple descriptions for rectangular regions, we want to set up inequalities by hold one of our coordinates constant and setting boundary functions for the other coordinate.  
     </p>
-    <proposition xml:id="prop-verticallysimple">
+    <proposition xml:id="prop-polarsimple">
       <statement>
         <p>
           A region is called radially-simple if it can be described by a set of inequalities of the form
@@ -466,68 +466,95 @@
           </md>
           which corresponds geometrically to the region in <xref ref="radiallysimple"/>
         </p>
-        <figure xml:id="vertsimple">
+        <figure xml:id="radiallysimple">
           <caption></caption>
-          <image width="60%" xml:id="img-vertsimple">
+          <image width="60%" xml:id="img-radiallysimple">
             <sageplot>
               var('x,y,t,s')
-              f(x)=(x-2)^2/5+0.5-0.25*sin(4*x); g(x)= 0.25*cos(7*x)+0.2*x+1.5;
-              a=0.5; b=1.5; dx=b-a; n=25;
-              bottom=[(a+i*dx/n,f(a+i*dx/n)) for i in range(n+1)]
-              top=[(b-i*dx/n,g(b-i*dx/n)) for i in range(n+1)]
+              f(x)=2+0.2*cos(12*x-1);g(x)=1-0.1*sin(10*x+1)
+              a=0.5; b=1.2; dt=b-a; n=25;
+              bottom=[(f(a+i*dt/n)*cos(a+i*dt/n),f(a+i*dt/n)*sin(a+i*dt/n)) for i in range(n+1)]
+              top=[(g(b-i*dt/n)*cos(b-i*dt/n),g(b-i*dt/n)*sin(b-i*dt/n)) for i in range(n+1)]
               points=bottom+top
-              plot4=polygon(points,color="pink",edgecolor="black",xmin=0,xmax=1.75,ymin=0,ymax=2,axes_labels=["$x$","$y$"])
-              m=6;xv=[0.5+i/m for i in range(1,m)]
-              for xval in xv:
-                plot4+=line([(xval,f(xval)),(xval,g(xval))],color="orange",thickness=2,linestyle="--")
-              plot4+=plot(f(x),(x,a,b),color="red",thickness=3,ticks=[[a,b],[]],tick_formatter=[["$x=a$","$x=b$"],[]],fontsize=15)
-              plot4+=plot(g(x),(x,a,b),color="blue",thickness=3)
-              plot4+=line([(a,g(a)),(a,0)],color="gray",thickness=1)+line([(b,g(b)),(b,0)],color="gray",thickness=1)
-              plot4+=text("$g_1(x)$",(1,0.7),color="red",fontsize=20)+text("$g_2(x)$",(1,2.1),color="blue",fontsize=20)
+              plot4=polygon(points,color="lightblue",edgecolor="black",xmin=0,xmax=2,ymin=0,ymax=2,ticks=[[],[]])
+              m=6;tv=[0.5+i/m/1.3 for i in range(1,m)]
+              for tval in tv:
+                plot4+=line([(f(tval)*cos(tval),f(tval)*sin(tval)),(g(tval)*cos(tval),g(tval)*sin(tval))],color="orange",thickness=2,linestyle="--")
+              plot4+=parametric_plot((f(t)*cos(t),f(t)*sin(t)),(t,a,b),color="red",thickness=3,zorder=4)
+              plot4+=parametric_plot((g(t)*cos(t),g(t)*sin(t)),(t,a,b),color="blue",thickness=3,zorder=4)
+              plot4+=line([(f(a)*cos(a),f(a)*sin(a)),(0,0),(f(b)*cos(b),f(b)*sin(b))],color="gray",thickness=2)
+              plot4+=text("$r=g_1(\\theta)$",(1.15,0.45),color="blue",fontsize=20)+text("$r=g_2(\\theta)$",(0.5,2),color="red",fontsize=20)
               plot4  
             </sageplot>
           </image>
         </figure>
         <p>
-          A region is called vertically simple if it can be described by a set of inequalities of the form
+          A region is called angularly simple if it can be described by a set of inequalities of the form
           <md>
-            <mrow> c \leq y \leq d</mrow>
-            <mrow> h_1(y) \leq  x \leq h_2(y)</mrow>
+            <mrow> c \leq r \leq d</mrow>
+            <mrow> h_1(r) \leq  \theta \leq h_2(r)</mrow>
           </md>
-          which corresponds geometrically to the region in <xref ref="horzsimple"/>
+          which corresponds geometrically to the region in <xref ref="angsimple"/>
         </p>
-        <figure xml:id="horzsimple">
+        <figure xml:id="angsimple">
           <caption></caption>
-          <image width="60%" xml:id="img-horzsimple">
+          <image width="60%" xml:id="img-angsimple">
             <sageplot>
               var('x,y,t,s')
-              f(x)=(x-1.5)^2/4+0.5-0.15*sin(5*x); g(x)= 0.25*cos(3*x)+0.2*x+1.5;
-              a=0.5; b=1.5; dx=b-a; n=25;
-              bottom=[(f(a+i*dx/n),a+i*dx/n) for i in range(n+1)]
-              top=[(g(b-i*dx/n),b-i*dx/n) for i in range(n+1)]
-              points=bottom+top
-              plot5=polygon(points,color="pink",edgecolor="black",xmin=0,xmax=2,ymin=0,ymax=2,axes_labels=["$x$","$y$"])
-              m=6;xv=[0.5+i/m for i in range(1,m)]
-              for xval in xv:
-                plot5+=line([(f(xval),xval),(g(xval),xval)],color="orange",thickness=2,linestyle="--")
-              plot5+=parametric_plot((f(x),x),(x,a,b),color="red",thickness=3,ticks=[[],[a,b]],tick_formatter=[[],["$y=c$","$y=d$"]],fontsize=15)
-              plot5+=parametric_plot((g(x),x),(x,a,b),color="blue",thickness=3)
-              plot5+=line([(g(a),a),(0,a)],color="gray",thickness=1)+line([(g(b),b),(0,b)],color="gray",thickness=1)
-              plot5+=text("$x=h_1(y)$",(0.5,1.6),color="red",fontsize=20)+text("$x=h_2(y)$",(1.5,1.6),color="blue",fontsize=20)
-              plot5 
+              f(x)=1.3-0.2*sin(2*x);g(x)=0.5+0.2*cos(4*x)
+              a=0.7; b=1.5; dt=b-a; n=25;
+              bottom=[((a+i*dt/n)*cos(f(a+i*dt/n)),(a+i*dt/n)*sin(f(a+i*dt/n))) for i in range(n+1)]
+              top=[((b-i*dt/n)*cos(g(b-i*dt/n)),(b-i*dt/n)*sin(g(b-i*dt/n))) for i in range(n+1)]
+              av1=f(a);av2=g(a);bv1=f(b);bv2=g(b); da=(av2-av1)/n; db=(bv2-bv1)/n;
+              edge1=[(a*cos(av2-i*da),a*sin(av2-i*da)) for i in range(n+1) ]
+              edge2=[(b*cos(bv1+i*db),b*sin(bv1+i*db)) for i in range(n+1) ]
+              points=top+edge1+bottom+edge2
+              plot5=polygon(points,color="lightblue",edgecolor="black",xmin=0,xmax=2,ymin=0,ymax=2,ticks=[[],[]])
+              m=6;dr=(b-a)/m;tv=[a+i*dr for i in range(1,m)]
+              for tval in tv:
+                upper=f(tval);lower=g(tval);
+                plot5+=parametric_plot((tval*cos(t),tval*sin(t)),(t,lower,upper),color="orange",thickness=2,linestyle="--")
+              plot5+=parametric_plot((t*cos(f(t)),t*sin(f(t))),(t,a,b),color="red",thickness=3,zorder=4)
+              plot5+=parametric_plot((t*cos(g(t)),t*sin(g(t))),(t,a,b),color="blue",thickness=3,zorder=4)
+              plot5+=parametric_plot((a*cos(t),a*sin(t)),(t,av2-0.3,av1+0.3),color="gray",thickness=2,linestyle="--")+text("$r=c$",(0.4,0.4),color="gray",fontsize=15)
+              plot5+=parametric_plot((b*cos(t),b*sin(t)),(t,bv2-0.3,bv1+0.3),color="gray",thickness=2,linestyle="--")+text("$r=d$",(0.95,1.3),color="gray",fontsize=15)
+              plot5+=text("$\\theta=h_1(r)$",(1.2,0.3),color="blue",fontsize=20)+text("$\\theta=h_2(r)$",(0.5,1.55),color="red",fontsize=20)
+              plot5
             </sageplot>
           </image>
         </figure>
       </statement>
     </proposition>
-
+    <p>
+      Each of the types of regions above corresponds to exactly the necessary description to use a iterated integral. Let's look at the inequalities and plot for a radially simple region; For any fixed value of <m>\theta</m> in the interval <m>[a,b]</m>, we want to look at a slice along this constant <m>\theta</m> value. This corresponds to a ray from the origin in the cone between the grey lines in <xref ref="radiallysimple"/>. Along this <m>\theta=k</m> ray, the region of interest has an upper and lower bound on the <m>r</m>-coordinate. In fact, there is the function that describes the upper boundary, <m>r=g_2(\theta)</m>, for every value of <m>\theta</m> in <m>[a,b]</m>. Similarly, there is the function that describes the lower boundary, <m>r=g_1(\theta)</m>, for every value of <m>\theta</m> in <m>[a,b]</m>. Geometrically, this means that along every orange, dashed slice (where <m>\theta</m> is constant), there is the same upper and lower boundary curves, shown in red and blue, respectively.
+    </p>
+    <p>
+      While angularly simple regions are used much less often than radially simple regions, a parallel structure is used; Along every slice with a constant value of <m>r</m> in <m>[c,d]</m> (the orange, dashed curves in <xref ref="angsimple"/>), the upper bound on <m>\theta</m> is given by the function <m>\theta=h_2(r)</m> and the lower bound is given by <m>\theta=h_1(r)</m> (shown by the red and blue bounding curves in <xref ref="angsimple"/>).
+    </p>
+    <p>
+      Just as in the rectangular coordinate case, especially complicated regions may need to be split into several different regions that are radially or angularly simple.
+    </p>
     <assemblage xml:id="Double-integral-polar">
       <title>Double integrals in polar coordinates</title>
       <p>
         The double integral <m>\iint_D f(x,y) \, dA</m> in rectangular coordinates can be converted to a double integral in polar coordinates<idx><h>iterated integral</h><h>polar coordinates</h></idx> as <m>\iint_D f(r\cos(\theta), r\sin(\theta)) \, r \, dr \, d\theta</m>.
       </p>
+      <p>
+        If the region <m>D</m> is radially simple (<m>a \leq \theta \leq b \quad g_1(\theta) \leq  r \leq g_2(\theta)</m>), then 
+        <me>
+          \iint_D f(x,y) \, dA = \int_a^b \int_{g_1(\theta)}^{g_2(\theta)} f(r\cos(\theta) , r\sin(\theta)) \, r \, dr \, d\theta
+        </me>
+      </p>
+      <p>
+        If the region <m>D</m> is angularly simple (<m>c \leq r \leq d \quad h_1(r) \leq \theta \leq h_2(r)</m>), then 
+        <me>
+          \iint_D f(x,y) \, dA = \int_c^d \int_{h_1(r)}^{h_2(r)} f(r\cos(\theta) , r\sin(\theta)) \, r \, d\theta \, dr
+        </me>
+      </p>
     </assemblage>
-    
+    <p>
+      Note again that the order of integration corresponds to the manner in which we have sliced the region of integration, with the variable being held constant along a slice being the last variable to be integrated.
+    </p>
     <example>
       <statement>
         <p>
@@ -537,10 +564,30 @@
         <p>
           In rectangular coordinates the double integral <m>\iint_D f(x,y) \, dA</m> can be written as the iterated integral
           <me>
-            \iint_D f(x,y) \, dA = \int_{x=-1}^{x=1} \int_{y=-\sqrt{1-x^2}}^{y=\sqrt{1-x^2}} e^{x^2+y^2} \, dy \, dx.
+            \iint_D f(x,y) \, dA = \int_{x=-1}^{x=1} \int_{y=-\sqrt{1-x^2}}^{y=\sqrt{1-x^2}} e^{x^2+y^2} \, dy \, dx
           </me>
+          where the vertically simple slicing is shown in <xref ref="diskvs"/>
         </p>
-
+        <figure xml:id="diskvs">
+          <caption></caption>
+          <image width="60%" xml:id="img-diskvs">
+            <sageplot>
+              var('x,y,t,s')
+              n=100
+              points=[(cos(i*2*pi/n),sin(i*2*pi/n)) for i in range(n+1)]
+              plot6=polygon(points,color="lightblue",edgecolor="black",thickness=2,xmin=-1.5,xmax=1.5,ymin=-1.5,ymax=1.5)
+              m=9;
+              for i in range(1,m):
+                xv=-1+i*2/m
+                plot6+=line([(xv,sqrt(1-xv*xv)),(xv,-sqrt(1-xv*xv))],color="orange",linestyle="--",thickness=2)
+              plot6+=parametric_plot((cos(t),sin(t)),(t,0,pi),color="red",thickness=2,zorder=3)
+              plot6+=text("$y=\\sqrt{1-x^2}$",(.8,1.1),color="red",fontsize=15)
+              plot6+=parametric_plot((cos(t),sin(t)),(t,pi,2*pi),color="blue",thickness=2,zorder=3)
+              plot6+=text("$y=-\\sqrt{1-x^2}$",(.8,-1),color="blue",fontsize=15)
+              plot6                  
+            </sageplot>
+          </image>
+        </figure>
         <p>
           We cannot evaluate this iterated integral, because <m>e^{x^2 + y^2}</m> does not have an elementary antiderivative with respect to either <m>x</m> or <m>y</m>. However, since <m>r^2=x^2+y^2</m> and the region <m>D</m> is circular, it is natural to wonder whether converting to polar coordinates will allow us to evaluate the new integral. To do so, we replace <m>x</m> with <m>r \cos(\theta)</m>, <m>y</m> with <m>r \sin(\theta)</m>, and <m>dy \, dx</m> with <m>r \, dr \, d\theta</m> to obtain
           <me>
@@ -549,7 +596,30 @@
         </p>
 
         <p>
-          The disc <m>D</m> is described in polar coordinates by the constraints <m>0 \leq r \leq 1</m> and <m>0 \leq \theta \leq 2\pi</m>. Therefore, it follows that
+          The disc <m>D</m> is described in polar coordinates by the inequalities <m>0 \leq r \leq 1</m> and <m>0 \leq \theta \leq 2\pi</m>. Note that our region <m>D</m> can be consider both radially simple and angularly simple, with all of the bounds of integration being constant. In <xref ref="diskrs"/>, we show how <m>D</m> can be considered radially simple.
+        </p>
+        <figure xml:id="diskrs">
+          <caption></caption>
+          <image width="60%" xml:id="img-diskrs">
+            <sageplot>
+              var('x,y,t,s')
+              n=100
+              points=[(cos(i*2*pi/n),sin(i*2*pi/n)) for i in range(n+1)]
+              plot7=polygon(points,color="lightblue",edgecolor="black",thickness=2,xmin=-1.5,xmax=1.5,ymin=-1.5,ymax=1.5)
+              m=11;
+              for i in range(m):
+                xv=2*pi*i/m
+                plot7+=line([(0,0),(cos(xv),sin(xv))],color="orange",linestyle="--",thickness=2)
+              plot7+=parametric_plot((cos(t),sin(t)),(t,0,2*pi),color="red",thickness=2,zorder=3)
+              plot7+=text("$r=1$",(.8,0.9),color="red",fontsize=15)
+              plot7+=point((0,0),color="blue",size=30,zorder=3)
+              plot7+=text("$r=0$",(0.25,0.1),color="blue",fontsize=15)
+              plot7                  
+            </sageplot>
+          </image>
+        </figure>
+        <p>    
+          Therefore, it follows that
           <me>
             \iint_D e^{r^2} \, r \, dr \, d\theta = \int_{\theta=0}^{\theta = 2\pi} \int_{r=0}^{r=1} e^{r^2} \, r \, dr \, d\theta.
           </me>
@@ -562,239 +632,225 @@
             <mrow>\amp = \frac{1}{2} \int_{\theta=0}^{\theta = 2\pi} \left( e-1 \right) \, d\theta</mrow>
             <mrow>\amp = \frac{1}{2}(e-1) \int_{\theta=0}^{\theta = 2\pi} \, d\theta</mrow>
             <mrow>\amp = \frac{1}{2}(e-1)\left[\theta\right]\restrict{\theta=0}^{\theta = 2\pi}</mrow>
-            <mrow>\amp = \pi(e-1).</mrow>
+            <mrow>\amp = \pi(e-1)</mrow>
           </md>
         </p>
       </statement>
     </example>
 
     <p>
-      While there is no firm rule for when polar coordinates can or should be used, they are a natural alternative anytime the domain of integration may be expressed simply in polar form, and/or when the integrand involves expressions such as <m>\sqrt{x^2 + y^2}.</m>
+      While there is no firm rule for when polar coordinates can or should be used, they are a natural alternative anytime the domain of integration may be expressed simply in polar form, and/or when the integrand involves expressions such as <m>\sqrt{x^2 + y^2}</m>.
     </p>
 
     <activity xml:id="A_11_5_4">
-      <statement>
+      <introduction>
         <p>
           Let <m>f(x,y) = x+y</m> and <m>D = \{(x,y) : x^2 + y^2 \leq 4\}</m>.
-          <ol marker="a.">
-            <li>
-              <p>
-                Sketch the region <m>D</m> and then write the double integral of <m>f</m> over <m>D</m> as an iterated integral in rectangular coordinates. 
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Write the double integral of <m>f</m> over <m>D</m> as an iterated integral in polar coordinates.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Evaluate one of the iterated integrals. Why is the final value you found not surprising?
-              </p>
-            </li>
-          </ol>
         </p>
-      </statement>
-      
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              <me>
-                \int_{x=-2}^{2} \int_{y=-\sqrt{4-x^2}}^{\sqrt{4-x^2}} x+y \, dy \, dx
-              </me>
-            </p>
-          </li>
-          <li>
-            <p>
-              <me>
-                \int_{\theta=0}^{2\pi} \int_{r=0}^2 \left[r\cos(\theta) + r \sin(\theta)\right] \ r \, dr \, d\theta
-              </me>
-            </p>
-          </li>
-          <li>
-            <p>
-             Evaluating the integral yields <m>0</m>.
-              The graph of the plane <m>z=x+y</m> crosses the <m>xy</m>-plane along the line <m>y=-x</m>,
-              and bounds the same amount of volume below the <m>xy</m>-plane as above on the disk <m>D</m>.
-              So we should have expected the value of the integral to be <m>0</m>.
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              The integral <m> \int \int_D f(x,y) \, dA</m> can be written as the iterated integral
-              <me>
-                \int_{x=-2}^{2} \int_{y=-\sqrt{4-x^2}}^{\sqrt{4-x^2}} x+y \, dy \, dx
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              To convert to polar coordinates,
-              we replace <m>x</m> with <m>r \cos(\theta)</m>,
-              <m>y</m> with <m>r \sin(\theta)</m> and <m>dy \ dx</m> with <m>r \, dr \, d\theta</m> to obtain
-              <me>
-                \int \int_D \left[ r \cos(\theta) + r \sin(\theta) \right] \ r \, dr \, d\theta
-              </me>.
-              The disc <m>D</m> is described in polar coordinates by the constraints
-              <m>0 \leq r \leq 2</m> and <m>0 \leq \theta \leq 2\pi</m>.
-              So we have
-              <me>
-                \int \int_D r\cos(\theta) + r \sin(\theta) \ r \, dr \, d\theta = \int_{\theta=0}^{2\pi} \int_{r=0}^2 \left[r\cos(\theta) + r \sin(\theta)\right] \ r \, dr \, d\theta
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              We evaluate the integral in polar coordinates as follows:
-              <md>
-                <mrow>\int_{\theta=0}^{2\pi} \int_{r=0}^2 \left[r\cos(\theta) + r \sin(\theta)\right] \ r \, dr \, d\theta \amp = \int_{\theta=0}^{2\pi} \int_{r=0}^2 r^2\left[\cos(\theta) + \sin(\theta)\right] \, dr \, d\theta</mrow>
-                <mrow>\amp = \int_{\theta=0}^{2\pi} \left( \left[\cos(\theta) + \sin(\theta)\right]\frac{r^3}{3}\mid_{r=0}^2 \right) \, d\theta</mrow>
-                <mrow>\amp = \int_{\theta=0}^{2\pi} \frac{8}{3} \left[ \cos(\theta) + \sin(\theta) \right] \, d\theta</mrow>
-                <mrow>\amp = \frac{8}{3}\left[\sin(\theta) - \cos(\theta)\right]\mid_{\theta=0}^{2\pi}</mrow>
-                <mrow>\amp = \frac{8}{3}[(-1)-(-1)]</mrow>
-                <mrow>\amp = 0</mrow>
-              </md>.
-              The graph of the plane <m>z=x+y</m> crosses the <m>xy</m>-plane along the line <m>y=-x</m>,
-              and bounds the same amount of volume below the <m>xy</m>-plane as above on the disk <m>D</m>.
-              So we should have expected the value of the integral to be <m>0</m>.
-            </p>
-          </li>
-        </ol>
-      </solution>
-
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Sketch the region <m>D</m> and then write the double integral of <m>f</m> over <m>D</m> as an iterated integral in rectangular coordinates. 
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <me>
+              \int_{x=-2}^{2} \int_{y=-\sqrt{4-x^2}}^{\sqrt{4-x^2}} x+y \, dy \, dx
+            </me>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            The integral <m> \int \int_D f(x,y) \, dA</m> can be written as the iterated integral
+            <me>
+              \int_{x=-2}^{2} \int_{y=-\sqrt{4-x^2}}^{\sqrt{4-x^2}} x+y \, dy \, dx
+            </me>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Write the double integral of <m>f</m> over <m>D</m> as an iterated integral in polar coordinates.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <me>
+              \int_{\theta=0}^{2\pi} \int_{r=0}^2 \left[r\cos(\theta) + r \sin(\theta)\right] \ r \, dr \, d\theta
+            </me>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            To convert to polar coordinates, we replace <m>x</m> with <m>r \cos(\theta)</m>, <m>y</m> with <m>r \sin(\theta)</m> and <m>dy \ dx</m> with <m>r \, dr \, d\theta</m> to obtain
+            <me>
+              \int \int_D \left[ r \cos(\theta) + r \sin(\theta) \right] \ r \, dr \, d\theta
+            </me>.
+            The disc <m>D</m> is described in polar coordinates by the constraints <m>0 \leq r \leq 2</m> and <m>0 \leq \theta \leq 2\pi</m>. So we have
+            <me>
+              \int \int_D r\cos(\theta) + r \sin(\theta) \ r \, dr \, d\theta = \int_{\theta=0}^{2\pi} \int_{r=0}^2 \left[r\cos(\theta) + r \sin(\theta)\right] \ r \, dr \, d\theta
+            </me>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Evaluate one of the iterated integrals. Write a couple sentences to explain your answer in the context of a double integral (as either a signed volume or an average value).
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Evaluating the integral yields <m>0</m>. The graph of the plane <m>z=x+y</m> crosses the <m>xy</m>-plane along the line <m>y=-x</m>, and bounds the same amount of volume below the <m>xy</m>-plane as above on the disk <m>D</m>. So we should have expected the value of the integral to be <m>0</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            We evaluate the integral in polar coordinates as follows:
+            <md>
+              <mrow>\int_{\theta=0}^{2\pi} \int_{r=0}^2 \left[r\cos(\theta) + r \sin(\theta)\right] \ r \, dr \, d\theta \amp = \int_{\theta=0}^{2\pi} \int_{r=0}^2 r^2\left[\cos(\theta) + \sin(\theta)\right] \, dr \, d\theta</mrow>
+              <mrow>\amp = \int_{\theta=0}^{2\pi} \left( \left[\cos(\theta) + \sin(\theta)\right]\frac{r^3}{3}\mid_{r=0}^2 \right) \, d\theta</mrow>
+              <mrow>\amp = \int_{\theta=0}^{2\pi} \frac{8}{3} \left[ \cos(\theta) + \sin(\theta) \right] \, d\theta</mrow>
+              <mrow>\amp = \frac{8}{3}\left[\sin(\theta) - \cos(\theta)\right]\mid_{\theta=0}^{2\pi}</mrow>
+              <mrow>\amp = \frac{8}{3}[(-1)-(-1)]</mrow>
+              <mrow>\amp = 0</mrow>
+            </md>
+            The graph of the plane <m>z=x+y</m> crosses the <m>xy</m>-plane along the line <m>y=-x</m>, and bounds the same amount of volume below the <m>xy</m>-plane as above on the disk <m>D</m>. So we should have expected the value of the integral to be <m>0</m>.
+          </p>
+        </solution>
+      </task>
     </activity>
-
-
-
+    <p>
+      In the next activity, we will convert an equation from rectangular to polar coordinates and use this polar equation to give bounds of integration for two different integrals.
+    </p>
     <activity xml:id="A_11_5_5">
-      <statement>
+      <introduction>
         <p>
           Consider the circle given by <m>x^2 + (y-1)^2 = 1</m> as shown in <xref ref="F_11_5_Polar_exercise">Figure</xref>.
-            <figure xml:id="F_11_5_Polar_exercise">
-              <caption>The graphs of <m>y=x</m> and <m>x^2 + (y-1)^2 = 1</m>, for use in <xref ref="A_11_5_5">Activity</xref>.</caption>
-              <image width="40%" source="images/fig_11_5_polar_region"/>
-            </figure>
-          <ol marker="a.">
-
-            <li>
-              <p>
-                Determine a polar curve in the form <m>r = f(\theta)</m> that traces out the circle <m>x^2 + (y-1)^2 = 1</m>. (Hint: Recall that a circle centered at the origin of radius <m>r</m> can be described by the equations <m>x = r \cos(\theta)</m> and <m>y = r \sin(\theta)</m>.)
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Find the exact average value of <m>g(x,y) = \sqrt{x^2 + y^2}</m> over the interior of the circle <m>x^2 + (y-1)^2 = 1</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Find the volume under the surface <m>h(x,y) = x</m> over the region <m>D</m>, where <m>D</m> is the region bounded above by the line <m>y=x</m> and below by the circle (this is the shaded region in <xref ref="F_11_5_Polar_exercise">Figure</xref>).
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Explain why in both (b) and (c) it is advantageous to use polar coordinates.
-              </p>
-            </li>
-          </ol>
         </p>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              The circle <m>C</m> can be described as
-              <m>0 \leq r \leq \ 2\sin(\theta)</m> with <m>0 \leq \theta \leq \pi</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m> \frac{32}{9\pi}</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\frac{1}{6}</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              In (b), it is very difficult to integrate
-              <m>\sqrt{x^2+y^2}</m> in rectangular coordinates,
-              and in (c) the region <m>D</m> is much more easily described in polar coordinates.
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              When expanded,
-              the equation of the circle is <m>x^2+y^2 - 2y = 0</m>.
-              We can write this in polar coordinates as <m>r^2 - 2r \sin(\theta) = 0</m>,
-              or <m>r = 2\sin(\theta)</m>.
-              Thus, the circle <m>C</m> can be described as
-              <m>0 \leq r \leq \ 2\sin(\theta)</m> with <m>0 \leq \theta \leq \pi</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The circle <m>C</m> has radius 1, so <m>A(C) = \pi</m>.
-              Note that <m>g(x,y) = \sqrt{x^2 + y^2}</m> can be written in polar form as <m>g(r,\theta) = r</m>.
-              Thus, the average value of <m>g</m> over <m>C</m> is
-              <md>
-                <mrow>\frac{1}{\pi}\int \int_C g(x,y) \, dA \amp = \int_{0}^{\pi} \int_{0}^{2\sin(\theta)} r r \, dr \, d \theta</mrow>
-                <mrow>\amp = \frac{1}{\pi}\int_{0}^{\pi} \frac{r^3}{3} \mid_{0}^{2\sin(\theta)} \, d \theta</mrow>
-                <mrow>\amp = \frac{8}{3\pi} \int_{0}^{\pi} \sin^3(\theta) \, d \theta</mrow>
-                <mrow>\amp = \frac{8}{3\pi} \int_{0}^{\pi} \sin(\theta)(1-\cos^2(\theta)) \, d \theta</mrow>
-                <mrow>\amp = \frac{8}{3\pi} \left(-\cos(\theta)+\frac{\cos^3(\theta)}{3}\right)\mid_{0}^{\pi}</mrow>
-                <mrow>\amp = \frac{8}{3\pi}\left(2-\frac{2}{3}\right)</mrow>
-                <mrow>\amp = \frac{32}{9\pi}</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-              In polar coordinates,
-              the line <m>y=x</m> is represented as <m>r \sin(\theta) = r \cos(\theta)</m>,
-              or <m>\tan(\theta) = 1</m>, or <m>\theta = \frac{\pi}{4}</m>.
-              Therefore, the region <m>D</m> is described by
-              <m>0 \leq r \leq \ 2\sin(\theta)</m> with <m>0 \leq \theta \leq \pi/4</m>.
-              So the under the surface <m>h(x,y) = x</m> over the region <m>D</m> is given by
-              <md>
-                <mrow>\int \int_D x \, dA \amp = \int_{0}^{\pi/4} \int_{0}^{2\sin(\theta)} r\cos(\theta) r \, dr \, d \theta</mrow>
-                <mrow>\amp = \int_{0}^{\pi/4} \cos(\theta) \frac{r^3}{3} \mid_{0}^{2\sin(\theta)} \, d \theta</mrow>
-                <mrow>\amp = \frac{8}{3} \int_{0}^{\pi/4} \cos(\theta) \sin^3(\theta) \, d \theta</mrow>
-                <mrow>\amp = \frac{8}{12} \sin^4(\theta) \mid_{0}^{\pi/4}</mrow>
-                <mrow>\amp = \frac{2}{3} \left(\frac{\sqrt{2}}{2}\right)^4</mrow>
-                <mrow>\amp = \frac{1}{6}</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-              In (b), it is very difficult to integrate
-              <m>\sqrt{x^2+y^2}</m> in rectangular coordinates,
-              and in (c) the region <m>D</m> is much more easily described in polar coordinates.
-            </p>
-          </li>
-        </ol>
-      </solution>
-
+        <figure xml:id="circyp1">
+          <caption></caption>
+          <image width="60%" xml:id="img-circyp1">
+            <sageplot>
+              var('x,y,t,s')
+              plot8=parametric_plot((cos(t),1+sin(t)),(t,0,2*pi),color="black",thickness=3,ticks=[[-1,1],[0,1,2]],axes_labels=["$x$","$y$"])
+              plot8                 
+            </sageplot>
+          </image>
+        </figure>
+        <!-- <figure xml:id="F_11_5_Polar_exercise">
+          <caption>The graphs of <m>y=x</m> and <m>x^2 + (y-1)^2 = 1</m>, for use in <xref ref="A_11_5_5">Activity</xref>.</caption>
+          <image width="40%" source="images/fig_11_5_polar_region"/>
+        </figure> -->
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Determine a polar curve in the form <m>r = f(\theta)</m> that traces out the circle <m>x^2 + (y-1)^2 = 1</m>. You should substitute <m>x = r \cos(\theta)</m> and <m>y = r \sin(\theta)</m> into the rectangular coordinate equation and solve for <m>r</m>.
+          </p>
+        </statement>
+        <hint>
+          <p>After you substitute, you should expand and combine like terms. You will also want to factor your expression and disregard the <m>r=0</m> solution. </p>
+        </hint>
+        <answer>
+          <p>
+            The circle <m>C</m> can be described as <m>0 \leq r \leq \ 2\sin(\theta)</m> with <m>0 \leq \theta \leq \pi</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            When expanded, the equation of the circle is <m>x^2+y^2 - 2y = 0</m>. We can write this in polar coordinates as <m>r^2 - 2r \sin(\theta) = 0</m>, or <m>r = 2\sin(\theta)</m>. Thus, the circle <m>C</m> can be described as <m>0 \leq r \leq \ 2\sin(\theta)</m> with <m>0 \leq \theta \leq \pi</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find the exact average value of <m>g(x,y) = \sqrt{x^2 + y^2}</m> over the interior of the circle <m>x^2 + (y-1)^2 = 1</m>.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Use a radially simple description of your region with your result from part a as the upper bound.
+          </p>
+        </hint>
+        <answer>
+          <p>
+            <m> \frac{32}{9\pi}</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            The circle <m>C</m> has radius 1, so <m>A(C) = \pi</m>. Note that <m>g(x,y) = \sqrt{x^2 + y^2}</m> can be written in polar form as <m>g(r,\theta) = r</m>. Thus, the average value of <m>g</m> over <m>C</m> is
+            <md>
+              <mrow>\frac{1}{\pi}\int \int_C g(x,y) \, dA \amp = \int_{0}^{\pi} \int_{0}^{2\sin(\theta)} r r \, dr \, d \theta</mrow>
+              <mrow>\amp = \frac{1}{\pi}\int_{0}^{\pi} \frac{r^3}{3} \mid_{0}^{2\sin(\theta)} \, d \theta</mrow>
+              <mrow>\amp = \frac{8}{3\pi} \int_{0}^{\pi} \sin^3(\theta) \, d \theta</mrow>
+              <mrow>\amp = \frac{8}{3\pi} \int_{0}^{\pi} \sin(\theta)(1-\cos^2(\theta)) \, d \theta</mrow>
+              <mrow>\amp = \frac{8}{3\pi} \left(-\cos(\theta)+\frac{\cos^3(\theta)}{3}\right)\mid_{0}^{\pi}</mrow>
+              <mrow>\amp = \frac{8}{3\pi}\left(2-\frac{2}{3}\right)</mrow>
+              <mrow>\amp = \frac{32}{9\pi}</mrow>
+            </md>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find the volume under the surface <m>h(x,y) = x</m> over the region <m>D</m>, where <m>D</m> is the region bounded above by the line <m>y=x</m> and below by the circle (this is the shaded region in <xref ref="F_11_5_Polar_exercise">Figure</xref>).
+          </p>
+          <figure xml:id="F_11_5_Polar_exercise">
+            <caption></caption>
+            <image width="60%" xml:id="img-F_11_5_Polar_exercise">
+              <sageplot>
+                var('x,y,t,s')
+                plot9=parametric_plot((cos(t),1+sin(t)),(t,0,2*pi),color="black",thickness=2,ticks=[[-1,1],[0,1,2]],axes_labels=["$x$","$y$"])
+                points=[(2*sin(pi/4*i/25 )*cos(pi/4*i/25), 2*sin(pi/4*i/25)^2) for i in range(26)]
+                plot9+=polygon(points,color="lightblue",edgecolor="black",thickness=3)
+                plot9                  
+              </sageplot>
+            </image>
+          </figure>
+        </statement>
+        <answer>
+          <p>
+            <m>\frac{1}{6}</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            In polar coordinates, the line <m>y=x</m> is represented as <m>r \sin(\theta) = r \cos(\theta)</m>, or <m>\tan(\theta) = 1</m>, or <m>\theta = \frac{\pi}{4}</m>. Therefore, the region <m>D</m> is described by <m>0 \leq r \leq \ 2\sin(\theta)</m> with <m>0 \leq \theta \leq \pi/4</m>. So the under the surface <m>h(x,y) = x</m> over the region <m>D</m> is given by
+            <md>
+              <mrow>\int \int_D x \, dA \amp = \int_{0}^{\pi/4} \int_{0}^{2\sin(\theta)} r\cos(\theta) r \, dr \, d \theta</mrow>
+              <mrow>\amp = \int_{0}^{\pi/4} \cos(\theta) \frac{r^3}{3} \mid_{0}^{2\sin(\theta)} \, d \theta</mrow>
+              <mrow>\amp = \frac{8}{3} \int_{0}^{\pi/4} \cos(\theta) \sin^3(\theta) \, d \theta</mrow>
+              <mrow>\amp = \frac{8}{12} \sin^4(\theta) \mid_{0}^{\pi/4}</mrow>
+              <mrow>\amp = \frac{2}{3} \left(\frac{\sqrt{2}}{2}\right)^4</mrow>
+              <mrow>\amp = \frac{1}{6}</mrow>
+            </md>
+          </p>
+        </solution>
+      </task>  
+      <task>
+        <statement>
+          <p>
+            Explain why in both parts b. and c. it is advantageous to use polar coordinates.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            In (b), it is very difficult to integrate <m>\sqrt{x^2+y^2}</m> in rectangular coordinates, and in (c) the region <m>D</m> is much more easily described in polar coordinates.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            In (b), it is very difficult to integrate <m>\sqrt{x^2+y^2}</m> in rectangular coordinates, and in (c) the region <m>D</m> is much more easily described in polar coordinates.
+          </p>
+        </solution>
+      </task>
     </activity>
   </subsection>
 
@@ -802,7 +858,7 @@
   <subsection>
     <title>Summary</title>
     <ul>
-      <li>
+      <!-- <li>
         <p>
           The polar representation of a point <m>P</m> is the ordered pair <m>(r,\theta)</m> where <m>r</m> is the distance from the origin to <m>P</m> and <m>\theta</m> is the angle the ray through the origin and <m>P</m> makes with the positive <m>x</m>-axis.
         </p>
@@ -819,631 +875,27 @@
             x = r\cos(\theta)  \ \ \ \ \ \text{ and }  \ \ \ \ \ y = r\sin(\theta).
           </me>
         </p>
-      </li>
+      </li> -->
 
       <li>
         <p>
           The area element <m>dA</m> in polar coordinates is determined by the area of a slice of an annulus and is given by
           <me>
-            dA = r \, dr \, d\theta.
+            dA = r \, dr \, d\theta
           </me>
         </p>
       </li>
 
       <li>
         <p>
-          To convert the double integral <m>{\iint_D f(x,y) \, dA}</m> to an iterated integral in polar coordinates, we substitute <m>r \cos(\theta)</m> for <m>x</m>, <m>r \sin(\theta)</m> for <m>y</m>, and <m>r \, dr \, d\theta</m> for <m>dA</m> to obtain the iterated integral
+          To convert the double integral <m>{\iint_D f(x,y) \, dA}</m> to an iterated integral in polar coordinates, we substitute <m>r \cos(\theta)</m> for <m>x</m>, <m>r \sin(\theta)</m> for <m>y</m>, and <m>r \, dr \, d\theta</m> for <m>dA</m> to obtain the iterated integral (where the order of integration is determined by whether the region is described as radially or angularly simple)
           <me>
-            {\iint_D f(r\cos(\theta), r\sin(\theta)) \, r \, dr \, d\theta}.
+            {\iint_D f(r\cos(\theta), r\sin(\theta)) \, r \, dr \, d\theta}
           </me>
         </p>
       </li>
     </ul>
 
     </subsection>
-
-    <exercises>
-
-    <exercise label="Library__ma123DB__set9__s10_4_3.pg" xml:id="ex-11-5-WW-matching">
-      <!--<title>Matching polar and cartesian coordinates</title>-->
-         <webwork source="Library/ma123DB/set9/s10_4_3.pg"/>
-      </exercise>
-
-    <exercise label="Library__UCSB__Stewart5_10_3__Stewart5_10_3_6.pg" xml:id="ex-11-5-WW-finding-polar">
-      <!--<title>Finding polar coordinates from rectangular</title>-->
-         <webwork source="Library/UCSB/Stewart5_10_3/Stewart5_10_3_6.pg"/>
-      </exercise>
-
-    <exercise label="Library__UCSB__Stewart5_10_3__Stewart5_10_3_1.pg" xml:id="ex-11-5-WW-multiple">
-      <!--<title>Multiple polar coordinates</title>-->
-         <webwork source="Library/UCSB/Stewart5_10_3/Stewart5_10_3_1.pg"/>
-      </exercise>
-
-    <exercise label="Library__ma123DB__set9__s10_4_1.pg" xml:id="ex-11-5-WW-comparing-points">
-      <!--<title>Comparing points in polar form</title>-->
-         <webwork source="Library/ma123DB/set9/s10_4_1.pg"/>
-      </exercise>
-
-    <exercise label="Library__ma123DB__set9__s10_4_16.pg" xml:id="ex-11-5-WW-convert-equation">
-      <!--<title>Convert a polar equation into a linear Cartesian equation</title>-->
-         <webwork source="Library/ma123DB/set9/s10_4_16.pg"/>
-      </exercise>
-
-      <exercise label="Library__UCSB__Stewart5_10_3__Stewart5_10_3_23.pg" xml:id="ex-11-5-WW-convert-equation-2">
-      <!--<title>Convert a parabola to polar form</title>-->
-         <webwork source="Library/UCSB/Stewart5_10_3/Stewart5_10_3_23.pg"/>
-      </exercise>
-
-
-
-    <exercise label="Library__272__setStewart15_4__problem_1.pg" xml:id="ex-11-5-WW-convert-to-polar">
-      <!--<title>Converting an integral to polar coordinates</title>-->
-         <webwork source="Library/272/setStewart15_4/problem_1.pg"/>
-      </exercise>
-
-      <exercise label="Library__Michigan__Chap16Sec4__Q21.pg" xml:id="ex-11-5-WW-convert-to-polar-2">
-      <!--<title>Converting an integral to polar coordinates</title>-->
-         <webwork source="Library/Michigan/Chap16Sec4/Q21.pg"/>
-      </exercise>
-
-      <exercise label="Library__Michigan__Chap16Sec4__Q07.pg" xml:id="ex-11-5-WW-choosing">
-      <!--<title>Choosing between rectangular and polar coordinates</title>-->
-         <webwork source="Library/Michigan/Chap16Sec4/Q07.pg"/>
-      </exercise>
-
-      <exercise label="Library__ma123DB__set9__s10_4_15.pg" xml:id="ex-11-5-WW-converting">
-      <!--<title>Converting a polar equation to cartesian coordiantes</title>-->
-         <webwork source="Library/ma123DB/set9/s10_4_15.pg"/>
-      </exercise>
-
-       <exercise label="Library__Rochester__setVMultIntegrals2Polar__UR_VC_9_2.pg" xml:id="ex-11-5-WW-area">
-      <!--<title>Calculate an area betwen curves</title>-->
-         <webwork source="Library/Rochester/setVMultIntegrals2Polar/UR_VC_9_2.pg"/>
-      </exercise>
-
-      <exercise label="Library__Michigan__Chap16Sec4__Q33.pg" xml:id="ex-11-5-WW-set-up">
-      <!--<title>Set up and evaluate an integral in polar coordinates</title>-->
-         <webwork source="Library/Michigan/Chap16Sec4/Q33.pg"/>
-      </exercise>
-
-
-      <exercise label="Library__maCalcDB__setVMultIntegrals2Polar__UR_VC_9_1.pg" xml:id="ex-11-5-WW-evaluate-polar">
-      <!--<title>Evaluating an integral in polar coordinates</title>-->
-         <webwork source="Library/maCalcDB/setVMultIntegrals2Polar/UR_VC_9_1.pg"/>
-      </exercise>
-
-      
-
-      <exercise label="Library__FortLewis__Calc3__16-4-Polar-integrals__HGM5-16-4-14-Double-integrals-polar.pg" xml:id="ex-11-5-WW-region-of-integration">
-      <!--<title>Determining the region of integration</title>-->
-         <webwork source="Library/FortLewis/Calc3/16-4-Polar-integrals/HGM5-16-4-14-Double-integrals-polar.pg"/>
-      </exercise>
-
-      <exercise label="Library__maCalcDB__setVMultIntegrals2Polar__UR_VC_9_3.pg" xml:id="ex-11-5-WW-sphere">
-      <!--<title>Calculate the volume of a sphere</title>-->
-         <webwork source="Library/maCalcDB/setVMultIntegrals2Polar/UR_VC_9_3.pg"/>
-      </exercise>
-
-      <exercise label="Library__FortLewis__Calc3__16-4-Polar-integrals__HGM5-16-4-27-Double-integrals-polar.pg" xml:id="ex-11-5-WW-solid-volume">
-      <!--<title>Calculate the volume of a solid</title>-->
-         <webwork source="Library/FortLewis/Calc3/16-4-Polar-integrals/HGM5-16-4-27-Double-integrals-polar.pg"/>
-      </exercise>
-
-   <!--PTX issue
-    <exercise xml:id="ex-11-5-WW-points-polar">
-      <title>Finding polar coordinates of points</title>
-         <webwork source="Library/maCalcDB/setPolarCoord1Points/ur_pc_1_1.pg" />
-      </exercise>-->
-
-      <!--PTX issue
-      <exercise xml:id="ex-11-5-WW-match-equations">
-      <title>Match polar equations to descriptions</title>
-         <webwork source="Library/ma123DB/set9/s10_4_34.pg" />
-      </exercise>
-
-      <exercise xml:id="ex-11-5-WW-match-descriptions">
-      title>Match descriptions to polar or Cartesian equations</title>
-         <webwork source="Library/UCSB/Stewart5_10_3/Stewart5_10_3_27to28.pg" />
-      </exercise>
-      -->
-
-      <!-- MBX exception
-      <exercise xml:id="ex-11-5-WW-find-limits">
-      <title>Finding limits on a polar integral</title>
-         <webwork source="Library/FortLewis/Calc3/16-4-Polar-integrals/HGM5-16-4-03-Double-integrals-polar.pg" />
-      </exercise> 
-
-      <exercise xml:id="ex-11-5-WW-match">
-      <title>Match polar integrals with graphs</title>
-         <webwork source="Library/FortLewis/Calc3/16-4-Polar-integrals/HGM4-16-4-06-Double-integrals-polar.pg" />
-      </exercise> 
-
-      <exercise xml:id="ex-11-5-WW-cone">
-      <title>Calculate the volume of an ice cream cone</title>
-         <webwork source="Library/FortLewis/Calc3/16-4-Polar-integrals/HGM5-16-4-24-Double-integrals-polar.pg" /> 
-      </exercise> -->
-
-      <exercise>
-        <statement>
-          <p>
-            Consider the iterated integral <m>I = \int_{-3}^{0} \int_{-\sqrt{9-y^2}}^{0} \frac{y}{x^2 + y^2+1} \, dx \, dy.</m>
-            <ol marker="a.">
-              <li>
-                <p>
-                  Sketch (and label) the region of integration.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Convert the given iterated integral to one in polar coordinates.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Evaluate the iterated integral in (b).
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  State one possible interpretation of the value you found in (c).
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-
-        <answer>
-          <ol marker="a.">
-            <li>
-              <p>
-                The region <m>R</m> defined by <m>-\sqrt{9-y^2} \leq x \leq 0</m> and
-                <m>-3 \leq y \leq 0</m> is the portion of the circle centered at the origin of radius 3 that is in the third quadrant.
-              </p>
-            </li>
-            <li>
-              <p>
-                <me>
-                  \int_{\pi}^{3\pi/2} \int_{0}^{3} \frac{r\sin(\theta)}{r^2+1} r \, dr \, d\theta
-                </me>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> \arctan(3)-3</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                If <m>f(x,y) = \frac{y}{x^2 + y^2+1}</m> is the density of the lamina defined by <m>R</m>,
-                then <m>I</m> represents the mass of the lamina.
-              </p>
-            </li>
-          </ol>
-        </answer>
-
-        <solution>
-          <ol marker="a.">
-            <li>
-              <p>
-                The region <m>R</m> defined by <m>-\sqrt{9-y^2} \leq x \leq 0</m> and
-                <m>-3 \leq y \leq 0</m> is the portion of the circle centered at the origin of radius 3 that is in the third quadrant.
-              </p>
-            </li>
-            <li>
-              <p>
-                The region <m>R</m> is described in polar coordinates by
-                <m>0 \leq r \leq 3</m> and <m>\pi \leq \theta \leq \frac{3 \pi}{2}</m>.
-                With <m>r^2=x^2+y^2</m> and <m>y = r\sin(\theta)</m> we have
-                <me>
-                  \int_{-3}^{0} \int_{-\sqrt{9-y^2}}^{0} \frac{y}{x^2 + y^2+1} \, dx \, dy = \int_{\pi}^{3\pi/2} \int_{0}^{3} \frac{r\sin(\theta)}{r^2+1} r \, dr \, d\theta
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Dividing <m>1+r^2</m> into <m>r^2</m> shows that <m>\frac{r^2}{r^2+1} = 1 - \frac{1}{r^2+1}</m>.
-                Using this fact gives us
-                <md>
-                  <mrow>\int_{\pi}^{3\pi/2} \int_{0}^{3} \frac{r^2\sin(\theta)}{r^2+1} \, dr \, d\theta \amp = \int_{\pi}^{3\pi/2} \sin(\theta) \int_{0}^{3} \frac{r^2}{r^2+1} \, dr \, d\theta</mrow>
-                  <mrow>\amp = \int_{\pi}^{3\pi/2} \sin(\theta) \int_{0}^{3} 1-\frac{1}{r^2+1} \, dr \, d\theta</mrow>
-                  <mrow>\amp = \int_{\pi}^{3\pi/2} \sin(\theta)  \left(r-\arctan(r)\right)\mid_{0}^{3} \, d\theta</mrow>
-                  <mrow>\amp = \int_{\pi}^{3\pi/2} \sin(\theta)  \left(3-\arctan(3)\right) \, d\theta</mrow>
-                  <mrow>\amp = \left(3-\arctan(3)\right) (-\cos(\theta))\mid_{\pi}^{3\pi/2}</mrow>
-                  <mrow>\amp = \arctan(3)-3</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                If <m>f(x,y) = \frac{y}{x^2 + y^2+1}</m> is the density of the lamina defined by <m>R</m>,
-                then <m>I</m> represents the mass of the lamina.
-              </p>
-            </li>
-          </ol>
-        </solution>
-
-        
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Let <m>D</m> be the region that lies inside the unit circle in the plane.
-            <ol marker="a.">
-              <li>
-                <p>
-                  Set up and evaluate an iterated integral in polar coordinates whose value is the area of <m>D</m>.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Determine the exact average value of <m>f(x,y) = y</m> over the upper half of <m>D</m>.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Find the exact center of mass of the lamina over the portion of <m>D</m> that lies in the first quadrant and has its mass density distribution given by <m>\delta(x,y) = 1</m>. (Before making any calculations, where do you expect the center of mass to lie? Why?)
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Find the exact volume of the solid that lies under the surface <m>z = 8-x^2-y^2</m> and over the unit disk, <m>D</m>.
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-
-        <answer>
-          <ol marker="a.">
-            <li>
-              <p>
-                <me>
-                  \int_{0}^{2 \pi} \int_{0}^{1} r \, dr \, d\theta = \pi
-                </me>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> \frac{2}{3\pi}</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                The region and density function are symmetric around the line <m>y=x</m>,
-                so we should expect the center of mass to lie on this line.
-                The center of mass is at point <m>(\frac{2}{3\pi},  \frac{2}{3\pi})</m>. 
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> \frac{15 \pi}{2}</m>
-              </p>
-            </li>
-          </ol>
-        </answer>
-
-        <solution>
-          <ol marker="a.">
-            <li>
-              <p>
-                The unit disk <m>D</m> is described in polar coordinates as
-                <m>0 \leq r \leq 1</m> and <m>0 \leq \theta \leq 2 \pi</m>.
-                So an iterated integral in polar coordinates whose value is the area of <m>D</m> is
-                <me>
-                  \int_{0}^{2 \pi} \int_{0}^{1} r \, dr \, d\theta
-                </me>.
-                The value of this iterated integral is <m>\pi</m>, which is exactly the area of the unit circle.
-              </p>
-            </li>
-            <li>
-              <p>
-                The upper half <m>H</m> of <m>D</m> is represented by restricting <m>\theta</m> to <m>0 \leq \theta \leq \pi</m>.
-                Since the area of this half-disk is <m>\pi</m>,
-                the exact average value of
-                <m>f(x,y) = y</m> over the upper half of <m>D</m> is
-                <md>
-                  <mrow>\frac{1}{\pi} \iint_H f(x,y) \, dA \amp =  \int_{0}^{\pi} \int_{0}^{1} r (r\sin(\theta)) \, dr \, d\theta</mrow>
-                  <mrow>\amp = \frac{1}{\pi} \int_{0}^{\pi} \sin(\theta) \frac{1}{3}r^3\mid_{0}^{1} \, d\theta</mrow>
-                  <mrow>\amp = \frac{1}{3 \pi} \int_{0}^{\pi} \sin(\theta) \, d\theta</mrow>
-                  <mrow>\amp = \frac{1}{3 \pi} (-\cos(\theta))\mid_{0}^{\pi}</mrow>
-                  <mrow>\amp = \frac{2}{3\pi}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The region and density function are symmetric around the line <m>y=x</m>,
-                so we should expect the center of mass to lie on this line.
-                The inequalities <m>0 \leq \theta \leq \frac{\pi}{2}</m> describe the first quadrant region <m>Q</m> of <m>D</m>.
-                The area of <m>Q</m> is <m>\frac{\pi}{2}</m>.
-                The center of mass <m>(\overline{x}, \overline{y})</m> of this region with mass density distribution given by <m>\delta(x,y) = 1</m> is found by
-                <md>
-                  <mrow>\overline{x} \amp = \frac{2}{\pi} \int_{0}^{\pi/2} \int_{0}^{1} r(r \cos(\theta)) \, dr \, d\theta</mrow>
-                  <mrow>\amp = \frac{2}{\pi} \int_{0}^{\pi/2} \cos(\theta) \frac{1}{3}r^3\mid_{0}^{1} \, d\theta</mrow>
-                  <mrow>\amp = \frac{2}{3 \pi} \int_{0}^{\pi/2} \cos(\theta) \, d\theta</mrow>
-                  <mrow>\amp = \frac{2}{3 \pi} (\sin(\theta))\mid_{0}^{\pi/2}</mrow>
-                  <mrow>\amp = \frac{2}{3\pi}</mrow>
-                </md>
-                and
-                <md>
-                  <mrow>\overline{y} \amp =  \frac{2}{\pi} \int_{0}^{\pi/2} \int_{0}^{1} r (r\sin(\theta)) \, dr \, d\theta</mrow>
-                  <mrow>\amp = \frac{2}{\pi} \int_{0}^{\pi/2} \sin(\theta) \frac{1}{3}r^3\mid_{0}^{1} \, d\theta</mrow>
-                  <mrow>\amp = \frac{2}{3 \pi} \int_{0}^{\pi/2} \sin(\theta) \, d\theta</mrow>
-                  <mrow>\amp = \frac{2}{3 \pi} (-\cos(\theta))\mid_{0}^{\pi/2}</mrow>
-                  <mrow>\amp = \frac{2}{3\pi}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The volume is
-                <md>
-                  <mrow>\iint_D 8-x^2-y^2 \, dA \amp = \int_{0}^{2\pi} \int_0^1 (8-r^2) r \, dr \, d \theta</mrow>
-                  <mrow>\amp = \int_{0}^{2\pi} \left( 4r^2 -\frac{1}{4}r^4 \right)\mid_0^1 \, d \theta</mrow>
-                  <mrow>\amp = \frac{15}{4} \int_{0}^{2\pi} \, d \theta</mrow>
-                  <mrow>\amp = \frac{15 \pi}{2}</mrow>
-                </md>.
-              </p>
-            </li>
-          </ol>
-        </solution>
-
-        
-      </exercise>
-
-
-      <exercise>
-        <statement>
-          <p>
-            For each of the following iterated integrals, 
-            <ul>
-              <li>
-                <p>sketch and label the region of integration, 
-                </p>
-              </li>
-
-              <li>
-                <p> convert the integral to the other coordinate system (if given in polar, to rectangular; if given in rectangular, to polar), and 
-                </p>
-              </li>
-
-              <li>
-                <p>
-                choose one of the two iterated integrals to evaluate exactly.
-                </p>
-              </li>
-            </ul>
-            <ol marker="a.">
-              <li>
-                <p>
-                  <m>\int_{\pi}^{3\pi/2} \int_{0}^{3}  r^3 \, dr \, d\theta</m>
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  <m>\int_{0}^{2} \int_{-\sqrt{1-(x-1)^2}}^{\sqrt{1-(x-1)^2}} \sqrt{x^2 + y^2} \, dy \, dx</m>
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  <m>\int_0^{\pi/2} \int_0^{\sin(\theta)} r \sqrt{1-r^2} \, dr \, d\theta.</m>
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  <m>\int_0^{\sqrt{2}/2} \int_y^{\sqrt{1-y^2}} \cos(x^2 + y^2) \, dx \, dy.</m>
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-
-        <answer>
-          <ol marker="a.">
-            <li>
-              <p>
-                The region is the third quadrant portion of the disk centered at the origin of radius 3.
-                In rectangular coordinates an equivalent iterated integral is
-                <me>
-                  \int_{-3}^0 \int_{-\sqrt{9-x^2}}^0 x^2+y^2 \, dy \, dx
-                </me>.
-                Evaluating the integral in polar coordinates yields
-                <md>
-                  <mrow>\int_{\pi}^{3\pi/2} \int_{0}^{3}  r^3 \, dr \, d\theta \amp = \int_{\pi}^{3\pi/2} \frac{1}{4}r^4\mid_{0}^{3} \, d\theta</mrow>
-                  <mrow>\amp =  \frac{81}{4} \int_{\pi}^{3\pi/2} \, d\theta</mrow>
-                  <mrow>\amp =  \frac{81 \pi}{8}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The region is the disk <m>(x-1)^2+y^2=1</m> centered at <m>(1,0)</m> of radius 1.
-                To convert to polar coordinates we substitute for <m>x</m> and <m>y</m> to see that
-                <md>
-                  <mrow>(r \cos(\theta)-1)^2 + (r \sin(\theta))^2 \amp =  1</mrow>
-                  <mrow>r^2\cos^2(\theta) -2r\cos(\theta) + 1 + r^2\sin^2(\theta) \amp =  1</mrow>
-                  <mrow>r^2 - 2r\cos(\theta) \amp = 0</mrow>
-                  <mrow>r \amp = 2\cos(\theta)</mrow>
-                </md>.
-                So an equivalent iterated integral in polar coordinates is
-                <me>
-                  \int_{-\pi/2}^{\pi/2} \int_0^{2 \cos(\theta)} r^2 \, dr \, d\theta
-                </me>.
-                Evaluating the integral in polar coordinates yields
-                <md>
-                  <mrow>\int_{-\pi/2}^{\pi/2} \int_{0}^{2\cos(\theta)}  r^2 \, dr \, d\theta \amp = \int_{-\pi/2}^{\pi/2} \frac{1}{3}r^3\mid_{0}^{2\cos(\theta)} \, d\theta</mrow>
-                  <mrow>\amp =  \int_{-\pi/2}^{\pi/2} \frac{8}{3}\cos^3(\theta) \, d\theta</mrow>
-                  <mrow>\amp =  \frac{8}{3}\int_{-\pi/2}^{\pi/2} \cos(\theta)[1-\sin^2(\theta)] \, d\theta</mrow>
-                  <mrow>\amp =  \frac{8}{3}\int_{-\pi/2}^{\pi/2} \cos(\theta)-\sin^2(\theta)\cos(\theta) \, d\theta</mrow>
-                  <mrow>\amp =  \frac{8}{3} \left[\sin(\theta)-\frac{1}{3}\sin^3(\theta) \right]\mid_{-\pi/2}^{\pi/2}</mrow>
-                  <mrow>\amp =  \frac{8}{3} \left[\left(1-\frac{1}{3} \right) - \left(-1 - \left(-\frac{1}{3}\right) \right)\right]</mrow>
-                  <mrow>\amp =  \frac{32}{9}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                To convert the equation <m>r = \sin(\theta)</m> to rectangular coordinates,
-                we proceed as follows:
-                <md>
-                  <mrow>r \amp = \sin(\theta)</mrow>
-                  <mrow>r^2 \amp = r \sin(\theta)</mrow>
-                  <mrow>x^2+y^2 \amp = y</mrow>
-                  <mrow>x^2+y^2-y + \frac{1}{4} \amp = \frac{1}{4}</mrow>
-                  <mrow>x^2 + \left(y-\frac{1}{2}\right)^2 \amp = \left(\frac{1}{2}\right)^2</mrow>
-                </md>.
-                So the equation <m>r = \sin(\theta)</m> is the circle centered at the point
-                <m>\left( 0, \frac{1}{2}\right)</m> with radius <m>\frac{1}{2}</m>.
-                With <m>0 \leq \theta \leq \frac{\pi}{2}</m> we only get the right half of the circle,
-                so an equivalent iterated integral in rectangular coordinates is
-                <me>
-                  \int_0^1 \int_{0}^{\sqrt{y-y^2}} \sqrt{1-(x^2+y^2)} \, dx \, dy
-                </me>.
-                Evaluating the integral in polar coordinates yields
-                <md>
-                  <mrow>\int_0^{\pi/2} \int_0^{\sin(\theta)} r\sqrt{1-r^2} \, dr \, d\theta \amp = \int_{0}^{\pi/2} -\frac{1}{3} (1-r^2)^{3/2}\mid_{0}^{\sin(\theta)} \, d\theta</mrow>
-                  <mrow>\amp = -\frac{1}{3} \int_{0}^{\pi/2}  \left[(1-\sin^2(\theta))^{3/2}-1 \right] \, d\theta</mrow>
-                  <mrow>\amp = -\frac{1}{3} \int_{0}^{\pi/2}  \left[(\cos^2(\theta))^{3/2} - 1 \right]  \, d\theta</mrow>
-                  <mrow>\amp = -\frac{1}{3} \int_{0}^{\pi/2}  \cos^3(\theta) \, d\theta + \frac{1}{3} \int_{0}^{\pi/2} 1  \, d\theta</mrow>
-                  <mrow>\amp = -\frac{1}{3} \int_{0}^{\pi/2}  \cos(\theta)(1-\sin^2(\theta)) \, d\theta + \frac{\pi}{6}</mrow>
-                  <mrow>\amp = \frac{\pi}{6} -\frac{1}{3} \int_{0}^{\pi/2}  \cos(\theta)- \cos(\theta)\sin^2(\theta) \, d\theta</mrow>
-                  <mrow>\amp = \frac{\pi}{6} -\frac{1}{3} \left[ \sin(\theta)- \frac{1}{3}\sin^3(\theta)\right] \mid_{0}^{\pi/2}</mrow>
-                  <mrow>\amp = \frac{\pi}{6} -\frac{1}{3} \left[ 1- \frac{1}{3}\right]</mrow>
-                  <mrow>\amp = \frac{\pi}{6} -\frac{2}{9}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The graph of <m>x=y</m> is the line through the origin with slope 1 and the graph of
-                <m>x = \sqrt{1-y^2}</m> is the top half of the unit circle.
-                The circle and the lie <m>x=y</m> intersect at <m>\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)</m>.
-                In polar coordinates the unit circle has equation <m>r=1</m> and the line <m>x=y</m> makes and angle of
-                <m>\frac{\pi}{4}</m> with the positive <m>x</m>-axis.
-                Thus, an equivalent iterated integral in polar coordinates is
-                <me>
-                  \int_{\pi/4}^{\pi/2} \int_{0}^{1} r \cos(r^2) \, dr \, d\theta
-                </me>.
-                Evaluating the integral in polar coordinates using the identity for yields
-                <md>
-                  <mrow>\int_{\pi/4}^{\pi/2} \int_{0}^{1} r \cos(r^2) \, dr \, d\theta \amp = \int_{\sqrt{2}/2}^{\pi/2} \frac{1}{2} \sin(r^2) \mid_{0}^{1} \, d\theta</mrow>
-                  <mrow>\amp = \frac{1}{2}\int_{\pi/4}^{\pi/2} \sin(1)  \, d\theta</mrow>
-                  <mrow>\amp = \frac{1}{2} \sin(1) \int_{\pi/4}^{\pi/2} \, d\theta</mrow>
-                  <mrow>\amp = \frac{\pi}{8} \sin(1)</mrow>
-                </md>.
-              </p>
-            </li>
-          </ol>
-        </answer>
-
-        <solution>
-          <ol marker="a.">
-            <li>
-              <p>
-                The region is the third quadrant portion of the disk centered at the origin of radius 3.
-                In rectangular coordinates an equivalent iterated integral is
-                <me>
-                  \int_{-3}^0 \int_{-\sqrt{9-x^2}}^0 x^2+y^2 \, dy \, dx
-                </me>.
-                Evaluating the integral in polar coordinates yields
-                <md>
-                  <mrow>\int_{\pi}^{3\pi/2} \int_{0}^{3}  r^3 \, dr \, d\theta \amp = \int_{\pi}^{3\pi/2} \frac{1}{4}r^4\mid_{0}^{3} \, d\theta</mrow>
-                  <mrow>\amp =  \frac{81}{4} \int_{\pi}^{3\pi/2} \, d\theta</mrow>
-                  <mrow>\amp =  \frac{81 \pi}{8}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The region is the disk <m>(x-1)^2+y^2=1</m> centered at <m>(1,0)</m> of radius 1.
-                To convert to polar coordinates we substitute for <m>x</m> and <m>y</m> to see that
-                <md>
-                  <mrow>(r \cos(\theta)-1)^2 + (r \sin(\theta))^2 \amp =  1</mrow>
-                  <mrow>r^2\cos^2(\theta) -2r\cos(\theta) + 1 + r^2\sin^2(\theta) \amp =  1</mrow>
-                  <mrow>r^2 - 2r\cos(\theta) \amp = 0</mrow>
-                  <mrow>r \amp = 2\cos(\theta)</mrow>
-                </md>.
-                So an equivalent iterated integral in polar coordinates is
-                <me>
-                  \int_{-\pi/2}^{\pi/2} \int_0^{2 \cos(\theta)} r^2 \, dr \, d\theta
-                </me>.
-                Evaluating the integral in polar coordinates yields
-                <md>
-                  <mrow>\int_{-\pi/2}^{\pi/2} \int_{0}^{2\cos(\theta)}  r^2 \, dr \, d\theta \amp = \int_{-\pi/2}^{\pi/2} \frac{1}{3}r^3\mid_{0}^{2\cos(\theta)} \, d\theta</mrow>
-                  <mrow>\amp =  \int_{-\pi/2}^{\pi/2} \frac{8}{3}\cos^3(\theta) \, d\theta</mrow>
-                  <mrow>\amp =  \frac{8}{3}\int_{-\pi/2}^{\pi/2} \cos(\theta)[1-\sin^2(\theta)] \, d\theta</mrow>
-                  <mrow>\amp =  \frac{8}{3}\int_{-\pi/2}^{\pi/2} \cos(\theta)-\sin^2(\theta)\cos(\theta) \, d\theta</mrow>
-                  <mrow>\amp =  \frac{8}{3} \left[\sin(\theta)-\frac{1}{3}\sin^3(\theta) \right]\mid_{-\pi/2}^{\pi/2}</mrow>
-                  <mrow>\amp =  \frac{8}{3} \left[\left(1-\frac{1}{3} \right) - \left(-1 - \left(-\frac{1}{3}\right) \right)\right]</mrow>
-                  <mrow>\amp =  \frac{32}{9}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                To convert the equation <m>r = \sin(\theta)</m> to rectangular coordinates,
-                we proceed as follows:
-                <md>
-                  <mrow>r \amp = \sin(\theta)</mrow>
-                  <mrow>r^2 \amp = r \sin(\theta)</mrow>
-                  <mrow>x^2+y^2 \amp = y</mrow>
-                  <mrow>x^2+y^2-y + \frac{1}{4} \amp = \frac{1}{4}</mrow>
-                  <mrow>x^2 + \left(y-\frac{1}{2}\right)^2 \amp = \left(\frac{1}{2}\right)^2</mrow>
-                </md>.
-                So the equation <m>r = \sin(\theta)</m> is the circle centered at the point
-                <m>\left( 0, \frac{1}{2}\right)</m> with radius <m>\frac{1}{2}</m>.
-                With <m>0 \leq \theta \leq \frac{\pi}{2}</m> we only get the right half of the circle,
-                so an equivalent iterated integral in rectangular coordinates is
-                <me>
-                  \int_0^1 \int_{0}^{\sqrt{y-y^2}} \sqrt{1-(x^2+y^2)} \, dx \, dy
-                </me>.
-                Evaluating the integral in polar coordinates yields
-                <md>
-                  <mrow>\int_0^{\pi/2} \int_0^{\sin(\theta)} r\sqrt{1-r^2} \, dr \, d\theta \amp = \int_{0}^{\pi/2} -\frac{1}{3} (1-r^2)^{3/2}\mid_{0}^{\sin(\theta)} \, d\theta</mrow>
-                  <mrow>\amp = -\frac{1}{3} \int_{0}^{\pi/2}  \left[(1-\sin^2(\theta))^{3/2}-1 \right] \, d\theta</mrow>
-                  <mrow>\amp = -\frac{1}{3} \int_{0}^{\pi/2}  \left[(\cos^2(\theta))^{3/2} - 1 \right]  \, d\theta</mrow>
-                  <mrow>\amp = -\frac{1}{3} \int_{0}^{\pi/2}  \cos^3(\theta) \, d\theta + \frac{1}{3} \int_{0}^{\pi/2} 1  \, d\theta</mrow>
-                  <mrow>\amp = -\frac{1}{3} \int_{0}^{\pi/2}  \cos(\theta)(1-\sin^2(\theta)) \, d\theta + \frac{\pi}{6}</mrow>
-                  <mrow>\amp = \frac{\pi}{6} -\frac{1}{3} \int_{0}^{\pi/2}  \cos(\theta)- \cos(\theta)\sin^2(\theta) \, d\theta</mrow>
-                  <mrow>\amp = \frac{\pi}{6} -\frac{1}{3} \left[ \sin(\theta)- \frac{1}{3}\sin^3(\theta)\right] \mid_{0}^{\pi/2}</mrow>
-                  <mrow>\amp = \frac{\pi}{6} -\frac{1}{3} \left[ 1- \frac{1}{3}\right]</mrow>
-                  <mrow>\amp = \frac{\pi}{6} -\frac{2}{9}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The graph of <m>x=y</m> is the line through the origin with slope 1 and the graph of
-                <m>x = \sqrt{1-y^2}</m> is the top half of the unit circle.
-                The circle and the lie <m>x=y</m> intersect at <m>\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)</m>.
-                In polar coordinates the unit circle has equation <m>r=1</m> and the line <m>x=y</m> makes and angle of
-                <m>\frac{\pi}{4}</m> with the positive <m>x</m>-axis.
-                Thus, an equivalent iterated integral in polar coordinates is
-                <me>
-                  \int_{\pi/4}^{\pi/2} \int_{0}^{1} r \cos(r^2) \, dr \, d\theta
-                </me>.
-                Evaluating the integral in polar coordinates using the identity for yields
-                <md>
-                  <mrow>\int_{\pi/4}^{\pi/2} \int_{0}^{1} r \cos(r^2) \, dr \, d\theta \amp = \int_{\sqrt{2}/2}^{\pi/2} \frac{1}{2} \sin(r^2) \mid_{0}^{1} \, d\theta</mrow>
-                  <mrow>\amp = \frac{1}{2}\int_{\pi/4}^{\pi/2} \sin(1)  \, d\theta</mrow>
-                  <mrow>\amp = \frac{1}{2} \sin(1) \int_{\pi/4}^{\pi/2} \, d\theta</mrow>
-                  <mrow>\amp = \frac{\pi}{8} \sin(1)</mrow>
-                </md>.
-              </p>
-            </li>
-          </ol>
-        </solution>
-
-        
-      </exercise>
-    </exercises>
+  <xi:include href="exercises/ez-S_multi_ints_double_ints_polar.ptx" />
 </section>
