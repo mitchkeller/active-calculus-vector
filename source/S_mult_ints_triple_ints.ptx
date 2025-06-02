@@ -15,148 +15,177 @@
 <!-- **********************************************************************-->
 <section xml:id="S-11-7-Triple-Integrals" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Triple Integrals</title>
-  
-    <objectives>
-        <ul>
-          <li>
-            <p>
-              How are a triple Riemann sum and the corresponding triple integral of a continuous function <m>f = f(x,y,z)</m> defined?
-            </p>
-          </li>
+  <objectives>
+      <ul>
+        <li>
+          <p>
+            How are a triple Riemann sum and the corresponding triple integral of a continuous function <m>f = f(x,y,z)</m> defined?
+          </p>
+        </li>
 
-          <li>
-            <p>
-              What are two things the triple integral of a function can tell us?
-            </p>
-          </li>
-        </ul>
-    </objectives>
-
-    <introduction>
+        <li>
+          <p>
+            What are two things the triple integral of a function can tell us?
+          </p>
+        </li>
+      </ul>
+  </objectives>
+  <introduction>
     <p>
-      We have now learned that we define the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as a limit of a double Riemann sum, and that these ideas parallel the single-variable integral of a function <m>g = g(x)</m> on an interval <m>[a,b]</m>. Moreover, this double integral has natural interpretations and applications, and can even be considered over non-rectangular regions, <m>D</m>. For instance, given a continuous function <m>f</m> over a region <m>D</m>, the average value of <m>f</m>, <m>f_{\operatorname{AVG}(D)}</m>, is given by
+      In the first five sections of this chapter, we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as a limit of a double Riemann sum, which paralleled the single-variable integral of a function <m>g = g(x)</m> on an interval <m>[a,b]</m>. Moreover, this double integral has natural interpretations and applications, and can be considered over non-rectangular regions, <m>D</m>. For instance, given a continuous function <m>f</m> over a region <m>D</m>, the average value of <m>f</m>, <m>f_{\operatorname{AVG}(D)}</m>, is given by
       <me>
         f_{\operatorname{AVG}(D)} = \frac{1}{A(D)} \iint_D f(x,y) \, dA,
       </me>
-      where <m>A(D)</m> is the area of <m>D</m>. Likewise, if <m>\delta(x,y)</m> describes a mass density function on a lamina over <m>D</m>, the mass, <m>M</m>, of the lamina is given by
+      where <m>A(D)</m> is the area of <m>D</m>. Likewise, if <m>\delta(x,y)</m> describes the density function of a material over <m>D</m>, the total mass of material in <m>D</m>, <m>M</m>, is given by
       <me>
         M = \iint_D \delta(x,y) \, dA.
       </me>
     </p>
 
     <p>
-      It is natural to wonder if it is possible to extend these ideas of double Riemann sums and double integrals for functions of two variables to triple Riemann sums and then triple integrals for functions of three variables. We begin investigating in <xref ref="PA_11_7">Preview Activity</xref>.
+      It is natural to wonder if it is possible to extend these ideas of double Riemann sums and double integrals for functions of two variables to triple Riemann sums and then triple integrals for functions of three variables. We begin investigating this generalization in <xref ref="PA_11_7">Preview Activity</xref> by looking at setting up a classical calculus approach for a rectangular box region in three-dimensions.
     </p>
 
     <exploration xml:id="PA_11_7">
-      <statement> 
-      <p>
-        Consider a solid piece of granite in the shape of a box <m>B = \{(x,y,z) : 0 \leq x \leq 4, 0 \leq y \leq 6, 0 \leq z \leq 8\}</m>, whose density varies from point to point. Let <m>\delta(x, y, z)</m> represent the mass density of the piece of granite at point <m>(x,y,z)</m> in kilograms per cubic meter (so we are measuring <m>x</m>, <m>y</m>, and <m>z</m> in meters). Our goal is to find the mass of this solid.
-      </p>
-
-      <p>
-        Recall that if the density was constant, we could find the mass by multiplying the density and volume; since the density varies from point to point, we will use the approach we did with two-variable lamina problems, and slice the solid into small pieces on which the density is roughly constant.
-      </p>
-
-      <p>
-        Partition the interval <m>[0,4]</m> into 2 subintervals of equal length, the interval <m>[0,6]</m> into 3 subintervals of equal length, and the interval <m>[0,8]</m> into 2 subintervals of equal length. This partitions the box <m>B</m> into sub-boxes as shown in <xref ref="F_11_7_Box_domain">Figure</xref>.
-      </p>
-
-      <figure xml:id="F_11_7_Box_domain">
-        <caption>A partitioned three-dimensional domain.</caption>
-        <image width="50%" source="images/fig_11_7_preview"/>
-      </figure>
-
-      <ol marker="a.">
-        <li>
+      <introduction>
+        <p>
+          Consider a solid piece of granite in the shape of a box <m>B = \{(x,y,z) : 0 \leq x \leq 4, 0 \leq y \leq 6, 0 \leq z \leq 8\}</m>, whose density varies from point to point. Let <m>\delta(x, y, z)</m> represent the mass density of the piece of granite at point <m>(x,y,z)</m> in kilograms per cubic meter (so we are measuring <m>x</m>, <m>y</m>, and <m>z</m> in meters). Our goal is to find the mass of this solid.
+        </p>
+        <p>
+          Recall that if the density was constant, we could find the mass by multiplying the density and volume; since the density varies from point to point, we will use the approach we did with two-variable lamina problems; We will apply the first step of the classic calculus approach by slicing the solid into smaller pieces on which the density is roughly constant and use these pieces to approximate the total volume.
+        </p>
+      </introduction>
+      <task>
+        <statement>
           <p>
-            Let <m>0=x_0 \lt  x_1 \lt  x_2=4</m> be the endpoints of the subintervals of <m>[0,4]</m> after partitioning. Draw a picture of <xref ref="F_11_7_Box_domain">Figure</xref> and label these endpoints on your drawing. Do likewise with <m>0=y_0 \lt  y_1 \lt  y_2 \lt  y_3=6</m> and <m>0=z_0 \lt  z_1 \lt  z_2=8</m>
-    
-                What is the length <m>\Delta x</m> of each subinterval <m>[x_{i-1},x_i]</m> for <m>i</m> from 1 to 2?  the length of <m>\Delta y</m>?  of <m>\Delta z</m>?
+            For our approximation using smaller pieces, we will partition the interval <m>[0,4]</m> into 2 subintervals of equal length, the interval <m>[0,6]</m> into 3 subintervals of equal length, and the interval <m>[0,8]</m> into 2 subintervals of equal length. This partitions the box <m>B</m> into sub-boxes as shown in <xref ref="F_11_7_Box_domain">Figure</xref>.
           </p>
-        </li>
-
-        <li>
+          <!-- <figure xml:id="F_11_7_Box_domain">
+            <caption>A partitioned three-dimensional domain.</caption>
+            <image width="50%" source="images/fig_11_7_preview"/>
+          </figure> -->
+          <figure xml:id="F_11_7_Box_domain">
+            <caption>A partitioned three-dimensional domain</caption>
+            <interactive title="interactive-F_11_7_Box_domain" platform="sage" width="100%" aspect="1:1">
+              <slate surface="sage">
+                var('t,s,x,y,z')
+                from sage.plot.plot3d.shapes import Box
+                xscale=6;yscale=8;zscale=10
+                plot1=arrow((0,0,0),(xscale,0,0),color="black",opacity=0.5,width=2)+text3d("x",(xscale+0.5,0,0),fontsize=30)+text3d("y",(0,yscale+0.5,0),fontsize=30)+text3d("z",(0,0,zscale+0.5),fontsize=30)
+                plot1+=arrow((0,0,0),(0,yscale,0),color="black",opacity=0.5,width=2)+arrow((0,0,0),(0,0,zscale),color="black",opacity=0.5,width=2)
+                #f(x,y)=(3-(-1.5+x)^2/2-(1-y)^2/1.5)*(3+sin(1.6*x*y))/4
+                x1=0;x2=4; y1=0;y2=6; z1=0;z2=8;
+                nx=2; ny=3; nz=2; dx=(x2-x1)/nx; dy=(y2-y1)/ny; dz=(z2-z1)/nz;
+                for i in range(nx):
+                  xa=x1+i*dx; xb=x1+(i+1)*dx;
+                  for j in range(ny):
+                    ya=y1+j*dy;yb=y1+(j+1)*dy;
+                    for k in range(nz):
+                      za=z1+k*dz;yb=y1
+                      plot1+=Box([dx/2,dy/2,dz/2],color="lightblue",opacity=0.5).translate((xa+dx/2,ya+dy/2,za+dz/2))
+                show(plot1,frame=False,viewpoint=[[-0.3692,-0.5082,-0.7781],121.04],camera_position=[20.4801,9.8069,13.1691])            
+              </slate>
+            </interactive>
+          </figure>
+          <p>
+            Let <m>0=x_0 \lt  x_1 \lt  x_2=4</m> be the endpoints of the subintervals of <m>[0,4]</m> after partitioning. Draw a picture of <xref ref="F_11_7_Box_domain">Figure</xref> by hand and label these endpoints on your drawing. Repeat this process with <m>0=y_0 \lt  y_1 \lt  y_2 \lt  y_3=6</m> and <m>0=z_0 \lt  z_1 \lt  z_2=8</m>. What is the length <m>\Delta x</m> of each subinterval <m>[x_{i-1},x_i]</m> for <m>i</m> from 1 to 2?  the length of <m>\Delta y</m>?  of <m>\Delta z</m>?
+          </p>
+        </statement>
+        <answer>
+          <p>
+            We have <m>x_0=0</m>, <m>x_1=2</m>, and <m>x_2=4</m>; <m>y_0=0</m>, <m>y_1=2</m>, <m>y_2=4</m>, and <m>y_3=6</m>; and <m>z_0=0</m>, <m>z_1=4</m>, and <m>z_2=8</m>. This gives us <m>\Delta x = \frac{4-0}{2} = 2</m>, <m>\Delta y = \frac{6-0}{3} = 2</m>, and <m>\Delta z = \frac{8-0}{2} = 4</m>. These points are labeled in figure below.
+          </p>
+          <image width="73%" source="images/fig_11_7_Box_domain_PA_labeled.png"/>
+        </answer>
+        <solution>
+          <p>
+            We have <m>x_0=0</m>, <m>x_1=2</m>, and <m>x_2=4</m>; <m>y_0=0</m>, <m>y_1=2</m>, <m>y_2=4</m>, and <m>y_3=6</m>; and <m>z_0=0</m>, <m>z_1=4</m>, and <m>z_2=8</m>. This gives us <m>\Delta x = \frac{4-0}{2} = 2</m>, <m>\Delta y = \frac{6-0}{3} = 2</m>, and <m>\Delta z = \frac{8-0}{2} = 4</m>. These points are labeled in figure below.
+          </p>
+          <image width="73%" source="images/fig_11_7_Box_domain_PA_labeled.png"/>
+        </solution>
+      </task>
+      <task>
+        <statement>
           <p>
             The partitions of the intervals <m>[0,4]</m>, <m>[0,6]</m> and <m>[0,8]</m> partition the box <m>B</m> into sub-boxes. How many sub-boxes are there? What is volume <m>\Delta V</m> of each sub-box?
           </p>
-        </li>
-
-        <li>
+        </statement>
+        <answer>
           <p>
-            Let <m>B_{ijk}</m> denote the sub-box <m>[x_{i-1},x_i] \times [y_{j-1},y_j] \times [z_{k-1}, z_k]</m>.
-              Say that we choose a point <m>(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*)</m> in the <m>i,j,k</m>th sub-box for each possible combination of <m>i,j,k</m>.  What is the meaning of <m>\delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*)</m>?  What physical quantity will <m>\delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*) \Delta V</m> approximate?
+            Since we partition the interval <m>[0,4]</m> into 2 subintervals, the interval <m>[0,6]</m> into 3 subintervals, and the interval <m>[0,8]</m> into 2 subintervals, there are <m>(2)(3)(2) = 12</m> sub-boxes of <m>B</m>. Each sub-box has volume <m>\Delta x \ \Delta y \ \Delta z = (2)(2)(4) = 16</m>.
           </p>
-        </li>
-
-        <li>
+        </answer>
+        <solution>
           <p>
-            What final step(s) would it take to determine the exact mass of the piece of granite?
+             Since we partition the interval <m>[0,4]</m> into 2 subintervals, the interval <m>[0,6]</m> into 3 subintervals, and the interval <m>[0,8]</m> into 2 subintervals, there are <m>(2)(3)(2) = 12</m> sub-boxes of <m>B</m>. Each sub-box has volume <m>\Delta x \ \Delta y \ \Delta z = (2)(2)(4) = 16</m>.
           </p>
-        </li>
-      </ol>
-      </statement>
-      <solution>
-        <p>
-         
-        <ol marker="a.">
-          <li>
-            <p>
-              We have <m>x_0=0</m>, <m>x_1=2</m>, and <m>x_2=4</m>;
-              <m>y_0=0</m>, <m>y_1=2</m>, <m>y_2=4</m>, and <m>y_3=6</m>;
-              and <m>z_0=0</m>, <m>z_1=4</m>, and <m>z_2=8</m>.
-              This gives us <m>\Delta x = \frac{4-0}{2} = 2</m>,
-              <m>\Delta y = \frac{6-0}{3} = 2</m>,
-              and <m>\Delta z = \frac{8-0}{2} = 4</m>.
-              These points are labeled in figure below.
-              <image width="73%" source="images/fig_11_7_Box_domain_PA_labeled.png"/>
-            </p>
-          </li>
-          <li>
-            <p>
-              Since we partition the interval <m>[0,4]</m> into 2 subintervals,
-              the interval <m>[0,6]</m> into 3 subintervals,
-              and the interval <m>[0,8]</m> into 2 subintervals,
-              there are <m>(2)(3)(2) = 12</m> sub-boxes of <m>B</m>.
-              Each sub-box has volume <m>\Delta x \ \Delta y \ \Delta z = (2)(2)(4) = 16</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The visible sub-boxes are labeled in the figure.
-              Notice that we cannot see boxes
-              <me>
-                B_{111} = [x_0,x_1] \times [y_0, y_1] \times [z_0,z_1] \ \ \text{ and }  \ \ B_{121} = [x_0,x_1] \times [y_1, y_2] \times [z_0,z_1]
-              </me>.
-              If we consider the mass of the solid in sub-box <m>B_{ijk}</m> as a constant
-              <m>\delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*)</m> in kilograms per cubic meter,
-              then the product <m>\delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*) \Delta V</m> will approximate the mass of the solid on sub-box <m>B_{ijk}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              To determine the mass of our solid,
-              we sum the approximations of the masses on each sub-box and the take the limit as <m>\Delta x</m>,
-              <m>\Delta y</m>, and <m>\Delta z</m> go to 0.
-              Thus, the mass of our solid is
-              <me>
-                \lim_{\substack{\Delta x \to 0 \\ \Delta y \to 0 \\ \Delta z \to 0} } \sum_{i=1}^m \sum_{j=1}^n \sum_{k=1}^l \delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*) \Delta V
-              </me>.
-            </p>
-          </li>
-        </ol>
-        </p>
-      </solution>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Let <m>B_{ijk}</m> denote the sub-box <m>[x_{i-1},x_i] \times [y_{j-1},y_j] \times [z_{k-1}, z_k]</m>. Say that we choose a point <m>(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*)</m> in the <m>i,j,k</m>th sub-box for each possible combination of <m>i,j,k</m>. Write a couple of sentences to describe what physical quantity will <m>\delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*) \Delta V</m> approximate and be sure to explain the meaning of <m>\delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*)</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            The visible sub-boxes are labeled in the figure. Notice that we cannot see boxes
+            <me>
+              B_{111} = [x_0,x_1] \times [y_0, y_1] \times [z_0,z_1] \ \ \text{ and }  \ \ B_{121} = [x_0,x_1] \times [y_1, y_2] \times [z_0,z_1]
+            </me>.
+            If we consider the mass of the solid in sub-box <m>B_{ijk}</m> as a constant <m>\delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*)</m> in kilograms per cubic meter, then the product <m>\delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*) \Delta V</m> will approximate the mass of the solid on sub-box <m>B_{ijk}</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            The visible sub-boxes are labeled in the figure. Notice that we cannot see boxes
+            <me>
+              B_{111} = [x_0,x_1] \times [y_0, y_1] \times [z_0,z_1] \ \ \text{ and }  \ \ B_{121} = [x_0,x_1] \times [y_1, y_2] \times [z_0,z_1]
+            </me>.
+            If we consider the mass of the solid in sub-box <m>B_{ijk}</m> as a constant <m>\delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*)</m> in kilograms per cubic meter, then the product <m>\delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*) \Delta V</m> will approximate the mass of the solid on sub-box <m>B_{ijk}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            We partitioned the space of inputs for <m>\delta(x, y, z)</m> into a few pieces. Write a few sentences about what you would change in the process above to improve the approximation of the total mass. Be sure to explain how you know that your changes will give a better approximation.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            To improve on the approximation, we will need to subdivide our region into smaller pieces so that that approximation of the average density <m>\delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*)</m> for the sub-box will be better.
+          </p>
+          <p>
+            To determine the mass of our solid, we sum the approximations of the masses on each sub-box and the take the limit as <m>\Delta x</m>, <m>\Delta y</m>, and <m>\Delta z</m> go to 0. Thus, the mass of our solid is
+            <me>
+              \lim_{\substack{\Delta x \to 0 \\ \Delta y \to 0 \\ \Delta z \to 0} } \sum_{i=1}^m \sum_{j=1}^n \sum_{k=1}^l \delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*) \Delta V
+            </me>
+          </p>
+        </answer>
+        <solution>
+          <p>
+             To improve on the approximation, we will need to subdivide our region into smaller pieces so that that approximation of the average density <m>\delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*)</m> for the sub-box will be better.
+          </p>
+          <p>
+            To determine the mass of our solid, we sum the approximations of the masses on each sub-box and the take the limit as <m>\Delta x</m>, <m>\Delta y</m>, and <m>\Delta z</m> go to 0. Thus, the mass of our solid is
+            <me>
+              \lim_{\substack{\Delta x \to 0 \\ \Delta y \to 0 \\ \Delta z \to 0} } \sum_{i=1}^m \sum_{j=1}^n \sum_{k=1}^l \delta(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*) \Delta V
+            </me>
+          </p>
+        </solution>
+      </task>
     </exploration>
+    <p>
+      In the Preview Activity above, we covered most of the classic calculus approach to set up integration of a density function in three dimensions. In the next subsection, we will generalize these ideas and work on activities and examples that highlight the defintion of a triple integral and how to convert triple integrals to iterated integrals for efficient calculation. 
+    </p>
   </introduction>
 
   <subsection>
     <title>Triple Riemann Sums and Triple Integrals</title>
     <p>
-      Through the application of a mass density distribution over a three-dimensional solid, <xref ref="PA_11_7">Preview Activity</xref> suggests that the generalization from double Riemann sums of functions of two variables to triple Riemann sums of functions of three variables is natural. In the same way, so is the generalization from double integrals to triple integrals. By simply adding a <m>z</m>-coordinate to our earlier work, we can define both a triple Riemann sum and the corresponding triple integral.
+      Through the application of a mass density distribution over a three-dimensional solid, <xref ref="PA_11_7">Preview Activity</xref> suggests a natural generalization from double Riemann sums of functions of two variables to triple Riemann sums of functions of three variables. In the same way, we can generalize from double integrals to triple integrals. By simply adding a <m>z</m>-coordinate to our earlier work, we can define both a triple Riemann sum and the corresponding triple integral.
     </p>
-
-
     <definition>
       <statement>
         <p>
@@ -164,17 +193,14 @@
           <ul>
             <li>
               <p>
-                Partition the interval <m>[a,b]</m> into <m>m</m> subintervals of equal length <m>\Delta x = \frac{b-a}{m}</m>. Let <m>x_0</m>, <m>x_1</m>, <m>\ldots</m>, <m>x_m</m> be the endpoints of these subintervals, where <m>a = x_0\lt x_1\lt x_2 \lt  \cdots \lt  x_m = b</m>.
-                Do likewise with the interval <m>[c,d]</m> using <m>n</m> subintervals of equal length <m>\Delta y = \frac{d-c}{n}</m> to generate <m>c = y_0\lt y_1\lt y_2 \lt  \cdots \lt  y_n = d</m>, and with the interval <m>[r,s]</m> using <m>\ell</m> subintervals of equal length <m>\Delta z = \frac{s-r}{\ell}</m> to have <m>r = z_0\lt z_1\lt z_2 \lt  \cdots \lt  z_l = s</m>.
+                Partition the interval <m>[a,b]</m> into <m>m</m> subintervals of equal length <m>\Delta x = \frac{b-a}{m}</m>. Let <m>x_0</m>, <m>x_1</m>, <m>\ldots</m>, <m>x_m</m> be the endpoints of these subintervals, where <m>a = x_0\lt x_1\lt x_2 \lt  \cdots \lt  x_m = b</m>. Do likewise with the interval <m>[c,d]</m> using <m>n</m> subintervals of equal length <m>\Delta y = \frac{d-c}{n}</m> to generate <m>c = y_0\lt y_1\lt y_2 \lt  \cdots \lt  y_n = d</m>, and with the interval <m>[r,s]</m> using <m>\ell</m> subintervals of equal length <m>\Delta z = \frac{s-r}{\ell}</m> to have <m>r = z_0\lt z_1\lt z_2 \lt  \cdots \lt  z_l = s</m>.
               </p>
             </li>
-
             <li>
               <p>
                 Let <m>B_{ijk}</m> be the sub-box of <m>B</m> with opposite vertices <m>(x_{i-1},y_{j-1},z_{k-1})</m> and <m>(x_i, y_j, z_k)</m> for <m>i</m> between <m>1</m> and <m>m</m>, <m>j</m> between <m>1</m> and <m>n</m>, and <m>k</m> between 1 and <m>\ell</m>. The volume of each <m>B_{ijk}</m> is <m>\Delta V = \Delta x \cdot \Delta y \cdot \Delta z</m>.
               </p>
             </li>
-
             <li>
               <p>
                 Let <m>(x_{ijk}^*, y_{ijk}^*, z_{ijk}^*)</m> be a point in box <m>B_{ijk}</m> for each <m>i</m>, <m>j</m>, and <m>k</m>. The resulting triple Riemann sum for <m>f</m> on <m>B</m> is
@@ -187,12 +213,9 @@
         </p>
       </statement>
     </definition>
-
     <p>
-      If <m>f(x,y,z)</m> represents the mass density of the box <m>B</m>, then, as we saw in <xref ref="PA_11_7">Preview Activity</xref>, the triple Riemann sum approximates the total mass of the box <m>B</m>. In order to find the exact mass of the box, we need to let the number of sub-boxes increase without bound (in other words, let <m>m</m>, <m>n</m>, and <m>\ell</m> go to infinity); in this case, the finite sum of the mass approximations becomes the actual mass of the solid <m>B</m>. More generally, we have the following definition of the triple integral.
+      If <m>f(x,y,z)</m> represents the mass density of a material in the box <m>B</m>, then, as we saw in <xref ref="PA_11_7">Preview Activity</xref>, the triple Riemann sum approximates the total mass of material in the box <m>B</m>. In order to find the exact mass of the box, we need to let the number of sub-boxes increase without bound (in other words, let <m>m</m>, <m>n</m>, and <m>\ell</m> go to infinity); in this case, the finite sum of the mass approximations becomes the actual mass of the solid <m>B</m>. More generally, we have the following definition of the triple integral.
     </p>
-
-
     <definition>
       <statement>
         <p>
@@ -210,6 +233,10 @@
         M = \iiint_B f(x,y,z) \, dV
       </me>
       is the mass of <m>B</m>.<idx><h>mass</h><h>of a solid</h></idx> Even more importantly, for any continuous function <m>f</m> over the solid <m>B</m>, we can use a triple integral to determine the average value of <m>f</m> over <m>B</m>, <m>f_{\operatorname{AVG}(B)}</m>. We note this generalization of our work with functions of two variables along with several others in the following important boxed information. Note that each of these quantities may actually be considered over a general domain <m>S</m> in <m>\R^3</m>, not simply a box, <m>B</m>.
+    </p>
+    <assemblage xml:id="assemblage-tripleint_interpretations">
+      <title>Interpretations of Triple Integrals</title>
+      <p>
       <ul>
         <li>
           <p>
@@ -220,7 +247,6 @@
             represents the <em>volume</em> of the solid <m>S</m><idx><h>volume of a solid</h></idx>.
           </p>
         </li>
-
         <li>
           <p>
             The <em>average value</em> of the function <m>f = f(x,y,x)</m> over a solid domain <m>S</m><idx><h>average value over a solid</h></idx> is given by
@@ -230,7 +256,6 @@
             where <m>V(S)</m> is the volume of the solid <m>S</m>.
           </p>
         </li>
-
         <li>
           <p>
             The <em>center of mass</em><idx><h>center of mass</h><h>of a solid</h></idx> of the solid <m>S</m> with density <m>\delta = \delta(x,y,z)</m> is <m>(\overline{x}, \overline{y}, \overline{z})</m>, where
@@ -242,134 +267,206 @@
           </p>
         </li>
       </ul>
-    </p>
-
+      </p>
+    </assemblage>
     <p>
-      In the Cartesian coordinate system, the volume element <m>dV</m> is <m>dz \, dy \, dx</m>, and, as a consequence, a triple integral of a function <m>f</m> over a box <m>B = [a,b] \times [c,d] \times [r,s]</m> in Cartesian coordinates can be evaluated as an iterated integral of the form
+      In a rectangular coordinate system, the volume element <m>dV</m> is <m>dz \, dy \, dx</m>, and, as a consequence, a triple integral of a function <m>f</m> over a box <m>B = [a,b] \times [c,d] \times [r,s]</m> in Cartesian coordinates can be evaluated as an iterated integral of the form
       <me>
         \iiint_B f(x,y,z) \, dV = \int_a^b \int_c^d \int_r^s f(x,y,z) \, dz \, dy \, dx.
       </me>
     </p>
 
     <p>
-      If we want to evaluate a triple integral as an iterated integral over a solid <m>S</m> that is not a box, then we need to describe the solid in terms of variable limits.
+      If we want to evaluate a triple integral as an iterated integral over a solid <m>S</m> that is not a box, then we need to describe the solid in terms of variable limits that correspond to appropriate inequalities.
     </p>
-
-    <activity xml:id="A_11_7_3">
+  <activity xml:id="A_11_7_3_1">
+    <statement>
+      <p>
+        Set up and evaluate iterated integrals that will evaluate the triple integral of <m>f(x,y,z) = x-y+2z</m> over the box <m>B = [-2,3] \times [1,4] \times [0,2]</m>.
+      </p>
+    </statement>
+    <answer>
+      <p>
+        <m>0</m>
+      </p>
+    </answer>
+    <solution>
+      <p>
+        As an iterated integral we have
+        <md>
+          <mrow>\int \int \int_B f(x,y,z) \, dV \amp = \int_{-2}^3 \int_1^4 \int_0^2 x-y+2z \, dz \, dy \, dx</mrow>
+          <mrow>\amp = \int_{-2}^3 \int_1^4 \left. \left[ (x-y)z+z^2\right] \restrict0^2 \, dy \, dx</mrow>
+          <mrow>\amp = \int_{-2}^3 \int_1^4 2(x-y)+4 \, dy \, dx</mrow>
+          <mrow>\amp = \int_{-2}^3 \left. \left[2xy-y^2+4y\right] \restrict1^4 \, dx</mrow>
+          <mrow>\amp = \int_{-2}^3 6x-3 \, dx</mrow>
+          <mrow>\amp = \left. \left[3x^2-3x\right] \restrict{-2}^3</mrow>
+          <mrow>\amp = 0</mrow>
+        </md>
+      </p>
+    </solution>
+  </activity>
+  <activity xml:id="A_11_7_3">
+    <introduction>
+      <p>
+        Let <m>S</m> be the solid cone bounded by <m>z = \sqrt{x^2+y^2}</m> and <m>z=3</m>. A picture of <m>S</m> is shown in <xref ref="F_11_7_Cone">Figure</xref>. Our goal in this activity is to set up an iterated integral of the form
+        <men xml:id="eq_11_7_TI_not_box">
+          \int_{x=?}^{x=?} \int_{y=?}^{y=?} \int_{z=?}^{z=?} \delta(x,y,z) \, dz \, dy \, dx
+        </men>
+        to represent the mass of <m>S</m> in the setting where <m>\delta(x,y,z)</m> tells us the density of <m>S</m> at the point <m>(x,y,z)</m>. Our particular task is to find the limits on each of the three integrals.
+      </p>
+              <!-- <figure xml:id="F_11_7_Cone_and_Cone_proj">
+          <caption>Left: The cone. Right: Its projection.</caption>
+          <sidebyside widths="50% 50%">
+          <image source="images/fig_11_7_cone_project"/>
+          <image source="images/fig_11_7_cone"/>
+          </sidebyside>
+        </figure> -->
+      <figure xml:id="F_11_7_Cone">
+        <caption> </caption>
+        <interactive title="interactive-F_11_7_Cone" platform="sage" width="100%" aspect="1:1">
+          <slate surface="sage">
+          var('t,s,x,y,z')
+          @interact
+          def tri_int(x0=slider(-3,3,0.1,default=1,label="x="),y0=slider(-3,3,0.1,default=1.5,label="y=")):
+            xscale=3;yscale=3;zscale=4
+            plot2=arrow((0,0,0),(xscale,0,0),color="black",opacity=0.5,width=2)+text3d("x",(xscale+0.5,0,0),fontsize=30)+text3d("y",(0,yscale+0.5,0),fontsize=30)+text3d("z",(0,0,zscale+0.5),fontsize=30)
+            plot2+=arrow((0,0,0),(0,yscale,0),color="black",opacity=0.5,width=2)+arrow((0,0,0),(0,0,zscale),color="black",opacity=0.5,width=2)
+            for i in range(-6,7):
+              val=i/2;
+              plot2+=parametric_plot3d((s,val,0),(s,-3,3),color="gray",opacity=.6)
+              plot2+=parametric_plot3d((val,s,0),(s,-3,3),color="gray",opacity=.6)
+            plot2+=parametric_plot3d((s*cos(t),s*sin(t),s),(s,0,3),(t,0,2*pi),color="lightblue",opacity=0.8)
+            plot2+=parametric_plot3d((s*cos(t),s*sin(t),3),(s,0,3),(t,0,2*pi),color="lightblue",opacity=0.8)
+            if(sign(x0*x0+y0*y0-9)==1):
+              plot2+=point((x0,y0,3),color="red",size=40)
+            else:
+              plot2+=line([(x0,y0,3),(x0,y0,sqrt(x0*x0+y0*y0))],color="black",thickness=3)
+              plot2+=point((x0,y0,3),color="black",size=40)
+              plot2+=point((x0,y0,sqrt(x0*x0+y0*y0)),color="black",size=40)
+            show(plot2)              
+          </slate>
+        </interactive>
+      </figure>
+    </introduction>
+    <task>
       <statement>
         <p>
-     
-      <ol marker="a.">
-      <li>
-        <p>
-          Set up and evaluate the triple integral of <m>f(x,y,z) = x-y+2z</m> over the box <m>B = [-2,3] \times [1,4] \times [0,2]</m>.
+          Remember that for the inner most integral of <xref ref="eq_11_7_TI_not_box">Equation </xref>, we will be looking for bounds on the <m>z</m>-coordinate for fixed values of <m>x</m> and <m>y</m>. In <xref ref="F_11_7_Cone">Figure</xref>, you can use the sliders to change the values of <m>x</m> and <m>y</m> and the plot will show the range of <m>z</m>-coordinates in our region for the particular values of <m>x</m> and <m>y</m>.
         </p>
-      </li>
-
-      <li>
         <p>
-          Let <m>S</m> be the solid cone bounded by <m>z = \sqrt{x^2+y^2}</m> and <m>z=3</m>. A picture of <m>S</m> is shown at right in <xref ref="F_11_7_Cone_and_Cone_proj">Figure</xref>. Our goal in what follows is to set up an iterated integral of the form
-          <men xml:id="eq_11_7_TI_not_box">
-            \int_{x=?}^{x=?} \int_{y=?}^{y=?} \int_{z=?}^{z=?} \delta(x,y,z) \, dz \, dy \, dx
-          </men>
-          to represent the mass of <m>S</m> in the setting where <m>\delta(x,y,z)</m> tells us the density of <m>S</m> at the point <m>(x,y,z)</m>. Our particular task is to find the limits on each of the three integrals.
-
-          <figure xml:id="F_11_7_Cone_and_Cone_proj">
-            <caption>Left: The cone. Right: Its projection.</caption>
-            <sidebyside widths="50% 50%">
-            <image source="images/fig_11_7_cone_project"/>
-            <image source="images/fig_11_7_cone"/>
-            </sidebyside>
-          </figure>
-
-          <ol marker="i.">
-            <li>
-              <p>
-                If we think about slicing up the solid, we can consider slicing the domain of the solid's projection onto the <m>xy</m>-plane (just as we would slice a two-dimensional region in <m>\R^2</m>), and then slice in the <m>z</m>-direction as well. The projection of the solid onto the <m>xy</m>-plane is shown at left in <xref ref="F_11_7_Cone_and_Cone_proj">Figure</xref>. If we decide to first slice the domain of the solid's projection perpendicular to the <m>x</m>-axis, over what range of constant <m>x</m>-values would we have to slice?
-              </p>
-            </li>
-
-            <li>
-              <p>
-                If we continue with slicing the domain, what are the limits on <m>y</m> on a typical slice?  How do these depend on <m>x</m>?   What, therefore, are the limits on the middle integral?
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Finally, now that we have thought about slicing up the two-dimensional domain that is the projection of the cone, what are the limits on <m>z</m> in the innermost integral? Note that over any point <m>(x,y)</m> in the plane, a vertical slice in the <m>z</m> direction will involve a range of values from the cone itself to its flat top.  In particular, observe that at least one of these limits is not constant but depends on <m>x</m> and <m>y</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                In conclusion, write an iterated integral of the form <xref ref="eq_11_7_TI_not_box"/> that represents the mass of the cone <m>S</m>.
-              </p>
-            </li>
-          </ol>
-        </p>
-      </li>
-      </ol>
-           
+          You should try several values of <m>x</m> and <m>y</m> and look at how the length of the segment changes in the <m>z</m>-direction. In particular, there is the same surface as the bottom boundary and the same surface as top boundary <em>for every <m>x</m> and <m>y</m> pair</em>. Give the equations for the top and bottom boundaries (in terms of <m>x</m> and <m>y</m>)
+          <md>
+            <mrow>z_{\text{top}}(x,y)\amp= \underline{\hspace{4cm}} </mrow>
+            <mrow>z_{\text{bottom}}(x,y)\amp= \underline{\hspace{4cm}} </mrow>
+          </md>
         </p>
       </statement>
+      <answer>
+        <p>
+          <md>
+            <mrow>z_{\text{top}}(x,y)\amp= 3 </mrow>
+            <mrow>z_{\text{bottom}}(x,y)\amp= \sqrt{x^2+y^2} </mrow>
+          </md>
+        </p>
+      </answer>
       <solution>
         <p>
-        <ol marker="a.">
-          <li>
-            <p>
-              As an iterated integral we have
-              <md>
-                <mrow>\int \int \int_B f(x,y,z) \, dV \amp = \int_{-2}^3 \int_1^4 \int_0^2 x-y+2z \, dz \, dy \, dx</mrow>
-                <mrow>\amp = \int_{-2}^3 \int_1^4 \left. \left[ (x-y)z+z^2\right] \restrict0^2 \, dy \, dx</mrow>
-                <mrow>\amp = \int_{-2}^3 \int_1^4 2(x-y)+4 \, dy \, dx</mrow>
-                <mrow>\amp = \int_{-2}^3 \left. \left[2xy-y^2+4y\right] \restrict1^4 \, dx</mrow>
-                <mrow>\amp = \int_{-2}^3 6x-3 \, dx</mrow>
-                <mrow>\amp = \left. \left[3x^2-3x\right] \restrict{-2}^3</mrow>
-                <mrow>\amp = 0</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <ol marker="i">
-              <li>
-                <p>
-                  The values of <m>x</m> run from <m>-3</m> to <m>3</m>.
-                </p>
-              </li>
-              <li>
-                <p>
-                  The projection of the cone <m>S</m> onto the <m>xy</m>-plane is image of the top of the cone,
-                  or the equation <m>\sqrt{x^2+y^2} = 3</m>.
-                  This is the circle <m>x^2+y^2 = 9</m>.
-                  The limits on <m>y</m> are from the bottom of the circle to the top,
-                  or <m>-\sqrt{9-x^2} \leq y \leq \sqrt{9-x^2}</m>.
-                </p>
-              </li>
-              <li>
-                <p>
-                  Notice that the smallest value of <m>z</m> on each slice is on the cone,
-                  and the largest value of <m>z</m> is on the plane <m>z=3</m>.
-                  So the limits on <m>z</m> are <m>\sqrt{x^2+y^2} \leq z \leq 3</m>.
-                </p>
-              </li>
-              <li>
-                <p>
-                  An iterated integral that represents the mass of the cone <m>S</m> is
-                  <me>
-                    \int_{-3}^3 \int_{-\sqrt{9-x^2}}^{\sqrt{9-x^2}} \int_{\sqrt{x^2+y^2}}^{3} \delta(x,y,z) \, dz \, dy \, dx
-                  </me>.
-                </p>
-              </li>
-            </ol>
-          </li>
-        </ol>
+          Because the top of our volume is given by <m>z=3</m> and the bottom is given by <m>z=\sqrt{x^2+y^2}</m> for any set of <m>(x,y)</m> in our volume, then 
+          <md>
+            <mrow>z_{\text{top}}(x,y)\amp= 3 </mrow>
+            <mrow>z_{\text{bottom}}(x,y)\amp= \sqrt{x^2+y^2} </mrow>
+          </md>
         </p>
       </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Now that we have our upper and lower boundaries for <m>z</m> as a function of a fixed choice of <m>x</m> and <m>y</m>, we need to look at what set of <m>(x,y)</m> need to be considered. Notice that if you choose a <m>(x,y)</m> choice in <xref ref="F_11_7_Cone">Figure</xref> that does not intersect our volume (like <m>(x,y)=(2.6,-2.3)</m>), then the point shown is red. Write a couple of sentences to explain why the set of <m>(x,y)</m> points we need to conisder is NOT the square <m>[-3,3]\times[-3,3]</m>.
+        </p>
+      </statement>
+    </task>  
+    <task>
+      <statement>
+        <p>
+          On <xref ref="blank44"/>, draw a plot of <m>D</m>, the region of <m>(x,y)</m> points that you need to consider as part of <m>S</m>. 
+        </p>
+        <figure xml:id="blank44">
+          <caption>A grid of <m>[-4,4]\times[-4,4]</m></caption>
+          <image width="60%" xml:id="img-blank44">
+            <sageplot>
+              plot3=point((0,0),size=3,gridlines=true,xmin=-4,xmax=4,ymin=-4,ymax=4,aspect_ratio=1,axes_labels=["$x$","$y$"])
+              plot3                
+            </sageplot>
+          </image>
+        </figure>
+      </statement>
+      <answer>
+        <p>
+          Not every <m>(x,y)</m> point in the square <m>[-3,3]\times[-3,3]</m> will intersect the volume <m>S</m>. Only those points inside the circle <m>x^2+y^2=9</m>.
+        </p>
+      </answer>
+      <solution>
+        <p>
+          Not every <m>(x,y)</m> point in the square <m>[-3,3]\times[-3,3]</m> will intersect the volume <m>S</m>. Only those points inside the circle <m>x^2+y^2=9</m>.
+        </p>
+        <image width="60%">
+          <sageplot>
+            points=[(3*cos(i*2*pi/100),3*sin(i*2*pi/100)) for i in range(101)]
+            plot4=polygon(points,color="lightblue",edgecolor="black",thickness=2,gridlines=true,xmin=-4,xmax=4,ymin=-4,ymax=4,aspect_ratio=1,axes_labels=["$x$","$y$"])
+            plot4                
+          </sageplot>
+        </image>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          We now have part of our iterated integral
+          <me>\iiint_S \delta(x,y,z) dV = \\int_D \left[ \int_{z_{\text{bottom}}(x,y)}^{z_{\text{top}}(x,y)} \delta(x,y,z) dz \right] dA</me> 
+          but we will need to give our region <m>D</m> from the previous task using a veritically simple description in order to have our iterated integral fit the form of <xref ref="eq_11_7_TI_not_box">Equation </xref>.
+        </p>
+        <p>
+          Give the inequalities that describe your region <m>D</m> from the previous task as vertically simple.
+          <md>
+            <mrow>\underline{\hspace{4cm}} \amp\leq x \amp\leq \underline{\hspace{4cm}} </mrow>
+            <mrow>\underline{\hspace{4cm}} \amp\leq y \amp\leq \underline{\hspace{4cm}}</mrow>
+          </md>
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <md>
+            <mrow>-3 \amp\leq x \amp\leq 3 </mrow>
+            <mrow>-\sqrt{9-x^2} \amp\leq y \amp\leq \sqrt{9-x^2}</mrow>
+          </md>
+        </p>
+      </answer>
+    </task>
+    <task>
+      <statement>
+        <p>
+          In conclusion, write an iterated integral of the form <xref ref="eq_11_7_TI_not_box"/> that represents the mass of the cone <m>S</m>.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          <me>
+            \int_{x=-3}^{x=3} \int_{y=-\sqrt{9-x^2}}^{y=\sqrt{9-x^2}} \int_{z=\sqrt{x^2+y^2}}^{z=3} \delta(x,y,z) \, dz \, dy \, dx
+          </me>
+        </p>
+      </answer>
+      <solution>
+        <p>
+          <me>
+            \int_{x=-3}^{x=3} \int_{y=-\sqrt{9-x^2}}^{y=\sqrt{9-x^2}} \int_{z=\sqrt{x^2+y^2}}^{z=3} \delta(x,y,z) \, dz \, dy \, dx
+          </me>
+        </p>
+      </solution>
+    </task>
     </activity>
-
     <p>
-      <em>Note well: </em> When setting up iterated integrals, the limits on a given variable can be <em>only</em> in terms of the remaining variables. In addition, there are multiple different ways we can choose to set up such an integral. For example, two possibilities for iterated integrals that represent a triple integral <m>\iiint_S f(x,y,z) \, dV</m> over a solid <m>S</m> are
+      <em>Algebraic Note:</em> When setting up iterated integrals, the limits on a given variable can be <em>only</em> in terms of the remaining variables. In addition, there are multiple different ways we can choose to set up such an integral. For example, two possibilities for iterated integrals that represent a triple integral <m>\iiint_S f(x,y,z) \, dV</m> over a solid <m>S</m> are
       <ul>
         <li>
           <p>
@@ -383,25 +480,41 @@
           </p>
         </li>
       </ul>
-    </p>
-
-    <p>
       where <m>g_1</m>, <m>g_2</m>, <m>h_1</m>, <m>h_2</m>, <m>p_1</m>, <m>p_2</m>, <m>q_1</m>, and <m>q_2</m> are functions of the indicated variables. There are four other options beyond the two stated here, since the variables <m>x</m>, <m>y</m>, and <m>z</m> can (theoretically) be arranged in any order. Of course, in many circumstances, an insightful choice of variable order will make it easier to set up an iterated integral, just as was the case when we worked with double integrals.
     </p>
-
     <example xml:id="ex_11_7_Tetrahedron_mass">
       <statement>
         <p>
-          Find the mass of the tetrahedron in the first octant bounded by the coordinate planes and the plane <m>x + 2 y + 3 z = 6</m> if the density at point <m>(x,y,z)</m> is given by <m>\delta(x, y, z) = x + y + z</m>. A picture of the solid tetrahedron is shown at left in <xref ref="F_11_7_Tetrahedron_ex">Figure</xref>.
+          In this example, we will find the mass of the tetrahedron in the first octant bounded by the coordinate planes and the plane <m>x + 2 y + 3 z = 6</m> if the density at point <m>(x,y,z)</m> is given by <m>\delta(x, y, z) = x + y + z</m>. A picture of the solid tetrahedron is shown in <xref ref="F_11_7_Tetrahedron_ex">Figure</xref>.
         </p>
-
         <figure xml:id="F_11_7_Tetrahedron_ex">
+          <caption>The tetrahedron in the first octant bounded by the coordinate planes and the plane <m>x + 2 y + 3 z = 6</m> </caption>
+          <interactive title="interactive-F_11_7_Tetrahedron_ex" platform="sage" width="100%" aspect="1:1">
+            <slate surface="sage">
+              var('t,s,x,y,z')
+              xscale=7;yscale=4;zscale=3
+              plot4=arrow((0,0,0),(xscale,0,0),color="black",opacity=0.5,width=2)+text3d("x",(xscale+0.5,0,0),fontsize=30)+text3d("y",(0,yscale+0.5,0),fontsize=30)+text3d("z",(0,0,zscale+0.5),fontsize=30)
+              plot4+=arrow((0,0,0),(0,yscale,0),color="black",opacity=0.5,width=2)+arrow((0,0,0),(0,0,zscale),color="black",opacity=0.5,width=2)
+              plot4+=polygon([(0,0,2),(6,0,0),(0,0,0)],color="lightblue",opacity=0.6)
+              plot4+=polygon([(0,0,2),(6,0,0),(0,3,0)],color="lightblue",opacity=0.6)
+              plot4+=polygon([(0,0,2),(0,0,0),(0,3,0)],color="lightblue",opacity=0.6)
+              plot4+=polygon([(0,0,0),(6,0,0),(0,3,0)],color="lightblue",opacity=0.6)
+              plot4+=point([(0,0,2),(6,0,0),(0,3,0)],color="black",size=50,frame=False)
+              plot4+=text3d("(6,0,0)",(6.5,-0.5,0.5),color="black",fontsize=25)
+              plot4+=text3d("(0,3,0)",(0,4,0.75),color="black",fontsize=25)
+              plot4+=text3d("(0,0,2)",(-0.5,1,2.5),color="black",fontsize=25)
+              plot4+=line([(0,0,2),(6,0,0),(0,3,0),(0,0,2)],color="black",thickness=3)
+              show(plot4,aspect_ratio=(1,1.5,1.5))              
+            </slate>
+          </interactive>
+        </figure>
+        <!-- <figure xml:id="F_11_7_Tetrahedron_ex">
           <caption>Left: The tetrahedron. Right: Its projection.</caption>
           <sidebyside widths="50% 50%">
           <image source="images/fig_11_7_tetrahedron"/>
           <image source="images/fig_11_7_tetrahedron_project"/>
           </sidebyside>
-        </figure>
+        </figure> -->
 
         <p>
           We find the mass, <m>M</m>, of the tetrahedron by the triple integral
@@ -417,24 +530,29 @@
             z = \frac{1}{3}(6 - x - 2y).
           </me>
         </p>
-
         <p>
           The bottom of the tetrahedron is the <m>xy</m>-plane, so the limits on <m>z</m> in the iterated integral will be <m>0 \leq z \leq \frac{1}{3}(6-x-2y)</m>.
         </p>
-
         <p>
           To find the bounds on <m>x</m> and <m>y</m> we project the tetrahedron onto the <m>xy</m>-plane; this corresponds to setting <m>z = 0</m> in the equation <m>z = \frac{1}{3}(6 - x - 2y)</m>. The resulting relation between <m>x</m> and <m>y</m> is
           <me>
             x + 2 y = 6.
           </me>
         </p>
-
+        <figure xml:id="F_11_7_Tetrahedron_ex2">
+          <caption>The projection of our tetrahedron to the <m>xy</m>-plane</caption>
+          <image width="60%" xml:id="img-F_11_7_Tetrahedron_ex2">
+            <sageplot>
+              plot5=polygon([(0,0),(6,0),(0,3)],color="lightblue",edgecolor="black",thickness=3,ymax=4,ticks=[[0,2,4,6],[0,1,2,3,4]])
+              plot5                  
+            </sageplot>
+          </image>
+        </figure>
         <p>
-          The right image in <xref ref="F_11_7_Tetrahedron_ex">Figure</xref> shows the projection of the tetrahedron onto the <m>xy</m>-plane.
+          The plot in <xref ref="F_11_7_Tetrahedron_ex2">Figure</xref> shows the projection of the tetrahedron onto the <m>xy</m>-plane.
         </p>
-
         <p>
-          If we choose to integrate with respect to <m>y</m> for the middle integral in the iterated integral, then the lower limit on <m>y</m> is the <m>x</m>-axis and the upper limit is the hypotenuse of the triangle. Note that the hypotenuse joins the points <m>(6,0)</m> and <m>(0,3)</m> and so has equation <m>y = 3 - \frac{1}{2}x</m>. Thus, the bounds on <m>y</m> are <m>0 \leq y \leq 3 - \frac{1}{2}x</m>. Finally, the <m>x</m> values run from 0 to 6, so the iterated integral that gives the mass of the tetrahedron is
+          If we choose to integrate with respect to <m>y</m> for the middle integral in the iterated integral, then the lower limit on <m>y</m> is the <m>x</m>-axis and the upper limit is the hypotenuse of the triangle. Note that the hypotenuse joins the points <m>(6,0)</m> and <m>(0,3)</m>, thus has equation <m>y = 3 - \frac{1}{2}x</m>. Thus, the bounds on <m>y</m> are <m>0 \leq y \leq 3 - \frac{1}{2}x</m>. Finally, the <m>x</m> values run from 0 to 6, so the iterated integral that gives the mass of the tetrahedron is
           <men xml:id="eq_11_7_Tetrahedron_mass">
             M = \int_{0}^{6} \int_{0}^{3-(1/2)x} \int_{0}^{(1/3)(6-x-2y)} x+y+z \, dz \, dy \, dx.
           </men>
