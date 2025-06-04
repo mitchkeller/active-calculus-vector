@@ -3,7 +3,8 @@
 
 ## Ignore cached versions of generated files 
 /.cache/
-
+/generated-assets/
+/generated-assets-solutions/
 
 
 ## Core latex/pdflatex auxiliary files:
@@ -262,3 +263,5 @@ codechat_config.yaml
 .devcontainer.json
 pretext-cli.yml
 .cache
+.github
+.devcontainer

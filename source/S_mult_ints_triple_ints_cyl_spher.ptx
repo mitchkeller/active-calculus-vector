@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- **********************************************************************-->
-<!-- Copyright 2013-2018                                                   -->
-<!-- Steven Schlicker                                                      -->
+<!-- Copyright 2013-2025                                                   -->
+<!-- Nicholas Long, Mitchel Keller, Steven Schlicker                       -->
 <!--                                                                       -->
 <!-- This file is part of Active Calculus Multivariable.                   -->
 <!--                                                                       -->
@@ -13,16 +13,16 @@
 <!-- derivatives for profit.  All trademarks are the registered marks of   -->
 <!-- their respective owners.                                              -->
 <!-- **********************************************************************-->
-<section xml:id="S-11-8-Triple-Integrals-Cylindrical-Spherical">
+<section xml:id="S-11-8-Triple-Integrals-Cylindrical-Spherical" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Triple Integrals in Cylindrical and Spherical Coordinates</title>
   
     <objectives>
         <ul>
-          <li>
+          <!-- <li>
             <p>
               What are the cylindrical coordinates of a point, and how are they related to Cartesian coordinates?
             </p>
-          </li>
+          </li> -->
 
           <li>
             <p>
@@ -30,11 +30,11 @@
             </p>
           </li>
 
-          <li>
+         <!--  <li>
             <p>
               What are the spherical coordinates of a point, and how are they related to Cartesian coordinates?
             </p>
-          </li>
+          </li> -->
 
           <li>
             <p>
@@ -45,104 +45,89 @@
     </objectives>
 
     <introduction>
-    
     <p>
-      Just as with rectangular coordinates, where we usually write <m>z</m> as a function of <m>x</m> and <m>y</m> to plot the resulting surface, in cylindrical coordinates, we often express <m>z</m> as a function of <m>r</m> and <m>\theta</m>. In the following activity, we explore several basic equations in cylindrical coordinates and the corresponding surface each generates.
+      In <xref ref="S-11-5-Double-Integrals-Polar"/>, we saw how advantageous it could be to use polar coordinates to write iterated integrals when trying to evaluate a double integral. In particular, we saw that double integrals with integrands and regions of integration that are simple to write in polar coordinates are the most convienent to convert, as well as how the area element would be equal to <m>dA = r dr \, d\theta</m> when using polar coordinates.
     </p>
-
-    <activity xml:id="A_11_8_1">
-      <statement> 
-      <p>
-        In this activity, we graph some surfaces using cylindrical coordinates. To improve your intuition and test your understanding, you should first think about what each graph should look like before you plot it using appropriate technology.
-        <ol marker="a.">
-          <li>
-            <p>
-              What familiar surface is described by the points in cylindrical coordinates with <m>r=2</m>, <m>0 \leq \theta \leq 2\pi</m>, and <m>0 \leq z \leq 2</m>?  How does this example suggest that we call these coordinates <em>cylindrical coordinates</em>? How does your answer change if we restrict <m>\theta</m> to <m> 0 \leq \theta \leq \pi</m>? 
-            </p>
-          </li>
-
-          <li>
-            <p>
-              What familiar surface is described by the points in cylindrical coordinates with <m>\theta=2</m>, <m>0 \leq r \leq 2</m>, and <m>0 \leq z \leq 2</m>? 
-            </p>
-          </li>
-
-          <li>
-            <p>
-              What familiar surface is described by the points in cylindrical coordinates with <m>z=2</m>, <m>0 \leq \theta \leq 2\pi</m>, and <m>0 \leq r \leq 2</m>? 
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Plot the graph of the cylindrical equation <m>z=r</m>, where <m>0 \leq \theta \leq 2\pi</m> and <m>0 \leq r \leq 2</m>. What familiar surface results?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Plot the graph of the cylindrical equation <m>z= \theta</m> for <m>0 \leq \theta \leq 4 \pi</m>. What does this surface look like?
-            </p>
-          </li>
-        </ol>
-      </p>
-      </statement>
-      <solution>
-        <p> 
-        <ol marker="a.">
-          <li>
-            <p>
-              In polar coordinates,
-              the graph of <m>r=2</m> is a circle centered at the origin with radius 2.
-              Extending this to cylindrical coordinates,
-              we obtain a cylinder centered at the origin of radius 2, with base on the <m>xy</m>-plane and height 2.
-            </p>
-          </li>
-          <li>
-            <p>
-              In polar coordinates, the graph of
-              <m>\theta = 2</m> is a line through the origin making an angle of 2 radians with the positive <m>x</m>-axis.
-              Extending this to cylindrical coordinates,
-              the graph of <m>\theta=2</m> is a plane through the origin perpendicular to the <m>xy</m>-plane making an angle of 2 radians with the <m>xz</m>-plane.
-            </p>
-          </li>
-          <li>
-            <p>
-              The graph of <m>z=2</m> is just a plane parallel to the <m>xy</m>-plane at a distance 2 above the <m>xy</m>-plane.
-              With <m>0 \leq \theta \leq 2\pi</m> and <m>0 \leq r \leq 2</m>,
-              the graph of <m>z=2</m> is just a disk of radius 2 centered at <m>(0,0,2)</m> within the plane <m>z=2</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              For a fixed value of <m>r</m>,
-              the graph of <m>z=r</m> and
-              <m>0 \leq \theta \leq 2\pi</m> is a circle of radius <m>r</m> in the plane <m>z=r</m>.
-              As <m>r</m> increases the radii increase,
-              so we will obtain a cone with base at the origin,
-              opening up with height <m>2</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              For a fixed <m>\theta</m>,
-              the graph of <m>z=\theta</m> is a line in the
-              <m>z = \theta</m> plane making an angle of <m>\theta</m> with the <m>xz</m>-plane.
-              Allowing <m>\theta</m> to vary will produce a set of lines,
-              spiraling upward so that the result looks like a bit of an auger.
-            </p>
-          </li>
-        </ol>
-        </p>
-      </solution>
-    </activity>
-
     <p>
-      As the name and <xref ref="A_11_8_1">Activity</xref> suggests, cylindrical coordinates are useful for describing surfaces that are cylindrical in nature.
+      In <xref ref="S-Precalc-OtherCoordSystems" />, we introduced both cylindrical and spherical coordinate systems and explore converting points, equations, and regions between these and rectangular coordinate systems in three dimensions. Cylindrical coordinates are most commonly used in situations with rotational symmetry around the <m>z</m>-axis, whereas spherical coordinates are primarily used when there is rotational symmetry around the origin. We encourage you to review these elements, including the <xref ref="Cartesian-cylindrical">conversion equations between cylindrical and rectangular coordinates</xref> and <xref ref="Spherical-rect">conversion equations between spherical and rectangular coordinates</xref>. The following preview activity will include some descriptions of common surfaces given in either cylindrical or spherical coordinates.
+    </p>
+    <exploration>
+      <introduction>
+        <p>
+          In this Preview Activity, we will be reviewing the meaning of each of the cylindrical and spherical coordinates by looking at a description of a common surface in either cylindrical or spherical coordinates. For each task, you should draw a plot of the surface described by hand and write a few sentences describing how your plot relates to the cylindrical/spherical coordinates.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            What familiar surface is described by the points in cylindrical coordinates with <m>r=2</m>, <m>0 \leq \theta \leq 2\pi</m>, and <m>0 \leq z \leq 2</m>?  How does this example suggest that we call these coordinates <em>cylindrical coordinates</em>? How does the surface change if we restrict <m>\theta</m> to <m> 0 \leq \theta \leq \pi</m>? 
+          </p>
+        </statement>
+        <solution>
+          <p>
+            In polar coordinates, the graph of <m>r=2</m> is a circle centered at the origin with radius 2. Extending this to cylindrical coordinates, we obtain a cylinder centered at the origin of radius 2, with base on the <m>xy</m>-plane and height 2.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What familiar surface is described by the points in cylindrical coordinates with <m>\theta=2</m>, <m>0 \leq r \leq 2</m>, and <m>0 \leq z \leq 2</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            In polar coordinates, the graph of <m>\theta = 2</m> is a line through the origin making an angle of 2 radians with the positive <m>x</m>-axis. Extending this to cylindrical coordinates,the graph of <m>\theta=2</m> is a plane through the origin perpendicular to the <m>xy</m>-plane making an angle of 2 radians with the <m>xz</m>-plane.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Plot the graph of the cylindrical equation <m>z=r</m>, where <m>0 \leq \theta \leq 2\pi</m> and <m>0 \leq r \leq 2</m>. What familiar surface results?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            For a fixed value of <m>r</m>, the graph of <m>z=r</m> and <m>0 \leq \theta \leq 2\pi</m> is a circle of radius <m>r</m> in the plane <m>z=r</m>. As <m>r</m> increases the radii increase, so we will obtain a cone with base at the origin, opening up with height <m>2</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+             What familiar surface is described by the points in spherical coordinates with <m>\rho = 1</m>, <m>0 \leq \theta \leq 2\pi</m>, and <m>0 \leq \phi \leq \pi</m>? How does this particular example demonstrate the reason for the name of this coordinate system? What if we restrict <m>\phi</m> to <m>0 \leq \phi \leq \frac{\pi}{2}</m>?       
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Since <m>\rho</m> measures the distance from the origin to a point, the graph of <m>\rho = 1</m> is the set of all points that are a distance 1 from the origin. This makes <m>\rho=1</m> the equation of the sphere of radius 1 centered at the origin.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What familiar surface is described by the points in spherical coordinates with <m>\phi = \frac{\pi}{3}</m>, <m>0 \leq \rho \leq 1</m>, and <m>0 \leq \theta \leq 2\pi</m>? 
+          </p>
+        </statement>
+        <solution>
+          <p>
+            All points with <m>\phi = \frac{\pi}{3}</m> are at a fixed angle from the positive <m>z</m>-axis. The set of such points with <m>0 \leq \rho \leq 1</m> is a cone making an angle of <m>\frac{\pi}{3}</m> with the positive <m>z</m>-axis having a slant height of 1.
+          </p>
+        </solution>
+      </task>
+    </exploration>
+    <p>
+      In this section, we will look at converting triple integrals to use cylindrical and spherical coordinates and similar to our approach in <xref ref="S-11-5-Double-Integrals-Polar"/>, we will focus conceptually on converting
+      <ol>
+        <li>the volume element <m>dV</m></li>
+        <li>the integrand (the function being integrated)</li>
+        <li>the region of integration</li>
+      </ol>
+      to cylindrical and spherical coordinates.
     </p>
   </introduction>
-
-
   <subsection>
     <title>Triple Integrals in Cylindrical Coordinates</title>
     <p>
@@ -156,11 +141,18 @@
         <m>B = \{(r,\theta,z) : r_1 \leq r \leq r_2, \theta_1 \leq \theta \leq \theta_2, z_1 \leq z \leq z_2\},</m>
         is shown in <xref ref="F_11_8_Cylindrical_Vol_Element">Figure</xref>. Let <m>\Delta r = r_2-r_1</m>, <m>\Delta \theta = \theta_2 - \theta_1</m>, and <m>\Delta z = z_2-z_1</m>. We want to determine the volume <m>\Delta V</m> of <m>B</m> in terms of <m>\Delta r</m>, <m>\Delta \theta</m>, <m>\Delta z</m>, <m>r</m>, <m>\theta</m>, and <m>z</m>.
       </p>
-
       <figure xml:id="F_11_8_Cylindrical_Vol_Element">
+        <caption>A cylindrical box</caption>
+        <interactive title="interactive-F_11_8_Cylindrical_Vol_Element" platform="sage" width="100%" aspect="1:1">
+          <slate surface="sage">
+            <xi:include href="interacts/cylindrical-vol.txt" parse="text" />            
+          </slate>
+        </interactive>
+      </figure>
+      <!-- <figure xml:id="F_11_8_Cylindrical_Vol_Element">
         <caption>A cylindrical box.</caption>
         <image width="50%" source="images/fig_11_8_cylindrical_box"/>
-      </figure>
+      </figure> -->
       <p>
       <ol marker="a.">
         <li>
