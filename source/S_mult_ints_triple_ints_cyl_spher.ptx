@@ -133,301 +133,168 @@
     <p>
       To evaluate a triple integral <m>\iiint_S f(x,y,z) \, dV</m> as an iterated integral in Cartesian coordinates, we use the fact that the volume element <m>dV</m> is equal to <m>dz \, dy \, dx</m> (which corresponds to the volume of a small box). To evaluate a triple integral in cylindrical coordinates, we similarly must understand the volume element <m>dV</m> in cylindrical coordinates.
     </p>
-
-    <activity xml:id="A_11_8_2">
-      <statement> 
-      <p>
-        A picture of a cylindrical box,
-        <m>B = \{(r,\theta,z) : r_1 \leq r \leq r_2, \theta_1 \leq \theta \leq \theta_2, z_1 \leq z \leq z_2\},</m>
-        is shown in <xref ref="F_11_8_Cylindrical_Vol_Element">Figure</xref>. Let <m>\Delta r = r_2-r_1</m>, <m>\Delta \theta = \theta_2 - \theta_1</m>, and <m>\Delta z = z_2-z_1</m>. We want to determine the volume <m>\Delta V</m> of <m>B</m> in terms of <m>\Delta r</m>, <m>\Delta \theta</m>, <m>\Delta z</m>, <m>r</m>, <m>\theta</m>, and <m>z</m>.
-      </p>
-      <figure xml:id="F_11_8_Cylindrical_Vol_Element">
-        <caption>A cylindrical box</caption>
-        <interactive title="interactive-F_11_8_Cylindrical_Vol_Element" platform="sage" width="100%" aspect="1:1">
-          <slate surface="sage">
-            <xi:include href="interacts/cylindrical-vol.txt" parse="text" />            
-          </slate>
-        </interactive>
-      </figure>
-      <!-- <figure xml:id="F_11_8_Cylindrical_Vol_Element">
-        <caption>A cylindrical box.</caption>
-        <image width="50%" source="images/fig_11_8_cylindrical_box"/>
-      </figure> -->
-      <p>
-      <ol marker="a.">
-        <li>
-          <p>
-            Appropriately label <m>\Delta r</m>, <m>\Delta \theta</m>, and <m>\Delta z</m> in <xref ref="F_11_8_Cylindrical_Vol_Element">Figure</xref>.
-          </p>
-        </li>
-
-        <li>
-          <p>
-            Let <m>\Delta A</m> be the area of the projection of the box, <m>B</m>, onto the <m>xy</m>-plane, which is shaded blue in <xref ref="F_11_8_Cylindrical_Vol_Element">Figure</xref>.  Recall that we previously determined the area <m>\Delta A</m> in polar coordinates in terms of <m>r</m>, <m>\Delta r</m>, and <m>\Delta \theta</m>. In light of the fact that we know <m>\Delta A</m> and that <m>z</m> is the standard <m>z</m> coordinate from Cartesian coordinates, what is the volume <m>\Delta V</m> in cylindrical coordinates?
-          </p>
-        </li>
-      </ol>
-    </p>
-      </statement>
-      <solution>
-        <p>
-        <ol marker="a.">
-          <li>
-            <p>
-              The labels are shown below.
-            </p>
-              <image width="90%" source="images/11_8_cbox_labels.png"/>
-          </li>
-          <li>
-            <p>
-              Recall that <m>\Delta A</m> was <m>\frac{1}{2}(r_{i+1}+r_i) \Delta r \ \Delta \theta</m>.
-              Since <m>z</m> is just the standard height, we have
-              <me>
-                \Delta V = \Delta A \ \Delta z = \frac{1}{2}(r_{i+1}+r_i) \Delta r \ \Delta \theta \Delta z
-              </me>.
-            </p>
-          </li>
-        </ol>
-      </p>
-      </solution>
-    </activity>
-
     <p>
-      <xref ref="A_11_8_2">Activity</xref> demonstrates that the volume element <m>dV</m> in cylindrical coordinates is given by <m>dV = r \, dz \, dr \, d\theta</m>, and hence the following rule holds in general.
+      In particular, we need to look at the volume of a region created by a small step in each of the coordinates (<m>\Delta r</m>, <m>\Delta \theta</m>, <m>\Delta z</m>). You can see a plot of an example region in <xref ref="F_11_8_Cylindrical_Vol_Element"/> and you should recognize the shaded area in the <m>xy</m>-plane as the area element from our work on double integrals in polar coordinates. Recall that <m>\Delta A</m> was <m>\frac{1}{2}(r_{i+1}+r_i) \Delta r \ \Delta \theta</m> and since <m>z</m> is the perpendicular height of our region, we have
+      <me>
+        \Delta V = \Delta A \ \Delta z = \frac{(r_{i+1}+r_i)}{2} \Delta r \, \Delta \theta \, \Delta z .
+      </me>
+    </p>
+    <figure xml:id="F_11_8_Cylindrical_Vol_Element">
+      <caption>A cylindrical box</caption>
+      <interactive title="interactive-F_11_8_Cylindrical_Vol_Element" platform="sage" width="100%" aspect="1:1">
+        <slate surface="sage">
+          <xi:include href="interacts/cylindrical-vol.txt" parse="text" />            
+        </slate>
+      </interactive>
+    </figure>
+    <p>
+      Remember that as <m>\Delta r</m> shrinks, <m>\frac{(r_{i+1}+r_i)}{2}</m> approaches the <m>r</m>-coordinate of this block. Therefore the volume element <m>dV</m> in cylindrical coordinates is given by <m>dV = r \, dz \, dr \, d\theta</m>.
+    </p>
+    <p>  
+      We can also convert our integrand to polar coordinates by using <m>x=r\cos(\theta)</m> and <m>y=r\sin(\theta)</m>. Slicing our region into a <xref ref="radiallysimple">radially simple</xref> or <xref ref="angsimple">angularly simple</xref> description will provide the bounds of our iterated integrals used to evaluate the triple integral. Remember that cylindrical coordinates are really polar coordinates plus <m>z</m>.
     </p>
 
     <assemblage xml:id="Triple-integral-cylidrical">
       <title>Triple integrals in cylindrical coordinates</title>
-    <p>
-      Given a continuous function <m>f = f(x,y,z)</m> over a region <m>S</m> in <m>\R^3</m>,
-      <me>
-        \iiint_S f(x,y,z) \, dV = \iiint_S f(r\cos(\theta), r\sin(\theta), z) \, r \, dz \, dr \, d\theta.
-      </me>
-    </p>
-
-    <p>
-      The latter expression is an <em>iterated integral in cylindrical coordinates</em>.<idx><h>iterated integral</h><h>cylindrical coordinates</h></idx>
-    </p>
+      <p>
+        Given a continuous function <m>f = f(x,y,z)</m> over a region <m>S</m> in <m>\R^3</m>,
+        <me>
+          \iiint_S f(x,y,z) \, dV = \iiint_S f(r\cos(\theta), r\sin(\theta), z) \, r \, dz \, dr \, d\theta.
+        </me>
+      </p>
+      <p>
+        The latter expression is an <em>iterated integral in cylindrical coordinates</em>.<idx><h>iterated integral</h><h>cylindrical coordinates</h></idx>
+      </p>
     </assemblage>
 
 
 
     <p>
-      Of course, to complete the task of writing an iterated integral in cylindrical coordinates, we need to determine the limits on the three integrals: <m>\theta</m>, <m>r</m>, and <m>z</m>. In the following activity, we explore how to do this in several situations where cylindrical coordinates are natural and advantageous.
+      While the volume elemet and the conversion of the integrand will work the same for every case, the task of writing an iterated integral in cylindrical coordinates will require us to slice the particular region in terms of simple bounds on <m>\theta</m>, <m>r</m>, and <m>z</m>. In the following activity, we explore how to do this in several situations where cylindrical coordinates are natural and advantageous.
     </p>
 
     <activity xml:id="A_11_8_3">
-      <statement> 
-      <p>
-        In this activity we work with triple integrals in cylindrical coordinates. 
-        <ol marker="a.">
-          <li>
-            <p>
-              Let <m>S</m> be the solid bounded above by the graph of <m>z = x^2+y^2</m> and below by <m>z=0</m> on the unit disk in the <m>xy</m>-plane. 
-                <ol marker="i.">
-                  <li>
-                    <p>
-                      The projection of the solid <m>S</m> onto the <m>xy</m>-plane is a disk. Describe this disk using polar coordinates.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Now describe the surfaces bounding the solid <m>S</m> using cylindrical coordinates. 
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      Determine an iterated triple integral expression in cylindrical coordinates that gives the volume of <m>S</m>. You do not need to evaluate this integral. 
-                    </p>
-                  </li>
-                </ol>
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Suppose the density of the cone defined by <m>r = 1 - z</m>, with <m>z \geq 0</m>, is given by <m>\delta(r, \theta, z) = z</m>. A picture of the cone is shown at left in <xref ref="F_11_8_Cylindrical_ex">Figure</xref>, and the projection of the cone onto the <m>xy</m>-plane in given at right in <xref ref="F_11_8_Cylindrical_ex">Figure</xref>. Set up an iterated integral in cylindrical coordinates that gives the mass of the cone. You do not need to evaluate this integral.
-
-              
-              <figure xml:id="F_11_8_Cylindrical_ex">
-                <caption>The cylindrical cone <m>r = 1-z</m> and its projection onto the <m>xy</m>-plane.</caption>
-                <sidebyside widths="50% 50%">
-                  <image source="images/fig_11_8_cone"/>
-                  <image source="images/fig_11_8_cone_project"/>
-                  </sidebyside>
-              </figure>
-              
-
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Determine an iterated integral expression in cylindrical coordinates whose value is the volume of the solid bounded below by the cone <m>z = \sqrt{x^2+y^2}</m> and above by the cone <m>z = 4 - \sqrt{x^2+y^2}</m>. A picture is shown in <xref ref="F_11_8_Cylindrical_ex2">Figure</xref>. You do not need to evaluate this integral.
-
-              <figure xml:id="F_11_8_Cylindrical_ex2">
-                <caption>A solid bounded by the cones <m>z = \sqrt{x^2+y^2}</m>  and <m>z = 4 - \sqrt{x^2+y^2}</m>.</caption>
-                <image width="50%" source="images/fig_11_8_two_cones"/>
-              </figure>
-
-            </p>
-          </li>
-        </ol>
-      </p>
-      </statement>
-      <solution>
+      <introduction>
         <p>
-        <ol marker="a.">
-          <li>
-            <p>
-              Since <m>x^2+y^2=r^2</m> in cylindrical coordinates,
-              our limits on <m>z</m> will be <m>0 \leq z \leq r^2</m>.
-              Thus, an iterated integral in cylindrical coordinates that gives the volume of <m>S</m> is
-              <me>
-                \int \int \int_S 1 \, dV = \int_{0}^{2\pi} \int_0^1 \int_0^{r^2} (1) r \, dz \, dr \, d\theta
-              </me>.
-              Now
-              <md>
-                <mrow>\int_{0}^{2\pi} \int_0^1 \int_0^{r^2} r \, dz \, dr \, d\theta \amp = \int_{0}^{2\pi} \int_0^1 \left. rz \restrict0^{r^2} \, dr \, d\theta</mrow>
-                <mrow>\amp = \int_{0}^{2\pi} \int_0^1 r^3 \, dr \, d\theta</mrow>
-                <mrow>\amp = \int_{0}^{2\pi} \left. \frac{r^4}{4} \restrict0^1 \, d\theta</mrow>
-                <mrow>\amp = \frac{1}{4} \int_{0}^{2\pi} \, d\theta</mrow>
-                <mrow>\amp = \frac{\pi}{2}</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Recall that mass is the integral of density,
-              so the mass of the cone is
-              <me>
-                \int \int \int_S \delta(r, \theta, z) \, dV
-              </me>.
-              The cone is bounded below by the <m>xy</m>-plane and above by the surface <m>r=1-z</m>.
-              If we integrate with respect to <m>z</m> first,
-              then the limits on <m>z</m> are <m>0 \leq z \leq 1-r</m>.
-              When can project the surface into the <m>xy</m>-plane as shown in <xref ref="F_11_8_Cylindrical_ex">Figure</xref>
-              to find the limits on <m>r</m> and <m>\theta</m>.
-              Note than when <m>z=0</m> we have <m>r=1</m>,
-              so the projection is a circle with radius centered at the origin.
-              Therefore, the mass of the cone given the the iterated integral
-              <me>
-                \int \int \int_S \delta(r, \theta, z) \, dV = \int_0^{2\pi} \int_0^1 \int_0^{1-r} zr \, dz \, dr \, d\theta
-              </me>.
-            </p>
-          </li>
-          <li>
-            <p>
-              In cylindrical coordinates the cones are <m>z=r</m> and <m>z=4-r</m>.
-              So we have <m>r \leq z \leq 4-r</m>.
-              Now <m>z=r</m> and <m>z=4-r</m> intersect when <m>r = 4-r</m> or when <m>r=2</m>.
-              So the projection of this solid in the <m>xy</m>-plane is the disk
-              <m>0 \leq r \leq 2</m> and <m>0 \leq \theta \leq 2\pi</m>.
-              So an iterated integral in cylindrical coordinates that gives the volume of this solid is
-              <me>
-                \int_0^{2\pi} \int_0^2 \int_{r}^{4-r} r \, dz \, dr \, d\theta
-              </me>.
-            </p>
-          </li>
-        </ol>
+          In this activity, we will work with a few triple integrals and look at the advantages of utilizing cylindrical coordinates for the iterated integral calculation.
         </p>
-      </solution>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Let <m>S</m> be the solid bounded above by the graph of <m>z = x^2+y^2</m> and below by <m>z=0</m> on the unit disk in the <m>xy</m>-plane.
+          </p>
+          <task>
+            <statement>
+              <p>
+                The projection of the solid <m>S</m> onto the <m>xy</m>-plane is a disk. Describe this disk using inequalities in polar coordinates.
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Use your inequalities from above to write inequalities in cylindrical coordinates that describe the solid <m>S</m>.
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Write out a set of iterated integrals that will evaluate to the volume of <m>S</m>. You do not need to evaluate this integral. 
+              </p>
+            </statement>
+          </task>
+        </statement>
+        <solution>
+          <p>
+            Since <m>x^2+y^2=r^2</m> in cylindrical coordinates, our limits on <m>z</m> will be <m>0 \leq z \leq r^2</m>. Thus, an iterated integral in cylindrical coordinates that gives the volume of <m>S</m> is
+            <me>
+              \int \int \int_S 1 \, dV = \int_{0}^{2\pi} \int_0^1 \int_0^{r^2} (1) r \, dz \, dr \, d\theta
+            </me>
+            Now
+            <md>
+              <mrow>\int_{0}^{2\pi} \int_0^1 \int_0^{r^2} r \, dz \, dr \, d\theta \amp = \int_{0}^{2\pi} \int_0^1 \left. rz \restrict0^{r^2} \, dr \, d\theta</mrow>
+              <mrow>\amp = \int_{0}^{2\pi} \int_0^1 r^3 \, dr \, d\theta</mrow>
+              <mrow>\amp = \int_{0}^{2\pi} \left. \frac{r^4}{4} \restrict0^1 \, d\theta</mrow>
+              <mrow>\amp = \frac{1}{4} \int_{0}^{2\pi} \, d\theta</mrow>
+              <mrow>\amp = \frac{\pi}{2}</mrow>
+            </md>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Suppose the density of the cone defined by <m>r = 1 - z</m>, with <m>z \geq 0</m>, is given by <m>\delta(r, \theta, z) = z</m>. A picture of the cone is shown at in <xref ref="F_11_8_Cylindrical_ex">Figure</xref>. Set up an iterated integral in cylindrical coordinates that gives the mass of the cone. You do not need to evaluate this integral.
+          </p>
+          <!-- <figure xml:id="F_11_8_Cylindrical_ex">
+            <caption>The cylindrical cone <m>r = 1-z</m> and its projection onto the <m>xy</m>-plane.</caption>
+            <sidebyside widths="50% 50%">
+              <image source="images/fig_11_8_cone"/>
+              <image source="images/fig_11_8_cone_project"/>
+              </sidebyside>
+          </figure> -->
+        </statement>
+        <solution>
+          <p>
+            Recall that mass is the integral of density, so the mass of the cone is
+            <me>
+              \int \int \int_S \delta(r, \theta, z) \, dV
+            </me>.
+            The cone is bounded below by the <m>xy</m>-plane and above by the surface <m>r=1-z</m>. If we integrate with respect to <m>z</m> first, then the limits on <m>z</m> are <m>0 \leq z \leq 1-r</m>. When can project the surface into the <m>xy</m>-plane as shown in <xref ref="F_11_8_Cylindrical_ex">Figure</xref> to find the limits on <m>r</m> and <m>\theta</m>. Note than when <m>z=0</m> we have <m>r=1</m>, so the projection is a circle with radius centered at the origin. Therefore, the mass of the cone given as an iterated integral is
+            <me>
+              \int \int \int_S \delta(r, \theta, z) \, dV = \int_0^{2\pi} \int_0^1 \int_0^{1-r} zr \, dz \, dr \, d\theta
+            </me>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Write an iterated integral expression in cylindrical coordinates whose value is the volume of the solid bounded below by the cone <m>z = \sqrt{x^2+y^2}</m> and above by the cone <m>z = 4 - \sqrt{x^2+y^2}</m>. A picture is shown in <xref ref="F_11_8_Cylindrical_ex2">Figure</xref>. You do not need to evaluate this integral.
+          </p>
+          <figure xml:id=" ">
+            <caption> </caption>
+            <interactive title="interactive- " platform="sage" width="100%" aspect="1:1">
+              <slate surface="sage">
+                var('r,s,t,x,y,z')
+                xscale=2.5;yscale=2.5;zscale=4.5
+                plot3=arrow((0,0,0),(xscale,0,0),color="black",opacity=0.5,width=1)+text3d("x",(xscale+0.15,0,0),fontsize=30)+text3d("y",(0,yscale+0.15,0),fontsize=30)+text3d("z",(0,0,zscale+0.15),fontsize=30)
+                plot3+=arrow((0,0,0),(0,yscale,0),color="black",opacity=0.5,width=1)+arrow((0,0,0),(0,0,zscale),color="black",opacity=0.5,width=1)
+                plot3+=parametric_plot3d((r*cos(t),r*sin(t),4-r),(r,0,2),(t,0,2*pi),color="lightblue")
+                plot3+=parametric_plot3d((r*cos(t),r*sin(t),r),(r,0,2),(t,0,2*pi),color="lightblue")
+                plot3              
+              </slate>
+            </interactive>
+          </figure>
+          <!-- <figure xml:id="F_11_8_Cylindrical_ex2">
+            <caption>A solid bounded by the cones <m>z = \sqrt{x^2+y^2}</m>  and <m>z = 4 - \sqrt{x^2+y^2}</m></caption>
+            <image width="50%" source="images/fig_11_8_two_cones"/>
+          </figure> -->
+        </statement>
+        <solution>
+          <p>
+            In cylindrical coordinates the cones are <m>z=r</m> and <m>z=4-r</m>. So we have <m>r \leq z \leq 4-r</m>. Now <m>z=r</m> and <m>z=4-r</m> intersect when <m>r = 4-r</m> or when <m>r=2</m>. So the projection of this solid in the <m>xy</m>-plane is the disk <m>0 \leq r \leq 2</m> and <m>0 \leq \theta \leq 2\pi</m>. So an iterated integral in cylindrical coordinates that gives the volume of this solid is
+            <me>
+              \int_0^{2\pi} \int_0^2 \int_{r}^{4-r} r \, dz \, dr \, d\theta
+            </me>
+          </p>
+        </solution>
+      </task>
     </activity>
   </subsection>
 
-
-  <subsection>
-    <title>Spherical Coordinates</title>
+  
     
 
-    <p>
-      When it comes to thinking about particular surfaces in spherical coordinates, similar to our work with cylindrical and Cartesian coordinates, we usually write <m>\rho</m> as a function of <m>\theta</m> and <m>\phi</m>; this is a natural analog to polar coordinates, where we often think of our distance from the origin in the plane as being a function of <m>\theta</m>. In spherical coordinates, we likewise often view <m>\rho</m> as a function of <m>\theta</m> and <m>\phi</m>, thus viewing distance from the origin as a function of two key angles.
-    </p>
-
-    <p>
-      In the following activity, we explore several basic equations in spherical coordinates and the surfaces they generate.
-    </p>
-
-    <activity xml:id="A_11_8_7">
-      <statement> 
-      <p>
-        In this activity, we graph some surfaces using spherical coordinates. To improve your intuition and test your understanding, you should first think about what each graph should look like before you plot it using appropriate technology.
-        <ol marker="a.">
-          <li>
-            <p>
-              What familiar surface is described by the points in spherical coordinates with <m>\rho = 1</m>, <m>0 \leq \theta \leq 2\pi</m>, and <m>0 \leq \phi \leq \pi</m>? How does this particular example demonstrate the reason for the name of this coordinate system? What if we restrict <m>\phi</m> to <m>0 \leq \phi \leq \frac{\pi}{2}</m>?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              What familiar surface is described by the points in spherical coordinates with <m>\phi = \frac{\pi}{3}</m>, <m>0 \leq \rho \leq 1</m>, and <m>0 \leq \theta \leq 2\pi</m>? 
-            </p>
-          </li>
-
-          <li>
-            <p>
-              What familiar shape is described by the points in spherical coordinates with <m>\theta = \frac{\pi}{6}</m>, <m>0 \leq \rho \leq 1</m>, and <m>0 \leq \phi \leq \pi</m>? 
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Plot the graph of <m>\rho = \theta</m>, for <m>0 \leq \phi \leq \pi</m> and <m>0 \leq \theta \leq 2 \pi</m>. How does the resulting surface appear?
-            </p>
-          </li>
-        </ol>
-      </p>
-      </statement>
-      <solution>
-        <p>
-        <ol marker="a.">
-          <li>
-            <p>
-              Since <m>\rho</m> measures the distance from the origin to a point,
-              the graph of <m>\rho = 1</m> is the set of all points that are a distance 1 from the origin.
-              This makes <m>\rho=1</m> the equation of the sphere of radius 1 centered at the origin.
-            </p>
-          </li>
-          <li>
-            <p>
-              All points with <m>\phi = \frac{\pi}{3}</m> are at a fixed angle from the positive <m>z</m>-axis.
-              The set of such points with
-              <m>0 \leq \rho \leq 1</m> is a cone making an angle of
-              <m>\frac{\pi}{3}</m> with the positive <m>z</m>-axis having a slant height of 1.
-            </p>
-          </li>
-          <li>
-            <p>
-              As in cylindrical coordinates,
-              the graph of <m>\theta = 2</m> is a plane through the origin perpendicular to the <m>xy</m>-plane making an angle of 2 radians with the <m>xz</m>-plane.
-              With <m>0 \leq \rho \leq 1</m> and <m>0 \leq \phi \leq \pi</m>,
-              we obtain a semicircle or radius 1 centered at the origin in this plane.
-            </p>
-          </li>
-          <li>
-            <p>
-              For a fixed value of <m>\theta</m>,
-              the graph of <m>\rho=\theta</m> is an intersection of a sphere of radius <m>\theta</m> centered at the origin with a plane through the origin.
-              If <m>0 \leq \phi \leq \pi</m>, then we get a semicircle.
-              As <m>\theta</m> increases from <m>0</m> to <m>2\pi</m>,
-              the radii of the semicircles increase,
-              leaving us with a surface that looks like a snail shell.
-            </p>
-          </li>
-        </ol>
-        </p>
-      </solution>
-    </activity>
-
-    <p>
-      As the name and <xref ref="A_11_8_7">Activity</xref> indicate, spherical coordinates are particularly useful for describing surfaces that are spherical in nature; they are also convenient for working with certain conical surfaces.
-    </p>
-  </subsection>
 
 
   <subsection>
     <title>Triple Integrals in Spherical Coordinates</title>
+    <p>
+      When it comes to thinking about particular surfaces in spherical coordinates, similar to our work with cylindrical and Cartesian coordinates, we usually write <m>\rho</m> as a function of <m>\theta</m> and <m>\phi</m>; this is a natural analog to polar coordinates, where we often think of our distance from the origin in the plane as being a function of <m>\theta</m>. In spherical coordinates, we likewise often view <m>\rho</m> as a function of <m>\theta</m> and <m>\phi</m>, thus viewing distance from the origin as a function of two key angles.
+    </p>
     <p>
       As with rectangular and cylindrical coordinates, a triple integral <m>\iiint_S f(x,y,z) \, dV</m> in spherical coordinates can be evaluated as an iterated integral once we understand the volume element <m>dV</m>.
     </p>
