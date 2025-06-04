@@ -54,9 +54,6 @@
     </p>
     <exploration xml:id="PA-dotproduct">
       <introduction>
-        <p>
-          In this Preview Activity, we consider some examples that will help us understand what we mean by <q>moving together</q> for two-dimensional vectors. We measure locations and changes in two dimensions by separating into horizontal and vertical parts then combining these measurements. We will take the same approach here; we will look how much our two dimensional vectors move together horizontal, then how much they move together vertically, and finally we will combine these measurements.
-        </p>  
         <p> 
           In this activity, we will use the following vectors:
             <me> \vu_1=\langle 1,2 \rangle , \vu_2=\langle -1,1 \rangle , \vu_3=\langle 2,-1 \rangle , \vu_4=\langle 1,-2 \rangle </me>
@@ -65,7 +62,7 @@
       <task>
         <statement>
           <p>
-            Draw representatives of each of <m>\vu_1,\vu_2,\vu_3,\vu_4</m> in the plane using the axes below.
+            Draw representatives of each of <m>\vu_1,\vu_2,\vu_3,\vu_4</m> in standard position using the axes below.
           </p>
           <figure xml:id="vec2Dblank">
             <caption>A plot of the 2D plane</caption>
@@ -80,197 +77,102 @@
         </statement>
       </task>
       <task xml:id="PA-dotproduct-compute">
-        <introduction>
+        <statement>
           <p>
-            Compute each of the following dot products.
+            Compute each of the dot products listed in the table below. Fill in only the <q>Value</q> column at this point. The <q>Angle Classification</q> column will be completed in the next part.
           </p>
-        </introduction>
-        <task>
-          <statement>
-            <p>
-              <m>\vu_1\cdot \vu_2</m>
-            </p>
-          </statement>
-          <answer>
-            <p>
-              <m>\vu_1\cdot \vu_2 = 1=4</m>.
-            </p>
-          </answer>
-          <solution>
-            <p>
-              <m>\vu_1\cdot \vu_2 = -1+2 = 1</m>
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\vu_1\cdot \vu_3</m>
-            </p>
-          </statement>
-          <answer>
-            <p>
-              <m>\vu_1\cdot \vu_3=0</m>
-            </p>
-          </answer>
-          <solution>
-            <p>
-              <m>\vu_1\cdot \vu_3=2-2 = 0</m>
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\vu_1\cdot \vu_4</m>
-            </p>
-          </statement>
-          <answer>
-            <p>
-              <m>\vu_1\cdot \vu_4=-3</m>
-            </p>
-          </answer>
-          <solution>
-            <p>
-              <m>\vu_1\cdot \vu_4=1-4=-3</m>
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\vu_2\cdot \vu_4</m>
-            </p>
-          </statement>
-          <answer>
-            <p>
-              <m>\vu_2\cdot \vu_4=-3</m>
-            </p>
-          </answer>
-          <solution>
-            <p>
-              <m>\vu_2\cdot \vu_4=-1-2=-3</m>
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\vu_3\cdot \vu_4</m>.
-            </p>
-          </statement>
-          <answer>
-            <p>
-              <m>\vu_3\cdot \vu_4 =4</m>.
-            </p>
-          </answer>
-          <solution>
-            <p>
-              <m>\vu_3\cdot \vu_4=2+2=4</m>.
-            </p>
-          </solution>
-        </task>                                
+          <tabular halign="center">
+            <row header="yes" bottom="major">
+              <cell>Dot Product</cell>
+              <cell>Value</cell>
+              <cell>Angle Classification</cell>
+            </row>
+            <row>
+              <cell><m>\vu_1\cdot \vu_2</m></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>\vu_1\cdot \vu_3</m></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>\vu_1\cdot \vu_4</m></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>\vu_2\cdot \vu_4</m></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>\vu_3\cdot \vu_4</m>.</cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+        </statement>
+        <answer>
+          <p>
+            <m>4</m>, <m>0</m>, <m>-3</m>, <m>-3</m>, <m>4</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            <md>
+              <mrow>\vu_1\cdot \vu_2  \amp = -1+2 = 1</mrow>
+              <mrow>\vu_1\cdot \vu_3 \amp =2-2 = 0</mrow>
+              <mrow>\vu_1\cdot \vu_4 \amp =1-4=-3</mrow>
+              <mrow>\vu_2\cdot \vu_4 \amp =-1-2=-3</mrow>
+              <mrow>\vu_3\cdot \vu_4 \amp =2+2=4</mrow>
+            </md>
+          </p>
+        </solution>
       </task>
       <task xml:id="PA-dotproduct-angle">
-        <introduction>
+        <statement>
           <p>
-            When we look at vectors drawn with the same initial point, as you have done with the vectors in <xref ref="vec2Dblank"/>, we can consider the angle between two vectors to be the <em>smaller</em> angle formed by looking at them. This results in an angle between <m>0</m> and <m>\pi</m> if we measure in radians or between <m>0^{\circ}</m> and <m>180^{\circ}</m> if we measure in degrees. Rather than measuring the angles between the vectors you've drawn in <xref ref="vec2Dblank"/> precisely, classify the angle between the pairs of vectors below as acute, right, or obtuse.
+            When we look at vectors drawn with the same initial point, as you have done with the vectors in <xref ref="vec2Dblank"/>, we can consider the angle between two vectors to be the <em>smaller</em> angle formed by looking at them. This results in an angle between <m>0</m> and <m>\pi</m> if we measure in radians or between <m>0^{\circ}</m> and <m>180^{\circ}</m> if we measure in degrees. Rather than measuring the angles between the vectors you've drawn in <xref ref="vec2Dblank"/> precisely, classify the angle between the pairs of vectors in the table in <xref ref="PA-dotproduct-compute" text="type-local"/> by writing acute, right, or obtuse in the <q>Angle Classification</q> column.
           </p>
-        </introduction>
-        <task>
-          <statement>
-            <p>
-              <m>\vu_1</m> and <m>\vu_2</m>
-            </p>
-          </statement>
-          <answer>
-            <p>
-              Acute
-            </p>
-          </answer>
-          <solution>
-            <p>
-              Acute
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\vu_1</m> and <m>\vu_3</m>
-            </p>
-          </statement>
-          <answer>
-            <p>
-              Right
-            </p>
-          </answer>
-          <solution>
-            <p>
-              Right
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              <m>\vu_1</m> and <m>\vu_4</m>
-            </p>
-          </statement>
-          <answer>
-            <p>
-              Obtuse
-            </p>
-          </answer>
-          <solution>
-            <p>
-              Obtuse
-            </p>
-          </solution>
-        </task>   
-        <task>
-          <statement>
-            <p>
-              <m>\vu_2</m> and <m>\vu_4</m>
-            </p>
-          </statement>
-          <answer>
-            <p>
-              Obtuse
-            </p>
-          </answer>
-          <solution>
-            <p>
-              Obtuse
-            </p>
-          </solution>
-        </task>   
-        <task>
-          <statement>
-            <p>
-              <m>\vu_3</m> and <m>\vu_4</m>
-            </p>
-          </statement>
-          <answer>
-            <p>
-              Acute
-            </p>
-          </answer>
-          <solution>
-            <p>
-              Acute
-            </p>
-          </solution>
-        </task>                                
+        </statement>
+        <answer>
+          <p>
+            Acute, right, obtuse, obtuse, acute.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Acute, right, obtuse, obtuse, acute.
+          </p>
+        </solution>
       </task>
       <task>
         <statement>
-          <p>Look at the values of the dot products that you computed in part <xref ref="PA-dotproduct-compute" text="local"/> and the classifications of the angles between the vectors that you made in part <xref ref="PA-dotproduct-angle" text="local" />. Write a sentence or two to describe what you notice about the relationship between the <em>sign</em> of the dot product and the type of angle between the vectors. Does the value of the dot product or the classification of the angle change if we change the order in which we consider the vectors? 
+          <p>Look at the values of the dot products that you computed in <xref ref="PA-dotproduct-compute" text="type-local"/> and the classifications of the angles between the vectors that you made in <xref ref="PA-dotproduct-angle" text="type-local" />. Write a sentence or two to describe what you notice about the relationship between the <em>sign</em> of the dot product and the type of angle between the vectors.
           </p>
         </statement>
         <solution>
           <p>
             When the angle between the vectors is acute, the dot product is positive. When the angle is obtuse, the dot product is negative. The dot product is <m>0</m> when the vectors are perpendicular.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+             Does the value of the dot product or the classification of the angle change if we change the order in which we consider the vectors? 
+          </p>
+        </statement>
+        <answer>
+          <p>
+            No.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            No.
           </p>
         </solution>
       </task>
@@ -310,7 +212,7 @@
       </task>
     </exploration>
     <p>
-      In <xref ref="PA-dotproduct"/>, you have started developing an understanding of the dot product gives us information about the angle between two  vectors in the plane. The rest of this section will formalize this idea as the dot product of two vectors and explore properties of this measurement.
+      In <xref ref="PA-dotproduct"/>, you have started developing an understanding of how the dot product gives us information about the angle between two vectors in the plane. The rest of this section will formalize this idea about the dot product of two vectors and explore properties of this measurement.
     </p>
   </introduction>
 
@@ -334,23 +236,9 @@
         As we will see shortly, the dot product arises in physics to calculate the work done by a vector force in a given direction. It might be more natural to define the dot product in this context. However, it is more convenient from a mathematical perspective to define the dot product algebraically and then view work as an application of this definition.
       </p>
     </aside>
-    <example>
-      <p>
-        For instance, we find that
-        <me>
-          \langle 3, 0, 1 \rangle\cdot\langle -2, 1, 4 \rangle = 3\cdot(-2) +
-          0\cdot1 + 1\cdot4 = -6 + 0 + 4 = -2.
-        </me>
-        Let's take a second to think about how much these vectors move together in each component. In the first component direction, our two vectors move opposite of each other which is measured by the <m>-6</m> as the first term in our sum. In the second component direction, our two vectors do not move together at all, because our first vector does not have any change in the second component. Thus our second term in the sum is <m>0</m>. In the third component direction, our vectors move together which is measured by the positive <m>4</m> as the last term in our sum. Combining these different component measurements together using a sum will allow us to assess whether the two vectors move together or apart. In this case, the first components of these vectors move apart more than the third components move together so the total amount these vectors move together is negative.
-      </p>
-      <p>
-        If we look at the dot product of <m>\langle 3, 0, 2 \rangle</m> with <m>\langle -2, 1, 4 \rangle</m>, then we see a different result.
-        <me>\langle 3, 0, 2 \rangle\cdot\langle -2, 1, 4 \rangle = 3\cdot(-2) + 0\cdot1 + 2\cdot4 = -6 + 0 + 8 = 2 </me>
-        The difference in sign for this case comes from the fact that the third components of these two vectors move together more than the first components move apart. Later in this section, we will look more precisely at how the lengths of the vectors and ideas of relative direction are related to this measurement of vectors moving together.
-      </p>
-    </example>
+    
     <p>
-      For instance, we find that
+      To illustrate the idea of computing a dot product in more than three dimensions, we find that
       <md>
         <mrow> \langle 3, 0, 1, 5 \rangle\cdot\langle -2, 1, 4, -2 \rangle \amp= 3\cdot(-2) +
         0\cdot1 + 1\cdot4 +5\cdot (-2)</mrow>
@@ -364,7 +252,7 @@
 
 
     <p>
-      The dot product gives us a way to define a product of two vectors, and we will soon formalize the ideas from <xref ref="PA-dotproduct"/> about what the dot product tells us about the angle between vectors. First, however, we state some useful properties the dot product that show how it behaves in ways that are similar to the product of real numbers.
+      The dot product gives us a way to define a product of two vectors, and we will soon formalize the ideas from <xref ref="PA-dotproduct"/> about what the dot product tells us about the angle between vectors. First, however, we state some useful properties the dot product that show how it behaves in ways that are similar to the product of real numbers. In fact, all of these properties are consequences of properties of addition and multiplication of real numbers.
     </p>
 
     <assemblage xml:id="Dot-product-properties">
@@ -497,6 +385,23 @@
           </p>
         </solution>
       </task>
+      <task>
+        <statement>
+          <p>
+            Let <m>\vu,\vv</m> be vectors in <m>\R^n</m>. For what value of <m>t</m> is <m>(t\vu + \vv) dot \vv =0</m>?
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>t=-(\vv\cdot \vv)/(\vu\cdot \vv)</m> (provided <m>\vu\cdot \vv\neq 0</m>)
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Using the distributive property, we have <m>t\vu\cdot \vv + \vv\cdot \vv = 0</m>. We can rearrange this to be <m>t\vu\cdot \vv = -\vv\cdot \vv</m>, or <m>t(\vu\cdot \vv) = -\vv\cdot \vv</m>. Since <m>\vu\cdot \vv</m> is a scalar, we can divide by it (so long as it is nonzero) and have <m>t=-(\vv\cdot \vv)/(\vu\cdot \vv)</m>. If <m>\vu\cdot \vv = 0</m>, then any value of <m>t</m> makes the expression <m>0</m> if <m>\vv = \vec{0}</m> and if <m>\vv\neq \vec{0}</m>, then there is no value of <m>t</m> that works.
+          </p>
+        </solution>
+      </task>
     </activity>
 
   </subsection>
@@ -564,7 +469,7 @@
       </statement>
       <proof>
         <p>
-          To determine this angle, we may apply the Law of Cosines to the triangle shown in <xref ref="dotprodtri" />.
+          Recall that the Law of Cosines says that if we consider any triangle with side lengths <m>a,b,c</m> and <m>\theta</m>  the measure of the angle formed by the sides of length <m>a</m> and <m>b</m>, then <m>c^2=a^2+b^2-2ab\cos(\theta)</m>. To determine the angle <m>\theta</m> here, we may apply the Law of Cosines to the triangle shown in <xref ref="dotprodtri" />. 
         </p>
         <figure xml:id="dotprodtri">
           <caption>A triangle of vectors, <m>\vu</m>, <m>\vv</m>, and <m>\vu-\vv</m> </caption>
@@ -575,8 +480,8 @@
               at1=arctan(1/2)
               at2=arctan(3)
               plot5=arrow((0,0),(2,1),color="black",axes=False,width=4)+arrow((0,0),(1,3),color="black",width=4)
-              plot5+=text("$\\vec{v}$",(0.4,1.8),fontsize=25,color="black")
-              plot5+=text("$\\vec{u}$",(1,0.2),color="black",fontsize=25)
+              plot5+=text("$\\vec{u}$",(0.4,1.8),fontsize=25,color="black")
+              plot5+=text("$\\vec{v}$",(1,0.2),color="black",fontsize=25)
               plot5+=parametric_plot((0.75*cos(t),0.75*sin(t)),(t,at1,at2),color="black")
               plot5+=arrow((0.75*cos(at2-0.05),0.75*sin(at2-0.05)),(0.75*cos(at2),0.75*sin(at2)),color="black")
               plot5+=text("$\\theta$",(cos((at1+at2)/2),sin((at1+at2)/2)),color="black",fontsize=25)
@@ -720,11 +625,11 @@
     <p>
       The last three parts of <xref ref="A_9_3_2_a"/> allow us to succinctly state the observations you arrived at in the Preview Activity. The next subsection will state these conclusions explicitly.
     </p>
-  </subsection>
+  <!-- </subsection>
 
 
   <subsection>
-    <title>The Dot Product and Orthogonality</title>
+    <title>The Dot Product and Orthogonality</title> -->
     <p>
       Many important relationships between vectors arise when the angle between two vectors is a right angle. In this case, we say the vectors are <term>orthogonal</term>. <idx><h>orthogonal</h></idx> For instance, orthogonality often plays a role in optimization problems: to determine the shortest path from a point in <m>\R^3</m> to a given plane, we move along a line orthogonal to the plane. From your prior mathematical experience, you are likely familiar with saying that two objects that form a right angle are <em>perpendicular</em>. When vectors are involved, we prefer to use the term <em>orthogonal</em> because it allows for one (or both) of the vectors to be <m>\vzero</m>, which is a case where we would not say the vectors are perpendicular.
     </p>
@@ -786,15 +691,15 @@
     </p> 
     <figure xml:id="projexamples">
       <caption>Different possibilities for spliting <m>\vu</m> into parts that are parallel and orthogonal to <m>\vv</m></caption>  
-      <sidebyside widths="50% 50%" valign="bottom">  
-        <image width="45%" label="img-projex1">
+      <sidebyside widths="45% 45%" valign="bottom" margins="2%">  
+        <image>
           <description><p>Vector <m>\vv</m> points horizontally with <m>\vu</m> above it making an acute angle <m>\theta</m>. The vector <m>\vw_2</m> is orthogonal to <m>\vv</m>, pointing upward so that the tip of <m>\vw_2</m> coincides with the tip of <m>\vu</m>. Vector <m>\vw_1</m> has the same tail as <m>\vv</m> and its tip coincides with the tail of <m>\vw_2</m>.</p></description>
-          <sageplot>
+          <sageplot label="img-projex1">
             var('t')
-            plot8=arrow((0,0),(3,0),color="black",width=3,axes=False,aspect_ratio=1)
+            plot8=arrow((0,0),(2.5,0),color="black",width=3,axes=False,aspect_ratio=1)
             plot8+=text("$\\vec{u}$",(1.4,2.4),color="black",fontsize=25)
             plot8+=arrow((0,0),(1.6,2.4),color="black",width=3)
-            plot8+=text("$\\vec{v}$",(3.1,0),color="black",fontsize=25)
+            plot8+=text("$\\vec{v}$",(2.6,0),color="black",fontsize=25)
             plot8+=arrow((0,0),(1.6,0),color="blue",width=4)
             plot8+=text("$\\vec{w}_1$",(0.75,-0.2),color="blue",fontsize=25)
             plot8+=arrow((1.6,0),(1.6,2.4),color="red",width=4)
@@ -804,12 +709,12 @@
             plot8
           </sageplot>
         </image>
-        <image width="45%" label="img-projex2">
+        <image>
           <description><p>Vector <m>\vv</m> points horizontally with <m>\vu</m> above it making an obtuse angle <m>\theta</m>. The vector <m>\vw_2</m> is orthogonal to the horizontal axis, which passes through <m>\vv</m>, and <m>\vw_2</m> points upward so that the tip of <m>\vw_2</m> coincides with the tip of <m>\vu</m>. Vector <m>\vw_1</m> has the same tail as <m>\vv</m> and its tip coincides with the tail of <m>\vw_2</m>.</p></description>
-          <sageplot>
+          <sageplot label="img-projex2">
             var('t')
-            plot9=arrow((0,0),(2,0),color="black",width=3,axes=False,aspect_ratio=1)
-            plot9+=text("$\\vec{v}$",(2.1,0),color="black",fontsize=25)
+            plot9=arrow((0,0),(1.5,0),color="black",width=3,axes=False,aspect_ratio=1)
+            plot9+=text("$\\vec{v}$",(1.6,0),color="black",fontsize=25)
             plot9+=arrow((0,0),(-1,2),color="black",width=3)
             plot9+=text("$\\vec{u}$",(-0.75,1.9),color="black",fontsize=25)
             plot9+=arrow((0,0),(-1,0),color="blue",width=4)
@@ -1248,6 +1153,10 @@
       <me>
         \comp_{\vv} \vu = \frac{\vu \cdot \vv}{\vecmag{\vv}}
       </me>.
+      Recalling from earlier in the section that <m>\vu\cdot \vv = \vecmag{\vu}\vecmag{\vv}\cos(\theta)</m>, where <m>\theta</m> is the angle between <m>\vu</m> and <m>\vv</m>, we can also write
+      <me>
+        \comp_{\vv}\vu = \frac{\vecmag{\vu}\vecmag{\vv}\cos(\theta)}{\vecmag{\vv}} = \vecmag{\vu}\cos(\theta)
+      </me>.
     </p>
     <p>
       Vector subtraction also gives us a way to solve for the piece <m>\vw_2</m> of <m>\vu</m> that is orthogonal to <m>\vv</m>. We find <m>\vw_2=\vu-\vw_1= \vu-\frac{\vu \cdot \vv}{\vv \cdot \vv} \vv</m>. The <term>orthogonal projection of <m>\vu</m> onto <m>\vv</m></term> is 
@@ -1270,12 +1179,20 @@
             plot8+=text("$\\mathrm{proj}_{\\vec{v}}\\vec{u}$",(0.75,-0.2),color="blue",fontsize=25)
             plot8+=arrow((1.6,0),(1.6,2.4),color="red",width=4)
             plot8+=text("$\\mathrm{proj}_{\\perp\\vec{v}}\\vec{u}$",(2.1,1.2),color="red",fontsize=25)
+            plot8+=text("$\\theta$",(0.4,0.2),color="black",fontsize=25)
             plot8
           </sageplot>
         </image>
-    </figure>    
+    </figure>
     <p>
-      The component of <m>\vu</m> in the direction of <m>\vv</m> will be a scalar measure of how much of <m>\vu</m> is parallel to <m>\vv</m>. In fact, this shows up in the second formula for <m>\proj_{\vv} \vu</m>. Specifically, we can write <m>\proj_{\vv} \vu = (\comp_{\vv} \vu) \frac{\vv}{\vecmag{\vv}}</m>, which separates the projection of <m>\vu</m> onto <m>\vv</m> into   how much of <m>\vu</m> is parallel to <m>\vv</m> (a scalar) times the unit vector in the direction of <m>\vv</m>. This is useful idea of separating the magnitude of a vector and the direction of a vector (as described by a unit vector) will be used in the analysis of many vector calculations. The first expression for <m>\proj_{\vv} \vu = \frac{\vu \cdot \vv}{\vv\cdot\vv} \vv</m> can be interpreted conceptually as saying the projection of <m>\vu</m> onto <m>\vv</m> must be parallel to <m>\vv</m> and <m>\frac{\vu \cdot \vv}{\vv\cdot\vv}</m> is the length of <m>\proj_{\vv} \vu</m> as a proportion of <m>\vv</m>.
+      Notice in <xref ref="fig-dotproduct-proj-labeled"/> that you can also see 
+      <me>
+        \cos(\theta) = \frac{\vecmag{\proj_{\vv}\vu}}{\vecmag{\vu}} = \frac{\comp_{\vv}\vu}{\vecmag{\vu}},
+      </me>
+      which aligns with our earlier formula <m>\comp_{\vv}\vu = \vecmag{\vu}\cos(\theta)</m>.
+    </p>
+    <p>
+      The component of <m>\vu</m> in the direction of <m>\vv</m> will be a scalar measure of how much of <m>\vu</m> is parallel to <m>\vv</m>. In fact, this shows up in the second formula for <m>\proj_{\vv} \vu</m>. Specifically, we can write <m>\proj_{\vv} \vu = (\comp_{\vv} \vu) \frac{\vv}{\vecmag{\vv}}</m>, which separates the projection of <m>\vu</m> onto <m>\vv</m> into   how much of <m>\vu</m> is parallel to <m>\vv</m> (a scalar) times the unit vector in the direction of <m>\vv</m>. This useful idea of separating the magnitude of a vector and the direction of a vector (as described by a unit vector) will be used in the analysis of many vector calculations. The first expression for <m>\proj_{\vv} \vu = \frac{\vu \cdot \vv}{\vv\cdot\vv} \vv</m> can be interpreted conceptually as saying the projection of <m>\vu</m> onto <m>\vv</m> must be parallel to <m>\vv</m> and <m>\frac{\vu \cdot \vv}{\vv\cdot\vv}</m> is closely related to the length of <m>\proj_{\vv} \vu</m>.
     </p>
 
     <example xml:id="vecprojex">
@@ -1335,14 +1252,14 @@
           </li>
         </ul> 
       </p>
-      <p>
+      <!-- <p>
         This example allows us to contrast the precise meaning of the projection vector with the the original interpretation of the dot product. Specifically, we used the dot product of <m>\vu</m> and <m>\vv</m> to measure how much these vectors move together and found that <m>\langle 4,3\rangle \cdot \langle 0,2 \rangle=6</m>. So <m>\vu</m> and <m>\vv</m> move together a <q>positive</q> amount. This measurement is used in the coefficent for both forms of the projection equation. In the first equation, 
         we use the ratio <m>\frac{\vu \cdot \vv}{\vv\cdot\vv}</m> to measure how much <m>\vu</m> and <m>\vv</m> move together in comparison to the size of <m>\vv</m>. In the second equation for the projection, we use the ratio <m>\frac{\vu \cdot \vv}{\vecmag{\vv}}</m> to measure how much <m>\vu</m> and <m>\vv</m> move together in comparison to unit vector in the direction of <m>\vv</m>. 
-      </p>
+      </p> -->
     </example>
     <p>
-        Going forward, you will see the projection used much more often than the dot product by itself. This is because the projection precisely measures how much of one vector is in a particular direction rather than the much vauger measurement of how much two vectors move together.
-      </p>
+      Going forward, we will use the projection more often than the dot product by itself. This is because the projection precisely measures how much of one vector is in a particular direction rather than the much vauger measurement of the type of angle between the vectors.
+    </p>
     <p>
       The following activity gives you an opportunity to practice the computations involved with finding parallel and orthogonal projections.
     </p>
@@ -1399,14 +1316,9 @@
       <task>
         <statement>
           <p>
-            Now let <m>\vw = \langle -2,4 \rangle </m>. Without doing any calculations, find <m>\proj_{\vw} \vu</m>. Explain your reasoning.
+            Now let <m>\vw = \langle -2,4 \rangle </m>. Add <m>\vw</m> to the picture you drew in the previous part. Without doing any calculations, find <m>\proj_{\vw} \vu</m>. Explain your reasoning.
           </p>
         </statement>
-        <hint>
-          <p>
-            Add <m>\vw</m> to the picture you drew in the previous part.
-          </p>
-        </hint>
         <answer>
           <p>
             <m>\proj_{\vw} \vu = \langle -2, 4 \rangle</m>
@@ -1477,7 +1389,7 @@
       This means that the work is determined only by the magnitude of the force applied parallel to the displacement and the length of the displacement. In fact, work is closely related to the projection of the force vector onto the displacement vector. (More precisely, it is the product of the component of the force vector in the direction of the displacement vector times the magnitude of the displacement vector.)
     </p>
     <p>
-      The units commonly used for work are Joules or Newton-meters in the metric system and foot-pounds in customary units. (In electrical settings, units such as coulomb-volts or kilowatt-hours). Note that these units come from work being the dot product of a force vector, using units of Newtons or pounds, and a displacement vector, using units of meters or feet.
+      The units commonly used for work are Joules or Newton-meters in the metric system and foot-pounds in customary units. (In electrical settings, units such as coulomb-volts or kilowatt-hours may be used.) Note that these units come from work being the dot product of a force vector, using units of Newtons or pounds, and a displacement vector, using units of meters or feet.
 
     </p>
     <activity xml:id="A_9_3_1">
