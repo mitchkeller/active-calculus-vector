@@ -14,15 +14,19 @@
 <!-- their respective owners.                                              -->
 <!-- **********************************************************************-->
 <section xml:id="S-Precalc-CommonGraphs" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Common Graphs in Two and Three Dimensions</title>
+  <title>Common Graphs in Three Dimensions</title>
   <objectives>
       <ul>
         <li>
           <p>
-            What are some sample graphs in two and three dimensions that can be used throughout our study of multivariable ideas?
+            If an equation involving only two variables is plotted in three-dimensional space, what sort of surface is produced?
           </p>
         </li>
-
+        <li>
+          <p>
+            What surfaces arise as graphs of an equations that contain all three of the variables <m>x</m>, <m>y</m>, and <m>z</m> and are quadratic in at least one variable?
+          </p>
+        </li>
       </ul>
   </objectives>
   <introduction> 
@@ -747,7 +751,7 @@
       Compare this to the graph of a hyperboloid of one sheet in <xref ref="quadsurfaces" />, where a line that is parallel to the <m>z</m>-axis will intersect the surface at two places. Lines parallel to the <m>x</m>- or <m>y</m>-axes will also intersect the hyperboloid of one sheet in more than one place. This means that we <em>cannot</em> express the graph of a hyperboloid of one sheet with one of the coordinates as a function of the other two. Algebraically, this corresponds to there being more than one solution when you try to solve the equation <m>\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}=1</m> for one variable. In particular, the multiple solutions come from needing to consider the positive and negative square roots. We will return to this idea in <xref ref="C_MVF" />.
     </p>
   </subsection>
-  <subsection>
+  <outcomes>
     <title>Summary</title>
     <ul>
       
@@ -774,7 +778,7 @@
         </p>
       </li>
     </ul>
-  </subsection>
+  </outcomes>
 
   <xi:include href="exercises/ez-S_Precalc_Common_Graphs.ptx" />  
   <subsection component="instructor" >
