@@ -168,7 +168,7 @@ def expytrace(a=slider(1,2,0.1,default=1.2,label="x-coordinate")):
   fyv=fy(a,-1.5)
   plot11=plot99+parametric_plot3d((x,-1.5,f(x,-1.5)+0.05),(x,0,pi),color="blue",thickness=3)
   plot11+=point((a,-1.5,f(a,-1.5)),color="black",size=30)
-  plot11+=parametric_plot3d((a+t,-1.5,fv+t*fxv+0.05),(t,-0.75,0.75),color="red",thickness=4,zorder=5)
+  plot11+=parametric_plot3d((a+t,-1.5,fv+t*fxv+0.05),(t,-0.75,0.75),color="black",thickness=4,zorder=5)
   show(plot11,viewpoint=[[-0.095,-0.5444,-0.8334],163.45],camera_position=[3.6961,5.9053,4.602])
 </script></pre></div>
 </body>
