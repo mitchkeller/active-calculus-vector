@@ -37,7 +37,7 @@
       </me>
     </p>
     <p>
-      In what follows, we begin exploring the four different second-order partial derivatives of a function of two variables and we will explore what these various derivatives tell us about the function's behavior.
+      In the following preview activity, we will explore how to calculate the four different second-order partial derivatives of a function of two variables as well as what these various derivatives tell us about the function's behavior.
     </p>
     <exploration xml:id="PA_10_3">
     <introduction>
@@ -53,35 +53,9 @@
         </figure> -->
       <figure xml:id="F_10_3_preview">
         <caption>The surface given by <m>z=f(x,y) = \frac{x^2 \sin(2y)}{g}</m> with traces <m>y=0.6</m> (in red) and <m>x=150</m> (in blue)</caption>
-        <interactive title="interactive-F_10_3_preview" platform="sage" width="85%" aspect="1:1.15">
+        <interactive title="interactive-F_10_3_preview" platform="sage" width="100%" aspect="1:1.15">
           <slate surface="sage">
-            var('x,y,z,t')
-            selections=["x-trace only","y-trace only","both traces"];
-            @interact
-            def tracetoggle(s=selector(selections,label="Traces to Draw:")):
-              g(x,y)=x^2*sin(2*y)/9.8
-              gx=diff(g,x)
-              gy=diff(g,y)
-              gv=g(150,0.6)
-              gxv=gx(150,0.6)
-              gyv=gy(150,0.6)
-              plot11=plot3d(g,(x,0,200),(y,0,pi/2),color="gray",plot_points=21,mesh=True,opacity=0.3,axes=True)
-              if(s=="x-trace only"):
-                s1=True
-                s2=False
-              elif(s=="y-trace only"):
-                s1=False
-                s2=True
-              else:
-                s1=True
-                s2=True
-              if(s1):
-                plot11+=parametric_plot3d((x,0.6,g(x,0.6)),(x,0,200),color="red",thickness=2)
-                plot11+=parametric_plot3d((t+150,0.6,gv+t*gxv),(t,-40,40),color="blue",thickness=3,zorder=5)
-              if(s2):
-                plot11+=parametric_plot3d((150,y,g(150,y)),(y,0,pi/2),color="blue",thickness=2)
-                plot11+=parametric_plot3d((150,0.6+t,gv+t*gyv),(t,-0.3,0.3),color="red",thickness=3,zorder=5)
-              show(plot11,aspect_ratio=[1,100,0.05],viewpoint=[[-0.792,0.3576,0.4949],84.75],camera_position=[-200.2301,-189.6884,234.3567])
+            <xi:include href="./interacts/rangefn_traces.txt" parse="text" />
           </slate>
         </interactive>
       </figure>
@@ -159,10 +133,10 @@
               g(x,y)=x^2*sin(2*y)/32
               gx=diff(g,x)
               pts=[(110,0.6),(150,0.6),(190,0.6)]
-              plot1=plot(g(x,0.6),(x,0,200),color="blue",thickness=1,gridlines=True,ymin=0,ymax=1200,xmin=0,xmax=250,axes_labels=["$x$","$f(x,0.06)$"])
+              plot1=plot(g(x,0.6),(x,0,200),color="red",thickness=1,gridlines=True,ymin=0,ymax=1200,xmin=0,xmax=250,axes_labels=["$x$","$f(x,0.06)$"])
               for (a,b) in pts:
                 plot1+=point((a,g(a,b)),size=40,color="black",aspect_ratio=0.2,zorder=5)
-                plot1+=parametric_plot((a+t,g(a,b)+t*gx(a,b)),(t,-10,10),color="red",thickness=2,aspect_ratio=0.2)
+                plot1+=parametric_plot((a+t,g(a,b)+t*gx(a,b)),(t,-10,10),color="black",thickness=2,aspect_ratio=0.2)
               plot1
             </sageplot>
           </image>
@@ -233,7 +207,7 @@
               for (a,b) in pts:
                 gyv=gy(a,b)
                 plot2+=point((b,g(a,b)),size=40,color="black",zorder=5)
-                plot2+=parametric_plot((b+t,g(a,b)+t*gyv),(t,-0.15,0.15),color="red",thickness=2,aspect_ratio=0.0015)
+                plot2+=parametric_plot((b+t,g(a,b)+t*gyv),(t,-0.15,0.15),color="black",thickness=2,aspect_ratio=0.0015)
               plot2
             </sageplot>
           </image>
@@ -280,7 +254,7 @@
     </task>
   </exploration>
   <p>
-    As we saw in the preview activity, we can relate properties of second derivatives from single variable calculus to the behavior of our trace functions. In this section, we will formalize our definitions of the second partial derivatives for a function of two variables and interpret how these give information about the functions behavior. Finally, we will briefly generalize to functions of more than two variables and higher order derivatives.
+    As we saw in the preview activity, we can relate properties of second derivatives from single variable calculus to the behavior of our trace functions. In this section, we will formalize our definitions of the second partial derivatives for a function of two variables and interpret how these give information about the functions behavior. Later in this section, we will briefly generalize to functions of more than two variables and higher order derivatives.
   </p>
   </introduction>
 
@@ -337,7 +311,10 @@
     </p>
 
     <p>
-      Be sure to note carefully the difference between Leibniz notation and subscript notation and the order in which <m>x</m> and <m>y</m> appear in each. In addition, remember that anytime we compute a partial derivative, we hold constant the variable(s) other than the one we are differentiating with respect to. In both notations, we use the same order of operations idea of working inside out. With the Leibniz notation, that means our partial derivative operators are written before the function we are taking partials of, whereas with the subscript notation writes order of derivatives <em>after</em> the function.  
+      Be sure to note carefully the difference between Leibniz notation and subscript notation and the order in which <m>x</m> and <m>y</m> appear in each. In addition, remember that anytime we compute a partial derivative, we hold constant the variable(s) other than the one we are differentiating with respect to.
+    </p>
+    <p>
+      In both notations, we use the same order of operations idea of working inside out. With the Leibniz notation, that means our partial derivative operators are written before the function we are taking partials of, whereas with the subscript notation writes order of derivatives <em>after</em> the function.
     </p>
 
     <activity xml:id="A_10_3_1">
@@ -347,7 +324,7 @@
           Find all second order partial derivatives of the following functions. For each partial derivative you calculate, state explicitly which variable is being held constant.
           <ol marker="i.">
             <li> <m>f(x,y) = x^2y^3</m> </li>
-            <li> <m>f(x,y) = y\cos(x)</m> </li>
+            <li> <m>y(q,p) = p\cos(q)</m> </li>
             <li><m>g(s,t) = st^3 + s^4</m> </li>
           </ol>
         </p>
@@ -372,15 +349,15 @@
           <li>
             To begin, we calculate the first order partials:
             <md>
-              <mrow>f_x(x,y) \amp = -y\sin(x)</mrow>
-              <mrow>f_y(x,y) \amp = \cos(x)</mrow>
+              <mrow>y_q(x,y) \amp = -p\sin(q)</mrow>
+              <mrow>y_p(x,y) \amp = \cos(q)</mrow>
             </md>.
             The second order partial derivatives are partial derivatives of the first order partial derivatives:
             <md>
-              <mrow>f_{xx}(x,y) \amp = (f_x)_x(x,y) = -y\cos(x)</mrow>
-              <mrow>f_{xy}(x,y) \amp = (f_x)_y(x,y) = -\sin(x)</mrow>
-              <mrow>f_{yx}(x,y) \amp = (f_y)_x(x,y) = -\sin(x)</mrow>
-              <mrow>f_{yy}(x,y) \amp = (f_y)_y(x,y) = 0</mrow>
+              <mrow>y_{qq}(x,y) \amp = (y_q)_q(q,p) = -p\cos(q)</mrow>
+              <mrow>y_{qp}(x,y) \amp = (y_q)_p(q,p) = -\sin(q)</mrow>
+              <mrow>y_{pq}(x,y) \amp = (y_p)_q(q,p) = -\sin(q)</mrow>
+              <mrow>y_{pp}(x,y) \amp = (y_p)_p(q,p) = 0</mrow>
             </md>
           </li>
           <li>
@@ -420,15 +397,15 @@
           <li>
             To begin, we calculate the first order partials:
             <md>
-              <mrow>f_x(x,y) \amp = -y\sin(x)</mrow>
-              <mrow>f_y(x,y) \amp = \cos(x)</mrow>
+              <mrow>y_q(x,y) \amp = -p\sin(q)</mrow>
+              <mrow>y_p(x,y) \amp = \cos(q)</mrow>
             </md>.
             The second order partial derivatives are partial derivatives of the first order partial derivatives:
             <md>
-              <mrow>f_{xx}(x,y) \amp = (f_x)_x(x,y) = -y\cos(x)</mrow>
-              <mrow>f_{xy}(x,y) \amp = (f_x)_y(x,y) = -\sin(x)</mrow>
-              <mrow>f_{yx}(x,y) \amp = (f_y)_x(x,y) = -\sin(x)</mrow>
-              <mrow>f_{yy}(x,y) \amp = (f_y)_y(x,y) = 0</mrow>
+              <mrow>y_{qq}(x,y) \amp = (y_q)_q(q,p) = -p\cos(q)</mrow>
+              <mrow>y_{qp}(x,y) \amp = (y_q)_p(q,p) = -\sin(q)</mrow>
+              <mrow>y_{pq}(x,y) \amp = (y_p)_q(q,p) = -\sin(q)</mrow>
+              <mrow>y_{pp}(x,y) \amp = (y_p)_p(q,p) = 0</mrow>
             </md>
           </li>
           <li>
@@ -452,7 +429,7 @@
     <task>
       <statement>
         <p>
-          How many second order partial derivatives does the function <m>h</m> defined by <m>h(x,y,z,t) = 9x^9z-xyz^9 + 9t</m> have? Write a sentence to justify your reasoning on the number of second order partial derivatives of <m>h</m>. Finally, find <m>h_{xz}</m> and <m>h_{zx}</m> (you do not need to find the other second order partial derivatives).
+          If <m>h(x,y,z,t) = 9x^9z-xyz^9 + 9t</m>, how many second order partial derivatives does the function <m>h</m> have? Write a sentence to justify your reasoning on the number of second order partial derivatives of <m>h</m>. Finally, find <m>h_{xz}</m> and <m>h_{zx}</m> (you do not need to find the other second order partial derivatives).
         </p>
       </statement>
       <answer>
@@ -500,77 +477,116 @@
   </p>
   <figure xml:id="increasing">
     <caption>Plots of three functions that are increasing, but doing so at an increasing rate, a constant rate, and a decreasing rate, respectively</caption>
-    <image width="100%" xml:id="img-increasing">
-      <sageplot>
-        from matplotlib import ticker
-        var('x,y,t')
-        tic=[i for i in range(-1,4)]
-        xv=[0.5,1.5,2.5]
-        f(x)=2.5-(x-3)^2/3+0.25
-        df=diff(f,x)
-        plot43=point((0,0),size=0,gridlines=True,ymin=-1,ymax=3,xmin=-1,xmax=3,ticks=[tic,tic],axes=True,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
-        plot43+=plot(f,(x,0.2,2.8),color="blue",aspect_ratio=1,thickness=2)
-        for a in xv:
-          plot43+=point((a,f(a)),size=20,color="black")
-          plot43+=parametric_plot((a+t,f(a)+t*df(a)),(t,-0.25,0.25),color="red",zorder=5,thickness=2)
-        f(x)=0.8*x+0.25
-        df=diff(f,x)
-        plot42=point((0,0),size=0,gridlines=True,ymin=-1,ymax=3,xmin=-1,xmax=3,ticks=[tic,tic],axes=True,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
-        plot42+=plot(f,(x,0.2,2.8),color="blue",aspect_ratio=1,thickness=2)
-        for a in xv:
-          plot42+=point((a,f(a)),size=20,color="black")
-          plot42+=parametric_plot((a+t,f(a)+t*df(a)),(t,-0.25,0.25),color="red",zorder=5,thickness=2)
-        f(x)=(x)^2/3+0.25
-        df=diff(f,x)
-        plot41=point((0,0),size=0,gridlines=True,ymin=-1,ymax=3,xmin=-1,xmax=3,ticks=[tic,tic],axes=True,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
-        plot41+=plot(f,(x,0.2,2.8),color="blue",aspect_ratio=1,thickness=2)
-        for a in xv:
-          plot41+=point((a,f(a)),size=20,color="black")
-          plot41+=parametric_plot((a+t,f(a)+t*df(a)),(t,-0.25,0.25),color="red",zorder=5,thickness=2)
-        plot44=graphics_array([plot41,plot42,plot43],1,3)
-        plot44
-      </sageplot>
-    </image>
+    <sidebyside widths="33% 33% 33%">
+      <image xml:id="img-increasing1">
+        <sageplot>
+          from matplotlib import ticker
+          var('x,y,t')
+          tic=[i for i in range(-1,4)]
+          xv=[0.5,1.5,2.5]
+          f(x)=(x)^2/3+0.25
+          df=diff(f,x)
+          plot41=point((0,0),size=0,gridlines=True,ymin=-1,ymax=3,xmin=-1,xmax=3,ticks=[tic,tic],axes=True,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
+          plot41+=plot(f,(x,0.2,2.8),color="blue",aspect_ratio=1,thickness=2)
+          for a in xv:
+              plot41+=point((a,f(a)),size=20,color="black")
+              plot41+=parametric_plot((a+t,f(a)+t*df(a)),(t,-0.25,0.25),color="red",zorder=5,thickness=2)
+          plot41
+        </sageplot>
+      </image>
+      <image xml:id="img-increasing2">
+        <sageplot>
+          from matplotlib import ticker
+          var('x,y,t')
+          tic=[i for i in range(-1,4)]
+          xv=[0.5,1.5,2.5]
+          f(x)=0.8*x+0.25
+          df=diff(f,x)
+          plot42=point((0,0),size=0,gridlines=True,ymin=-1,ymax=3,xmin=-1,xmax=3,ticks=[tic,tic],axes=True,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
+          plot42+=plot(f,(x,0.2,2.8),color="blue",aspect_ratio=1,thickness=2)
+          for a in xv:
+              plot42+=point((a,f(a)),size=20,color="black")
+              plot42+=parametric_plot((a+t,f(a)+t*df(a)),(t,-0.25,0.25),color="red",zorder=5,thickness=2)
+          plot42
+        </sageplot>
+      </image>
+      <image xml:id="img-increasing3">
+        <sageplot>
+          from matplotlib import ticker
+          var('x,y,t')
+          tic=[i for i in range(-1,4)]
+          xv=[0.5,1.5,2.5]
+          f(x)=2.5-(x-3)^2/3+0.25
+          df=diff(f,x)
+          plot43=point((0,0),size=0,gridlines=True,ymin=-1,ymax=3,xmin=-1,xmax=3,ticks=[tic,tic],axes=True,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
+          plot43+=plot(f,(x,0.2,2.8),color="blue",aspect_ratio=1,thickness=2)
+          for a in xv:
+              plot43+=point((a,f(a)),size=20,color="black")
+              plot43+=parametric_plot((a+t,f(a)+t*df(a)),(t,-0.25,0.25),color="red",zorder=5,thickness=2)
+          plot43
+        </sageplot>
+      </image>
+    </sidebyside>
   </figure>
   <p>
-    In <xref ref="increasing" />, the left curve has the slopes of the tangent liens increasing (from left to right) which means that the function is increasing at an increasing rate. In other words the derivative of the slope of the tangent lines is positive, thus <m>f''(x) \gt 0</m>. We say that this curve is concave up. The middle curve in <xref ref="increasing" /> has tangent lines with the same slope, which means that the function is increasing with constant rate. Thus the derivative of the slope of the tangent lines will be zero. The right curve in <xref ref="increasing" /> has the slope of the tangent lines decreasing (from left to right) which means the function is increasing at a decreasing rate. In other words, the derivative of the slope of the tangent line is negative, so <m>f''(x) \lt 0</m>. We say that this curve is concave down. 
+    In <xref ref="increasing" />, the left curve has the slopes of the tangent lines increasing (as you move along the graph from left to right) which means that the function is increasing at an increasing rate. In other words, the derivative of the slope of the tangent lines is positive, thus <m>f''(x) \gt 0</m>. We say that this curve is concave up. The middle curve in <xref ref="increasing" /> has tangent lines with the same slope, which means that the function is increasing at a constant rate. Thus the derivative of the slope of the tangent lines will be zero. The right curve in <xref ref="increasing" /> has the slope of the tangent lines decreasing (as you move along the graph from left to right) which means the function is increasing at a decreasing rate. In other words, the derivative of the slope of the tangent line is negative, so <m>f''(x) \lt 0</m>. We say that this curve is concave down. 
   </p>
   <p>
-    A similar argument can be applied to the graphs of decreasing functions, as shown in <xref ref="decreasing"/>. In particular, we can say that the left plot will have negative sloples of tangent lines but those slopes are increasing (from left to right), so <m>f''(x) \gt 0 </m> and the curve is concave up. The middle plot in <xref ref="decreasing"/> has a constant slope for tangent lines along the curve, thus the second derivative is zero. The right plot in <xref ref="decreasing"/> has negative slopes of tangent lines (decreasing graph), and the slopes of those tangent lines are decreasing. Thus <m>f''(x) \lt 0</m> and we say that the graph is concave down.
+    A similar argument can be applied to the graphs of decreasing functions, as shown in <xref ref="decreasing"/>. In particular, we can say that the left plot will have negative slopes of tangent lines but those slopes are increasing (from left to right), so <m>f''(x) \gt 0 </m> and the curve is concave up. The middle plot in <xref ref="decreasing"/> has a constant slope for tangent lines along the curve, thus the second derivative is zero. The right plot in <xref ref="decreasing"/> has negative slopes of tangent lines (decreasing graph), and the slopes of those tangent lines are decreasing. Thus <m>f''(x) \lt 0</m> and we say that the graph is concave down.
   </p>
   <figure xml:id="decreasing">
     <caption>Plots of three functions that are decreasing, but doing so at an increasing rate, a constant rate, and a decreasing rate, respectively</caption>
-    <image width="100%" xml:id="img-decreasing">
-      <sageplot>
-        from matplotlib import ticker
-        var('x,y,t')
-        tic=[i for i in range(-1,4)]
-        xv=[0.5,1.5,2.5]
-        f(x)=(x-3)^2/3+0.25
-        df=diff(f,x)
-        plot31=point((0,0),size=0,gridlines=True,ymin=-1,ymax=3,xmin=-1,xmax=3,ticks=[tic,tic],axes=True,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
-        plot31+=plot(f,(x,0.2,2.8),color="blue",aspect_ratio=1,thickness=2)
-        for a in xv:
-          plot31+=point((a,f(a)),size=20,color="black")
-          plot31+=parametric_plot((a+t,f(a)+t*df(a)),(t,-0.25,0.25),color="red",zorder=5,thickness=2)
-        f(x)=2.5-0.8*x
-        df=diff(f,x)
-        plot32=point((0,0),size=0,gridlines=True,ymin=-1,ymax=3,xmin=-1,xmax=3,ticks=[tic,tic],axes=True,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
-        plot32+=plot(f,(x,0.2,2.8),color="blue",aspect_ratio=1,thickness=2)
-        for a in xv:
-          plot32+=point((a,f(a)),size=20,color="black")
-          plot32+=parametric_plot((a+t,f(a)+t*df(a)),(t,-0.25,0.25),color="red",zorder=5,thickness=2)
-        f(x)=3-(x)^2/3-0.25
-        df=diff(f,x)
-        plot33=point((0,0),size=0,gridlines=True,ymin=-1,ymax=3,xmin=-1,xmax=3,ticks=[tic,tic],axes=True,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
-        plot33+=plot(f,(x,0.2,2.8),color="blue",aspect_ratio=1,thickness=2)
-        for a in xv:
-          plot33+=point((a,f(a)),size=20,color="black")
-          plot33+=parametric_plot((a+t,f(a)+t*df(a)),(t,-0.25,0.25),color="red",zorder=5,thickness=2)
-        plot34=graphics_array([plot31,plot32,plot33],1,3)
-        plot34
-      </sageplot>
-    </image>
+    <sidebyside widths="33% 33% 33%">
+      <image width="100%" xml:id="img-decreasing1">
+        <sageplot>
+          from matplotlib import ticker
+          var('x,y,t')
+          tic=[i for i in range(-1,4)]
+          xv=[0.5,1.5,2.5]
+          f(x)=(x-3)^2/3+0.25
+          df=diff(f,x)
+          plot31=point((0,0),size=0,gridlines=True,ymin=-1,ymax=3,xmin=-1,xmax=3,ticks=[tic,tic],axes=True,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
+          plot31+=plot(f,(x,0.2,2.8),color="blue",aspect_ratio=1,thickness=2)
+          for a in xv:
+              plot31+=point((a,f(a)),size=20,color="black")
+              plot31+=parametric_plot((a+t,f(a)+t*df(a)),(t,-0.25,0.25),color="red",zorder=5,thickness=2)
+          plot31
+        </sageplot>
+      </image>
+      <image width="100%" xml:id="img-decreasing2">
+        <sageplot>
+          from matplotlib import ticker
+          var('x,y,t')
+          tic=[i for i in range(-1,4)]
+          xv=[0.5,1.5,2.5]
+          f(x)=2.5-0.8*x
+          df=diff(f,x)
+          plot32=point((0,0),size=0,gridlines=True,ymin=-1,ymax=3,xmin=-1,xmax=3,ticks=[tic,tic],axes=True,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
+          plot32+=plot(f,(x,0.2,2.8),color="blue",aspect_ratio=1,thickness=2)
+          for a in xv:
+              plot32+=point((a,f(a)),size=20,color="black")
+              plot32+=parametric_plot((a+t,f(a)+t*df(a)),(t,-0.25,0.25),color="red",zorder=5,thickness=2)
+          plot32
+        </sageplot>
+      </image>
+      <image width="100%" xml:id="img-decreasing3">
+        <sageplot>
+          from matplotlib import ticker
+          var('x,y,t')
+          tic=[i for i in range(-1,4)]
+          xv=[0.5,1.5,2.5]
+          f(x)=3-(x)^2/3-0.25
+          df=diff(f,x)
+          plot33=point((0,0),size=0,gridlines=True,ymin=-1,ymax=3,xmin=-1,xmax=3,ticks=[tic,tic],axes=True,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
+          plot33+=plot(f,(x,0.2,2.8),color="blue",aspect_ratio=1,thickness=2)
+          for a in xv:
+              plot33+=point((a,f(a)),size=20,color="black")
+              plot33+=parametric_plot((a+t,f(a)+t*df(a)),(t,-0.25,0.25),color="red",zorder=5,thickness=2)
+          plot33
+        </sageplot>
+      </image>
+    </sidebyside>
+    
   </figure>
   <p>
     Remember that <m> -10 \lt -5 </m> and <m> -5 \lt 2</m>, so an increase in negative numbers means they are getting closer to zero and a decrease in negative numbers will mean that values are getting <q>more negative</q>. 
@@ -590,8 +606,18 @@
     Furthermore, we remember that the second derivative of a function at a point provides us with information about the concavity of the function at that point. 
    --> 
   <p> 
-    Since the unmixed second-order partial derivative <m>f_{xx}</m> requires us to hold <m>y</m> constant and differentiate twice with respect to <m>x</m>, we can view <m>f_{xx}</m> as the second derivative of a trace of <m>f</m> where <m>y</m> is fixed. As such, <m>f_{xx}</m> will measure the concavity of this trace. You can use the slider in <xref ref="F_10_3_fxx" /> to change the location of the tangent line shown on the trace given by <m>y=-1.5</m>. As with <em>ALL</em> plots in three dimensions, you should look at the axes or the coordinate values shown in the frame of the plot to make sure you understand which direction corresponds to an increase in each variable. This is especially important with interactive plots like the ones used throughout this text because you may have changed the perspective from the original settings in order to see the plot from a different place. 
+    Since the unmixed second-order partial derivative <m>f_{xx}</m> requires us to hold <m>y</m> constant and differentiate twice with respect to <m>x</m>, we can view <m>f_{xx}</m> as the second derivative of a trace of <m>f</m> where <m>y</m> is fixed. As such, <m>f_{xx}</m> will measure the concavity of this trace. 
   </p>
+  <example>
+    <p>
+      In this example, we will look at the second partial derivative of <m>f(x,y) = \sin(x)e^{-y}</m> with respect to <m>x</m> and how <m>f_{xx}</m> measures the concavity of the surface in the directions parallel to the <m>x</m>-axis.
+    </p>
+    <p>  
+      <xref ref="F_10_3_fxx" /> shows a plot of the surface defined by <m>z=f(x,y) = \sin(x)e^{-y}</m> with the trace at <m>y=-1.5</m> highlighted (including a tangent line). You can use the slider at the top of <xref ref="F_10_3_fxx" /> to change the location of the tangent line shown on the trace given by <m>y=-1.5</m>. As with <em>ALL</em> plots in three dimensions, you should look at the axes or the coordinate values shown in the frame of the plot to make sure you understand which direction corresponds to an increase in each variable. This is especially important with interactive plots like the ones used throughout this text because you may have changed the perspective from the original settings in order to see the plot from a different view.
+    </p>
+    <p>
+      As you increase the <m>x</m>-coordinate where the tangent line is shown, you should notice that the slope of the tangent line is decreasing, and just as in single variable calculus, this is why the trace is concave down.
+    </p>
   <figure xml:id="F_10_3_fxx">
     <caption>The surface given by <m>z=f(x,y) = \sin(x)e^{-y}</m> with trace at <m>y=-1.5</m> and tangent line drawn </caption>
     <interactive title="interactive-F_10_3_fxx" platform="sage" width="85%" aspect="1:1.15">
@@ -622,27 +648,28 @@
           fyv=fy(a,-1.5)
           plot11=plot99+parametric_plot3d((x,-1.5,f(x,-1.5)+0.05),(x,0,pi),color="blue",thickness=3)
           plot11+=point((a,-1.5,f(a,-1.5)),color="black",size=30)
-          plot11+=parametric_plot3d((a+t,-1.5,fv+t*fxv+0.05),(t,-0.75,0.75),color="red",thickness=4,zorder=5)
+          plot11+=parametric_plot3d((a+t,-1.5,fv+t*fxv+0.05),(t,-0.75,0.75),color="black",thickness=4,zorder=5)
           show(plot11,viewpoint=[[-0.095,-0.5444,-0.8334],163.45],camera_position=[3.6961,5.9053,4.602])
       </slate>
     </interactive> 
   </figure>
   <p>
-    You should notice that the slope of the tangent line is decreasing as <m>x</m> increases, and just as in single variable calculus, this is why the trace is concave down. Indeed, we see that <m>f_x(x,y)=\cos(x)e^{-y}</m> and so <m>f_{xx}(x,y)=-\sin(x)e^{-y} \lt  0</m>, since <m>e^{-y} \gt 0</m> for all values of <m>y</m>, including <m>y = -1.5</m>.
+    Algebraically, we can calculate <m>f_x(x,y)=\cos(x)e^{-y}</m> and so <m>f_{xx}(x,y)=-\sin(x)e^{-y} </m>. If we consider <m>x</m> coordinates from <m>0</m> to <m>\pi</m>, then <m>f_{xx}(x,y)=-\sin(x)e^{-y} \lt 0 </m> since <m>-\sin(x) \leq 0</m> if <m>x\in[0,\pi]</m> and <m>e^{-y} \gt 0</m> for all values of <m>y</m>, including <m>y = -1.5</m>. The other second partials of <m>f</m> are explored in <xref ref="A_10_3_2a" />. 
   </p>
+</example>
   <p>
     In the following activity, we further explore what second-order partial derivatives tell us about the geometric behavior of a surface.
   </p>
   <activity xml:id="A_10_3_2a">
   <introduction>
     <p>
-      We continue to consider the function <m>f</m> defined by <m>f(x,y) = \sin(x) e^{-y}</m>.
+      We will continue to work with the function <m>f</m> defined by <m>f(x,y) = \sin(x) e^{-y}</m>.
     </p>
   </introduction>
   <task>
     <statement>
       <p>
-        In <xref ref="F_10_3_fyy">Figure</xref>, we see the trace of <m>f(x,y) = \sin(x) e^{-y}</m> with <m>x</m> held constant with <m>x = 1.75</m> plotted in blue. You can use the slider in <xref ref="F_10_3_fyy">Figure</xref> to look at how the slope of the tangent line changes as you vary the <m>y</m>-coordinate along this trace. Write a couple of sentences that describe whether the slope of the tangent lines to this curve increase or decrease as <m>y</m> increases. Be sure to pay attention to which direction corresponds to each coordinate increasing. 
+        In <xref ref="F_10_3_fyy">Figure</xref>, we see the trace of <m>f(x,y) = \sin(x) e^{-y}</m> with <m>x</m> held constant with <m>x = 1.75</m> plotted in blue. You can use the slider in <xref ref="F_10_3_fyy">Figure</xref> to look at how the slope of the tangent line changes as you vary the <m>y</m>-coordinate along this trace. Write a couple of sentences that describe whether the slope of the tangent lines to this curve increase or decrease as <m>y</m> increases along the trace <m>x=1.75</m>. Be sure to pay attention to which direction corresponds to each coordinate increasing. 
       </p>
       <figure xml:id="F_10_3_fyy">
         <caption>The surface given by <m>z=f(x,y) = \sin(x)e^{-y}</m> with trace at <m>x=1.75</m> and tangent line drawn </caption>
@@ -674,8 +701,8 @@
               fyv=fy(1.75,a)
               plot12=plot99+parametric_plot3d((1.75,y,f(1.75,y)+0.05),(y,-2,0),color="blue",thickness=3)
               plot12+=point3d((1.75,a,f(1.75,a)),color="black",size=30)
-              plot12+=parametric_plot3d((1.75,a+t,fv+t*fyv+0.05),(t,-0.5,0.5),color="red",thickness=4,zorder=5)
-              show(plot12,viewpoint=[[-0.095,-0.5444,-0.8334],163.45],camera_position=[3.6961,5.9053,4.602])
+              plot12+=parametric_plot3d((1.75,a+t,fv+t*fyv+0.05),(t,-0.5,0.5),color="black",thickness=4,zorder=5)
+              show(plot12,viewpoint=[[-0.4995,0.5074,0.7022],110.69],camera_position=[-4.3266,-0.9076,3.4276])
           </slate>
         </interactive> 
       </figure>
@@ -692,7 +719,7 @@
   <task>
     <statement>
       <p>
-        Compute <m>f_{yy}(x,y)</m> and explain how your observations in the previous task is related to the value of <m>f_{yy}(1.75,y)</m>.  Be sure to address the notion of concavity in your response and be careful to note the directions in which <m>x</m> and <m>y</m> are increasing.
+        Compute <m>f_{yy}(x,y)</m> algebraically and explain how your observations in the previous task are related to the value of <m>f_{yy}(1.75,y)</m>. Be sure to address the notion of concavity in your response and be careful to note the directions in which <m>y</m> is increasing.
       </p>
     </statement>
     <answer>
@@ -709,17 +736,17 @@
   <task>
     <statement>
       <p>
-        We want to explore what is described by the mixed partial derivative, <m>f_{xy}</m> and we will focus on the point given by <m>(x,y)=(1.75,-1.5)</m>. We are going to work through the definition for <m>f_{xy} (1.75,-1.5)</m> carefully now.
+        We want to explore what is described by the mixed partial derivative, <m>f_{xy}</m>, and we will focus on the point given by <m>(x,y)=(1.75,-1.5)</m>. In this task, we will work through the definition for <m>f_{xy} (1.75,-1.5)</m> carefully.
       </p>
       <p>  
-        The partial derivative <m>f_x(1.75,-1.5)</m> measures the slope of the line tangent to the trace given by <m>y=-1.5</m>. The tangent line we are examining is changing in the <m>x</m>-direction. When we look at <m>f_{xy}</m>, we are taking the partial derivative of <m>f_x</m> with respect to <m>y</m>, <m>\frac{\partial}{\partial y} \Bigl[ f_x \Bigr]</m>. So we are looking at how the slope of the tangent line in the <m>x</m>-direction will change when we vary the <m>y</m>-coordinate a little bit. We would approximate <m>f_{xy}(1.75,-1.5)</m> with the following difference quotient:
+        The partial derivative <m>f_x(1.75,-1.5)</m> measures the slope of the line tangent to the trace given by <m>y=-1.5</m>. The tangent line we are examining is changing in the <m>x</m>-direction (parallel to the <m>x</m>-axis). When we look at <m>f_{xy}</m>, we are taking the partial derivative of <m>f_x</m> with respect to <m>y</m>, <m>\frac{\partial}{\partial y} \Bigl[ f_x \Bigr]</m>. So we are looking at how the slope of the tangent line in the <m>x</m>-direction will change when we vary the <m>y</m>-coordinate a little bit. We would approximate <m>f_{xy}(1.75,-1.5)</m> with the following difference quotient:
         <me> \frac{f_x(1.75,-1.5+h)-f_x(1.75,-1.5)}{h}</me>
       </p>
       <p>
-        You might think of sliding your pencil down the trace with <m>x=1.5</m> so that the pencil is in the <m>x</m>-direction and tangent to the surface. In <xref ref="F_10_3_fxy">Figure</xref>, the pencil would be the red tangent line drawn. You can use the slider to change the <m>y</m>-coordinate of the point where the red tangent line is drawn. You should look at what happens to the slope of the red tangent line as you increase the <m>t</m>-cooridnate with the slider. The tangent line at the point <m>(1.75,-1.5)</m> is drawn in gray for reference purposes. 
+        You might think of sliding your pencil down the trace with <m>x=1.5</m> so that the pencil is in the <m>x</m>-direction and tangent to the surface. In <xref ref="F_10_3_fxy">Figure</xref>, the pencil would be the black tangent line drawn. You can use the slider at the top of <xref ref="F_10_3_fxy">Figure</xref> to change the <m>y</m>-coordinate of the point where the black tangent line is drawn. You should look at what happens to the slope of the black tangent line as you increase the <m>y</m>-coordinate with the slider. The tangent line in the <m>x</m>-direction at the point <m>(1.75,-1.5)</m> is drawn in gray for reference purposes. 
       </p>
       <p>
-        Based on <xref ref="F_10_3_fxy">Figure</xref>, write a few sentences about whether <m>f_{xy}(1.75, -1.5)</m> is positive or negative and justify your reasoning.
+        Based on your exploration with <xref ref="F_10_3_fxy">Figure</xref>, write a few sentences about whether <m>f_{xy}(1.75, -1.5)</m> is positive or negative and justify your reasoning.
       </p>
      <!--  <figure xml:id="F_10_3_fxy">
         <caption>The trace of <m>z = f(x,y) = \sin(x)e^{-y}</m> with <m>x = 1.75</m>, along with tangent lines in the <m>y</m>-direction at three different points.</caption>
@@ -730,12 +757,12 @@
         </sidebyside>
       </figure> -->
       <figure xml:id="F_10_3_fxy">
-        <caption>The surface given by <m>z=f(x,y) = \sin(x)e^{-y}</m> with trace at <m>x=1.75</m> and tangent line drawn </caption>
+        <caption>The surface given by <m>z=f(x,y) = \sin(x)e^{-y}</m> with trace at <m>x=1.75</m> and a tangent line in the <m>x</m>-direction drawn </caption>
         <interactive title="interactive-F_10_3_fxy" platform="sage" width="85%" aspect="1:1.15">
           <slate surface="sage">
             var('x,y,z,t')
             @interact
-            def expxtrace(a=slider(-2,-1,0.1,default=-1.5,label="y-coordinate")):
+            def expxtrace2(a=slider(-2,-1,0.1,default=-1.5,label="y-coordinate")):
               f(x,y)=sin(x)*exp(-y)
               param(s,t)=(s,t,f(s,t))
               #set up grid      n is number of steps in s    m is number of steps in t  
@@ -759,11 +786,11 @@
               fyv=fy(1.75,a)
               fxy=diff(fx,y)
               fxyv=fxy(1.75,a)
-              plot12=plot99+parametric_plot3d((1.75,y,f(1.75,y)),(y,-2,0),color="blue",thickness=3,opacity=0.5)
-              plot12+=text3d("x=1.5",(1.5,-2,8),color="blue",fontsize=20)
+              plot12=plot99+parametric_plot3d((1.75,y,f(1.75,y)),(y,-2,0),color="blue",thickness=3,opacity=0.75)
+              plot12+=text3d("x=1.75",(1.75,-2,8),color="blue",fontsize=20)
               plot12+=point3d((1.75,a,f(1.75,a)),color="black",size=30)
               plot12+=parametric_plot3d((1.75+t,-1.5,f(1.75,-1.5)+t*fx(1.75,-1.5)+0.05),(t,-0.5,0.5),color="gray",thickness=4,zorder=3)
-              plot12+=parametric_plot3d((1.75+t,a,fv+t*fxv+0.05),(t,-0.5,0.5),color="red",thickness=4,zorder=5)
+              plot12+=parametric_plot3d((1.75+t,a,fv+t*fxv+0.05),(t,-0.5,0.5),color="black",thickness=4,zorder=5)
               show(plot12,viewpoint=[[-0.095,-0.5444,-0.8334],163.45],camera_position=[3.5605,4.5275,4.1779])
           </slate>
         </interactive> 
@@ -783,7 +810,7 @@
   <task>
     <statement>
       <p>
-        Compute <m>f_{xy}(x,y)</m> and evaluate <m>f_{xy}(1.75, -1.5)</m>.  Write a couple of sentences about how does this value compare with your observations in the previous task.
+        Compute <m>f_{xy}(x,y)</m> algebraically and evaluate <m>f_{xy}(1.75, -1.5)</m>.  Write a couple of sentences about how this value compares with your observations in the previous task.
       </p>
     </statement>
     <answer>
@@ -867,9 +894,43 @@
     </answer>
   </task>
   </activity>
-
   <p>
-    Just as with the first-order partial derivatives, we can approximate second-order partial derivatives in the situation where we have only partial information about the function, like with tables or contour plots.
+    As we have found in <xref ref="A_10_3_2a">Activities</xref> and <xref ref="A_10_3_6"/>, we may think of <m>f_{xy}</m> as measuring the <q>twist</q> of the graph as we increase <m>y</m> along a particular trace where <m>x</m> is held constant. In the same way, <m>f_{yx}</m> measures how the graph twists as we increase <m>x</m>. If we remember that Clairaut's theorem tells us that <m>f_{xy} = f_{yx}</m>, we see that the amount of twisting is the same in both directions. This twisting is perhaps more easily seen in <xref ref="F_10_3_ruled">Figure</xref>, which shows the graph  of <m>f(x,y) = -xy</m>, for which <m>f_{xy} = -1</m>.
+  </p>
+  <figure xml:id="F_10_3_ruled">
+    <caption>The surface given by <m>z=f(x,y) = xy</m> </caption>
+    <interactive title="interactive-F_10_3_rules" platform="sage" width="100%" aspect="1:1.15">
+      <slate surface="sage">
+        from sage.plot.plot3d.plot3d import axes
+        scale=1.25
+        plot5=axes(scale,1,color="black",aspect_ratio=[1,1,1])
+        plot5+=text3d("x",(scale+0.25,0,0),fontsize=30)+text3d("y",(0,scale+0.25,0),fontsize=30)+text3d("z",(0,0,scale+0.25),fontsize=30)
+        var('x,y,z,t,s')
+        param(s,t)=(s,t,-s*t)
+        #set up grid      n is number of steps in s    m is number of steps in t  
+        #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+        n=10;m=12;a1=-1;a2=1;b1=-1;b2=1; 
+        #c1 is surface color     o1 is surface opacity
+        #c2 and o2 are for constant t value traces
+        #c3 and o3 are for constant s value traces
+        c1="gray"; c2="black"; c3="black"; o1=0.3; o2=0.7; o3=0.7;
+        plot5+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,frame=False)
+        for i in range(n+1):
+          sv=a1+i/n*(a2-a1)
+          plot5+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+        for i in range(m+1):
+          tv=b1+i/m*(b2-b1)
+          plot5+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+        show(plot5,viewpoint=[[-0.4417,-0.5254,-0.7272],117.13],camera_position=[5.5415,1.1735,2.0264])
+      </slate>
+    </interactive> 
+  </figure>
+    <!-- <figure xml:id="F_10_3_ruled">
+      <caption>The graph of <m>f(x,y) = -xy</m>.</caption>
+      <image width="50%" source="images/fig_10_3_ruled"/>
+    </figure> -->
+  <p>
+    Just as with the first-order partial derivatives, we can approximate second-order partial derivatives in the situation where we have information about the function only at certain inputs, like with tables or contour plots.
   </p>
   <activity xml:id="A_10_3_6">
     <introduction>
@@ -1176,41 +1237,7 @@
       </solution>
     </task>
   </activity>
-  <p>
-    As we have found in <xref ref="A_10_3_2a">Activities</xref> and <xref ref="A_10_3_6"/>, we may think of <m>f_{xy}</m> as measuring the <q>twist</q> of the graph as we increase <m>y</m> along a particular trace where <m>x</m> is held constant. In the same way, <m>f_{yx}</m> measures how the graph twists as we increase <m>x</m>. If we remember that Clairaut's theorem tells us that <m>f_{xy} = f_{yx}</m>, we see that the amount of twisting is the same in both directions. This twisting is perhaps more easily seen in <xref ref="F_10_3_ruled">Figure</xref>, which shows the graph  of <m>f(x,y) = -xy</m>, for which <m>f_{xy} = -1</m>.
-  </p>
-  <figure xml:id="F_10_3_ruled">
-    <caption>The surface given by <m>z=f(x,y) = xy</m> </caption>
-    <interactive title="interactive-F_10_3_rules" platform="sage" width="100%" aspect="1:1.15">
-      <slate surface="sage">
-        from sage.plot.plot3d.plot3d import axes
-        scale=1.25
-        plot5=axes(scale,1,color="black",aspect_ratio=[1,1,1])
-        plot5+=text3d("x",(scale+0.25,0,0),fontsize=30)+text3d("y",(0,scale+0.25,0),fontsize=30)+text3d("z",(0,0,scale+0.25),fontsize=30)
-        var('x,y,z,t,s')
-        param(s,t)=(s,t,-s*t)
-        #set up grid      n is number of steps in s    m is number of steps in t  
-        #a1 is min s    a2 is max s   b1 is min t    b2 is max t
-        n=10;m=12;a1=-1;a2=1;b1=-1;b2=1; 
-        #c1 is surface color     o1 is surface opacity
-        #c2 and o2 are for constant t value traces
-        #c3 and o3 are for constant s value traces
-        c1="gray"; c2="black"; c3="black"; o1=0.3; o2=0.7; o3=0.7;
-        plot5+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,frame=False)
-        for i in range(n+1):
-          sv=a1+i/n*(a2-a1)
-          plot5+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
-        for i in range(m+1):
-          tv=b1+i/m*(b2-b1)
-          plot5+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
-        show(plot5,viewpoint=[[-0.4417,-0.5254,-0.7272],117.13],camera_position=[5.5415,1.1735,2.0264])
-      </slate>
-    </interactive> 
-  </figure>
-    <!-- <figure xml:id="F_10_3_ruled">
-      <caption>The graph of <m>f(x,y) = -xy</m>.</caption>
-      <image width="50%" source="images/fig_10_3_ruled"/>
-    </figure> -->
+  
   </subsection>
 
   <subsection>

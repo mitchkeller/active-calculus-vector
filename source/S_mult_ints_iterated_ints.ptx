@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- **********************************************************************-->
-<!-- Copyright 2013-2018                                                   -->
-<!-- Steven Schlicker                                                      -->
+<!-- Copyright 2013-2025                                                   -->
+<!-- Nicholas Long, Mitchel Keller, Steven Schlicker                       -->
 <!--                                                                       -->
 <!-- This file is part of Active Calculus Multivariable.                   -->
 <!--                                                                       -->
@@ -13,7 +13,7 @@
 <!-- derivatives for profit.  All trademarks are the registered marks of   -->
 <!-- their respective owners.                                              -->
 <!-- **********************************************************************-->
-<section xml:id="S-11-2-Iterated-Integrals">
+<section xml:id="S-11-2-Iterated-Integrals" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Iterated Integrals</title>
   
     <objectives>
@@ -28,142 +28,186 @@
 
     <introduction>
     <p>
-      Recall that we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as
+      In <xref ref="S-11-1-Double-Integrals-Rectangles">Section</xref>, we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as
       <me>
         \iint_R f(x,y) \, dA = \lim_{m,n \to \infty} \sum_{j=1}^n \sum_{i=1}^m f\left(x_{ij}^*, y_{ij}^*\right) \cdot \Delta A,
       </me>
-      where the different variables and notation are as described in <xref ref="S-11-1-Double-Integrals-Rectangles">Section</xref>. Thus <m>\iint_R f(x,y) \, dA</m> is a limit of double Riemann sums, but while this definition tells us exactly what a double integral is, it is not very helpful for determining the value of a double integral. Fortunately, there is a way to view a double integral as an <em>iterated integral</em><idx><h>iterated integral</h><h>rectangular coordinates</h></idx>, which will make computations feasible in many cases.
+      using the classic calculus approach. Thus <m>\iint_R f(x,y) \, dA</m> is a limit of double Riemann sums, but while this definition tells us exactly what a double integral is, it is not very helpful for determining the value of a double integral. Fortunately, there is a way to view a double integral as an <em>iterated integral</em><idx><h>iterated integral</h><h>rectangular coordinates</h></idx>, which will make computations feasible in many cases.
     </p>
 
     <p>
-      The viewpoint of an iterated integral is closely connected to an important idea from single-variable calculus. When we studied solids of revolution, such as the one shown in <xref ref="F_6_2_Ex1">Figure</xref>, we saw that in some circumstances we could slice the solid perpendicular to an axis and have each slice be approximately a circular disk. From there, we were able to find the volume of each disk, and then use an integral to add the volumes of the slices. In what follows, we are able to use single integrals to generalize this approach to handle even more general geometric shapes.
+      The viewpoint of an iterated integral is closely connected to an important idea from single-variable calculus. When we studied solids of revolution, such as the one shown in <xref ref="F_6_2_Ex1">Figure</xref>, we saw that in some circumstances we could slice the solid perpendicular to an axis and approximate the volume using circular disks. From there, we were able to find the volume of each disk, and then use an integral to add the volumes of the slices to find the total volume of the rotated solid. 
+    </p>
+    <p>  
+      We will look at an example of this approach in the following Preview Activity, we will look at how use single variable integrals along traces in a similar way to the rotation volume described above. We will generalize this approach in this section for double integrals over rectangular regions. In <xref ref="S-11-3-Double-Integrals-General"/>, we will look at using this technique on non-rectangular regions. 
     </p>
 
-    <figure xml:id="F_6_2_Ex1">
+    <!-- <figure xml:id="F_6_2_Ex1">
       <caption>A solid of revolution.</caption>
       <image width="50%" source="images/fig_11_2_volume_revolve"/>
+    </figure> -->
+    <figure xml:id="F_6_2_Ex1">
+      <caption> </caption>
+        <interactive title="interactive-F_6_2_Ex1" platform="sage" width="100%" aspect="1:1">
+          <slate surface="sage">
+            <xi:include href="interacts/surfrot.txt" parse="text" />     
+          </slate>
+        </interactive>
     </figure>
 
     <exploration xml:id="PA_11_2">
-      <statement>
+      <introduction>
         <p>
-          Let <m>f(x,y) = 25-x^2-y^2</m> on the rectangular domain <m>R = [-3,3] \times [-4,4]</m>.
+          In this activity we will explore the double integral of <m>f(x,y) = 25-x^2-y^2</m> on the rectangular domain <m>R = [-3,3] \times [-4,4]</m>.
         </p>
-
         <p>
-          As with partial derivatives, we may treat one of the variables in <m>f</m> as constant and think of the resulting function as a function of a single variable. Now we investigate what happens if we integrate instead of differentiate.
-          <ol marker="a.">
-            <li>
-              <p>
-                Choose a fixed value of <m>x</m> in the interior of <m>[-3,3]</m>. Let
-                <me>
-                  A(x) = \int_{-4}^4 f(x,y) \, dy.
-                </me>
-                What is the geometric meaning of the value of <m>A(x)</m> relative to the surface defined by <m>f</m>. (Hint: Think about the trace determined by the fixed value of <m>x</m>, and consider how <m>A(x)</m> is related to the image at left in <xref ref="F_11_2_Cross_section_PA_y">Figure</xref>.)
-
-                <figure xml:id="F_11_2_Cross_section_PA_y">
-                  <caption>Left: A cross section with fixed <m>x</m>. Right: A cross section with fixed <m>x</m> and <m>\Delta x</m>.</caption>
-                  <sidebyside widths="50% 50%">
-                    <image source="images/fig_11_2_preview_slice"/>
-                    <image source="images/fig_11_2_preview_thick"/>
-                    </sidebyside>
-                </figure>
-                
-
-              </p>
-            </li>
-
-            <li>
-              <p>
-                For a fixed value of <m>x</m>, say <m>x_i^*</m>, what is the geometric meaning of <m>A(x_i^*) \ \Delta x</m>?  (Hint: Consider how <m>A(x_i^*) \Delta x</m> is related to the image at right in <xref ref="F_11_2_Cross_section_PA_y">Figure</xref>.)
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Since <m>f</m> is continuous on <m>R</m>, we can define the function <m>A = A(x)</m> at every value of <m>x</m> in <m>[-3,3]</m>. Now think about subdividing the <m>x</m>-interval <m>[-3,3]</m> into <m>m</m> subintervals, and choosing a value <m>x_i^*</m> in each of those subintervals.  What will be the meaning of the sum <m>\sum_{i=1}^m A(x_i^*) \ \Delta x</m>?
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Explain why <m>\int_{-3}^3 A(x) \, dx</m> will determine the exact value of the volume under the surface <m>z = f(x,y)</m> over the rectangle <m>R</m>.
-              </p>
-            </li>
-          </ol>
+          As with partial derivatives, we may treat one of the variables in <m>f</m> as constant and think of the resulting function as a function of a single variable. We will now investigate what this means geometrically and algebraically when we integrate with one input variable fixed. 
         </p>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              Since <m>f(x,y) \geq 0</m> on the given domain,
-              the value of <m>A(x)</m> tells us the area under the <m>y</m>-trace curve for that fixed value of <m>x</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Since <m>A(x_i^*)</m> is an area under the <m>y</m>-trace for the value <m>x = x_i^*</m>,
-              when we multiply that area by a constant width <m>\Delta x</m>,
-              we obtain the volume of a slab obtained by thickening the region under the <m>x=x_i^*</m> trace by a uniform thickness <m>\Delta x</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              This sum will give us the sum of volumes of slabs with constant cross sections parallel to the <m>yz</m>-plane,
-              where the cross sections look like the areas under the graphs of the <m>x_i^*</m> traces.
-            </p>
-          </li>
-          <li>
-            <p>
-              As we let <m>m</m> go to infinity,
-              the thickness of the slabs goes to 0 and we are just adding up all of the cross sectional areas of the surface parallel to the <m>yz</m>-plane, and so
-              <me>
-                \int_{-3}^3 A(x) \, dx = \lim_{m \to \infty} \sum_{i=1}^m A(x_i^*) \ \Delta x
-              </me>
-              gives us the volume of the solid under the surface
-              <m>z = f(x,y)</m> over the rectangle <m>R</m>.
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              Since <m>f(x,y) \geq 0</m> on the given domain,
-              the value of <m>A(x)</m> tells us the area under the <m>y</m>-trace curve for that fixed value of <m>x</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Since <m>A(x_i^*)</m> is an area under the <m>y</m>-trace for the value <m>x = x_i^*</m>,
-              when we multiply that area by a constant width <m>\Delta x</m>,
-              we obtain the volume of a slab obtained by thickening the region under the <m>x=x_i^*</m> trace by a uniform thickness <m>\Delta x</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              This sum will give us the sum of volumes of slabs with constant cross sections parallel to the <m>yz</m>-plane,
-              where the cross sections look like the areas under the graphs of the <m>x_i^*</m> traces.
-            </p>
-          </li>
-          <li>
-            <p>
-              As we let <m>m</m> go to infinity,
-              the thickness of the slabs goes to 0 and we are just adding up all of the cross sectional areas of the surface parallel to the <m>yz</m>-plane, and so
-              <me>
-                \int_{-3}^3 A(x) \, dx = \lim_{m \to \infty} \sum_{i=1}^m A(x_i^*) \ \Delta x
-              </me>
-              gives us the volume of the solid under the surface
-              <m>z = f(x,y)</m> over the rectangle <m>R</m>.
-            </p>
-          </li>
-        </ol>
-      </solution>  
-  
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Let <m>a</m> be a fixed value in the interval <m>[-3,3]</m>. Compute 
+            <me>\int_{-4}^4 f(a,y) dy </me>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>200-8a^2-128/3</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            We will integrate in terms of <m>y</m> to get
+            <me>\int_{-4}{^4} 25-a^2-y^2 \, dy = 25 (8)-8a^2-y^3/3 \restrict_{-4}^4 = 200-8a^2-128/3</me>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            The answer of your previous task depended on the value of <m>a</m> but the process would be the exact same set of steps for every <m>a</m>, so we can define a function <m>A(x)</m> as 
+            <me>
+              A(x) = \int_{-4}^4 f(x,y) \, dy
+            </me>
+          </p>
+          <p>
+            Explain the geometric meaning of the value of <m>A(x)</m> relative to the surface defined by <m>f</m> in the context of the trace determined by the fixed value of <m>x</m>. Your explanation should refer to different parts of <xref ref="surftrace"/>
+          </p> 
+          <figure xml:id="surftrace">
+            <caption> </caption>
+              <interactive title="interactive-surftrace" platform="sage" width="100%" aspect="1:1">
+                <slate surface="sage">
+                  var('s,t,x,y,z')
+                  f(x,y)=25-x^2-y^2
+                  x1=-3;x2=3;y1=-4;y2=4;
+                  param(s,t)=(s,t,f(s,t))
+                  #set up grid      n is number of steps in s    m is number of steps in t  
+                  #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+                  n=7;m=7;a1=x1;a2=x2;b1=y1;b2=y2; 
+                  #c1 is surface color     o1 is surface opacity
+                  #c2 and o2 are for constant t value traces
+                  #c3 and o3 are for constant s value traces
+                  c1="lightblue"; c2="black"; c3="black"; o1=0.2; o2=0.3; o3=0.3;
+                  plot1=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+                  for i in range(n+1):
+                    sv=a1+i/n*(a2-a1)
+                    plot1+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+                  for i in range(m+1):
+                    tv=b1+i/m*(b2-b1)
+                    plot1+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+                  a=0.75;
+                  plot1+=parametric_plot3d((a,t,s*f(a,t)),(t,b1,b2),(s,0,1),color="blue",opacity=0.6)
+                  show(plot1,viewpoint=[[-0.2251,-0.5901,-0.7753],147.05],camera_position=[7.5902,13.4964,5.4958],aspect_ratio=(1,1,.2))
+                </slate>
+              </interactive>
+          </figure>
+        </statement>
+        <answer>
+          <p>
+            Since <m>f(x,y) \geq 0</m> on the given domain, the value of <m>A(x)</m> tells us the area under the <m>y</m>-trace curve for that fixed value of <m>x</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Since <m>f(x,y) \geq 0</m> on the given domain, the value of <m>A(x)</m> tells us the area under the <m>y</m>-trace curve for that fixed value of <m>x</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            For a fixed value of <m>x</m>, say <m>x_i^*</m>, write a few sentences to explain the geometric meaning of <m>A(x_i^*) \ \Delta x</m>. Your explanation of <m>A(x_i^*) \Delta x</m> should refer to the parts of  <xref ref="F_11_2_Cross_section_PA_y">Figure</xref>.)
+          </p>
+          <figure xml:id="F_11_2_Cross_section_PA_y">
+            <caption> </caption>
+              <interactive title="interactive-F_11_2_Cross_section_PA_y" platform="sage" width="100%" aspect="1:1">
+                <slate surface="sage">
+                  <xi:include href="interacts/surftrace2.txt" parse="text" />     
+                </slate>
+              </interactive>
+          </figure>
+        </statement>
+        <answer>
+          <p>
+            Since <m>A(x_i^*)</m> is an area under the <m>y</m>-trace for the value <m>x = x_i^*</m>, when we multiply that area by a constant width <m>\Delta x</m>, we obtain the volume of a slab obtained by thickening the region under the <m>x=x_i^*</m> trace by a uniform thickness <m>\Delta x</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Since <m>A(x_i^*)</m> is an area under the <m>y</m>-trace for the value <m>x = x_i^*</m>, when we multiply that area by a constant width <m>\Delta x</m>, we obtain the volume of a slab obtained by thickening the region under the <m>x=x_i^*</m> trace by a uniform thickness <m>\Delta x</m>.
+          </p>
+        </solution>
+      </task>     
+      <!-- <figure xml:id="F_11_2_Cross_section_PA_y">
+        <caption>Left: A cross section with fixed <m>x</m>. Right: A cross section with fixed <m>x</m> and <m>\Delta x</m>.</caption>
+        <sidebyside widths="50% 50%">
+          <image source="images/fig_11_2_preview_slice"/>
+          <image source="images/fig_11_2_preview_thick"/>
+          </sidebyside>
+      </figure> -->
+      <task>
+        <statement>
+          <p>
+            Since <m>f</m> is continuous on <m>R</m>, we can define the function <m>A = A(x)</m> at every value of <m>x</m> in <m>[-3,3]</m>. Now think about subdividing the <m>x</m>-interval <m>[-3,3]</m> into <m>m</m> subintervals, and choosing a value <m>x_i^*</m> in each of those subintervals.  What will be the meaning of the sum <m>\sum_{i=1}^m A(x_i^*) \ \Delta x</m>?
+          </p>
+        </statement>
+        <answer>
+          <p>
+            This sum will give us the sum of volumes of slabs with constant cross sections parallel to the <m>yz</m>-plane, where the cross sections look like the areas under the graphs of the <m>x_i^*</m> traces.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            This sum will give us the sum of volumes of slabs with constant cross sections parallel to the <m>yz</m>-plane, where the cross sections look like the areas under the graphs of the <m>x_i^*</m> traces.
+          </p>
+        </solution>
+      </task>         
+      <task>
+        <statement>
+          <p>
+            Explain why <m>\int_{-3}^3 A(x) \, dx</m> will determine the exact value of the volume under the surface <m>z = f(x,y)</m> over the rectangle <m>R</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            As we let <m>m</m> go to infinity, the thickness of the slabs goes to 0 and we are just adding up all of the cross sectional areas of the surface parallel to the <m>yz</m>-plane, and so
+            <me>
+              \int_{-3}^3 A(x) \, dx = \lim_{m \to \infty} \sum_{i=1}^m A(x_i^*) \ \Delta x
+            </me>
+            gives us the volume of the solid under the surface <m>z = f(x,y)</m> over the rectangle <m>R</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            As we let <m>m</m> go to infinity, the thickness of the slabs goes to 0 and we are just adding up all of the cross sectional areas of the surface parallel to the <m>yz</m>-plane, and so
+            <me>
+              \int_{-3}^3 A(x) \, dx = \lim_{m \to \infty} \sum_{i=1}^m A(x_i^*) \ \Delta x
+            </me>
+            gives us the volume of the solid under the surface <m>z = f(x,y)</m> over the rectangle <m>R</m>.
+          </p>
+        </solution>
+      </task>
     </exploration>
   </introduction>
 
@@ -179,15 +223,41 @@
     <p>
       The function <m>A = A(x)</m> determines the value of the cross sectional area (by area we mean <q>signed</q> area) in the <m>y</m> direction for the fixed value of <m>x</m> of the solid bounded between the surface defined by <m>f</m> and the <m>xy</m>-plane.
     </p>
-
     <figure xml:id="F_11_2_Cross_section_y_slab_sum">
-      <caption>Summing volumes of cross section slices.</caption>
+      <caption> </caption>
+        <interactive title="interactive-F_11_2_Cross_section_y_slab_sum" platform="sage" width="100%" aspect="1:1">
+          <slate surface="sage">
+            var('s,t,x,y,z')
+            f(x,y)=25-x^2-y^2
+            x1=-3;x2=3;y1=-4;y2=4;
+            param(s,t)=(s,t,f(s,t))
+            @interact
+            def slicesinteract(ns=slider(3,25,1,default=5,label="Number of slices to use")):
+              a1=x1;a2=x2;b1=y1;b2=y2; 
+              xscale=5;yscale=5;zscale=30
+              plot1=arrow((0,0,0),(xscale,0,0),color="black",opacity=0.5,width=2)+text3d("x",(xscale+0.5,0,0),fontsize=30)+text3d("y",(0,yscale+0.5,0),fontsize=30)+text3d("z",(0,0,zscale+0.5),fontsize=30)
+              plot1+=arrow((0,0,0),(0,yscale,0),color="black",opacity=0.5)+arrow((0,0,0),(0,0,zscale),color="black",opacity=0.5)
+              dx=6/ns;sc="pink";o4=.8;
+              for i in range(ns+1):
+                a=-3+i*dx
+                plot1+=parametric_plot3d((a,t,s*f(a,t)),(t,b1,b2),(s,0,1),color=sc,opacity=o4)
+                plot1+=parametric_plot3d((a+dx,t,s*f(a,t)),(t,b1,b2),(s,0,1),color=sc,opacity=o4)
+                plot1+=parametric_plot3d((a+s,t,f(a,t)),(t,b1,b2),(s,0,dx),color="purple",opacity=o4)
+                plot1+=parametric_plot3d((a+s,t,0),(t,b1,b2),(s,0,dx),color=sc,opacity=o4)
+                plot1+=parametric_plot3d((a+s,4,t*f(a,4)),(t,0,1),(s,0,dx),color=sc,opacity=o4)
+                plot1+=parametric_plot3d((a+s,-4,t*f(a,-4)),(t,0,1),(s,0,dx),color=sc,opacity=o4)
+              show(plot1,viewpoint=[[-0.099,-0.6027,-0.7918],165.17],camera_position=[4.2065,9.5131,4.0273],aspect_ratio=(1,1,.2))
+          </slate>
+        </interactive>
+    </figure>
+    <!-- <figure xml:id="F_11_2_Cross_section_y_slab_sum">
+      <caption>Summing volumes of cross section slices</caption>
       <sidebyside widths="33% 33% 33%">
       <image source="images/fig_11_2_preview_animate_0"/>
       <image source="images/fig_11_2_preview_animate_2"/>
       <image source="images/fig_11_2_preview_animate_5"/>
       </sidebyside>
-    </figure>
+    </figure> -->
 
     <p>
       The value of this cross sectional area is determined by the input <m>x</m> in <m>A</m>. Since <m>A</m> is a function of <m>x</m>, it follows that we can integrate <m>A</m> with respect to <m>x</m>. In doing so, we use a partition of <m>[a, b]</m> and make an approximation to the integral given by
@@ -212,12 +282,41 @@
       </me>
       is called an <em>iterated integral</em>, and we see that each double integral may be represented by two single integrals.
     </p>
+    <p>
+      We can also think of these iterated integrals as a description for evaluating one of our Riemann sums over fixed values (corresponding to the other input variable). As in our descriptions above, we can partition our space into pieces such that the inner sum of 
+      <me>  \sum_{j=1}^m \sum_{i=1}^n f\left(x_{ij}^*, y_{ij}^*\right) \, \Delta A</me>
+      corresponds to our gridding in <m>y</m> (along a constant value <m>x_i^*</m>). This corresponds to the inner sum being along a column of smaller rectangles, as shown in <xref ref="iigrid"/>. 
+    </p>
+    <figure xml:id="iigrid">
+      <caption>A splitting of a rectangular region of integration into smaller rectangles</caption>
+        <image width="100%" xml:id="img-iigrid">
+          <sageplot>
+            from matplotlib import ticker
+            a=0.5; b=9; c=1; d=3; m=4; n=6; dx=(b-a)/m; dy=(d-c)/n;
+            tx=[a+dx*i for i in range(m+1)]; ty=[c+dy*i for i in range(n+1)]
+            plot12=line([(a,c),(a,d),(b,d),(b,c),(a,c)],thickness=3,color="black",gridlines=True,ticks=[tx,ty],axes_labels=["$x$","$y$"],xmin=0,xmax=b+1,ymin=0,ymax=d,tick_formatter=(ticker.NullFormatter(),
+            ticker.NullFormatter()))
+            for i in range(m):
+              plot12+=arrow((a+(dx/2)+dx*i,d-dy/2),(a+(dx/2)+dx*i,c+dy/2),color="gray")
+            plot12+=text("$\\sum_{i=1}^n  \\, f(x_1^*,y^*_i) \\, \\Delta A$",(a+(dx/2),c-dy),color="black",fontsize=10)+text("$+$",(a+dx,c-dy),color="black",fontsize=10)
+            plot12+=text("$\\sum_{i=1}^n \\, f(x_2^*,y^*_i) \\, \\Delta A$",(a+(dx/2)+dx,c-dy),color="black",fontsize=10)+text("$+$",(a+2*dx,c-dy),color="black",fontsize=10)
+            plot12+=text("$\\sum_{i=1}^n \\, f(x_3^*,y^*_i) \\, \\Delta A$",(a+(dx/2)+2*dx,c-dy),color="black",fontsize=10)+text("$+$",(a+3*dx,c-dy),color="black",fontsize=10)
+            plot12+=text("$\\sum_{i=1}^n \\, f(x_4^*,y^*_i) \\, \\Delta A$",(a+(dx/2)+3*dx,c-dy),color="black",fontsize=10)+text("$=$",(a+4*dx,c-dy),color="black",fontsize=10)
+            plot12+=text("$\\sum_{j=1}^m \\, \\sum_{i=1}^n \\, f(x_j^*,y^*_i) \\, \\Delta A$",(a+(dx/2)+4*dx,c-2*dy),color="black",fontsize=10)
+            plot12           
+          </sageplot>
+        </image>
+    </figure>
+    <p>
+      Our outer sum will then correspond to the sum over each of these cross sectional areas (column sums). Because we are working with a rectangular region of integration, the limit as <m>n \to \infty</m> will make these column sums converge to integrals of the form <m>\int_c^d f(x_i^*,y) \, dy</m>, which we called <m>A(x^*_i)</m>. The outer sum will converge to the integral <m>\int_a^b A(x) \, dx</m>, giving the iterated integral form. 
+    </p>
 
     <p>
-      We made a choice to integrate first with respect to <m>y</m>. The same argument shows that we can also find the double integral as an iterated integral integrating with respect to <m>x</m> first, or
+      In our arguments above, we made the choice to integrate first with respect to <m>y</m> (holding <m>x</m> constant first). A parallel argument shows that we can also find the double integral as an iterated integral integrating with respect to <m>x</m> first, or
       <me>
         \iint_R f(x,y) \, dA = \int_c^d \left( \int_a^b f(x,y) \, dx \right) \, dy = \int_c^d  \int_a^b f(x,y) \, dx  \, dy.
       </me>
+      You could visualize this as first taking the sum across rows of smaller rectangles in <xref ref="iigrid"/>, then taking the sum of this column of sums. This order of operations would correspond to integrating with respect to <m>x</m> first (holding <m>y</m> constant for a particular row), then integrating across the range of <m>y</m> values.
     </p>
 
     <p>
@@ -226,190 +325,164 @@
 
     <assemblage xml:id="Fubini-theorem">
       <title>Fubini's Theorem</title>
-    <p>
-      If <m>f = f(x,y)</m> is a continuous function on a rectangle <m>R = [a,b] \times [c,d]</m>, then
-      <me>
-        \iint_R f(x,y) \, dA = \int_c^d \int_a^b f(x,y) \, dx \, dy = \int_a^b \int_c^d f(x,y) \, dy \, dx.
-      </me>
-    </p>
+      <p>
+        If <m>f = f(x,y)</m> is a continuous function on a rectangle <m>R = [a,b] \times [c,d]</m>, then
+        <me>
+          \iint_R f(x,y) \, dA = \int_c^d \int_a^b f(x,y) \, dx \, dy = \int_a^b \int_c^d f(x,y) \, dy \, dx.
+        </me>
+      </p>
     </assemblage>
-
-    
-
     <p>
       Fubini's theorem enables us to evaluate iterated integrals without resorting to the limit definition. Instead, working with one integral at a time, we can use the Fundamental Theorem of Calculus from single-variable calculus to find the exact value of each integral, starting with the inner integral.
     </p>
-
+    <aside>
+      <p>
+        This is another time in which we trade a multi-dimensional problem (double integral) for multiple one-dimensional problems that we have much more experience with.
+      </p>
+       <image source="LBmeme.png" width="50%">
+        <shortdescription>(for accessibility)</shortdescription>
+       </image>
+    </aside>
     <activity xml:id="A_11_2_1">
-      <statement>
+      <introduction>
         <p>
           Let <m>f(x,y) = 25-x^2-y^2</m> on the rectangular domain <m>R = [-3,3] \times [-4,4]</m>.
-          <ol marker="a.">
-            <li>
-              <p>
-                Viewing <m>x</m> as a fixed constant, use the Fundamental Theorem of Calculus to evaluate the integral
-                <me>
-                  A(x) = \int_{-4}^4 f(x,y) \, dy.
-                </me>
-                Note that you will be integrating with respect to <m>y</m>, and holding <m>x</m> constant.  Your result should be a function of <m>x</m> only.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Next, use your result from (a) along with the Fundamental Theorem of Calculus to determine the value of <m>\int_{-3}^3 A(x) \, dx</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                What is the value of <m>\iint_R f(x,y) \, dA</m>? What are two different ways we may interpret the meaning of this value?
-              </p>
-            </li>
-          </ol>
         </p>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              <m> \frac{472}{3} - 8x^2</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>800</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              Using the results of parts (a) and (b) we have
-              <me>
-                \iint_R f(x,y) \, dA = \int_{-3}^3 \int_{-4}^4 f(x,y) \, dy \, dx = 800
-              </me>.
-              Since <m>f(x,y) \geq 0</m> on <m>R</m>,
-              this result tells us that the volume of the solid bounded above the graph of <m>f</m> and below by the rectangle <m>R</m> is 800.
-              The area of <m>R</m> is 48,
-              so this result also tells us that the average value of <m>f</m> on <m>R</m> is <m>\frac{800}{48}</m>.
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              Treating <m>x</m> as a constant we have
+      </introduction>
+      <task >
+        <statement>
+          <p>
+            Viewing <m>x</m> as a fixed constant, use the Fundamental Theorem of Calculus to evaluate the integral
+            <me>
+              A(x) = \int_{-4}^4 f(x,y) \, dy.
+            </me>
+            Note that you will be integrating with respect to <m>y</m>, and holding <m>x</m> constant.  Your result should be a function of <m>x</m> only.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m> \frac{472}{3} - 8x^2</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Treating <m>x</m> as a constant we have
               <md>
                 <mrow>A(x) \amp = \int_{-4}^4 f(x,y) \, dy</mrow>
                 <mrow>\amp = \int_{-4}^4 25-x^2-y^2 \, dy</mrow>
                 <mrow>\amp = \left[ (25-x^2)y - \frac{y^3}{3} \right] \mid_{-4}^4</mrow>
                 <mrow>\amp = 8(25-x^2) - \frac{128}{3}</mrow>
                 <mrow>\amp = \frac{472}{3} - 8x^2</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Then
+              </md>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Next, use your result from (a) along with the Fundamental Theorem of Calculus to determine the value of <m>\int_{-3}^3 A(x) \, dx</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>800</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Then
               <md>
                 <mrow>\int_{-3}^3 A(x) \, dx \amp = \int_{-3}^3 \frac{472}{3} - 8x^2 \, dx</mrow>
                 <mrow>\amp =  \left[ \frac{472}{3}x - \frac{8}{3}x^3 \right] \mid_{-3}^3</mrow>
                 <mrow>\amp = 944 - 144</mrow>
                 <mrow>\amp = 800</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Using the results of parts (a) and (b) we have
-              <me>
-                \iint_R f(x,y) \, dA = \int_{-3}^3 \int_{-4}^4 f(x,y) \, dy \, dx = 800
-              </me>.
-              Since <m>f(x,y) \geq 0</m> on <m>R</m>,
-              this result tells us that the volume of the solid bounded above the graph of <m>f</m> and below by the rectangle <m>R</m> is 800.
-              The area of <m>R</m> is 48,
-              so this result also tells us that the average value of <m>f</m> on <m>R</m> is <m>\frac{800}{48}</m>.
-            </p>
-          </li>
-        </ol>
-      </solution>
-
+              </md>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What is the value of <m>\iint_R f(x,y) \, dA</m>? What are three different ways we may interpret the meaning of this value?
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Using the results of parts (a) and (b) we have
+            <me>
+              \iint_R f(x,y) \, dA = \int_{-3}^3 \int_{-4}^4 f(x,y) \, dy \, dx = 800
+            </me>.
+            Since <m>f(x,y) \geq 0</m> on <m>R</m>, this result tells us that the volume of the solid bounded above the graph of <m>f</m> and below by the rectangle <m>R</m> is 800. The area of <m>R</m> is 48, so this result also tells us that the average value of <m>f</m> on <m>R</m> is <m>\frac{800}{48}</m>. Additionally, if <m>f</m> was a density of a material on the region of integration, there would be 800 units of material total in the region. 
+          </p>
+        </answer>
+        <solution>
+          <p>
+            Using the results of parts (a) and (b) we have
+            <me>
+              \iint_R f(x,y) \, dA = \int_{-3}^3 \int_{-4}^4 f(x,y) \, dy \, dx = 800
+            </me>.
+            Since <m>f(x,y) \geq 0</m> on <m>R</m>, this result tells us that the volume of the solid bounded above the graph of <m>f</m> and below by the rectangle <m>R</m> is 800. The area of <m>R</m> is 48, so this result also tells us that the average value of <m>f</m> on <m>R</m> is <m>\frac{800}{48}</m>. Additionally, if <m>f</m> was a density of a material on the region of integration, there would be 800 units of material total in the region. 
+          </p>
+        </solution>
+      </task>
     </activity>
 
     <activity xml:id="A_11_2_2">
-      <statement>
+      <introduction>
         <p>
           Let <m>f(x,y) = x+y^2</m> on the rectangle <m>R = [0,2] \times [0,3]</m>.
-          <ol marker="a.">
-            <li>
-              <p>
-                Evaluate <m>\iint_R f(x,y) \, dA</m> using an iterated integral.  Choose an order for integration by deciding whether you want to integrate first with respect to <m>x</m> or <m>y</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Evaluate <m>\iint_R f(x,y) \, dA</m> using the iterated integral whose order of integration is the opposite of the order you chose in (a).
-              </p>
-            </li>
-          </ol>
         </p>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              <m>24</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>24</m>
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              We evaluate <m> \iint_R f(x,y) \, dA</m> as an iterated integral,
-              integrating first with respect to <m>x</m>, then <m>y</m>:
-              <md>
-                <mrow>\iint_R f(x,y) \, dA \amp =  \int_{0}^{3} \int_{0}^{2} x+y^2 \, dx \, dy</mrow>
-                <mrow>\amp = \int_{0}^{3}  \left[ \frac{x^2}{2} + xy^2 \right] \mid_{0}^{2}  \, dy</mrow>
-                <mrow>\amp = \int_{0}^{3} \left[ 2 + 2y^2 \right]  \, dy</mrow>
-                <mrow>\amp = \left[ 2y + \frac{2}{3}y^3 \right] \mid_{0}^{3}</mrow>
-                <mrow>\amp = 24</mrow>
-              </md>.
-            </p>
-          </li>
-          <li>
-            <p>
-              We evaluate <m> \iint_R f(x,y) \, dA</m> as an iterated integral,
-              integrating first with respect to <m>y</m>, then <m>x</m>:
-              <md>
-                <mrow>\iint_R f(x,y) \, dA \amp =  \int_{0}^{2} \int_{0}^{3} x+y^2 \, dy \, dx</mrow>
-                <mrow>\amp = \int_{0}^{2}  \left[ xy + \frac{y^3}{3} \right] \mid_{0}^{3}  \, dx</mrow>
-                <mrow>\amp = \int_{0}^{2} \left[ 3x + 9 \right]  \, dx</mrow>
-                <mrow>\amp =  \left[ \frac{3}{2}x^2 + 9x \right] \mid_{0}^{2}</mrow>
-                <mrow>\amp = 24</mrow>
-              </md>.
-            </p>
-          </li>
-        </ol>
-      </solution>
-
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Evaluate <m>\iint_R f(x,y) \, dA</m> using an iterated integral.  Choose an order for integration by deciding whether you want to integrate first with respect to <m>x</m> or <m>y</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+             <m>24</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            We evaluate <m> \iint_R f(x,y) \, dA</m> as an iterated integral, integrating first with respect to <m>x</m>, then <m>y</m>:
+            <md>
+              <mrow>\iint_R f(x,y) \, dA \amp =  \int_{0}^{3} \int_{0}^{2} x+y^2 \, dx \, dy</mrow>
+              <mrow>\amp = \int_{0}^{3}  \left[ \frac{x^2}{2} + xy^2 \right] \mid_{0}^{2}  \, dy</mrow>
+              <mrow>\amp = \int_{0}^{3} \left[ 2 + 2y^2 \right]  \, dy</mrow>
+              <mrow>\amp = \left[ 2y + \frac{2}{3}y^3 \right] \mid_{0}^{3}</mrow>
+              <mrow>\amp = 24</mrow>
+            </md>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Evaluate <m>\iint_R f(x,y) \, dA</m> using the iterated integral whose order of integration is the opposite of the order you chose in (a).
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>24</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            We evaluate <m> \iint_R f(x,y) \, dA</m> as an iterated integral, integrating first with respect to <m>y</m>, then <m>x</m>:
+            <md>
+              <mrow>\iint_R f(x,y) \, dA \amp =  \int_{0}^{2} \int_{0}^{3} x+y^2 \, dy \, dx</mrow>
+              <mrow>\amp = \int_{0}^{2}  \left[ xy + \frac{y^3}{3} \right] \mid_{0}^{3}  \, dx</mrow>
+              <mrow>\amp = \int_{0}^{2} \left[ 3x + 9 \right]  \, dx</mrow>
+              <mrow>\amp =  \left[ \frac{3}{2}x^2 + 9x \right] \mid_{0}^{2}</mrow>
+              <mrow>\amp = 24</mrow>
+            </md>
+          </p>
+        </solution>
+      </task>
     </activity>
   </subsection>
-
-
-
   <subsection>
     <title>Summary</title>
     <ul>
@@ -418,400 +491,22 @@
           We can evaluate the double integral <m>\iint_R f(x,y) \, dA</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as an iterated integral in one of two ways:
           <ul>
             <li>
-              <title>-</title>
               <p>
                 <m>\int_a^b \left( \int_c^d f(x,y) \, dy \right) \, dx</m>, or
               </p>
             </li>
-
             <li>
-              <title>-</title>
               <p>
                 <m>\int_c^d \left( \int_a^b f(x,y) \, dx \right) \, dy</m>.
               </p>
             </li>
           </ul>
-        
-
-          This process works because each inner integral represents a cross-sectional (signed) area and the outer integral then sums all of the cross-sectional (signed) areas.  Fubini's Theorem guarantees that the resulting value is the same, regardless of the order in which we integrate.
+          This process works because each inner integral represents a cross-sectional (signed) area and the outer integral then sums all of the cross-sectional (signed) areas. Fubini's Theorem guarantees that the resulting value is the same, regardless of the order in which we integrate.
         </p>
       </li>
     </ul>
 
   </subsection>
 
-    <exercises>
-
-    <exercise label="Library__maCalcDB__setVMultIntegrals1Double__ur_vc_8_2.pg" xml:id="ex-11-2-WW-polynomial">
-      <!--<title>Evaluate an iterated integral with a polynomial function</title>-->
-         <webwork source="Library/maCalcDB/setVMultIntegrals1Double/ur_vc_8_2.pg"/>
-      </exercise>
-
-      <exercise label="Library__maCalcDB__setVMultIntegrals1Double__ur_vc_8_3.pg" xml:id="ex-11-2-WW-rational">
-      <!--<title>Evaluate an iterated integral with a rational function</title>-->
-         <webwork source="Library/maCalcDB/setVMultIntegrals1Double/ur_vc_8_3.pg"/>
-      </exercise>
-
-      <exercise label="Library__Dartmouth__setMTWCh5S1__problem_4.pg" xml:id="ex-11-2-WW-log">
-      <!--<title>Evaluate an iterated integral with a logarithmic function</title>-->
-         <webwork source="Library/Dartmouth/setMTWCh5S1/problem_4.pg"/>
-      </exercise>
-
-      <exercise label="Library__272__setStewart15_2__problem_13.pg" xml:id="ex-11-2-WW-exp">
-      <!--<title>Evaluate an iterated integral with an exponential function</title>-->
-         <webwork source="Library/272/setStewart15_2/problem_13.pg"/>
-      </exercise>
-
-      <exercise label="Library__maCalcDB__setVMultIntegrals1Double__ur_vc_8_4.pg" xml:id="ex-11-2-WW-double">
-      <!--<title>Evaluate a double integral with polynomials</title>-->
-         <webwork source="Library/maCalcDB/setVMultIntegrals1Double/ur_vc_8_4.pg"/>
-      </exercise>
-
-      <exercise label="Library__Rochester__setVMultIntegrals1Double__ur_vc_8_5.pg" xml:id="ex-11-2-WW-double-2">
-      <!--<title>Evaluate a double integral with a trigonometric function</title>-->
-         <webwork source="Library/Rochester/setVMultIntegrals1Double/ur_vc_8_5.pg"/>
-      </exercise>
-
-      <exercise label="Library__maCalcDB__setVMultIntegrals1Double__ur_vc_8_1.pg" xml:id="ex-11-2-WW-estimate">
-      <!--<title>Estimate and evaluate a double integral</title>-->
-         <webwork source="Library/maCalcDB/setVMultIntegrals1Double/ur_vc_8_1.pg"/>
-      </exercise>
-
-      <exercise label="Library__Rochester__setVMultIntegrals1Double__ur_vc_8_14.pg" xml:id="ex-11-2-WW-cross-sections">
-      <!--<title>Evaluate a double integral given cross sections</title>-->
-         <webwork source="Library/Rochester/setVMultIntegrals1Double/ur_vc_8_14.pg"/>
-      </exercise>
-
-		<exercise label="Library__ASU-topics__setCalculus__stef__stef15_2p1.pg" xml:id="ex-11-2-WW-average-value">
-      <!--<title>Calculate an average value of a polynomial function</title>-->
-         <webwork source="Library/ASU-topics/setCalculus/stef/stef15_2p1.pg"/>
-         </exercise>
-
-         <exercise label="Library__ASU-topics__setCalculus__stef__stef15_2p2.pg" xml:id="ex-11-2-WW-average-value-2">
-      <!--<title>Calculate an average value of a radical and exponential function</title>-->
-         <webwork source="Library/ASU-topics/setCalculus/stef/stef15_2p2.pg"/>
-         </exercise>
-
-
-
-      <exercise>
-        <statement>
-          <p>
-            Evaluate each of the following double or iterated integrals exactly.
-            <ol marker="a.">
-              <li>
-                <p>
-                  <m>\int_1^3 \left( \int_2^5 xy \, dy \right) \, dx</m>
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  <m>\int_0^{\pi/4} \left( \int_0^{\pi/3} \sin(x) \cos(y) \, dx \right) \, dy</m>
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  <m>\int_0^1 \left( \int_0^1 e^{-2x - 3y} \, dy \right) \, dx</m>
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  <m>\iint_R \sqrt{2x + 5y} \, dA</m>, where <m>R = [0,2]\times[0,3]</m>.
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-
-        <answer>
-          <ol marker="a.">
-            <li>
-              <p>
-                <m>42</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> \frac{\sqrt{2}}{4}</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> \frac{\sqrt{1}}{6} \left(e^{-5}-e^{-2} - e^{-3} + 1\right)</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> \frac{2}{75} \left(19^{5/2} - 4^{5/2} - 15^{5/2}\right)</m>
-              </p>
-            </li>
-          </ol>
-        </answer>
-
-        <solution>
-          <ol marker="a.">
-            <li>
-              <p>
-                We integrate first with respect to <m>y</m>,
-                then with respect to <m>x</m>:
-                <md>
-                  <mrow>\int_1^3 \left( \int_2^5 xy \, dy \right) \, dx \amp = \int_1^3 \left( x\frac{y^2}{2}\right)\mid_{y=2}^{5} \, dx</mrow>
-                  <mrow>\amp = \int_1^3  \frac{21}{2}x \, dx</mrow>
-                  <mrow>\amp = \frac{21}{4}x^2 \mid_{x=1}^3</mrow>
-                  <mrow>\amp = \frac{21}{4}(8)</mrow>
-                  <mrow>\amp = 42</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                We integrate first with respect to <m>x</m>,
-                then with respect to <m>y</m>:
-                <md>
-                  <mrow>\int_0^{\pi/4} \left( \int_0^{\pi/3} \sin(x) \cos(y) \, dx \right) \, dy \amp = \int_0^{\pi/4} \left( -\cos(x) \cos(y) \mid_0^{x=\pi/3}  \right) \, dy</mrow>
-                  <mrow>\amp = \int_0^{\pi/4} \left( -\frac{1}{2}-(-1)\right) \cos(y) \, dy</mrow>
-                  <mrow>\amp = \frac{1}{2} \sin(y) \mid_{y=0}^{\pi/4}</mrow>
-                  <mrow>\amp = \frac{\sqrt{2}}{4}</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                We integrate first with respect to <m>y</m>,
-                then with respect to <m>x</m>:
-                <md>
-                  <mrow>\int_0^1 \left( \int_0^1 e^{-2x - 3y} \, dy \right) \, dx \amp = \int_0^1 \left( -\frac{1}{3}e^{-2x - 3y}\mid_{y=0}^1 \right) \, dx</mrow>
-                  <mrow>\amp = -\frac{1}{3} \int_0^{1} \left( e^{-2x-3} - e^{-2x} \right) \, dy</mrow>
-                  <mrow>\amp = \frac{1}{6} \left(e^{-2x-3} - e^{-2x}\right) \mid_{x=0}^{1}</mrow>
-                  <mrow>\amp = \frac{\sqrt{1}}{6} \left(e^{-5}-e^{-2} - e^{-3} + 1\right)</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                We integrate first with respect to <m>y</m>,
-                then with respect to <m>x</m>:
-                <md>
-                  <mrow>\iint_R \sqrt{2x + 5y} \, dA \amp = \int_0^2 \left( \int_0^3 \sqrt{2x+5y} \, dy \right) \, dx</mrow>
-                  <mrow>\amp = \int_0^2 \left( \frac{2}{15}(2x+5y)^{3/2}\mid_{y=0}^3 \right) \, dx</mrow>
-                  <mrow>\amp = \frac{2}{15}\int_0^2 \left( (2x+15)^{3/2} - (2x)^{3/2} \right) \, dx</mrow>
-                  <mrow>\amp = \left(\frac{2}{15}\right)\left(\frac{1}{5}\right) \left( (2x+15)^{5/2} - (2x)^{5/2} \right)\mid_{x=0}^2</mrow>
-                  <mrow>\amp = \frac{2}{75} \left(19^{5/2} - 4^{5/2} - 15^{5/2}\right)</mrow>
-                </md>.
-              </p>
-            </li>
-          </ol>
-        </solution>
-
-      </exercise>
-
-
-      <exercise>
-        <statement>
-          <p>
-            The temperature at any point on a metal plate in the <m>xy</m> plane is given by <m>T(x,y) = 100-4x^2 - y^2</m>, where <m>x</m> and <m>y</m> are measured in inches and <m>T</m> in degrees Celsius. Consider the portion of the plate that lies on the rectangular region <m>R = [1,5] \times [3,6]</m>.
-            <ol marker="a.">
-              <li>
-                <p>
-                  Write an iterated integral whose value represents the volume under the surface <m>T</m> over the rectangle <m>R</m>.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Evaluate the iterated integral you determined in (a).
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Find the area of the rectangle, <m>R</m>.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Determine the exact average temperature, <m>T_{\operatorname{AVG}(R)}</m>, over the region <m>R</m>.
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-
-        <answer>
-          <ol marker="a.">
-            <li>
-              <p>
-                <me>
-                  \int_1^5 \left( \int_3^6 100 - 4x^2-y^2 \, dy \right) \, dx
-                </me>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> 452</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                 <m>12</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>\frac{113}{3}</m>
-              </p>
-            </li>
-          </ol>
-        </answer>
-
-        <solution>
-          <ol marker="a.">
-            <li>
-              <p>
-                An iterated integral whose value represents the volume under the surface <m>T</m> over the rectangle <m>R</m> is
-                <me>
-                  \int_1^5 \left( \int_3^6 100 - 4x^2-y^2 \, dy \right) \, dx
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Integrating with respect to <m>y</m> then <m>x</m> gives us
-                <md>
-                  <mrow>\int_1^5 \left( \int_3^6 100 - 4x^2-y^2 \, dy \right) \, dx \amp = \int_1^5 \left( (100-4x^2)y - \frac{y^3}{3} \right)\mid_3^6  \, dx</mrow>
-                  <mrow>\amp = \int_1^5 \left( 300-12x^2 - \frac{189}{3} \right) \, dx</mrow>
-                  <mrow>\amp = \left( 300x-4x^3 - \frac{189}{3}x \right)\mid_1^5</mrow>
-                  <mrow>\amp = 1200 - 496 - \frac{756}{3}</mrow>
-                  <mrow>\amp = 452</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The area of the rectangle, <m>R</m>, is <m>(4)(3) = 12</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The exact average temperature,
-                <m>T_{\operatorname{AVG}(R)}</m>,
-                over the region <m>R</m> is
-                <me>
-                  T_{\operatorname{AVG}(R)} = \frac{1}{\text{ Area } (R)} \iint_R T(x,y) \, dA = \frac{452}{12} = \frac{113}{3}
-                </me>.
-              </p>
-            </li>
-          </ol>
-        </solution>
-
-        
-      </exercise>
-      <exercise>
-        <statement>
-          <p>
-            Consider the box with a sloped top that is given by the following description: the base is the rectangle <m>R = [1,4] \times [2,5]</m>, while the top is given by the plane <m>z = p(x,y) = 30 - x - 2y</m>.
-            <ol marker="a.">
-              <li>
-                <p>
-                  Write an iterated integral whose value represents the volume under <m>p</m> over the rectangle <m>R</m>.
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  Evaluate the iterated integral you determined in (a).
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  What is the exact average value of <m>p</m> over <m>R</m>?
-                </p>
-              </li>
-
-              <li>
-                <p>
-                  If you wanted to build a rectangular box (with an identical base) that has the same volume as the box with the sloped top described here, how tall would the rectangular box have to be?
-                </p>
-              </li>
-            </ol>
-          </p>
-        </statement>
-
-        <answer>
-          <ol marker="a.">
-            <li>
-              <p>
-                <me>
-                  \int_1^4 \left( \int_2^5 30-x-2y \, dy \right) \, dx
-                </me>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m> 184.5</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>20.5</m>
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>20.5</m>
-              </p>
-            </li>
-          </ol>
-        </answer>
-
-        <solution>
-          <ol marker="a.">
-            <li>
-              <p>
-                An iterated integral whose value represents the volume under <m>p</m> over the rectangle <m>R</m> is
-                <me>
-                  \int_1^4 \left( \int_2^5 30-x-2y \, dy \right) \, dx
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                Integrating with respect to <m>y</m> then <m>x</m> gives us
-                <md>
-                  <mrow>\int_1^4 \left( \int_2^5 30-x-2y \, dy \right) \, dx \amp = \int_1^4 \left( (30-x)y - y^2 \right)\mid_2^5 \, dx</mrow>
-                  <mrow>\amp = \int_1^4 \left( 90-3x - 21 \right) \, dx</mrow>
-                  <mrow>\amp = \left( 69x-\frac{3}{2}x^2 \right)\mid_1^4</mrow>
-                  <mrow>\amp = 207 - \frac{45}{2}</mrow>
-                  <mrow>\amp = 184.5</mrow>
-                </md>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The exact average value of <m>p</m> over <m>R</m> is
-                <me>
-                  p_{\operatorname{AVG}(R)} = \frac{1}{\text{ Area } (R)} \iint_R p(x,y) \, dA = \frac{184.5}{(3)(3)} = 20.5
-                </me>.
-              </p>
-            </li>
-            <li>
-              <p>
-                The average value of <m>p</m> over <m>R</m> tells us the height of a rectangular box
-                (with an identical base)
-                that has the same volume as the box with the sloped top described here,
-                so we need a box of height <m>20.5</m>.
-              </p>
-            </li>
-          </ol>
-        </solution>
-
-        
-      </exercise>
-    </exercises>
-
+    <xi:include href="exercises/ez-S_multi_ints_iterated_ints.ptx" />
 </section>

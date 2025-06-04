@@ -321,31 +321,30 @@
     If you look at <xref ref="coord2d-2"/>, you can see a right triangle in the first quadrant with base <m>x</m> and height <m>y</m>. The angle the hypotenuse makes with the base is <m>\theta</m>. From this, you can deduce the four relationships shown below, which are used to convert between rectangular and polar coordinates. It may be insightful to draw triangles of this type in each of the quadrants to confirm for yourself that these conversion formulas are valid in all four cases.
   </p>
   <assemblage xml:id="rect-polar">
-    <title>Converting between recangular and polar coordinates</title>
-  <p>
-    <dl>
-      <li>
-        <title>From polar to rectangular</title>
-        <p>
-          Given polar coordinates <m>(r,\theta)</m> of a point <m>P</m>, the rectangular coordinates <m>(x,y)</m> of <m>P</m> satisfy
-          <md>
-            <mrow>x \amp = r \cos(\theta) \amp  y \amp= r \sin(\theta)</mrow>
-          </md>.
-        </p>
-      </li>
-
-      <li>
-        <title>From rectangular to polar</title>
-        <p>
-          Given rectangular coordinates <m>(x,y)</m> of a point <m>P</m>, the polar coordinates <m>(r,\theta)</m> of <m>P</m> satisfy
-          <md>
-            <mrow>r^2  \amp = x^2  + y^2 \amp \tan(\theta) \amp= \frac{y}{x} </mrow>
-          </md>,
-          assuming <m> x \neq 0</m>.
-        </p>
-      </li>
-    </dl>
-  </p>
+    <title>Converting between rectangular and polar coordinates</title>
+    <p>
+      <dl>
+        <li>
+          <title>From polar to rectangular</title>
+          <p>
+            Given polar coordinates <m>(r,\theta)</m> of a point <m>P</m>, the rectangular coordinates <m>(x,y)</m> of <m>P</m> satisfy
+            <md>
+              <mrow>x \amp = r \cos(\theta) \amp  y \amp= r \sin(\theta)</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <title>From rectangular to polar</title>
+          <p>
+            Given rectangular coordinates <m>(x,y)</m> of a point <m>P</m>, the polar coordinates <m>(r,\theta)</m> of <m>P</m> satisfy
+            <md>
+              <mrow>r^2  \amp = x^2  + y^2 \amp \tan(\theta) \amp= \frac{y}{x} </mrow>
+            </md>,
+            assuming <m> x \neq 0</m>.
+          </p>
+        </li>
+      </dl>
+    </p>
   </assemblage>
   <p>
     It is important to notice that the equations used in the conversion from polar to rectangular work to convert coordinates of a point for <em>any</em> values of <m>r</m> and <m>\theta</m>, including negative <m>r</m>-values and values of <m>\theta</m> outside the interval <m>[0,2\pi]</m>. The conversion equations to go from rectangular to polar require you to interpret the results of your calculation by choosing from multiple suitable values for <m>r</m> and <m>\theta</m>. This is because we are not able to solve uniquely for <m>r</m> and <m>\theta</m> in terms of <m>x</m> and <m>y</m>. This is because there is not a unique set of polar coordinates for a location. A point can have many different polar coordinates that refer to the same location.
@@ -354,7 +353,7 @@
     For example, the point with rectangular coordinates <m>(-1,-1)</m> can be given the polar coordinates <m>(r,\theta)=(\sqrt{2},\frac{5\pi}{4})</m> or <m>(r,\theta)=(-\sqrt{2},\frac{-\pi}{4})</m> or <m>(r,\theta)=(\sqrt{2},\frac{13\pi}{4})</m> or <m>(r,\theta)=(\sqrt{2},-\frac{3\pi}{4})</m> or <m>(r,\theta)=(-\sqrt{2},-\frac{7\pi}{4})</m> (amongst many others). The good news is that when you need to choose appropriate <m>r</m> and <m>\theta</m>, you can make proper choices based on your experience with quadrants and where the point is (in terms of <m>x</m> and <m>y</m>). 
   </p>
 
-<example>
+<example xml:id="polar-interpret">
   <p>
     In this example, we will look at how to convert the points with rectangular coordinates <m>P=(-2,3)</m> and <m>Q=(-3,-2)</m> into polar coordinates. Note here that <m>P</m> is in the second quadrant and <m>Q</m> is in the third quadrant. 
   </p>

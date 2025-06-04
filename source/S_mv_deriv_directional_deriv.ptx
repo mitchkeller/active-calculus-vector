@@ -25,7 +25,7 @@
           </li>
           <li>
             <p>
-              What is the gradient of a multivariable function and what does it tell us about the rate of change the function in different directions?
+              What is the gradient of a multivariable function and what does it tell us about the rate of change in different directions?
             </p>
           </li>
         </ul>
@@ -42,13 +42,13 @@
       <caption>An example of a sixteen point compass rose (from <url
       href="https://commons.wikimedia.org/w/index.php?curid=667281" visual="commons.wikimedia.org/w/index.php?curid=667281">By Brosen~commonswiki - Own work, CC BY 2.5</url>)</caption>
       <image width="50%" source="/Brosen_windrose.png">
-        <description>A sixteen point compass rose</description>
+        <description><p>A sixteen point compass rose</p></description>
       </image>
     </figure>
     <exploration xml:id="PA-DD">
       <introduction>
         <p>
-          <xref ref="PA-DDcontour1"/> is a contour plot showing the elevations for a region of a nearby park. The elevations are given in meters above sea level and the horizontal and vertical grid lines are 1 km apart. Several locations are labeled on <xref ref="PA-DDcontour1"/> with capital letters. We will be referring to <m>h(x,y)</m> as the function of two variables that gives the elevation as a function of x-coordinates (location in East-West, horizontal direction) and y-coordinates (location North-South, vertical direction).
+          <xref ref="PA-DDcontour1"/> is a contour plot showing the elevations for a region of a nearby park. <!-- The elevations are given in meters above sea level and the horizontal and vertical grid lines are 1 km apart. Several locations are labeled on <xref ref="PA-DDcontour1"/> with capital letters. --> We will be referring to <m>h(x,y)</m> as the function of two variables that gives the elevation as a function of x-coordinates (location in East-West, horizontal direction) and y-coordinates (location North-South, vertical direction).
         </p>
         <figure xml:id="PA-DDcontour1">
           <caption>A contour plot representing the elevation of locations in a nearby park with three locations labeled</caption>
@@ -59,7 +59,7 @@
               f(x,y)=(x*y+(y-20)^2)/125+90*exp(-(((x-70)/90)^2+((y+10)/30)^2))+100+100*exp(-(((x+75)/30)^2+((y-50)/60)^2))
               n=30
               c=[70+i*5 for i in range(n)]
-              plot2=contour_plot(f(x,y),(x,-100,100),(y,-100,100),fill=True,labels=True,linewidths=1,contours=c,label_fmt="%1.0f",gridlines=True,plot_points=100,tick_formatter=(ticker.NullFormatter(),
+              plot2=contour_plot(f(x,y),(x,-100,100),(y,-100,100),fill=False,labels=True,linewidths=1,contours=c,label_fmt="%1.0f",gridlines=True,plot_points=100,tick_formatter=(ticker.NullFormatter(),
               ticker.NullFormatter()))
               plot2+=arrow((-90,-90),(-80,-90),color="black",arrowsize=2)+arrow((-90,-90),(-90,-80),color="black",arrowsize=2)
               plot2+=arrow((-90,-90),(-100,-90),color="black",arrowsize=2)+arrow((-90,-90),(-90,-100),color="black",arrowsize=2)
@@ -91,47 +91,49 @@
       <task>
         <statement>
           <p>
-            Suppose we are at the point B. Would you expect the elevation to be increasing, decreasing, or constant if you took a step in the Northeast direction?
+            Suppose we are at point B. Would you expect the elevation to be increasing, decreasing, or constant if you took a step in the Northeast direction?
           </p>
         </statement>
       </task>
        <task>
         <statement>
           <p>
-            Suppose we are at the point B. Would you expect the elevation to be increasing, decreasing, or constant if you took a step in the Southeast direction?
+            Suppose we are at point B. Would you expect the elevation to be increasing, decreasing, or constant if you took a step in the Southeast direction?
           </p>
         </statement>
       </task>
        <task>
         <statement>
           <p>
-            Suppose we are at the point A. Would you expect the elevation to be increasing, decreasing, or constant if you took a step in the Southwest direction?
+            Suppose we are at point A. Would you expect the elevation to be increasing, decreasing, or constant if you took a step in the Southwest direction?
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Suppose we are at the point C. In what direction would you take a step to move in the steepest downhill direction?
+            Suppose we are at point C. In what direction would you take a step to move in the steepest downhill direction?
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Suppose we are at the point A. In what direction would you take a step to move in the steepest uphill direction?
+            Suppose we are at point A. In what direction would you take a step to move in the steepest uphill direction?
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Suppose we are at point B. Rank the following directions in order of steepness: Northeast, North, East, West, South
+            Suppose we are at point B. Rank the following directions in order of steepness (from most steep and uphil to level to most steep downhill): Northeast, North, East, West, South
           </p>
         </statement>
       </task>
     </exploration>
-
+    <p>
+      As you saw in the preview activity, visual information like a contour plot or a surface plot will be helpful in determining information about how quickly the output of a function is changing as your inputs change in different directions. In the next subsections, we will focus on how to calculate this kind of directional derivative using either algebraic or numerical representations of our function, then we will relate this calculation to other ways we have described change for a function. 
+    </p>
     <!-- <exploration xml:id="PA-DD">
       <statement>
         <p>
@@ -258,13 +260,13 @@
   <subsection>
     <title>Directional Derivatives</title>
     <p>
-      The goal of this section is to measure the rate of change for a function of two variables in a direction that is not parallel to one of the coordinate directions. We will use the classic calculus approach to set up this measurement (approximate our measurement, quantify how the approximation changes on a smaller scale, then use a limit to find the actual value). In order to measure the rate of change in the output of our function, we will use a typical difference quotient 
+      The first goal of this section is to measure the rate of change for a function of two variables in a direction that is not parallel to one of the coordinate directions. We will use the classic calculus approach to set up this measurement: approximate our measurement, quantify how the approximation changes on a smaller scale, then use a limit to find the actual value. In order to measure the rate of change in the output of our function, we will use a typical difference quotient 
       <me>
         \text{rate of change} = \frac{\text{change in output}}{\text{change in input}}
       </me>
     </p>
     <p>
-      Let <m>f</m> be a function of two variables, <m>x</m> and <m>y</m>, where we wish to measure the rate of change in the <m>\langle a,b\rangle</m> direction for <m>f</m> at the base point <m>(x_0,y_0)</m>. So we can set up the difference quotient using the points <m>(x_0+a,y_0+b)</m> and <m>(x_0,y_0</m>).
+      Let <m>f</m> be a function of two variables, <m>x</m> and <m>y</m>, where we wish to measure the rate of change in the <m>\langle a,b\rangle</m> direction for <m>f</m> at the base point <m>(x_0,y_0)</m>. So we can set up the difference quotient using the input points <m>(x_0+a,y_0+b)</m> and <m>(x_0,y_0</m>).
       <me>\frac{f(x_0+a,y_0+b)-f(x_0,y_0)}{\sqrt{a^2+b^2}}</me>
       Note here that we use the distance formula to measure the change in the input as distance on the <m>xy</m>-plane. <xref ref="CCA-DD1" /> shows the plot of a surface given by <m>z=f(x,y)</m> with the points used in the difference quotient labeled.
     </p>
@@ -272,54 +274,22 @@
       <caption>A plot of <m>f(x,y)</m> with the measurements of change in input and output labeled for a change of inputs given by <m>\langle a,b\rangle</m></caption>
       <interactive title="interactive-CCA-DD1" platform="sage" width="100%" aspect="1:1">
         <slate surface="sage">
-          from sage.plot.plot3d.plot3d import axes
-          var('x,y,z,t,s')
-          scale=2; a=1/2;b=1/3 ;x0=1;y0=1;
-          f(x,y)=2*exp(-(x-1/2)^2/2-y^2/4)
-          plot3=axes(scale,1,color="black",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-          param(s,t)=(s,t,f(s,t))
-          #set up grid      n is number of steps in s    m is number of steps in t  
-          #a1 is min s    a2 is max s   b1 is min t    b2 is max t
-          n=6;m=6;a1=0;a2=2;b1=0;b2=2; 
-          #c1 is surface color     o1 is surface opacity
-          #c2 and o2 are for constant t value traces
-          #c3 and o3 are for constant s value traces
-          c1="gray"; c2="black"; c3="black"; o1=0.2; o2=0.2; o3=0.2;
-          plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
-          for i in range(n+1):
-            sv=a1+i/n*(a2-a1)
-            plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
-          for i in range(m+1):
-            tv=b1+i/m*(b2-b1)
-            plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
-          plot3+=plot99
-          #plot3+=plot3d(f(x,y),(x,0,2),(y,0,2),color="gray",plot_points=13,opacity=0.3)
-          plot3+=parametric_plot3d((x0+a*t,y0+b*t,f(x0+a*t,y0+b*t)),(t,-2,2),color="black",opacity=0.5,thickness=2)
-          #plot3+=parametric_plot3d((x0+a*t,y0+b*t,s),(t,-1,1.5),(s,0,2),color="gray",opacity=0.4,mesh=True,plot_points=3)
-          plot3+=point((x0,y0,f(x0,y0)),color="red",size=20)+point((x0+a,y0+b,f(x0+a,y0+b)),color="red",size=20)
-          plot3+=arrow3d((x0,y0,0),(x0+a,y0+b,0),color="blue")+text3d("\u27E8a,b\u27E9",(a+0.25+x0,b+0.25+y0,0),color="blue",fontsize=20)
-          plot3+=line([(x0-b/2,y0+a/2,0),(x0,y0,0),(x0+a,y0+b,0),(x0+a-b/2,y0+b+a/2,0)],color="blue",thickness=2)
-          plot3+=text3d("change",(x0+a/2-b/2,y0+b/2+a/2,-0.1),color="blue",fontsize=20)+text3d("in input",(x0+a/2-b/2,y0+b/2+a/2,-0.3),color="blue",fontsize=20)
-          plot3+=line([(x0,y0,f(x0,y0)),(0,0,f(x0,y0))],color="red",thickness=2)
-          plot3+=line([(x0+a,y0+b,f(x0+a,y0+b)),(0,0,f(x0+a,y0+b))],color="red",thickness=2)+text3d("change in output",(-1.25,0,(f(x0,y0)+f(x0+a,y0+b))/2),color="red",fontsize=20)
-          plot3+=arrow((0,0,(f(x0,y0)+f(x0+a,y0+b))/2),(0,0,f(x0+a,y0+b)),color="red")
-          plot3+=arrow((0,0,(f(x0,y0)+f(x0+a,y0+b))/2),(0,0,f(x0,y0)),color="red")
-          show(plot3,viewpoint=[[-0.0327,-0.6937,-0.7196],176.12],camera_position=[1.1319,6.5856,1.2975])
+          <xi:include href="interacts/CCA-DD1.txt" parse="text" />
         </slate>
       </interactive>
     </figure>
     <p>
-      The difference quotient given above is a good start to approximating the rate of change for the output of <m>f</m> in the direction <m>\langle a,b\rangle</m> (the first step in our classic calculus approach), but it is not clear how this approximation will change when we look at smaller scales. Specifically, we will need to look at what happens to this approximation as we shrink the step size, <m>\sqrt{a^2+b^2}\to 0</m>. We can separate the length of the vector <m>\langle a,b \rangle </m> from its direction by finding the unit vector in the direction of <m>\langle a,b\rangle</m>.
+      The difference quotient given above is a good start to approximating the rate of change for the output of <m>f</m> in the direction <m>\langle a,b\rangle</m> (the first step in our classic calculus approach), but it is not clear how this approximation will change when we look at smaller scales. Specifically, we will need to look at what happens to this approximation as we shrink the step size, <m>\sqrt{a^2+b^2}\to 0</m> while maintaining the same direction of change. In order to maintain our direction <em>and</em> look at smaller step sizes, we will need to separate the length of the vector <m>\langle a,b \rangle </m> from its direction using the unit vector in the direction of <m>\langle a,b \rangle</m>.
     </p>
     <p>
-      Let <m>\vu=\langle u_1,u_2\rangle </m> be the unit vector in the same direction as <m>\langle a,b \rangle</m>. Thus, we can express <m>\langle a,b \rangle = t \langle u_1,u_2\rangle</m>, where <m>t</m> is the step size and <m>\vu=\langle u_1,u_2\rangle </m> is the unit vector in the direction we want to measure the rate of change of <m>f</m>. Our difference quotient becomes 
+      Let <m>\vu=\langle u_1,u_2\rangle </m> be the unit vector in the same direction as <m>\langle a,b \rangle</m>. We can express the vectors in the same direction as <m>\langle a,b \rangle</m> using the form <m> t \langle u_1,u_2\rangle</m>, where <m>t</m> is the step size and <m>\vu=\langle u_1,u_2\rangle </m> is our unit vector. Taking a step of length <m>t</m> in the direction <m>\langle u_1,u_2 \rangle</m>, our difference quotient becomes 
       <me>\frac{f(x_0+t (u_1),y_0+t(u_2))-f(x_0,y_0)}{t}</me>
-      and looking at smaller scales will be accomplished by looking at what happens as <m>t</m> goes to zero. This accomplishes the second step of our classic calculus approach in quantifying how our approximation will work on smaller scales. We can take the limit as <m>t \to 0</m> to get our definition for the directional derivative.
+      We will need to look how this difference quotient changes at smaller scales (as our step size <m>t</m> gets smaller). This accomplishes the second step of our classic calculus approach in quantifying how our approximation will work on smaller scales. We can now take the limit as <m>t \to 0</m> to get our definition for the directional derivative.
     </p>
     <definition xml:id="defn-DD">
       <statement>
         <p>
-          Let <m>f = f(x,y)</m> be a function of two variables. The <term>derivative of <m>f</m> at the point <m>(x,y)</m> in the direction of the unit vector <m>\vu = \langle u_1, u_2 \rangle</m></term><idx><h>directional derivative</h></idx> is denoted <m>D_{\vu}f(x,y)</m> and is given by
+          Let <m>f(x,y)</m> be a function of two variables. The <term>derivative of <m>f</m> at the point <m>(x,y)</m> in the direction of the unit vector <m>\vu = \langle u_1, u_2 \rangle</m></term><idx><h>directional derivative</h></idx> is denoted <m>D_{\vu}f(x,y)</m> and is given by
           <men xml:id="E_DirDerDef">
             D_{\vu}f(x,y) = \lim_{t \to 0} \frac{f(x+u_1 t, y+u_2 t) - f(x,y)}{t}
           </men>
@@ -328,48 +298,21 @@
       </statement>
     </definition>
     <p>
-      The notation <m>D_{\vu}f(x,y)</m> can also be read as the directional derivative of <m>f</m> in the direction <m>\vu</m> at the point <m>(x,y)</m>. While this may seem like a handful, each piece of this statement is necessary for a directional derivative; We need to specify what function we are looking at the rate of change of, the location at which we are looking at the rate of change, AND the direction in which we will change the inputs. When we evaluate the directional derivative <m>D_{\vu} f(x,y)</m> at a point <m>(x_0, y_0)</m>, the result <m>D_{\vu} f(x_0,y_0)</m> tells us the instantaneous rate at which <m>f</m> changes at <m>(x_0, y_0)</m> per unit increase in the direction of the vector <m>\vu</m>.
+      The notation <m>D_{\vu}f(x,y)</m> can also be read as <q>the directional derivative of <m>f</m> in the direction <m>\vu</m> at the point <m>(x,y)</m>.</q> While this may seem like a handful, each piece of this statement is necessary for a directional derivative; We need to specify what function we are looking at, the location at which we are looking for the rate of change, AND the direction in which we will change the inputs. When we evaluate the directional derivative <m>D_{\vu} f(x,y)</m> at a point <m>(x_0, y_0)</m>, the result <m>D_{\vu} f(x_0,y_0)</m> tells us the instantaneous rate at which <m>f</m> changes at <m>(x_0, y_0)</m> per unit increase in the direction of the vector <m>\vu</m>.
     </p>
     <p>
-      We will take a moment to discuss something you may have noticed which will connect to our method of understanding surfaces (and their defining functions) by looking at slices. We can think about the directional derivative as a single variable calculus problem if we cut our surface in the <m>\langle u_1,u_2\rangle </m> direction through our base point. 
+      We will take a moment to connect <xref ref="E_DirDerDef">Equation</xref> to our work on traces earlier in this chapter. When initially exploring surface plots, we simplified our approach by looking at slices that were parallel to one of the coordinate axes (by holding the other input variable constant). This allowed us to use our single variable calculus knowledge to understand a bit more about the surface as well as motivating the definitions for partial derivatives. Similarly, if we cut our surface in the <m>\langle u_1,u_2\rangle </m> direction through our base point, then we can think about the directional derivative as a single variable calculus problem. 
     </p>
     <figure xml:id="CCA-DD2">
       <caption>A plot of <m>f(x,y)</m> with a trace shown from the point <m>(x_0,y_0)</m> in the direction <m>\langle u_1,u_2 \rangle</m></caption>
       <interactive title="interactive-CCA-DD2" platform="sage" width="100%" aspect="1:1">
         <slate surface="sage">
-          from sage.plot.plot3d.plot3d import axes
-          var('x,y,z,t,s')
-          scale=2; a=1/2;b=1/3 ;x0=1;y0=1;
-          f(x,y)=2*exp(-(x-1/2)^2/2-y^2/4)
-          plot4=axes(scale,1,color="black",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-          param(s,t)=(s,t,f(s,t))
-          #set up grid      n is number of steps in s    m is number of steps in t  
-          #a1 is min s    a2 is max s   b1 is min t    b2 is max t
-          n=6;m=6;a1=0;a2=2;b1=0;b2=2; 
-          #c1 is surface color     o1 is surface opacity
-          #c2 and o2 are for constant t value traces
-          #c3 and o3 are for constant s value traces
-          c1="gray"; c2="black"; c3="black"; o1=0.2; o2=0.2; o3=0.2;
-          plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
-          for i in range(n+1):
-            sv=a1+i/n*(a2-a1)
-            plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
-          for i in range(m+1):
-            tv=b1+i/m*(b2-b1)
-            plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
-          plot4+=plot99
-          #plot3+=plot3d(f(x,y),(x,0,2),(y,0,2),color="gray",plot_points=13,opacity=0.3)
-          plot4+=parametric_plot3d((x0+a*t,y0+b*t,f(x0+a*t,y0+b*t)),(t,0,2),color="blue",opacity=0.5,thickness=3)
-          plot4+=parametric_plot3d((x0+a*t,y0+b*t,0),(t,0,2),color="red",opacity=0.5,thickness=3)
-          plot4+=parametric_plot3d((x0+a*t,y0+b*t,s),(t,0,2),(s,0,2),color="blue",opacity=0.1,mesh=True,plot_points=2)
-          plot4+=arrow((x0,y0,0),(x0+a,y0+b,0),color="red",width=1)+text3d("\u27E8u\u2081,u\u2082\u27E9",(a+0.25+x0,b+0.25+y0,-0.2),color="red",fontsize=20)
-          plot4+=point((x0,y0,f(x0,y0)),color="blue",size=30)+point((x0,y0,0),color="red",size=20)
-          show(plot4,viewpoint=[[-0.6979,-0.4507,-0.5566],98.49],camera_position=[6.4729,-1.1441,2.3749])
+          <xi:include href="interacts/CCA-DD2.txt" parse="text" />
         </slate>
       </interactive>
     </figure>
     <p>
-      In particular, we can parameterize the trace along the surface by noticing our inputs correspond to the line in the xy-plane given by <m>\langle x_0+ u_1 t, y_0 + u_2 t\rangle</m> (shown in red on <xref ref="CCA-DD2"/>) and thus our trace along the surface will be given by <m>\vr(t)=\langle x_0+ u_1 t, y_0 + u_2 t , f(x_0+ u_1 t, y_0 + u_2 t) \rangle</m> (shown in blue on <xref ref="CCA-DD2"/>). We can visualize the directional derivative as the slope of a tangent line along this trace as drawn in black on <xref ref="CCA-DD3"/>. The quantity <m>D_{\vu} f(x_0,y_0)</m> tells us the slope of the line tangent to the surface in the direction of <m>\vu</m> at the point <m>(x_0,y_0,f(x_0,y_0))</m>. 
+      In particular, we can parameterize the trace along the surface by noticing our inputs correspond to the line in the xy-plane given by <m>\langle x_0+ u_1 t, y_0 + u_2 t\rangle</m> (shown in red on <xref ref="CCA-DD2"/>). Note that when <m>t=0</m> the location will be <m>(x_0,y_0)</m>. Our trace along the surface will be given by <m>\vr(t)=\langle x_0+ u_1 t, y_0 + u_2 t , f(x_0+ u_1 t, y_0 + u_2 t) \rangle</m> (shown in blue on <xref ref="CCA-DD2"/>). We can plot the trace of our surface in the direction of <m>\langle u_1,u_2 \rangle</m> (as a function of <m>t</m>) as a 2D plot like <xref ref="CCA-DD3"/>. We can visualize the directional derivative as the slope of a tangent line at our base point as drawn in black on <xref ref="CCA-DD3"/>. The scalar <m>D_{\vu} f(x_0,y_0)</m> tells us the slope of the line tangent to the surface in the direction of <m>\vu</m> at the point <m>(x_0,y_0,f(x_0,y_0))</m>. 
     </p>
     <figure xml:id="CCA-DD3">
       <caption>A plot of the trace of <m>f</m> along the direction <m>\langle u_1,u_2\rangle</m> with tangent line drawn at point corresponding to <m>(x_0,y_0)</m></caption>
@@ -377,12 +320,13 @@
         <sageplot>
           from matplotlib import ticker
           var('x,y,z,t,s')
-          f(x,y)=2*exp(-(x-1/2)^2/2-y^2/4)
-          a=1/2;b=1/3 ;x0=1;y0=1;
+          f(x,y)=3*exp(-(x-1/2)^2/2-y^2/4)-1
+          a=2/3;b=1/3 ;x0=1/2;y0=1;
           fx=diff(f,x);fy=diff(f,y);
           fxv=fx(x=x0,y=y0);fyv=fy(x=x0,y=y0);
-          plot4=plot(f(x0+a*t,y0+b*t),(t,0,2),color="blue",axes_labels=["$t$","$f(x_0+t u_1,y_0+t u_2)$"],thickness=2,gridlines=True,ymin=0,ymax=2,aspect_ratio=2,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
-          plot4+=parametric_plot((t,f(x0,y0)+a*fxv*t+b*fyv*t),(t,-1/2,1/2),color="black",thickness=2)
+          plot4=plot(f(x0+a*t,y0+b*t),(t,0,2),color="blue",axes_labels=["$t$","$f(x_0+t u_1,y_0+t u_2)$"],thickness=2,gridlines=True,ymin=0,ymax=2,aspect_ratio=1,tick_formatter=(ticker.NullFormatter(),
+          ticker.NullFormatter()))
+          plot4+=parametric_plot((t,f(x0,y0)+a*fxv*t+b*fyv*t),(t,0,1/2),color="black",thickness=2)
           plot4
         </sageplot>
       </image>
@@ -428,34 +372,34 @@
 
 
   <subsection>
-    <title>Computing the Directional Derivative</title>
+    <title>Efficiently Computing the Directional Derivative</title>
     <p>
-      In a similar way to how we developed algebraic rules for calculating standard derivatives in single variable calculus and for partial derivatives in multivariable calculus, we can also find a way to evaluate directional derivatives without resorting to the limit definition found in Equation <xref ref="E_DirDerDef"/>. We will look at these algebraic shortcuts from two perspectives; first, we will look at <xref ref="E_DirDerDef"/> as a composition of functions and use the chain rule from <xref ref="S-10-5-Chain-Rule"/>. Second, we will look at how the directional derivative can be found from our linearization when we have <q>nice</q> functions.
+      In a similar way to how we developed algebraic rules for calculating standard derivatives in single variable calculus and for partial derivatives in multivariable calculus, we want to find a way to evaluate directional derivatives without resorting to evaluating the limit definition (Equation <xref ref="E_DirDerDef"/>). We will look at this algebraic shortcuts from two perspectives; First, we will look at <xref ref="E_DirDerDef">Equation</xref> as a composition of functions and use the chain rule from <xref ref="S-10-5-Chain-Rule"/> to define a simple algebraic rule which will allow us to efficiently calculate directional derivatives. Second, we will look at how directional derivatives can be computed using the linearization (when we have a locally linear/differentiable function).
     </p>
-
     <p>
-      We are interested in the instantaneous rate of change of <m>f</m> at a point <m>(x_0,y_0)</m> in the direction <m>\vu = \langle u_1, u_2 \rangle</m>, where <m>\vu</m> is a unit vector. Our trace along the surface will be given by <m>\vr(t)=\langle x_0+ u_1 t, y_0 + u_2 t , f(x_0+ u_1 t, y_0 + u_2 t) \rangle</m>. In particular, the input variables <m>x</m> and <m>y</m> are therefore changing according to
+      We are interested in the instantaneous rate of change of <m>f</m> at a point <m>(x_0,y_0)</m> in the direction <m>\vu = \langle u_1, u_2 \rangle</m>, where <m>\vu</m> is a unit vector. In particular, the input variables <m>x</m> and <m>y</m> are therefore changing according to
       <me>
-        x = x_0 + u_1t \ \ \ \ \ \text{ and }  \ \ \ \ \  y = y_0 + u_2t
+        x = x_0 + u_1t \quad \text{ and }  \quad y = y_0 + u_2t
       </me>
+      Therefore, our trace along the surface in the direction <m>\langle u_1,u_2\rangle</m> will be given by <m>\vr(t)=\langle x_0+ u_1 t, y_0 + u_2 t , f(x_0+ u_1 t, y_0 + u_2 t) \rangle</m>.
     </p>
     <p>
-      Observe that <m>\frac{dx}{dt} = u_1</m> and <m>\frac{dy}{dt} = u_2</m> for all values of <m>t</m>. Since <m>\vu</m> is a unit vector, it follows that a point along the line of inputs along the xy-plane; that is, each single unit of time corresponds to movement of a single unit of distance in that direction. This observation allows us to use the Chain Rule to calculate the directional derivative, which measures the instantaneous rate of change of <m>f</m> with respect to change in the direction <m>\vu</m>.
+      Observe that <m>\frac{dx}{dt} = u_1</m> and <m>\frac{dy}{dt} = u_2</m> for all values of <m>t</m>. Since <m>\vu</m> is a unit vector in the xy-plane, a single unit change in the parameter <m>t</m> corresponds to moving a single unit of distance in the <m>\vu</m> direction. This observation allows us to use the multivariable chain rule to calculate the directional derivative as a measure of the instantaneous rate of change of <m>f</m> with respect to change in the direction <m>\vu</m>.
     </p>
     <p>
-      We can express the output of our function along the given direction as a composition of functions, <m>f(t)=f(x(t), y(t))</m>, which means we can apply the chain rule to get
+      We can express the output of our function along the given direction as a composition of functions, <m>f(t)=f(\vr(t))=f(x(t), y(t))</m>, which means we can apply the chain rule to get
       <md>
-        <mrow>D_{\vu}f(x_0,y_0) \amp = f_x(x_0,y_0)\frac{dx}{dt} + f_y(x_0,y_0)\frac{dy}{dt} </mrow>
-        <mrow> \amp = f_x(x_0,y_0)u_1 + f_y(x_0,y_0)u_2. </mrow>
+        <mrow>D_{\vu}f(x_0,y_0) \amp = \frac{d}{dt}\left[ f(\vr(t)) \right] </mrow>
+        <mrow> \amp = f_x(x_0,y_0)\frac{dx}{dt} + f_y(x_0,y_0)\frac{dy}{dt} </mrow>
+        <mrow> \amp = f_x(x_0,y_0) u_1 + f_y(x_0,y_0) u_2 </mrow>
       </md>
     </p>
-
     <p>
-      This now allows us to compute the directional derivative at an arbitrary point according to the following formula.
+      This allows us to compute the directional derivative at an arbitrary point according to the following formula.
     </p>
 
     <theorem xml:id="Directional-derivative">
-      <title>Calculating a directional derivative</title>
+      <title>Calculating Directional Derivatives</title>
       <p>
         Given a differentiable function <m>f = f(x,y)</m> and a unit vector <m>\vu = \langle u_1, u_2 \rangle</m>, <m>D_{\vu}f(x,y)</m> can be computed by
         <men xml:id="eq_10_6_DD">
@@ -468,7 +412,7 @@
     </p>
     <example>
       <p>
-        We will look at an example that is algebraically and geometrically simple but allows us to use the specifics stated in this section up to this point. We will look at the rate of change for the function <m>f(x,y)=2.5-\frac{(x-1)^2}{2}-\frac{(y+1)^2}{9}</m> in several directions around the input point <m>(2,2)</m>. Note that <m>f(2,2)=2.5-\frac{(2-1)^2}{2}-\frac{(2-2)^2}{9}=2.5-0.5-1=1</m> so our point will lie on the level curve with output 1 as shown in <xref ref="DDexample1"/>.
+        We will look at an example that is algebraically and geometrically simple but allows us to use <xref ref="Directional-derivative"/> and the concepts stated in this section up to this point. We will look at the rate of change for the function <m>f(x,y)=2.5-\frac{(x-1)^2}{2}-\frac{(y+1)^2}{9}</m> in several directions around the input point <m>(2,2)</m>. Note that <m>f(2,2)=2.5-\frac{(2-1)^2}{2}-\frac{(2-2)^2}{9}=2.5-0.5-1=1</m> so our point will lie on the level curve with output 1 as shown in <xref ref="DDexample1"/>.
       </p>
       <figure xml:id="DDexample1">
         <caption>A contour plot of <m>f(x,y)=2.5-\frac{(x-1)^2}{2}-\frac{(y+1)^2}{9}</m> with the point <m>(2,2)</m> highlighted</caption>
@@ -477,115 +421,57 @@
             var('x,y,z,t,s')
             f(x,y)=2.5-(x-1)^2/2-(y+1)^2/9
             plot7=contour_plot(f(x,y),(x,-2,4),(y,-4,4),aspect_ratio=1,labels=True,label_fmt="%1.0f",gridlines=True,label_inline=True,label_inline_spacing=5,fill=True)
+            plot7+=arrow((2,2),(2-2/sqrt(5),2+1/sqrt(5)),color="red")
             plot7+=point((2,2),size=30,zorder=10,color="black")
             plot7
           </sageplot>
         </image>
       </figure>
       <p>
-        We would like to measure the directional derivative of <m>f</m> at the point <m>(2,2)</m> in the direction of <m>\langle-2,-1\rangle</m>. Since <m>\langle-2,1\rangle</m> is not a unit vector, we will use <m>\vu=\frac{1}{\sqrt{5}}\langle -2,1</m> as the unit vector in the direction of <m>\langle-2,1\rangle</m>. We would like to use <xref ref="eq_10_6_DD"/>, so we first calculate the partial derivatives of <m>f</m>.
-        <me> f_x= -\frac{2(x-1)}{2} \quad { and } \quad f_y=-\frac{2(y+1)}{9} </me>
-        So at our point, we have <m>f_x(2,2)=-1</m> and <m>f_y=-{2}{3}</m>. By <xref ref="eq_10_6_DD"/>, our directional derivative of <m>f</m> at <m>(2,2)</m> in the direction <m>\vu</m> will be
-        <me>Df_\vu (2,2)=f_x(2,2) u_1+f_y(2,2) u_2=(-1)(-3)+(-\frac{2}{3})(1)=\frac{7}{3} </me>
+        We would like to find the directional derivative of <m>f</m> at the point <m>(2,2)</m> in the direction of <m>\langle-2,-1\rangle</m>. Since <m>\langle-2,1\rangle</m> is not a unit vector, we will use <m>\vu=\frac{1}{\sqrt{5}}\langle -2,1\rangle</m> as the unit vector in the direction of <m>\langle-2,1\rangle</m>. We would like to use <xref ref="eq_10_6_DD"/>, so we first calculate the partial derivatives of <m>f</m>.
+        <me> f_x= -\frac{2(x-1)}{2} \quad \text{ and } \quad f_y=-\frac{2(y+1)}{9} </me>
+        At our base point, we have <m>f_x(2,2)=-1</m> and <m>f_y(2,2)=-\frac{2}{3}</m>. By <xref ref="eq_10_6_DD">Equation</xref>, our directional derivative of <m>f</m> at <m>(2,2)</m> in the direction <m>\vu</m> will be
+        <me>Df_\vu (2,2)=f_x(2,2) u_1 + f_y(2,2) u_2 = (-1)(-3)+\left(-\frac{2}{3}\right)(1)=\frac{7}{3} </me>
         So for a small step in the direction of <m>\vu</m> at the input <m>(2,2)</m> we would expect the output of <m>f</m> to increase by <m>\frac{7}{3}</m> times the step size.
       </p>
       <p>
-        This may be a bit difficult to see based on <xref ref="DDexample1"/>, but if we look at surface plot and parameterize the path of inputs along the direction <m>\vu</m> we can give a better visualization. In <xref ref="DDexample2"/> we see a plot of <m>z=f(x,y)</m> with the trace along the direction <m>\vu</m> in blue and the direction vector <m>\vu</m> shown in red (on the <m>xy</m>-plane). The steepness of the black segment shows how <m>Df_\vu(2,2)</m> is positive. 
+        This may be a bit difficult to see based on <xref ref="DDexample1"/>, but if we look at surface plot and parameterize the path of inputs along the direction <m>\vu</m> we can give a better visualization. In <xref ref="DDexample2"/>, we see a surface plot of <m>z=f(x,y)</m> with the trace in the <m>\vu</m>-direction shown in blue and the direction vector <m>\vu</m> shown in red (on the <m>xy</m>-plane). The black line segment shows how <m>Df_\vu(2,2)</m> is positive because the <m>z</m>-coordinate of this tangent line will increase (as we step away from <m>(2,2)</m> in the <m>\vu</m> direction).
       </p>
       <figure xml:id="DDexample2">
       <caption>A plot of <m>z=f(x,y)</m> with trace in the direction <m>\vu</m> through (2,2,1) shown including the tangent line</caption>
         <interactive title="interactive-DDexample2" platform="sage" width="100%" aspect="1:1">
           <slate surface="sage">
-            from sage.plot.plot3d.plot3d import axes
-            var('x,y,z,t,s')
-            scale=4; 
-            plot6=axes(scale,1,color="black",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-            a=1/2;b=1/3 ;x0=1.5;y0=0.75;
-            f(x,y)=2.5-(x-1)^2/2-(y+1)^2/9
-            param(s,t)=(sqrt(2)*s*cos(t)+1,3*s*sin(t)-1,2.5-s^2)
-            #set up grid      n is number of steps in s    m is number of steps in t  
-            #a1 is min s    a2 is max s   b1 is min t    b2 is max t
-            n=6;m=6;a1=0;a2=1.5;b1=0;b2=pi; 
-            #c1 is surface color     o1 is surface opacity
-            #c2 and o2 are for constant t value traces
-            #c3 and o3 are for constant s value traces
-            c1="gray"; c2="black"; c3="black"; o1=0.3; o2=0.3; o3=0.3;
-            plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
-            for i in range(n+1):
-              sv=a1+i/n*(a2-a1)
-              plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
-            for i in range(m+1):
-              tv=b1+i/m*(b2-b1)
-              plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
-            plot6+=plot99
-            plot6+=point((2,2,1),size=40)
-            r(t)=(2+(-2)*t,2+(1)*t)
-            plot6+=parametric_plot3d((r(t)[0],r(t)[1],f(r(t)[0],r(t)[1])),(t,0,1),color="blue",thickness=3)
-            plot6+=parametric_plot3d((r(t)[0],r(t)[1],1+7/3*t),(t,0,0.25),color="black",thickness=3)
-            plot6+=arrow((2,2,0),(1,2.5,0),color="red",width=2)
-            plot6+=parametric_plot3d((r(t)[0],r(t)[1],s),(t,0,1),(s,0,3),color="blue",opacity=0.1,plot_points=2,mesh=True)
-            show(plot6,viewpoint=[[0.0266,-0.6767,-0.7358],183.32],camera_position=[1.297,10.6282,2.0542])
+            <xi:include href="interacts/DDexample2.txt" parse="text" />
           </slate>
         </interactive>
       </figure>
       <p>  
-        Remember that the directional derivative is a local measurement and only applies in a small neighborhood of our point and only in the direction <m>\vu</m>. In other words, <m>Df_\vu(2,2)</m> does not describe the the rate of change along the blue curve, only the rate of change along the blue curve for a small step in red direction. With plots like <xref ref="DDexample1"/>, you will be tempted to use information far away from the point of interest to try to figure out the rate of change, but like most calculus measurements, we will need to take from plots only the information on what is happening right around our point of interest. 
+        Remember that the directional derivative is a local measurement and only applies in a small neighborhood of our point and only in the direction <m>\vu</m>. In other words, <m>Df_\vu(2,2)</m> does not describe the the rate of change at other points along the blue curve, only the rate of change along the blue curve for a small step away from our base point in the red direction. With plots like <xref ref="DDexample1"/>, you will be tempted to use information far away from the point of interest to try to figure out the rate of change, but like most calculus measurements, we will need to only take from plots information on what is happening right around our point of interest. 
       </p>
       <p>
-        If we look at <m>Df_\vk(2,2)</m>, the rate of change for the output of <m>f</m> in the direction <m>\langle 0,1\rangle</m> at the input <m>(2,2)</m>, <xref ref="eq_10_6_DD"/> gives the following result
-        <me>Df_\vk (2,2)=f_x(2,2) u_1+f_y(2,2) u_2=(-1)(0)+(-\frac{2}{3})(1)=-\frac{2}{3} </me>
-        which corresponds to the partial derivative of <m>f</m> with respect to <m>y</m>. The default direction displayed in <xref ref="DDexample3"/> shows the direction vector <m>\vk</m>, the cooresponding trace, and tangent line to the surface in the <m>\vk</m> direction. 
+        If we look at <m>Df_\vj(2,2)</m>, the rate of change for the output of <m>f</m> in the direction <m>\vj=\langle 0,1\rangle</m> at the input <m>(2,2)</m>, <xref ref="eq_10_6_DD"/> gives the following result
+        <me>Df_\vj (2,2)=f_x(2,2) u_1+f_y(2,2) u_2=(-1)(0)+(-\frac{2}{3})(1)=-\frac{2}{3} </me>
+        which corresponds to the partial derivative of <m>f</m> with respect to <m>y</m>. The default direction displayed in <xref ref="DDexample3"/> shows the direction vector <m>\vj</m>, the cooresponding trace, and tangent line to the surface in the <m>\vj</m> direction. 
       </p>
       <figure xml:id="DDexample3">
       <caption>An intereactive plot of <m>z=f(x,y)</m> with trace in the direction <m>\vu</m> through (2,2,1) shown including the tangent line</caption>
         <interactive title="interactive-DDexample3" platform="sage" width="100%" aspect="1:1">
           <slate surface="sage">
-          from sage.plot.plot3d.plot3d import axes
-          var('x,y,z,t,s')
-          scale=4;
-          @interact
-          def DDex1(d=slider(0,6.2,0.1,default=pi/2,label="Direction")):
-            plot6=axes(scale,1,color="black",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-            a=cos(d);b=sin(d);
-            f(x,y)=2.5-(x-1)^2/2-(y+1)^2/9
-            param(s,t)=(sqrt(2)*s*cos(t)+1,3*s*sin(t)-1,2.5-s^2)
-            #set up grid      n is number of steps in s    m is number of steps in t  
-            #a1 is min s    a2 is max s   b1 is min t    b2 is max t
-            n=6;m=6;a1=0;a2=1.5;b1=0;b2=pi; 
-            #c1 is surface color     o1 is surface opacity
-            #c2 and o2 are for constant t value traces
-            #c3 and o3 are for constant s value traces
-            c1="gray"; c2="black"; c3="black"; o1=0.3; o2=0.3; o3=0.3;
-            plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
-            for i in range(n+1):
-              sv=a1+i/n*(a2-a1)
-              plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
-            for i in range(m+1):
-              tv=b1+i/m*(b2-b1)
-              plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
-            plot6+=plot99
-            plot6+=point((2,2,1),size=40)
-            r(t)=(2+(a)*t,2+(b)*t)
-            plot6+=parametric_plot3d((r(t)[0],r(t)[1],f(r(t)[0],r(t)[1])),(t,0,2),color="blue",thickness=3)
-            dd=-1*a+(-2/3)*b
-            plot6+=parametric_plot3d((r(t)[0],r(t)[1],1+dd*t),(t,0,0.55),color="black",thickness=3)
-            plot6+=arrow((2,2,0),(2+a,2+b,0),color="red",width=2)
-            plot6+=parametric_plot3d((r(t)[0],r(t)[1],s),(t,0,2),(s,0,3),color="blue",opacity=0.1,plot_points=2,mesh=True)
-            show(plot6,viewpoint=[[0.0266,-0.6767,-0.7358],183.32],camera_position=[1.297,10.6282,2.0542])
+            <xi:include href="interacts/DDexample3.txt" parse="text" />
           </slate>
         </interactive>
       </figure>
       <p>
-        You can use the slider at the top of <xref ref="DDexample3"/> to change the direction in which you want evaluate the directional derivative. You should look to see how the steepness of the black segment will change in different directions. 
+        You can use the slider at the top of <xref ref="DDexample3"/> to change the direction in which you want to evaluate the directional derivative. You should look to see how the steepness of the black segment will change in different directions. 
       </p>
     </example>
     <p>
-      In the following activity, we will explore directional derivatives for a new function algebraically and without using surface graphs.  
+      In the following activity, we will explore how to calculate and make sense of directional derivatives for a new function without using surface graphs.
     </p>
     <activity xml:id="A_10_6_2">
       <introduction>
         <p>
-          In this activity, we will practice using Equation <xref ref="eq_10_6_DD"/> to calculate some directional derivatives and make sense of these results for a few cases. For all parts of this activity, let <m>f(x,y) = 3xy-x^2y^3</m>.
+          In this activity, we will use Equation <xref ref="eq_10_6_DD"/> to calculate some directional derivatives and make sense of these results for a few cases. For all parts of this activity, let <m>f(x,y) = 3xy-x^2y^3</m>.
         </p>
       </introduction>
       <task>
@@ -697,7 +583,7 @@
       <task>
         <statement>
           <p>
-            Use Equation<nbsp/><xref ref="eq_10_6_DD"/> to find the derivative of <m>f</m> in the direction of the vector <m>\vv = \langle -2, -3 \rangle</m> at the point <m>(1,-1)</m>. Write a couple of sentences to explain how this result is different than your answer to the previous two tasks, even though the direction vectors are parallel.
+            Use Equation<nbsp/><xref ref="eq_10_6_DD"/> to find the derivative of <m>f</m> in the direction of the vector <m>\vv = \langle -2, -3 \rangle</m> at the point <m>(1,-1)</m>. Write a couple of sentences to explain why this result is different than your answer to the previous two tasks, even though the direction vectors are parallel.
           </p>
         </statement>
          <answer>
@@ -724,7 +610,7 @@
       </task>    
     </activity>
     <p>
-      We found Equation<xref ref="eq_10_6_DD"/> by considering our <xref ref="defn-DD">definition for the directional derivative</xref> as a composition of functions and utilizing our chain rule. A very useful idea when we have multivariable functions that are locally linear is that evaluating a limit for how the function is changing near a point will give the same result as asking what the corresponding change would be on the linearization or tangent plane. Remember that on very small scales there is virtually no difference between the (locally linear) function and the linearization as demonstrated by <xref ref="F_10_4_tangent_2"/>. 
+      We found Equation<xref ref="eq_10_6_DD"/> by considering our <xref ref="defn-DD">definition for the directional derivative</xref> as a composition of functions and utilizing our chain rule. A very useful idea when we have multivariable functions that are locally linear is that evaluating a limit for how the function is changing near a point will give the same result as asking what the corresponding change would be on the linearization or tangent plane. Remember that on very small scales there is virtually no difference between the (locally linear) function and the linearization as demonstrated by <xref ref="F_10_4_tangent_4"/>. 
     </p>
     <p>
       The equation of the plane tangent to the graph of <m>f</m> at the point <m>(x_0,y_0,f(x_0,y_0))</m> is
@@ -743,7 +629,7 @@
   <subsection xml:id="gradient_ss">
     <title>The Gradient</title>
     <p>
-      Via the Chain Rule and the linearization, we have seen that for a given function <m>f = f(x,y)</m>, its instantaneous rate of change in the direction of a unit vector <m>\vu = \langle u_1, u_2 \rangle</m> is given by
+      Via the chain rule and linearization, we have seen that for a given function, <m>f = f(x,y)</m>, its instantaneous rate of change in the direction of a unit vector <m>\vu = \langle u_1, u_2 \rangle</m> is given by
       <men xml:id="E_DDrevisited">
         D_{\vu}f(x_0,y_0) = f_x(x_0,y_0)u_1 + f_y(x_0,y_0)u_2
       </men>
@@ -754,14 +640,14 @@
       <me>
         \vv \cdot \vu = v_1 u_1 + v_2 u_2
       </me>
-      Thus we may recast Equation<nbsp/><xref ref="E_DDrevisited"/> in a way that has geometric meaning related to the dot product. In particular, we see that <m>D_{\vu}f(x_0,y_0)</m> is the dot product of the vector <m>\left\langle f_x(x_0,y_0), f_y(x_0,y_0) \right\rangle</m> and the vector <m>\vu</m>. This is particularly useful because the vector <m>\left\langle f_x(x_0,y_0), f_y(x_0,y_0) \right\rangle</m> comes from simple calculations that tell us how the function <m>f</m> is changing near the input <m>(x_0,y_0)</m>. We give this vector a special name and will spend most of the rest of this section talking about the importance of this vector.
+      Thus we can think about Equation<nbsp/><xref ref="E_DDrevisited"/> in a way that will have geometric meaning related to the dot product. In particular, we see that <m>D_{\vu}f(x_0,y_0)</m> is the dot product of the vector <m>\left\langle f_x(x_0,y_0), f_y(x_0,y_0) \right\rangle</m> and the vector <m>\vu=\langle u_1,u_2\rangle</m>. This is particularly useful because the vector <m>\left\langle f_x(x_0,y_0), f_y(x_0,y_0) \right\rangle</m> comes from simple calculations that tell us how the function <m>f</m> is changing near the input <m>(x_0,y_0)</m>. We give this vector a special name and will spend most of the rest of this section talking about the importance of this vector.
     </p>
     <definition xml:id="def-gradient">
       <statement>
         <p>
-          The vector formed by partial derivatives of <m>f</m> is called the <em>gradient</em> of <m>f</m> and denote it
+          The vector formed by partial derivatives of <m>f</m> is called the <em>gradient</em> of <m>f</m> and is denoted 
           <me>
-            \nabla f(x_0,y_0) = \left\langle f_x(x_0,y_0), f_y(x_0,y_0) \right\rangle.
+            \nabla f(x_0,y_0) = \left\langle f_x(x_0,y_0), f_y(x_0,y_0) \right\rangle
           </me>
         </p>
       </statement>
@@ -772,7 +658,7 @@
       Notice that <m>\nabla f</m> varies from point to point, and also provides an alternate formulation of the directional derivative.
     </p>
     <proposition xml:id="Directional-derivative-gradient">
-      <title>The directional derivative and the gradient</title>
+      <title>The Directional Derivative and the Gradient</title>
       <p>
         Given a differentiable function <m>f = f(x,y)</m> and a unit vector <m>\vu = \langle u_1, u_2 \rangle</m>, we may compute <m>D_{\vu}f(x,y)</m> by
         <men xml:id="eq_10_6_DD_grad">
@@ -917,14 +803,17 @@
   <subsection xml:id="vec-grad">
     <title>Vector Properties of the Gradient</title>
     <p>
-      <xref ref="Directional-derivative-gradient"/> shows how we can separate the directional derivative of a function of two variables into two separate parts: 1) the gradient vector at the point of interest and 2) the unit vector in the direction we want to change the inputs of the function. This separation will be vital to explaining the  the vector properties of the gradient (direction and magnitude). 
+      <xref ref="Directional-derivative-gradient"/> shows how we can separate the directional derivative of a function of two variables into two separate parts: 1) the gradient vector evaluated at the point of interest and 2) the unit vector in the direction we want to change the inputs of the function. This separation will be vital to explaining the  the vector properties of the gradient (direction and magnitude). 
     </p>
     <p>
-      Recall from <xref ref="E_9_3_dot_angle"/> that dot product of two vectors depends on the lengths of the vectors and the angle between the vectors. So if <m>\theta</m> is the angle between <m>\nabla f(x_0,y_0)</m> and <m>\vu</m> (where <m>\vu</m> is a unit vector), then 
-      <men xml:id="DD-vecprop">
-            D_{\vu}f(x_0,y_0) = \nabla f(x_0,y_0)\cdot\vu = \vecmag{\nabla f(x_0,y_0)} \vecmag{\vu} \cos(\theta) = \vecmag{\nabla f(x_0,y_0)} \cos(\theta)
-      </men>
-      Remember that our vector <m>\vu</m> is a unit vector (<m>\vecmag{\vu}=1</m>), so the value of the directional derivative will be the length of the gradient vector times the cosine of the angle between <m>\nabla f(x_0,y_0)</m> and <m>\vu</m>. <xref ref="DD-vecprop">Equation</xref> will be <em>extremely</em> useful in understanding all of the elements that gradient describes.
+      Recall from <xref ref="E_9_3_dot_angle">Equation</xref> that the dot product of two vectors depends on the lengths of the vectors and the angle between the vectors. So if <m>\theta</m> is the angle between <m>\nabla f(x_0,y_0)</m> and <m>\vu</m> (where <m>\vu</m> is a unit vector), then by <xref ref="eq_10_6_DD_grad"/> and <xref ref="E_9_3_dot_angle"/>, respectively,
+      <md>
+        <mrow>  D_{\vu}f(x_0,y_0) \amp= \nabla f(x_0,y_0)\cdot\vu </mrow>
+        <mrow> \amp= \vecmag{\nabla f(x_0,y_0)} \vecmag{\vu} \cos(\theta) </mrow>
+      </md>
+      Remember that our vector <m>\vu</m> is a unit vector (<m>\vecmag{\vu}=1</m>), so the value of the directional derivative will be the length of the gradient vector times the cosine of the angle between <m>\nabla f(x_0,y_0)</m> and <m>\vu</m>. 
+      <men xml:id="DD-vecprop">D_{\vu}f(x_0,y_0) =\vecmag{\nabla f(x_0,y_0)} \cos(\theta)</men>
+      <xref ref="DD-vecprop">Equation</xref> will be <em>extremely</em> useful in understanding all of the elements that gradient describes.
     </p>
     <figure xml:id="F_10_6_gradient_sign">
       <caption>The sign of <m>D_{\vu} f(x_0,y_0)</m> is determined by <m>\theta</m> </caption>
@@ -935,13 +824,13 @@
       </sidebyside>
     </figure>
     <p>
-      <xref ref="F_10_6_gradient_sign"/> graphically shows examples of the following statements (from left to right):
+      Because the magnitude of a vector is always non-negative, whether a directional derivative will be positive/negative/zero will depend on <m>\cos(\theta)</m>. <xref ref="F_10_6_gradient_sign"/> graphically shows examples of the following statements (from left to right):
       <ul>
         <li>If the angle between the gradient and our direction vector is a right angle, then the directional derivative will be zero. </li>
         <li>If the angle between the gradient and our direction vector is acute, then the directional derivative will be positive. </li>
         <li>If the angle between the gradient and our direction vector is obtuse, then the directional derivative will be neagtive. </li>
       </ul>
-      In particular, the second statement shows why the gradient will be perpendicular to the level curve through the point of interest. The level curve is the set of points that have a particular value for the output of our function, so the directional derivative in a direction tangent to the level curve must be zero.
+      In particular, the second statement shows why the gradient will be perpendicular to the level curve through the point of interest. The level curve is the set of points that have a particular value for the output of our function, so the directional derivative in a direction tangent to the level curve must be zero. Remember that the level curve corresponds to input points with the same output value, therefore the output will not change along the level curve and the directional derivative along the level curve must be zero.
     </p>
     <p>
       We can expand our explanation to the other statements as well. The output of <m>f</m> will be increasing in any direction that makes an acute angle with the gradient vector and the output of <m>f</m> will be decreasing in any direction that makes an obtuse angle with the gradient.
@@ -954,10 +843,10 @@
         <li>What direction corresponds to the <em>smallest</em> (or most negative) value for the directional derivative?</li>
         <li>What is the smallest value possible for the directional derivative at a particular input <m>(x_0,y_0)</m>?</li>
       </ul>
-      All of these questions can be answered with <xref ref="DD-vecprop"/>. Because the length of the gradient vector does not change when we look in different directions, the <m>\cos(\theta)</m> term will tell us when we have the maximum and minimum values. We only need to consider values of <m>\theta</m> between 0 and <m>2\pi</m> inclusive because <m>\theta</m> is the (smallest) angle between two vectors. Therefore, we will have the largest value of the directional derivative when <m>\cos(\theta)</m> has its maximum output of 1 at <m>\theta=0</m>. So when the direction vector <m>\vu</m> is in the same direction as the gradient, we have the maximum value of the directional derivative <em>AND</em> the largest value of the directional derivative is the length of the gradient, <m>D_{\vu}f(x_0,y_0) = \vecmag{\nabla f(x_0,y_0)} \cos(0) =\vecmag{\nabla f(x_0,y_0)}</m>.
+      All of these questions can be answered with <xref ref="DD-vecprop">Equation</xref>. Because the length of the gradient vector does not change when we look in different directions, the <m>\cos(\theta)</m> term will tell us when we have the maximum and minimum values. We only need to consider values of <m>\theta</m> between 0 and <m>\pi</m> inclusive because <m>\theta</m> is the (smallest) angle between two vectors. Therefore, we will have the largest value of the directional derivative when <m>\cos(\theta)</m> has its maximum output of 1 at <m>\theta=0</m>. So when the direction vector <m>\vu</m> is in the exact same direction as the gradient, we have the maximum value of the directional derivative <em>AND</em> the largest value of the directional derivative is the length of the gradient; If <m>\vu</m> is in the same direction as <m>\nabla f(x_0,y_0)</m>, then <m>D_{\vu}f(x_0,y_0) = \vecmag{\nabla f(x_0,y_0)} \cos(0) =\vecmag{\nabla f(x_0,y_0)}</m>.
     </p>
     <p>
-      By a parallel argument, the minimum (most negative) value the directional derivative can take at a point is when <m>\theta=\pi</m>, the direction vector is in the opposite direction of the gradient vector. Thus if <m>\theta=\pi</m>, then <m>D_{\vu}f(x_0,y_0) = \vecmag{\nabla f(x_0,y_0)} \cos(\pi) = -\vecmag{\nabla f(x_0,y_0)}</m> because <m>\cos(\pi)=-1</m>.
+      By a parallel argument, the minimum (most negative) value the directional derivative can take is when <m>\theta=\pi</m>, the direction vector is in the opposite direction of the gradient vector. Thus if <m>\theta=\pi</m>, then <m>D_{\vu}f(x_0,y_0) = \vecmag{\nabla f(x_0,y_0)} \cos(\pi) = -\vecmag{\nabla f(x_0,y_0)}</m> because <m>\cos(\pi)=-1</m>.
     </p>  
 
 
@@ -1171,18 +1060,18 @@
       <p>
         <ul>
           <li>The gradient points in a direction perpendicular to the level curve <m>z=k</m> where <m>k=f(x_0,y_0)</m>.</li>
-          <li>Then <m>\nabla f(x_0,y_0)</m> points in the direction of greatest rate of increase for <m>f</m> at <m>(x_0,y_0)</m>, and the instantaneous rate of change of <m>f</m> in that direction is the length of the gradient vector. That is, if <m>\vu = \frac{1}{\vecmag{\nabla f(x_0,y_0)}} \nabla f(x_0,y_0)</m>, then <m>\vu</m> is a unit vector in the direction of greatest increase of <m>f</m> at <m>(x_0,y_0)</m>, and <m>D_{\vu} f(x_0,y_0) = \vecmag{\nabla f(x_0,y_0)}</m>. </li>
+          <li>The gradient <m>\nabla f(x_0,y_0)</m> points in the direction of greatest rate of increase for <m>f</m> at <m>(x_0,y_0)</m>, and the instantaneous rate of change of <m>f</m> in that direction is the length of the gradient vector. That is, if <m>\vu = \frac{1}{\vecmag{\nabla f(x_0,y_0)}} \nabla f(x_0,y_0)</m>, then <m>\vu</m> is a unit vector in the direction of greatest increase of <m>f</m> at <m>(x_0,y_0)</m>, and <m>D_{\vu} f(x_0,y_0) = \vecmag{\nabla f(x_0,y_0)}</m>. </li>
           <li>The gradient <m>\nabla f(x_0,y_0)</m> points in the opposite direction of greatest rate of decrease for <m>f</m> at <m>(x_0,y_0)</m>, and the instantaneous rate of change of <m>f</m> in that direction is negative the length of the gradient vector. That is, if <m>\vu = -\frac{1}{\vecmag{\nabla f(x_0,y_0)}} \nabla f(x_0,y_0)</m>, then <m>\vu</m> is a unit vector in the direction of greatest decrease of <m>f</m> at <m>(x_0,y_0)</m>, and <m>D_{\vu} f(x_0,y_0) =  -\vecmag{\nabla f(x_0,y_0)}</m>. </li>
         </ul>
       </p>
     </assemblage>
     <p>
-      In the next couple of activities, we will look at how the directional derivative will change as a function of the direction used (Activity   ) or of the point where the directional derivative is being evaluated. The goals of these activities are to understand the directional derivative as a geometric measurement with visaully based sense making prompts in terms of the location and directions being used. These activities are adapted from activities developed by Rafael Martinez-Planell (find reference).
+      In <xref ref="DD-sensemaking1" />, we will look at how the directional derivative will change as a function of the direction used or of the point where the directional derivative is being evaluated. The goals of these tasks are to understand the directional derivative as a geometric measurement using visually-based sense making prompts in terms of the location and directions being used. These activities are adapted from materials developed by Rafael Martinez-Planell.
     </p>
-  <activity>
+  <activity xml:id="DD-sensemaking1">
       <task>
         <p>
-          The following is a the graph of <m>z=f(x,y)</m>.
+          <xref ref="DD-Act1"/> shows a graph of <m>z=f(x,y)</m> that you should use for the following:
           <ol>
             <li>
               On the <m>xy</m>-plane of the figure below, draw the direction vector <m>\langle 1,1\rangle </m> starting at the point <m>(2,-1)</m>.
@@ -1203,44 +1092,19 @@
             </li>
           </ol>
         </p>
-        <image witdh ="80%" source="ddimage1.png" />
+        <!-- <image width ="80%" source="ddimage1.png" /> -->
         <figure xml:id="DD-Act1">
-      <caption>A plot of <m>f(x,y)</m> with the measurements of change in input and output labeled for a change of inputs given by <m>\langle a,b\rangle</m></caption>
-      <interactive title="interactive-DD-Act1" platform="sage" width="100%" aspect="1:1">
-        <slate surface="sage">
-          from sage.plot.plot3d.plot3d import axes
-          var('x,y,z,t,s')
-          scale=2;
-          #plot6=axes(scale,1,color="black",aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-          f(x,y)=2*x^2/(x^2+y^2)
-          param(s,t)=(s,t,f(s,t))
-          #set up grid      n is number of steps in s    m is number of steps in t  
-          #a1 is min s    a2 is max s   b1 is min t    b2 is max t
-          n=20;m=20;a1=-2;a2=2;b1=-2;b2=2; 
-          #c1 is surface color     o1 is surface opacity
-          #c2 and o2 are for constant t value traces
-          #c3 and o3 are for constant s value traces
-          c1="blue"; c2="gray"; c3="black"; o1=0.3; o2=0.3; o3=0.5;
-          plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,plot_points=201)
-          for i in range(n+1):
-            sv=a1+i/n*(a2-a1)
-            plot99+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c3,opacity=o3)
-            plot99+=parametric_plot3d((sv,t,0),(t,b1,b2),color=c2,opacity=o2)
-          for i in range(m+1):
-            tv=b1+i/m*(b2-b1)
-            plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
-            plot99+=parametric_plot3d((s,tv,0),(s,a1,a2),color=c2,opacity=o2)
-          plot6=plot99
-          plot6+=point((-2,1,f(-2,1)),color="blue",size=30)
-          #plot6+=parametric_plot((s,t,0),(s,-2,2),(t,-2,2),opacity=0,mesh=True,plot_points=21)
-          show(plot6,aspect_ratio=(1,1,1),viewpoint=[[0.0825,-0.4149,-0.9061],200.43],camera_position=[-2.6268,6.2541,5.6841])
-        </slate>
-      </interactive>
-    </figure>
+          <caption>A plot of <m>f(x,y)</m> with the measurements of change in input and output labeled for a change of inputs given by <m>\langle a,b\rangle</m></caption>
+          <interactive title="interactive-DD-Act1" platform="sage" width="100%" aspect="1:1">
+            <slate surface="sage">
+              <xi:include href="interacts/DD-Act1plot.txt" parse="text" />
+            </slate>
+          </interactive>
+        </figure>
       </task>
       <task>
         <p>
-          Let <m>f</m> be the function whose graph appears below. For each value of <m>t</m> the vector <m>\langle \cos(t),\sin(t)\rangle </m> is a direction vector. The value of <m>D(t)=D_{\langle \cos(t),\sin(t)\rangle} f (1,-1)</m> a scalar.
+          Let <m>f</m> be the function whose graph appears in <xref ref="DD-Act1"/>. For each value of <m>t</m> the vector <m>\langle \cos(t),\sin(t)\rangle </m> is a direction vector. The value of <m>D(t)=D_{\langle \cos(t),\sin(t)\rangle} f (1,-1)</m> a scalar.
         </p>
           <ol>
             <li>
@@ -1585,7 +1449,7 @@
   <subsection>
     <title>Applications</title>
     <p>
-      The gradient finds many natural applications. For example, situations often arise <mdash/> for instance, constructing a road through the mountains or planning the flow of water across a landscape <mdash/> where we are interested in knowing the direction in which a function is increasing or decreasing most rapidly. In the next activity, we will look at how the gradient can help you navigate to the top of a mountain in foggy conditions.
+      The gradient has many natural applications. For example, situations often arise <mdash/> for instance, constructing a road through the mountains or planning the flow of water across a landscape <mdash/> where we are interested in knowing the direction in which a function is increasing or decreasing most rapidly. In the next activity, we will look at how the gradient can help you navigate to the top of a mountain in foggy conditions.
     </p>
     <activity xml:id="foggymtn1">
       <introduction>
