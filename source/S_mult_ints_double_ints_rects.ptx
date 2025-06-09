@@ -806,7 +806,7 @@
       Before we move on to the interpretations of double integrals, we will talk about a couple of simplifying ideas used in our development of the double integral that are not strictly necessary. Many times we will use equally sized subintervals or pieces of our region of integration but that is not strictly necessary. The most general form of a double integral would just require that as we take the limit, the area of <em>every</em> smaller piece must go to zero. In <xref ref="A_11_1_1"/>, we used the upper right point of each smaller rectangle to evaluate <m>f</m> but in <xref ref="def-dblint" /> there is not a particular point in each smaller rectangle used. Remember that as the area of <em>all</em> the smaller rectangles is going to zero, there will be smaller and smaller differences between the output of <m>f</m> on the points in the smaller rectangle.
     </p>
   </subsection>
-  <subsection>
+  <subsection xml:id="interpret-dblint">
     <title>Interpretation of Double Riemann Sums and Double integrals</title>
     <p>
       At the moment, there are three ways we can interpret the value of the double integral, where each of these corresponds to the same three interpretations of integrals from single variable calculus: the area under the curve, the average value of the function, and the accumulation of some density function.
