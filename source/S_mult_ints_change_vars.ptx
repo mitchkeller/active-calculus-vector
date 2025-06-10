@@ -99,7 +99,7 @@
           <task>
             <statement>
               <p>
-                Draw a plot of the region of integration <m>D</m> in the <m>xy</m>-plane and label the four <q>corners</q> of the polar coordinates (if <m>D</m> is described by <m>a \leq r \leq b \quad \quad c \leq \theta \leq d</m>, then the corners will be <m>(r,\theta)=(a,c),(a,d),(b,c),(b,d)</m>).
+                Draw a plot of the region of integration <m>D</m> in the <m>xy</m>-plane and label the four <q>corners</q> of the polar coordinates (if <m>D</m> is described by <m>a \leq r \leq b \break c \leq \theta \leq d</m>, then the corners will be <m>(r,\theta)=(a,c),(a,d),(b,c),(b,d)</m>).
               </p>
             </statement>
             <hint>
@@ -188,7 +188,7 @@
           <task>
             <statement>
               <p>
-                On <xref ref="planegrid"/>, plot the rectangle on the <m>r\theta</m>-plane that corresponds to the bounds <m>a \leq r \leq b \quad c leq \theta \leq d</m> for your radar system. Label the four corners of your figure with their <m>r</m> and <m>\theta</m> coordinates.
+                On <xref ref="planegrid"/>, plot the rectangle on the <m>r\theta</m>-plane that corresponds to the bounds <m>a \leq r \leq b \quad c \leq \theta \leq d</m> for your radar system. Label the four corners of your figure with their <m>r</m> and <m>\theta</m> coordinates.
               </p>
               <figure xml:id="planegrid">
                 <caption>A polar grid</caption>
@@ -361,7 +361,7 @@
     <p>  
       To complete the change of our integral to the new <m>s,t</m> variables, we need to 
       <ol>
-        <li>understand the area element, <m>dA</m></li>
+        <li>understand the area element, <m>dA</m>, in terms of <m>s</m> and <m>t</m></li>
         <li>transform the integrand (with the change of variable formulas)</li>
         <li>write the new region (in the <m>st</m>-plane) with a vertically or horizontally simple description</li>
       </ol>
@@ -529,7 +529,7 @@
       <task>
         <statement>
           <p>
-            Write each of the other boundary curves of <m>D</m> (<m>y=\frac{2}{x}, y=\frac{1}{2x}, y=\frac{x}{2}</m>) n terms of <m>s</m> and <m>t</m> coordinates,solve for either <m>s</m> or <m>t</m> (as would make sense), and plot the resulting lines on <xref ref="st-plane1"/>. 
+            Write each of the other boundary curves of <m>D</m> (<m>y=\frac{2}{x}, y=\frac{1}{2x}, y=\frac{x}{2}</m>) in terms of <m>s</m> and <m>t</m> coordinates, solve for either <m>s</m> or <m>t</m> (as would make sense), and plot the resulting lines on <xref ref="st-plane1"/>. 
           </p>
         </statement>
         <solution>
@@ -713,9 +713,9 @@
       </proof>
     </proposition>
     <p>
-      <xref ref="prop-area-cov"/> hence determines the general change of variable formula in a double integral, and we can now say that
+      <xref ref="prop-area-cov"/> determines the general change of variable formula in a double integral, and we can now convert all the parts of the double integral to <m>s</m> and <m>t</m> coordinates.
       <me>
-        \iint_T f(x,y) \, dy \, dx = \iint_{T'} f(x(s,t),y(s,t)) \left|\frac{\partial x}{\partial s} \frac{\partial y}{\partial t} - \frac{\partial x}{\partial t} \frac{\partial y}{\partial s}\right| ds \, dt.
+        \iint_T f(x,y) \, dy \, dx = \iint_{T'} f(x(s,t),y(s,t)) \left|\frac{\partial x}{\partial s} \frac{\partial y}{\partial t} - \frac{\partial x}{\partial t} \frac{\partial y}{\partial s}\right| ds \, dt
       </me>
     </p>
 
@@ -752,7 +752,7 @@
         </me>
       </p>
       <p>
-        It is important to note a couple of interesting features of our Jacobian. First, the Jacobian is negative because in this the region is flipped; Specifically the <q>lower</q> and <q>upper</q> bounds in <xref ref="irreg-region"/> given by <m>y=\frac{x}{2}</m> and <m>y=2x</m> are respectively transformed to <m>t=2</m> and <m>t=\frac{1}{2}</m>. In other words, the top and bottom edges get flipped by the transformation which results in this area transformation being negative. Notice that we take the absolute value of the Jacobian when considering the area element because we only care about how the area is deformed in the transformation given by the change of coordinates (and do not care about any flips that occur as part of the transformation).
+        It is important to note a couple of interesting features of our Jacobian. First, the Jacobian is negative because in this example the region is flipped; Specifically the <q>lower</q> and <q>upper</q> bounds in <xref ref="irreg-region"/> given by <m>y=\frac{x}{2}</m> and <m>y=2x</m> are respectively transformed to <m>t=2</m> and <m>t=\frac{1}{2}</m>. In other words, the top and bottom edges get flipped by the transformation which results in this area transformation being negative. Notice that we take the absolute value of the Jacobian when considering the area element because we only care about how the area is deformed in the transformation given by the change of coordinates (and do not care about any flips that occur as part of the transformation).
       </p>
       <p>
         The second feature is that the Jacobian is not constant, which means that the deformation of the area does not occur the same at every part of our region. In particular, for values where <m>t</m> is great than one, we are multiplying by a smaller factor, which means the region is expanded as part of the transformation from <m>xy</m> to <m>st</m> coordinates. For values where <m>t</m> is less than one, we are multiplying by a larger factor, which means the region is shrunk as part of the transformation from <m>xy</m> to <m>st</m> coordinates. 

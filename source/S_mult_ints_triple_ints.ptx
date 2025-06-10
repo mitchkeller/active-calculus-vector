@@ -177,7 +177,7 @@
       </task>
     </exploration>
     <p>
-      In the Preview Activity above, we covered most of the classic calculus approach to set up integration of a density function in three dimensions. In the next subsection, we will generalize these ideas and work on activities and examples that highlight the defintion of a triple integral and how to convert triple integrals to iterated integrals for efficient calculation. 
+      In the Preview Activity above, we covered most of the classic calculus approach to set up integration of a density function in three dimensions. In the next subsection, we will generalize these ideas and work on activities and examples that highlight the definition of a triple integral and how to convert triple integrals to iterated integrals for efficient calculation. 
     </p>
   </introduction>
 
@@ -322,7 +322,7 @@
           </sidebyside>
         </figure> -->
       <figure xml:id="F_11_7_Cone">
-        <caption> </caption>
+        <caption>The region <m>S</m> with a vertical segment highlighted (for fixed <m>x</m> and <m>y</m> values) </caption>
         <interactive title="interactive-F_11_7_Cone" platform="sage" width="100%" aspect="1:1">
           <slate surface="sage">
           var('t,s,x,y,z')
@@ -382,7 +382,7 @@
     <task>
       <statement>
         <p>
-          Now that we have our upper and lower boundaries for <m>z</m> as a function of a fixed choice of <m>x</m> and <m>y</m>, we need to look at what set of <m>(x,y)</m> need to be considered. Notice that if you choose a <m>(x,y)</m> choice in <xref ref="F_11_7_Cone">Figure</xref> that does not intersect our volume (like <m>(x,y)=(2.6,-2.3)</m>), then the point shown is red. Write a couple of sentences to explain why the set of <m>(x,y)</m> points we need to conisder is NOT the square <m>[-3,3]\times[-3,3]</m>.
+          Now that we have our upper and lower boundaries for <m>z</m> as a function of a fixed choice of <m>x</m> and <m>y</m>, we need to look at what set of <m>(x,y)</m> ,must be considered. Notice that if you choose a <m>(x,y)</m> choice in <xref ref="F_11_7_Cone">Figure</xref> that does not intersect our volume (like <m>(x,y)=(2.6,-2.3)</m>), then the point shown is red. Write a couple of sentences to explain why the set of <m>(x,y)</m> points we need to consider is NOT the square <m>[-3,3]\times[-3,3]</m>.
         </p>
       </statement>
     </task>  
@@ -650,7 +650,7 @@
       <task>
         <statement>
           <p>
-            Set up an iterated integral, integrating first with respect to <m>x</m>, then <m>y</m>, then <m>z</m> that is equivalent to the integral in Equation<nbsp/><xref ref="eq_11_7_Tetrahedron_mass"/>.
+            Set up an iterated integral, integrating first with respect to <m>x</m>, then <m>y</m>, then <m>z</m> that is equivalent to the integral in Equation <xref ref="eq_11_7_Tetrahedron_mass"/>.
           </p>
         </statement>
         <answer>

@@ -46,7 +46,7 @@
 
     <introduction>
     <p>
-      In <xref ref="S-11-5-Double-Integrals-Polar"/>, we saw how advantageous it could be to use polar coordinates to write iterated integrals when trying to evaluate a double integral. In particular, we saw that double integrals with integrands and regions of integration that are simple to write in polar coordinates are the most convienent to convert, as well as how the area element would be equal to <m>dA = r dr \, d\theta</m> when using polar coordinates.
+      In <xref ref="S-11-5-Double-Integrals-Polar"/>, we saw how advantageous it could be to use polar coordinates to write iterated integrals when trying to evaluate a double integral. In particular, we saw that double integrals with integrands and regions of integration that are simple to write in polar coordinates are the most convenient to convert, as well as how the area element would be equal to <m>dA = r dr \, d\theta</m> when using polar coordinates.
     </p>
     <p>
       In <xref ref="S-Precalc-OtherCoordSystems" />, we introduced both cylindrical and spherical coordinate systems and explore converting points, equations, and regions between these and rectangular coordinate systems in three dimensions. Cylindrical coordinates are most commonly used in situations with rotational symmetry around the <m>z</m>-axis, whereas spherical coordinates are primarily used when there is rotational symmetry around the origin. We encourage you to review these elements, including the <xref ref="Cartesian-cylindrical">conversion equations between cylindrical and rectangular coordinates</xref> and <xref ref="Spherical-rect">conversion equations between spherical and rectangular coordinates</xref>. The following preview activity will include some descriptions of common surfaces given in either cylindrical or spherical coordinates.
@@ -84,7 +84,7 @@
       <task>
         <statement>
           <p>
-            Plot the graph of the cylindrical equation <m>z=r</m>, where <m>0 \leq \theta \leq 2\pi</m> and <m>0 \leq r \leq 2</m>. What familiar surface results?
+            Plot the graph of the cylindrical equation <m>z=r</m>, where <m>0 \leq \theta \leq 2\pi</m> and <m>0 \leq r \leq 2</m>. What familiar surface is this a plot of?
           </p>
         </statement>
         <solution>
@@ -152,10 +152,10 @@
       Remember that as <m>\Delta r</m> shrinks, <m>\frac{(r_{i+1}+r_i)}{2}</m> approaches the <m>r</m>-coordinate of this block. Therefore the volume element <m>dV</m> in cylindrical coordinates is given by <m>dV = r \, dz \, dr \, d\theta</m>.
     </p>
     <p>  
-      We can also convert our integrand to polar coordinates by using <m>x=r\cos(\theta)</m> and <m>y=r\sin(\theta)</m>. Slicing our region into a <xref ref="radiallysimple">radially simple</xref> or <xref ref="angsimple">angularly simple</xref> description will provide the bounds of our iterated integrals used to evaluate the triple integral. Remember that cylindrical coordinates are really polar coordinates plus <m>z</m>.
+      We can also convert our integrand to polar coordinates by using <m>x=r\cos(\theta)</m> and <m>y=r\sin(\theta)</m>. Slicing our region into a <xref ref="radiallysimple" text="custom">radially simple</xref> or <xref ref="angsimple" text="custom">angularly simple</xref> description will provide the bounds of our iterated integrals used to evaluate the triple integral. Remember that cylindrical coordinates are really polar coordinates plus <m>z</m>.
     </p>
 
-    <assemblage xml:id="Triple-integral-cylidrical">
+    <assemblage xml:id="Triple-integral-cylindrical">
       <title>Triple integrals in cylindrical coordinates</title>
       <p>
         Given a continuous function <m>f = f(x,y,z)</m> over a region <m>S</m> in <m>\R^3</m>,
@@ -171,7 +171,7 @@
 
 
     <p>
-      While the volume elemet and the conversion of the integrand will work the same for every case, the task of writing an iterated integral in cylindrical coordinates will require us to slice the particular region in terms of simple bounds on <m>\theta</m>, <m>r</m>, and <m>z</m>. In the following activity, we explore how to do this in several situations where cylindrical coordinates are natural and advantageous.
+      While the volume element and the conversion of the integrand will work the same for every case, the task of writing an iterated integral in cylindrical coordinates will require us to slice the particular region in terms of simple bounds on <m>\theta</m>, <m>r</m>, and <m>z</m>. In the following activity, we explore how to do this in several situations where cylindrical coordinates are natural and advantageous.
     </p>
 
     <activity xml:id="A_11_8_3">
@@ -303,10 +303,10 @@
   <subsection>
     <title>Triple Integrals in Spherical Coordinates</title>
     <p>
-      When it comes to thinking about particular surfaces in spherical coordinates, similar to our work with cylindrical and Cartesian coordinates, we usually write <m>\rho</m> as a function of <m>\theta</m> and <m>\phi</m>; this is a natural analog to polar coordinates, where we often think of our distance from the origin in the plane as being a function of <m>\theta</m>. In spherical coordinates, we likewise often view <m>\rho</m> as a function of <m>\theta</m> and <m>\phi</m>, thus viewing distance from the origin as a function of two key angles.
+      Similar to our work with cylindrical and Cartesian coordinates, when it comes to thinking about particular surfaces in spherical coordinates, we usually write <m>\rho</m> as a function of <m>\theta</m> and <m>\phi</m>; this is a natural analog to polar coordinates, where we often think of our distance from the origin in the plane as being a function of <m>\theta</m>. In spherical coordinates, we likewise often view <m>\rho</m> as a function of <m>\theta</m> and <m>\phi</m>, thus viewing distance from the origin as a function of two key angles.
     </p>
     <p>
-      As with rectangular and cylindrical coordinates, a triple integral <m>\iiint_S f(x,y,z) \, dV</m> in spherical coordinates can be evaluated as an iterated integral once we understand the volume element <m>dV</m>. In <xref ref="F_11_8_Spherical_Vol_Element"/>, we see a volume given by a change in each of the <m>\rho, \theta, \phi</m> coordinates. We a conceptual description for where the volume element comes from in the proof to 
+      As with rectangular and cylindrical coordinates, a triple integral <m>\iiint_S f(x,y,z) \, dV</m> in spherical coordinates can be evaluated as an iterated integral once we understand the volume element <m>dV</m>. In <xref ref="F_11_8_Spherical_Vol_Element"/>, we see a volume given by a change in each of the <m>\rho, \theta, \phi</m> coordinates. A conceptual description for where the volume element comes from is given in the proof to <xref ref="Triple-integral-spherical"/>.
     </p>
     <figure xml:id="F_11_8_Spherical_Vol_Element">
       <caption> </caption>
@@ -335,7 +335,7 @@
           The conversion of the function being integrated is straightforward because <m>x= \rho\sin(\phi)\cos(\theta), y=\rho \sin(\phi) \sin(\theta), z=\rho \cos(\phi) </m> does not require interpretation based on the coordinates used.
         </p>
         <p>
-          To find the volume element <m>dV</m> in spherical coordinates, we need to understand how to determine the volume of a spherical box of the form <m>\rho_1 \leq \rho \leq \rho_2</m> (with <m>\Delta \rho = \rho_2-\rho_1)</m>, <m>\phi_1 \leq \phi \leq \phi_2</m> (with <m>\Delta \phi = \phi_2-\phi_1</m>), and <m>\theta_1 \leq \theta \leq \theta_2</m> (with <m>\Delta \theta = \theta_2-\theta_1</m>). An illustration of such a box is given at left in <xref ref="F_11_8_Spherical_Vol_Element">Figure</xref>. This spherical box is a bit more complicated than the cylindrical box we encountered earlier. In this situation, it is easier to approximate the volume <m>\Delta V</m> than to compute it directly. Here we can approximate the volume <m>\Delta V</m> of this spherical box with the volume of a Cartesian box whose sides have the lengths of the sides of this spherical box. We have highlighted the three sides we will use in red, blue, and green.
+          To find the volume element <m>dV</m> in spherical coordinates, we need to understand how to determine the volume of a spherical box of the form <m>\rho_1 \leq \rho \leq \rho_2</m> (with <m>\Delta \rho = \rho_2-\rho_1)</m>, <m>\phi_1 \leq \phi \leq \phi_2</m> (with <m>\Delta \phi = \phi_2-\phi_1</m>), and <m>\theta_1 \leq \theta \leq \theta_2</m> (with <m>\Delta \theta = \theta_2-\theta_1</m>). An illustration of such a box is given in <xref ref="F_11_8_Spherical_Vol_Element">Figure</xref>. This spherical box is a bit more complicated than the cylindrical box we encountered earlier. In this situation, it is easier to approximate the volume <m>\Delta V</m> than to compute it directly. Here we can approximate the volume <m>\Delta V</m> of this spherical box with the volume of a Cartesian box whose sides have the lengths of the sides of this spherical box. We have highlighted the three sides we will use in red, blue, and green.
         </p>
         <p>
           Along the red side, both <m>\theta</m> and <m>\phi</m> are constant and <m>\rho</m> is changing. In fact, the length of the red side is simply the change in <m>\rho</m>.
@@ -376,7 +376,7 @@
         </p>
         <p>
           Remember that as we look at smaller and smaller changes in the coordinates, the difference between the values of the coordinates used will also shrink and <m>\rho=0 \approx \rho_1 \approx \rho</m>, for example. So we can get an idea of how large this volume will be by multiplying the lengths of the red, blue, and green segments to get
-          <me>\Delta V \approx \left(\Delta\rho\right) \left(\rho \,  \Delta\phi \right)\left(\rho \sin(\phi) \, \Delta\theta \right)</me>
+          <me>\Delta V \approx \left(\Delta\rho\right) \left(\rho \,  \Delta\phi \right)\left(\rho \sin(\phi) \, \Delta\theta \right) = \rho^2 \sin(\phi) \Delta\phi \, \Delta\theta \, \Delta\rho</me>
         </p>
       </proof>
     </proposition>
