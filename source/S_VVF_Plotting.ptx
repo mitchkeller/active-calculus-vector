@@ -57,7 +57,7 @@
           <diagram dimensions="(600, 200)" margins="5">
             <definition>f(x,y) = (x-2)^2/9 + (y+1)^2/1</definition>
             <coordinates bbox="[-1.1,-2.1,5.1,0.1]">
-              <grid-axes>
+              <grid-axes spacings="((-1,1/2,5),(-2,1/2,0))">
                 <xlabel alignment="nw"><m>x</m></xlabel>
                 <ylabel offset="(20,-183)" alignment="sw"><m>y</m></ylabel>
               </grid-axes>
