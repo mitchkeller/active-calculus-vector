@@ -192,7 +192,7 @@
         </interactive>
       </figure>
       <p>
-        <xref ref="plot4d"/> may look like a three dimensional plot, but we really have a four dimensional plot with the fourth dimensional axis given by the slider. We saw a similar case in <xref ref="vvf-example1"/> where the plot of <m>\vr(t)</m> was really a four dimensional idea (one dimension for the input changing with the <m>t</m>-axis for the slider and the three dimensional output of <m>\vr</m> is shown with the vector in standard position or a plot of the terminal point). With our vector valued functions of one variables, we simplified our four dimensional plot to include <em>all</em> of the 3D outputs but we often ignored plotting how those outputs depended on the value of the parameter <m>t</m>.
+        <xref ref="plot4d"/> may look like a three dimensional plot, but we really have a four dimensional plot with the fourth dimensional axis given by the slider. We saw a similar case in <xref ref="vvf-example1"/> where the plot of <m>\vr(t)</m> was really a four dimensional idea (one dimension for the input changing with the <m>t</m>-axis for the slider and the three dimensional output of <m>\vr</m> is shown with the vector in standard position or a plot of the terminal point). With our vector-valued functions of one variables, we simplified our four dimensional plot to include <em>all</em> of the 3D outputs but we often ignored plotting how those outputs depended on the value of the parameter <m>t</m>.
       </p>
     </example>
     <activity xml:id="level-grad">
@@ -522,7 +522,7 @@
       </li>
       <li>
         <p>
-          The partial derivatives for functions of functions three or more variables are calculated by measuring the rate of change in one input variable while holding all other inputs constant. The gradient of a function of three or more variables is a vector valued, multivariable function where each component is the first partial derivative of with respect to a different coordinate. If <m>g(x_1,x_2, \ldots,x_n)</m>, then the gradient of <m>g</m> has <m>n</m> components and is given by <m>\nabla g = \left\langle \frac{\partial g}{\partial x_1}, \frac{\partial g}{\partial x_2},\ldots,\frac{\partial g}{\partial x_m}\right\rangle</m>.
+          The partial derivatives for functions of functions three or more variables are calculated by measuring the rate of change in one input variable while holding all other inputs constant. The gradient of a function of three or more variables is a vector-valued, multivariable function where each component is the first partial derivative of with respect to a different coordinate. If <m>g(x_1,x_2, \ldots,x_n)</m>, then the gradient of <m>g</m> has <m>n</m> components and is given by <m>\nabla g = \left\langle \frac{\partial g}{\partial x_1}, \frac{\partial g}{\partial x_2},\ldots,\frac{\partial g}{\partial x_m}\right\rangle</m>.
         </p>
       </li>
 

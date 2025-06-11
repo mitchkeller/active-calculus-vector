@@ -82,13 +82,13 @@
     <exploration xml:id="PA-chain">
       <introduction>
         <p>
-          Your self driving car company, <em>Steer Clear</em>, is doing well and almost ready to launch its first car. Some of your engineers have reported that the car has problems when the air intake encounters too much large particulate matter in the air (like sand, dust, large pollen, smog, etc.). In order to fix this issue, you have created a new type of filter that uses a sophisticated mesh and gravity to filter out large particulate matter, but this new type of filter gets clogged if exposed to too much large particulate matter too quickly. So we will need to measure the rate at which your car's intake will be exposed to large particulate matter per unit time. 
+          Your self-driving car company, <em>Steer Clear</em>, is doing well and almost ready to launch its first car. Some of your engineers have reported that the car has problems when the air intake encounters too much large particulate matter in the air (like sand, dust, large pollen, smog, etc.). In order to fix this issue, you have created a new type of filter that uses a sophisticated mesh and gravity to filter out large particulate matter, but this new type of filter gets clogged if exposed to too much large particulate matter too quickly. So we will need to measure the rate at which your car's intake will be exposed to large particulate matter per unit time. 
         </p>
         <p>
           You consult a friend Alex who does atmospheric modeling of large particulate matter in your area. Alex created <m>P(x,y)=10-\frac{1}{2} x^2-\frac{1}{5}y^2</m>, a function that describes the amount of large particular matter in the air in terms of location relative to Alex's lab. In particular, the <m>x</m> coordinate is the distance East/West of from Alex's lab in kilometers and the <m>y</m>-coordinate is the distance North/South from Alex's lab in kilometers. 
         </p>
         <p>
-          Since you have completed the self driving part of your car, you know that your car will move along a test course as a function of time given by 
+          Since you have completed the self-driving part of your car, you know that your car will move along a test course as a function of time given by 
           <me>
             \vr(t) = \langle x(t), y(t) \rangle = \langle 2-t^2, t^3 + 1\rangle.
           </me>
@@ -98,7 +98,7 @@
       <task xml:id="PA-chain-t1">
         <statement>
           <p>
-            Substitute <m>x(t)</m> and <m>y(t)</m> (from your self driving car path) into your expression for <m>P(x,y)</m> to get an expression for <m>P(t)</m>, the amount of large particulate matter encountered at each location on your test course as a function of time driven. Do not simplify your expression for <m>P(t)</m>.
+            Substitute <m>x(t)</m> and <m>y(t)</m> (from your self-driving car path) into your expression for <m>P(x,y)</m> to get an expression for <m>P(t)</m>, the amount of large particulate matter encountered at each location on your test course as a function of time driven. Do not simplify your expression for <m>P(t)</m>.
           </p>
         </statement>
       </task>

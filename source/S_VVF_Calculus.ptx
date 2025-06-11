@@ -77,7 +77,7 @@
       In your first calculus course, you looked at the new operations of limits, derivatives, and integrals and used these to measure change and accumulation . Each of these ideas and its applications was likely introduced as a way to measure something specific by approximating the measurement and then looking at how to improve this approximation. Limits offer a powerful tool to precisely describe how these approximations will converge to the relevant measurement. This process is what we will call the <term>classic calculus approach</term>: 1) approximate the measurement, 2) quantify how the approximation changes on a finer scale, and 3) use a limit to show how the approximation converges to the measurement of interest. 
     </p>
     <p>
-      Before we start our work on the calculus of vector valued functions, we will review some key ideas involving the classic calculus approach, limits, differentiation, and integration. This review is not meant to be comprehensive but is intended to ensure that all students are reminded of key concepts that will be vital for our development of calculus for new types of of functions. We will provide links to activities where you can review and explore the ideas from single variable calculus.
+      Before we start our work on the calculus of vector-valued functions, we will review some key ideas involving the classic calculus approach, limits, differentiation, and integration. This review is not meant to be comprehensive but is intended to ensure that all students are reminded of key concepts that will be vital for our development of calculus for new types of of functions. We will provide links to activities where you can review and explore the ideas from single variable calculus.
     </p>
     <p>
       Limits: The limit of a function measures what the output of the function approaches as an input gets closer to a particular value. Limits are examples of local measurements, since they describe a measurement that applies to a region around a particular value. Remember that a limit does <em>not</em> measure what is happening at the particular input value; the limit describes behavior in a region <em>around</em> the particular input value. In fact, limits are most useful and interesting when evaluating the function at the particular input value does not make sense. For instance, 
@@ -240,12 +240,12 @@
       </proof>
     </proposition>
     <p>
-      In this course, we will use the structure of the classical calculus approach to investigate properties of new kinds of functions, equations, and graphs. Later in this section, we will investigate the meaning of limits, derivatives, and integrals for our new class of functions, vector valued functions of one variable. Additionally, we will connect these measurements to properties of curves in space as the graphs of these vector valued functions. As we expand our perspective and scope of study, you will hopefully see deeper meanings in and a greater appreciation for the definitions of limits, derivative, and integrals from your first calculus course. 
+      In this course, we will use the structure of the classical calculus approach to investigate properties of new kinds of functions, equations, and graphs. Later in this section, we will investigate the meaning of limits, derivatives, and integrals for our new class of functions, vector-valued functions of one variable. Additionally, we will connect these measurements to properties of curves in space as the graphs of these vector-valued functions. As we expand our perspective and scope of study, you will hopefully see deeper meanings in and a greater appreciation for the definitions of limits, derivative, and integrals from your first calculus course. 
     </p>
     <exploration xml:id="PA_9_7">
       <introduction>
         <p>
-          As the only employee of <em>Steer Clear</em>, you have decided that you need to understand how the timing of position measurements will change different properties related to your self driving car. You decide to drive in a figure eight path described by <m>\vr_8(t)=\langle \cos(t),\sin(2t) \rangle </m> for <m>0 \leq t \leq 2 \pi</m>. A plot of this path is given in <xref ref="PA-vvfcalc1" />.
+          As the only employee of <em>Steer Clear</em>, you have decided that you need to understand how the timing of position measurements will change different properties related to your self-driving car. You decide to drive in a figure eight path described by <m>\vr_8(t)=\langle \cos(t),\sin(2t) \rangle </m> for <m>0 \leq t \leq 2 \pi</m>. A plot of this path is given in <xref ref="PA-vvfcalc1" />.
         </p>
         <figure xml:id="PA-vvfcalc1">
           <caption>A plot of the figure eight curve given by <m>\vr_8(t)=\langle \cos(t),\sin(2t) \rangle </m> for <m>0 \leq t \leq 2 \pi</m></caption>
@@ -361,7 +361,7 @@
       </solution> -->
     </exploration>
     <p>
-      In <xref ref="vvf-limitPA" />, we examined what the limit of a vector valued function will look like; specifically, the limit of a vector valued function (of one variable) has the same meaning as in your first calculus course. The limit of a function is a measure of what the output approaches as the input gets closer to a particular value. We will not state the formal version of limits of vector valued functions of one variable, but rather will appeal to the very important idea that limits can be defined and calculated componentwise. If <m>\vr(t)=\langle x_1(t),\ldots,x_n(t)\rangle</m>, then the limit of <m>\vr</m> as <m>t\rightarrow a</m> exists if all of the limits of <m>x_i(t)</m> exist as <m>t\rightarrow a</m>. In other words, the limit of a vector valued function of one variable is the same as the limits of the <m>n</m> component functions organized as a vector. In <m>\mathbb{R}^3</m>, this will look algebraically like 
+      In <xref ref="vvf-limitPA" />, we examined what the limit of a vector-valued function will look like; specifically, the limit of a vector-valued function (of one variable) has the same meaning as in your first calculus course. The limit of a function is a measure of what the output approaches as the input gets closer to a particular value. We will not state the formal version of limits of vector-valued functions of one variable, but rather will appeal to the very important idea that limits can be defined and calculated componentwise. If <m>\vr(t)=\langle x_1(t),\ldots,x_n(t)\rangle</m>, then the limit of <m>\vr</m> as <m>t\rightarrow a</m> exists if all of the limits of <m>x_i(t)</m> exist as <m>t\rightarrow a</m>. In other words, the limit of a vector-valued function of one variable is the same as the limits of the <m>n</m> component functions organized as a vector. In <m>\mathbb{R}^3</m>, this will look algebraically like 
       <me>
         \lim_{t\rightarrow a} \langle f(t),g(t),h(t) \rangle = \langle \lim_{t\rightarrow a} f(t) , \lim_{t\rightarrow a} g(t) , \lim_{t\rightarrow a} h(t) \rangle
       </me>
@@ -491,7 +491,7 @@
     </p>
 
     <figure xml:id="F_9_7_VVF_tan_vector">
-      <caption>A single difference quotient of a vector valued function</caption>
+      <caption>A single difference quotient of a vector-valued function</caption>
       <image width="50%" source="images/fig_9_7_curve_1"/>
     </figure>
     <figure xml:id="vvf-secvec1">
@@ -583,7 +583,7 @@
         <li>scalar multiplication (multiply by <m>\frac{1}{h}</m>) </li>
         <li>evaluate limit as <m>h\rightarrow 0</m> </li>
       </ol>
-      are all evaluated componentwise on our vector valued function. Thus we can apply our derivative rules on each component of <m>\vr(t)</m> to compute the derivative <m>\frac{d\vr}{dt}</m>.
+      are all evaluated componentwise on our vector-valued function. Thus we can apply our derivative rules on each component of <m>\vr(t)</m> to compute the derivative <m>\frac{d\vr}{dt}</m>.
     </p>
     <proposition xml:id="Vector-valued-function-derivative">
       <title>Efficient calculation of the derivative of a vector-valued function</title>
@@ -733,7 +733,7 @@
     When applying these properties, pay attention to whether the quantities involved are either scalars or vectors. For example, <m>\vr(t) \cdot \vs(t)</m> defines a scalar function because we have taken the dot product of two vector-valued functions. However, <m>\vr(t) \times \vs(t)</m> defines a vector-valued function since we have taken the cross product of two vector-valued functions.
   </p>
   <p>
-    In the next several sections of this chapter, we will examine how to utilize calculus tools and vector measurements to calculate different properties of curves in space and the associated velocity and acceleration vectors that come from their parameterizations. <xref ref="A_9_7_8" /> offers some good practice on using calculus tools on vector valued functions and previews some ideas that will be used in later sections of this chapter. 
+    In the next several sections of this chapter, we will examine how to utilize calculus tools and vector measurements to calculate different properties of curves in space and the associated velocity and acceleration vectors that come from their parameterizations. <xref ref="A_9_7_8" /> offers some good practice on using calculus tools on vector-valued functions and previews some ideas that will be used in later sections of this chapter. 
   </p>
 </subsection>
 <subsection xml:id="tangentlines">
@@ -884,7 +884,7 @@
     The set of functions that are the antiderivative of <m>f(x)</m> is also called the indefinite integral of <m>f(x)</m> and is denoted <m>\int f(x)  \  dx</m>. 
   </p>
   <p>
-    We can apply all of the ideas above related to definite and indefinite integrals to vector valued functions of one variable by performing each operation separately on each component (apply integration componentwise). 
+    We can apply all of the ideas above related to definite and indefinite integrals to vector-valued functions of one variable by performing each operation separately on each component (apply integration componentwise). 
   </p>
   <assemblage xml:id="Vector-valued-function-integral">
     <title>Integrating a vector-valued function</title>
@@ -907,7 +907,7 @@
     The area under the curve idea does NOT generalize when we think about the integral of <m>\vr(t)</m>. The integral of <m>\vr</m> is in relation to the input variable <m>t</m> and there is not a <m>t</m>-axis on the graph of <m>\vr(t)</m>. 
   </p>
   <p>
-    As described in the introduction to this section, the concept that will generalize to the vector valued function realm is the definite integral measures the accumulation of the output of your function. Recall that if <m>v(t)</m> was the velocity of an object traveling on the <m>x</m>-axis, then we could describe the position of the object as 
+    As described in the introduction to this section, the concept that will generalize to the vector-valued function realm is the definite integral measures the accumulation of the output of your function. Recall that if <m>v(t)</m> was the velocity of an object traveling on the <m>x</m>-axis, then we could describe the position of the object as 
     <me>
       x(t)=\int_0^t v(u)  \  du + x_0
     </me>
@@ -947,7 +947,7 @@
       <me>
         \langle v_0 \cos(\theta) t ,v_0 \sin(\theta)t- \frac{1}{2}gt^2 \rangle+ \vec{C}
       </me>
-      Again we need to pick the integration constant, <m>\vec{C}</m>, that satisifes our initial position <m> \vr(0)=\langle x_0,y_0\rangle </m>. This gives the following vector valued function for the position of the object as a function of time.
+      Again we need to pick the integration constant, <m>\vec{C}</m>, that satisifes our initial position <m> \vr(0)=\langle x_0,y_0\rangle </m>. This gives the following vector-valued function for the position of the object as a function of time.
       <me>
         \vr(t) = \left\langle v_0 \cos(\theta)t + x_0, -\frac{g}{2}t^2 + v_0 \sin(\theta)t + y_0 \right\rangle
       </me>
@@ -1038,7 +1038,7 @@
     </task>
   </activity>
   <p>
-    The previous activity shows a case where the motion of our object is driven by forces that either turn the object or change the speed of the object in the <m>z</m>-coordinate direction. We will spend the rest of this chapter looking at measurements related to motion along curves like this. Key to these measurements will be the combined use of our new calculus for vector valued functions with the vector tools from the previous chapter. 
+    The previous activity shows a case where the motion of our object is driven by forces that either turn the object or change the speed of the object in the <m>z</m>-coordinate direction. We will spend the rest of this chapter looking at measurements related to motion along curves like this. Key to these measurements will be the combined use of our new calculus for vector-valued functions with the vector tools from the previous chapter. 
   </p>
 </subsection>
 <subsection>

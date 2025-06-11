@@ -33,25 +33,48 @@
     </objectives>
   <introduction>
     <p>
-      In our previous work, we have seen several examples of curves in space, such as lines in three dimensions and conic sections (in 2D). <xref ref="Lines-vector-form" text="custom" > For a line  through a fixed point <m>\vr_0</m> in the direction of vector <m>\vv</m></xref>, we can express the line parametrically through the single vector equation
+      In our previous work, we have seen several examples of curves in space, such as lines in three dimensions and conic sections (in two dimensions). <xref ref="Lines-vector-form" text="custom">For a line through a fixed point <m>\vr_0</m> in the direction of vector <m>\vv</m></xref>, we can express the line parametrically through the single vector equation
       <me>
         \vr(t) = \vr_0 + t \vv.
       </me>
     </p>
     <p>
-       We call <m>\vr(t)</m> a vector valued function of one variable (or simply a vector valued function, for now) because there is one scalar input (<m>t</m>) and the output of <m>\vr</m> is a vector that will vary based on the value of the scalar input. When the output vectors are graphed with initial point at the origin, then the terminal points of this vector output will trace out the line in space, like <xref ref="Lineplot2" /> or <xref ref="Lineplot3d" />.
+       We call <m>\vr(t)</m> a vector-valued function of one variable (or simply a vector-valued function, when the the single variable aspect is clear in context) because there is one scalar input (<m>t</m>) and the output of <m>\vr</m> is a vector that will vary based on the value of the scalar input. When the output vectors are graphed with initial point at the origin, the terminal points of these vector outputs trace out the line in space. <xref ref="Lineplot2" /> and <xref ref="Lineplot3d" /> provide illustrations of this idea.
     </p>
     <p>
-      Similar to lines, other curves in space are one-dimensional objects (there is only one way to move along this object, which we refer to as forward/backward). Thus we would like to similarly express the coordinates of points on a given curve in terms of a single variable that would describe how we are moving along this path. For instance, the graph of an ellipse, like <xref ref="ellipse-ex1" />, cannot be expressed with <m>y</m> as a function of <m>x</m>, but an ellipse is still a one dimensional graph because at any point on the graph, there is only one dimension to move (forward/backward) along the graph. 
+      Similar to lines, other curves in space are classified as one-dimensional objects because there is only one way to move along this object. We refer to this direction as forward/backward depending on whether motion is toward larger (forward) or smaller (backward) values of the input variable. We will similarly express the coordinates of points on a curve in terms of a single variable. This expression will describe movement along this path. For instance, the graph of an ellipse, such as the one shown in <xref ref="fig-VVF-Plotting-ellipse" />, cannot be expressed with <m>y</m> as a function of <m>x</m>. However, we still classify an ellipse as a one-dimensional graph because at any point on the graph, there is only one dimension to move along the graph. 
     </p>
+    <figure xml:id="fig-VVF-Plotting-ellipse">
+      <caption>The ellipse <m>(x-2)^2/9+(y+1)^2/1 = 1</m></caption>
+      <image width="70%">
+        <shortdescription>An ellipse</shortdescription>
+        <description>
+          <p>An ellipse with center <m>(2,-1)</m>. It is <m>6</m> units wide and <m>2</m> units tall.
+          </p>
+        </description>
+        <prefigure xmlns="https://prefigure.org"
+                    label="img-VVF-Plotting-ellipse">
+          <diagram dimensions="(600, 200)" margins="5">
+            <definition>f(x,y) = (x-2)^2/9 + (y+1)^2/1</definition>
+            <coordinates bbox="[-1.1,-2.1,5.1,0.1]">
+              <grid-axes>
+                <xlabel alignment="nw"><m>x</m></xlabel>
+                <ylabel offset="(20,-183)" alignment="sw"><m>y</m></ylabel>
+              </grid-axes>
+              <implicit-curve function="f" k="1" stroke="blue" />
+            </coordinates>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure> 
     <p>
-      Vector valued functions (of one variable) are the perfect vehicle for describing curves in general; we use vectors starting at the origin to identify points in space and connect the terminal points of these vectors to draw a curve in space. This approach will allow us to draw an incredible variety of graphs in 2- and 3-space, as well as to describe curves in <m>n</m>-space for any <m>n</m>. This same approach to drawing curves will also allow us to represent slices of surfaces in space, which we will discuss more in <xref ref="A_9_6_4" /> and many times in <xref ref="C_MVF" />.
+      Vector-valued functions of one variable are the perfect vehicle for describing curves in general. We use vectors starting at the origin to identify points in space and the terminal points of these vectors trace out a curve in space. This approach allows us to draw a wide variety of graphs in two- and three-dimensional space. We can also describe curves in <m>\R^n</m> for any <m>n</m>. This same approach to drawing curves will also allow us to represent slices of surfaces in space, which we will discuss more in <xref ref="act-vvf-plotting-paraboloid" /> and many times in <xref ref="C_MVF" />.
     </p>
 
-    <exploration xml:id="PA_9_6">
+    <exploration xml:id="PA-VVF-Plotting">
       <introduction>
         <p>
-          After graduating, you decide to start a self driving car company because it didn't look too hard based on a few articles you scrolled past online. You decide to call your company <em>Steer Clear</em> and start working on the self driving part of the car. Your first task is to understand how the location tracking equipment you bought online works. There are two parts to your location tracking system. A receiver box and a tracker that you put in the object you want to track. 
+          After graduating, you decide to start a self-driving car company because it didn't look too hard based on a few articles you scrolled past online. You decide to call your company <em>Steer Clear</em> and start working on the self-driving part of the car. Your first task is to understand how the location tracking equipment you bought online works. There are two parts to your location tracking system: a receiver box and a tracker that you put in the object you want to track. 
         </p>
       </introduction>
       <task>
@@ -60,7 +83,7 @@
             After putting the tracker in your pocket, you get in a car and drive around the receiver box. When you download the data about your drive, you notice that the software is outputting a vector from the receiver box to the tracker. The software also seems to love math, because these vectors are written in terms of trig functions.
           </p>
           <p>
-            Below are some of the output vectors from the software. Evaluate each of these vectors and draw these vectors with initial point at the origin on the same set of axes. 
+            Below are some of the output vectors from the software. Evaluate each of these vectors and draw these vectors with initial point at the origin on the axes in <xref ref="vvfPA1"/>. 
             <ul>
               <li><m>\langle \cos(0), \sin(0) \rangle</m></li>
               <li><m>\langle \cos\left(\frac{\pi}{2}\right), \sin\left(\frac{\pi}{2}\right)\rangle</m></li>
@@ -70,13 +93,17 @@
           </p>
           <figure xml:id="vvfPA1">
             <caption>Two-dimensional axes for plotting points</caption>
-            <image width="55%" label="img-vvfPA1">
+            <image width="55%" >
               <shortdescription>A two-dimensional grid</shortdescription>
-              <description><p>A blank two-dimensional grid where each coordinate varies from <m>-4</m> to <m>4</m>.</p></description>
-              <sageplot>
-                plot9=point((0,0),color="black",size=0,xmin=-1.1,xmax=1.1,ymin=-1.1,ymax=1.1,gridlines=True,aspect_ratio=1,axes=true,axes_labels=["$x$","$y$"])
-                plot9        
-              </sageplot>
+              <description><p>A blank two-dimensional grid where each coordinate varies from <m>-1</m> to <m>1</m>.</p></description>
+              <prefigure xmlns="https://prefigure.org"
+                         label="img-vvfPA1">
+                <diagram dimensions="(200, 200)" margins="5">                  
+                  <coordinates bbox="[-1.1,-1.1,1.1,1.1]">
+                    <grid-axes xlabel="x" ylabel="y" />
+                  </coordinates>
+                </diagram>
+              </prefigure>
             </image>
           </figure>
         </statement>
@@ -94,7 +121,7 @@
       <task>
         <statement>
           <p>
-            Below are a few more output vectors from your software. Evaluate each of these vectors and draw each of these vectors with initial point at the origin.
+            Below are a few more output vectors from your software. Evaluate each of these vectors and draw each of these vectors with initial point at the origin on the axes in <xref ref="vvfPA1"/>.
             <ul>
               <li><m>\langle \cos\left(\frac{\pi}{4}\right), \sin\left(\frac{\pi}{4}\right) \rangle</m></li>
               <li><m>\langle \cos\left(\frac{3\pi}{4}\right), \sin\left(\frac{3\pi}{4}\right) \rangle</m></li>
@@ -117,7 +144,7 @@
       <task>
         <statement>
           <p>
-            Based on the data you are seeing from the two sets of vector outputs of your software, it appears that the output of your software is the set of vectors of the form <m>\langle \cos(t), \sin(t) \rangle</m>, where <m>t</m> goes from <m>0</m> to <m>2 \pi</m>. Sketch the set of <em>terminal</em> points of vectors <m>\langle \cos(t), \sin(t) \rangle</m> plotted in standard position (with initial point at the origin), where <m>t</m> assumes values from <m>0</m> to <m>2 \pi</m>. Write a couple sentences about what path your drive took. 
+            Based on the data you are seeing from the two sets of vector outputs of your software, it appears that the output of your software is the set of vectors of the form <m>\langle \cos(t), \sin(t) \rangle</m>, where <m>t</m> goes from <m>0</m> to <m>2 \pi</m>. Add to <xref ref="vvfPA1"/> a sketch the set of <em>terminal</em> points (only) of vectors <m>\langle \cos(t), \sin(t) \rangle</m> plotted in standard position (with initial point at the origin). You should allow <m>t</m> to assume values from <m>0</m> to <m>2 \pi</m>. Write a couple sentences about what path your drive took. 
           </p>
         </statement>
         <answer>
@@ -164,7 +191,7 @@
   <subsection>
     <title>Vector-Valued Functions</title>
     <p>
-      As in <xref ref="PA_9_6">Preview Activity</xref>, we can think of a point on the curve shown in <xref ref="vvf-example1">Figure</xref> as the terminal point of a vector starting at the origin. As the point we are looking at moves along the curve, the vector changes to terminate at the desired point. <xref ref="vvf-example1" /> shows a curve in space with a vector from the origin to a highlighted point on the curve. You should use the slider to change the location on the curve to see how changing the scalar input (parameter) will give different outputs with terminal points on the curve. 
+      As in <xref ref="PA-VVF-Plotting">Preview Activity</xref>, we can think of a point on the curve shown in <xref ref="vvf-example1">Figure</xref> as the terminal point of a vector starting at the origin. As the point we are looking at moves along the curve, the vector changes to terminate at the desired point. <xref ref="vvf-example1" /> shows a curve in space with a vector from the origin to a highlighted point on the curve. Use the slider to change the location on the curve to see how changing the scalar input gives different outputs with terminal points on the curve. 
     </p>
     <figure xml:id="vvf-example1">
       <caption>A plot of a curve in space with a position vector shown</caption>
@@ -174,7 +201,7 @@
           var('t')
           scale=2;
           @interact
-          def basic3dcurveplot(s=slider(0,2*pi,pi/20,default=3*pi/4,label="t=")):
+          def basic3dcurveplot(s=slider(0,2*pi,pi/20,default=3*pi/4,label="\\(t=\\)")):
               plot1=axes(scale,1,color="black",opacity=0.15)+text3d("x",(scale+0.5,0,0),fontsize=30)
               plot1+=text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30,frame=False)
               plot1+=parametric_plot3d((cos(t),sin(t),cos(2*t)),(t,0,2*pi),color="red",thickness=2,opacity=0.6)
@@ -184,32 +211,23 @@
         </slate>
       </interactive>
     </figure>
-   <!--  <figure xml:id="F_9_6_VVF_graph">
-      <caption>The graph of a curve in space.</caption>
-      <sidebyside widths="33% 33% 33%" margins="0%">
-      <image source="images/fig_9_6_curve_animate_01"/>
-      <image source="images/fig_9_6_curve_animate_25"/>
-      <image source="images/fig_9_6_curve_animate_40"/>
-      </sidebyside>
-    </figure>
- -->
     <p>
       This correspondence between a location and a vector starting at the origin will allow us to think of a curve as a collection of terminal points of vectors emanating from the origin. We can describe an object traveling along this curve by defining a function <m>\vr</m> whose input is the variable <m>t</m> and whose output is the vector from the origin to the point on the curve at time <m>t</m>. In so doing, we have introduced a new type of function, one whose input is a scalar and whose output is a vector.
     </p>
     <p>
       The terminal points of the output vectors of <m>\vr</m> will trace out the curve in space. From this perspective, the <m>x</m>, <m>y</m>, and <m>z</m> coordinates of the points on the curve are functions of time, <m>t</m>,
       <me>
-        x = x(t), \quad y = y(t), \quad \text{ and }  \quad z = z(t),
-      </me>
-      and thus we have three coordinate functions that represent the collection of points on the curve. The variable <m>t</m> is called a <term><em>parameter</em></term> and the equations <m>x = x(t)</m>, <m>y = y(t)</m>, and <m>z = z(t)</m> are called <term><em>parametric equations</em></term> (or a <term><em>parameterization of the curve</em></term>). The function <m>\vr</m> whose output is the vector from the origin to a point on the curve is defined by
+        x = x(t), \quad y = y(t), \quad \text{ and }  \quad z = z(t)
+      </me>,
+      and thus we have three coordinate functions that represent the collection of points on the curve. The variable <m>t</m> is called a <term>parameter</term> and the equations <m>x = x(t)</m>, <m>y = y(t)</m>, and <m>z = z(t)</m> are called <term>parametric equations</term> (or a <term>parameterization of the curve</term>). The function <m>\vr</m> whose output is the vector from the origin to a point on the curve is defined by
       <me>
         \vr(t) = \langle x(t), y(t), z(t) \rangle
-      </me>
+      </me>.
     </p>
     <definition xml:id="vvf1_def">
       <statement>
         <p>
-          A <term>vector-valued function (of one variable)</term><idx><h>vector-valued function</h><h>definition</h></idx> is a function whose input is a real parameter <m>t</m> and whose output is a vector that depends on <m>t</m>. The <term>graph</term><idx><h>graph of a vector-valued function</h><h>definition</h></idx> of a vector-valued function is the set of all terminal points of the output vectors with their initial points at the origin.
+          A <term>vector-valued function of one variable</term><idx><h>vector-valued function</h><h>definition</h></idx> is a function whose input is a real parameter <m>t</m> and whose output is a vector that depends on <m>t</m>. The <term>graph</term><idx><h>graph of a vector-valued function</h><h>definition</h></idx> of a vector-valued function is the set of all terminal points of the output vectors with their initial points at the origin.
         </p>
         <p>
           <term>Parametric equations</term><idx><h>parametric equations for a curve</h></idx><idx><h>parameterization</h><h>curve</h></idx> for a curve in space are equations of the form
@@ -232,230 +250,278 @@
       <me>
         x(t) = \cos(t), \quad y(t) = \sin(t), \quad \text{ and } \quad z(t)
         = \cos(t) \sin(t)
-      </me>
-      which is represented as the vector-valued function <m>\vr</m>
+      </me>.
+      We represent this as the vector-valued function <m>\vr</m> given by
       <me>
         \vr(t) = \langle \cos(t), \sin(t), \cos(t) \sin(t) \rangle
-      </me>
+      </me>.
     </p>
     <p>
-      Before we start working on parameterizations of curves, you may be asking yourself <q>Why can't we just have the output of our function be a point? Why do vectors need to be involved?!?</q> This is a good question because all things being equal, simpler tends to be better. But using vectors means we will have a LOT more tools and these vector tools will make calculations easier as well as help us make geometric sense of measurements throughout the rest of this course (and a few more). For example, we used a (constant) vector to measure the direction a line moves and this vector is related to the location vectors along the path. Remember that we already have vector tools that allow us to separate measurements into different pieces (like magnitude or direction), or how much of a vector is in a particular direction, or how much is orthogonal to another direction.
+      Before we start working on parameterizations of curves, you may be asking yourself <q>Why can't we just have the output of our function be a point? Why do vectors need to be involved?!?</q> This is a good question because  simpler tends to be better. However, using vectors means we will have significantly more tools at our disposal. These vector tools will make calculations easier and help us make geometric sense of measurements throughout the rest of this course. For example, we used a constant vector to indicate the direction of a line and this vector is related to the location vectors along the path. Remember that we already have vector tools that allow us to separate measurements into different pieces (like magnitude or direction), determine how much of a vector is in a particular direction, or determine how much of a vector is orthogonal to another direction.
     </p>
-    <p>
+    <!-- TODO -->
+    <!-- <p>
       Perhaps this is where we have an aside about how to graph parameterizations in sage, desmos, calcplot3d. Maybe this needs to be an appendix or something else. I don't know which one to suggest but users will need some help with "use appropriate technology" in the activity below.
-    </p>
-    <activity xml:id="A_9_6_1">
-      <statement>
+
+      The built-in Geogebra calculator can actually do this, so that's what I'd suggest since it's 2D.
+    </p> -->
+    <activity xml:id="act-VVF-Plotting-circles">
+      <introduction>
        <p>
           The same curve can be represented with different parameterizations. Use appropriate technology to plot each of the curves generated by the following vector-valued functions for values of <m>t</m> from <m>0</m> to <m>2 \pi </m>. For each example, you should write a few sentences to explain how the graphs are alike and how they are different. Be sure to pay attention to how the parameter values are related to different points on the curve.
-          <ol marker="a.">
-            <li> <m>\vr(t) = \langle \sin(t), \cos(t) \rangle</m> </li>
-            <li> <m>\vr(t) = \langle \sin(2t), \cos(2t) \rangle</m> </li>
-            <li> <m>\vr(t) = \langle \cos(t+\pi), \sin(t+\pi) \rangle</m> </li>
-            <li> <m>\vr(t) = \langle \cos(t^2), \sin(t^2) \rangle</m> </li>
-          </ol>
        </p>
-      </statement>
-      <answer>
-        <p>
-          <ol marker="a.">
-            <li>This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, 1)</m>, and terminal point <m>(0, 1)</m>.</li>
-            <li>This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, 1)</m>, and terminal point <m>(0, 1)</m>, but the circle is traced twice since the period of the parametric trigonometric functions are <m>\pi</m>.</li>
-            <li>This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, -1)</m>, and terminal point <m>(0, -1)</m>.</li>
-            <li>This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, 1)</m>, and terminal point <m>(sin(4(\pi)^2), cos(4(\pi)^2))</m>. The circle is traced multiple times.</li>
-          </ol>
-        </p>
-      </answer>
-      <solution>
-        <p>
-          <ol marker="a.">
-            <li>This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, 1)</m>, and terminal point <m>(0, 1)</m>.</li>
-            <li>This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, 1)</m>, and terminal point <m>(0, 1)</m>, but the circle is traced twice since the period of the parametric trigonometric functions are <m>\pi</m>.</li>
-            <li>This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, -1)</m>, and terminal point <m>(0, -1)</m>.</li>
-            <li>This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, 1)</m>, and terminal point <m>(sin(4(\pi)^2), cos(4(\pi)^2))</m>. The circle is traced multiple times.</li>
-          </ol>
-        </p>
-      </solution>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>\vr(t) = \langle \sin(t), \cos(t) \rangle</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, 1)</m>, and terminal point <m>(0, 1)</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, 1)</m>, and terminal point <m>(0, 1)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\vr(t) = \langle \sin(2t), \cos(2t) \rangle</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, 1)</m>, and terminal point <m>(0, 1)</m>, but the circle is traced twice since the period of the parametric trigonometric functions are <m>\pi</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, 1)</m>, and terminal point <m>(0, 1)</m>, but the circle is traced twice since the period of the parametric trigonometric functions are <m>\pi</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\vr(t) = \langle \cos(t+\pi), \sin(t+\pi) \rangle</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, -1)</m>, and terminal point <m>(0, -1)</m>.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, -1)</m>, and terminal point <m>(0, -1)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\vr(t) = \langle \cos(t^2), \sin(t^2) \rangle</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, 1)</m>, and terminal point <m>(sin(4(\pi)^2), cos(4(\pi)^2))</m>. The circle is traced multiple times.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            This vector-valued function is a circle traced in the clockwise direction with radius <m>1</m>, initial point <m>(0, 1)</m>, and terminal point <m>(sin(4(\pi)^2), cos(4(\pi)^2))</m>. The circle is traced multiple times.
+          </p>
+        </solution>
+      </task>
     </activity>
     <p>
-      The examples in <xref ref="A_9_6_1">Activity</xref> illustrate that a parameterization allows us to not only describe a curve in space as the graph of a vector valued function of one variable, but also the direction and speed at which the graph is traversed as <m>t</m> changes. In the different parameterizations of the circle, we see that we can start at different points and move around the circle in either direction. In <xref ref="S-VVF-Calculus">Section</xref>, we will begin to investigate the calculus of vector-valued functions, which will enable us to precisely quantify the direction, speed, and acceleration of an object moving along a curve in space. As such, describing curves parametrically will allow us to not only indicate the points on the curve itself, but also to describe motion along the curve.
+      The examples in <xref ref="act-VVF-Plotting-circles"/> illustrate that a parameterization allows us not only to  describe a curve in space as the graph of a vector-valued function of one variable but also to specify the direction and speed at which the graph is traversed as <m>t</m> changes. In the different parameterizations of the circle, we see that we can start at different points and move around the circle in either direction. In <xref ref="S-VVF-Calculus" />, we will begin to investigate the calculus of vector-valued functions. This will enable us to precisely quantify the direction, speed, and acceleration of an object moving along a curve in space. As such, describing curves parametrically will allow us not only to indicate the points on the curve itself but also to describe motion along the curve.
     </p>
     <p>
-      While the ideas of a path or curve in space are closely related to a parameterization we will take a moment here to clarify these terms. A curve in space refers to the collection of points on the path. A curve does not have a specific direction to be traveled or even a particular way to move along points. A parameterization is an explicit description for how to travel along the points on the curve (in terms of the parameter <m>t</m>). A common analogy we will use is that a curve in space would be represented by a bike path or road and a parameterization would be a description for how you took a trip along this bike path or road (as a function of time).
+      While the ideas of a path or curve in space are closely related to a parameterization, we will take a moment here to clarify the precise meaning of these terms. A <term>curve in space</term> refers to the collection of points on the path. A curve does <em>not</em> have a specific direction to be traveled or even a particular way to move along points. A <term>parameterization</term> is an explicit description for how to travel along the points on the curve in terms of the parameter <m>t</m>. A common analogy we will use is that a curve in space would be represented by a bike path or road while a parameterization would be a description of how you took a trip along this bike path or road as a function of time.
     </p>  
     <p>
-      In general, we will avoid having parameterizations that stop at any point on the curve or reverse their direction along the curve because many of the measurements we look at in this chapter will be undefined at these instances. It is common in practice to split your parameterization up into separate pieces that correspond to the intervals between where these stops or reversings happen. 
+      In general, we will avoid having parameterizations that pause at any point on the curve or reverse their direction along the curve because many of the measurements we consider in this chapter will be undefined when this occurs. It is common in practice to split parameterizations up into separate pieces that correspond to the intervals between where these pauses or direction changes happen. 
     </p>
     <p> 
-      The graph of a vector valued function of one variable is the curve traced out by the endpoints of the output vectors, but this graph does not typically have parameter values labeled. This means that there is significant information lost when looking at the graph of a vector valued function because you don't have any indication of how the path is traveled/parameterized.
+      The <term>graph</term> of a vector-valued function of one variable is the curve traced out by the endpoints of the output vectors, but this graph does not typically have parameter values labeled. This means that there is significant information lost when considering only the graph of a vector-valued function because no information about how the path was traveled/parameterized is available.
     </p>
       <!-- should we show what the 3D plot of cos t,sin t looks like? -->
     <p>
-      In the next subsection, we will cover some ideas that will be useful in parameterizing curves but first we will address a couple of ideas related to the new category of functions we will be studying. Remember that the big idea behind functions is that for each input there can only be one output assigned to that input. The domain of a function is the set of allowed inputs for the function. Sometimes a restricted set will be given that limits what inputs should be considered, but unless otherwise stated, the domain of a function will be the largest set of inputs for which the function is defined. Common ways for scalar functions to <em>NOT</em> be defined for a particular input include:
+      In the next subsection, we will cover some ideas that will be useful in parameterizing curves. First, however, we will address a couple of ideas related to the new category of functions we will be studying. Remember that the key idea behind functions is that for each input there is exactly one output assigned to that input. The <term>domain</term> of a function is the set of allowed inputs for the function. Sometimes a restricted set will be given that limits what inputs should be considered. Unless otherwise stated, however, the domain of a function will be the largest set of inputs for which the function is defined. Common ways for scalar functions to <alert>not</alert> be defined for a particular input include:
       <ul>
-        <li>dividing by zero</li>
-        <li>taking the square root of negative numbers</li>
-        <li>restricted domains from other functions like <m>\arcsin</m> or logarithms</li>
+        <li>dividing by zero,</li>
+        <li>taking the square root of negative numbers, and </li>
+        <li>restricted domains from other functions like <m>\arcsin</m> or logarithms.</li>
       </ul>
     </p>
     <p>
-      The domain of a vector valued function of one variable will be the subset of <m>\R</m> where all of the component functions are defined. In other words, the domain of the vector valued function of one variable is the intersection of the domains for the component functions because that is the set of inputs for which the vector output will be defined.
+      The domain of a vector-valued function of one variable will be the subset of <m>\R</m> where <em>all</em> of the component functions are defined. In other words, the domain of a vector-valued function of one variable is the intersection of the domains for the component functions, because that is the set of inputs for which the vector output will be defined.
     </p>
     <example>
       <p>
-        If 
-        <me>\vr(t) = \langle \frac{-1}{t-2}, \sqrt{25-t^2}, \ln(t+1) \rangle</me> 
-        then the domains of the component functions will be <m>\{x \in \R | x\neq 2\}</m>, <m>[-5,5]</m>, and <m>(-1,\infty)</m>, respectively. The function <m>\vr</m> will have an output for only the parameter values for which <em>all</em> three component functions are defined. Thus, the domain of <m>\vr(t)</m> will be <m>(-1,2)\cap(2,5]</m>.
+        Let
+        <me>\vr(t) = \left\langle \frac{-1}{t-2},\, \sqrt{25-t^2},\, \ln(t+1) \right\rangle</me>.
+        The domains of the component functions are <m>\{x \in \R | x\neq 2\}</m> for the <m>x</m>-component, <m>[-5,5]</m> for the <m>y</m>-component, and <m>(-1,\infty)</m> for the <m>z</m>-component. The function <m>\vr</m> has an output for only the parameter values for which <em>all</em> three component functions are defined. Thus, the domain of <m>\vr(t)</m> is <m>(-1,2)\cup(2,5]</m>.
       </p>
     </example>
   </subsection>
   <subsection xml:id="subsec-parameterizingcurves">
     <title>Parameterizing Curves</title>
     <p>
-      In this subsection, we will look at how to parameterize several types of curves in space. A bigger idea that will be used throughout the rest of the text is the way that different relationships of between coordinates can be expressed or understood, like if one coordinate can be expressed as a function of the other or if the coordinates satisfy other relationships such as trig identities. 
+      We now discuss how to parameterize several types of curves in space. An important idea that will be used throughout the rest of the text is the way that different relationships of between coordinates can be expressed or understood, such as expressing one coordinate as a function of the other or relationships such as trig identities between the coordinate values. 
     </p> 
     <p>
-      Using parametric equations to define vector-valued functions in two dimensions is much more versatile way of describing curves than defining <m>y</m> as a function of <m>x</m>. In fact, if <m>y = f(x)</m> is a function of <m>x</m>, then we can parameterize the graph of <m>f</m> by
+      Using parametric equations to define vector-valued functions in two dimensions is a more versatile way of describing curves than defining <m>y</m> as a function of <m>x</m>. In fact, if <m>y = f(x)</m> is a function of <m>x</m>, then we can parameterize the graph of <m>f</m> by
       <me>
         \vr(t) = \langle t, f(t) \rangle
-      </me>
-      and thus the graph of every single-variable function may be described parametrically. In addition, as we saw in <xref ref="PA_9_6">Preview Activity</xref> and <xref ref="A_9_6_1">Activity</xref>, we can use vector-valued functions to represent curves in the plane that cannot be described with <m>y</m> as a function of <m>x</m> (or <m>x</m> as a function of <m>y</m>).
+      </me>.
+      Hence, the graph of every single-variable function can be described parametrically. In addition, as we saw in <xref ref="PA-VVF-Plotting" /> and <xref ref="act-VVF-Plotting-circles"/>, we can use vector-valued functions to represent curves in the plane that cannot be described with <m>y</m> as a function of <m>x</m> (or <m>x</m> as a function of <m>y</m>).
     </p>
 
     <p> 
-      As a side note: vector-valued functions make it easy to plot the inverse of a one-to-one function in two dimensions. If <m>y = f(x)</m> defines a one-to-one function, then we can parameterize this function by <m>\vr(t) = \langle t, f(t) \rangle</m>. Since the inverse function just reverses the role of input and output as symbolized by the <m>x</m> and <m>y</m> respectively, a parameterization for <m>f^{-1}</m> is <m>\langle f(t), t \rangle</m>.
+      As a side note: vector-valued functions make it easy to plot the inverse of a one-to-one function in two dimensions. If <m>y = f(x)</m> defines a one-to-one function, then we can parameterize this function by <m>\vr(t) = \langle t, f(t) \rangle</m>. Since the inverse function reverses the role of input and output as symbolized by  <m>x</m> and <m>y</m> respectively, a parameterization for the graph of <m>f^{-1}</m> is <m>\langle f(t), t \rangle</m>.
     </p>
     <example>
       <title>Parameterizing <m>y=f(x)</m></title>
       <p>
-        In this example we will look at parameterizing the parabola given by <m>(x-2)^2=8(y+1)</m>. From <xref ref="para-param" />, you can see that the graph of <m>(x-2)^2=8(y+1)</m> will pass the vertical line test, which means we can write the <m>y</m>-coordinate as a function of the <m>x</m>-coordinate. Specifically, we get <m>y=f(x)=\frac{(x-2)^2}{8}-1</m>. Using the idea above, we set <m>x=t</m> to be our parameter, which means we can express both coordinates of points on our curve as a function of <m>t</m>. In particular, setting <m>x(t)=t</m> means that we can write <m>y</m> as a function of <m>t</m> because <m>x=t</m>. Thus <m>x(t)=t</m> and <m>y(x)=y(t)=\frac{(t-2)^2}{8}-1</m> will parameterize the parabola given by <m>(x-2)^2=8(y+1)</m> and will correspond to the vector valued function <m>\vr(t) = \langle t , f(t) \rangle=\langle t,\frac{(t-2)^2}{8}-1 \rangle</m>.
+        Consider the parabola given by <m>(x-2)^2=8(y+1)</m>. From <xref ref="para-param" />, you can see that the graph of <m>(x-2)^2=8(y+1)</m> passes the vertical line test. Therefore, we can write the <m>y</m>-coordinate as a function of the <m>x</m>-coordinate. Specifically, we isolate <m>y</m> and obtain <m>y=f(x)=\frac{(x-2)^2}{8}-1</m>. Using the idea above, we set <m>x=t</m> to be our parameter. Now we can express both coordinates of points on our curve as functions of <m>t</m>. In particular, setting <m>x(t)=t</m> means that we can write <m>y</m> as a function of <m>t</m> because <m>x=t</m>. Thus <m>x(t)=t</m> and <m>y(x)=y(t)=\frac{(t-2)^2}{8}-1</m> will parameterize the parabola given by <m>(x-2)^2=8(y+1)</m>. This corresponds to the vector-valued function <m>\vr(t) = \langle t , f(t) \rangle=\langle t,\frac{(t-2)^2}{8}-1 \rangle</m>.
       </p>
       <figure xml:id="para-param">
         <caption>A plot of the parabola given by <m>(x-2)^2=8(y+1)</m></caption>
-        <image width="100%" xml:id="img-para-param">
-          <sageplot>
-            var('t,x')
-            plot2=plot((x-2)^2 /8 -1, (x,-5,7),aspect_ratio=1,gridlines=True,color="black",thickness=2)
-            plot2+=point((2,-1),size=30,color="black",xmin=-4,xmax=6,ymin=-2,ymax=6)
-            plot2
-          </sageplot>
+        <image width="60%">
+          <shortdescription>A parabola with its vertex identified</shortdescription>
+          <description>
+            <p>A parabola with vertex indicated by a point at <m>(2,-1)</m>. It is plotted for <m>-4\leq x\leq 6</m> and also passes through the points <m>(-2,1)</m> and <m>(6,1)</m>.
+            </p>
+          </description>
+          <prefigure xmlns="https://prefigure.org" label="img-para-param">
+            <diagram dimensions="(300, 180)" margins="5">
+              <definition>f(x,y) = (x-2)^2 - 8*(y+1)</definition>
+              <coordinates bbox="[-4.1,-2.1,6.1,4.1]">
+                <grid-axes xlabel="x" ylabel="y" />
+                <implicit-curve function="f" k="0" stroke="blue" />
+                <point p="(2,-1)" fill="blue"/>
+              </coordinates>
+            </diagram>
+          </prefigure>
         </image>
       </figure>
       <p>
-        Remember that there is NOT a unique way to parameterize a curve, so the choices above are not the only way to describe motion on the given parabola. You could move along the curve with double the speed (relative to the previous example), which would give <m>\vr(t) = \langle 2t,\frac{(2t-2)^2}{8}-1 \rangle</m>.
+        Remember that there is <em>not</em> a unique way to parameterize a curve. This means that the choices we made above are not the only way to describe motion on this parabola. You could move along the curve with double the speed (relative to our original parameterization). In this case, the parameterization would be <m>\vr(t) = \langle 2t,\frac{(2t-2)^2}{8}-1 \rangle</m>.
       </p>
       <p>
-        Other choices for the parameterization might include wanting to center your parameter on the vertex (<m>t=0</m> corresponds to <m>(2,-1)</m>), which could give a parameterization like <m>\vr(t) =\langle t-2 , \frac{t^2-2}{2} \rangle</m>. Remember that there is more than one way to walk the same path.
+        Other choices for the parameterization might include wanting to have the vertex <m>(2,-1)</m> of the parabola correspond to a specific parameter value, such as <m>t=0</m>. One parameterization with this property would be <m>\vr(t) =\langle t-2 , \frac{t^2-2}{2} \rangle</m>. <alert>Remember that there is more than one way to walk the same path.</alert>
       </p>
     </example>
-    <activity xml:id="A_9_6_3">
-      <statement>
+    <p>
+      The next activity has you consider a few examples of curves generated by vector-valued functions, including in three dimensions.
+    </p>
+    <activity xml:id="act-vvf-plotting-3D-plot">
+      <introduction>
        <p>
           Vector-valued functions can be used to generate many interesting curves. Graph each of the following using an appropriate technological tool, and then write one sentence for each function to describe the behavior of the resulting curve.
-          <ol marker="a.">
-            <li>
-              <p>
-                <m>\vr(t) = \langle t\cos(t), t\sin(t) \rangle</m>
-              </p>
-           </li>
-
-           <li>
-              <p>
-                <m>\vr(t) = \langle \sin(t)\cos(t), t\sin(t) \rangle</m>
-              </p>
-            </li>
-
-           <li>
-              <p>
-                <m>\vr(t) = \langle \sin(5t), \sin(4t) \rangle</m>
-              </p>
-            </li>
-
-           <li>
-              <p>
-                <m>\vr(t) = \langle t^2\sin(t)\cos(t), 0.9t\cos(t^2), \sin(t) \rangle</m> (Note that this defines a curve in 3-space.)
-              </p>
-            </li>
-            <li>
-              <p>
-                Experiment with different formulas for <m>x(t)</m> and <m>y(t)</m> and ranges for <m>t</m> to see what other interesting curves you can generate.  Share your best results with peers.
-              </p>
-            </li>
-          </ol>
        </p>
-      </statement>
-      <answer>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            <m>\vr(t) = \langle t\cos(t), t\sin(t) \rangle</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            This function has an initial point of <m>(0, 0)</m> with a radius that increases as <m>\theta</m> increase. This is a growing spiral in the <m>xy</m>-plane.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            This function has an initial point of <m>(0, 0)</m> with a radius that increases as <m>\theta</m> increase. This is a growing spiral in the <m>xy</m>-plane.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\vr(t) = \langle \sin(t)\cos(t), t\sin(t) \rangle</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            The domain for <m>x</m> is <m>-1 \leq x \leq 1</m>. As <m>t</m> increases, the <m>y</m>-value keeps increasing in both the positive and negative directions. This is an expanding figure 8 like graph.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            The domain for <m>x</m> is <m>-1 \leq x \leq 1</m>. As <m>t</m> increases, the <m>y</m>-value keeps increasing in both the positive and negative directions. This is an expanding figure 8 like graph.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\vr(t) = \langle \sin(5t), \sin(4t) \rangle</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            This function is called a Lissajous, or Bowditch, curve.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            This function is called a Lissajous, or Bowditch, curve.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\vr(t) = \langle t^2\sin(t)\cos(t), 0.9t\cos(t^2), \sin(t) \rangle</m>. (Note that this defines a curve in three-dimensional space.)
+          </p>
+        </statement>
+        <answer>
+          <p>
+            For <m>0 \leq t \leq \pi</m>, the function has <m>z</m>-values between 0 and 1. For <m>\pi \leq t \leq 2 \pi</m>, the function has <m>z</m>-values between -1 and 0. The function snakes its way outwards and then goes back to zero. It behaves similarly in the <m>y</m>-direction.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            For <m>0 \leq t \leq \pi</m>, the function has <m>z</m>-values between 0 and 1. For <m>\pi \leq t \leq 2 \pi</m>, the function has <m>z</m>-values between -1 and 0. The function snakes its way outwards and then goes back to zero. It behaves similarly in the <m>y</m>-direction.
+          </p>
+        </solution>
+      </task>
+      <conclusion>
         <p>
-          <ol marker="a.">
-            <li>
-              <p>
-                This function has an initial point of <m>(0, 0)</m> with a radius that increases as <m>\theta</m> increase. This is a growing spiral in the <m>xy</m>-plane.
-              </p>
-            </li>
-            <li>
-              <p>
-                The domain for <m>x</m> is <m>-1 \leq x \leq 1</m>. As <m>t</m> increases, the <m>y</m>-value keeps increasing in both the positive and negative directions. This is an expanding figure 8 like graph.
-              </p>
-            </li>
-            <li>
-              <p>
-                This function is called a Lissajous, or Bowditch, curve.
-              </p>
-            </li>
-            <li>
-              <p>
-                For <m>0 \leq t \leq \pi</m>, the function has <m>z</m>-values between 0 and 1. For <m>\pi \leq t \leq 2 \pi</m>, the function has <m>z</m>-values between -1 and 0. The function snakes its way outwards and then goes back to zero. It behaves similarly in the <m>y</m>-direction.
-              </p>
-            </li>
-          </ol>
+          Experiment with different formulas for <m>x(t)</m> and <m>y(t)</m> and ranges for <m>t</m> to see what other interesting curves you can generate.  Share your best results with peers.
         </p>
-      </answer>
-      <solution>
-        <p>
-          <ol marker="a.">
-            <li>
-              <p>
-                This function has an initial point of <m>(0, 0)</m> with a radius that increases as <m>\theta</m> increase. This is a growing spiral in the <m>xy</m>-plane.
-              </p>
-            </li>
-            <li>
-              <p>
-                The domain for <m>x</m> is <m>-1 \leq x \leq 1</m>. As <m>t</m> increases, the <m>y</m>-value keeps increasing in both the positive and negative directions. This is an expanding figure 8 like graph.
-              </p>
-            </li>
-            <li>
-              <p>
-                This function is called a Lissajous, or Bowditch, curve.
-              </p>
-            </li>
-            <li>
-              <p>
-                For <m>0 \leq t \leq \pi</m>, the function has <m>z</m>-values between 0 and 1. For <m>\pi \leq t \leq 2 \pi</m>, the function has <m>z</m>-values between -1 and 0. The function snakes its way outwards and then goes back to zero. It behaves similarly in the <m>y</m>-direction.
-              </p>
-            </li>
-          </ol>
-        </p>
-      </solution>
+      </conclusion>
     </activity>
     <p>
-     The intersection of surfaces in space are often curves and a convenient way of describing different conditions. Thus, we may determine parameterizations for these curves defined by satisfying multiple equations. For example, if we want to look at the intersection of <m>z = \cos(x^2 + y^2)</m> and the <m>y = 1</m> fundamental plane, we can set <m>y = 1</m> in <m>z = \cos(x^2 + y^2)</m>. We can then let <m>x</m> be parameterized by the variable <m>t</m>; thus the intersection of <m>z = \cos(x^2 + y^2)</m> and the <m>y = 1</m> fundamental plane is the curve given by the parameterization <m>\langle t, 1, \cos(t^2 + 1)\rangle</m>.
+     The intersection of surfaces in space are often curves. Thus, we may determine parameterizations for these curves defined by satisfying multiple equations. For example, if we want to describe the intersection of the surface <m>z = \cos(x^2 + y^2)</m> and the fundamental plane <m>y = 1</m> , then we can set <m>y = 1</m> in <m>z = \cos(x^2 + y^2)</m>. We then let <m>x</m> be parameterized by the variable <m>t</m>. This tells us that the intersection of <m>z = \cos(x^2 + y^2)</m> and the fundamental plane <m>y = 1</m> is the curve parameterizated as <m>\langle t, 1, \cos(t^2 + 1)\rangle</m>. The next activity guides you through similar questions for a more familiar surface.
     </p>
 
-    <activity xml:id="A_9_6_4">
+    <activity xml:id="act-vvf-plotting-paraboloid">
       <introduction>
         <p>
-          For this activity we will consider the paraboloid defined by <m>z = x^2+y^2</m>.
+          For this activity we will consider the paraboloid with equation <m>z = x^2+y^2</m>.
         </p>
       </introduction>
       <task>
         <statement>
           <p>
-            Find a parameterization for the intersection of the paraboloid with the <m>x=2</m> fundamental plane. What type of curve does this intersection describe?
+            Parameterize the intersection of the paraboloid with the fundamental plane <m>x=2</m>. What type of curve is the intersection?
           </p>
         </statement>
         <answer>
           <p>
-            <m>\vr(t) = \langle 2, t, 4 + t^2 \rangle</m>. This is a parabola in the <m>yz</m>-plane at <m>x = 2</m> that opens up in the positive <m>z</m>-direction with a vertex of <m>(2, 0, 4)</m>.
+            <m>\vr(t) = \langle 2, t, 4 + t^2 \rangle</m>. A parabola.
           </p>
         </answer>
         <solution>
@@ -467,12 +533,12 @@
       <task>
         <statement>
           <p>
-            Find a parameterization for the intersection of the paraboloid and the <m>y = -1</m> fundamental plane. What type of curve does this intersection describe?
+            Parameterize the intersection of the paraboloid with the fundamental plane <m>y = -1</m>. What type of curve is the intersection?
           </p>
         </statement>
         <answer>
           <p>
-            <m>\vr(t) = \langle t, -1, t^2 + 1 \rangle</m>. This is a parabola in the <m>xz</m>-plane at <m>y = -1</m> that opens up in the positive <m>z</m>-direction with a vertex of <m>(0, -1, 1)</m>.
+            <m>\vr(t) = \langle t, -1, t^2 + 1 \rangle</m>. A parabola.
           </p>
         </answer>
         <solution>
@@ -484,12 +550,12 @@
       <task>
         <statement>
           <p>
-            Find a parameterization for the intersection of the paraboloid with the fundamental plane <m>z = 25</m>. What type of curve does this intersection describe?
+            Parameterize the intersection of the paraboloid with the fundamental plane <m>z = 25</m>. What type of curve is the intersection?
           </p>
         </statement>
         <answer>
           <p>
-            <m>\vr(t) = \langle t, sqrt{25 - t^2}, 25 \rangle</m> and <m>\vr(t) = \langle t, -sqrt{25 - t^2}, 25 \rangle</m>. Or <m>\vr(t) = \langle 5cos(t), 5sin(t), 25 \rangle</m>. This is a circle with radius <m>5</m> in the plane <m>z = 25</m>.
+            <m>\vr(t) = \langle 5cos(t), 5sin(t), 25 \rangle</m>. A circle.
           </p>
         </answer>
         <solution>
@@ -522,13 +588,12 @@
       </task>    
     </activity>
     <p>
-      As you saw in <xref ref="A_9_6_4" />, it will be convenient to parameterize conic sections and other curves defined by common relationships between coordinates. In <xref ref="ellipse_param" />, we will generalize our work for parameterizing circles earlier to give a general parameterized of a translated ellipse. These ideas are extended in <xref ref ="hyperbola_param"/> where hyperbolas are parameterized. 
+      As you saw in <xref ref="act-vvf-plotting-paraboloid" />, it is convenient to parameterize conic sections and other curves defined by common relationships between coordinates. In <xref ref="ellipse_param" />, we will generalize our work for parameterizing circles earlier to give a general parameterized of a translated ellipse. These ideas are extended in <xref ref ="hyperbola_param"/>, which asks you to parameterize hyperbolas. 
     </p>
     
   </subsection>
 
-  <subsection>
-    <title>Summary</title>
+  <outcomes>
     <ul>
       <li>
         <p>
@@ -543,7 +608,7 @@
       </li>
     </ul>
 
-    </subsection>
+  </outcomes>
 
 <xi:include href="./exercises/ez-S_VVF_Plotting.ptx" />
 

@@ -41,7 +41,7 @@
     to understanding the derivative and the definite integral. In this section, we will begin to understand how the concept of limit for functions of two variables is similar to what we encountered for functions of a single variable. We will use the notion of the limit of a function of several variables as the last step in understanding and defining important concepts related to differentiability later in this chapter. 
   </p>
   <p>
-   We did not need to generalize our ideas related to limits when we looked at vector valued functions of one variable (in <xref ref="C_VVF" />) because we applied our one variable limits componentwise. The limit of a of function like <m>\vr(t)=\langle x(t),y(t),z(t) \rangle</m> is evaluated as three separate one variable limits. 
+   We did not need to generalize our ideas related to limits when we looked at vector-valued functions of one variable (in <xref ref="C_VVF" />) because we applied our one variable limits componentwise. The limit of a of function like <m>\vr(t)=\langle x(t),y(t),z(t) \rangle</m> is evaluated as three separate one variable limits. 
   </p>
   <p>
     Let's begin by reviewing the idea behind a limit of a function of one variable. We say that a function <m>f</m> has a limit <m>L</m> as <m>x</m> approaches <m>a</m> provided that we can make the values <m>f(x)</m> as close to <m>L</m> as we like by taking <m>x</m> sufficiently close (but not equal) to <m>a</m>. We denote this behavior by writing

@@ -350,7 +350,7 @@
     </p>
     <example>
       <p>
-        In this example, we will calculate the curvature of the parabola given by <m>y=x^2</m> for <m>-2 \lt x \lt 2</m>. We will parameterize this curve in three dimensions so that we can use <xref ref="ec-curv" /> (cross product is defined in 3D only). The vector valued function <m>\vr(t)=\langle t,t^2,0\rangle</m> with <m>t\in[-2,2]</m> will parameterize the curve given by <m>y=x^2</m> for <m>-2 \lt x \lt 2</m>.
+        In this example, we will calculate the curvature of the parabola given by <m>y=x^2</m> for <m>-2 \lt x \lt 2</m>. We will parameterize this curve in three dimensions so that we can use <xref ref="ec-curv" /> (cross product is defined in 3D only). The vector-valued function <m>\vr(t)=\langle t,t^2,0\rangle</m> with <m>t\in[-2,2]</m> will parameterize the curve given by <m>y=x^2</m> for <m>-2 \lt x \lt 2</m>.
       </p>
       <figure xml:id="paracurv1">
         <caption> A plot of <m>y=x^2</m> with points <m>(0,0)</m> and <m>(-\frac{3}{2},\frac{9}{4})</m></caption>
