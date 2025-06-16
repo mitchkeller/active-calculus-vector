@@ -46,7 +46,7 @@
 
     <introduction>
     <p>
-      Quantities like length, speed, area, and mass are all measured using a single number (a <term>scalar</term>). Other quantities, like velocity, force, and displacement, have two attributes: magnitude (or length) and direction. These quantities are represented by <term>vectors</term> and are the study of this section. For example, we will use vectors to calculate work done by a constant force, calculate torque, determine direction vectors for lines and normal vectors for planes, define curvature, and determine the direction of greatest increase on a surface. For most of these applications, we will be interested in using vectors to measure the direction of some aspect of the application while needing to also pay attention to the magnitude of this measurement. Vectors will be an essential tool for describing the behavior of functions of several variables. 
+      Quantities like length, speed, area, and mass are all measured using a single number (a <term>scalar</term>). Other quantities, like velocity, force, and displacement, have two attributes: magnitude (or length) and direction. These quantities are represented by <term>vectors</term> and are the focus of this section. For example, we will use vectors to calculate work done by a constant force, calculate torque, determine direction vectors for lines and normal vectors for planes, define curvature, and determine the direction of greatest increase on a surface. For most of these applications, we will be interested in using vectors to measure the direction of some aspect of the application while needing to also pay attention to the magnitude of this measurement. Vectors will be an essential tool for describing the behavior of functions of several variables. 
     </p>
 
     <!-- <p>
@@ -132,16 +132,19 @@
           </p>
         </statement>
         <answer>
-          <p>FIXME
-            <m>\overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC}</m>.
+          <p>
+            The sum of the horizontal displacements of <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> is the horizontal displacement of <m>\overrightarrow{AC}</m>. Similarly, the sum of the vertical displacements of <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> is the vertical displacement of <m>\overrightarrow{AC}</m>. You can think of the sum of  <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> as going from A to C with B as an intermediate point. Since the displacement only cares about the net change, the result of going straight from A to C versus going through the point B is the same. 
           </p>
           <p>
             <m>\langle -5 , -2 \rangle + \langle 7 , -3 \rangle = \langle 2 , -5 \rangle</m>.
           </p>
         </answer>
         <solution>
-          <p>FIXME
-            <m>\overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC}</m>. A triangle has 3 sides. <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> form two sides of the triangle. When we add these together, the vector formed creates the 3rd side of the triangle.
+          <p>
+            The sum of the horizontal displacements of <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> is the horizontal displacement of <m>\overrightarrow{AC}</m>. Similarly, the sum of the vertical displacements of <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> is the vertical displacement of <m>\overrightarrow{AC}</m>. You can think of the sum of  <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> as going from A to C with B as an intermediate point. Since the displacement only cares about the net change, the result of going straight from A to C versus going through the point B is the same. 
+          </p>
+          <p>
+            <m>\langle -5 , -2 \rangle + \langle 7 , -3 \rangle = \langle 2 , -5 \rangle</m>.
           </p>
         </solution>
       </task>
@@ -279,106 +282,80 @@
       <introduction>
         <p>
           <!-- An article by C.Kenneth Tanner of the University of Georgia argues that, due to the concept of social distance, a secondary school classroom for 20 students should have 1344 square feet of floor space. Suppose a classroom is 32 feet by 42 feet by 8 feet. --> 
-          After being bored in your previous calculus class (and definitely not in multivariable calculus) you count the floor tiles to see how large the room is. You now know that the room is 32 feet wide and 42 feet in length. Additionally, your tall friend Chuck can barely jump and touch the ceiling which means the ceiling is 10 feet high. Your calculus professor notices you doing these measurements and decides to create a classroom coordinate system. Your professor walks to the center of the room and notices that their head is five feet above the ground and sets their head as the origin of the classroom coordinate system. Your friend Alice is sitting at <m>A = (9, -6, -2.5)</m>, a projector is located at position <m>B = (0,1,9)</m>, and your rival Carlos is standing at point <m>C = (-2, 20, -5)</m>. All distances are measured in feet. 
+          After being bored in your previous calculus class (and definitely not in multivariable calculus) you count the floor tiles to see how large the room is. You now know that the room is 32 feet wide and 42 feet in length. Additionally, your tall friend Chuck can barely jump and touch the ceiling which means the ceiling is 10 feet high. Your calculus professor notices you doing these measurements and decides to create a classroom coordinate system. Your professor walks to the center of the room and notices that their head is five feet above the ground and sets their head as the origin of the classroom coordinate system. Your friend Alice is sitting at <m>A = (9, -6, -2.5)</m>, a projector is located at position <m>B = (0,1,3)</m>, and your friend Carlos is working while sitting on the floor at <m>C = (-2, 20, -5)</m>. All distances are measured in feet. 
+        </p>
+        <p>
+          For each of the directed line segments given below, determine the components of the indicated vectors and explain in context what each represents.
         </p>
       </introduction>
       <task>
         <statement>
-          <p>
-            Determine the components of the indicated vectors and explain in context what each represents. 
-          </p>
-          <p>
-            <ol marker="a.">
-              <li><p><m>\overrightarrow{OA}= \langle\, ,\, ,\, \rangle </m></p></li>
-              <li><p><m>\overrightarrow{OB}= \langle\, ,\, ,\, \rangle</m></p> </li>
-              <li><p><m>\overrightarrow{OC}= \langle\, ,\, ,\, \rangle</m></p> </li>
-              <li><p><m>\overrightarrow{AB}= \langle\, ,\, ,\, \rangle</m></p> </li>
-              <li><p><m>\overrightarrow{AC}= \langle\, ,\, ,\, \rangle</m></p> </li>
-              <li><p><m>\overrightarrow{BC}= \langle\, ,\, ,\, \rangle</m></p> </li>
-            </ol>
-          </p>
+          <p><m>\overrightarrow{OA}= \langle\, ,\, ,\, \rangle </m></p>
         </statement>
-      <answer>
-        <p>FIXME AND BREAK UP PREVIOUS INTO TASKS
-          <ol marker="a.">
-            <li>
-              <p>
-                <m>\overrightarrow{OA} = \langle -7 , -27, -5.5 \rangle</m>. This represents the displacement of the student's seat from the center of the classroom.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>\overrightarrow{OB} = \langle -16 , -20, -1 \rangle</m>. This represents the displacement of the projector from the center of the classroom.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>\overrightarrow{OC} = \langle -18 , -1, -8 \rangle</m>. This represents the displacement of the teacher from the center of the classroom.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>\overrightarrow{AB} = \langle -9 , 7, 4.5 \rangle</m>. This represents the displacement of the projector from the student's seat.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>\overrightarrow{AC} = \langle -11 , 26, -2.5 \rangle</m>. This represents the displacement of the teacher from the student's seat.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>\overrightarrow{BC} = \langle -2 , 19, -7 \rangle</m>. This represents the displacement of the teacher from the projector.
-              </p>
-            </li>
-          </ol>
-        </p>
-      </answer>
-      <solution>
-        <p>FIXME
-          <ol marker="a.">
-            <li>
-              <p>
-                If the dimensions of the room are 32 feet by 42 feet by 10 feet, the center of the room is located at <m> \langle 16 , 21 , 5 \rangle</m>.
-              </p>
-              <p>
-                <m>\overrightarrow{OA} = \langle (9 - 16) , (-6 - 21) , ((-1.5) - 4) \rangle = \langle -7 , -27, -5.5 \rangle</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>\overrightarrow{OB} = \langle (0 - 16) , (1 - 21) , (3 - 4) \rangle = \langle -16 , -20, -1 \rangle</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>\overrightarrow{OC} = \langle ((-2) - 16) , (20 - 21) , ((-4) - 4) \rangle = \langle -18 , -1, -8 \rangle</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>\overrightarrow{AB} = \langle (0 - 9) , (1 - (-6)) , (3 - (-1.5)) \rangle = \langle -9 , 7, 4.5 \rangle</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>\overrightarrow{AC} = \langle ((-2) - 9) , (20 - (-6)) , ((-4) - (-1.5)) \rangle = \langle -11 , 26, -2.5 \rangle</m>.
-              </p>
-            </li>
-            <li>
-              <p>
-                <m>\overrightarrow{BC} = \langle ((-2) - 0) , (20 - 1) , ((-4) - 3) \rangle = \langle -2 , 19, -7 \rangle</m>. This represents the displacement of the teacher from the projector.
-              </p>
-            </li>
-          </ol>
-        </p>
-      </solution>
-    </task>
+        <answer>
+          <p><m>\overrightarrow{OA}= \langle 9  , -6 , -2.5 \rangle </m></p>
+        </answer>
+        <solution>
+          <p><m>\overrightarrow{OA}= \langle 9  , -6 , -2.5 \rangle </m></p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p><m>\overrightarrow{OB}= \langle\, ,\, ,\, \rangle</m></p>
+        </statement>
+        <answer>
+          <p><m>\overrightarrow{OB}= \langle 0,1,3 \rangle</m></p>
+        </answer>
+        <solution>
+          <p><m>\overrightarrow{OB}= \langle 0,1,3 \rangle</m></p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p><m>\overrightarrow{OC}= \langle\, ,\, ,\, \rangle</m></p>
+        </statement>
+        <answer>
+          <p><m>\overrightarrow{OC}= \langle -2,20,-5 \rangle</m></p>  
+        </answer>
+        <solution>
+          <p><m>\overrightarrow{OC}= \langle -2,20,-5 \rangle</m></p> 
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p><m>\overrightarrow{AB}= \langle\, ,\, ,\, \rangle</m></p>
+        </statement>
+        <answer>
+          <p><m>\overrightarrow{AB}= \langle -9,7,5.5 \rangle</m></p>
+        </answer>
+        <solution>
+          <p><m>\overrightarrow{AB}= \langle -9,7,5.5 \rangle</m></p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p><m>\overrightarrow{AC}= \langle\, ,\, ,\, \rangle</m></p>
+        </statement>
+        <answer>
+          <p><m>\overrightarrow{AC}= \langle -11,26,-2.5 \rangle</m></p>
+        </answer>
+        <solution>
+          <p><m>\overrightarrow{AC}= \langle -11,26,-2.5 \rangle</m></p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p><m>\overrightarrow{BC}= \langle\, ,\, ,\, \rangle</m></p>
+        </statement>
+        <answer>
+          <p><m>\overrightarrow{BC}= \langle -2,19,-8 \rangle</m></p>  
+        </answer>
+        <solution>
+          <p><m>\overrightarrow{BC}= \langle -2,19,-8 \rangle</m></p> 
+        </solution>
+      </task>
   </activity>
-
-
   </subsection>
-
 
   <subsection>
     <title>Equality of Vectors</title>
