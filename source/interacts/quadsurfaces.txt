@@ -1,7 +1,7 @@
 from sage.plot.plot3d.plot3d import axes
 var('x,y,z,t,s')
 @interact
-def quadsurfaces(sb=selector(['Ellipsoid','Hyperboloid of One Sheet','Hyperboloid of Two Sheets','Elliptic Paraboloid','Saddle/Hyperbolic Paraboloid','Cone'],label="Surface Options:")):
+def quadsurfaces(sb=selector(['Ellipsoid','Hyperboloid of One Sheet','Hyperboloid of Two Sheets','Elliptic Paraboloid','Saddle/Hyperbolic Paraboloid','Alt Saddle','Cone'],label="Surface Options:")):
     if sb=='Ellipsoid':
         scale=2
         a=1;b=1.5;c=1.25;
@@ -142,7 +142,42 @@ def quadsurfaces(sb=selector(['Ellipsoid','Hyperboloid of One Sheet','Hyperboloi
             if ztrace==0:
                 plot30+=parametric_plot3d((a*t,b*t,0),(t,-sqrt(1.5),sqrt(1.5)),color="red")
                 plot30+=parametric_plot3d((-a*t,b*t,0),(t,-sqrt(1.5),sqrt(1.5)),color="red")
-  
+    if sb=='Alt Saddle':
+        scale=2.25
+        a=1;b=1.5;c=1;
+        param(s,t)=(s,t,s^2/a^2-t^2/b^2);s1=-2;s2=2;t1=-2;t2=2
+        plot30=axes(scale,1.5,color="gray",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+        plot30+=parametric_plot3d(param,(s,s1,s2),(t,t1,t2),color="gray",opacity=0.2,plot_points=101)
+
+        n=10;
+        xvals=[-a*2+i/n*2*a*2 for i in range(0,n+1)];
+        for xtrace in xvals:
+            #tl=b*sqrt(-xtrace^2/a^2+scale)
+            plot30+=parametric_plot3d((xtrace,t,xtrace^2/a^2-t^2/b^2),(t,t1,t2),color="blue",thickness=1)
+
+        yvals=[-2+i/n*2*2 for i in range(1,n)];
+        for ytrace in yvals:
+            #tl=a*sqrt(-ytrace^2/b^2+scale)
+            plot30+=parametric_plot3d((t,ytrace,t^2/a^2-ytrace^2/b^2),(t,t1,t2),color="green",thickness=1)
+        n=9
+        zvals=[-2+i/n*6 for i in range(1,n)];
+        #zvals=[-1]
+        for ztrace in zvals:
+            if sign(ztrace)==-1:
+                tl=a*sqrt(ztrace+4/b^2)
+                plot30+=parametric_plot3d((t,b*sqrt(t^2/a^2-ztrace),ztrace),(t,-tl,tl),color="red",thickness=1)
+                plot30+=parametric_plot3d((t,-b*sqrt(t^2/a^2-ztrace),ztrace),(t,-tl,tl),color="red",thickness=1)
+            if sign(ztrace)==1:
+                if (ztrace<2.5):
+                    tl=2;
+                else:
+                    tl=b*sqrt(-ztrace+4/a^2)
+                plot30+=parametric_plot3d((a*sqrt(t^2/b^2+ztrace),t,ztrace),(t,-tl,tl),color="red",thickness=1)
+                plot30+=parametric_plot3d((-a*sqrt(t^2/b^2+ztrace),t,ztrace),(t,-tl,tl),color="red",thickness=1)
+            if ztrace==0:
+                plot30+=parametric_plot3d((a*t,b*t,0),(t,-sqrt(1.75),sqrt(1.75)),color="red")
+                plot30+=parametric_plot3d((-a*t,b*t,0),(t,-sqrt(1.75),sqrt(1.75)),color="red")
+
     if sb=='Cone':
         scale=3
         a=1;b=1.5;c=1;
