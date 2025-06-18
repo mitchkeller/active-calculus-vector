@@ -41,7 +41,7 @@
 <exploration xml:id="PA-arclength" >
   <introduction>
     <p>
-      In <xref ref="PA-VVF-Plotting" /> and <xref ref="PA_9_7" /> we saw how the location tracking system's (LTS) output is related to a vector-valued function that corresponds to the location of the our car. We want to relate the location at different times to properties about how the car is being driven. In order to attract investors and drive shareholder value in <em>Steer Clear</em>, you decide to use the location tracking system's output to build a customized navigation and telemetry tool for a self-driving car. The first element you will need to build is a way to use the LTS output to calculate how far the car has driven in a given time. 
+      In <xref ref="PA-VVF-Plotting" /> and <xref ref="PA-VVF-Calculus" /> we saw how the location tracking system's (LTS) output is related to a vector-valued function that corresponds to the location of the our car. We want to relate the location at different times to properties about how the car is being driven. In order to attract investors and drive shareholder value in <em>Steer Clear</em>, you decide to use the location tracking system's output to build a customized navigation and telemetry tool for a self-driving car. The first element you will need to build is a way to use the LTS output to calculate how far the car has driven in a given time. 
     </p>
   </introduction> 
   <task xml:id="PA-arclength1">
