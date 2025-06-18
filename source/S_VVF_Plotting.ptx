@@ -385,10 +385,7 @@
       Hence, the graph of every single-variable function can be described parametrically. In addition, as we saw in <xref ref="PA-VVF-Plotting" /> and <xref ref="act-VVF-Plotting-circles"/>, we can use vector-valued functions to represent curves in the plane that cannot be described with <m>y</m> as a function of <m>x</m> (or <m>x</m> as a function of <m>y</m>).
     </p>
 
-    <p> 
-      As a side note: vector-valued functions make it easy to plot the inverse of a one-to-one function in two dimensions. If <m>y = f(x)</m> defines a one-to-one function, then we can parameterize this function by <m>\vr(t) = \langle t, f(t) \rangle</m>. Since the inverse function reverses the role of input and output as symbolized by  <m>x</m> and <m>y</m> respectively, a parameterization for the graph of <m>f^{-1}</m> is <m>\langle f(t), t \rangle</m>.
-    </p>
-    <example>
+    <example xml:id="ex-vvf-plotting-param-fn">
       <title>Parameterizing <m>y=f(x)</m></title>
       <p>
         Consider the parabola given by <m>(x-2)^2=8(y+1)</m>. From <xref ref="para-param" />, you can see that the graph of <m>(x-2)^2=8(y+1)</m> passes the vertical line test. Therefore, we can write the <m>y</m>-coordinate as a function of the <m>x</m>-coordinate. Specifically, we isolate <m>y</m> and obtain <m>y=f(x)=\frac{(x-2)^2}{8}-1</m>. Using the idea above, we set <m>x=t</m> to be our parameter. Now we can express both coordinates of points on our curve as functions of <m>t</m>. In particular, setting <m>x(t)=t</m> means that we can write <m>y</m> as a function of <m>t</m> because <m>x=t</m>. Thus <m>x(t)=t</m> and <m>y(x)=y(t)=\frac{(t-2)^2}{8}-1</m> will parameterize the parabola given by <m>(x-2)^2=8(y+1)</m>. This corresponds to the vector-valued function <m>\vr(t) = \langle t , f(t) \rangle=\langle t,\frac{(t-2)^2}{8}-1 \rangle</m>.
@@ -503,8 +500,81 @@
         </p>
       </conclusion>
     </activity>
+
     <p>
-     The intersection of surfaces in space are often curves. Thus, we may determine parameterizations for these curves defined by satisfying multiple equations. For example, if we want to describe the intersection of the surface <m>z = \cos(x^2 + y^2)</m> and the fundamental plane <m>y = 1</m> , then we can set <m>y = 1</m> in <m>z = \cos(x^2 + y^2)</m>. We then let <m>x</m> be parameterized by the variable <m>t</m>. This tells us that the intersection of <m>z = \cos(x^2 + y^2)</m> and the fundamental plane <m>y = 1</m> is the curve parameterizated as <m>\langle t, 1, \cos(t^2 + 1)\rangle</m>. The next activity guides you through similar questions for a more familiar surface.
+      The next example helps illustrate how thinking of curves as graphs of vector-valued functions can help make it easier to algebraically address some ideas about the graphs of functions that are tricker when working from the perspective of <m>y=f(x)</m>.
+    </p>
+    <example xml:id="ex-vvf-plotting-inv">
+      <task>
+        <statement>
+          <p>
+            Consider a one-to-one function, such as <m>f(x) = x^2+1</m> on <m>[0,2]</m>. The graph of this function is shown in <xref ref="fig-vvf-plotting-inverse"/>. In this scenario, we can also find the inverse function <m>f^{-1}</m> and graph it as well. Algebraically, this can sometimes be rather complex. However, when we parameterize the function as we did in <xref ref="ex-vvf-plotting-param-fn"/>, plotting the inverse function using a vector-valued function becomes routine. The method for doing this will rely on the fact that the graph of the inverse <m>y=f^{-1}(x)</m> the reflection of the graph of <m>y=f(x)</m> across the line <m>y=x</m>.
+          </p>
+          <figure xml:id="fig-vvf-plotting-inverse">
+            <caption>The graph of a function and its inverse</caption>
+            <image width="60%">
+              <shortdescription>The graph of a function and its inverse</shortdescription>
+              <description>
+                <p>The portion of a parabola with vertex <m>(0,1)</m> lying to the right of the <m>y</m>-axis is shown with label <m>y=f(x)</m>. The line <m>y=x</m> is shown as a dashed line. The reflection of the parabola across the line <m>y=x</m> is illustrated as well and labeled <m>y=f^{-1}(x)</m>.
+                </p>
+              </description>
+              <prefigure xmlns="https://prefigure.org"
+                         label="img-vvf-plotting-inverse">
+                <diagram dimensions="(300,300)" margins="5">
+                  <definition>f(x)=x^2+1</definition>
+                  <definition>g(t) = (f(t),t)</definition>
+                  <definition>l(x) = x</definition>
+                  <coordinates bbox="(-0.5,-0.5,4.5,4.5)">
+                    <grid-axes xlabel="x" ylabel="y"/>
+                    <graph function="f" domain="[0,2]" stroke="#1E88E5"/>
+                    <label anchor="(0.25,3.25)" alignment="e">
+                      <m>y=f(x)</m>
+                    </label>
+                    <label anchor="(2.7,1)" alignment="s">
+                      <m>y=f^{-1}(x)</m>
+                    </label>
+                    <parametric-curve function="g" domain="[0,2]" stroke="#D81B60"/>
+                    <graph function="l" stroke="gray" dash="4 8" thickness="1" />
+                  </coordinates>
+                </diagram>
+              </prefigure>
+            </image>
+          </figure>
+          <p>
+            As in <xref ref="ex-vvf-plotting-param-fn"/>, we parameterize the graph of <m>f(x)=x^2+1</m> on <m>[0,2]</m> as <m>\vr(t) = \left\langle t,f(t)\right\rangle = \left\langle t,t^2+1\right\rangle</m> for <m>0\leq t\leq 2</m>. The points on the graph of the inverse function are determined by swapping the coordinates of the points on the graph of <m>y=f(x)</m>, so we swap the components of our vector-valued function that has parameterized the graph and consider <m>\vs(t) = \left\langle f(t),t)\right\rangle = \left\langle t^2+1,t\right\rangle</m>. Notice here that while we do not have an algebraic formula that allows us to take a given <m>x</m> and find <m>f^{-1}(x)</m>, we do have a nice way of graphing the inverse function with absolutely no algebra required.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Now suppose that we need to think about the parabola with equation <m>x=y^2+1</m>. If we wanted to graph this using familiar tools from precalculus or single-variable calculus, we would need to graph <em>two</em> functions, since this curve does not pass the vertical line test. However, if we think parametrically, we can view <m>y</m> as the parameter here. This is similar to what we did in <xref ref="ex-vvf-plotting-param-fn"/>, but now we are thinking of a vector-valued function <m>\vr(t) = \langle x(t),y(t)\rangle</m> where <m>y(t)=t</m>. With that settled, we then have that <m>x(t) = \left(y(t)\right)^2 + 1 = t^2+1</m>. This leads us to <m>\vr(t) = \langle t^2+1,t\rangle</m>.
+          </p>
+          <figure xml:id="fig-vvf-plotting-param-y">
+            <caption>The graph of <m>x=y^2+1</m></caption>
+            <image width="60%">
+              <shortdescription>A rightward-opening parabola</shortdescription>
+              <description>
+                <p>A parabola that is symmetric about the <m>x</m>-axis with vertex <m>(1,0)</m>.
+                </p>
+              </description>
+              <prefigure xmlns="https://prefigure.org"
+                         label="img-vvf-plotting-param-y">
+                <diagram dimensions="(300,300)" margins="5">
+                  <definition>g(t) = (t^2+1,t)</definition>
+                  <coordinates bbox="(-0.5,-2.5,4.5,2.5)">
+                    <grid-axes xlabel="x" ylabel="y"/>
+                    <parametric-curve function="g" domain="[-2,2]" stroke="#1E88E5"/>
+                  </coordinates>
+                </diagram>
+              </prefigure>
+            </image>
+          </figure>          
+        </statement>
+      </task>
+    </example>
+    <p>
+     The intersection of surfaces in space are often curves. Thus, we may determine parameterizations for these curves defined by satisfying multiple equations. For example, if we want to describe the intersection of the surface <m>z = \cos(x^2 + y^2)</m> and the fundamental plane <m>y = 1</m> , then we can set <m>y = 1</m> in <m>z = \cos(x^2 + y^2)</m>. We then let <m>x</m> be parameterized by the variable <m>t</m>. This tells us that the intersection of <m>z = \cos(x^2 + y^2)</m> and the fundamental plane <m>y = 1</m> is the curve parameterizated as <m>\langle t, 1, \cos(t^2 + 1)\rangle</m>. The next activity guides you through similar questions for a more familiar surface. You may find it useful to use the idea of using a variable other than <m>x</m> as the parameter, as we did in the second part of <xref ref="ex-vvf-plotting-inv"/>
     </p>
 
     <activity xml:id="act-vvf-plotting-paraboloid">
@@ -588,7 +658,7 @@
       </task>    
     </activity>
     <p>
-      As you saw in <xref ref="act-vvf-plotting-paraboloid" />, it is convenient to parameterize conic sections and other curves defined by common relationships between coordinates. In <xref ref="ellipse_param" />, we will generalize our work for parameterizing circles earlier to give a general parameterized of a translated ellipse. These ideas are extended in <xref ref ="hyperbola_param"/>, which asks you to parameterize hyperbolas. 
+      As you saw in <xref ref="act-vvf-plotting-paraboloid" />, it is convenient to parameterize conic sections and other curves defined by common relationships between coordinates. In <xref ref="ellipse_param" text="type-local"/>, we will generalize our work for parameterizing circles earlier to give a general parameterized of a translated ellipse. These ideas are extended in <xref ref ="hyperbola_param" text="type-local"/>, which asks you to parameterize hyperbolas. 
     </p>
     
   </subsection>
