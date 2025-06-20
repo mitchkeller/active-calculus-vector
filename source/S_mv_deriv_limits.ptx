@@ -1353,7 +1353,7 @@
               <slate surface="sage">
                 from sage.plot.plot3d.plot3d import axes
                 var('x,y,t')
-                scale=0.5
+                scale=0.75
                 plot5=axes(scale,0.5,color="black",aspect_ratio=[1,1,0.5],opacity=0.5)
                 plot5+=text3d("x",(scale+0.1,0,0),fontsize=30)+text3d("y",(0,scale+0.1,0),fontsize=30)+text3d("z",(0,0,scale+0.25),fontsize=30)
                 var('x,y')
@@ -1376,7 +1376,6 @@
                 for i in range(m+1):
                   tv=b1+i/m*(b2-b1)
                   plot5+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
-                    
                 paths=[(t,0),(0,t+0),(0,0-t),(0-t,0),(0-t,0+t),(0+t,0+2*t^2),(0-t,0-t-0.1*sin(20*t)),(t,-t/2)]
                 for p in paths:
                   r1(t)=(p[0],p[1],0)
@@ -1385,7 +1384,7 @@
                   plot5+=arrow(r1(t=0.25),r1(t=0.2),color="blue",arrowsize=3,zorder=-1)
                   plot5+=parametric_plot3d(r2,(t,0.01,0.5),color="red",thickness=4)
                   plot5+=arrow(r2(t=0.25),r2(t=0.2),color="red",arrowsize=2)
-                show(plot5,viewpoint=[[-0.124,-0.7108,-0.6924],166.22],camera_position=[1.0437,2.363,0.5013],aspect_ratio=(1,1,1/2)) 
+                show(plot5,viewpoint=[[-0.8885,-0.2658,-0.374],77.31],camera_position=[1.6428,-2.0618,0.9308],aspect_ratio=(1,1,1/2),frame=False)
               </slate>
             </interactive>  
           </figure>

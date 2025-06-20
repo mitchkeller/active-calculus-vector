@@ -99,7 +99,7 @@
           <task>
             <statement>
               <p>
-                Draw a plot of the region of integration <m>D</m> in the <m>xy</m>-plane and label the four <q>corners</q> of the polar coordinates (if <m>D</m> is described by <m>a \leq r \leq b \break c \leq \theta \leq d</m>, then the corners will be <m>(r,\theta)=(a,c),(a,d),(b,c),(b,d)</m>).
+                Draw a plot of the region of integration <m>D</m> in the <m>xy</m>-plane and label the four <q>corners</q> of the polar coordinates (if <m>D</m> is described by <m>a \leq r \leq b , c \leq \theta \leq d</m>, then the corners will be <m>(r,\theta)=(a,c),(a,d),(b,c),(b,d)</m>).
               </p>
             </statement>
             <hint>
@@ -191,7 +191,7 @@
                 On <xref ref="planegrid"/>, plot the rectangle on the <m>r\theta</m>-plane that corresponds to the bounds <m>a \leq r \leq b \quad c \leq \theta \leq d</m> for your radar system. Label the four corners of your figure with their <m>r</m> and <m>\theta</m> coordinates.
               </p>
               <figure xml:id="planegrid">
-                <caption>A polar grid</caption>
+                <caption>A grid on the <m>\theta r </m>-plane</caption>
                 <image width="60%" xml:id="img-planegrid">
                   <sageplot>
                     from matplotlib import ticker

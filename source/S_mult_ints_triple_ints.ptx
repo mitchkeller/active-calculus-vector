@@ -323,7 +323,7 @@
         </figure> -->
       <figure xml:id="F_11_7_Cone">
         <caption>The region <m>S</m> with a vertical segment highlighted (for fixed <m>x</m> and <m>y</m> values) </caption>
-        <interactive title="interactive-F_11_7_Cone" platform="sage" width="100%" aspect="1:1">
+        <interactive title="interactive-F_11_7_Cone" platform="sage" width="100%" aspect="1:1.25">
           <slate surface="sage">
           var('t,s,x,y,z')
           @interact
