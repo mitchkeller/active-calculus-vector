@@ -346,7 +346,7 @@
     and this is algebraically <alert>VERY</alert> difficult to write out in closed form but will be possible because the arclength traveled as a function of your parameter cannot decrease. If we graph the parameter versus arclength traveled, we get a graph that passes the horizontal line test and is thus invertible. An example of this kind of plot is shown in <xref ref="arclengthplot" />. 
   </p>
   
-  <!--The figure below can be changed to be anything we want but I wanted something that showed some variation in speed. The other examples that can be referenced are (cos(t),sin(t),cos(2*t)) xml:id="vvf-example1" or (-2*sin(2*t),2*cos(t),1-1/(1+t)) xml:id="A_9_7_7" -->
+  <!--The figure below can be changed to be anything we want but I wanted something that showed some variation in speed. The other examples that can be referenced are (cos(t),sin(t),cos(2*t)) xml:id="vvf-example1" or (-2*sin(2*t),2*cos(t),1-1/(1+t)) xml:id="act-vvf-calc-position" -->
 
   <figure xml:id="arclengthplot">
     <caption>A plot of the arclength traveled as a function of the parameter value to that point for <m>\vr(t)=\langle 3t\cos(4t)\sin(3-2t),t-\cos(2+t)\rangle</m></caption>
