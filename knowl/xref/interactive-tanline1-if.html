@@ -144,7 +144,7 @@ window.MathJax = {
 \)</span></div>
 <div style="width:600px; height:600px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">var('t,x')
 @interact
-def tanline3d(a=slider(0.1,6.2,0.1,default=1,label="location",display_value=False),zoom=slider(0,5,1,default=0,label="Zoom",display_value=False)):
+def tanline3d(a=slider(0.1,6.2,0.1,default=1,label="Location",display_value=False),zoom=slider(0,5,1,default=0,label="Zoom",display_value=False)):
   from sage.plot.plot3d.plot3d import axes
   r(t)=(cos(t),sin(t),cos(2*t))
   v(t)=(-sin(t),cos(t),-2*sin(2*t))

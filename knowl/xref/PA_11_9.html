@@ -21,60 +21,43 @@
 <article class="exploration project-like"><h3 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">12.8.1</span><span class="period">.</span>
 </h3>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
 <div class="para logical">
 <div class="para">Consider the double integral</div>
 <div class="displaymath process-math">
 \begin{equation}
-I = \iint_D x^2+y^2 \, dA,\tag{12.8.1}
+I = \iint_D x^2+y^2 \, dA    \tag{12.8.1}
 \end{equation}
 </div>
-<div class="para">where <span class="process-math">\(D\)</span> is the upper half of the unit disk.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-1-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div> <ol class="lower-alpha ol-marker-2" id="PA_11_9-1-2">
-<li>
-<div class="para"><ol class="lower-roman ol-marker-5" id="PA_11_9-1-2-1-1">
-<li>
-<div class="para">Write the double integral <span class="process-math">\(I\)</span> given in Equation <a href="S-11-9-Change-of-Variable.html#eq_11_9_COV_PA" class="xref" data-knowl="./knowl/xref/eq_11_9_COV_PA.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 12.8.1">(12.8.1)</a> as an iterated integral in rectangular coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-1-2-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item a.i"><a href="#PA_11_9-1-2-1-1-1" title="Copy permalink for Item a.i">🔗</a></div>
-</li>
-<li>
-<div class="para">Write the double integral <span class="process-math">\(I\)</span> given in Equation  <a href="S-11-9-Change-of-Variable.html#eq_11_9_COV_PA" class="xref" data-knowl="./knowl/xref/eq_11_9_COV_PA.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 12.8.1">(12.8.1)</a> as an iterated integral in polar coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-1-2-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item a.ii"><a href="#PA_11_9-1-2-1-1-2" title="Copy permalink for Item a.ii">🔗</a></div>
-</li>
-</ol></div>
-<div class="autopermalink" data-description="Item a"><a href="#PA_11_9-1-2-1" title="Copy permalink for Item a">🔗</a></div>
-</li>
-<li>
-<div class="para logical">
-<div class="para">When we write the double integral <a href="S-11-9-Change-of-Variable.html#eq_11_9_COV_PA" class="xref" data-knowl="./knowl/xref/eq_11_9_COV_PA.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 12.8.1">(12.8.1)</a> as an iterated integral in polar coordinates we make a change of variables, namely</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_11_9_COV_PA.html">
+<div class="para">where <span class="process-math">\(D\)</span> is the upper half of the unit disk (<span class="process-math">\(y \geq 0\)</span>). Remember the polar conversion equations:</div>
+<div class="displaymath process-math">
 \begin{equation}
-x = r \cos(\theta)  \ \ \ \ \ \text{ and }  \ \ \ \ \ y = r \sin(\theta).\tag{12.8.2}
+x = r \cos(\theta)  \quad \text{ and }  \quad y = r \sin(\theta)\tag{12.8.2}
 \end{equation}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-1-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para">Write the double integral <span class="process-math">\(I\)</span> given in Equation <a href="S-11-9-Change-of-Variable.html#eq_11_9_COV_PA" class="xref" data-knowl="./knowl/xref/eq_11_9_COV_PA.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 12.8.1">(12.8.1)</a> as an iterated integral in rectangular coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-1-1-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">We also then have to change <span class="process-math">\(dA\)</span> to <span class="process-math">\(r \, dr \, d\theta\text{.}\)</span> This process also identifies a “polar rectangle” <span class="process-math">\([r_1, r_2] \times [\theta_1, \theta_2]\)</span> with the original Cartesian rectangle, under the transformation<details class="ptx-footnote" aria-live="polite" id="PA_11_9-1-2-2-2-5"><summary class="ptx-footnote__number" title="Footnote 12.8.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="PA_11_9-1-2-2-2-5">A <em class="emphasis">transformation</em> is another name for function:  here, the equations <span class="process-math">\(x = r\cos(\theta)\)</span> and <span class="process-math">\(y = r\sin(\theta)\)</span> define a function <span class="process-math">\(T\)</span> by <span class="process-math">\(T(r, \theta) = (r\cos(\theta), r\sin(\theta))\)</span> so that <span class="process-math">\(T\)</span> is a function (transformation) from <span class="process-math">\(\R^2\)</span> to <span class="process-math">\(\R^2\text{.}\)</span>  We view this transformation as mapping a version of the <span class="process-math">\(xy\)</span>-plane where the axes are viewed as representing <span class="process-math">\(r\)</span> and <span class="process-math">\(\theta\)</span> (the <span class="process-math">\(r \theta\)</span>-plane) to the familiar <span class="process-math">\(xy\)</span>-plane.</div></details> in Equation <a href="S-11-9-Change-of-Variable.html#eq_11_9_pol_to_rect" class="xref" data-knowl="./knowl/xref/eq_11_9_pol_to_rect.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 12.8.2">(12.8.2)</a>. The vertices of the polar rectangle are transformed into the vertices of a closed and bounded region in rectangular coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-1-2-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="part a"><a href="#PA_11_9-1-1-2" title="Copy heading and permalink for part a">🔗</a></div></article> <article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para">Write the double integral <span class="process-math">\(I\)</span> given in Equation  <a href="S-11-9-Change-of-Variable.html#eq_11_9_COV_PA" class="xref" data-knowl="./knowl/xref/eq_11_9_COV_PA.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 12.8.1">(12.8.1)</a> as an iterated integral in polar coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-1-1-3-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">To work with a numerical example, let’s now consider the polar rectangle <span class="process-math">\(P\)</span> given by <span class="process-math">\([1, 2] \times [\frac{\pi}{6}, \frac{\pi}{4}]\text{,}\)</span> so that <span class="process-math">\(r_1 = 1\text{,}\)</span> <span class="process-math">\(r_2=2\text{,}\)</span> <span class="process-math">\(\theta_1 = \frac{\pi}{6}\text{,}\)</span> and <span class="process-math">\(\theta_2 = \frac{\pi}{4}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-1-2-2-3" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="part b"><a href="#PA_11_9-1-1-3" title="Copy heading and permalink for part b">🔗</a></div></article> <article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para">Draw a plot of the region of integration <span class="process-math">\(D\)</span> in the <span class="process-math">\(xy\)</span>-plane and label the four “corners” of the polar coordinates (if <span class="process-math">\(D\)</span> is described by <span class="process-math">\(a \leq r \leq b , c \leq \theta \leq d\text{,}\)</span> then the corners will be <span class="process-math">\((r,\theta)=(a,c),(a,d),(b,c),(b,d)\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-1-1-4-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<ol class="lower-roman ol-marker-5" id="PA_11_9-1-2-2-4">
-<li>
-<div class="para">Use the transformation determined by the equations in <a href="S-11-9-Change-of-Variable.html#eq_11_9_pol_to_rect" class="xref" data-knowl="./knowl/xref/eq_11_9_pol_to_rect.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 12.8.2">(12.8.2)</a> to find the rectangular vertices that correspond to the polar vertices in the polar rectangle <span class="process-math">\(P\text{.}\)</span> In other words, by substituting appropriate values of <span class="process-math">\(r\)</span> and <span class="process-math">\(\theta\)</span> into the two equations in <a href="S-11-9-Change-of-Variable.html#eq_11_9_pol_to_rect" class="xref" data-knowl="./knowl/xref/eq_11_9_pol_to_rect.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 12.8.2">(12.8.2)</a>, find the values of the corresponding <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> coordinates for the vertices of the polar rectangle <span class="process-math">\(P\text{.}\)</span> Label the point that corresponds to the polar vertex <span class="process-math">\((r_1, \theta_1)\)</span> as <span class="process-math">\((x_1, y_1)\text{,}\)</span> the point corresponding to the polar vertex <span class="process-math">\((r_2, \theta_1)\)</span> as <span class="process-math">\((x_2, y_2)\text{,}\)</span> the point corresponding to the polar vertex <span class="process-math">\((r_1, \theta_2)\)</span> as <span class="process-math">\((x_3, y_3)\text{,}\)</span> and the point corresponding to the polar vertex <span class="process-math">\((r_2, \theta_2)\)</span> as <span class="process-math">\((x_4, y_4)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-1-2-2-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content">
+<div class="para">Two of your “corners” will be at the same point<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-1-1-4-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item b.i"><a href="#PA_11_9-1-2-2-4-1" title="Copy permalink for Item b.i">🔗</a></div>
-</li>
-<li>
-<div class="para">Draw a picture of the figure in rectangular coordinates that has the points <span class="process-math">\((x_1,y_1)\text{,}\)</span> <span class="process-math">\((x_2,y_2)\text{,}\)</span> <span class="process-math">\((x_3, y_3)\text{,}\)</span> and <span class="process-math">\((x_4,y_4)\)</span> as vertices. (Note carefully that because of the trigonometric functions in the transformation, this region will not look like a Cartesian rectangle.) What is the area of this region in rectangular coordinates? How does this area compare to the area of the original polar rectangle?<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-1-2-2-4-2-1" title="Copy permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item b.ii"><a href="#PA_11_9-1-2-2-4-2" title="Copy permalink for Item b.ii">🔗</a></div>
-</li>
-</ol>
-<div class="autopermalink" data-description="Item b"><a href="#PA_11_9-1-2-2" title="Copy permalink for Item b">🔗</a></div>
-</li>
-</ol>
-<div class="autopermalink" data-description="Preview Activity 12.8.1"><a href="#PA_11_9" title="Copy permalink for Preview Activity 12.8.1">🔗</a></div></article><span class="incontext"><a class="internal" href="S-11-9-Change-of-Variable.html#PA_11_9">in-context</a></span>
+<div class="autopermalink" data-description="Hint c.1"><a href="#PA_11_9-1-1-4-2" title="Copy heading and permalink for Hint c.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="part c"><a href="#PA_11_9-1-1-4" title="Copy heading and permalink for part c">🔗</a></div></article><div class="autopermalink" data-description="part 12.8.1.a"><a href="#PA_11_9-1" title="Copy heading and permalink for part 12.8.1.a">🔗</a></div></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para">Suppose you are calibrating a new radar system for your self driving car. This radar system is mounted at the center of your front bumper and can detect objects up to 45 degrees to either side of the forward direction at distances from 1 meter to 3 meters.<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para">On <a href="S-11-9-Change-of-Variable.html#polarplane1" class="xref" data-knowl="./knowl/xref/polarplane1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 12.8.1">Figure 12.8.1</a>, draw a plot of <span class="process-math">\(S\text{,}\)</span> the region that your radar system can detect objects. Assume your car’s front bumper is centered at the origin of your coordinate system and the car is facing the positive <span class="process-math">\(y\)</span>-direction. You should label the four corners of <span class="process-math">\(S\)</span> in terms of <em class="emphasis">both</em> rectangular and polar coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-2-1-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/img-polarplane1.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.8.1<span class="period">.</span></span><span class="space"> </span>A polar grid<div class="autopermalink" data-description="Figure 12.8.1"><a href="#polarplane1" title="Copy heading and permalink for Figure 12.8.1">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="part a"><a href="#PA_11_9-2-1-2" title="Copy heading and permalink for part a">🔗</a></div></article> <article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para">On <a href="S-11-9-Change-of-Variable.html#planegrid" class="xref" data-knowl="./knowl/xref/planegrid.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 12.8.2">Figure 12.8.2</a>, plot the rectangle on the <span class="process-math">\(r\theta\)</span>-plane that corresponds to the bounds <span class="process-math">\(a \leq r \leq b \quad c \leq \theta \leq d\)</span> for your radar system. Label the four corners of your figure with their <span class="process-math">\(r\)</span> and <span class="process-math">\(\theta\)</span> coordinates.<div class="autopermalink" data-description="Paragraph"><a href="#PA_11_9-2-1-3-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="generated/sageplot/img-planegrid.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">12.8.2<span class="period">.</span></span><span class="space"> </span>A grid on the <span class="process-math">\(\theta r \)</span>-plane<div class="autopermalink" data-description="Figure 12.8.2"><a href="#planegrid" title="Copy heading and permalink for Figure 12.8.2">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="part b"><a href="#PA_11_9-2-1-3" title="Copy heading and permalink for part b">🔗</a></div></article><div class="autopermalink" data-description="part 12.8.1.b"><a href="#PA_11_9-2" title="Copy heading and permalink for part 12.8.1.b">🔗</a></div></article><div class="autopermalink" data-description="Preview Activity 12.8.1"><a href="#PA_11_9" title="Copy heading and permalink for Preview Activity 12.8.1">🔗</a></div></article><span class="incontext"><a class="internal" href="S-11-9-Change-of-Variable.html#PA_11_9">in-context</a></span>
 </body>
 </html>
