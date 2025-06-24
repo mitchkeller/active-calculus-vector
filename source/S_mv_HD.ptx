@@ -322,7 +322,7 @@
       </statement>
       <proof>
         <p>
-          By <xref ref="Plane-scalar-equation"/> we need to find a normal vector for the plane and a point on the plane. The point <m>P_0=(x_0,y_0,z_0)</m> is the location where our tangent plane will intersect <m>S_1</m> so we only need to find a normal vector for our plane. By our interpretation of the gradient above, <m>\nabla F (P_0)= \langle \frac{\partial F}{\partial x}(P_0), \frac{\partial F}{\partial y}(P_0), \frac{\partial F}{\partial z}\rangle</m> will be perpendicular to the level surface <m>S_1</m>. Therefore, 
+          By <xref ref="Plane-scalar-equation" text="title"/> we need to find a normal vector for the plane and a point on the plane. The point <m>P_0=(x_0,y_0,z_0)</m> is the location where our tangent plane will intersect <m>S_1</m> so we only need to find a normal vector for our plane. By our interpretation of the gradient above, <m>\nabla F (P_0)= \langle \frac{\partial F}{\partial x}(P_0), \frac{\partial F}{\partial y}(P_0), \frac{\partial F}{\partial z}\rangle</m> will be perpendicular to the level surface <m>S_1</m>. Therefore, 
           <me>\frac{\partial F}{\partial x}(P_0) (x-x_0)+ \frac{\partial F}{\partial y}(P_0) (y-y_0) +\frac{\partial F}{\partial z}(P_0) (z-z_0)=0</me>
         </p>
       </proof>
