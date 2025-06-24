@@ -82,13 +82,13 @@
               from sage.plot.plot3d.plot3d import axes
               var('t,s')
               scale=5
-              plot1=axes(scale,1,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-              plot1+=line3d([(4,0,0),(4,3,0)],color="red",thickness=2)+text3d("3",(4.5,1.5,-.25),color="red",fontsize=20)
-              plot1+=line3d([(0,0,0),(4,3,0)],color="blue",thickness=2)+text3d("5",(2.5,1.25,0),color="blue",fontsize=20)
-              plot1+=line3d([(3.75,0,0),(3.75,0.25,0),(4,0.25,0)],color="black")
-              plot1+=line3d([(4,3,0),(4,3,2)],color="green",thickness=2)+text3d("2",(4,3.2,1.5),color="green",fontsize=20)
-              plot1+=point3d((4,3,2),color="black",size=30)+text3d("P",(4,3.2,2.1),color="black",fontsize=20)
-              show(plot1,aspect_ratio=1,viewpoint=[[-0.5384,-0.5556,-0.6336],116.91],camera_position=[18.2582,3.6995,4.9808])
+              plot1=axes(scale,2,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+              plot1+=line3d([(4,0,0),(4,3,0)],color="red",thickness=3)+text3d("3",(4.5,1.5,-.25),color="red",fontsize=30)
+              plot1+=line3d([(0,0,0),(4,3,0)],color="blue",thickness=3)+text3d("5",(2.5,1.25,0),color="blue",fontsize=30)
+              plot1+=line3d([(3.5,0,0),(3.5,0.5,0),(4,0.5,0)],color="black",thickness=2)
+              plot1+=line3d([(4,3,0),(4,3,2)],color="green",thickness=3)+text3d("2",(4,3.2,1.5),color="green",fontsize=30)
+              plot1+=sphere((4,3,2),color="black",size=0.1)+text3d("P",(4,3.3,2.2),color="black",fontsize=30)
+              show(plot1,aspect_ratio=1,viewpoint=[[-0.4585,-0.5912,-0.6635],125.54],camera_position=[15.0205,5.8566,4.0979])
             </slate>
           </interactive>
         </figure>
@@ -132,16 +132,16 @@
               scale=3
               th=arcsin(2/3)+pi
               ps=arccos(-1/sqrt(10))
-              plot2=axes(scale,1,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)
+              plot2=axes(scale,2,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)
               plot2+=text3d("y",(0,scale+1,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
               plot2+=line3d([(0,0,0),(-3,0,0)],color="gray",linestyle='--')+line3d([(0,0,0),(0,-3,0)],color="gray",linestyle='--')
-              plot2+=line3d([(-sqrt(5),0,0),(-sqrt(5),-2,0)],color="red",linestyle="--",thickness=2)+text3d("2",(-3,-1,0),color="red",fontsize=25)
-              plot2+=line3d([(0,0,0),(-sqrt(5),-2,0)],color="blue",linestyle="--",thickness=2)+text3d("3",(-1.5,-1,0.25),color="blue",fontsize=25)
-              plot2+=line3d([(-sqrt(5),-2,0),(-sqrt(5),-2,-1)],color="green",thickness=2)+text3d("1",(-3,-2,-0.5),color="green",fontsize=25)
-              plot2+=point3d((-sqrt(5),-2,-1),color="black",size=50)+text3d("P",(-3.3,-2,-1.5),color="black",fontsize=25)
-              plot2+=line3d([(0,0,0,),(-sqrt(5),-2,-1)],color="pink",thickness=2)
-              plot2+=parametric_plot3d((cos(th)*sin(t),sin(th)*sin(t),cos(t)),(t,0,ps),color="orange",thickness=2)
-              show(plot2,aspect_ratio=1,viewpoint=[[-0.9843,-0.1165,-0.1328],83.41],camera_position=[2.3056,-13.4274,3.5349])
+              plot2+=line3d([(-sqrt(5),0,0),(-sqrt(5),-2,0)],color="red",linestyle="--",thickness=3)+text3d("2",(-3,-1,0),color="red",fontsize=30)
+              plot2+=line3d([(0,0,0),(-sqrt(5),-2,0)],color="blue",linestyle="--",thickness=3)+text3d("3",(-1.5,-1,0.25),color="blue",fontsize=30)
+              plot2+=line3d([(-sqrt(5),-2,0),(-sqrt(5),-2,-1)],color="green",thickness=3)+text3d("1",(-3,-2,-0.5),color="green",fontsize=30)
+              plot2+=sphere((-sqrt(5),-2,-1),color="black",size=0.1)+text3d("P",(-3.3,-2,-1.5),color="black",fontsize=30)
+              plot2+=line3d([(0,0,0,),(-sqrt(5),-2,-1)],color="pink",thickness=3)
+              plot2+=parametric_plot3d((cos(th)*sin(t),sin(th)*sin(t),cos(t)),(t,0,ps),color="orange",thickness=3)
+              show(plot2,aspect_ratio=1,viewpoint=[[-0.9662,-0.1375,-0.2179],66.3],camera_position=[2.6194,-8.1725,5.3059])
             </slate>
           </interactive>
         </figure>
@@ -187,14 +187,15 @@
       <description><p> A plot with the 2D coordinate measurements labeled for a point in the first quadrant and a point in the fourth quadrant</p> </description>
       <sageplot>
         var('t')
-        plot3=point((3,1),color="black",size=20,axes=True,axes_labels=["$x$","$y$"],ticks=[[],[]])
-        plot3+=line([(0,1),(3,1)],color="red")+line([(3,0),(3,1)],color="blue")
-        plot3+=text("$a$",(1.5,1.3),color="red",fontsize=20)+text("$b$",(3.3,0.5),color="blue",fontsize=20)
-        plot3+=text("$P=(a,b)$",(3.3,1.3),color="black",fontsize=20)+text("$Q=(c,d)$",(2.3,-2.3),color="black",fontsize=20)
-        plot3+=point((2,-2),color="black",size=20)
-        plot3+=line([(0,-2),(2,-2)],color="red")+line([(2,0),(2,-2)],color="blue")
-        plot3+=text("$c$",(1,-1.3),color="red",fontsize=20)+text("$d$",(2.3,-1),color="blue",fontsize=20,xmin=-2,xmax=4,ymin=-2,ymax=4)
-        plot3
+        plot11=point((3,1),color="black",size=40,axes=True,zorder=5,axes_labels=["$x$","$y$"],ticks=[[],[]],fontsize=15)
+        plot11+=line([(0,1),(3,1)],color="red",thickness=3)+line([(3,0),(3,1)],color="blue",thickness=3)
+        plot11+=text("$a$",(1.5,1.3),color="red",fontsize=20)+text("$b$",(3.3,0.5),color="blue",fontsize=20)
+        plot11+=text("$P=(a,b)$",(3.3,1.3),color="black",fontsize=20)+text("$Q=(c,d)$",(2.3,-2.3),color="black",fontsize=20)
+        plot11+=point((2,-2),color="black",size=40,zorder=5)
+        plot11+=line([(0,-2),(2,-2)],color="red",thickness=3)+line([(2,0),(2,-2)],color="blue",thickness=3)
+        plot11+=text("$c$",(1,-1.7),color="red",fontsize=20)+text("$d$",(2.3,-1),color="blue",fontsize=20,xmin=-2,xmax=4,ymin=-2,ymax=2,aspect_ratio=1)
+        plot11.axes_width(3)
+        plot11
         </sageplot>
     </image>
   </figure>
@@ -206,17 +207,17 @@
     <image width="70%" label="img-coord2d-2">
       <description><p>A plot with polar coordinate measurements labeled for a point in the first quadrant </p></description>
       <sageplot>
-        var('t') 
-        plot4=point((4,2),color="black",size=20,axes=True,axes_labels=["$x$","$y$"],ticks=[[],[]])
-        plot4+=line([(4,2),(0,0)],color="red")+text("$r$",(2,1.25),color="red",fontsize=20)
-        a=arctan(0.5)
-        plot4+=parametric_plot((1.5*cos(t),1.5*sin(t)),(t,0,a),color="blue")+text("$\\theta$",(1.75,0.5),color="blue",fontsize=20)
-        plot4+=text("$P=(r,\\theta)$",(4.5,2.3),color="black",fontsize=20)
-        plot4+=arrow((1.5*cos(a-.1),1.5*sin(a-.1)),(1.5*cos(a),1.5*sin(a)),color="blue",xmin=-1,xmax=5,ymin=-1,ymax=3)
-        plot4+=line([(4,0),(4,2)],color="gray",zorder=0,linestyle="--")
-        plot4+=line([(0,2),(4,2)],color="gray",zorder=0,linestyle="--")
-        plot4+=text("$x$",(2,2.25),color="gray",fontsize=15)
-        plot4+=text("$y$",(4.25,1),color="gray",fontsize=15)
+        var('t')
+        plot4=point((2,4),color="black",size=40,zorder=8,axes=True,axes_labels=["$x$","$y$"],ticks=[[],[]])
+        plot4+=line([(2,4),(0,0)],color="red",thickness=3)+text("$r$",(1,2.5),color="red",fontsize=25)
+        a=arctan(2)
+        plot4+=parametric_plot((cos(t),sin(t)),(t,0,a),color="blue",thickness=3)+text("$\\theta$",(1.5,1),color="blue",fontsize=25)
+        plot4+=text("$P=(r,\\theta)$",(2.5,4.3),color="black",fontsize=25)
+        plot4+=arrow((cos(a-.1),sin(a-.1)),(cos(a),sin(a)),color="blue",xmin=-1,xmax=3,ymin=-1,ymax=5)
+        plot4+=line([(2,0),(2,4)],color="gray",zorder=0,linestyle="--",thickness=2)
+        plot4+=line([(0,4),(2,4)],color="gray",zorder=0,linestyle="--",thickness=2)
+        plot4+=text("$x$",(1,4.25),color="gray",fontsize=20)
+        plot4+=text("$y$",(2.25,2),color="gray",fontsize=20)
         plot4
       </sageplot>
     </image>
@@ -946,19 +947,19 @@
         <slate surface="sage">
           from sage.plot.plot3d.plot3d import axes
           var('s,t')
-          scale=4
+          scale=3.25
           et=arctan(2)
-          plot12=axes(scale,1,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+          plot12=axes(scale,2,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
           plot12+=parametric_plot3d((s,t,0),(s,-1,3),(t,-1,3),opacity=0.15,color="gray",aspect_ratio=1,mesh=True,plot_points=5)
-          plot12+=parametric_plot3d((0.5*cos(t),0.5*sin(t),0),(t,0,et),color="blue",thickness=2)
+          plot12+=parametric_plot3d((0.5*cos(t),0.5*sin(t),0),(t,0,et),color="blue",thickness=3)
           plot12+=arrow((0.5*cos(et-0.1),0.5*sin(et-0.1),0),(0.5*cos(et),0.5*sin(et),0),color="blue",width=10)
-          plot12+=parametric_plot3d((t,2*t,0),(t,0,1),color="red",thickness=2)
-          plot12+=line([(1,2,0),(1,2,2.5)],color="green",thickness=2)
-          plot12+=point3d((1,2,2.5),color="black",size=30)
+          plot12+=parametric_plot3d((t,2*t,0),(t,0,1),color="red",thickness=3)
+          plot12+=line([(1,2,0),(1,2,2.5)],color="green",thickness=3)
+          plot12+=sphere((1,2,2.5),color="black",size=0.15)
           plot12+=text3d("P=(r,\u03B8,z)",(1,2,3),fontsize=30,color="black")
-          plot12+=text3d("\u03B8",(1.5,0.5,0),color="blue",fontsize=25)
-          plot12+=text3d("r",(0.5,1.5,0.75),color="red",fontsize=25)
-          plot12+=text3d("z",(1.25,2.5,1.5),color="green",fontsize=25)
+          plot12+=text3d("\u03B8",(1.5,0.5,0),color="blue",fontsize=30)
+          plot12+=text3d("r",(0.5,1.5,0.75),color="red",fontsize=30)
+          plot12+=text3d("z",(1.25,2.5,1.5),color="green",fontsize=30)
           show(plot12,viewpoint=[[-0.4306,-0.5735,-0.6969],124.76],camera_position=[12.851,4.9751,4.488])
         </slate>
       </interactive>
@@ -1008,14 +1009,13 @@
                   from sage.plot.plot3d.plot3d import axes
                   var('s,t')
                   scale=3.5
-                  plot15=axes(scale,1,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-                  plot15+=line([(0,0,0),(-3,0,0)],color="gray")
-                  plot15+=point3d((-sqrt(10)/2,sqrt(10)/2,-2),size=25,color="black")+line([(-sqrt(10)/2,sqrt(10)/2,-2),(-sqrt(10)/2,sqrt(10)/2,0)],color="green",thickness=2)
-                  plot15+=text3d("-2",(-sqrt(10)/2+0.5,2,-1),color="green",fontsize=25)
-                  plot15+=line([(-sqrt(10)/2,sqrt(10)/2,0),(0,0,0)],color="blue",thickness=2)+text3d("r",(-sqrt(10)/3,sqrt(10)/3-0.6,0),color="blue",fontsize=25)
-                  plot15+=parametric_plot3d((cos(t),sin(t),0),(t,0, 0.75*pi),color="red",thickness=2)+text3d("\u03B8",(1,1,0),color="red",fontsize=25)
-                  plot15+=arrow3d((cos(0.75*pi-0.1),sin(0.75*pi-0.1),0),(-1/sqrt(2),1/sqrt(2),0),color="red",width=5)
-                  plot15+=parametric_plot3d((s,t,0),(s,-3,3),(t,-3,3),opacity=0.05,color="gray",aspect_ratio=1,mesh=True,plot_points=5)
+                  plot15=axes(scale,2,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+                  plot15+=sphere((-sqrt(10)/2,sqrt(10)/2,-2),size=0.15,color="black")+line([(-sqrt(10)/2,sqrt(10)/2,-2),(-sqrt(10)/2,sqrt(10)/2,0)],color="green",thickness=3)
+                  plot15+=text3d("-2",(-sqrt(10)/2+0.5,2,-1),color="green",fontsize=30)
+                  plot15+=line([(-sqrt(10)/2,sqrt(10)/2,0),(0,0,0)],color="red",thickness=3)+text3d("r",(-sqrt(10)/3,sqrt(10)/3-0.6,0),color="red",fontsize=30,fontsytle='italic')
+                  plot15+=parametric_plot3d((cos(t),sin(t),0),(t,0, 0.75*pi),color="blue",thickness=3)+text3d("\u03B8",(1,1,0),color="blue",fontsize=30)
+                  plot15+=arrow3d((cos(0.75*pi-0.1),sin(0.75*pi-0.1),0),(-1/sqrt(2),1/sqrt(2),0),color="red",arrowsize=3)
+                  plot15+=parametric_plot3d((s,t,0),(s,-3,3),(t,-3,3),opacity=0.1,color="gray",aspect_ratio=1,mesh=True,plot_points=5)
                   show(plot15,aspect_ratio=1,viewpoint=[[0.076,-0.5053,-0.8596],194.73],camera_position=[-2.8466,11.7913,6.6115])
                 </slate>
               </interactive>
@@ -1042,17 +1042,19 @@
                 <slate surface="sage">
                   from sage.plot.plot3d.plot3d import axes
                   var('s,t')
-                  scale=3
+                  scale=3.5
                   a=arccos(-2/sqrt(5))
-                  plot16=axes(scale,1,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-                  plot16+=parametric_plot3d((s,t,0),(s,-3,3),(t,-3,3),opacity=0.05,color="gray",aspect_ratio=1,mesh=True,plot_points=5)
-                  plot16+=point3d((-2,1,2),size=25,color="black")+line([(-2,1,2),(-2,1,0)],color="green",thickness=2)+text3d("2",(-2.25,1,1.35),color="green",fontsize=25)
-                  plot16+=line([(-2,1,0),(-2,0,0)],color="red",thickness=2)+text3d("1",(-2.5,0.5,0.25),color="red",fontsize=25)
-                  plot16+=line([(0,0,0),(-2,0,0)],color="blue",thickness=2)+text3d("-2",(-1,0,0.25),color="blue",fontsize=25)
-                  plot16+=line([(0,0,0),(-2,1,0)],color="purple",thickness=2)+text3d("r",(-1.5,1.5,0.25),color="purple",fontsize=25)
-                  plot16+=parametric_plot3d((cos(t),sin(t),0),(t,0,a),color="orange",thickness=2)+text3d("\u03B8",(0.75,1.25,0.25),color="orange",fontsize=25)
-                  plot16+=arrow3d((cos(a-.1),sin(a-0.1),0),(cos(a),sin(a),0),color="orange",width=3)
-                  show(plot16,aspect_ratio=1,viewpoint=[[0.1647,-0.5839,-0.7949],205.27],camera_position=[-5.5009,7.7206,3.466])
+                  plot16=axes(scale,2,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+                  plot16+=parametric_plot3d((s,t,0),(s,-3,3),(t,-3,3),opacity=0.1,color="gray",aspect_ratio=1)
+                  for i in range(-3,4):
+                    plot16+=line([(3,i,0),(-3,i,0)],color="gray")+line([(i,3,0),(i,-3,0)],color="gray")
+                  plot16+=sphere((-2,1,2),size=0.15,color="black")+line([(-2,1,2),(-2,1,0)],color="green",thickness=3)+text3d("2",(-2.25,1,1.35),color="green",fontsize=30)
+                  plot16+=line([(-2,1,0),(-2,0,0)],color="purple",thickness=3)+text3d("1",(-2.5,0.5,0.25),color="purple",fontsize=30)
+                  plot16+=line([(0,0,0),(-2,0,0)],color="magenta",thickness=3)+text3d("-2",(-1,-0.25,0.25),color="magenta",fontsize=30)
+                  plot16+=line([(0,0,0),(-2,1,0)],color="red",thickness=3)+text3d("r",(-1.0,1.75,0.25),color="red",fontsize=30)
+                  plot16+=parametric_plot3d((cos(t),sin(t),0),(t,0,a),color="blue",thickness=3)+text3d("\u03B8",(1.5,1.5,0.25),color="blue",fontsize=25)
+                  plot16+=arrow3d((cos(a-.1),sin(a-0.1),0),(cos(a),sin(a),0),color="blue",arrowsize=3)
+                  show(plot16,aspect_ratio=1,viewpoint=[[-0.1086,-0.5695,-0.8148],162.33],camera_position=[3.752,13.1687,6.9602])
                 </slate>
               </interactive>
           </figure>
@@ -1069,19 +1071,22 @@
                 <slate surface="sage">
                   from sage.plot.plot3d.plot3d import axes
                   var('s,t')
-                  scale=3
+                  scale=3; d=2.5
                   a=pi+2
                   plot17=axes(scale,2,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-                  plot17+=parametric_plot3d((s,tan(2)*s,t),(t,-scale,scale),(s,-1.5,0),color="blue",opacity=.25,mesh=True,plot_points=3)
-                  plot17+=parametric_plot3d((s,tan(2)*s,t),(t,-scale,scale),(s,0,1.5),color="green",opacity=.25,mesh=True,plot_points=3)
-                  plot17+=parametric_plot3d((cos(t),sin(t),0),(t,0,2),color="red",thickness=2)+arrow3d((cos(a-0.1),sin(a-0.1),0),(cos(a),sin(a),0),color="red",arrowsize=100)
-                  plot17+=arrow3d((0.75*cos(2-0.1),0.75*sin(2-0.1),0),(cos(2),sin(2),0),color="orange",arrowsize=100)
-                  plot17+=text3d("\u03B8=2",(1,2,0),color="red",fontsize=25)
-                  plot17+=text3d("\u03B8=2+\u03C0",(-2,-1,0),color="orange",fontsize=25)
-                  plot17+=parametric_plot3d((0.75*cos(t),0.75*sin(t),0),(t,0,pi+2),color="orange",thickness=2)
-                  plot17+=text3d("\u03B8 with r\u003C0",(4*cos(pi+2),4*sin(pi+2),4),color="green",fontsize=25)
-                  plot17+=text3d("\u03B8 with r\u003E0",(4*cos(2),4*sin(2),4),color="blue",fontsize=25)
-                  show(plot17,aspect_ratio=1,viewpoint=[[-0.0603,-0.5458,-0.8357],169.45],camera_position=[3.7514,13.4219,6.5388])
+                  plot17+=parametric_plot3d((s,tan(2)*s,t),(t,-d,d),(s,-1.25,0),color="blue",opacity=.15)
+                  plot17+=parametric_plot3d((s,tan(2)*s,t),(t,-d,d),(s,0,1.25),color="green",opacity=.15)
+                  for i in range(-2,3):
+                    plot17+=line([(i*d/4,tan(2)*i*d/4,d),(i*d/4,tan(2)*i*d/4,-d)],color="gray",thickness=1)
+                    plot17+=line([(d/2,tan(2)*d/2,d*i/2),(-d/2,-tan(2)*d/2,d*i/2)],color="gray",thickness=1)
+                  plot17+=parametric_plot3d((cos(t),sin(t),0),(t,0,2),color="red",thickness=3)+arrow((cos(2-0.3),sin(2-0.3),0),(cos(2),sin(2),0),color="red",arrowsize=8)
+                  plot17+=arrow3d((0.5*cos(a-0.3),0.5*sin(a-0.3),0),(0.5*cos(a),0.5*sin(a),0),color="magenta",arrowsize=8)
+                  plot17+=text3d("\u03B8=2",(1,2,0),color="red",fontsize=30)
+                  plot17+=text3d("\u03B8=2+\u03C0",(-2,-1,0),color="magenta",fontsize=30)
+                  plot17+=parametric_plot3d((0.5*cos(t),0.5*sin(t),0),(t,0,pi+2),color="magenta",thickness=3)
+                  plot17+=text3d("\u03B8 with r\u003C0",(4*cos(pi+2),4*sin(pi+2),3),color="green",fontsize=25)
+                  plot17+=text3d("\u03B8 with r\u003E0",(4*cos(2),4*sin(2),3),color="blue",fontsize=25)
+                  show(plot17,aspect_ratio=1,viewpoint=[[-0.5738,-0.49,-0.6562],104.92],camera_position=[14.2567,-2.1413,4.5515])
                 </slate>
               </interactive>
           </figure>
@@ -1100,9 +1105,24 @@
                   var('s,t')
                   scale=2
                   @interact
-                  def zr2(b=slider(0,1.5,0.1,default=1.25,label="\\(r\\):"),a=slider(0,6,0.1,default=2.5,label="\\(\\theta\\):")):
+                  def zr2(b=slider(0,1.5,0.1,default=1.25,label="$r$:"),a=slider(0,6,0.1,default=2.5,label="$\\theta$:")):
                       plot18=axes(scale,2,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-                      plot18+=parametric_plot3d((s*cos(t),s*sin(t),s^2),(s,0,1.5),(t,0,2*pi),color="blue",opacity=.25,mesh=True,plot_points=20)
+                      #plot18+=parametric_plot3d((s*cos(t),s*sin(t),s^2),(s,0,1.5),(t,0,2*pi),color="lightblue",opacity=.25)
+                      param(s,t)=(s*cos(t),s*sin(t),s^2)
+                      #set up grid      n is number of steps in s    m is number of steps in t  
+                      #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+                      n=9;m=9;a1=0;a2=1.5;b1=0;b2=2*pi; 
+                      #c1 is surface color     o1 is surface opacity
+                      #c2 and o2 are for constant t value traces
+                      #c3 and o3 are for constant s value traces
+                      c1="lightblue"; c2="gray"; c3="gray"; o1=0.5; o2=0.6; o3=0.6;
+                      plot18+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+                      for i in range(n+1):
+                        sv=a1+i/n*(a2-a1)
+                        plot18+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+                      for i in range(m+1):
+                        tv=b1+i/m*(b2-b1)
+                        plot18+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
                       plot18+=line([(0,0,0),(b*cos(a),b*sin(a),0)],color="red",thickness=3)+text3d("r",(b*cos(a)/1.6,b*sin(a)/1.6,-0.25),color="red",fontsize=25)
                       plot18+=line([(b*cos(a),b*sin(a),0),(b*cos(a),b*sin(a),b^2)],color="green",thickness=3)+text3d("z=r\u00B2",((b+0.75)*cos(a),(b+0.75)*sin(a),b^2/2),color="green",fontsize=25)
                       show(plot18,aspect_ratio=1,viewpoint=[[-0.0213,-0.6767,-0.7359],177.35],camera_position=[0.9859,8.7231,1.8168])
@@ -1240,17 +1260,17 @@
               var('s,t')
               scale=3
               a=arccos(3/sqrt(14))
-              plot19=axes(scale,1.5,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-              plot19+=line([(0,0,0),(1,2,3)],color="blue",thickness=2)+text3d("\u03c1",(0.6,1.2,1.5),color="blue",fontsize=25)
-              plot19+=line([(0,0,0),(1,2,0)],color="red",thickness=2)
+              plot19=axes(scale,2,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+              plot19+=line([(0,0,0),(1,2,3)],color="red",thickness=3)+text3d("\u03c1",(0.6,1.2,1.5),color="red",fontsize=30)
+              plot19+=line([(0,0,0),(1,2,0)],color="magenta",thickness=3)
               plot19+=line([(1,2,3),(1,2,0)],color="gray",linestyle="--")
               plot19+=text3d("z",(1.25,2.5,1.5),color="grey",fontsize=25)
-              plot19+=parametric_plot3d((cos(t),sin(t),0),(t,0,arctan(2)),color="green",thickness=2)+arrow3d((cos(1.99),sin(1.99),0),(cos(2),sin(2),0),color="green",width=4)
-              plot19+=text3d("\u03b8",(1.5,0.75,0),color="green",fontsize=25)
-              plot19+=text3d("r",(1.25,2.5,0),color="red",fontsize=25)
-              plot19+=parametric_plot3d((sin(t),2*sin(t),sqrt(5)*cos(t)),(t,0,a),color="orange",thickness=2)+arrow3d((sin(a-.01),2*sin(a-.01),sqrt(5)*cos(a-.01)),(sin(a),2*sin(a),sqrt(5)*cos(a)),color="orange")
-              plot19+=text3d("\u03c6",(0.5,1,2.5),color="orange",fontsize=25)
-              plot19+=point3d((1,2,3),size=30,color="black")+text3d("P=(\u03c1,\u03b8,\u03c6)",(1.2,2.2,3.5),fontsize=25,color="black")
+              plot19+=parametric_plot3d((cos(t),sin(t),0),(t,0,arctan(2)),color="blue",thickness=3)+arrow3d((cos(a-.3),sin(a-.3),0),(cos(a),sin(a),0),color="blue",arrowsize=8)
+              plot19+=text3d("\u03b8",(1.5,0.75,0),color="blue",fontsize=25)
+              plot19+=text3d("r",(1.25,2.5,0),color="magenta",fontsize=25)
+              plot19+=parametric_plot3d((sin(t),2*sin(t),sqrt(5)*cos(t)),(t,0,a),color="green",thickness=2)+arrow3d((sin(a-.1),2*sin(a-.1),sqrt(5)*cos(a-.1)),(sin(a),2*sin(a),sqrt(5)*cos(a)),color="green",arrowsize=5)
+              plot19+=text3d("\u03c6",(0.5,1,2.5),color="green",fontsize=25)
+              plot19+=sphere((1,2,3),size=0.1,color="black")+text3d("P=(\u03c1,\u03b8,\u03c6)",(1.2,2.2,3.5),fontsize=25,color="black")
               show(plot19,aspect_ratio=1,viewpoint=[[-0.3784,-0.4878,-0.7867],117.21],camera_position=[8.8047,3.5745,5.4277])
             </slate>
           </interactive>
@@ -1305,17 +1325,17 @@
               r=sqrt(xval^2+yval^2)
               rho=sqrt(xval^2+yval^2+zval^2)
               a=arccos(zval/rho)
-              plot20=axes(scale,1.5,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-              plot20+=line([(0,0,0),(xval,yval,zval)],color="blue",thickness=2)+text3d("\u03c1",(xval/1.6,yval/1.6,zval/1.6+0.5),color="blue",fontsize=20)
-              plot20+=line([(0,0,0),(xval,yval,0)],color="red",thickness=2)+text3d("r",(xval/1.6,yval/1.6,-0.5),color="red",fontsize=20)
-              plot20+=line([(xval,yval,zval),(xval,yval,0)],color="gray",linestyle="--")+text3d("z",(xval/0.8,yval/0.8,zval/2),color="gray",fontsize=20)
-              plot20+=parametric_plot3d((cos(t),sin(t),0),(t,0,tval),color="green",thickness=2)+arrow3d((cos(tval-0.1),sin(tval-0.1),0),(cos(tval),sin(tval),0),color="green")
-              plot20+=text3d("\u03B8",(1,2,0),color="green",fontsize=25)
-              plot20+=parametric_plot3d((xval/rho*sin(t),yval/rho*sin(t),r/rho*cos(t)),(t,0,a),color="orange",thickness=2)
-              plot20+=arrow3d((sin(a-.01),2*sin(a-.01),sqrt(5)*cos(a-.01)),(sin(a),2*sin(a),sqrt(5)*cos(a)),color="orange")
-              plot20+=text3d("\u03c6",(xval/4,yval/4,zval/2),color="orange",fontsize=25)
-              plot20+=point3d((xval,yval,zval),size=30,color="black")+text3d("P",(xval,yval,zval+0.5),fontsize=25,color="black")
-              show(plot20,aspect_ratio=1,viewpoint=[[-0.0346,-0.6289,-0.7767],175.1],camera_position=[1.7949,11.1905,3.744])
+              plot20=axes(scale,2,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+              plot20+=line([(0,0,0),(xval,yval,zval)],color="red",thickness=3)+text3d("\u03c1",(xval/1.6,yval/1.6,zval/1.6+0.5),color="red",fontsize=30)
+              plot20+=line([(0,0,0),(xval,yval,0)],color="magenta",thickness=2)+text3d("r",(xval/1.6,yval/1.6,-0.5),color="magenta",fontsize=30)
+              plot20+=line([(xval,yval,zval),(xval,yval,0)],color="gray",linestyle="--")+text3d("z",(xval/0.8,yval/0.8,zval/2),color="gray",fontsize=30)
+              plot20+=parametric_plot3d((cos(t),sin(t),0),(t,0,tval),color="blue",thickness=3)+arrow3d((cos(tval-0.2),sin(tval-0.2),0),(cos(tval),sin(tval),0),color="blue")
+              plot20+=text3d("\u03B8",(1,2,0),color="blue",fontsize=25)
+              plot20+=parametric_plot3d((xval/rho*sin(t),yval/rho*sin(t),r/rho*cos(t)),(t,0,a),color="green",thickness=3)
+              plot20+=arrow3d((sin(a-.01),2*sin(a-.01),sqrt(5)*cos(a-.01)),(sin(a),2*sin(a),sqrt(5)*cos(a)),color="green")
+              plot20+=text3d("\u03c6",(xval/4,yval/4,zval/2),color="green",fontsize=30)
+              plot20+=sphere((xval,yval,zval),size=0.1,color="black")+text3d("P",(xval,yval,zval+0.5),fontsize=25,color="black")
+              show(plot20,aspect_ratio=1,viewpoint=[[-0.1362,-0.5482,-0.8252],156.83],camera_position=[5.0477,10.2784,5.5862])
             </slate>
           </interactive>
       </figure>
@@ -1338,16 +1358,16 @@
             var('t')
             rho=sqrt(1.2^2+1)
             a=arctan(1.2)
-            plot21=line([(0,0),(1.2,0)],color="red",thickness=2.5,axes=True,axes_labels=["","$z$-axis"],ticks=[[],[]])
-            plot21+=text("$r$",(0.75,-.15),color="red",fontsize=20)
-            plot21+=line([(0,0),(1.2,1)],color="blue",thickness=2)+line([(1.2,1),(1.2,0)],color="gray",thickness=2)
-            plot21+=text("$\\rho$",(0.7,0.8),color="blue",fontsize=0)
+            plot21=line([(0,0),(1.2,0)],color="magenta",thickness=3,zorder=3,axes=True,axes_labels=["","$z$-axis"],ticks=[[],[]])
+            plot21+=text("$r$",(0.75,-.15),color="magenta",fontsize=20)
+            plot21+=line([(0,0),(1.2,1)],color="red",thickness=3)+line([(1.2,1),(1.2,0)],color="gray",thickness=2)
+            plot21+=text("$\\rho$",(0.7,0.8),color="red",fontsize=20)
             plot21+=text("$z$",(1.35,0.5),color="gray",fontsize=20)
-            plot21+=parametric_plot((0.5*sin(t),0.5*cos(t)),(t,0,a),color="orange")+arrow((0.5*sin(a-0.1),.5*cos(a-0.1)),(0.5*sin(a),0.5*cos(a)),color="orange")
-            plot21+=text("$\\phi$",(0.2,0.6),color="orange",fontsize=20)+text("$\\theta$-direction",(2,-0.15),color="black",fontsize=15)
-            plot21+=parametric_plot((1.2-0.5*sin(t),1-0.5*cos(t)),(t,0,a),color="orange",thickness=2)+arrow((1.2-0.5*sin(a-0.1),1-0.5*cos(a-0.1)),(1.2-0.5*sin(a),1-0.5*cos(a)),color="orange")
-            plot21+=text("$\\phi$",(0.95,0.35),color="orange",fontsize=20)+point((1.2,1),size=30,color="black")
-            plot21+=text("$P$",(1.3,1.1),color="black",xmin=-1,xmax=2,ymin=-1,ymax=2,aspect_ratio=1,fontsize=20)
+            plot21+=parametric_plot((0.5*sin(t),0.5*cos(t)),(t,0,a),color="green")+arrow((0.5*sin(a-0.1),.5*cos(a-0.1)),(0.5*sin(a),0.5*cos(a)),color="green")
+            plot21+=text("$\\phi$",(0.2,0.6),color="green",fontsize=20)+text("$\\theta$-direction",(1.5,-0.15),color="black",fontsize=15)
+            plot21+=parametric_plot((1.2-0.5*sin(t),1-0.5*cos(t)),(t,0,a),color="green",thickness=2)+arrow((1.2-0.5*sin(a-0.1),1-0.5*cos(a-0.1)),(1.2-0.5*sin(a),1-0.5*cos(a)),color="green")
+            plot21+=text("$\\phi$",(0.95,0.35),color="green",fontsize=20)+point((1.2,1),size=40,color="black",zorder=4)
+            plot21+=text("$P$",(1.3,1.1),color="black",xmin=-0.5,xmax=1.5,ymin=-0.5,ymax=1.5,aspect_ratio=1,fontsize=20)
             plot21+=line([(1.1,0),(1.1,0.1),(1.2,0.1)],color="black")
             plot21
           </sageplot>
@@ -1430,11 +1450,26 @@
               var('s,t')
               scale=2
               a=arctan(sqrt(2))
-              plot22=axes(scale,1.5,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-              plot22+=parametric_plot3d((s*cos(t),s*sin(t),s/sqrt(2)),(s,0,1.75),(t,0,2*pi),color="red",opacity=0.45,mesh=True,plot_points=20)
-              plot22+=parametric_plot3d((0,1.5*sin(t),1.5*cos(t)),(t,0,a),color="blue",thickness=2)
-              plot22+=text3d("\u03C6\u224854.73\u00B0",(0,1,1.75),color="blue",fontsize=25)
-              plot22+=arrow3d((0,1.5*sin(a)-0.2,1.5*cos(a)+0.2),(0,1.5*sin(a),1.5*cos(a)),color="blue",width=10)
+              plot22=axes(scale,2,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+              #plot22+=parametric_plot3d((s*cos(t),s*sin(t),s/sqrt(2)),(s,0,1.75),(t,0,2*pi),color="red",opacity=0.45,mesh=True,plot_points=20)
+              param(s,t)=(s*cos(t),s*sin(t),s/sqrt(2))
+              #set up grid      n is number of steps in s    m is number of steps in t  
+              #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+              n=9;m=9;a1=0;a2=2.5;b1=0;b2=2*pi; 
+              #c1 is surface color     o1 is surface opacity
+              #c2 and o2 are for constant t value traces
+              #c3 and o3 are for constant s value traces
+              c1="lightblue"; c2="gray"; c3="gray"; o1=0.5; o2=0.6; o3=0.6;
+              plot22+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+              for i in range(n+1):
+                sv=a1+i/n*(a2-a1)
+                plot22+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+              for i in range(m+1):
+                tv=b1+i/m*(b2-b1)
+                plot22+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+              plot22+=parametric_plot3d((0,1.5*sin(t),1.5*cos(t)),(t,0,a),color="green",thickness=2)
+              plot22+=text3d("\u03C6\u224854.73\u00B0",(0,1,1.75),color="green",fontsize=25)
+              plot22+=arrow3d((0,1.5*sin(a)-0.2,1.5*cos(a)+0.2),(0,1.5*sin(a),1.5*cos(a)),color="green",width=10)
               show(plot22,viewpoint=[[-0.5565,-0.5478,-0.6246],115.2],camera_position=[9.134,0.1137,2.3726])
             </slate>
             </interactive>
@@ -1451,11 +1486,27 @@
               scale=2
               a=pi-arctan(sqrt(2))
               plot23=axes(scale,1.5,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-              plot23+=parametric_plot3d((s*cos(t),s*sin(t),-s/sqrt(2)),(s,0,2),(t,0,2*pi),color="red",opacity=0.65,mesh=True,plot_points=20)
-              plot23+=parametric_plot3d((0,sin(t),cos(t)),(t,0,a),color="blue")
-              plot23+=arrow3d((0,sin(a)+0.1,cos(a)+0.2),(0,sin(a),cos(a)),color="blue",width=2)
-              plot23+=text3d("\u03C6\u2248125.27\u00B0",(0,2,0.5),color="blue",fontsize=25)
-              show(plot23,viewpoint=[[-0.3297,-0.6865,-0.6481],145.43],camera_position=[7.854,6.3402,-0.0187])
+              #plot23+=parametric_plot3d((s*cos(t),s*sin(t),-s/sqrt(2)),(s,0,2),(t,0,2*pi),color="red",opacity=0.65,mesh=True,plot_points=20)
+              param(s,t)=(s*cos(t),s*sin(t),-s/sqrt(2))
+              #set up grid      n is number of steps in s    m is number of steps in t  
+              #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+              n=9;m=9;a1=0;a2=2.5;b1=0;b2=2*pi; 
+              #c1 is surface color     o1 is surface opacity
+              #c2 and o2 are for constant t value traces
+              #c3 and o3 are for constant s value traces
+              c1="lightblue"; c2="gray"; c3="gray"; o1=0.5; o2=0.6; o3=0.6;
+              plot23+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
+              for i in range(n+1):
+                sv=a1+i/n*(a2-a1)
+                plot23+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+              for i in range(m+1):
+                tv=b1+i/m*(b2-b1)
+                plot23+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+              plot23+=parametric_plot3d((0,sin(t),cos(t)),(t,0,a),color="green")
+              plot23+=arrow3d((0,sin(a)+0.1,cos(a)+0.2),(0,sin(a),cos(a)),color="green",width=2)
+              plot23+=text3d("\u03C6\u2248125.27\u00B0",(0,2,0.5),color="green",fontsize=25)
+              plot23+=line([(0,0,0),(0,0,-2)],color="black")
+              show(plot23,viewpoint=[[-0.3876,-0.5801,-0.7164],128.84],camera_position=[9.8949,4.0994,2.5267])
             </slate>
           </interactive>
         </figure>
@@ -1577,11 +1628,11 @@
             from sage.plot.plot3d.plot3d import axes
             var('s,t')
             scale=3
-            plot24=axes(scale,1,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-            plot24+=Box([3,1.5,3],color="yellow",opacity=0.35).translate((0,1.5,0))
-            plot24+=parametric_plot3d((s,0,t),(s,0,scale),(t,-scale,scale),color="green",opacity=0.4)+text3d("Theta =0",(1.5,-0.75,-0.25),color="green")
-            plot24+=parametric_plot3d((s,0,t),(s,-scale,0),(t,-scale,scale),color="red",opacity=0.4)+text3d("Theta = pi",(-1.5,-0.75,0.25),color="red")
-            plot24
+            plot24=axes(scale+0.25,1.5,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+            plot24+=Box([3,1.5,3],color="yellow",opacity=0.25).translate((0,1.5,0))+text3d("0 \u2264 \u03C6 \u2264 \u03C0",(0,2,4),color="black",fontsize=25) 
+            plot24+=parametric_plot3d((s,0,t),(s,0,scale),(t,-scale,scale),color="blue",opacity=0.5)+text3d("\u03B8 = 0",(3.5,-0.75,1.25),color="blue",fontsize=25)
+            plot24+=parametric_plot3d((s,0,t),(s,-scale,0),(t,-scale,scale),color="magenta",opacity=0.5)+text3d("\u03B8 = \u03C0",(-3.5,-0.75,0.25),color="magenta",fontsize=25)
+            show(plot24,viewpoint=[[0.8499,0.2985,0.4342],77.92],camera_position=[8.216,-8.8812,5.5437])
           </slate>
         </interactive>
       </figure>
