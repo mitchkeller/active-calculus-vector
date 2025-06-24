@@ -44,14 +44,14 @@
     </p>
 
     <p>
-      It is useful, therefore, to be able to translate to other coordinate systems where the limits of integration <em>and</em> the evaluation of the iterated integrals are simpler. In this section we provide a reminder of polar coordinates and then introduce and investigate their ramifications for double integrals. For a more thorough discussion of polar coordinates, look at <xref ref="S-Precalc-OtherCoordSystems"/>. 
+      It is therefore useful to be able to translate to other coordinate systems where the limits of integration <em>and</em> the evaluation of the iterated integrals are simpler. In this section we provide a brief reminder of polar coordinates, then investigate their usage for double integrals. For a more thorough discussion of polar coordinates, look at <xref ref="S-Precalc-OtherCoordSystems"/>. 
     </p>
     <p>
       The rectangular coordinate system is best suited for graphs and regions that are naturally considered over a rectangular grid. The polar coordinate system is an alternative that offers good options for functions and domains that have more circular characteristics. A point <m>P</m> in rectangular coordinates that is described by an ordered pair <m>(x,y)</m>, where <m>x</m> is the displacement from <m>P</m> to the <m>y</m>-axis and <m>y</m> is the displacement from <m>P</m> to the <m>x</m>-axis can also be described with polar coordinates<idx><h>polar coordinates</h></idx> <m>(r,\theta)</m>, where <m>r</m> is the distance from <m>P</m> to the origin and <m>\theta</m> is the angle formed by the line segment <m>\overline{OP}</m> and the positive <m>x</m>-axis, as shown at left in <xref ref="F_11_5_Polar_coords">Figure</xref>.
     </p>
     <figure xml:id="coord2d-3">
     <caption>A plot with polar coordinate measurements labeled</caption>
-      <image width="70%" label="img-coord2d-3">
+      <image width="60%" label="img-coord2d-3">
         <description><p>A plot with polar coordinate measurements labeled for a point in the first quadrant </p></description>
         <sageplot>
           var('t') 
@@ -183,10 +183,10 @@
       <me>
         \int_a^b \int_{g_1(x)}^{g_2(x)} f(x,y) \, dy \, dx
       </me>
-      in rectangular coordinates where <m>D</m> has a vertically simple description (<m>a\leq x \leq b \quad  g_1(x) \leq y \leq g_2(x)</m>). Note that the area element <m>dA</m> became <m>dy\, dx </m> in this conversion of the double integral into an iterated integral. We will need to transform the three different elements of this double integral into polar coordinates: 
+      in rectangular coordinates where <m>D</m> has a vertically simple description (<m>a\leq x \leq b, g_1(x) \leq y \leq g_2(x)</m>). Note that the area element <m>dA</m> became <m>dy\, dx </m> in this conversion of the double integral into an iterated integral. We will need to transform the three different elements of this double integral into polar coordinates: 
       <ol>
         <li>convert the area element to polar coordinates</li>
-        <li>the region of integration described by inequalities that correspond to fixing one coordinate and bounding the other in a consistent way </li>
+        <li>describe the region of integration with inequalities that correspond to fixing one coordinate and bounding the other in a consistent way </li>
         <li>convert the integrand, <m>f(x,y)</m>, to polar coordinates</li>    
       </ol>
     </p>
@@ -444,7 +444,7 @@
       <me>\Delta A \approx R_1 \Delta r \, \Delta \theta</me>
     </p>
     <p>
-      Remember that we can easily convert our function <m>f(x,y)</m> to polar coordinates with <xref ref="PolarCoordinates"/> to be <m>f(r\cos(\theta),r\sin(\theta))</m>. We can then approximate a double integral <m>\iint_D f(x,y) \, dA</m> with a Riemann sum of the form 
+      Remember that we can easily convert our function <m>f(x,y)</m> to polar coordinates with <xref ref="PolarCoordinates" text="custom">our conversion equations</xref> to be <m>f(r\cos(\theta),r\sin(\theta))</m>. We can then approximate a double integral <m>\iint_D f(x,y) \, dA</m> with a Riemann sum of the form 
       <md>
         <mrow>  \iint_D f(x,y) \, dA\amp= \sum_{j=1}^n \sum_{i=1}^m f(r_i^*\cos(\theta_j^*), r_i^* \sin(\theta_j^*)) \enspace \Delta A</mrow>
         <mrow> \amp= \sum_{j=1}^n \sum_{i=1}^m f(r_i^*\cos(\theta_j^*), r_i^* \sin(\theta_j^*))  r_i^* \Delta r \, \Delta \theta</mrow>
@@ -467,7 +467,7 @@
           which corresponds geometrically to the region in <xref ref="radiallysimple"/>
         </p>
         <figure xml:id="radiallysimple">
-          <caption></caption>
+          <caption>A radially simple region with slices along constant <m>\theta</m> values shown in gray</caption>
           <image width="60%" xml:id="img-radiallysimple">
             <sageplot>
               var('x,y,t,s')
@@ -479,7 +479,7 @@
               plot4=polygon(points,color="lightblue",edgecolor="black",xmin=0,xmax=2,ymin=0,ymax=2,ticks=[[],[]])
               m=6;tv=[0.5+i/m/1.3 for i in range(1,m)]
               for tval in tv:
-                plot4+=line([(f(tval)*cos(tval),f(tval)*sin(tval)),(g(tval)*cos(tval),g(tval)*sin(tval))],color="orange",thickness=2,linestyle="--")
+                plot4+=line([(f(tval)*cos(tval),f(tval)*sin(tval)),(g(tval)*cos(tval),g(tval)*sin(tval))],color="gray",thickness=2,linestyle="--")
               plot4+=parametric_plot((f(t)*cos(t),f(t)*sin(t)),(t,a,b),color="red",thickness=3,zorder=4)
               plot4+=parametric_plot((g(t)*cos(t),g(t)*sin(t)),(t,a,b),color="blue",thickness=3,zorder=4)
               plot4+=line([(f(a)*cos(a),f(a)*sin(a)),(0,0),(f(b)*cos(b),f(b)*sin(b))],color="gray",thickness=2)
@@ -497,7 +497,7 @@
           which corresponds geometrically to the region in <xref ref="angsimple"/>
         </p>
         <figure xml:id="angsimple">
-          <caption></caption>
+          <caption>An angularly simple region with slices along constant <m>r</m> values shown in gray</caption>
           <image width="60%" xml:id="img-angsimple">
             <sageplot>
               var('x,y,t,s')
@@ -513,7 +513,7 @@
               m=6;dr=(b-a)/m;tv=[a+i*dr for i in range(1,m)]
               for tval in tv:
                 upper=f(tval);lower=g(tval);
-                plot5+=parametric_plot((tval*cos(t),tval*sin(t)),(t,lower,upper),color="orange",thickness=2,linestyle="--")
+                plot5+=parametric_plot((tval*cos(t),tval*sin(t)),(t,lower,upper),color="gray",thickness=2,linestyle="--")
               plot5+=parametric_plot((t*cos(f(t)),t*sin(f(t))),(t,a,b),color="red",thickness=3,zorder=4)
               plot5+=parametric_plot((t*cos(g(t)),t*sin(g(t))),(t,a,b),color="blue",thickness=3,zorder=4)
               plot5+=parametric_plot((a*cos(t),a*sin(t)),(t,av2-0.3,av1+0.3),color="gray",thickness=2,linestyle="--")+text("$r=c$",(0.4,0.4),color="gray",fontsize=15)
@@ -526,10 +526,10 @@
       </statement>
     </proposition>
     <p>
-      Each of the types of regions above corresponds to exactly the necessary description to use a iterated integral. Let's look at the inequalities and plot for a radially simple region; For any fixed value of <m>\theta</m> in the interval <m>[a,b]</m>, we want to look at a slice along this constant <m>\theta</m> value. This corresponds to a ray from the origin in the cone between the grey lines in <xref ref="radiallysimple"/>. Along this <m>\theta=k</m> ray, the region of interest has an upper and lower bound on the <m>r</m>-coordinate. In fact, there is the function that describes the upper boundary, <m>r=g_2(\theta)</m>, for every value of <m>\theta</m> in <m>[a,b]</m>. Similarly, there is the function that describes the lower boundary, <m>r=g_1(\theta)</m>, for every value of <m>\theta</m> in <m>[a,b]</m>. Geometrically, this means that along every orange, dashed slice (where <m>\theta</m> is constant), there is the same upper and lower boundary curves, shown in red and blue, respectively.
+      Each of the types of regions above corresponds to exactly the necessary description to use a iterated integral. Let's look at the inequalities and plot for a radially simple region; For any fixed value of <m>\theta</m> in the interval <m>[a,b]</m>, we want to look at a slice along this constant <m>\theta</m> value. This corresponds to a ray from the origin in the cone between the grey lines in <xref ref="radiallysimple"/>. Along this <m>\theta=k</m> ray, the region of interest has an upper and lower bound on the <m>r</m>-coordinate. In fact, there is the function that describes the upper boundary, <m>r=g_2(\theta)</m>, for every value of <m>\theta</m> in <m>[a,b]</m>. Similarly, there is the function that describes the lower boundary, <m>r=g_1(\theta)</m>, for every value of <m>\theta</m> in <m>[a,b]</m>. Geometrically, this means that along every gray, dashed slice (where <m>\theta</m> is constant), there is the same upper and lower boundary curves, shown in red and blue, respectively.
     </p>
     <p>
-      While angularly simple regions are used much less often than radially simple regions, a parallel structure is used; Along every slice with a constant value of <m>r</m> in <m>[c,d]</m> (the orange, dashed curves in <xref ref="angsimple"/>), the upper bound on <m>\theta</m> is given by the function <m>\theta=h_2(r)</m> and the lower bound is given by <m>\theta=h_1(r)</m> (shown by the red and blue bounding curves in <xref ref="angsimple"/>).
+      While angularly simple regions are used much less often than radially simple regions, a parallel structure is used; Along every slice with a constant value of <m>r</m> in <m>[c,d]</m> (the gray, dashed curves in <xref ref="angsimple"/>), the upper bound on <m>\theta</m> is given by the function <m>\theta=h_2(r)</m> and the lower bound is given by <m>\theta=h_1(r)</m> (shown by the red and blue bounding curves in <xref ref="angsimple"/>).
     </p>
     <p>
       Just as in the rectangular coordinate case, especially complicated regions may need to be split into several different regions that are radially or angularly simple.
@@ -569,7 +569,7 @@
           where the vertically simple slicing is shown in <xref ref="diskvs"/>
         </p>
         <figure xml:id="diskvs">
-          <caption></caption>
+          <caption>A unit disk centered at the origin with slices showing a vertically simple description</caption>
           <image width="60%" xml:id="img-diskvs">
             <sageplot>
               var('x,y,t,s')
@@ -579,7 +579,7 @@
               m=9;
               for i in range(1,m):
                 xv=-1+i*2/m
-                plot6+=line([(xv,sqrt(1-xv*xv)),(xv,-sqrt(1-xv*xv))],color="orange",linestyle="--",thickness=2)
+                plot6+=line([(xv,sqrt(1-xv*xv)),(xv,-sqrt(1-xv*xv))],color="gray",linestyle="--",thickness=2)
               plot6+=parametric_plot((cos(t),sin(t)),(t,0,pi),color="red",thickness=2,zorder=3)
               plot6+=text("$y=\\sqrt{1-x^2}$",(.8,1.1),color="red",fontsize=15)
               plot6+=parametric_plot((cos(t),sin(t)),(t,pi,2*pi),color="blue",thickness=2,zorder=3)
@@ -599,7 +599,7 @@
           The disc <m>D</m> is described in polar coordinates by the inequalities <m>0 \leq r \leq 1</m> and <m>0 \leq \theta \leq 2\pi</m>. Note that our region <m>D</m> can be consider both radially simple and angularly simple, with all of the bounds of integration being constant. In <xref ref="diskrs"/>, we show how <m>D</m> can be considered radially simple.
         </p>
         <figure xml:id="diskrs">
-          <caption></caption>
+          <caption>The unit disk centered at the origin with slices showing a radially simple description</caption>
           <image width="60%" xml:id="img-diskrs">
             <sageplot>
               var('x,y,t,s')
@@ -609,7 +609,7 @@
               m=11;
               for i in range(m):
                 xv=2*pi*i/m
-                plot7+=line([(0,0),(cos(xv),sin(xv))],color="orange",linestyle="--",thickness=2)
+                plot7+=line([(0,0),(cos(xv),sin(xv))],color="gray",linestyle="--",thickness=2)
               plot7+=parametric_plot((cos(t),sin(t)),(t,0,2*pi),color="red",thickness=2,zorder=3)
               plot7+=text("$r=1$",(.8,0.9),color="red",fontsize=15)
               plot7+=point((0,0),color="blue",size=30,zorder=3)
@@ -837,7 +837,7 @@
       <task>
         <statement>
           <p>
-            Explain why in both parts b. and c. it is advantageous to use polar coordinates.
+            Explain why in both parts (b) and (c) it is advantageous to use polar coordinates.
           </p>
         </statement>
         <answer>

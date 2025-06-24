@@ -46,11 +46,11 @@
 
     <introduction>
     <p>
-      So far, we have interpreted the double integral of a function <m>f</m> over a domain <m>D</m> in several ways. First, <m>\iint_D f(x,y) \, dA</m> tells us a difference of volumes <mdash/> the volume the surface defined by <m>f</m> bounds above the <m>xy</m>-plane on <m>D</m> minus the volume the surface bounds below the <m>xy</m>-plane on <m>D</m>. In addition, <m>\frac{1}{A(D)} \iint_D f(x,y) \, dA</m> determines the average value of <m>f</m> on <m>D</m>. In this section, we investigate several other applications of double integrals, using the integration process as seen in <xref ref="PA_11_4">Preview Activity</xref>: we partition into small regions, approximate the desired quantity on each small region, then use the integral to sum these values exactly in the limit.
+      So far, we have interpreted the double integral of a function <m>f</m> over a domain <m>D</m> in several ways. First, <m>\iint_D f(x,y) \, dA</m> tells us a difference of volumes <mdash/> the volume the surface defined by <m>f</m> bounds above the <m>xy</m>-plane over <m>D</m> minus the volume the surface bounds below the <m>xy</m>-plane over <m>D</m>. In addition, <m>\frac{1}{Area(D)} \iint_D f(x,y) \, dA</m> determines the average value of <m>f</m> on <m>D</m>. In this section, we investigate several other applications of double integrals, using the integration process as seen in <xref ref="PA_11_4">Preview Activity</xref>: we partition into small regions, approximate the desired quantity on each small region, then use the integral to sum these values exactly in the limit.
     </p>
 
     <p>
-      The following preview activity explores another interpretation: a double integral can be used to determine the density of a thin plate with a mass density distribution. Recall that in single-variable calculus, we considered a similar problem and computed the mass of a one-dimensional rod with a mass-density distribution. There, as here, the key idea is that if density is constant, mass is the product of density and volume.
+      The following preview activity explores our third interpretation of double integrals: a double integral can be used to determine the mass of a thin plate with a  density distribution, <m>\delta(x,y)</m>. Recall that in single-variable calculus, we considered a similar problem and computed the mass of a one-dimensional rod with a mass-density distribution. There, as here, the key idea is that if density is constant, mass is the product of density and volume.
     </p>
 
     <exploration xml:id="PA_11_4">
@@ -170,7 +170,7 @@
     <assemblage xml:id="Lamina-mass">
       <title>The Mass of a Lamina</title>
       <p>
-        If <m>\delta(x, y)</m> describes the density of a lamina defined by a planar region <m>D</m>, then the <em>mass</em><idx><h>double integral</h><h>mass of lamina</h></idx> of <m>D</m> is given by the double integral <m>\iint_D \delta(x,y) \, dA</m>.
+        If <m>\delta(x, y)</m> describes the density of a lamina defined by a planar region <m>D</m>, then the <em>mass</em><idx><h>double integral</h><h>mass of lamina</h></idx> of <m>D</m> is given by the double integral <m>\displaystyle{\iint_D \delta(x,y) \, dA}</m>.
       </p>
     </assemblage>
     

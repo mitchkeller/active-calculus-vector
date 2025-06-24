@@ -344,24 +344,24 @@
   <subsection>
     <title>Double Riemann Sums over Rectangles</title>
     <p>
-      The motivating interpretation of a definite integral for a function of one variable was the area under a curve (over a particular interval of inputs). We will use the same motivating interpretation for the definie integral of function of two variables; The definite integral of a function of two variables will the size of the region beneath the graph of <m>f</m> over a set of inputs. We can show this geometrically as the volume of the region below the surface given by <m>z=f(x,y)</m> in <xref ref="basedblint"/>. The surface given by <m>z=f(x,y)</m> is shown in blue and the set of inputs we want to look at is shown (on the <m>xy</m>-plane) in red. So we want the double integral to measure the volume of the region shaded in gray.
+      The motivating interpretation of a definite integral for a function of one variable was the area under a curve (over a particular interval of inputs). We will use the same motivating interpretation for the definite integral of function of two variables; The definite integral of a function of two variables will measure the size of the region beneath the graph of <m>f</m> over a set of inputs. We can show this geometrically as the volume of the region below the surface given by <m>z=f(x,y)</m> as shown in <xref ref="basedblint"/>. The surface given by <m>z=f(x,y)</m> is shown in blue and the set of inputs we want to look at is shown (on the <m>xy</m>-plane) in red. The double integral of <m>f</m> over the red region should measure the volume of the region shaded in gray.
     </p>
     <figure xml:id="basedblint">
-      <caption> </caption>
+      <caption>A plot of the volume under as surface <m>z=f(x,y)</m> over a region <m>R</m>, in red</caption>
         <interactive title="interactive-basedblint" platform="sage" width="100%" aspect="1:1">
           <slate surface="sage">
             var('t,s,x,y,z')
             from sage.plot.plot3d.plot3d import axes
             scale=3
-            plot1=axes(scale,2,color="black",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+            plot1=axes(scale,1,color="black",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
             f(x,y)=3-(0.5+x)^2/2-(1-y)^2/1.5
-            x0=2.1;y0=1.75;
+            x0=1.75;y0=2;
             x1(t)=(cos(t)^3+1)*sin(t)/1.5
             y1(t)=(sin(t)+1.5)*cos(t)/2
             plot1+=parametric_plot3d((x1(t)+x0,y1(t)+y0,0),(t,0,2*pi),thickness=3,color="red")
             plot1+=parametric_plot3d((x1(t)+x0,y1(t)+y0,f(x1(t),y1(t))*s) ,(t,0,2*pi),(s,0,1),color="gray",opacity=0.6)
-            plot1+=parametric_plot3d((s*x1(t)+x0,s*y1(t)+y0,f(s*x1(t),s*y1(t))),(t,0,2*pi),(s,0,1),color="blue",opacity=0.7)
-            plot1+=parametric_plot3d((s*x1(t)+x0,s*y1(t)+y0,0),(t,0,2*pi),(s,0,1),color="red",opacity=0.5)
+            plot1+=parametric_plot3d((s*x1(t)+x0,s*y1(t)+y0,f(s*x1(t),s*y1(t))),(t,0,2*pi),(s,0,1),color="lightblue",opacity=0.9)
+            plot1+=parametric_plot3d((s*x1(t)+x0,s*y1(t)+y0,0),(t,0,2*pi),(s,0,1),color="red",opacity=0.8)
             step=1
             #plot1+=plot3d(f(x-x0,y-y0),(x,x0-step,x0+step),(y,y0-step,y0+step),color="blue",opacity=0.15,mesh=True,plot_points=13)
             param(s,t)=(s,t,f(s-x0,t-y0))
@@ -371,7 +371,7 @@
             #c1 is surface color     o1 is surface opacity
             #c2 and o2 are for constant t value traces
             #c3 and o3 are for constant s value traces
-            c1="blue"; c2="black"; c3="black"; o1=0.15; o2=0.2; o3=0.2;
+            c1="gray"; c2="gray"; c3="gray"; o1=0.4; o2=0.6; o3=0.6;
             plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
             for i in range(n+1):
               sv=a1+i/n*(a2-a1)
@@ -380,38 +380,58 @@
               tv=b1+i/m*(b2-b1)
               plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
             plot1+=plot99
-            show(plot1,viewpoint=[[-0.9793,-0.1081,-0.1713],65.59],camera_position=[3.6055,-6.2764,4.3523])        
+            show(plot1,viewpoint=[[-0.9428,-0.1952,-0.2702],74.93],camera_position=[4.9761,-5.7972,4.0654])     
           </slate>
         </interactive>
     </figure>
     <p>
-      The region of integration shown shaded red in <xref ref="basedblint"/> is irregular in our coordinates (<m>x</m> and <m>y</m>) and we will tackle this kind of problem in <xref ref="S-11-3-Double-Integrals-General"/> once we have some intuition and tools from looking at a nicer shape for a region of integration. 
+      The region of integration shown shaded red in <xref ref="basedblint"/> is irregular in our coordinates (<m>x</m> and <m>y</m>) and we will explore this kind of problem in <xref ref="S-11-3-Double-Integrals-General"/> once we have some intuition and tools from examining rectangular regions of integration. 
     </p>
     <p>
-      We will apply our classic calculus approach to the region shown in <xref ref="rectdblint"/>. In particular, we have a rectangular region of inputs to examine and we want to 1) estimate the volume between the surface plot (in blue) and the <m>xy</m>-plane, 2) quantify how our estimate for the region under the graph of <m>f(x,y)</m> changes when we use a smaller scale, and 3) use a limit to evaluate the true value of the volume under the surface. In order to estimate the volume under our graph, we will use rectangular prisms because their volume is easy to compute: <m>\text{Volume of rectangular prism}= (\text{length})(\text{width})(\text{height})</m>. In the next activity, we will go through these steps for a particular function and rectangular region of integration and introduce some of the notation used in our development of double integrals. 
+      We will apply our classic calculus approach to the region shown in <xref ref="rectdblint"/>. In particular, we have a rectangular region of inputs to examine and we want to 
+      <ol>
+        <li>estimate the volume between the surface plot (in blue) and the <m>xy</m>-plane </li>
+        <li>quantify how our estimate for the region under the graph of <m>f(x,y)</m> changes when we use a smaller scale </li>
+        <li>use a limit to evaluate the true value of the volume under the surface</li>
+      </ol>
+    </p>
+    <p>
+      To estimate the volume under our graph, we will use rectangular prisms because their volume is easy to compute: 
+      <me>\text{Volume of rectangular prism}= (\text{length})(\text{width})(\text{height})</me>
+      In the next activity, we will go through these steps for a particular function and rectangular region of integration as well as introduce some of the notation used in our development of double integrals. 
     </p>
     <figure xml:id="rectdblint">
-      <caption> </caption>
+      <caption>A plot of the volume under a surface over a rectangular region</caption>
         <interactive title="interactive-rectdblint" platform="sage" width="100%" aspect="1:1">
           <slate surface="sage">
             var('t,s,x,y,z')
             from sage.plot.plot3d.plot3d import axes
-            scale=3
-            plot2=axes(scale,2,color="black",frame=False,aspect_ratio=1,opacity=0.2)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-            f(x,y)=(3-(-1.5+x)^2/2-(1-y)^2/1.5)*(3+sin(1.6*x*y))/4
-            x1=1.5;x2=2.5; y1=0.75;y2=2;
+            scale=3.5
+            plot2=axes(scale,1,color="gray",frame=False,aspect_ratio=1,opacity=0.8)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+            f(x,y)=(3.5+(-1.5+x)^2/2.5-(2.5-y)^2/1.5)-x*y/2
+            x1=0.5;x2=2.5; y1=0.75;y2=2;
             plot2+=polygon([(x1,y1,0),(x2,y1,0),(x2,y2,0),(x1,y2,0)],thickness=3,color="red",opacity=0.5)
-            plot2+=line([(x1,y2,0),(x1,0,0)],color="black",thickness=2)+text3d("x=x\u2080",(x1,-0.5,0),color="black",fontsize=20)
-            plot2+=line([(x2,y2,0),(x2,0,0)],color="black",thickness=2)+text3d("x=x\u2081",(x2,-0.5,0),color="black",fontsize=20)
-            plot2+=line([(x2,y1,0),(0,y1,0)],color="black",thickness=2)+text3d("y=y\u2080",(-0.5,y1,0),color="black",fontsize=20)
-            plot2+=line([(x2,y2,0),(0,y2,0)],color="black",thickness=2)+text3d("y=y\u2080",(-0.5,y2,0),color="black",fontsize=20)
-            plot2+=parametric_plot3d((x1+t*(x2-x1),y1,s*f(x1+t*(x2-x1),y1)),(t,0,1),(s,0,1),color="gray",opacity=0.3)
-            plot2+=parametric_plot3d((x1+t*(x2-x1),y2,s*f(x1+t*(x2-x1),y2)),(t,0,1),(s,0,1),color="gray",opacity=0.3)
-            plot2+=parametric_plot3d((x1,y1+t*(y2-y1),s*f(x1,y1+t*(y2-y1))),(t,0,1),(s,0,1),color="gray",opacity=0.3)
-            plot2+=parametric_plot3d((x2,y1+t*(y2-y1),s*f(x2,y1+t*(y2-y1))),(t,0,1),(s,0,1),color="gray",opacity=0.3)
+            plot2+=line([(x1,y2,0),(x1,0,0)],color="black",thickness=2)+text3d("x=a",(x1,-0.5,0),color="black",fontsize=20)
+            plot2+=line([(x2,y2,0),(x2,0,0)],color="black",thickness=2)+text3d("x=b",(x2,-0.5,0),color="black",fontsize=20)
+            plot2+=line([(x2,y1,0),(0,y1,0)],color="black",thickness=2)+text3d("y=c",(-0.5,y1,0),color="black",fontsize=20)
+            plot2+=line([(x2,y2,0),(0,y2,0)],color="black",thickness=2)+text3d("y=d",(-0.5,y2,0),color="black",fontsize=20)
+            plot2+=parametric_plot3d((x1+t*(x2-x1),y1,s*f(x1+t*(x2-x1),y1)),(t,0,1),(s,0,1),color="gray",opacity=0.4)
+            plot2+=parametric_plot3d((x1+t*(x2-x1),y2,s*f(x1+t*(x2-x1),y2)),(t,0,1),(s,0,1),color="gray",opacity=0.4)
+            plot2+=parametric_plot3d((x1,y1+t*(y2-y1),s*f(x1,y1+t*(y2-y1))),(t,0,1),(s,0,1),color="gray",opacity=0.4)
+            plot2+=parametric_plot3d((x2,y1+t*(y2-y1),s*f(x2,y1+t*(y2-y1))),(t,0,1),(s,0,1),color="gray",opacity=0.4)
+            #plot1+=parametric_plot3d((x1(t)+x0,y1(t)+y0,f(x1(t),y1(t))*s) ,(t,0,2*pi),(s,0,1),color="gray",opacity=0.6)
+            #plot1+=parametric_plot3d((s*x1(t)+x0,s*y1(t)+y0,f(s*x1(t),s*y1(t))),(t,0,2*pi),(s,0,1),color="blue",opacity=0.7)
+            #plot1+=parametric_plot3d((s*x1(t)+x0,s*y1(t)+y0,0),(t,0,2*pi),(s,0,1),color="red",opacity=0.5)
+            #step=1
+            #plot1+=plot3d(f(x-x0,y-y0),(x,x0-step,x0+step),(y,y0-step,y0+step),color="blue",opacity=0.15,mesh=True,plot_points=13)
             param(s,t)=(s,t,f(s,t))
-            n=7;m=7;a1=x1;a2=x2;b1=y1;b2=y2
-            c1="blue"; c2="black"; c3="black"; o1=0.3; o2=0.5; o3=0.5;
+            #set up grid      n is number of steps in s    m is number of steps in t  
+            #a1 is min s    a2 is max s   b1 is min t    b2 is max t
+            n=7;m=7;a1=x1;a2=x2;b1=y1;b2=y2; 
+            #c1 is surface color     o1 is surface opacity
+            #c2 and o2 are for constant t value traces
+            #c3 and o3 are for constant s value traces
+            c1="lightblue"; c2="black"; c3="black"; o1=0.8; o2=0.5; o3=0.5;
             plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
             for i in range(n+1):
               sv=a1+i/n*(a2-a1)
@@ -420,22 +440,15 @@
               tv=b1+i/m*(b2-b1)
               plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
             plot2+=plot99
-            show(plot2,viewpoint=[[-0.9793,-0.1081,-0.1713],65.59],camera_position=[3.6055,-6.2764,4.3523])          
+            show(plot2,viewpoint=[[-0.96,-0.193,-0.2028],89.49],camera_position=[5.5569,-7.3355,2.4591])    
           </slate>
         </interactive>
     </figure>
-    <!-- <p>
-      For the definite integral in single-variable calculus, we considered a continuous function over a closed, bounded interval <m>[a,b]</m>. In multivariable calculus, we will eventually develop the idea of a definite integral over a closed, bounded region (such as the interior of a circle). We begin with a simpler situation by thinking only about rectangular domains, and will address more complicated domains in <xref ref="S-11-3-Double-Integrals-General">Section</xref>.
-    </p>
-
-    <p>
-      Let <m>f = f(x,y)</m> be a continuous function defined on a rectangular domain <m>R = \{(x,y) : a \leq x \leq b, c \leq y \leq d\}</m>. As we saw in <xref ref="PA_11_1">Preview Activity</xref>, the domain is a rectangle <m>R</m> and we want to partition <m>R</m> into subrectangles. We do this by partitioning each of the intervals <m>[a,b]</m> and <m>[c,d]</m> into subintervals and using those subintervals to create a partition of <m>R</m> into subrectangles. In the first activity, we address the quantities and notations we will use in order to define double Riemann sums and double integrals.
-    </p> -->
-
+   
     <activity xml:id="A_11_1_1">
       <introduction>
         <p>
-          In this activity, we will be going through the first two steps of the classic calculus approach to defining the definite integral of <m>f(x,y) = 100 - x^2-y^2</m> on the rectangular domain <m>R = [0,8] \times [2,6]</m>. Remember that we are trying to measure the volume below the graph of <m>f</m> over the region <m>R</m> and we will start with estimating this volume. 
+          In this activity, we will be going through the first two steps of the classic calculus approach to defining the definite integral of <m>f(x,y) = 100 - x^2-y^2</m> on the rectangular domain <m>R = [0,8] \times [2,6]</m>. Remember that we are trying to measure the volume below the graph of <m>f</m> over the region <m>R</m>, so we will start with estimating this volume. 
         </p>
       </introduction>
       <task>
@@ -453,23 +466,55 @@
               </image>
           </figure>
         </statement>
+        <answer>
+          <p>
+            <image source="images/fig_11_1_rect_general_xy.png"/>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            <image source="images/fig_11_1_rect_general_xy.png"/>
+          </p>
+        </solution>
       </task>
       <task>
         <statement>
           <p>
-            We will break the interval of <m>x</m>-coordinates into four equally sized subintervals and we will break the interval of <m>y</m>-coordinates into three equally sized subintervals. How large will the subintervals be in the <m>x</m>-direction and the <m>y</m>-direction?
+            Because all of the regions and subregions we are looking at will be rectangles, we can break up the <m>x</m> and <m>y</m> coordinates into pieces separately. We will break the interval of <m>x</m>-coordinates into four equally sized subintervals and we will break the interval of <m>y</m>-coordinates into three equally sized subintervals. How large will the subintervals be in the <m>x</m>-direction and the <m>y</m>-direction?
           </p>
         </statement>
+        <answer>
+          <p>
+            The x subintervals will be length 2 and the y subintervals will be length 4/3.
+          </p>
+        </answer>
+        <solution>
+          <p>
+            The x subintervals will be length 2 and the y subintervals will be length 4/3.
+          </p>
+        </solution>
       </task>
       <task>
         <statement>
           <p>
-            Because all of the regions and subregions we are looking at will be rectangles, we can break up the <m>x</m> and <m>y</m> coordinates into pieces separately. Let <m>\Delta x_i</m> be the <m>i</m>-th subinterval for <m>x</m>. We want to state the endpoints of each of the <m>\Delta x_i</m>. The first subinterval, <m>\Delta x_1</m>, will go from <m>x_0</m> to <m>x_1</m>, the second subinterval, <m>\Delta x_2</m>, will go from <m>x_1</m> to <m>x_2</m>, the third subinterval, <m>\Delta x_3</m>, will go from <m>x_2</m> to <m>x_3</m>, and the fourth subinterval, <m>\Delta x_4</m>, will go from <m>x_3</m> to <m>x_4</m>.
+            Let <m>\Delta x_i</m> be the <m>i</m>-th subinterval for <m>x</m>. We want to state the endpoints of each of the <m>\Delta x_i</m>. The first subinterval, <m>\Delta x_1</m>, will go from <m>x_0</m> to <m>x_1</m>, the second subinterval, <m>\Delta x_2</m>, will go from <m>x_1</m> to <m>x_2</m>, the third subinterval, <m>\Delta x_3</m>, will go from <m>x_2</m> to <m>x_3</m>, and the fourth subinterval, <m>\Delta x_4</m>, will go from <m>x_3</m> to <m>x_4</m>.
           </p>
           <p>
             Give the values for <m>x_0</m>, <m>x_1</m>, <m>x_2</m>, <m>x_3</m>, and <m>x_4</m> and add these as tick marks on the <m>x</m>-axis of <xref ref="blank1010"/> to make sure your subintervals are equally sized. 
           </p>
         </statement>
+        <answer>
+          <p>
+            The points <m>x_0</m>, <m>x_1</m>, <m>x_2</m>, <m>x_3</m>, and <m>x_4</m> are labeled in the picture below.
+          </p>
+          <image source="images/fig_11_1_rect_general_xy.png"/>
+        </answer>
+        <solution>
+          <p>
+            The points <m>x_0</m>, <m>x_1</m>, <m>x_2</m>, <m>x_3</m>, and <m>x_4</m> are labeled in the picture below.
+          </p>
+          <image source="images/fig_11_1_rect_general_xy.png"/>
+        </solution>
       </task>
       <task>
         <statement>
@@ -477,6 +522,18 @@
             Let <m>\Delta y_i</m> be the <m>i</m>-th subinterval for <m>y</m>. Give the values for <m>y_0</m>, <m>y_1</m>, <m>y_2</m>, and <m>y_3</m> and add these as tick marks on the <m>y</m>-axis of <xref ref="blank1010"/> to make sure your subintervals are equally sized.
           </p>
         </statement>
+        <answer>
+          <p>
+            The points <m>y_0</m>, <m>y_1</m>, <m>y_2</m>, and <m>y_3</m> are labeled in the picture below.
+          </p>
+          <image source="images/fig_11_1_rect_general_xy.png"/>
+        </answer>
+        <solution>
+          <p>
+            The points <m>y_0</m>, <m>y_1</m>, <m>y_2</m>, and <m>y_3</m> are labeled in the picture below.
+          </p>
+          <image source="images/fig_11_1_rect_general_xy.png"/>
+        </solution>
       </task>
       <task>
         <statement>
@@ -489,6 +546,24 @@
             </ol>
           </p>
         </statement>
+        <answer>
+          <p>
+            As examples, the subrectangle <m>[x_0,x_1] \times [y_0, y_1]</m> is <m>R_{11}</m>, the lower left subrectangle and the subrectangle <m>[x_1,x_2] \times [y_0, y_1]</m> is <m>R_{21}</m>, the subrectangle to the right of subrectangle <m>R_{11}</m>. The 12 subrectangles are labeled in the figure below.
+          </p>
+          <image source="images/fig_11_1_rect_general_labels.png"/>   
+          <p>
+            <m>\Delta A = \left(\frac{b-a}{4}\right) \left(\frac{d-c}{3}\right)</m>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            As examples, the subrectangle <m>[x_0,x_1] \times [y_0, y_1]</m> is <m>R_{11}</m>, the lower left subrectangle and the subrectangle <m>[x_1,x_2] \times [y_0, y_1]</m> is <m>R_{21}</m>, the subrectangle to the right of subrectangle <m>R_{11}</m>. The 12 subrectangles are labeled in the figure below.
+          </p>
+          <image source="images/fig_11_1_rect_general_labels.png"/>
+          <p>
+            <m>\Delta A = \left(\frac{b-a}{4}\right) \left(\frac{d-c}{3}\right)</m>
+          </p>
+        </solution>
       </task>
       <task>
         <statement>
@@ -496,15 +571,65 @@
             We will estimate the height of each of the rectangular prisms over our <m>R_{i j}</m> by evaluating <m>f</m> at the upper right point of each smaller rectangle. State the point at the upper right of each smaller rectangle and evaluate <m>f</m> at each of these points. 
           </p>
         </statement>
+        <answer>
+          <p>
+            With <m>[a,b] = [0,8]</m> and <m>[c,d] = [2,6]</m>, we have <m>\Delta x = 2</m> and <m>\Delta y = \frac{4}{3}</m>. So <m>(x_{11}^*,y_{11}^*) = \left(2, \frac{10}{3}\right)</m> as shown in the figure below. Then
+            <me>
+              f(x_{11}^*,y_{11}^*) \Delta A = f\left(2, \frac{10}{3}\right) (2)\left(\frac{4}{3}\right) = \left(\frac{764}{9}\right)\frac{8}{3} = \frac{6112}{27} \approx 226.37
+            </me>
+            This result represents the volume of a box with height <m>f(x_{11}^*,y_{11}^*)</m> and base given by the rectangle <m>[x_0, x_1] \times [y_0, y_1]</m>.
+          </p>
+          <image source="images/xyz_vol1.png"/>
+        </answer>
+        <solution>
+          <p>
+            With <m>[a,b] = [0,8]</m> and <m>[c,d] = [2,6]</m>, we have <m>\Delta x = 2</m> and <m>\Delta y = \frac{4}{3}</m>. So <m>(x_{11}^*,y_{11}^*) = \left(2, \frac{10}{3}\right)</m> as shown in the figure below. Then
+            <me>
+              f(x_{11}^*,y_{11}^*) \Delta A = f\left(2, \frac{10}{3}\right) (2)\left(\frac{4}{3}\right) = \left(\frac{764}{9}\right)\frac{8}{3} = \frac{6112}{27} \approx 226.37
+            </me>
+            This result represents the volume of a box with height <m>f(x_{11}^*,y_{11}^*)</m> and base given by the rectangle <m>[x_0, x_1] \times [y_0, y_1]</m>.
+          </p>
+          <image source="images/xyz_vol1.png"/>
+        </solution>
       </task>
       <task>
         <statement>
           <p>
             Write a sentence about why the volume of our approximation on each smaller rectangle would be 
             <me> f(x_i,y_j) \Delta A</me>
-            then write a couple sentences about how you would find your approximation of the volume under the surface <m>z=f(x,y)</m> over the region <m>R</m>. (You do not need to do this calculuation but rather explain what calculation is being done.)
+            then write a couple sentences about how you would find your approximation of the volume under the surface <m>z=f(x,y)</m> over the region <m>R</m>. (You do not need to do this calculation but rather explain what calculation is being done.)
           </p>
         </statement>
+        <answer>
+          <p>
+            <me>
+              f(x_{ij}^*,y_{ij}^*) \Delta A
+            </me>
+            represents the volume of a box with height <m>f(x_{ij}^*,y_{ij}^*)</m> and base given by one of the subrectangles.
+          </p>
+          <image source="images/xyz_vol2.png"/>
+          <p>
+            If we add all the values <m>f(x_{ij}^*,y_{ij}^*) \Delta A</m> for each <m>i</m> and <m>j</m>, the resulting number approximates the volume of the solid bounded above by the surface defined by <m>f</m> and below by the rectangle <m>R</m>.
+            <me>
+              \sum_{j=1}^3 \sum_{i=1}^4 f(x_{ij}^*,y_{ij}^*) \Delta A
+            </me>
+          </p>
+        </answer>
+        <solution>
+          <p>
+            <me>
+              f(x_{ij}^*,y_{ij}^*) \Delta A
+            </me>
+            represents the volume of a box with height <m>f(x_{ij}^*,y_{ij}^*)</m> and base given by one of the subrectangles.
+          </p>
+          <image source="images/xyz_vol2.png"/>
+          <p>
+            If we add all the values <m>f(x_{ij}^*,y_{ij}^*) \Delta A</m> for each <m>i</m> and <m>j</m>, the resulting number approximates the volume of the solid bounded above by the surface defined by <m>f</m> and below by the rectangle <m>R</m>.
+            <me>
+              \sum_{j=1}^3 \sum_{i=1}^4 f(x_{ij}^*,y_{ij}^*) \Delta A
+            </me>
+          </p>
+        </solution>
       </task>
       <task>
         <statement>
@@ -512,288 +637,24 @@
             We used the upper right point to approximate the heights of our rectangular prisms on each <m>R_{i j}</m>. Write a sentence or two about whether you think the upper right point provides an overestimate, an underestimate, or approximately the average value for <m>f</m> on each <m>R_{i j}</m>. Explain how this suggests that your estimate for the volume under the surface <m>z=f(x,y)</m> over the region <m>R</m> is either an overestimate, an underestimate, or approximately the correct value. 
           </p>
         </statement>
-      </task>
-      <!-- <statement>
-       <p>
-          Let <m>f(x,y) = 100 - x^2-y^2</m> be defined on the rectangular domain <m>R = [a,b] \times [c,d]</m>. Partition the interval <m>[a,b]</m> into four uniformly sized subintervals and the interval <m>[c,d]</m> into three evenly sized subintervals as shown in <xref ref="F_11_1_Domain2">Figure</xref>. As we did in <xref ref="PA_11_1">Preview Activity</xref>, we will need a method for identifying the endpoints of each subinterval and the resulting subrectangles.
-        </p>
-
-        <figure xml:id="F_11_1_Domain2">
-          <caption>Rectangular domain with subrectangles.</caption>
-          <image width="50%" source="images/fig_11_1_rect_general"/>
-        </figure>
-
-        <ol marker="a.">
-          <li>
-            <p>
-              Let <m>a=x_0 \lt  x_1 \lt  x_2 \lt  x_3 \lt  x_4 =b</m> be the endpoints of the subintervals of <m>[a,b]</m> after partitioning. Label these endpoints in <xref ref="F_11_1_Domain2">Figure</xref>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              What is the length <m>\Delta x</m> of each subinterval <m>[x_{i-1},x_i]</m>? Your answer should be in terms of <m>a</m> and <m>b</m>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Let <m>c=y_0 \lt  y_1 \lt  y_2 \lt  y_3 =d</m> be the endpoints of the subintervals of <m>[c,d]</m> after partitioning. Label these endpoints in <xref ref="F_11_1_Domain2">Figure</xref>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              What is the length <m>\Delta y</m> of each subinterval <m>[y_{j-1},y_j]</m>? Your answer should be in terms of <m>c</m> and <m>d</m>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              The partitions of the intervals <m>[a,b]</m> and <m>[c,d]</m> partition the rectangle <m>R</m> into subrectangles. How many subrectangles are there?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Let <m>R_{ij}</m> denote the subrectangle <m>[x_{i-1},x_i] \times [y_{j-1},y_j]</m>. Label each subrectangle in <xref ref="F_11_1_Domain2">Figure</xref>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              What is area <m>\Delta A</m> of each subrectangle?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Now let <m>[a,b] = [0,8]</m> and <m>[c,d] = [2,6]</m>.  Let <m>(x_{11}^*,y_{11}^*)</m> be the point in the upper right corner of the subrectangle <m>R_{11}</m>. Identify and correctly label this point in <xref ref="F_11_1_Domain2">Figure</xref>. Calculate the product
-              <me>
-                f(x_{11}^*,y_{11}^*) \Delta A.
-              </me>
-              Explain, geometrically, what this product represents.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              For each <m>i</m> and <m>j</m>, choose a point <m>(x_{ij}^*,y_{ij}^*)</m> in the subrectangle <m>R_{i,j}</m>. Identify and correctly label these points in <xref ref="F_11_1_Domain2">Figure</xref>. Explain what the product
-              <me>
-                f(x_{ij}^*,y_{ij}^*) \Delta A
-              </me>
-              represents.
-            </p>
-          </li>
-
-          <li xml:id="p_11_1_Rsum_1">
-
+        <answer>
           <p>
-            If we were to add all the values <m>f(x_{ij}^*,y_{ij}^*) \Delta A</m> for each <m>i</m> and <m>j</m>, what does the resulting number approximate about the surface defined by <m>f</m> on the domain <m>R</m>? (You don't actually need to add these values.)
+            The upper right point in each subrectangle will give the largest x and y coordinates for the region and larger x and y will correspond to smaller <m>f(x,y)</m>, so the upper right point will underestimate the heights for each sub region. Thus the sum of these estimates will underestimate the total volume under our surface.
           </p>
-          </li>
-
-          <li>
-            <p>
-              Write a double sum using summation notation that expresses the arbitrary sum from part (<m>j</m>).
-            </p>
-          </li>
-        </ol>
-      </statement>
-
-      <answer>
-        <ol marker="a.">
-          <li>
-            <p>
-              The points <m>x_0</m>, <m>x_1</m>, <m>x_2</m>,
-              <m>x_3</m>, and <m>x_4</m> are labeled in the picture below.
-            </p>
-              <image source="images/fig_11_1_rect_general_xy.png"/> 
-          </li>
-          <li>
-            <p>
-             <m>\Delta x = \frac{b-a}{4}</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              The points <m>y_0</m>, <m>y_1</m>,
-              <m>y_2</m>, and <m>y_3</m> are labeled in the picture below.
-            </p>
-              <image source="images/fig_11_1_rect_general_xy.png"/>
-          </li>
-          <li>
-            <p>
-              <m>\Delta y = \frac{d-c}{3}</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>12</m> subrectangles
-            </p>
-          </li>
-          <li>
-            <p>
-              As examples,
-              the subrectangle <m>[x_0,x_1] \times [y_0, y_1]</m> is <m>R_{11}</m>,
-              the lower left subrectangle and the subrectangle <m>[x_1,x_2] \times [y_0, y_1]</m> is <m>R_{21}</m>,
-              the subrectangle to the right of subrectangle <m>R_{11}</m>.
-              The 12 subrectangles are labeled in the figure below.
-            </p>
-             <image source="images/fig_11_1_rect_general_labels.png"/> 
-          </li>
-          <li>
-            <p>
-              <m>\Delta A = \left(\frac{b-a}{4}\right) \left(\frac{d-c}{3}\right)</m>
-            </p>
-          </li>
-          <li>
-            <p>
-              With <m>[a,b] = [0,8]</m> and <m>[c,d] = [2,6]</m>,
-              we have <m>\Delta x = 2</m> and <m>\Delta y = \frac{4}{3}</m>.
-              So <m>(x_{11}^*,y_{11}^*) = \left(2, \frac{10}{3}\right)</m> as shown in the figure below.
-              Then
-              <me>
-                f(x_{11}^*,y_{11}^*) \Delta A = f\left(2, \frac{10}{3}\right) (2)\left(\frac{4}{3}\right) = \left(\frac{764}{9}\right)\frac{8}{3} = \frac{6112}{27} \approx 226.37
-              </me>.
-              This result represents the volume of a box with height
-              <m>f(x_{11}^*,y_{11}^*)</m> and base given by the rectangle <m>[x_0, x_1] \times [y_0, y_1]</m>.
-            </p>
-            <image source="images/xyz_vol1.png"/>
-          </li>
-          <li>
-            <p>
-              <me>
-                f(x_{ij}^*,y_{ij}^*) \Delta A
-              </me>
-              represents the volume of a box with height
-              <m>f(x_{ij}^*,y_{ij}^*)</m> and base given by one of the subrectangles.
-            </p>
-            <image source="images/xyz_vol2.png"/>
-          </li>
-          <li>
-            <p>
-              If we add all the values <m>f(x_{ij}^*,y_{ij}^*) \Delta A</m> for each <m>i</m> and <m>j</m>,
-              the resulting number approximates the volume of the solid bounded above by the surface defined by <m>f</m> and below by the rectangle <m>R</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <me>
-                \sum_{j=1}^3 \sum_{i=1}^4 f(x_{ij}^*,y_{ij}^*) \Delta A
-              </me>
-            </p>
-          </li>
-        </ol>
-      </answer>
-
-      <solution>
-        <ol marker="a.">
-          <li>
-            <p>
-              The points <m>x_0</m>, <m>x_1</m>, <m>x_2</m>,
-              <m>x_3</m>, and <m>x_4</m> are labeled in the picture below.
-            </p>
-            <image source="images/fig_11_1_rect_general_xy.png"/>
-          </li>
-          <li>
-            <p>
-              The length of the interval <m>[a,b]</m> is <m>b-a</m>,
-              and we are dividing the interval into 4 subintervals of equal length.
-              So the length of each subinterval is <m>\Delta x = \frac{b-a}{4}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              The points <m>y_0</m>, <m>y_1</m>,
-              <m>y_2</m>, and <m>y_3</m> are labeled in the picture below.
-            </p>
-            <image source="images/fig_11_1_rect_general_xy.png"/>
-          </li>
-          <li>
-            <p>
-              The length of the interval <m>[c,d]</m> is <m>d-c</m>,
-              and we are dividing the interval into 3 subintervals of equal length.
-              So the length of each subinterval is <m>\Delta y = \frac{d-c}{3}</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              We have 4 subintervals in the <m>x</m> direction and 3 in the <m>y</m> direction,
-              partitioning the rectangle
-              <m>[a,b] \times [c,d]</m> into <m>3 \times 4 = 12</m> subrectangles.
-            </p>
-          </li>
-          <li>
-            <p>
-              As examples,
-              the subrectangle <m>[x_0,x_1] \times [y_0, y_1]</m> is <m>R_{11}</m>,
-              the lower left subrectangle and the subrectangle <m>[x_1,x_2] \times [y_0, y_1]</m> is <m>R_{21}</m>,
-              the subrectangle to the right of subrectangle <m>R_{11}</m>.
-              The 12 subrectangles are labeled in the figure below.
-            </p>
-            <image source="images/fig_11_1_rect_general_labels.png"/>
-          </li>
-          <li>
-            <p>
-              Since each subrectangle has side lengths
-              <m>\frac{b-a}{4}</m> and <m>\frac{d-c}{3}</m>,
-              the area <m>\Delta A</m> of each subrectangle is <m>\Delta A = \left(\frac{b-a}{4}\right) \left(\frac{d-c}{3}\right)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              With <m>[a,b] = [0,8]</m> and <m>[c,d] = [2,6]</m>,
-              we have <m>\Delta x = 2</m> and <m>\Delta y = \frac{4}{3}</m>.
-              So <m>(x_{11}^*,y_{11}^*) = \left(2, \frac{10}{3}\right)</m> as shown in the figure below.
-              Then
-              <me>
-                f(x_{11}^*,y_{11}^*) \Delta A = f\left(2, \frac{10}{3}\right) (2)\left(\frac{4}{3}\right) = \left(\frac{764}{9}\right)\frac{8}{3} = \frac{6112}{27} \approx 226.37
-              </me>.
-              This result represents the volume of a box with height
-              <m>f(x_{11}^*,y_{11}^*)</m> and base given by the rectangle <m>[x_0, x_1] \times [y_0, y_1]</m>.
-            </p>
-            <image source="images/xyz_vol1.png"/>
-          </li>
-          <li>
-            <p>
-              The product
-              <me>
-                f(x_{ij}^*,y_{ij}^*) \Delta A
-              </me> 
-              represents the volume of a box with height
-              <m>f(x_{ij}^*,y_{ij}^*)</m> and base given by one of the subrectangles.
-            </p>
-            <image source="images/xyz_vol2.png"/>
-          </li>
-          <li>
-            <p>
-              If we add all the values <m>f(x_{ij}^*,y_{ij}^*) \Delta A</m> for each <m>i</m> and <m>j</m>,
-              the resulting number approximates the volume of the solid bounded above by the surface defined by <m>f</m> and below by the rectangle <m>R</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              A double sum that expresses the arbitrary sum from part (<m>j</m>) is
-              <me>
-                \sum_{j=1}^3 \sum_{i=1}^4 f(x_{ij}^*,y_{ij}^*) \Delta A
-              </me>.
-            </p>
-          </li>
-        </ol>
-      </solution>
- -->
+        </answer>
+        <solution>
+          <p>
+            The upper right point in each subrectangle will give the largest x and y coordinates for the region and larger x and y will correspond to smaller <m>f(x,y)</m>, so the upper right point will underestimate the heights for each sub region. Thus the sum of these estimates will underestimate the total volume under our surface.
+          </p>
+        </solution>
+      </task>
     </activity>
-
   </subsection>
-
-
   <subsection>
     <title>Double Riemann Sums and Double Integrals</title>
     <p>
       Every part of the previous activity can be generalized to work on any finite rectangular region and any number of subintervals (in either the <m>x</m> or <m>y</m> directions), so we will state these steps in general below and note that using more subintervals corresponds to estimating on a smaller scale (step 2 of the classic calculus approach!).
     </p>
-
     <definition>
       <statement>
         <p>
@@ -832,18 +693,18 @@
       <m>R</m>, as illustrated in <xref ref="F_11_1_volume">Figure</xref>. 
     </p>
     <figure xml:id="F_11_1_volume">
-      <caption> </caption>
+      <caption>The volume below a surface <m>z=f(x,y)</m> over a rectangular region (shown in red)</caption>
         <interactive title="interactive-F_11_1_volume" platform="sage" width="100%" aspect="1:1">
           <slate surface="sage">
             var('t,s,x,y,z')
             from sage.plot.plot3d.plot3d import axes
+            scale=2.5
+            plot2=axes(scale,1,color="black",frame=False,aspect_ratio=1,opacity=0.7)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
             scale=2
-            plot2=axes(scale,2,color="black",frame=False,aspect_ratio=1,opacity=0.2)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-            scale=2
-            f(x,y)=1-x/3+y^2/9
+            f(x,y)=1.5-x/3+y^2/9
             x1=0.5;x2=2; y1=0.5;y2=2;
-            tc="black";sc="orange";bc="red"
-            plot2+=polygon([(x1,y1,0),(x2,y1,0),(x2,y2,0),(x1,y2,0)],thickness=3,color=bc,opacity=0.5)
+            tc="black";sc="gray";bc="red"
+            plot2+=polygon([(x1,y1,0),(x2,y1,0),(x2,y2,0),(x1,y2,0)],thickness=3,color=bc,opacity=0.8)
             plot2+=parametric_plot3d((x1+t*(x2-x1),y1,s*f(x1+t*(x2-x1),y1)),(t,0,1),(s,0,1),color=sc,opacity=0.4)
             plot2+=parametric_plot3d((x1+t*(x2-x1),y2,s*f(x1+t*(x2-x1),y2)),(t,0,1),(s,0,1),color=sc,opacity=0.4)
             plot2+=parametric_plot3d((x1,y1+t*(y2-y1),s*f(x1,y1+t*(y2-y1))),(t,0,1),(s,0,1),color=sc,opacity=0.4)
@@ -855,7 +716,7 @@
             #c1 is surface color     o1 is surface opacity
             #c2 and o2 are for constant t value traces
             #c3 and o3 are for constant s value traces
-            c1="pink"; c2="gray"; c3="gray"; o1=0.3; o2=0.5; o3=0.5;
+            c1="lightblue"; c2="gray"; c3="gray"; o1=0.9; o2=0.9; o3=0.9;
             plot99=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
             for i in range(n+1):
               sv=a1+i/n*(a2-a1)
@@ -864,7 +725,7 @@
               tv=b1+i/m*(b2-b1)
               plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
             plot2+=plot99
-            show(plot2,viewpoint=[[-0.4427,-0.4917,-0.7498],111.96],camera_position=[6.088,1.5166,2.6543])          
+            show(plot2,viewpoint=[[-0.3037,-0.5594,-0.7712],134.56],camera_position=[5.9608,4.3919,3.2182])          
           </slate>
         </interactive>
     </figure>
@@ -876,24 +737,24 @@
       </sidebyside>
     </figure> -->
     <p>
-      This volume is approximated by a Riemann sum, which sums the volumes of the rectangular prisms shown in <xref ref="F_11_1_volume2">Figure</xref>. As we let the number of subrectangles increase without bound (in other words, as both <m>m</m> and <m>n</m> in a double Riemann sum go to infinity), as illustrated in <xref ref="F_11_1_volume2">Figure</xref>, the sum of the volumes of the rectangular boxes approaches the true volume of the solid bounded above by <m>z=f(x,y)</m> over the region <m>R</m>. You can use the sliders at the top of <xref ref="F_11_1_volume2">Figure</xref> to change the number of subintervals used in Riemann sum and verify geometrically how the volume estimate will approach true volume under <m>f</m> as <m>n</m> and <m>m</m> become arbitrarily large. The value of this limit (the third step in our classic calculus approach), provided it exists, is the double integral we have been seeking.
+      This volume is approximated by a Riemann sum, which sums the volumes of the rectangular prisms shown in <xref ref="F_11_1_volume2">Figure</xref>. As we let the number of subrectangles increase without bound (in other words, as both <m>m</m> and <m>n</m> go to infinity in a double Riemann sum), as illustrated in <xref ref="F_11_1_volume2">Figure</xref>, the sum of the volumes of the rectangular boxes approaches the true volume of the solid bounded above by <m>z=f(x,y)</m> over the region <m>R</m>. You can use the sliders at the top of <xref ref="F_11_1_volume2">Figure</xref> to change the number of subintervals used in the Riemann sum and verify geometrically how the estimated volume will approach true volume under <m>f</m> as <m>n</m> and <m>m</m> become arbitrarily large. The value of this limit (the third step in our classic calculus approach), provided it exists, is the double integral we have been seeking.
     </p>
     <figure xml:id="F_11_1_volume2">
-      <caption> </caption>
-        <interactive title="interactive-F_11_1_volume2" platform="sage" width="100%" aspect="1:1">
+      <caption>The estimated volume under a surface <m>z=f(x,y)</m> when using <m>m</m> by <m>n</m> subrectangles</caption>
+        <interactive title="interactive-F_11_1_volume2" platform="sage" width="100%" aspect="1:1.15">
           <slate surface="sage">
             var('t,s,x,y,z')
             from sage.plot.plot3d.plot3d import axes
             from sage.plot.plot3d.shapes import Box
             from sage.plot.plot3d.shapes import ColorCube
-            scale=2
+            scale=2.5
             @interact
             def dblRS(nx=slider(2,15,1,default=3,label="m="),ny=slider(2,15,1,default=2,label="n=")):
-              plot3=axes(scale,2,color="black",frame=False,aspect_ratio=1,opacity=0.2)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-              f(x,y)=1-x/3+y^2/9
+              plot3=axes(scale,1,color="black",frame=False,aspect_ratio=1,opacity=0.8)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+              f(x,y)=2-x/1.5+y^2/4
               x1=0.5;x2=2; y1=0.5;y2=2;
               dx=(x2-x1)/nx; dy=(y2-y1)/ny;
-              tc="black";sc="orange";bc="red"
+              tc="black";sc="lightblue";bc="red"
               for i in range(nx):
                 xa=x1+i*dx; xb=x1+(i+1)*dx;
                 for j in range(ny):
@@ -907,7 +768,7 @@
               #c1 is surface color     o1 is surface opacity
               #c2 and o2 are for constant t value traces
               #c3 and o3 are for constant s value traces
-              c1="pink"; c2="black"; c3="black"; o1=0.5; o2=0.2; o3=0.2;
+              c1="gray"; c2="black"; c3="black"; o1=0.3; o2=0.2; o3=0.2;
               plot3+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
               for i in range(n+1):
                 sv=a1+i/n*(a2-a1)
@@ -915,12 +776,10 @@
               for i in range(m+1):
                 tv=b1+i/m*(b2-b1)
                 plot3+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
-              show(plot3,viewpoint=[[-0.4427,-0.4917,-0.7498],111.96],camera_position=[6.088,1.5166,2.6543])   
+              show(plot3,viewpoint=[[-0.423,-0.5604,-0.712],123.49],camera_position=[7.0129,3.055,2.8624])   
           </slate>
         </interactive>
     </figure>
-    
-
     <!-- <figure xml:id="F_11_1_rs">
       <caption>Finding better approximations by using smaller subrectangles.</caption>
       <sidebyside widths="50% 50%">
@@ -928,7 +787,6 @@
       <image source="images/fig_11_1_riemann_8_8"/>
       </sidebyside>
     </figure> -->
-
     <definition xml:id="def-dblint">
       <statement>
         <p>
@@ -939,18 +797,17 @@
         </p>
       </statement>
     </definition>
-
+    <aside>
+      <p>
+        Some textbooks use the notation <m>\displaystyle{\int_R f(x,y) \, dA}</m> for a double integral. You will see this in some of the WeBWorK problems. 
+      </p>
+    </aside>
     <p>
-    Some textbooks use the notation <m>\displaystyle{\int_R f(x,y) \, dA}</m> for a double integral. You will see this in some of the WeBWorK problems. 
-    </p>
-    <p>
-      Before we move on to the interpretations of double integrals, we will talk about a couple of simplifying ideas used in our developement of the double integral that are not strictly necessary. Many times we will use equally sized subintervals or pieces of our region of integration but that is not strictly necessary. The most general form of a double integral would just require that as we take the limit, the size of <em>every</em> smaller piece must go to zero. In <xref ref="A_11_1_1"/>, we used the upper right point of each smaller rectangle to evaluate <m>f</m> and in <xref ref="def-dblint" /> there is not a particular point in each smaller rectangle used. Remember that if the size of all the smaller rectangles are going to zero then there will be smaller and smaller differences between the output of <m>f</m> on the points in the smaller rectangle.
+      Before we move on to the interpretations of double integrals, we will talk about a couple of simplifying ideas used in our development of the double integral that are not strictly necessary. Many times we will use equally sized subintervals or pieces of our region of integration but that is not strictly necessary. The most general form of a double integral would just require that as we take the limit, the area of <em>every</em> smaller piece must go to zero. In <xref ref="A_11_1_1"/>, we used the upper right point of each smaller rectangle to evaluate <m>f</m> but in <xref ref="def-dblint" /> there is not a particular point in each smaller rectangle used. Remember that as the area of <em>all</em> the smaller rectangles is going to zero, there will be smaller and smaller differences between the output of <m>f</m> on the points in the smaller rectangle.
     </p>
   </subsection>
-
-
-  <subsection>
-    <title>Interpretation of Double Riemann Sums and Double integrals.</title>
+  <subsection xml:id="interpret-dblint">
+    <title>Interpretation of Double Riemann Sums and Double integrals</title>
     <p>
       At the moment, there are three ways we can interpret the value of the double integral, where each of these corresponds to the same three interpretations of integrals from single variable calculus: the area under the curve, the average value of the function, and the accumulation of some density function.
       <ul>
@@ -963,16 +820,15 @@
             can then be interpreted as a sum of <q>signed</q> volumes of boxes, with a negative sign attached to those boxes whose heights are below the <m>xy</m>-plane.
           </p>
           <figure xml:id="F_11_1_signed">
-            <caption> </caption>
+            <caption>A plot of the surface <m>z=f(x,y)</m> over the rectangular region <m>R</m> </caption>
               <interactive title="interactive-F_11_1_signed" platform="sage" width="100%" aspect="1:1">
                 <slate surface="sage">
                   var('t,s,x,y,z')
                   from sage.plot.plot3d.plot3d import axes
-                  scale=1.5
+                  scale=2
                   plot7=axes(scale,1,color="black",frame=False,aspect_ratio=1,opacity=0.35)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
                   f(x,y)=(x-0.5)*(y-0.5)
                   x1=-1;x2=1; y1=-1;y2=1;
-                  tc="black";sc="orange";bc="red"
                   param(s,t)=(s,t,f(s,t))
                   #set up grid      n is number of steps in s    m is number of steps in t  
                   #a1 is min s    a2 is max s   b1 is min t    b2 is max t
@@ -980,20 +836,21 @@
                   #c1 is surface color     o1 is surface opacity
                   #c2 and o2 are for constant t value traces
                   #c3 and o3 are for constant s value traces
-                  c1="blue"; c2="black"; c3="black"; o1=0.5; o2=0.5; o3=0.5;
+                  c1="lightblue"; c2="black"; c3="black"; o1=1; o2=0.7; o3=0.7;
+                  plot7+=line([(x1,y1,0),(x2,y1,0),(x2,y2,0),(x1,y2,0),(x1,y1,0)],thickness=3,color="black",opacity=0.75)+text3d("R",(1.25,1.25,0),color="black",fontsize=25)
                   plot7+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
                   for i in range(n+1):
-                    sv=a1+i/n*(a2-a1)
-                    plot7+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
+                      sv=a1+i/n*(a2-a1)
+                      plot7+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c2,opacity=o2)
                   for i in range(m+1):
-                    tv=b1+i/m*(b2-b1)
-                    plot7+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+                      tv=b1+i/m*(b2-b1)
+                      plot7+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
                   for i in range(-4,5):
-                    val=i*3/8;
-                    plot7+=parametric_plot3d((s,val,0),(s,-1.5,1.5),color="gray",opacity=.6)
-                    plot7+=parametric_plot3d((val,s,0),(s,-1.5,1.5),color="gray",opacity=.6)
-                  plot7+=parametric_plot3d((s,t,0),(s,-1.5,1.5),(t,-1.5,1.5),color="gray",opacity=0.2)
-                  show(plot7,viewpoint=[[-0.4427,-0.4917,-0.7498],111.96],camera_position=[6.088,1.5166,2.6543])   
+                      val=i*3/8;
+                      plot7+=parametric_plot3d((s,val,0),(s,-1.5,1.5),color="gray",opacity=.6)
+                      plot7+=parametric_plot3d((val,s,0),(s,-1.5,1.5),color="gray",opacity=.6)
+                  plot7+=parametric_plot3d((s,t,0),(s,-1.5,1.5),(t,-1.5,1.5),color="gray",opacity=0.1)
+                  show(plot7,viewpoint=[[-0.4104,-0.5179,-0.7505],118.51],camera_position=[7.1519,2.061,3.4685])  
                 </slate>
               </interactive>
           </figure>
@@ -1008,13 +865,16 @@
             We can then realize the double integral <m>\iint_R f(x,y) \, dA</m> as a difference in volumes<idx><h>double integral</h><h>difference in volumes</h></idx>: <m>\iint_R f(x,y) \, dA</m> tells us the volume of the solids the graph of <m>f</m> bounds above the <m>xy</m>-plane over the rectangle <m>R</m> minus the volume of the solids the graph of <m>f</m> bounds below the <m>xy</m>-plane under the rectangle <m>R</m>.  This is shown in <xref ref="F_11_1_signed2">Figure</xref>.
           </p>
           <figure xml:id="F_11_1_signed2">
-          <caption> </caption>
+          <caption>A plot of the signed volume with the volume above the <m>xy</m>-plane shown in blue and the volume below the <m>xy</m>-plane shown in red</caption>
             <interactive title="interactive-F_11_1_signed2" platform="sage" width="100%" aspect="1:1">
               <slate surface="sage">
                 <xi:include href="interacts/signedvol.txt" parse="text" />
               </slate>
             </interactive>
         </figure>
+        <p>
+          The double integral of <m>f</m> over the rectangle <m>R</m> will be positive because there is more blue volume (volume above the <m>xy</m>-plane) than red volume (volume below the <m>xy</m>-plane, which is counted as negative.)
+        </p>
         </li>
         
         <li>
@@ -1042,7 +902,10 @@
         </li>
         <li>
           <p>
-            If the function being integrated is a density function, then integral measures how much of the thing being measured is in the region of integration. You can see a single variable calculus explaination of this in <xref ref="accumulation"/>. For example, if our function measures the density of some mineral on some plot of land, then the double integral of this function will measure the total amount of that mineral on the plot of land. The function (<m>f(x,y)</m>) will have units of mass (of the minearl) per unit area and the Riemann sum
+            If the function being integrated is a density function, then integral measures how much of the thing being measured is in the region of integration. You can see a single variable calculus explanation of this in <xref ref="accumulation"/> and this will be explored in a multivariable setting in <xref ref="S-11-4-Double-Integrals-Applications"/> and later applications.
+          </p>
+          <p>  
+            For example, if our function measures the density of some material on some plot of land, then the double integral of this function will measure the total amount of that material on the plot of land. The function (<m>f(x,y)</m>) will have units of mass (of the material) per unit area and the Riemann sum
             <me> \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \Delta A </me>
             will have units of mass. This idea is used for the laminar masses given in <xref ref="S-11-4-Double-Integrals-Applications"/> and applies to many other settings including electric charge (which has the possibility of negative values for both the density and total amount).
           </p>
@@ -1156,7 +1019,7 @@
           <title>Table of values of <m>f(x,y) =  \sqrt{4-y^2}</m>.</title>
           <tabular halign="center" >
             <row bottom="medium">
-              <cell right="medium"><m> x \\ y</m> </cell>
+              <cell right="medium"><m> x \downarrow \backslash \, y \rightarrow</m> </cell>
               <cell><m>-2</m></cell>
               <cell><m>-1</m></cell>
               <cell><m>0</m></cell>
@@ -1236,7 +1099,7 @@
                 #c1 is surface color     o1 is surface opacity
                 #c2 and o2 are for constant t value traces
                 #c3 and o3 are for constant s value traces
-                c1="blue"; c2="black"; c3="black"; o1=0.6; o2=0.5; o3=0.5;
+                c1="lightblue"; c2="black"; c3="black"; o1=0.8; o2=0.5; o3=0.5;
                 plot9=polygon([(x1,y1,0),(x2,y1,0),(x2,y2,0),(x1,y2,0),(x1,y1,0)],thickness=3,color="gray",opacity=0.2)
                 plot9+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
                 for i in range(n+1):

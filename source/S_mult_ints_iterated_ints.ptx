@@ -38,23 +38,17 @@
     <p>
       The viewpoint of an iterated integral is closely connected to an important idea from single-variable calculus. When we studied solids of revolution, such as the one shown in <xref ref="F_6_2_Ex1">Figure</xref>, we saw that in some circumstances we could slice the solid perpendicular to an axis and approximate the volume using circular disks. From there, we were able to find the volume of each disk, and then use an integral to add the volumes of the slices to find the total volume of the rotated solid. 
     </p>
-    <p>  
-      We will look at an example of this approach in the following Preview Activity, we will look at how use single variable integrals along traces in a similar way to the rotation volume described above. We will generalize this approach in this section for double integrals over rectangular regions. In <xref ref="S-11-3-Double-Integrals-General"/>, we will look at using this technique on non-rectangular regions. 
-    </p>
-
-    <!-- <figure xml:id="F_6_2_Ex1">
-      <caption>A solid of revolution.</caption>
-      <image width="50%" source="images/fig_11_2_volume_revolve"/>
-    </figure> -->
     <figure xml:id="F_6_2_Ex1">
-      <caption> </caption>
+      <caption>A plot of a volume of revolution with circular disk used in estimating the enclosed volume</caption>
         <interactive title="interactive-F_6_2_Ex1" platform="sage" width="100%" aspect="1:1">
           <slate surface="sage">
             <xi:include href="interacts/surfrot.txt" parse="text" />     
           </slate>
         </interactive>
     </figure>
-
+    <p>  
+      We will look at an example of this approach in the following Preview Activity, we will look at how use single variable integrals along traces in a similar way to the rotation volume described above. We will generalize this approach in this section for double integrals over rectangular regions. In <xref ref="S-11-3-Double-Integrals-General"/>, we will look at using this technique on non-rectangular regions of integration. 
+    </p>
     <exploration xml:id="PA_11_2">
       <introduction>
         <p>
@@ -95,7 +89,7 @@
             Explain the geometric meaning of the value of <m>A(x)</m> relative to the surface defined by <m>f</m> in the context of the trace determined by the fixed value of <m>x</m>. Your explanation should refer to different parts of <xref ref="surftrace"/>
           </p> 
           <figure xml:id="surftrace">
-            <caption> </caption>
+            <caption>A plot of the surface <m>z= 25-x^2-y^2</m> with a cross section shown at <m>x=a</m></caption>
               <interactive title="interactive-surftrace" platform="sage" width="100%" aspect="1:1">
                 <slate surface="sage">
                   var('s,t,x,y,z')
@@ -108,7 +102,7 @@
                   #c1 is surface color     o1 is surface opacity
                   #c2 and o2 are for constant t value traces
                   #c3 and o3 are for constant s value traces
-                  c1="lightblue"; c2="black"; c3="black"; o1=0.2; o2=0.3; o3=0.3;
+                  c1="lightblue"; c2="black"; c3="black"; o1=0.5; o2=0.3; o3=0.3;
                   plot1=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1)
                   for i in range(n+1):
                     sv=a1+i/n*(a2-a1)
@@ -118,7 +112,8 @@
                     plot1+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
                   a=0.75;
                   plot1+=parametric_plot3d((a,t,s*f(a,t)),(t,b1,b2),(s,0,1),color="blue",opacity=0.6)
-                  show(plot1,viewpoint=[[-0.2251,-0.5901,-0.7753],147.05],camera_position=[7.5902,13.4964,5.4958],aspect_ratio=(1,1,.2))
+                  plot1+=text3d("x=a",(a,y1,20),color="blue",fontsize=25)
+                  show(plot1,viewpoint=[[-0.2151,-0.5915,-0.7771],148.44],camera_position=[9.0426,10.7901,6.3889],aspect_ratio=(1,1,.2))
                 </slate>
               </interactive>
           </figure>
@@ -137,7 +132,7 @@
       <task>
         <statement>
           <p>
-            For a fixed value of <m>x</m>, say <m>x_i^*</m>, write a few sentences to explain the geometric meaning of <m>A(x_i^*) \ \Delta x</m>. Your explanation of <m>A(x_i^*) \Delta x</m> should refer to the parts of  <xref ref="F_11_2_Cross_section_PA_y">Figure</xref>.)
+            For a fixed value of <m>x</m>, say <m>x_i^*</m>, write a few sentences to explain the geometric meaning of <m>A(x_i^*) \ \Delta x</m>. Your explanation of <m>A(x_i^*) \Delta x</m> should refer to the parts of  <xref ref="F_11_2_Cross_section_PA_y">Figure</xref>.
           </p>
           <figure xml:id="F_11_2_Cross_section_PA_y">
             <caption> </caption>
@@ -270,15 +265,16 @@
     <p>
       As we let the number of subintervals in the <m>x</m> direction approach infinity, we can see that the Riemann sum <m>\sum_{i=1}^m A(x_i^*) \Delta x</m>
       approaches a limit and that limit is the sum of signed volumes bounded by the function <m>f</m> on <m>R</m>. Therefore, since <m>A(x)</m> is itself determined by an integral, we have
-      <me>
-        \iint_R f(x,y) \, dA = \lim_{m \to \infty} \sum_{i=1}^m A(x_i^*) \Delta x = \int_a^b A(x) \, dx = \int_a^b \left( \int_c^d f(x,y) \, dy \right) \, dx.
-      </me>
+      <md>
+        <mrow> \iint_R f(x,y) \, dA \amp= \lim_{m \to \infty} \sum_{i=1}^m A(x_i^*) \Delta x </mrow>
+        <mrow> \amp= \int_a^b A(x) \, dx = \int_a^b \left[ \int_c^d f(x,y) \, dy \right] \, dx. </mrow>
+      </md>
     </p>
 
     <p>
       Hence, we can compute the double integral of <m>f</m> over <m>R</m> by first integrating <m>f</m> with respect to <m>y</m> on <m>[c, d]</m>, then integrating the resulting function of <m>x</m> with respect to <m>x</m> on <m>[a, b]</m>. The nested integral
       <me>
-        \int_a^b \left( \int_c^d f(x,y) \, dy \right) \, dx = \int_a^b \int_c^d f(x,y) \, dy \, dx
+        \int_a^b \left[ \int_c^d f(x,y) \, dy \right] \, dx = \int_a^b \int_c^d f(x,y) \, dy \, dx
       </me>
       is called an <em>iterated integral</em>, and we see that each double integral may be represented by two single integrals.
     </p>
@@ -333,7 +329,7 @@
       </p>
     </assemblage>
     <p>
-      Fubini's theorem enables us to evaluate iterated integrals without resorting to the limit definition. Instead, working with one integral at a time, we can use the Fundamental Theorem of Calculus from single-variable calculus to find the exact value of each integral, starting with the inner integral.
+      Fubini's theorem enables us to evaluate double integrals by using iterated integrals instead of resorting to the limit definition. Working with one integral at a time, we can use the Fundamental Theorem of Calculus from single-variable calculus to find the exact value of each integral, starting with the inner integral.
     </p>
     <aside>
       <p>
@@ -403,7 +399,7 @@
       <task>
         <statement>
           <p>
-            What is the value of <m>\iint_R f(x,y) \, dA</m>? What are three different ways we may interpret the meaning of this value?
+            What is the value of <m>\displaystyle{\iint_R f(x,y) \, dA}</m>? Write a sentence to interpret the meaning of this value for two out of the three different ways mentioned in <xref ref="interpret-dblint"/>.
           </p>
         </statement>
         <answer>
@@ -436,7 +432,7 @@
       <task>
         <statement>
           <p>
-            Evaluate <m>\iint_R f(x,y) \, dA</m> using an iterated integral.  Choose an order for integration by deciding whether you want to integrate first with respect to <m>x</m> or <m>y</m>.
+            Evaluate <m>\displaystyle{\iint_R f(x,y) \, dA}</m> using an iterated integral.  Choose an order for integration by deciding whether you want to integrate first with respect to <m>x</m> or <m>y</m>.
           </p>
         </statement>
         <answer>
@@ -460,7 +456,7 @@
       <task>
         <statement>
           <p>
-            Evaluate <m>\iint_R f(x,y) \, dA</m> using the iterated integral whose order of integration is the opposite of the order you chose in (a).
+            Evaluate <m>\displaystyle{\iint_R f(x,y) \, dA}</m> using the iterated integral whose order of integration is the opposite of the order you chose in (a).
           </p>
         </statement>
         <answer>
@@ -492,12 +488,12 @@
           <ul>
             <li>
               <p>
-                <m>\int_a^b \left( \int_c^d f(x,y) \, dy \right) \, dx</m>, or
+                <m>\displaystyle{\int_a^b \left[ \int_c^d f(x,y) \, dy \right] \, dx}</m>, or
               </p>
             </li>
             <li>
               <p>
-                <m>\int_c^d \left( \int_a^b f(x,y) \, dx \right) \, dy</m>.
+                <m>\displaystyle{\int_c^d \left[ \int_a^b f(x,y) \, dx \right] \, dy}</m>.
               </p>
             </li>
           </ul>
