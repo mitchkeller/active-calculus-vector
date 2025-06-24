@@ -13,12 +13,12 @@
 //
 ///////////////////////////////////////////////////////////////
 {
-  "image": "oscarlevin/pretext:full",
+  "image": "oscarlevin/pretext:latest",
   "features": {},
 
   // Comment or uncomment lines below if you don't or do need that feature.
   "postCreateCommand": {
-    "install TikZ hobby package": "tlmgr install hobby",
+    //"install TikZ hobby package": "tlmgr install hobby",
     "mark repo as safe": "git config --global --add safe.directory $(pwd)"
     },
 
