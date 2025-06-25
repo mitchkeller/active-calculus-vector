@@ -563,7 +563,10 @@
     </figure> -->
     <p>
       If <m>\vr(t)</m> determines the <term>position</term> of an object at time <m>t</m>, then <m>\frac{\vr(t+h)-\vr(t)}{h}</m>
-      represents the average rate of change in the position of the object over the interval <m>[t,t+h]</m>. We also call this the <term>average velocity</term> of the object on the interval<m>[t,t+h]</m>. It may feel a bit surprising to think of a rate of change as a vector quantity. However, describing how the vector quantity position changes with respect to time requires knowing both about the direction in which position changes and the magnitude of that change. The derivative
+      represents the average rate of change in the position of the object over the interval <m>[t,t+h]</m>. We also call this the <term>average velocity</term> of the object on the interval<m>[t,t+h]</m>. It may feel a bit surprising to think of a rate of change as a vector quantity. However, describing how the vector quantity position changes with respect to time requires knowing both about the direction in which position changes and the magnitude of that change. Furthermore, when computing the difference quotient, the vector subtraction in the numerator is done componentwise. The factor of <m>1/h</m> is also multiplied into each component, so we can view the difference quotient's components as each being the average rate of change for that particular component.
+    </p>
+    <p>
+      The derivative
       <me>
         \vr\, '(t) = \lim_{h \to 0} \frac{\vr(t+h)-\vr(t)}{h}
       </me>
@@ -659,7 +662,7 @@
   <activity xml:id="act-vvf-calculus-diff">
     <introduction> 
       <p>
-        For each of the following vector-valued functions, state any values of <m>a</m> for which <m>\displaystyle\lim_{t\to a}\vr\(t)</m> will <em>not</em> exist and find <m>\vr\, '(t)</m>.
+        For each of the following vector-valued functions, state any values of <m>a</m> for which <m>\displaystyle\lim_{t\to a}\vr(t)</m> will <em>not</em> exist and find <m>\vr\, '(t)</m>.
       </p>
     </introduction>
     <task>
