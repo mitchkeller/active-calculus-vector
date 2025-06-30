@@ -13,6 +13,13 @@
       <output-dir>output/html</output-dir>
       <xsl>xsl/acmv-html.xsl</xsl>
     </target>
+    <target name="html-instructor">
+      <format>html</format>
+      <source>source/acmv-index.ptx</source>
+      <publication>publication/publication-instructor.ptx</publication>
+      <output-dir>output/html-instructor</output-dir>
+      <xsl>xsl/acmv-html.xsl</xsl>
+    </target>
     <target name="html-hosted">
       <format>html</format>
       <source>source/acmv-index.ptx</source>
