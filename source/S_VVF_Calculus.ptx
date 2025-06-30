@@ -43,8 +43,8 @@
           </li>
         </ul>
     </objectives>
-
-    <introduction>
+  <subsection>
+    <title>Introduction</title>
     <!-- <p>
       A vector-valued function <m>\vr</m> determines a curve in space as the
       collection of terminal points of the vectors <m>\vr(t)</m>. If the curve is
@@ -408,7 +408,7 @@
         \lim_{t\rightarrow a} \langle f(t),g(t),h(t) \rangle = \left\langle \lim_{t\rightarrow a} f(t) , \lim_{t\rightarrow a} g(t) , \lim_{t\rightarrow a} h(t) \right\rangle
       </me>
     </p>
-  </introduction>
+  </subsection>
 
 
   <subsection xml:id="vvf-derivative">

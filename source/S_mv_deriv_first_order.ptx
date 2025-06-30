@@ -43,7 +43,8 @@
         </li>
       </ul> -->
   </objectives>
-  <introduction>
+  <subsection>
+    <title>Introduction</title>
   <p>
     The derivative plays a central role in single variable calculus because it provides important information about a function in terms of each of the representations of the function. Thinking graphically, the derivative at a point tells us the slope of the line tangent to the graph at the given point. Numerically, the derivative at a point also provides the instantaneous rate of change of the function with respect to a change in the independent variable. Algebraically, we can calculate the derivative as a function of the same input variable, which is useful as a tool to examine where the function is increasing or decreasing, as well as the concavity of the function's graph. 
   </p>
@@ -201,7 +202,7 @@
       </solution>
     </task>
     </exploration>
-  </introduction>
+  </subsection>
 
   <subsection>
     <title>First-Order Partial Derivatives</title>

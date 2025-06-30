@@ -32,8 +32,8 @@
 
         </ul>
     </objectives>
-
-  <introduction>
+<subsection>
+  <title>Introduction</title>
     <p>
       In single variable calculus, we learn that a differentiable function is <em>locally linear</em>. <idx><h>locally linear</h></idx> In other words, if we zoom in on the graph of a differentiable function around a point, the graph will look like the tangent line to the function at that point. In <xref ref="LLline" /> you can look at the graph of a curve and zoom in around a point on that curve to see that eventually the graph of the function will look linear. You can use the sliders at the top of change how zoomed in the plot is displayed or change the location on the curve that you are examining. You should visually verify at a several points that this function is differentiable because at any point shown, the graph is locally linear.
     </p>
@@ -222,7 +222,7 @@
         </solution>
       </task> -->
      </exploration>
-  </introduction>
+  </subsection>
 
   <subsection>
     <title>Lines in Space</title>

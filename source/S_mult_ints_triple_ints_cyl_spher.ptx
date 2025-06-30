@@ -43,8 +43,8 @@
           </li>
         </ul>
     </objectives>
-
-    <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       In <xref ref="S-11-5-Double-Integrals-Polar"/>, we saw how advantageous it could be to use polar coordinates to write iterated integrals when trying to evaluate a double integral. In particular, we saw that double integrals with integrands and regions of integration that are simple to write in polar coordinates are the most convenient to convert, as well as how the area element would be equal to <m>dA = r dr \, d\theta</m> when using polar coordinates.
     </p>
@@ -127,7 +127,7 @@
       </ol>
       to cylindrical and spherical coordinates.
     </p>
-  </introduction>
+  </subsection>
   <subsection>
     <title>Triple Integrals in Cylindrical Coordinates</title>
     <p>

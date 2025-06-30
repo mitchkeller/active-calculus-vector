@@ -24,7 +24,8 @@
         </li>
       </ul>
   </objectives>
-  <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       Position is the central measurement of kinematics, the study of motion. Velocity and acceleration are the first and second derivatives of position, respectively and often serve as vital properties in the study of physics and mechanics. To better understand velocity as a vector-valued function of time, we examined how the magnitude and direction of position change separately. In particular, we separated velocity into its critical parts, namely speed (magnitude of velocity) and unit tangent vector (direction of travel). Speed is a scalar measurement for how fast the position of an object is changing as a function of time and <m>\vT</m> is a unit vector that measures in what direction position is changing.
     </p>
@@ -168,7 +169,7 @@
   <p>
     The preview activity shows how you can graphically separate the acceleration vector into parts in the direction of travel and direction of turning. In this section, we will look at how to calculate these separate parts algebraically, understand what is being measured by these quantities, and show how these tools will give us important physical measurements as well as an efficient tool for calculating <m>\vN</m>, the unit normal vector to a curve.
   </p>
-</introduction>
+</subsection>
 <subsection>
   <title>Splitting Acceleration</title>
   <p>

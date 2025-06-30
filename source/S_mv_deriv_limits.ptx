@@ -34,7 +34,8 @@
         </li>
       </ul>
   </objectives>
-  <introduction>
+  <subsection>
+    <title>Introduction</title>
   <p>
     In this section, we want to study limits of functions of several variables and will primarily look at limits of functions of two variables. In single variable calculus, we studied the idea of a limit, which turned out to be a critical concept which served as the critical third step in the classic calculus approach 
     <fn>Remember the steps to the classic calculus approach: 1) approximate the measurement, 2) quantify how the approximation changes on a finer scale, and 3) use a limit to show how the approximation converges to the measurement of interest </fn>
@@ -665,8 +666,7 @@
   <p>
     In <xref ref="PA_10_1">Preview Activity</xref>, we used the notion of limit from single variable calculus and saw several different outcomes for limits in terms of tables and graphs. Specifically, the limit <m>\displaystyle{\lim_{x \rightarrow a} f(x)}</m> (if it exists) will be the value that the output of <m>f</m> approaches as the inputs (<m>x</m>-values) get closer to <m>a</m>. We must look at whether the output of <m>f</m> approaches the same value for as the input values approach <m>x=a</m> from different directions. Tables of values for the function can give evidence that a limit will either exist or not but will not have enough evidence to show a limit exists. Similarly, we can use graphs to visually represent the behavior of the output values as we approach a particular input from different directions.
   </p>
-</introduction>
-
+</subsection>
 <subsection>
   <title>Limits of Functions of Two Variables</title>
   <p>

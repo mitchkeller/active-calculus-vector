@@ -30,7 +30,8 @@
     </li>
   </ul>
 </objectives>
-<introduction>
+<subsection>
+  <title>Introduction</title>
 <p>
   In the previous sections, we have introduced the notation and graphs for vector-valued functions, as well as how the calculus operations of limits, derivatives, and integrals will apply to these functions. In this section, we will start utilizing these calculus elements alongside our vector tools (like magnitude, direction, or projection) to measure and efficiently calculate important properties of our curve and how motion can occur along the curve. The first property we will investigate comes up very naturally when looking at curves in space: <q>What is the length of a given curve in space?</q> Remember that <xref ref="Distance-formula" text="custom"> the distance between two points in space</xref> is given by 
   <me>
@@ -90,7 +91,7 @@
 <p>
   The last task is an example of algorithmic thinking, a vital skill in mathematical, scientific, and engineering fields. Algorithmic thinking involves breaking larger problems into different tasks where a precise set of rules or operations can be stated for each task. We have referred to our classic calculus approach in a few scenarios (and will again this section), but we take a moment here to mention how the classic calculus approach has the structure of this algorithmic thinking. Specifically, the tasks for our classic calculus approach can be summarized as as 1) approximate our measurement, 2) quantify how the approximation changes with a finer scale or refinement, 3) apply a limit to describe how our approximation converges to the measurement of interest. Each of these steps requires precise statements into how the approximation is made and changes when looking at a finer scale. The details of how each of these tasks is done will change depending on the measurement, which is why so much time will be spent talking about tasks 1 and 2 when introducing new concepts. 
 </p>
-</introduction>
+</subsection>
 <subsection>
   <title>Arc Length</title>
   <p>

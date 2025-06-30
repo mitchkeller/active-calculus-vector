@@ -30,8 +30,8 @@
         </li>
       </ul>
   </objectives>
-
-  <introduction>
+<subsection>
+  <title>Introduction</title>
     <p>
       In <xref ref="S-VVF-TNB" />, we defined <m>\vT</m> and <m>\vN</m> to measure the direction of travel and the direction of turning for an oriented curve in space. Both <m>\vT</m> and <m>\vN</m> are unit vectors that are used to capture <q>direction</q> aspects of motion. In the next couple of sections, we will look at a few different ways to measure the magnitude of various aspects of our motion and turning on a curve in space. 
     </p>
@@ -118,7 +118,7 @@
     <p>
       Our preview activity showed how looking at the change in <m>\vT</m>, the direction of travel, for small steps (in terms of arclength) along our curve will allow us to measure the rate at which a curve is turning. Note that this will be different than measuring how quickly an object traveling along the path needs to turn in order to stay on the path. The arguments in the preview activity do not depend on how an object is traveling along the path, only on the path itself.
     </p>
-  </introduction>
+  </subsection>
   <subsection>
     <title>Curvature</title>
     <p>

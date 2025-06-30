@@ -29,7 +29,8 @@
         </li>
       </ul>
     </objectives>
-  <introduction>
+  <subsection>
+    <title>Introduction</title>
   <p>
     In <xref ref="S_Vector_IdeaLineIntegral" />, the idea of a line integral was introduced by looking at the work done by a vector field when traveling along <m>C</m>, a path in space. In particular, the line integral measured the accumulated amount of the vector field that is along the path <m>C</m> (in the direction of travel.) <xref ref="def_Vector_IdeaLineIntegral_LineIntegral" /> shows how to use a Riemann sum to measure the accumulation of the vector field in the direction of travel along the given curve. Additionally, <xref ref="thm_LineIntParam" /> shows how the line integral <m>\int_C \vF\cdot d\vr </m> can be efficently calculated in terms of the vector field and the derivative of <em>any</em> paramaterization of <m>C</m>. Philosophically, the Riemann sum in <xref ref="def_Vector_IdeaLineIntegral_LineIntegral" /> is adding up the scalar function given by the dot product of the vector field and the unit vector in the direction of travel (along the curve).
   </p>
@@ -143,7 +144,7 @@
         </solution>
     </task>
   </exploration>
-</introduction>
+</subsection>
 <subsection>
   <title>Defining line integrals of scalar functions</title>
 <p>

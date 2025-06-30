@@ -34,7 +34,8 @@
     </li>
   </ul>
 </objectives>
-<introduction>
+<subsection>
+  <title>Introduction</title>
   <p>
     In <xref ref="S_Vector_Div"/>, we examined how the strength of a
     vector field in two (or more) dimensions changed in different
@@ -239,7 +240,7 @@
       </solution>
     </task>
   </exploration>
-</introduction>
+</subsection>
 <subsection xml:id="SS_Vector_Curl_Development">
   <title>Measuring the Circulation Density of Vector Field in <m>\R^2</m></title>
   <p>

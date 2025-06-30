@@ -31,8 +31,8 @@
           </li>
         </ul>
     </objectives>
-
-    <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       In single-variable calculus, we encountered situations in which some quantity was related through a composition of related quantities. For instance, let <m>P</m> be the price of a product and <m>P</m> depends on <m>x</m>, the wages of people making the product. The wages of people making the product will also change over time, denoted <m>t</m>, because of seasonal availability and other factors. So a change in the value of <m>t</m> will produce a change in the value of <m>x</m>, which will produce a change in the value of <m>P</m>. This means that we can write <m>P</m> as a function of <m>x</m> and <m>x</m> as a function of <m>t</m>, thus we can express <m>P</m>'s dependence on <m>t</m> by a composition of functions:
     </p> 
@@ -312,7 +312,7 @@
       </solution>
   
     </exploration> -->
-  </introduction>
+  </subsection>
   <subsection>
     <title>The Chain Rule</title>
     <p>

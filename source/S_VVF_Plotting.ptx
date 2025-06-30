@@ -31,7 +31,8 @@
           </li>
         </ul>
     </objectives>
-  <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       In our previous work, we have seen several examples of curves in space, such as lines in three dimensions and conic sections (in two dimensions). <xref ref="Lines-vector-form" text="custom">For a line through a fixed point <m>\vr_0</m> in the direction of vector <m>\vv</m></xref>, we can express the line parametrically through the single vector equation
       <me>
@@ -187,7 +188,7 @@
     <p>
       In the preview activity, we saw how location data for how an object is moving along a curve can be given by vectors with a common initial point. In this section, we will continue to look at the implications of using this as an algebraic description of movement along a curve. In particular, we will look at what algebraic rules and definitions for functions using the output vectors as points and we will conclude this section by generating several families of examples.
     </p>
-  </introduction>
+  </subsection>
   <subsection>
     <title>Vector-Valued Functions</title>
     <p>

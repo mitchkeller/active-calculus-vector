@@ -34,7 +34,8 @@
       </li>
     </ul>
   </objectives>
-  <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       In <xref ref="S-VVF-Plotting" />, we saw how a vector-valued function of one variable will graphically correspond to a curve in space. While the application of derivatives, integrals, and limits apply to these functions componentwise, we will need to apply our calculus and vector tools <em>together</em> to measure  important properties of these curves. Conceptually, you should think about the parameterization of the curve in space as a description on how to travel through those points in space. Remember that parameterizations are not unique; There is more than one way to walk the same path.
     </p>
@@ -97,7 +98,7 @@
     <p>
       <xref ref="PA-Bike"/> highlights the intuitive nature of measuring the direction of travel and the direction of turning given a plot of a curve in space. We will now look at how to use location information in the form of a parameterization of a curve to precisely measure the direction of travel and the direction of turning at a particular point on the curve. 
     </p>
-  </introduction>
+  </subsection>
 
   <subsection xml:id="subsec-T">
     <title>Direction of travel</title>

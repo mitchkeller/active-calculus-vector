@@ -36,8 +36,8 @@
           </li>
         </ul>
     </objectives>
-
-  <introduction>
+<subsection>
+  <title>Introduction</title>
     <p>
       The last two sections have introduced some basic algebraic operations and useful geometric interpretations for vector addition, scalar multiplication, and the dot product. In this section, we will define and explore the <term>cross product</term>, another algebraic operation which measures useful geometric information related to pairs of vectors in <m>\R^3</m>.
     </p>
@@ -159,7 +159,7 @@
         </solution>
       </task>
     </exploration>
-  </introduction>
+  </subsection>
   <subsection> 
     <title>Computing the cross product</title>
     <p>
