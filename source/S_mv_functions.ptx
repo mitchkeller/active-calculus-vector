@@ -37,10 +37,10 @@
           </li>
         </ul>
     </objectives>
-
-    <introduction> 
+  <subsection>
+    <title>Introduction</title> 
     <p>
-      For much of your study of algebra, precalculus, and calculus you have been focused on working with functions that have a scalar input and a scalar output, like <m>y=f(x)</m>. In <xref ref="C_VVF"/>, we used vector valued functions of one variable as our first case of multivariable functions. Vector valued functions of one variable have a single scalar input and an output corresponding to multiple variables that we either organized as a vector output, <m>\vr(t)=\langle x(t),y(t),z(t) \rangle</m> or as parametric functions (<m>x(t)</m>, <m>y(t)</m>, and <m>z(t)</m>) . Our work in <xref ref="C_VVF" /> was very focused on paths in space and the motion of an object on these paths. This narrow focus was because we had just one direction to move (while staying on the path). We worked with vector valued functions of one variable as our first new class of functions because the calculus of these object was relatively easy. We applied limits, derivatives, and integrals to these functions componentwise, but we saw how useful a combination of vector tools and calculus measurements was for describing many features of vector valued functions of one variable and their graphs as paths in space. 
+      For much of your study of algebra, precalculus, and calculus you have been focused on working with functions that have a scalar input and a scalar output, like <m>y=f(x)</m>. In <xref ref="C_VVF"/>, we used vector-valued functions of one variable as our first case of multivariable functions. Vector valued functions of one variable have a single scalar input and an output corresponding to multiple variables that we either organized as a vector output, <m>\vr(t)=\langle x(t),y(t),z(t) \rangle</m> or as parametric functions (<m>x(t)</m>, <m>y(t)</m>, and <m>z(t)</m>) . Our work in <xref ref="C_VVF" /> was very focused on paths in space and the motion of an object on these paths. This narrow focus was because we had just one direction to move (while staying on the path). We worked with vector-valued functions of one variable as our first new class of functions because the calculus of these object was relatively easy. We applied limits, derivatives, and integrals to these functions componentwise, but we saw how useful a combination of vector tools and calculus measurements was for describing many features of vector-valued functions of one variable and their graphs as paths in space. 
     </p>
   
     <p>
@@ -269,7 +269,7 @@
         </solution>
       </task>
     </exploration>   
-   </introduction>
+   </subsection>
 
   <subsection>
     <title>Functions of Several Variables</title>

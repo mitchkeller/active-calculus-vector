@@ -34,7 +34,8 @@
     </li>-->
   </ul>
 </objectives>
-<introduction>
+<subsection>
+  <title>Introduction</title>
   <p>
     In <xref ref="S_Vector_Div"/> we examined vector fields to consider how the strength of a vector field changes in different regions. In particular, we developed the <xref ref="defn_Div" text="custom">divergence</xref> of a vector field as a local measurement (based on density) of how the strength of the vector field changes. In particular, we did this by looking at the flux of the vector field through a closed path in two dimensions and then generalized these ideas to higher dimensions.
   </p>
@@ -234,7 +235,7 @@
   <p>
     The preview activity showed how the flux through a closed surface can be subdivided into the flux through surfaces which combine to be the closed surface (with orientation switches corresponding to additive inverse). The net flux through the closed surface measures the net amount of the vector field that is created or destroyed on the interior of the closed surface.
   </p>
-</introduction>
+</subsection>
 <subsection xml:id="SS_Vector_DivThm_Verify">
   <title>The Divergence Theorem</title>
   <p>

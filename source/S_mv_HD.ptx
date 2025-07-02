@@ -29,7 +29,8 @@
       </li>
     </ul>
   </objectives>
-  <introduction> 
+  <subsection>
+    <title>Introduction</title> 
     <p>
       In this chapter, we have primarily worked with functions of two variables including understand graphs of the form <m>z=f(x,y)</m> and measuring change with two variable functions. In this section, we will look at how many of the tools we have developed for understanding two variable functions can be easily generalized for functions of three or more variables. We will not give new definitions for the various ideas in this section since the definitions would often be too technical and would not change how we use or understand these ideas.
     </p>
@@ -92,7 +93,7 @@
     <p>
       We will now generalize these ideas of level sets to start our exploration for functions of three or more variables. As we have for most kinds of functions in previous precalculus and calculus courses, we will look at the following ideas in order: domain and range of functions, graphs of functions, limits of functions, and finally, measuring change of function. 
     </p>
-  </introduction>
+  </subsection>
   <subsection>
     <title>Inputs and Outputs with Functions of Three or More Variables</title>
     <p>
@@ -181,7 +182,7 @@
         </interactive>
       </figure>
       <p>
-        <xref ref="plot4d"/> may look like a three dimensional plot, but we really have a four dimensional plot with the fourth dimensional axis given by the slider. We saw a similar case in <xref ref="vvf-example1"/> where the plot of <m>\vr(t)</m> was really a four dimensional idea (one dimension for the input changing with the <m>t</m>-axis for the slider and the three dimensional output of <m>\vr</m> is shown with the vector in standard position or a plot of the terminal point). With our vector valued functions of one variables, we simplified our four dimensional plot to include <em>all</em> of the 3D outputs but we often ignored plotting how those outputs depended on the value of the parameter <m>t</m>.
+        <xref ref="plot4d"/> may look like a three dimensional plot, but we really have a four dimensional plot with the fourth dimensional axis given by the slider. We saw a similar case in <xref ref="vvf-example1"/> where the plot of <m>\vr(t)</m> was really a four dimensional idea (one dimension for the input changing with the <m>t</m>-axis for the slider and the three dimensional output of <m>\vr</m> is shown with the vector in standard position or a plot of the terminal point). With our vector-valued functions of one variables, we simplified our four dimensional plot to include <em>all</em> of the 3D outputs but we often ignored plotting how those outputs depended on the value of the parameter <m>t</m>.
       </p>
     </example>
     <activity xml:id="level-grad">
@@ -322,7 +323,7 @@
       </statement>
       <proof>
         <p>
-          By <xref ref="Plane-scalar-equation"/> we need to find a normal vector for the plane and a point on the plane. The point <m>P_0=(x_0,y_0,z_0)</m> is the location where our tangent plane will intersect <m>S_1</m> so we only need to find a normal vector for our plane. By our interpretation of the gradient above, <m>\nabla F (P_0)= \langle \frac{\partial F}{\partial x}(P_0), \frac{\partial F}{\partial y}(P_0), \frac{\partial F}{\partial z}\rangle</m> will be perpendicular to the level surface <m>S_1</m>. Therefore, 
+          By <xref ref="Plane-scalar-equation" text="title"/> we need to find a normal vector for the plane and a point on the plane. The point <m>P_0=(x_0,y_0,z_0)</m> is the location where our tangent plane will intersect <m>S_1</m> so we only need to find a normal vector for our plane. By our interpretation of the gradient above, <m>\nabla F (P_0)= \langle \frac{\partial F}{\partial x}(P_0), \frac{\partial F}{\partial y}(P_0), \frac{\partial F}{\partial z}\rangle</m> will be perpendicular to the level surface <m>S_1</m>. Therefore, 
           <me>\frac{\partial F}{\partial x}(P_0) (x-x_0)+ \frac{\partial F}{\partial y}(P_0) (y-y_0) +\frac{\partial F}{\partial z}(P_0) (z-z_0)=0</me>
         </p>
       </proof>
@@ -547,7 +548,7 @@
       </li>
       <li>
         <p>
-          The partial derivatives for functions of functions three or more variables are calculated by measuring the rate of change in one input variable while holding all other inputs constant. The gradient of a function of three or more variables is a vector valued, multivariable function where each component is the first partial derivative of with respect to a different coordinate. If <m>g(x_1,x_2, \ldots,x_n)</m>, then the gradient of <m>g</m> has <m>n</m> components and is given by <m>\nabla g = \left\langle \frac{\partial g}{\partial x_1}, \frac{\partial g}{\partial x_2},\ldots,\frac{\partial g}{\partial x_m}\right\rangle</m>.
+          The partial derivatives for functions of functions three or more variables are calculated by measuring the rate of change in one input variable while holding all other inputs constant. The gradient of a function of three or more variables is a vector-valued, multivariable function where each component is the first partial derivative of with respect to a different coordinate. If <m>g(x_1,x_2, \ldots,x_n)</m>, then the gradient of <m>g</m> has <m>n</m> components and is given by <m>\nabla g = \left\langle \frac{\partial g}{\partial x_1}, \frac{\partial g}{\partial x_2},\ldots,\frac{\partial g}{\partial x_m}\right\rangle</m>.
         </p>
       </li>
 

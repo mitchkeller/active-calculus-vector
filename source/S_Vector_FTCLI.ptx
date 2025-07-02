@@ -35,7 +35,8 @@
     </li>
   </ul>
 </objectives>
-<introduction>
+<subsection>
+  <title>Introduction</title>
   <p>
     In <xref ref="act_Vector_ParamLineIntegrals_DifferentPaths"/>, <xref ref="ex_Vector_ParamLineIntegrals_ParamIndep"/>, and <xref ref="act_Vector_ParamLineIntegrals_ParamIndep"/>, we encountered situations where <m>C_1</m> and <m>C_2</m> are different oriented curves from a point <m>P</m> to a point <m>Q</m> and <m>\int_{C_1}\vF\cdot d\vr = \int_{C_2}\vF\cdot d\vr</m>. In this section, we explore vector fields which have the property that <em>for all</em> points <m>P</m> and <m>Q</m>, if <m>C_1</m> and <m>C_2</m> are oriented paths from <m>P</m> to <m>Q</m>, then <m>\int_{C_1}\vF\cdot d\vr = \int_{C_2}\vF\cdot d\vr</m>.
   </p>
@@ -81,7 +82,7 @@
 		</solution>
 	  </task>
 	</exploration>
-</introduction>
+</subsection>
 <subsection>
   <title>Path-Independent Vector Fields</title>
 <p>

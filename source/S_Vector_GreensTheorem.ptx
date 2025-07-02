@@ -31,7 +31,8 @@
 
     </ul>
   </objectives>
-  <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       We know from <xref ref="S_Vector_FTCLI"/> that a vector field is path-independent if and only if the circulation around every closed curve in its domain is <m>0</m>. It is probably not surprising that, given the multitude of names we have for path-independent vector fields, they are important vector fields that arise frequently. However, not every vector field is path-independent, and many times we will want to calculate the circulation around a closed curve in a vector field that is not path-independent. This section explores a connection between line integrals and double integrals that you may find surprising. It will be the first of three major theorems that connect types of integrals that seem very different on the surface.
     </p>
@@ -162,7 +163,7 @@
 <p>
 	A natural question after completing the Preview Activity is if there is something special about the vector field <m>\vF</m> or the curve <m>C</m> that led to the results you obtained, and investigating this will be our principal task in this section.
 </p>
-</introduction>
+</subsection>
 
 <subsection xml:id="SS_Vector_GreensTheorem_Circulation">
     <title>Circulation</title>

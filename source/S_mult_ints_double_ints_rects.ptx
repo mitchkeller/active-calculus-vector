@@ -36,8 +36,8 @@
           </li>
         </ul>
     </objectives>
-
-    <introduction>
+  <subsection>
+    <title>Introduction</title>
 
     <p>
       In single-variable calculus, recall that we used the classic calculus approach to define the definite integral as the area under a graph. Specifically, we approximated the area under the graph of a positive function <m>f</m> on an interval <m>[a,b]</m> by adding areas of rectangles whose heights are determined by the curve. We then broke the interval <m>[a,b]</m> into smaller subintervals, constructing rectangles on each of these smaller intervals to approximate the region under the curve on that subinterval, then summing the areas of these rectangles to approximate the area under the curve. We defined the definite integral of <m>f</m> using the limit of this Riemann sum as the size of all of the subintervals goes to zero.
@@ -339,7 +339,7 @@
     <p>
       In this section, we will use the classic calculus approach to define and understand the definite integral for a function of two variables over a rectangular region of inputs. Just as you did in single variable calculus, we will develop some algebraic rules to help efficiently evaluate these integrals. Later in this chapter we will will generalize to regions that are not rectangular and work with functions of three or more variables. 
     </p>
-  </introduction>
+  </subsection>
 
   <subsection>
     <title>Double Riemann Sums over Rectangles</title>
@@ -902,7 +902,7 @@
         </li>
         <li>
           <p>
-            If the function being integrated is a density function, then integral measures how much of the thing being measured is in the region of integration. You can see a single variable calculus explanation of this in <xref ref="accumulation"/> and this will be explored in a multivariable setting in <xref ref="S-11-4-Double-Integrals-Applications"/> and later applications.
+            If the function being integrated is a density function, then integral measures how much of the thing being measured is in the region of integration. You can see a single variable calculus explanation of this in <xref ref="accumulation" text="title"/> and this will be explored in a multivariable setting in <xref ref="S-11-4-Double-Integrals-Applications"/> and later applications.
           </p>
           <p>  
             For example, if our function measures the density of some material on some plot of land, then the double integral of this function will measure the total amount of that material on the plot of land. The function (<m>f(x,y)</m>) will have units of mass (of the material) per unit area and the Riemann sum

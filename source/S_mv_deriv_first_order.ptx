@@ -43,7 +43,8 @@
         </li>
       </ul> -->
   </objectives>
-  <introduction>
+  <subsection>
+    <title>Introduction</title>
   <p>
     The derivative plays a central role in single variable calculus because it provides important information about a function in terms of each of the representations of the function. Thinking graphically, the derivative at a point tells us the slope of the line tangent to the graph at the given point. Numerically, the derivative at a point also provides the instantaneous rate of change of the function with respect to a change in the independent variable. Algebraically, we can calculate the derivative as a function of the same input variable, which is useful as a tool to examine where the function is increasing or decreasing, as well as the concavity of the function's graph. 
   </p>
@@ -201,7 +202,7 @@
       </solution>
     </task>
     </exploration>
-  </introduction>
+  </subsection>
 
   <subsection>
     <title>First-Order Partial Derivatives</title>
@@ -1257,7 +1258,7 @@
     Before we end this section, we will talk about a few ideas that were not necessary to understand and motivate the first partial derivatives, but will be important when we look at measuring or approximating the rate of change in other directions. In particular, we did not need to use our classic calculus approach to define the partial derivative because we restricted our two variable function along a trace to be a single variable function. This was extremely convenient but we will need new tools to make similar arguments in any other direction (that is not along a trace like <m>x=a</m> or <m>y=b</m>). 
   </p>
   <p>
-    The approximations, algebraic rules, and interpretations for partial derivatives are the same as in single variable calculus. Additionally, the form of the difference quotients and limit definition for partial derivatives maintains the same form as in single variable calculus and for <xref ref="changeform" text="custom">vector valued functions of one variable</xref>:
+    The approximations, algebraic rules, and interpretations for partial derivatives are the same as in single variable calculus. Additionally, the form of the difference quotients and limit definition for partial derivatives maintains the same form as in single variable calculus and for <xref ref="changeform" text="custom">vector-valued functions of one variable</xref>:
     <me> \text{rate of change}= \lim \frac{\text{change in output of function}}{\text{change in input of function}}</me>
     Again, conveniently all of the change we look at with a partial derivative is in a single input variable (holding all other input variables constant).
   </p>

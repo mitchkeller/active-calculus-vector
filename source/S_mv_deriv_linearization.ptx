@@ -34,7 +34,8 @@
       </li>
     </ul>
   </objectives>
-  <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       Throughout your work in single variable calculus, the tangent line has served as a geometric and conceptual tool to understand the derivative at a point. While the value of a derivative at a point measures the instantaneous rate of change, we visualized the value of the derivative as the slope of the line tangent to the graph of our function. This allowed use to <q>see</q> the value of the derivative in terms of an important behavior of the function's graph.
     </p>
@@ -64,7 +65,7 @@
       When viewing our differentiable function on a very small scale, the graph will be very close to the graph of the tangent line. Thus we can use the derivative as the slope of our tangent line in order to measure how tilted our graph is on a small scale. Because the graph of the function and the tangent line are so similar for a small region around the given point, the tangent line will allow us to approximate the output value of the function or the change in the output value for inputs near the given point. Tangent lines were used in many different applications and extensions of derivatives; For example, horizontal tangent lines gave critical points for optimization problems and tangent lines were used to approximate zeros or roots of functions when developing the Newton-Raphson Method. 
     </p> 
     <p>
-      In <xref ref="tangentlines"/>, we saw that a curve in space, as the graph of a vector valued function of one variable, would be locally linear and approximated well by a tangent line if the function was differentiable. So a curve in space/vector valued function will be differentiable if the graph looks like a line on a small scale.
+      In <xref ref="tangentlines"/>, we saw that a curve in space, as the graph of a vector-valued function of one variable, would be locally linear and approximated well by a tangent line if the function was differentiable. So a curve in space/vector-valued function will be differentiable if the graph looks like a line on a small scale.
     </p>  
     <p>
       In this section, we will explore the various ways in which we can extend the ideas described above to a function of two variables. Geometrically, this means we will use a tangent plane as a <q>flat</q> analog for surfaces of the form <m>z=f(x,y)</m>.
@@ -162,7 +163,7 @@
       </sidebyside>
     </figure> -->
     <p>
-      Just as the graph of a differentiable single-variable function (or a differentiable vector valued function of one variable) looks like a line when viewed on a small scale, we see that the graph of this particular two-variable function looks like a plane, as seen in <xref ref="F_10_4_tangent_4">Figure</xref>. In the following preview activity, we will explore how to state an equation for this plane in terms of values related to our function <m>f(x,y)</m>. We will first state a key idea that will be helpful algebraic form to use when thinking about tangent planes to surfaces of the form <m>z=f(x,y)</m>.
+      Just as the graph of a differentiable single-variable function (or a differentiable vector-valued function of one variable) looks like a line when viewed on a small scale, we see that the graph of this particular two-variable function looks like a plane, as seen in <xref ref="F_10_4_tangent_4">Figure</xref>. In the following preview activity, we will explore how to state an equation for this plane in terms of values related to our function <m>f(x,y)</m>. We will first state a key idea that will be helpful algebraic form to use when thinking about tangent planes to surfaces of the form <m>z=f(x,y)</m>.
     </p>
     <!-- <figure xml:id="F_10_4_tangent_4">
       <caption>A plot of <m>f(x,y)=6-\frac{x^2}{2}-y^2</m> with tangent plane at the point <m>(1,1,\frac{9}{2})</m> drawn and the option to zoom in around <m>(1,1,\frac{9}{2})</m></caption>
@@ -388,7 +389,7 @@
             </li>
  -->
     </exploration>
-  </introduction>
+  </subsection>
 
   <subsection>
     <title>Differentiability and Local Linearity</title>
