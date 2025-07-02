@@ -1,112 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    This file provides the overall configuration for your PreTeXt
-    project. To edit the content of your document, open `source/main.ptx`
-    (default location).
--->
-<project>
+<project ptx-version="2">
+  <!-- For the conversion to ptx-version="2", I have only tested HTML and instructor targets inintially (20250702). MTK -->
   <targets>
-    <target name="html">
-      <format>html</format>
-      <source>source/acmv-index.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>output/html</output-dir>
-      <xsl>xsl/acmv-html.xsl</xsl>
-    </target>
-    <target name="html-instructor">
-      <format>html</format>
-      <source>source/acmv-index.ptx</source>
-      <publication>publication/publication-instructor.ptx</publication>
-      <output-dir>output/html-instructor</output-dir>
-      <xsl>xsl/acmv-html.xsl</xsl>
-    </target>
-    <target name="html-hosted">
-      <format>html</format>
-      <source>source/acmv-index.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>/home/activec2/public_html/multi</output-dir>
-      <xsl>xsl/acmv-html.xsl</xsl>
-    </target>
-    <target name="react">
-      <format>html</format>
-      <source>source/acmv-index.ptx</source>
-      <stringparam key="debug.react.global" value="yes" />      
-      <publication>publication/publication.ptx</publication>
-      <output-dir>output/html</output-dir>
-      <xsl>xsl/acmv-html.xsl</xsl>
-    </target>
-
-    <target name="runestone">
-      <format>html</format>
-      <source>source/acmv-index.ptx</source>
-      <publication>publication/publication_runestone.ptx</publication>
-      <output-dir>published/acmulti</output-dir>
-      <xsl>xsl/acmv-html.xsl</xsl>
-    </target>    
-    <target name="latex">
-      <format>latex</format>
-      <source>source/acmv-index.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>output/latex</output-dir>
-    </target>
-    <target name="pdf" pdf-method="pdflatex">
-      <format>pdf</format>
-      <source>source/acmv-index.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>output/pdf</output-dir>
-    </target>
-    <target name="solutions" pdf-method="xelatex">
-      <format>pdf</format>
-      <source>source/acm-solution-manual.ptx</source>
-      <publication>publication/publication-solutions.ptx</publication>
-      <output-dir>output/solutions-pdf</output-dir>
-      <xsl>xsl/acm-solution-manual.xsl</xsl>
-    </target>
-    <target name="solutions-latex">
-      <format>latex</format>
-      <source>source/acm-solution-manual.ptx</source>
-      <publication>publication/publication-solutions.ptx</publication>
-      <output-dir>output/solutions-latex</output-dir>
-      <xsl>xsl/acm-solution-manual.xsl</xsl>
-    </target>    
-    <target name="workbook-latex">
-      <format>latex</format>
-      <source>source/acm-activity-workbook.ptx</source>
-      <publication>publication/publication-workbook.ptx</publication>
-      <output-dir>output/workbook-latex</output-dir>
-      <xsl>xsl/acm-activity-workbook.xsl</xsl>
-    </target>    
-    <target name="vector">
-      <format>html</format>
-      <source>source/acmv-index.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>output/vector</output-dir>
-      <stringparam key="debug.skip-knowls" value="yes"/>
-      <!-- edit this to change the section/chapter/etc. to include
-           in your subset build -->
-      <xmlid-root>C_Vector</xmlid-root>
-      <xsl>xsl/acmv-html.xsl</xsl>
-    </target>
-    <target name="workbook">
-      <format>latex</format>
-      <source>source/acmv-index.ptx</source>
-      <publication>publication/publication-workbook.ptx</publication>
-      <output-dir>output/workbook-latex</output-dir>
-      <xsl>xsl/acm-activity-workbook.xsl</xsl>
-    </target>
+    <target name="html" format="html" source="acmv-index.ptx" xsl="acmv-html.xsl" deploy-dir="multi" />
+    <target name="instructor" format="html" source="acmv-index.ptx" xsl="acmv-html.xsl" publication="publication-instructor.ptx" deploy-dir="multi-instructor" />
+    <target name="hosted" format="html" source="acmv-index.ptx" xsl="acmv-html.xsl" output-dir="/home/activec2/public_html/multi" />
+    <target name="runestone" format="html" source="acmv-index.ptx" xsl="acmv-html.xsl" publication="publication_runestone.ptx" platform="runestone" />
+    <target name="latex" format="latex" source="acmv-index.ptx" />
+    <target name="pdf" format="pdf" source="acmv-index.ptx" latex-engine="pdflatex" />
+    <target name="solutions" format="pdf" source="acm-solution-manual.ptx" publication="publication-solutions.ptx" output-dir="solutions-pdf" xsl="acm-solution-manual.xsl" latex-engine="xelatex" />
+    <target name="solutions-latex" format="latex" source="acm-solution-manual.ptx" publication="publication-solutions.ptx" xsl="acm-solution-manual.xsl" />
+    <target name="workbook" format="pdf" source="acmv-index.ptx" publication="publication-workbook.ptx" output-dir="workbook-pdf" xsl="acm-activity-workbook.xsl" latex-engine="xelatex" />
+    <target name="workbook-latex" format="latex" source="acmv-index.ptx" publication="publication-workbook.ptx" xsl="acm-activity-workbook.xsl" />
   </targets>
-  <executables>
-    <latex>latex</latex>
-    <pdflatex>pdflatex</pdflatex>
-    <xelatex>xelatex</xelatex>
-    <pdfsvg>pdf2svg</pdfsvg>
-    <asy>asy</asy>
-    <sage>sage</sage>
-    <pdfpng>convert</pdfpng>
-    <pdfeps>pdftops</pdfeps>
-    <pdfcrop>pdf-crop-margins</pdfcrop>
-    <pageres>pageres</pageres>
-    <node>node</node>
-    <liblouis>file2brl</liblouis>
-  </executables>
 </project>
