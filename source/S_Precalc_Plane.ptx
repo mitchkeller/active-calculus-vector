@@ -30,8 +30,8 @@
           </li>
         </ul>
     </objectives>
-
-  <introduction>
+<subsection>
+  <title>Introduction</title>
     <p>
       In <xref ref="S-Precalc-Lines" />, we saw how to describe a line in <m>\R^n</m> by setting an initial point and allowing unrestricted movement in a direction given by a direction vector. In this section's Preview Activity, we will be looking at what happens when we allow only movement that is perpendicular to a given direction. Since we will specify the given direction by a vector, we will find the perpendicular directions using orthogonal vectors.    
     </p>
@@ -111,7 +111,7 @@
         </statement>
       </task>
      </exploration>
-  </introduction>
+  </subsection>
   <subsection>
     <title>Planes in Space</title>
     <p>

@@ -29,7 +29,8 @@
     </li>
   </ul>
 </objectives>
-<introduction>
+<subsection>
+  <title>Introduction</title>
   <p>
     As we saw in <xref ref="S_Vector_VectorFields"/>, there are many physical and theoretical representations for vector fields. A natural question is <q>Where exactly is the vector field created?</q> With the vector field in <xref ref="fig_Vector_Div_vf1"/>, imagine sketching a curve that follows the direction of the vector field by treating the vectors in the vector field as tangent vectors to your curve. No matter where you start, you should observe that the vector field decreases in strength as you move along the flow. We wish to understand (as a function of position), how much of the vector field is created (or destroyed) at a given location.
   </p>
@@ -170,7 +171,7 @@
       </solution>
     </task>
   </exploration>
-</introduction>
+</subsection>
 
 
 <subsection xml:id="SS_Vector_Div_Defn">

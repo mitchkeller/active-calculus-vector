@@ -29,7 +29,8 @@
       </li>
     </ul>
   </objectives>
-  <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       Recall that for a single-variable function <m>f</m>, the second derivative of <m>f</m> is defined to be the derivative of the first derivative. That is, <m>f''(x) = \frac{d}{dx}\Bigl[ f'(x) \Bigr] = \frac{d^2f}{dx^2}</m>, which can be stated in terms of the limit definition of the derivative by writing
       <me>
@@ -256,7 +257,7 @@
   <p>
     As we saw in the preview activity, we can relate properties of second derivatives from single variable calculus to the behavior of our trace functions. In this section, we will formalize our definitions of the second partial derivatives for a function of two variables and interpret how these give information about the functions behavior. Later in this section, we will briefly generalize to functions of more than two variables and higher order derivatives.
   </p>
-  </introduction>
+  </subsection>
 
   <subsection>
     <title>Second-Order Partial Derivatives</title>

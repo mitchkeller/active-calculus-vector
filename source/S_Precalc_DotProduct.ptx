@@ -40,8 +40,8 @@
           </li>
         </ul>
     </objectives>
-
-    <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       In <xref ref="S-Precalc-Vectors" />, we considered vector addition and scalar multiplication algebraically and interpreted the corresponding geometric meaning. In this section, we will introduce the first of two types of vector multiplication that we will study. This multiplication produces a scalar that tells us a remarkable amount about the geometric relationship between the vectors that are multiplied. We will start investigating these properties in the Preview Activity, but first, we provide the definition of this form of multiplication for two-dimensional vectors.
     </p>
@@ -214,7 +214,7 @@
     <p>
       In <xref ref="PA-dotproduct"/>, you have started developing an understanding of how the dot product gives us information about the angle between two vectors in the plane. The rest of this section will formalize this idea about the dot product of two vectors and explore properties of this measurement.
     </p>
-  </introduction>
+  </subsection>
 
   <subsection>
     <title>The Dot Product</title>

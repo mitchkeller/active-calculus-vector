@@ -43,8 +43,8 @@
           </li>
         </ul>
     </objectives>
-
-    <introduction>
+  <subsection>
+    <title>Introduction</title>
     <!-- <p>
       A vector-valued function <m>\vr</m> determines a curve in space as the
       collection of terminal points of the vectors <m>\vr(t)</m>. If the curve is
@@ -74,183 +74,22 @@
       outputs that are vectors.
     </p> -->
     <p>
-      In your first calculus course, you looked at the new operations of limits, derivatives, and integrals and used these to measure change and accumulation . Each of these ideas and its applications was likely introduced as a way to measure something specific by approximating the measurement and then looking at how to improve this approximation. Limits offer a powerful tool to precisely describe how these approximations will converge to the relevant measurement. This process is what we will call the <term>classic calculus approach</term>: 1) approximate the measurement, 2) quantify how the approximation changes on a finer scale, and 3) use a limit to show how the approximation converges to the measurement of interest. 
+      In this book, we will use the structure of the <xref ref="C_VVF_classic-calc-approach" text="custom">classic calculus approach</xref> to investigate properties of new kinds of functions, equations, and graphs. Later in this section, we will investigate the meaning of limits, derivatives, and integrals of vector-valued functions of one variable. Additionally, we will connect these measurements to properties of curves in space as the graphs of these vector-valued functions. 
     </p>
-    <p>
-      Before we start our work on the calculus of vector valued functions, we will review some key ideas involving the classic calculus approach, limits, differentiation, and integration. This review is not meant to be comprehensive but is intended to ensure that all students are reminded of key concepts that will be vital for our development of calculus for new types of of functions. We will provide links to activities where you can review and explore the ideas from single variable calculus.
-    </p>
-    <p>
-      Limits: The limit of a function measures what the output of the function approaches as an input gets closer to a particular value. Limits are examples of local measurements, since they describe a measurement that applies to a region around a particular value. Remember that a limit does <em>not</em> measure what is happening at the particular input value; the limit describes behavior in a region <em>around</em> the particular input value. In fact, limits are most useful and interesting when evaluating the function at the particular input value does not make sense. For instance, 
-      <me>\lim_{x \rightarrow 5} x^2-2x+1</me> 
-      is not a very interesting limit because the function we are taking the limit of will output the value of the limit. In other words, substituting in <m>x=5</m> into <m>x^2-2x+1</m> will provide the same result as taking the limit as <m>x</m> approaches <m>5</m>. These kinds of functions are called continuous functions and while continuous functions are important and nice, evaluating and understanding limits of continuous functions does not offer a different insight or understanding. WYSIWYG.
-    </p>
-    <p>
-      A more interesting limit would be 
-      <me>\lim_{x \rightarrow 5} \frac{x^2-25}{x-5}</me>
-      This limit is of an indeterminant form which means that we will need to use other tools other than just attempting to substitute the particular input into different parts of the function. This limit (and many of the limits you looked at in your definitions of calculus operations) is of the form
-      <m>\lim_{a \rightarrow 0} f(a)g(a)</m> with <m>\lim_{a \rightarrow 0} f(a) = 0</m> and <m>\lim_{a \rightarrow 0} g(a) \Rightarrow \infty</m>. Note that because this limit can't be evaluated by substitution, does not mean the limit does not exist; We will have to use other tools to find the limit value (if the limit value does exist). 
-    </p>
-    <p>
-      Differentiation: The derivative of a function measures the rate of change of the function at a particular input value. Geometrically this is commonly visualized as the slope of a line tangent to the graph of the function at the point corresponding to the particular input value. The derivative is again a local measurement because the rate of change or slope of the tangent line only models the behavior of the function for an arbitrarily small region around the input value. The derivative is approximated with the average rate of change over an interval which corresponds to the slope of a secant line. If you move the points involved in the secant line closer to the particular input value, your approximation will be closer to the true rate of change at the particular input value. Thus by looking at the limit as the change in the inputs goes to zero of the difference quotient for the change in the output over the change in the input of the function, we can get the true rate of change for the function.
-    </p>
-    <figure xml:id="secantlines">
-      <caption>Three plots of secant lines with <m>h\rightarrow0</m> </caption>
-      <sidebyside widths="33% 33% 33%">
-        <image width="100%" xml:id="img-secline1">
-            <sageplot>
-              var('t,x')
-              f(x)=x^3-3*x^2+x
-              a=1/2
-              f0=f(a)
-              plot2=plot(f(x),(x,-0.25,0.75),color="black",axes=False,thickness=3,xmin=-0.25,xmax=0.75,ymin=-0.5,ymax=0.25)
-              plot2+=point((a,f0),color="black",size=50,zorder=5)
-              plot2+=text("$P:(a,f(a))$",(0.65,-0.1),color="black",fontsize=20)
-              h=0.5
-              f1=f(a-h)
-              plot2+=point((a-h,f1),color="blue",size=50,zorder=5)
-              plot2+=plot((f0-f1)/h*(x-a)+f0,(x,-0.25,0.75),color="blue",thickness=2)
-              plot2+=line([(a,f0),(a-h,f0)],color="green",thickness=2)
-              plot2+=line([(a-h,f0),(a-h,f1)],color="orange",thickness=2)
-              plot2+=text("$h$",(a-h/2,f0-0.05),color="green",fontsize=20)
-              plot2+=text("$f(a)-f(a-h)$",(-0.25,-0.05),color="orange",fontsize=20)
-              plot2
-            </sageplot>
-          </image>
-          <image width="100%" xml:id="img-secline2">
-            <sageplot>
-              var('t,x')
-              f(x)=x^3-3*x^2+x
-              a=1/2
-              f0=f(a)
-              plot3=plot(f(x),(x,-0.25,0.75),color="black",axes=False,thickness=3,xmin=-0.25,xmax=0.75,ymin=-0.5,ymax=0.25)
-              plot3+=point((a,f0),color="black",size=50,zorder=5)
-              plot3+=text("$P:(a,f(a))$",(0.65,-0.1),color="black",fontsize=20)
-              h=0.25
-              f1=f(a-h)
-              plot3+=point((a-h,f1),color="blue",size=50,zorder=5)
-              plot3+=plot((f0-f1)/h*(x-a)+f0,(x,-0.25,0.75),color="blue",thickness=2)
-              plot3+=line([(a,f0),(a-h,f0)],color="green",thickness=2)
-              plot3+=line([(a-h,f0),(a-h,f1)],color="orange",thickness=2)
-              plot3+=text("$h$",(a-h/2,f0-0.05),color="green",fontsize=20)
-              plot3+=text("$f(a)-f(a-h)$",(0.10,-0.05),color="orange",fontsize=18)
-              plot3
-            </sageplot>
-          </image>
-          <image width="100%" xml:id="img-secline3">
-            <sageplot>
-              var('t,x')
-              f(x)=x^3-3*x^2+x
-              a=1/2
-              f0=f(a)
-              plot4=plot(f(x),(x,-0.25,0.75),color="black",axes=False,thickness=3,xmin=-0.25,xmax=0.75,ymin=-0.5,ymax=0.25)
-              plot4+=point((a,f0),color="black",size=50,zorder=5)
-              plot4+=text("$P:(a,f(a))$",(0.65,-0.1),color="black",fontsize=20)
-              h=0.1
-              f1=f(a-h)
-              plot4+=point((a-h,f1),color="blue",size=50,zorder=5)
-              plot4+=plot((f0-f1)/h*(x-a)+f0,(x,-0.25,0.75),color="blue",thickness=2)
-              plot4+=line([(a,f0),(a-h,f0)],color="green",thickness=2)
-              plot4+=line([(a-h,f0),(a-h,f1)],color="orange",thickness=2)
-              plot4+=text("$h$",(a-h/2,f0-0.05),color="green",fontsize=20)
-              plot4+=text("$f(a)-f(a-h)$",(0.20,-0.05),color="orange",fontsize=20)
-              plot4
-            </sageplot>
-          </image>
-        </sidebyside>
-    </figure>
-    <p>
-      Algebraically, this classic calculus approach looks like
-      <md>
-        <mrow>\text{rate of change of }f \amp\approx \frac{f(a+h)-f(a)}{h} \quad \quad \quad \text{(slope of secant line)}</mrow>
-        <mrow>\text{rate of change of }f \amp=\lim_{h\rightarrow 0} \frac{f(a+h)-f(a)}{h}  \quad \quad \quad \text{(slope of tangent line)}</mrow>
-      </md>
-      Note that other derivative definitions correspond to different ways to think about how the two nearby points involved in the secant line can approach the input of interest. The formula above approaches the point of interest from the left, but derivative formulas exist for the right difference or center difference methods; When taking the limit, all of these formulas calculate the same value for the derivative since there is only one instantaneous rate of change for the function at the point <m>(a,f(a))</m>. 
-    </p>
-    <p>
-      You may not have noticed but the limit formula for the derivative at a point is of the form of our <q>interesting</q> limits from above because 
-      <me>\lim_{h\rightarrow 0} (f(a+h)-f(a)) \frac{1}{h}</me> 
-      with 
-      <me>\lim_{h \rightarrow 0} f(a+h)-f(a)=0 \quad \text{and} \quad \lim_{h \rightarrow 0} \frac{1}{h} \Rightarrow \infty</me> 
-      This meant that we needed other tools to evaluate the limit involved in derivatives which you likely skipped over in your first semester calculus course.
-    </p>
-    <p>
-      You likely also generalized the derivative at a point to <m>f'(x)=\frac{df}{dx}</m>, a function which outputs the rate of change of <m>f</m> for the input value <m>x</m>. This gave a functional approach to derivatives which allowed you to use many rules for efficiently calculating derivatives (power rule, sum/difference, coefficient rules, product rule, chain rule, etc.) as well as the ability to take derivatives of derivatives (to measure new features like concavity). 
-    </p>
-    <p>
-      Integration: The integral of a function on an interval measures the signed area between the graph of the function and the horizontal axis. This area was approximated by breaking the interval of interest into subintervals and using rectangles with widths given by each subinterval and heights given by the functions output for some value in the subinterval. By adding up the area of these rectangles, we could approximate the actual area under the curve. If we uses smaller and smaller subintervals, this rectangular approximation would get closer to the true area under the curve. Thus taking the limit of the sum of the area of these rectangles as the width of all of the subintervals goes to zero will give the true area under the curve. 
-    </p>
-    <figure xml:id="Riemannsum1">
-      <caption>At left and center, two left Riemann sums for a function <m>f</m> that is sometimes negative; at right, the exact areas bounded by <m>f</m> on the interval <m>[a,d]</m> (image from https://activecalculus.org/single/sec-4-3-definite-integral.html#F-4-3-IncreaseN) </caption>
-      <image source="images/4_2_NegF">
-        <shortdescription>(for accessibility)</shortdescription>
-      </image>
-    </figure>
-   
-    <p>
-      While you likely investigated many rules for selecting which point you use to find the height of the rectangles in your approximation (right endpoint, left endpoint, midpoint, trapezoidal rule, etc.), the actual value of the integral does not depend on this choice. This classic calculus approach approximates the area under the curve takes the form 
-      <md>
-        <mrow>\text{area under the graph of }f \amp\approx \sum_{i=0}^n f(x_i^*) \Delta x_i </mrow>
-        <mrow>\text{area under the graph of }f \amp=\lim_{\Delta x_i \rightarrow 0} \sum_{i=0}^n f(x_i^*) \Delta x_i </mrow>
-      </md>
-      If we use equally sized subintervals in our approximation, then the Riemann sum argument above fits the form of our <q>interesting</q> limits; namely 
-      <me>\lim_{\Delta x \rightarrow 0} \sum_{i=0}^n f(x_i^*) \Delta x</me> 
-      with 
-      <me>\lim_{\Delta x \rightarrow 0} \Delta x =0 \quad \text{and} \quad \lim_{n \rightarrow \infty} \sum_{i=0}^n f(x_i^*) \Rightarrow \infty </me>
-      Note when the number of subintervals gets larger, this exactly corresponds to the width of these equally sized subintervals going to zero. 
-    </p>
-    <proposition xml:id="accumulation">
-      <statement>
-        <p>
-          You may have generalized the idea of the definite integral by looking at the accumulation of a function. We will spend some time and more detail on this idea here because this is will be important for our uses later and many students may not have seen or fully understood these steps. In this description, we will look at an object moving in one dimension (along the number line) in which we are trying to find the position of the object as a function (<m>x(t)</m>) when we know the starting position (<m>x(0)=x_0</m>) and the velocity of the object (<m>v(t)=\frac{dx}{dt}=x'(t)</m>).
-        </p>
-      </statement>
-      <proof>
-        <p>
-          In many physical problems it is much easier to measure and keep track of velocity rather than position. This is because velocity is a local measurement but position isn't. This may sound a little weird so we will look at our analogy of piloting a car (or a bike or boat or spaceship, if you prefer). If you were to try to keep track of your position for all times on a trip in your car/bike/boat/spaceship, you would need to set up a coordinate system and constantly measure your distance to things like your axes or coordinate planes to find your location. This means you have to measure well outside of your car/bike/boat/spacecraft and this requires an external view of your car/bike/boat/spacecraft. This is why systems like GPS satellites and receivers are necessary for accurate global navigation. Note here that your car doesn't need something outside of itself to measure its speed because the speed is a measure of how much position changes relative to a small step around wherever you are.
-        </p>
-        <p>
-          So the big idea we will use is that velocity is the change in position over time, <m>\text{velocity}=\frac{\Delta \text{position}}{\Delta \text{time}}</m>, which means that we can measure a <em>change</em> in position by taking the velocity times the change in time (<m>\Delta \text{position}=\text{velocity} \Delta \text{time}</m>) if velocity is constant. We can use a classic calculus approach to use velocity to approximate, refine, then precisely state the position as a function of time. 
-        </p>
-        <p>
-          Starting at time <m>0</m>, we know the position of our object because <m>x(0)=x_0</m>, so we need to use the velocity to measure the change in position (on the number line) between <m>t=0</m> and time <m>t=a</m>. We will approximate this change in position using <m>\Delta \text{position}=\text{velocity} \Delta \text{time}</m>. In particular, we will break up the interval <m>[0,a]</m> into <m>n</m> equally sized pieces (<m>\Delta t= \frac{a}{n}</m> where <m>t_0=0, t_1=\Delta t, \ldots, t_{n-1}=(n-1)\Delta t, t_n =a</m>).  Mathematically, the position at <m>t=a</m> will be given by
-          <me>x(t=a)=x_0+ \Delta x_1 + \ldots + \Delta x_n </me>
-          where <m>\Delta x_i</m> is change in position from <m>t_{i-1}</m> to <m>t_i</m>. 
-        </p>
-        <p>
-          On each piece we will approximate the change in position by taking the velocity for some time in this interval and multiply by <m>\Delta t</m>. We evaluate the velocity at some point in the interval <m>[t_{i-1},t_i]</m> , which we will denote <m>v(t_i^*)</m>, which means our estimate will be <m>\Delta x_i \approx v(t_i^*) \Delta t </m>. Our estimate of the position of our object at <m>t=a</m> will be given by
-          <me>
-            x(a)\approx x_0+\sum_{i=1}^n v(t_i^*) \Delta t \quad \quad \text{for some }t_i^*\in[t_{i-1},t_i] 
-          </me>
-          This approximation is step one of our classic calculus approach and sets ourselves up well for step 2.
-        </p>
-        <p>
-          For step 2 of our classic calculus approach, we will need to understand how this approximation will work on a finer scale. A finer scale in this case means a larger number of subintervals (<m>n</m>) which means that <m>\Delta t</m> gets smaller. In other words, a finer scale means more terms in our sum but a smaller step size multiplier (<m>\Delta t</m>). Our estimate becomes a Riemann sum where the function being evaluated in the Riemann sum is the velocity of the object. Recognizing this means that we can use our knowledge of how limits of Riemann sums become definite integrals to do step three of our classic calculus approach. So as <m>n\rightarrow \infty</m> or <m>\Delta t \rightarrow 0</m>,
-          <me>
-            x_0+\sum_{i=1}^n v(t_i^*) \Delta t \Rightarrow x(a)=x_0+\int_0^{a} v(t) \enspace dt
-          </me>
-        </p>
-        <p>
-          In practice, this approximation is what GPS systems do a very fine level; namely, use hyper-accurate timing and changes in distances to satellites to give current position. Accumulation will also apply to many situations when working with the density of a material as well. For instance, if you drive a mining machine that harvests a mineral from the surface, the amount you harvest is going to be the accumulation of the different densities of the mineral along the path you drove. Mathematically this looks like
-          <md>
-            <mrow>\text{total harvested} \amp= \sum \text{amount in each section driven} </mrow>
-            <mrow>      \amp\approx \sum (\text{density}) (\text{length of the section}) </mrow>
-          </md>
-          where this Riemann sum becomes a definite integral of the density function. This idea of accumulation of a function is something we will use in most chapters from here out, so we will return to these ideas as they are needed. You can look at Chapter 5 of Active Calculus for activities involving accumulation as well as ideas like antiderivatives and indefinite integrals as a functional generalization of integration.
-        </p>
-      </proof>
-    </proposition>
-    <p>
-      In this course, we will use the structure of the classical calculus approach to investigate properties of new kinds of functions, equations, and graphs. Later in this section, we will investigate the meaning of limits, derivatives, and integrals for our new class of functions, vector valued functions of one variable. Additionally, we will connect these measurements to properties of curves in space as the graphs of these vector valued functions. As we expand our perspective and scope of study, you will hopefully see deeper meanings in and a greater appreciation for the definitions of limits, derivative, and integrals from your first calculus course. 
-    </p>
-    <exploration xml:id="PA_9_7">
+    <exploration xml:id="PA-VVF-Calculus">
       <introduction>
         <p>
-          As the only employee of <em>Steer Clear</em>, you have decided that you need to understand how the timing of position measurements will change different properties related to your self driving car. You decide to drive in a figure eight path described by <m>\vr_8(t)=\langle \cos(t),\sin(2t) \rangle </m> for <m>0 \leq t \leq 2 \pi</m>. A plot of this path is given in <xref ref="PA-vvfcalc1" />.
+          As the only employee of <em>Steer Clear</em>, you have decided that you need to understand how the timing of position measurements will change different properties related to your self-driving car. You decide to drive in a figure eight path described by <m>\vr_8(t)=\langle \cos(t),\sin(2t) \rangle </m> for <m>0 \leq t \leq 2 \pi</m>. A plot of this path is given in <xref ref="fig-PA-vvfcalc1" />.
         </p>
-        <figure xml:id="PA-vvfcalc1">
-          <caption>A plot of the figure eight curve given by <m>\vr_8(t)=\langle \cos(t),\sin(2t) \rangle </m> for <m>0 \leq t \leq 2 \pi</m></caption>
-          <image width="75%" xml:id="img-PAvvfcalc1">
-            <sageplot>
+        <figure xml:id="fig-PA-vvfcalc1">
+          <caption>A plot of the figure eight curve given by <m>\vr_8(t)=\langle \cos(t),\sin(2t) \rangle </m> for <m>0 \leq t \leq 2 \pi</m>.</caption>
+          <image width="75%">
+            <shortdescription>A figure eight curve</shortdescription>
+            <description>
+              <p>A curve in the plane. The curve intersects itself at the origin and is symmetric about both axes. On each side of the vertical axis, the curve forms a sort of squashed loop with a point at the origin.
+              </p>
+            </description>
+            <sageplot label="img-PAvvfcalc1">
               var('t,x')
               plot1=parametric_plot((cos(t),sin(2*t)), (t,0,2*pi),aspect_ratio=1,gridlines=True,color="black",thickness=2,xmin=-1,xmax=1,ymin=-1,ymax=1)
               plot1
@@ -261,27 +100,27 @@
       <task>
         <statement>
           <p>
-            In order to understand how often to have your software collect location data, you decide to look at your position for a few different times. Calculate the following and draw the output vectors of <m>\vr_8</m> on a plot of the curve. You should state your answer with components rounded to three decimal places. 
-            <ol>
+            In order to understand how often your software should collect location data, you decide to look at your position for a few different times. Calculate the following, rounding the component values to three decimal places. Draw the output vectors of <m>\vr_8</m> on <xref ref="fig-PA-vvfcalc1"/> in standard position.
+            <ol marker="i." cols="3">
               <li><m>\vr_8(3)</m></li>
               <li><m>\vr_8(3.1)</m></li>
               <li><m>\vr_8(3.14)</m></li>
             </ol>
-            These correspond to the locations that would be sampled if wanted to know the location of our car at <m>\vr_8(\pi)</m> but collected data every second, every tenth of a second, and hundredth of a second (respectively). 
+            The tips of these vectors correspond to the locations that would be sampled if you wanted to know the location of your car at <m>\vr_8(\pi)</m> but collected data every second, every tenth of a second, and every hundredth of a second, respectively. 
           </p>
         </statement>
       </task>
       <task xml:id="vvf-limitPA" >
         <statement>
           <p>
-            Write a couple of sentences to describe (geometrically and algebraically) what happens to the output of <m>\vr_8(t)</m> as <m>t\rightarrow\pi</m>.
+            Write a couple of sentences to describe both geometrically and algebraically what happens to the output of <m>\vr_8(t)</m> as <m>t\rightarrow\pi</m>.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Calculate <m>\vr_8(\pi)</m> and <m>\vr_8(\pi)-\vr_8(3)</m>. Plot <m>\vr_8(\pi)</m> and <m>\vr_8(3)</m> in standard position on a graph of the figure eight curve, then plot <m>\vr_8(\pi)-\vr_8(3)</m> as the difference of these two position vectors.
+            Calculate <m>\vr_8(\pi)</m> and <m>\vr_8(\pi)-\vr_8(3)</m>. Sketch <m>\vr_8(\pi)</m> and <m>\vr_8(3)</m> in standard position in <xref ref="fig-PA-vvfcalc1"/>. Also plot <m>\vr_8(\pi)-\vr_8(3)</m>, positioned in such a way to illustrate that it is difference of these two position vectors.
           </p>
         </statement>
         <hint>
@@ -300,7 +139,7 @@
       <task>
         <statement>
           <p>
-            How would you expect <m>\frac{\vr_8(\pi)-\vr_8(3.1)}{\pi-3.1}</m> to be different than <m>\frac{\vr_8(\pi)-\vr_8(3)}{\pi-3}</m>. Use this idea write about what is measured by <m>\frac{\vr_8(\pi)-\vr_8(\pi-h)}{h}</m> if we look at smaller and smaller values of <m>h</m>. Remember to be specific about what aspects of our curve or drive are being measured.
+            How would you expect <m>\frac{\vr_8(\pi)-\vr_8(3.1)}{\pi-3.1}</m> to be different than <m>\frac{\vr_8(\pi)-\vr_8(3)}{\pi-3}</m>? Use this idea write about what is measured by <m>\frac{\vr_8(\pi)-\vr_8(\pi-h)}{h}</m> if we look at smaller and smaller values of <m>h</m>. Remember to be specific about what aspects of our curve or drive are being measured.
           </p>
         </statement>
       </task>
@@ -317,13 +156,13 @@
 
           <li>
             <p>
-              Recall that for functions of a single variable, the derivative of a sum is the sum of the derivatives; that is, <m>\frac{d}{dx}[f(x) + g(x)] = f'(x) + g'(x)</m>. With this idea in mind and viewing <m>\vi</m> and <m>\vj</m> as constant vectors, what do you expect the derivative of <m>\vr</m> to be?  Write a proposed formula for <m>\vr'(t)</m>.
+              Recall that for functions of a single variable, the derivative of a sum is the sum of the derivatives; that is, <m>\frac{d}{dx}[f(x) + g(x)] = f'(x) + g'(x)</m>. With this idea in mind and viewing <m>\vi</m> and <m>\vj</m> as constant vectors, what do you expect the derivative of <m>\vr</m> to be?  Write a proposed formula for <m>\vr\, '(t)</m>.
             </p>
           </li>
 
           <li>
             <p>
-              Use your result from part (b) to compute <m>\vr'(\pi)</m>. Sketch this vector <m>\vr'(\pi)</m> as emanating from the point on the graph of <m>\vr</m> when <m>t=\pi</m> , and explain what you think <m>\vr'(\pi)</m> tells us about the object's motion.
+              Use your result from part (b) to compute <m>\vr\, '(\pi)</m>. Sketch this vector <m>\vr\, '(\pi)</m> as emanating from the point on the graph of <m>\vr</m> when <m>t=\pi</m> , and explain what you think <m>\vr\, '(\pi)</m> tells us about the object's motion.
             </p>
           </li>
         </ol>
@@ -343,17 +182,17 @@
               If the derivative of a sum is the sum of the derivatives,
               then we should expect that
               <me>
-                \vr'(t) = \frac{d}{dt} \cos(t) \vi + \frac{d}{dt} \sin(2t) \vj = -\sin(t) \vi + 2\cos(2t) \vj
+                \vr\, '(t) = \frac{d}{dt} \cos(t) \vi + \frac{d}{dt} \sin(2t) \vj = -\sin(t) \vi + 2\cos(2t) \vj
               </me>.
             </p>
           </li>
           <li>
             <p>
-              Using our rule for <m>\vr'(t)</m> we have <m>\vr'(\pi) = 2 \vj</m>.
-              A sketch of this vector <m>\vr'(\pi)</m> as emanating from the point on the graph of <m>\vr</m> when <m>t=\pi</m> is shown below.
+              Using our rule for <m>\vr\, '(t)</m> we have <m>\vr\, '(\pi) = 2 \vj</m>.
+              A sketch of this vector <m>\vr\, '(\pi)</m> as emanating from the point on the graph of <m>\vr</m> when <m>t=\pi</m> is shown below.
               This looks like a direction vector for the line tangent to the graph of <m>\vr</m> at the point where <m>t = \pi</m>.
               In other words,
-              this vector <m>\vr'(t)</m> is the velocity vector of the object at time <m>t = \pi</m>.
+              this vector <m>\vr\, '(t)</m> is the velocity vector of the object at time <m>t = \pi</m>.
               <image width="73%" source="images/fig_9_7_PA_b"/>
             </p>
           </li>
@@ -361,12 +200,12 @@
       </solution> -->
     </exploration>
     <p>
-      In <xref ref="vvf-limitPA" />, we examined what the limit of a vector valued function will look like; specifically, the limit of a vector valued function (of one variable) has the same meaning as in your first calculus course. The limit of a function is a measure of what the output approaches as the input gets closer to a particular value. We will not state the formal version of limits of vector valued functions of one variable, but rather will appeal to the very important idea that limits can be defined and calculated componentwise. If <m>\vr(t)=\langle x_1(t),\ldots,x_n(t)\rangle</m>, then the limit of <m>\vr</m> as <m>t\rightarrow a</m> exists if all of the limits of <m>x_i(t)</m> exist as <m>t\rightarrow a</m>. In other words, the limit of a vector valued function of one variable is the same as the limits of the <m>n</m> component functions organized as a vector. In <m>\mathbb{R}^3</m>, this will look algebraically like 
+      In <xref ref="vvf-limitPA" text="type-local" /> of the Preview Activity, we examined what the limit of a vector-valued function will look like. Specifically, the limit of a vector-valued function of one variable has the same meaning as in your first calculus course. The limit of a function is a measure of what the output approaches as the input gets closer to a particular value. We will not state the formal version of limits of vector-valued functions of one variable, but rather will appeal to the important idea that limits can be defined and calculated componentwise. If <m>\vr(t)=\langle x_1(t),\ldots,x_n(t)\rangle</m>, then the limit of <m>\vr</m> as <m>t\rightarrow a</m> exists if all of the limits of <m>x_i(t)</m> exist as <m>t\rightarrow a</m>. In other words, the limit of a vector-valued function of one variable is the same as the limits of the <m>n</m> component functions organized as a vector. In <m>\mathbb{R}^3</m>, we can express this algebraically as
       <me>
-        \lim_{t\rightarrow a} \langle f(t),g(t),h(t) \rangle = \langle \lim_{t\rightarrow a} f(t) , \lim_{t\rightarrow a} g(t) , \lim_{t\rightarrow a} h(t) \rangle
+        \lim_{t\rightarrow a} \langle f(t),g(t),h(t) \rangle = \left\langle \lim_{t\rightarrow a} f(t) , \lim_{t\rightarrow a} g(t) , \lim_{t\rightarrow a} h(t) \right\rangle
       </me>
     </p>
-  </introduction>
+  </subsection>
 
 
   <subsection xml:id="vvf-derivative">
@@ -384,21 +223,21 @@
         <p>
           The <term>derivative</term><idx><h>vector-valued function</h><h>derivative</h></idx> of a vector-valued function <m>\vr</m> is defined to be
           <me>
-            \vr'(t) = \lim_{h \to 0} \frac{\vr(t+h)-\vr(t)}{h}
+            \vr\, '(t) = \lim_{h \to 0} \frac{\vr(t+h)-\vr(t)}{h}
           </me>
           for those values of <m>t</m> at which the limit exists. We also use the notation <m>\frac{d\vr}{dt}</m> and <m>\frac{d}{dt}[\vr(t)]</m> for
-          <m>\vr'(t)</m>.
+          <m>\vr\,'(t)</m>.
         </p>
       </statement>
     </definition>
     <p xml:id="changeform">
       We will take a moment here to note that both the single variable calculus definition of derivative and <xref ref="vvf-derivative-defn" /> have the form of the classic calculus approach described above. In particular, both definitions are of the form
-      <me>\text{derivative}=\lim_{stepsize\rightarrow0} \frac{\text{change in output of function}}{\text{change in input of function}}</me>
+      <me>\text{derivative}=\lim_{\text{stepsize}\rightarrow 0} \frac{\text{change in output of function}}{\text{change in input of function}}</me>
     </p>
     <!-- <activity xml:id="A_9_7_1">
       <statement>
       <p>
-        Let's investigate how we can interpret the derivative <m>\vr'(t)</m>. Let <m>\vr</m> be the vector-valued function whose graph is shown in <xref ref="F_9_7_VVF_tan_vector">Figure</xref>, and let <m>h</m> be a scalar that represents a small change in time. The vector <m>\vr(t)</m> is the blue vector in <xref ref="F_9_7_VVF_tan_vector">Figure</xref> and <m>\vr(t+h)</m> is the green vector.
+        Let's investigate how we can interpret the derivative <m>\vr\, '(t)</m>. Let <m>\vr</m> be the vector-valued function whose graph is shown in <xref ref="F_9_7_VVF_tan_vector">Figure</xref>, and let <m>h</m> be a scalar that represents a small change in time. The vector <m>\vr(t)</m> is the blue vector in <xref ref="F_9_7_VVF_tan_vector">Figure</xref> and <m>\vr(t+h)</m> is the green vector.
       </p>
 
       <figure xml:id="F_9_7_VVF_tan_vector">
@@ -491,10 +330,10 @@
     </p>
 
     <figure xml:id="F_9_7_VVF_tan_vector">
-      <caption>A single difference quotient of a vector valued function</caption>
+      <caption>A single difference quotient of a vector-valued function</caption>
       <image width="50%" source="images/fig_9_7_curve_1"/>
     </figure>
-    <figure xml:id="vvf-secvec1">
+    <!-- <figure xml:id="vvf-secvec1">
       <caption>A plot of a curve in space with a difference in position vectors shown</caption>
       <interactive label="interactive-secvec1" platform="sage" width="100%" aspect="1:1">
         <slate surface="sage">
@@ -518,23 +357,26 @@
             show(plot5,viewpoint=[[-0.4807,-0.5193,-0.7066],113.63],camera_position=[3.6816,0.7685,1.3301])
         </slate>
       </interactive>
-    </figure>
+    </figure> -->
     <p>
       If <m>\vr(t)</m> determines the <term>position</term> of an object at time <m>t</m>, then <m>\frac{\vr(t+h)-\vr(t)}{h}</m>
-      represents the average rate of change in the position of the object over the interval <m>[t,t+h]</m>, which is also the <term>average velocity</term> of the object on this interval. Thus, the derivative
-      <me>
-        \vr'(t) = \lim_{h \to 0} \frac{\vr(t+h)-\vr(t)}{h}
-      </me>
-      is the instantaneous rate of change of <m>\vr(t)</m> at time <m>t</m> (for those values of <m>t</m> for which the limit exists), so <m>\vr'(t) = \vv(t)</m> is the instantaneous <term>velocity</term> of the object at time <m>t</m>. Furthermore, we can interpret the derivative <m>\vr'(t)</m> as a direction vector of the line tangent to the graph of <m>\vr</m> at the value <m>t</m>.
+      represents the average rate of change in the position of the object over the interval <m>[t,t+h]</m>. We also call this the <term>average velocity</term> of the object on the interval<m>[t,t+h]</m>. It may feel a bit surprising to think of a rate of change as a vector quantity. However, describing how the vector quantity position changes with respect to time requires knowing both about the direction in which position changes and the magnitude of that change. Furthermore, when computing the difference quotient, the vector subtraction in the numerator is done componentwise. The factor of <m>1/h</m> is also multiplied into each component, so we can view the difference quotient's components as each being the average rate of change for that particular component.
     </p>
-    <figure xml:id="F_9_7_VVF_tan_vector_quotients">
+    <p>
+      The derivative
+      <me>
+        \vr\, '(t) = \lim_{h \to 0} \frac{\vr(t+h)-\vr(t)}{h}
+      </me>
+      is the instantaneous rate of change of <m>\vr(t)</m> at time <m>t</m> for those values of <m>t</m> for which the limit exists. Therefore, the <term>instantaneous velocity</term> of the object at time <m>t</m> is <m>\vv(t) = \vr\, '(t)</m>. <xref ref="vvf-secvec2"/> allows you to reduce the step size in the difference quotient to approach <m>0</m>. In doing so, you should notice that <m>\vr\, '(t)</m> is tangent to the graph of <m>\vr(t)</m> at time <m>t</m>. We will return to this important characteristic later in the section.
+    </p>
+    <!-- <figure xml:id="F_9_7_VVF_tan_vector_quotients">
       <caption>Snapshots of several difference quotients as <m>h</m> gets smaller</caption>
       <sidebyside widths="33% 33% 33%" margins="0%">
       <image source="images/fig_9_7_animate_02"/>
       <image source="images/fig_9_7_animate_04"/>
       <image source="images/fig_9_7_animate_06"/>
       </sidebyside>
-    </figure>
+    </figure> -->
     <figure xml:id="vvf-secvec2">
       <caption>A plot of a curve in space with a difference in position vectors shown</caption>
       <interactive label="interactive-vvf-example2" platform="sage" width="100%" aspect="1:1">
@@ -563,27 +405,26 @@
     <p>
       Similarly,
       <me>
-        \vv'(t) = \vr''(t) = \lim_{h \to 0} \frac{\vv(t+h)-\vv(t)}{h}
+        \vv\,'(t) = \vr\,''(t) = \lim_{h \to 0} \frac{\vv(t+h)-\vv(t)}{h}
       </me>
-      is the instantaneous rate of change of the velocity of the object at time <m>t</m>, for those values of <m>t</m> for which the limits exists, and thus <m>\vv'(t) = \va(t)</m> is the <term>acceleration</term> of the moving object.
+      is the instantaneous rate of change of the velocity of the object at time <m>t</m>, for those values of <m>t</m> for which the limits exists. Therefore, the <term>acceleration</term> of the moving object is given by <m>\va(t) = \vv\, '(t)</m>.
     </p>
 
     <p>
-      Both the velocity and acceleration are <em>vector quantities</em>: they have magnitude and direction. By contrast, the magnitude of the velocity vector, <m>\Vert \vv(t) \Vert</m>, which is the <term>speed</term> of the object at time <m>t</m>, is a scalar quantity.
+      Both the velocity and acceleration are <em>vector quantities</em>: they have magnitude and direction. In single-variable calculus, we distinguish the velocity of an object, which can be positive, negative, or zero, from its speed, which must be nonnegative. The speed of an object in the single-variable case is the absolute value of its velocity. The analogous idea for an object having movement described by a vector-valued function is that the <em>magnitude</em> of the object's velocity vector is the <term>speed</term> of the object. This allows the speed <m>\vecmag{\vv(t)}</m> to again be a nonnegative scalar quantity.<idx><h>speed</h><h>of vector-valued function</h></idx>
     </p>
   </subsection>
 
   <subsection>
     <title>Computing Derivatives</title>
     <p>
-      As we learned in single variable calculus, computing derivatives using the definition is often difficult. Fortunately, properties of the
-      limits and vectors make it straightforward to calculate the derivative of a vector-valued function similar to how we developed shortcut differentiation rules in calculus I. If we breakdown the steps in <xref ref="vvf-derivative-defn" /> we notice that
+      As we learned in single variable calculus, computing derivatives using the definition is often difficult because the limit involved is an indeterminate form. Fortunately, properties of limits and vectors make it straightforward to calculate the derivative of a vector-valued function. This will be similar to how we developed shortcut differentiation rules in single-variable calculus. If we analyze the steps in <xref ref="vvf-derivative-defn" />, we identify three steps
       <ol>
-        <li>vector subtraction (<m>\vr(t+h)-\vr(t)</m>) </li>
-        <li>scalar multiplication (multiply by <m>\frac{1}{h}</m>) </li>
-        <li>evaluate limit as <m>h\rightarrow 0</m> </li>
+        <li>vector subtraction (<m>\vr(t+h)-\vr(t)</m>), </li>
+        <li>scalar multiplication (multiply by <m>\frac{1}{h}</m>), </li>
+        <li>evaluate limit as <m>h\rightarrow 0</m>, and </li>
       </ol>
-      are all evaluated componentwise on our vector valued function. Thus we can apply our derivative rules on each component of <m>\vr(t)</m> to compute the derivative <m>\frac{d\vr}{dt}</m>.
+      each of these is all evaluated componentwise on a vector-valued function. Therefore, familiar differentiation rules from single-variable calculus can be applied one ach component of <m>\vr(t)</m> to compute the derivative <m>\vr\, '</m>.
     </p>
     <proposition xml:id="Vector-valued-function-derivative">
       <title>Efficient calculation of the derivative of a vector-valued function</title>
@@ -598,154 +439,165 @@
       </statement>
       <proof>
         <p>
-          To see why, recall that the limit of a sum is the sum of the limits, and that we can remove constant factors from limits. Thus, as we observed after <xref ref="PA_9_7">Preview Activity</xref>, if <m>\vr(t) = x(t) \vi + y(t) \vj + z(t) \vk</m>, it follows that
+          To see why, recall that the limit of a sum is the sum of the limits, and that we can remove constant factors from limits. Thus, as we observed after <xref ref="PA-VVF-Calculus">Preview Activity</xref>, if <m>\vr(t) = x(t) \vi + y(t) \vj + z(t) \vk</m>, it follows that
           <md>
-            <mrow>\vr'(t) = \mathstrut \amp  \lim_{h \to 0} \frac{\vr(t+h)-\vr(t)}{h}</mrow>
+            <mrow>\vr\, '(t) = \mathstrut \amp  \lim_{h \to 0} \frac{\vr(t+h)-\vr(t)}{h}</mrow>
             <mrow> = \mathstrut \amp \lim_{h \to 0} \frac{[x(t+h)-x(t)] \vi + [y(t+h)-y(t)] \vj +
             [z(t+h)-z(t)] \vk}{h}</mrow>
             <mrow> = \mathstrut \amp \left(\lim_{h \to 0} \frac{x(t+h)-x(t)}{h}
             \right) \vi + \left( \lim_{h \to 0} \frac{y(t+h)-y(t)}{h} \right) \vj</mrow>
             <mrow> \mathstrut \amp  + \left( \lim_{h \to 0} \frac{z(t+h)-z(t)}{h} \right)\vk</mrow>
-            <mrow>\mathstrut \amp = x'(t)\vi + y'(t) \vj + z'(t) \vk.</mrow>
+            <mrow>\mathstrut = \amp  x'(t)\vi + y'(t) \vj + z'(t) \vk.</mrow>
           </md>
-          Thus, we can calculate the derivative of a vector-valued function by simply differentiating its components.
+          Thus, we can calculate the derivative of a vector-valued function by differentiating each of its components.
         </p>
       </proof>
   </proposition>
-  <activity xml:id="A_9_7_2">
-    <statement> 
+  <p>
+    Our next activity gives you a chance to practice with componentwise differentiation and also asks you to think about when limits of vector-valued functions do not exist.
+  </p>
+  <activity xml:id="act-vvf-calculus-diff">
+    <introduction> 
       <p>
-        For each of the following vector-valued functions, 
-        <ul>
-          <li>state any values of <m>t</m> for which the limit will <em>NOT</em> exist</li>
-          <li>find <m>\vr'(t)</m> </li>
-        </ul>
-        <ol marker="a.">
-          <li>
-            <p>
-              <m>\vr(t) = \langle \cos(t), t\sin(t), \ln(t) \rangle</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\vr(t) = \langle t^2 + 3t, e^{-2t}, \frac{t}{t^2 + 1} \rangle</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\vr(t) = \langle \tan(t), \cos(t^2), te^{-t} \rangle</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>\vr(t) = \langle \sqrt{t^4 + 4}, \frac{2}{t^2+t} , e^{2t} \sin(-2t) \rangle</m>.
-            </p>
-          </li>
-        </ol>
+        For each of the following vector-valued functions, state any values of <m>a</m> for which <m>\displaystyle\lim_{t\to a}\vr(t)</m> will <em>not</em> exist and find <m>\vr\, '(t)</m>.
       </p>
-    </statement>
-    <solution>
-      <ol marker="a.">
-        <li>
-          <p>
-            The third component of this function will only exist when <m>t\geq 0</m> and the limit of this function will exist if <m>t\geq 0</m>.
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          <m>\vr(t) = \langle \cos(t), t\sin(t), \ln(t) \rangle</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The third component of this function will is only defined when <m>t\geq 0</m>. The limit as <m>t\to a</m> of this function will exist if <m>a\geq 0</m>.
             Differentiating componentwise gives
             <me>
-              \vr'(t) = \left\langle -\sin(t), t\cos(t)+\sin(t), \frac{1}{t} \right\rangle
+              \vr\, '(t) = \left\langle -\sin(t), t\cos(t)+\sin(t), \frac{1}{t} \right\rangle
             </me>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Each component of this function will have limits exist for every input.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>\vr(t) = \langle t^2 + 3t, e^{-2t}, \displaystyle\frac{t}{t^2 + 1} \rangle</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Each component of this function will have limits that exist for every input.
             Differentiating componentwise gives
             <me>
-              \vr'(t) = \left\langle 2t+3, -2e^{-2t}, \frac{1-t^2}{1+t^2} \right\rangle
+              \vr\, '(t) = \left\langle 2t+3, -2e^{-2t}, \displaystyle\frac{1-t^2}{1+t^2} \right\rangle
             </me>.
-          </p>
-        </li>
-        <li>
-          <p>
-            The limit of the first component of this function does not exist for inputs of the form <m>\frac{(2k+1)\pi}{2}</m> for <m>k\in\mathbb{Z}</m>. 
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>\vr(t) = \langle \tan(t), \cos(t^2), te^{-t} \rangle</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The limit as <m>t\to a</m> of the first component of this function does not exist for values of <m>a</m> of the form <m>\frac{(2k+1)\pi}{2}</m> with <m>k\in\mathbb{Z}</m>. 
             Differentiating componentwise gives
             <me>
-              \vr'(t) = \left\langle \sec^2(t), -2t\sin(t^2), -te^{-t}+e^{-t} \right\rangle
+              \vr\, '(t) = \left\langle \sec^2(t), -2t\sin(t^2), -te^{-t}+e^{-t} \right\rangle
             </me>.
-          </p>
-        </li>
-        <li>
-          <p>
-            Each component of this function will have limits exist for every input.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>\vr(t) = \left\langle \sqrt{t^4 + 4}, \frac{2}{t^2+t} , e^{2t} \sin(-2t) \right\rangle</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Each component of this function will have limits that exist for every input.
             Differentiating componentwise gives
             <me>
-              \vr'(t) = \left\langle \frac{2t^3}{\sqrt{t^4 + 4}}, 3\cos(3t), -4\sin(4t) \right\rangle
+              \vr\, '(t) = \left\langle \frac{2t^3}{\sqrt{t^4 + 4}}, 3\cos(3t), -4\sin(4t) \right\rangle
             </me>.
-          </p>
-        </li>
-      </ol>
-    </solution>
+        </p>
+      </solution>
+    </task>
   </activity>
   <p>
-    In first-semester calculus, we developed several important differentiation rules, including the constant multiple, product, quotient, and chain rules. For instance, recall that we formally state the product rule as
+    In first-semester calculus, we developed several important differentiation rules, including the constant multiple, product, quotient, and chain rules. For instance, we can formally state the product rule as
     <me>
-      \frac{d}{dx}[f(x)  g(x)] = f(x) g'(x) + g(x) f'(x).
-    </me>
+      \frac{d}{dx}[f(x)  g(x)] = f(x) g'(x) + g(x) f'(x)
+    </me>.
   </p>
   <p>
-    There are several analogous rules for vector-valued functions, including a product rules for each of the kinds of multiplication we have defined involving vectors. These rules, which are easily verified, are summarized as follows.
+    There are several analogous rules for vector-valued functions, including a product rule for each of the products we have defined involving vectors. These rules, which are easily verified by componentwise application of the familiar single-variable calculus rules, are summarized below.
   </p>
 
   <assemblage xml:id="Vector-valued-functions-derivative-properties">
-    <title>Properties of derivatives of vector-valued functions</title>
+    <title>Properties of Derivatives of Vector-Valued Functions</title>
     <p>
-      Let <m>f</m> be a differentiable real-valued function of a real variable <m>t</m> and let <m>\vr</m> and <m>\vs</m> be
+      Let <m>f</m> be a differentiable real-valued function of a real variable <m>t</m>. Let <m>\vr</m> and <m>\vs</m> be
       differentiable vector-valued functions of the real variable <m>t</m>. Then
-      <ol>
+      <dl>
         <li>
+          <title>Sum Rule</title>
           <p>
-            <m>\frac{d}{dt} \left[\vr(t) + \vs(t) \right] = \vr'(t) + \vs'(t) \quad \quad  \text{(sum rule)} </m>
+            <m>\frac{d}{dt} \left[\vr(t) + \vs(t) \right] = \vr\, '(t) + \vs\, '(t)</m>
           </p>
         </li>
         <li>
+          <title>Scalar Multiplication Product Rule</title>
           <p>
-            <m>\frac{d}{dt} [f(t) \vr(t)] = f(t) \vr'(t) + f'(t) \vr(t) \quad \quad \text{(scalar mult. product rule)} </m>
+            <m>\frac{d}{dt} \left[f(t) \vr(t)\right] = f(t) \vr\, '(t) + f'(t) \vr(t)</m>
           </p>
         </li>
         <li>
+          <title>Dot Product Rule</title>
           <p>
-            <m>\frac{d}{dt} \left[\vr(t) \cdot \vs(t) \right] = \vr'(t) \cdot \vs(t) + \vr(t) \cdot \vs'(t) \quad \quad \text{(dot product rule)} </m>
+            <m>\frac{d}{dt} \left[\vr(t) \cdot \vs(t) \right] = \vr\, '(t) \cdot \vs(t) + \vr(t) \cdot \vs\, '(t)</m>
           </p>
         </li>
         <li>
+          <title>Cross Product Rule</title>
           <p>
-            <m>\frac{d}{dt} \left[\vr(t) \times \vs(t) \right] = \vr'(t)  \times \vs(t) + \vr(t) \times \vs'(t) \quad \quad \text{(cross product rule)} </m>
+            <m>\frac{d}{dt} \left[\vr(t) \times \vs(t) \right] = \vr\, '(t)  \times \vs(t) + \vr(t) \times \vs\, '(t)</m>
           </p>
         </li>
         <li>
+          <title>Chain Rule</title>
           <p>
-            <m>\frac{d}{dt} \left[\vr(f(t))\right] = f'(t)  \  \vr'(f(t))  \quad \quad \text{(chain rule)} </m>
+            <m>\frac{d}{dt} \left[\vr\left(f(t)]\right)\right] = f'(t)  \  \vr\, '(f(t))</m>
           </p>
         </li>
-      </ol>
+      </dl>
     </p>
   </assemblage>
   <p>
-    When applying these properties, pay attention to whether the quantities involved are either scalars or vectors. For example, <m>\vr(t) \cdot \vs(t)</m> defines a scalar function because we have taken the dot product of two vector-valued functions. However, <m>\vr(t) \times \vs(t)</m> defines a vector-valued function since we have taken the cross product of two vector-valued functions.
+    When applying these properties, pay attention to whether the quantities involved are either scalars or vectors. For example, <m>\vr(t) \cdot \vs(t)</m> defines a scalar function because we have taken the dot product of two vector-valued functions. However, <m>\vr(t) \times \vs(t)</m> defines a vector-valued function since we have taken the cross product of two vector-valued functions. Also notice that while we have <em>three</em> product rules for the differentiation of vector-valued functions, we have only one chain rule and no quotient rule. The lack of a quotient rule should make sense, since we have not defined what it would mean to divide a vector by another. That we have a single chain rule arises because so far, we have only discussed how to have a single input to a vector-valued function. Thus, we cannot compose one vector-valued function with another vector-valued function. You might also notice that the order in which the factors in the Chain Rule are written is a bit different to what you would write for single-variable functions. This is because <m>f'(t)</m> is a <em>scalar</em>, and convention says we should write scalar-vector multiplication with the scalar first.
   </p>
   <p>
-    In the next several sections of this chapter, we will examine how to utilize calculus tools and vector measurements to calculate different properties of curves in space and the associated velocity and acceleration vectors that come from their parameterizations. <xref ref="A_9_7_8" /> offers some good practice on using calculus tools on vector valued functions and previews some ideas that will be used in later sections of this chapter. 
+    In the next several sections of this chapter, we will examine how to use calculus tools and vector measurements to calculate different properties of curves in space and the associated velocity and acceleration vectors that come from their parameterizations. <xref ref="A_9_7_8" text="type-local" /> offers practice on using calculus tools on vector-valued functions and previews some ideas that will be used in later sections of this chapter. 
   </p>
 </subsection>
 <subsection xml:id="tangentlines">
   <title>Tangent Lines</title>
   <p>
-    One of the most important ideas in first-semester calculus is that a differentiable function is <em>locally linear</em>: that is, when viewed up close, the curve generated by a differentiable function looks very much like a line. Indeed, when we zoom in sufficiently far on a particular point, the curve looks indistinguishable from its tangent line. You can look at <xref ref="LLline" /> at the beginning of <xref ref="S-Precalc-Lines" /> for an interactive visualization of this idea.
+    One of the most important ideas in first-semester calculus is that a differentiable function is <term>locally linear</term>: that is, when viewed up close, the graph of a differentiable function looks like a line. Indeed, when we zoom in sufficiently close to a particular point, the curve is indistinguishable from its tangent line. You can look at <xref ref="LLline" /> for an interactive visualization of this important idea.
   </p>
   <p>
-    In the same way, we expect that a smooth curve in 3-space will be locally linear if the graph of the curve will look like a line when you zoom in sufficently far. In <xref ref="A_9_7_4" />, we investigate how to find the tangent line to such a curve. Recall from our work in <xref ref="S-Precalc-Lines">Section</xref> that the vector equation of a line that passes through the point at the tip of the vector <m>\vL_0 = \langle x_0, y_0, z_0 \rangle</m> in the direction of the vector <m>\vu = \langle a, b, c \rangle</m> can be written as
+    In the same way, we expect that a smooth curve in three-dimensional space will be locally linear if the graph of the curve looks like a line when you zoom in sufficently far. In <xref ref="A_9_7_4" />, we investigate how to find the tangent line to such a curve. Recall from our work in <xref ref="S-Precalc-Lines">Section</xref> that the vector equation of a line that passes through the point at the tip of the vector <m>\vL_0 = \langle x_0, y_0, z_0 \rangle</m> in the direction of the vector <m>\vu = \langle a, b, c \rangle</m> can be written as
     <me>
-      \vL(t) = \vL_0 + t \vu.
-    </me>
+      \vL(t) = \vL_0 + t \vu
+    </me>.
+    The line described by <m>\vL</m> can also be written in parametric form as
+    <me>
+      x(t) = x_0 + at, \ \ y(t) = y_0 + bt, \ \ z(t) = z_0 + ct
+    </me>.
+    <xref ref="vvf-tanline1" /> shows a plot of a curve, a point on that curve, and the line tangent to the curve at that point. You can change the point at which the tangent line is shown by moving the <q>Location</q> slider. By moving the <q>Zoom</q> slider to the right, you can show smaller and smaller regions around the highlighted point to see that the tangent line approximates the curve very well on sufficiently small neighborhoods of the point. If you move the zoom slider all the way to the left, the whole curve and axes will be shown. 
   </p>
   <figure xml:id="vvf-tanline1">
     <caption>A plot of a curve in space with the tangent line at a point drawn in red</caption>
@@ -753,7 +605,7 @@
       <slate surface="sage">
         var('t,x')
         @interact
-        def tanline3d(a=slider(0.1,6.2,0.1,default=1,label="location",display_value=False),zoom=slider(0,5,1,default=0,label="Zoom",display_value=False)):
+        def tanline3d(a=slider(0.1,6.2,0.1,default=1,label="Location",display_value=False),zoom=slider(0,5,1,default=0,label="Zoom",display_value=False)):
           from sage.plot.plot3d.plot3d import axes
           r(t)=(cos(t),sin(t),cos(2*t))
           v(t)=(-sin(t),cos(t),-2*sin(2*t))
@@ -773,13 +625,6 @@
       </slate>
     </interactive>
   </figure>
-  <p>
-    The line described by <m>\vL</m> in parametric form is given by
-    <me>
-      x(t) = x_0 + at, \ \ y(t) = y_0 + bt, \ \ z(t) = z_0 + ct
-    </me>
-    <xref ref="vvf-tanline1" /> shows a plot of a curve and a line tangent to the curve. You can change the point at which the tangent line is shown by moving the <q>location</q> slider. By moving the zoom slider to the right, you can show smaller and smaller regions around the highlighted point to see that the tangent line will approximate the curve very well on smaller and smaller neighborhoods of the point. If you move the zoom slider all the way to the left, the whole curve and axes will be shown. 
-  </p>
   <activity xml:id="A_9_7_4">
     <task>
       <statement>
@@ -788,7 +633,7 @@
           <me>
             \vr(t) = \cos(t) \vi - \sin(t) \vj + t \vk.
           </me>
-          Sketch the curve using some appropriate tool and make a drawing by hand that labels the point at the end of <m>\vr(\pi)</m>. 
+          Sketch the curve using some appropriate tool and make a drawing by hand that labels the point at the terminal point of <m>\vr(\pi)</m>. 
         </p>
       </statement>
       <solution>
@@ -804,14 +649,14 @@
     <task>
       <statement>
         <p>
-          Find a direction vector for the line tangent to the graph of <m>\vr</m> at the point where <m>t=\pi</m>.
+          Recall that we discussed earlier that the vector <m>\vr\, '(a)</m> is tangent to the graph of <m>\vr(t)</m> at the point where <m>t=a</m>. Find a direction vector for the line tangent to the graph of <m>\vr</m> at the point where <m>t=\pi</m>.
         </p>
       </statement>
       <solution>
         <p>
           The derivative
           <me>
-            \vr'(\pi) = -\sin(\pi)\vi - \cos(\pi)\vj + \vk = \vj + \vk
+            \vr\, '(\pi) = -\sin(\pi)\vi - \cos(\pi)\vj + \vk = \vj + \vk
           </me>
           is a direction vector for the line tangent to the graph of <m>\vr</m> at the point where <m>t=\pi</m>.
         </p>
@@ -835,134 +680,126 @@
     <task>
       <statement>
         <p>
-          On your plot of the curve <m>\vr(t)</m>, sketch the tangent line corresponding to <m>t = \pi</m> and highlight the role of <m>\vr'(\pi)</m> on your plot.  
+          On your plot of the curve <m>\vr(t)</m>, sketch the tangent line corresponding to <m>t = \pi</m> and highlight the role of <m>\vr\, '(\pi)</m> on your plot.  
         </p>
       </statement>
       <solution>
         <p>
-          The sketch below shows the curve <m>\vr(t)</m> and a direction vector <m>\vr'(\pi)</m> for the tangent line to the curve at <m>t=\pi</m>.
+          The sketch below shows the curve <m>\vr(t)</m> and a direction vector <m>\vr\, '(\pi)</m> for the tangent line to the curve at <m>t=\pi</m>.
           <image width="73%" source="images/9_7_Act29_d_sol1"/>
         </p>
       </solution>
     </task>
   </activity>
   <p>
-    We see that our work in <xref ref="A_9_7_4">Activity</xref> can be generalized. Given a differentiable vector-valued function <m>\vr</m>, the tangent line to the curve at the input value <m>a</m> is given by
-    <men xml:id="E_TanLineVecFxn">
-      \vL(t) = \vr(a) + t \vr'(a).
-    </men>
+    Our work in <xref ref="A_9_7_4">Activity</xref> can be generalized to give a method for finding an equation of the line tangent to a curve described by a vector-valued function.
   </p>
+  <assemblage xml:id="assemblage-vvf-tangent-line">
+    <title>Tangent Line to Curve Described by a Vector-Valued Function</title>
+    <p>
+      Given a differentiable vector-valued function <m>\vr</m>, the tangent line to the curve at the input value <m>a</m> is given by
+      <men xml:id="E_TanLineVecFxn">
+        \vL(t) = \vr(a) + t \vr\, '(a)
+      </men>.
+    </p>
+  </assemblage>
   <p>
-    The tangent line is determined entirely by a given point (provided by the function <m>\vr</m>) and a direction vector (provided by the derivative, <m>\vr'</m>), with both the function and its derivative evaluated at <m>t = a</m>. Note how analogous the formula for <m>\vL(t)</m> is to the tangent line approximation from single-variable calculus: in that context, for a given function <m>y = f(x)</m> at a value <m>x = a</m>, we found that the tangent line can be expressed by the linear function <m>y = L(x)</m> whose
+    The tangent line is determined entirely by a given point (provided by the function <m>\vr</m>) and a direction vector (provided by the derivative, <m>\vr\, '</m>), with both the function and its derivative evaluated at <m>t = a</m>. Note how analogous the formula for <m>\vL(t)</m> is to the tangent line approximation from single-variable calculus: in that context, for a given function <m>y = f(x)</m> at a value <m>x = a</m>, we found that the tangent line can be expressed by the linear function <m>y = L(x)</m> whose
     formula is
     <me>
-      L(x) = f(a) + f'(a)(x-a).
-    </me>
-  </p>
-  <p>
+      L(x) = f(a) + f'(a)(x-a)
+    </me>.
     Equation<nbsp/><xref ref="E_TanLineVecFxn"/> for the tangent line <m>\vL(t)</m> to the vector-valued function <m>\vr(t)</m> is nearly identical. Indeed, because there are multiple parameterizations for a single line, it is even possible to write the parameterization
     as
     <men xml:id="E_TanLineVecFxn2">
       \vL(t) = \vr(a) + (t-a)
-      \vr'(a).
+      \vr\, '(a).
     </men>
-    For example, in Equation<nbsp/><xref ref="E_TanLineVecFxn"/>, <m>\vL(0) = \vr(a)</m>, so the line's parameterization <q>starts</q> at <m>t = 0</m>.  When we write the parameterization in the form of Equation<nbsp/><xref ref="E_TanLineVecFxn2"/>, <m>\vL(a) = \vr(a)</m>, so the line's parameterization <q>starts</q> at <m>t = a</m>.
+    For example, in Equation<nbsp/><xref ref="E_TanLineVecFxn"/>, <m>\vL(0) = \vr(a)</m>, so the line's parameterization <q>starts</q> at <m>t = 0</m>.  When we write the parameterization in the form of Equation<nbsp/><xref ref="E_TanLineVecFxn2"/>, <m>\vL(a) = \vr(a)</m>, so the line's parameterization <q>starts</q> at <m>t = a</m>. Both of these ways of parameterizing the line tangent to the graph of a vector-valued function will be useful in our future work.
   </p>
-  <p>
+  <!-- <p>
     As we will learn in <xref ref="C_MVF" />, a smooth surface in 3-space is also locally linear. That means that the surface will look like a plane, which we call its <em>tangent plane</em>, as we zoom in on the graph. It is possible to use tangent lines to traces of the surface to generate a formula for the tangent plane; see <xref ref="Ez_9_7_3">Exercise</xref> for more details.
-  </p>
+  </p> -->
 </subsection>
 <subsection>
   <title>Integrating a Vector-Valued Function</title>
   <p>
-    Recall from your calculus of scalar valued functions, that the definite integral of a function <m>f(x)</m> on the interval <m>[a,b]</m> is defined as 
+    In single-variable calculus, you learned that the definite integral of a (scalar-valued) function <m>f(x)</m> on the interval <m>[a,b]</m> is defined as 
     <me>
       \int_a^b f(x)  \  dx= \lim_{\Delta x_i \rightarrow 0} \sum_{i=0}^n f(x^*_i) \Delta x_i
-    </me>
-    Where <m>\Delta x_i</m> is the width of the interval from <m>[x_{i-1},x_i]</m> and <m>x^*_i</m> is some point in <m>[x_{i-1},x_i]</m>. The definite integral measure the (signed) area between the graph of <m>f(x)</m> and the <m>x</m>-axis between <m>x=a</m> and <m>x=b</m>. The definite integral follows our classic calculus approach to measure the accumulation of the output of <m>f</m> over the interval <m>[a,b]</m>. Most students never used this Riemann sum definition to calculate any definite integrals, rather they used the Fundamental Therom of Calculus and the associated antiderivatives to efficiently calculate the value of a definite integral. <url href="https://activecalculus.org/single/sec-4-4-FTC.html#FTC" text="custom">The Fundamental Theorem of Integral Calculus</url> states that if <m>f</m> is a continuous function on <m>[a,b]</m> and <m>F(x)</m> is an antiderivatve of f (<m>\frac{dF}{dx}=f(x)</m>), then 
-    <me> \int_a^b f(x)  \  dx = F(b)-F(a)</me>
-    The set of functions that are the antiderivative of <m>f(x)</m> is also called the indefinite integral of <m>f(x)</m> and is denoted <m>\int f(x)  \  dx</m>. 
+    </me>,
+    where <m>\Delta x_i</m> is the width of the interval from <m>[x_{i-1},x_i]</m> and <m>x^*_i</m> is a point in <m>[x_{i-1},x_i]</m>. The definite integral measures the net signed area between the graph of <m>f(x)</m> and the <m>x</m>-axis on the interval from <m>x=a</m> to <m>x=b</m>. The definite integral uses our classic calculus approach to measure the accumulation of the output of <m>f</m> over the interval <m>[a,b]</m>. In practice, you probably did not use this Riemann sum definition to calculate any definite integrals, since the Fundamental Therom of Calculus allowed you to use associated antiderivatives to efficiently calculate the value of a definite integral. <url href="https://activecalculus.org/single/sec-4-4-FTC.html#FTC" text="custom">The Fundamental Theorem of Integral Calculus</url> states that if <m>f</m> is a continuous function on <m>[a,b]</m> and <m>F(x)</m> is an antiderivatve of <m>f</m> (that is, <m>\frac{dF}{dx}=f(x)</m>), then 
+    <me> \int_a^b f(x)  \  dx = F(b)-F(a)</me>.
+    The family of functions that are antiderivatives of <m>f(x)</m> is also called the <term>indefinite integral</term> of <m>f(x)</m> and is denoted <m>\int f(x)  \  dx</m>. 
   </p>
   <p>
-    We can apply all of the ideas above related to definite and indefinite integrals to vector valued functions of one variable by performing each operation separately on each component (apply integration componentwise). 
+    We can apply all of the ideas above related to definite and indefinite integrals to vector-valued functions of one variable by performing each operation separately on each component. 
   </p>
   <assemblage xml:id="Vector-valued-function-integral">
-    <title>Integrating a vector-valued function</title>
+    <title>Integrating a Vector-Valued Function</title>
     <p>
       If <m>\vr(t) = x(t) \vi + y(t) \vj + z(t) \vk</m> with <m>t\in[a,b]</m>, then
       <me>
-        \int^b_a \vr(t) \ dt = \left(\int^b_a x(t) \ dt\right) \vi + \left( \int^b_a y(t) \ dt \right) \vj + \left(\int^b_a z(t) \ dt\right) \vk.
-      </me>
-      Similarly, the <term>indefinite integral</term><idx><h>vector-valued function</h><h>indefinite integral</h></idx> <m>\int \vr(t) \ dt</m> of a vector-valued function <m>\vr</m> is the general antiderivative of <m>\vr</m> and represents the collection of all antiderivatives of <m>\vr</m> and is denoted with 
+        \int^b_a \vr(t) \ dt = \left(\int^b_a x(t) \ dt\right) \vi + \left( \int^b_a y(t) \ dt \right) \vj + \left(\int^b_a z(t) \ dt\right) \vk
+      </me>,
+      provided that all three of the integrals on the right-hand side exist. An <term>antiderivative</term><idx><h>vector-valued function</h><h>antiderivative</h></idx> of a vector-valued function <m>\vr</m> is a vector-valued function <m>\vR</m> such that
       <me>
-        \int \vr  \  dt = \int \langle x(t),y(t),z(t) \rangle  \  dt = \langle \int x(t)  \  dt, \int y(t)  \  dt,\int z(t)  \  dt\rangle
-      </me>
-      An <term>antiderivative</term><idx><h>vector-valued function</h><h>antiderivative</h></idx> of a vector-valued function <m>\vr</m> is a vector-valued function <m>\vR</m> such that
+        \vR\, '(t) = \vr(t)
+      </me>.
+      The <term>indefinite integral</term><idx><h>vector-valued function</h><h>indefinite integral</h></idx> <m>\int \vr(t) \ dt</m> of a vector-valued function <m>\vr</m> is the most general antiderivative of <m>\vr</m> and represents the family of all antiderivatives of <m>\vr</m>. The indefinite integral of <m>\vr(t)</m> is denoted by
       <me>
-        \vR'(t) = \vr(t).
-      </me>
+        \int \vr  \  dt = \int \langle x(t),y(t),z(t) \rangle  \  dt = \left\langle \int x(t)  \  dt, \int y(t)  \  dt,\int z(t)  \  dt\right\rangle
+      </me>.
     </p>
   </assemblage>
   <p>
-    The area under the curve idea does NOT generalize when we think about the integral of <m>\vr(t)</m>. The integral of <m>\vr</m> is in relation to the input variable <m>t</m> and there is not a <m>t</m>-axis on the graph of <m>\vr(t)</m>. 
-  </p>
-  <p>
-    As described in the introduction to this section, the concept that will generalize to the vector valued function realm is the definite integral measures the accumulation of the output of your function. Recall that if <m>v(t)</m> was the velocity of an object traveling on the <m>x</m>-axis, then we could describe the position of the object as 
-    <me>
-      x(t)=\int_0^t v(u)  \  du + x_0
-    </me>
-    This was the result of setting up a Riemann sum that looked at the change in position over a small step of time as the velocity on that step times the size of the time step. In other words, 
-    <me>
-      x(t) \approx x_0 + \sum_{i=0}^{n} v(t^*_i) \Delta t
-    </me>
-  </p>
-  <p>
-    If we apply our argument for the accumulation of rates of change to each component separately (because we the components of the velocity vector), then we can integrate (componentwise!) to get the components of the position vector separately! Additionally, we can integrate acceleration to get the velocity as a function of <m>t</m>. Whether we are integrating velocity to get position or acceleration to get velocity, it will be necessary to have a particular point (in position or velocity) that will allow us to solve for the particular integration constant (the <m>+C</m>).
+    The area under the curve idea does <alert>not</alert> generalize when we think about the integral of <m>\vr(t)</m>. One way to understand this is that the integral of <m>\vr</m> is with respect to the input variable <m>t</m> and there is not a <m>t</m>-axis on the graph of <m>\vr(t)</m>. However, as described in the introduction to this section, the concept that <em>will</em> generalize to vector-valued functions is the definite integral as a measurement of the accumulation of the output of a function. Specifically, in <xref ref="accumulation" text="title"/>, we stated how we can recover the position function by integrating the velocity function. This is a way of viewing position as the accumulation of the rate of change of position. If we apply our argument for the accumulation of rates of change to each component separately, then we can integrate the velocity componentwise to obtain the components of the position vector separately. Additionally, we can integrate acceleration to get the velocity as a function of <m>t</m>. Whether we are integrating velocity to get position or acceleration to get velocity, it will be necessary to have a particular point (in position or velocity) that will allow us to solve for the particular integration constant (the <q><m>+C</m></q> from single-variable calculus).
   </p>
   <example xml:id="projectilemotion">
     <p>
-      For this example, we will look at the motion of a projectile in two dimensions where the only force on the projectile is gravity. This type of problem applies to sports like archery or shotput or to military applications like mortar or artillery placements, as well applications to firefighting or fireworks construction. This kind of simplified physics problem is common in introductory courses because there is only one force involved, the force is constant (does not change based on location, speed, or time), and the force is in only one coordinate direction. Even this description is a greatly simplified version of how gravity acts in a greater sense. 
+      For this example, we consider the motion of a projectile in two dimensions where the only force on the projectile is gravity. This type of problem applies to sports like archery or shotput as well as to military applications like mortar or artillery placements. It also has applications to firefighting or fireworks construction. This kind of simplified physics problem is common in introductory courses because there is only one force involved, the force is constant (does not change based on location, speed, or time), and the force is in only one coordinate direction. Even this description is a greatly simplified version of how gravity acts in a greater sense. 
     </p>
     <p>
       Newton's second law of motion says that that sum of the forces acting on an object is equal to the mass of the object times the acceleration vector. In our problem, the only force is gravity pulling the object in the negative <m>y</m>-direction. We want to completely determine the path traveled by an object that is launched from a fixed position at a given angle from the horizontal with a given initial velocity. This information can be stated as follows with the initial values shown in <xref ref="F_9_7_Motion" />: 
       <ul>
-        <li>the acceleration is given by <m>m \va(t) = -mg \vj</m> (the only force is gravity pulling down with a constant force)</li>
-        <li>the initial position is <m> \vr(0)=\langle x_0,y_0\rangle </m></li>
-        <li>the initial velocity is <m>\vv(0)=\frac{\vr}{dt}(0)=\langle v_0 \cos(\theta),v_0 \sin(\theta) \rangle</m></li>
-        <li>we want to find position as a function of time, <m>\vr(t)</m></li>
+        <li>The acceleration is given by <m>m \va(t) = -mg \vj</m> (the only force is gravity pulling down with a constant force).</li>
+        <li>The initial position is <m> \vr(0)=\langle x_0,y_0\rangle </m>.</li>
+        <li>The initial velocity is <m>\vv(0)=\frac{d\vr}{dt}(0)=\langle v_0 \cos(\theta),v_0 \sin(\theta) \rangle</m>.</li>
+        <li>We want to find position as a function of time, <m>\vr(t)</m>.</li>
       </ul>
     </p>
+    <!-- TODO Figure uses a bold vector name -->
     <figure xml:id="F_9_7_Motion">
       <caption>Projectile motion</caption>
       <image width="50%" source="images/fig_9_7_projectile"/>
     </figure>
     <p>
-      We can simplify <m>m \va(t) = -mg \vj</m> to get <m>\va(t)=\langle 0,-g\rangle</m>, then integrate acceleration to get the velocity as a function of <m>t</m>. The indefinite integral of <m>\va(t)=\langle 0,-g\rangle</m> with respect to <m>t</m> will be <m>\langle 0,-gt\rangle +\vec{C}</m>, where <m>\vec{C}</m> is some constant vector. We need to pick the constant such that the initial velocity is <m>\vv(0)=\langle v_0 \cos(\theta),v_0 \sin(\theta) \rangle</m>, because we need the initial speed to be <m>v_0</m> and have components that coorespond to an angle of <m>\theta</m> above the horizontal. Because <m>\vv(0)=\langle 0,-g(0)\rangle +\vec{C}=\vec{C}=\langle v_0 \cos(\theta),v_0 \sin(\theta) \rangle</m>, we get the following for the velocity as a function of time:
+      We can simplify <m>m \va(t) = -mg \vj</m> to find <m>\va(t)=\langle 0,-g\rangle</m>. Next, we integrate the acceleration to find the velocity as a function of <m>t</m>. The indefinite integral of <m>\va(t)=\langle 0,-g\rangle</m> with respect to <m>t</m> will be <m>\langle 0,-gt\rangle +\vec{C}</m>, where <m>\vec{C}</m> is a constant vector. We need to pick the constant such that the initial velocity is <m>\vv(0)=\langle v_0 \cos(\theta),v_0 \sin(\theta) \rangle</m>. This will ensure that the initial speed is <m>v_0</m> and that the initial velocity has an angle of <m>\theta</m> above the horizontal. Because <m>\vv(0)=\langle 0,-g(0)\rangle +\vec{C}=\vec{C}=\langle v_0 \cos(\theta),v_0 \sin(\theta) \rangle</m>, we find the following for the velocity as a function of time:
       <me>
         \vv(t)=\langle 0,-gt\rangle+\langle v_0 \cos(\theta),v_0 \sin(\theta) \rangle=\langle v_0 \cos(\theta),v_0 \sin(\theta)-gt \rangle
       </me>
     </p>
     <p>
-      We can integrate our velocity function to get the position as a function of <m>t</m>. The indefinite integral of <m>\langle v_0 \cos(\theta),v_0 \sin(\theta)-gt \rangle</m> will be 
+      Now we can integrate our velocity function to get the position as a function of <m>t</m>. The indefinite integral of <m>\langle v_0 \cos(\theta),v_0 \sin(\theta)-gt \rangle</m> will be 
       <me>
-        \langle v_0 \cos(\theta) t ,v_0 \sin(\theta)t- \frac{1}{2}gt^2 \rangle+ \vec{C}
-      </me>
-      Again we need to pick the integration constant, <m>\vec{C}</m>, that satisifes our initial position <m> \vr(0)=\langle x_0,y_0\rangle </m>. This gives the following vector valued function for the position of the object as a function of time.
+        \langle v_0 \cos(\theta) t ,v_0 \sin(\theta)t- \frac{1}{2}gt^2 \rangle+ \vec{D}
+      </me>.
+      Again we need to find the integration constant <m>\vec{D}</m> that satisifes the initial position <m> \vr(0)=\langle x_0,y_0\rangle </m>. This gives the following vector-valued function for the position of the object as a function of time.
       <me>
         \vr(t) = \left\langle v_0 \cos(\theta)t + x_0, -\frac{g}{2}t^2 + v_0 \sin(\theta)t + y_0 \right\rangle
       </me>
     </p>
   </example>
   <p>
-    In the next activity, we will look at relationships between position, velocity, and acceleration in a situation that is more complicated than the constant acceleration of <xref ref="projectilemotion" />. The process of using integration and differentiation will remain the same but the results will not be nearly as simple.
+    In the next activity, we look at relationships between position, velocity, and acceleration in a situation that is more complicated than the constant acceleration of <xref ref="projectilemotion" />. The process of using integration and differentiation will remain the same, but the results will not be nearly as simple.
   </p>
-  <activity xml:id="A_9_7_7">
+  <activity xml:id="act-vvf-calc-position">
     <introduction>
       <p>
         Suppose a moving object in space has its velocity given by
         <me>
-          \vv(t) = (-2\sin(2t)) \vi + (2 \cos(t)) \vj + \left(1 - \frac{1}{1+t}\right) \vk.
-        </me>
+          \vv(t) = (-2\sin(2t)) \vi + (2 \cos(t)) \vj + \left(1 - \frac{1}{1+t}\right) \vk
+        </me>.
         A graph of the position of the object for times <m>t</m> in <m>[-0.5,3]</m> is shown in <xref ref="F_9_7_VVD_Example">Figure</xref>. Suppose further that the object is at the point <m>(1.5,-1,0)</m> at time <m>t=0</m>.
       </p>
     </introduction>
@@ -1010,7 +847,7 @@
           Compute the position, velocity, and acceleration vectors of the object at time <m>t=1</m> and plot these vectors using <xref ref="F_9_7_VVD_Example">Figure</xref>.
         </p>
         <figure xml:id="F_9_7_VVD_Example">
-          <caption>The position graph for the function in <xref ref="A_9_7_7">Activity</xref></caption>
+          <caption>The position graph for the function in <xref ref="act-vvf-calc-position">Activity</xref></caption>
           <image width="50%" source="images/fig_9_7_activity"/>
         </figure>
       </statement>
@@ -1024,7 +861,7 @@
     <task>
       <statement>
         <p>
-          Give the vector equation for the tangent line, <m>\vL(t)</m>, that is tangent to the position curve at <m>t = 1</m>.
+          Give the vector equation for the tangent line, <m>\vL(t)</m>, that is tangent to the graph of <m>\vr(t)</m> at <m>t = 1</m>.
         </p>
       </statement>
       <solution>
@@ -1038,28 +875,27 @@
     </task>
   </activity>
   <p>
-    The previous activity shows a case where the motion of our object is driven by forces that either turn the object or change the speed of the object in the <m>z</m>-coordinate direction. We will spend the rest of this chapter looking at measurements related to motion along curves like this. Key to these measurements will be the combined use of our new calculus for vector valued functions with the vector tools from the previous chapter. 
+    The previous activity shows a case where the motion of our object is driven by forces that either turn the object or change the speed of the object in the <m>z</m>-coordinate direction. We will spend the rest of this chapter looking at measurements related to motion along curves like this. Key to these measurements will be the combined use of our new calculus for vector-valued functions with the vector tools from the previous chapter. 
   </p>
 </subsection>
-<subsection>
-  <title>Summary</title>
+<outcomes>
   <ul>
     <li>
       <p>
         If <m>\vr</m> is a vector-valued function, then the derivative of <m>\vr</m> is defined by
         <me>
-          \vr'(t) = \lim_{h \to 0} \frac{\vr(t+h)-\vr(t)}{h}
+          \vr\, '(t) = \lim_{h \to 0} \frac{\vr(t+h)-\vr(t)}{h}
         </me>
         for those values of <m>t</m> at which the limit exists, and is computed componentwise by the formula
         <me>
-          \vr'(t) = x'(t) \vi + y'(t) \vj + z'(t) \vk
+          \vr\, '(t) = x'(t) \vi + y'(t) \vj + z'(t) \vk
         </me>
         for those values of <m>t</m> at which <m>x</m>, <m>y</m>, and <m>z</m> are differentiable, where <m>\vr(t) = x(t) \vi + y(t) \vj + z(t) \vk</m>.
       </p>
     </li>
     <li>
       <p>
-        The derivative <m>\vr'(t)</m> of the vector-valued function <m>\vr</m> tells us the instantaneous rate of change of <m>\vr</m> with respect to time, <m>t</m>, which can be interpreted as a direction vector for the line tangent to the graph of <m>\vr</m> at the point <m>\vr(t)</m>, or also as the instantaneous velocity of an object traveling along the graph defined by <m>\vr(t)</m> at time <m>t</m>.
+        The derivative <m>\vr\, '(t)</m> of the vector-valued function <m>\vr</m> tells us the instantaneous rate of change of <m>\vr</m> with respect to time, <m>t</m>, which can be interpreted as a direction vector for the line tangent to the graph of <m>\vr</m> at the point <m>\vr(t)</m>, or also as the instantaneous velocity of an object traveling along the graph defined by <m>\vr(t)</m> at time <m>t</m>.
       </p>
     </li>
     <li>
@@ -1081,7 +917,7 @@
       </p>
     </li>
   </ul>
-</subsection>
+</outcomes>
 
 <xi:include href="./exercises/ez-S_VVF_Calculus.ptx" />
 

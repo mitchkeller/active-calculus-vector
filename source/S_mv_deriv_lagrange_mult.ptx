@@ -31,8 +31,8 @@
           </li>
         </ul>
     </objectives>
-
-    <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       We previously considered how to find the extreme values of functions on both unrestricted domains and on closed, bounded domains. Other types of optimization problems involve maximizing or minimizing a quantity subject to an external constraint. In these cases the extreme values frequently won't occur at the points where the gradient is zero, but rather at other points that satisfy an important geometric condition. These problems are often called <em>constrained optimization</em> problems and can be solved with the method of Lagrange Multipliers, which we study in this section.
     </p>
@@ -147,7 +147,7 @@
       </solution>
 
     </exploration>
-  </introduction>
+  </subsection>
 
   <subsection>
     <title>Constrained Optimization and Lagrange Multipliers</title>

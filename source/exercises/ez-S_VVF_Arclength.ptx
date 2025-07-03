@@ -36,13 +36,13 @@
 
       
    
-   <exercise xml:id="A_9_8_3">
+   <exercise xml:id="ex-VVF-arclength-fn">
    <statement> 
       <p>
          We can adapt the arc length formula to curves in 2-space that define <m>y</m> as a function of <m>x</m> as the following activity shows.
       </p>
       <p>
-         Let <m>y = f(x)</m> define a smooth curve in 2-space. Parameterize this curve and use Equation<nbsp/><xref ref="eq_9_8_arclength_2"/> to show that the length of the curve defined by <m>f</m> on an interval <m>[a,b]</m> is
+         Let <m>y = f(x)</m> define a smooth curve in 2-space. Parameterize this curve and use Equation<nbsp/><xref ref="eq_arclength"/> to show that the length of the curve defined by <m>f</m> on an interval <m>[a,b]</m> is
          <me>
             \int_a^b \sqrt{1+[f'(t)]^2} \, dt.
          </me>

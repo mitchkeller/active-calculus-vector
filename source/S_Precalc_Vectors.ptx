@@ -43,8 +43,8 @@
           </li>
         </ul>
     </objectives>
-
-    <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       Quantities like length, speed, area, and mass are all measured using a single number (a <term>scalar</term>). Other quantities, like velocity, force, and displacement, have two attributes: magnitude (or length) and direction. These quantities are represented by <term>vectors</term> and are the focus of this section. For example, we will use vectors to calculate work done by a constant force, calculate torque, determine direction vectors for lines and normal vectors for planes, define curvature, and determine the direction of greatest increase on a surface. For most of these applications, we will be interested in using vectors to measure the direction of some aspect of the application while needing to also pay attention to the magnitude of this measurement. Vectors will be an essential tool for describing the behavior of functions of several variables. 
     </p>
@@ -149,7 +149,7 @@
         </solution>
       </task>
     </exploration>
-  </introduction>
+  </subsection>
 
   <subsection>
     <title>Representations of Vectors</title>
