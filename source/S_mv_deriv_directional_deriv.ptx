@@ -30,8 +30,8 @@
           </li>
         </ul>
     </objectives>
-
-    <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       The partial derivatives of a multivariable function tell us the instantaneous rate at which the function's output changes as we hold all but one independent variable constant (allowing the remaining independent variable to change). It is natural to wonder how we can measure the rate at which a function changes in a direction other than parallel to a coordinate axes. In this section, we investigate this question and will connect the rates of change in other directions to the rates of change given by the partial derivatives. In our preview activity, we will investigate these concepts in terms of a contour map representing elevation in terms of location.
     </p>
@@ -255,7 +255,7 @@
   
     </exploration> -->
     
-  </introduction>
+  </subsection>
 
   <subsection>
     <title>Directional Derivatives</title>

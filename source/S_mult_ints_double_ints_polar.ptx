@@ -30,8 +30,8 @@
           </li>
         </ul>
     </objectives>
-
-    <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       While we have naturally defined double integrals in the rectangular coordinate system, starting with domains that are rectangular regions, there are many of these integrals that are difficult, if not impossible, to evaluate. For example, consider the domain <m>D</m> that is the unit circle (centered at the origin) and <m>f(x,y) = e^{-x^2 - y^2}</m>. To integrate <m>f</m> over <m>D</m>, we would use the iterated integral
       <me>
@@ -165,7 +165,7 @@
         </statement>
       </task>
     </exploration>
-  </introduction>
+  </subsection>
 
 
   <subsection>

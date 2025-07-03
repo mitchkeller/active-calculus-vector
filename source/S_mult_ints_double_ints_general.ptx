@@ -30,8 +30,8 @@
           </li>
         </ul>
     </objectives>
-
-    <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       Recall in <xref ref="S-11-1-Double-Integrals-Rectangles">Section</xref> that we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as
       <me>
@@ -280,7 +280,7 @@
         </solution>
       </task>
     </exploration>
-  </introduction>
+  </subsection>
 
   <subsection>
     <title>Double Integrals over General Regions</title>

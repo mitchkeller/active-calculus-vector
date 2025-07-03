@@ -29,7 +29,17 @@
         </li>
       </ul>
   </objectives>
-  <introduction> 
+  <introduction component="instructor" >
+    <title>Notes to Instructors and Dependencies</title>
+    <p>
+      If your course needs to teach conic sections in depth (or you have time and want to do so), <xref ref="S-app-conics" /> provides a comprehensive introduction for students in a course of this level.
+    </p>
+    <p>
+      This section is written with the assumption that students have sufficient background to be able to do the Preview Activity while consulting with <xref ref="S-app-conics"/> to refresh their memory on important aspects of conic sections. <xref ref="act-Precalc_CommonGraphs-quadric-describe"/> is likely too long to have every group of students work on all three surfaces. We suggest dividing students into groups and assigning each surface in the activity to one third of your groups. Save time for there to be a report on each surface by one of the groups that worked on that surface, allowing other groups who worked on the same surface to add factors they considered that were not brought up by the group that presented. If you have sufficient vertical non-permanent writing surfaces in your classroom, you could have groups rotate and see what a group who analyzed another surface did rather than having brief presentations to the full class.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Introduction</title> 
     <p>
       In this section, we will introduce some examples of graphs in three dimensions that have nice algebraic properties and a variety of interesting geometric features. In the Preview Activity, we ask you to practice identifying conic sections such as circles, parabolas, ellipses, and hyperbolas from their equations. The section will then help you see how to use your knowledge of conic sections to identify key properties of graphs in <em>three</em> dimensions. For a complete discussion of conic sections, see <xref ref="S-app-conics"/>.
     </p>
@@ -220,7 +230,7 @@
         </figure>
       </statement>
     </exploration>
-  </introduction>
+  </subsection>
   <subsection xml:id="subsec-cylsurf">
     <title>Cylinder Surfaces</title>
     <p>
@@ -541,6 +551,12 @@
         </li>
       </ul>
     </p>
+    <historical component="instructor">
+      <title>Note for instructors</title>
+      <p>
+        This activity is likely too long to have every group of students work on all three surfaces. See the notes for instructors at the top of the section for suggestions.
+      </p>
+    </historical>
     <activity xml:id="act-Precalc_CommonGraphs-quadric-describe">
       <introduction>
         <p>
@@ -612,7 +628,6 @@
     </p>
   </subsection>
   <outcomes>
-    <title>Summary</title>
     <ul>
       
       <li>
@@ -641,13 +656,5 @@
   </outcomes>
 
   <xi:include href="exercises/ez-S_Precalc_Common_Graphs.ptx" />  
-  <subsection component="instructor" >
-    <title>Notes to Instructors and Dependencies</title>
-    <p>
-      If your course needs to teach conic sections in depth (or you have time and want to do so), <xref ref="S-app-conics" /> provides a comprehensive introduction for students in a course of this level.
-    </p>
-    <p>
-      This section is written with the assumption that students have sufficient background to be able to do the Preview Activity while consulting with <xref ref="S-app-conics"/> to refresh their memory on important aspects of conic sections. <xref ref="act-Precalc_CommonGraphs-quadric-describe"/> is likely too long to have every group of students work on all three surfaces. We suggest dividing students into groups and assigning each surface in the activity to one third of your groups. Save time for there to be a report on each surface by one of the groups that worked on that surface, allowing other groups who worked on the same surface to add factors they considered that were not brought up by the group that presented. If you have sufficient vertical non-permanent writing surfaces in your classroom, you could have groups rotate and see what a group who analyzed another surface did rather than having brief presentations to the full class.
-    </p>
-  </subsection>
+
 </section>

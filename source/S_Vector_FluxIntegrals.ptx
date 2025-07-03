@@ -29,9 +29,10 @@
     </li>
   </ul>
 </objectives>
-<introduction>
+<subsection>
+  <title>Introduction</title>
   <p>
-    <xref ref="S-11-6-Parametric-Surfaces-Surface-Area"/> showed how we can use vector valued functions of two variables to give a parameterization of a surface in space. For instance, the function <m>\vr(s,t)=\langle 2\cos(t)\sin(s), 2\sin(t)\sin(s),2\cos(s)\rangle</m> with domain <m>0\leq t\leq 2 \pi</m> and <m>0\leq s\leq \pi</m> parameterizes a sphere of radius <m>2</m> centered at the origin. <xref ref="S-11-6-Parametric-Surfaces-Surface-Area"/> also gives examples of how to write parameterizations based on other geometric relationships like when one coordinate can be written as a function of the other two. In <xref ref="SS-11-6-2-Surface-Area-Parametrically-Defined-Surfaces"/>, we set up a Riemann sum based on a parameterization that would measure the surface area of our curved surfaces in space.
+    <xref ref="S-11-6-Parametric-Surfaces-Surface-Area"/> showed how we can use vector-valued functions of two variables to give a parameterization of a surface in space. For instance, the function <m>\vr(s,t)=\langle 2\cos(t)\sin(s), 2\sin(t)\sin(s),2\cos(s)\rangle</m> with domain <m>0\leq t\leq 2 \pi</m> and <m>0\leq s\leq \pi</m> parameterizes a sphere of radius <m>2</m> centered at the origin. <xref ref="S-11-6-Parametric-Surfaces-Surface-Area"/> also gives examples of how to write parameterizations based on other geometric relationships like when one coordinate can be written as a function of the other two. In <xref ref="SS-11-6-2-Surface-Area-Parametrically-Defined-Surfaces"/>, we set up a Riemann sum based on a parameterization that would measure the surface area of our curved surfaces in space.
   </p>
   <p>
     In <xref ref="fig_Vector_FluxInt_ParaPic"/>, we plot a surface using a parametrization <m>\vr(s,t)=\langle{f(s,t),g(s,t),h(s,t)}\rangle</m>. The magenta curves represent curves where <m>s</m> varies and <m>t</m> is held constant, while the yellow curves represent curves where <m>t</m> varies and <m>s</m> is held constant. The vector in magenta is
@@ -127,14 +128,14 @@ parse="text"
 
 <program>
 
-<input>
+<code>
 
 <xi:include
 href="./interacts/demo.sage9.txt"
 parse="text"
 />
 
-</input>
+</code>
 
 </program>
       </solution>
@@ -235,14 +236,14 @@ parse="text"
 
 <program>
 
-<input>
+<code>
 
 <xi:include
 href="./interacts/demo.sage10.txt"
 parse="text"
 />
 
-</input>
+</code>
 
 </program>
         </p>
@@ -289,7 +290,7 @@ parse="text"
   <p>
     As we saw in <xref ref="S-11-6-Parametric-Surfaces-Surface-Area"/>, we can set up a Riemann sum of the areas for the parallelograms in <xref ref="fig_Vector_FluxInt_ParaPic"/> to approximate the surface area of the region plotted by our parametrization. <xref ref="E_surface_area" text="global">Equation</xref> shows that we can compute the exact surface area by taking a limit of a Riemann sum which will correspond to integrating the magnitude of <m>\vr_s \times \vr_t</m> over the appropriate parameter bounds. What if we wanted to measure a quantity other than the surface area? Our focus in this section we will be the exploration of a specific case of this question: How can we measure the amount of a three dimensional vector field that flows through a particular section of a surface? The geometric tools we have reviewed in this section, especially the vector <m>\vr_s \times \vr_t</m>, will be valuable.
   </p>
-</introduction>
+</subsection>
 <subsection xml:id="SS_Vector_FluxInt_Idea">
   <title>The Idea of the Flux of a Vector Field through a Surface</title>
   <p>
@@ -558,7 +559,7 @@ parse="text"
       <me>
         \iint_{S_1} \vF \cdot (\vr_s \times \vr_t)\, dA = \iint_{S_1} \vF \cdot  d\vec{A} = \iint_{S_1} \vF \cdot  d\vec{S}
       </me>
-      While we will use the notation specified in <xref ref="thm_flux_int_calc" /> primarily, the other notations come from combining the normal vector (calculated from the parameterization of the surface) and the area element into a single vector valued area element. In other words, <m>(\vr_s \times \vr_t)\, dA =  d\vec{A} =  d\vec{s}</m>.
+      While we will use the notation specified in <xref ref="thm_flux_int_calc" /> primarily, the other notations come from combining the normal vector (calculated from the parameterization of the surface) and the area element into a single vector-valued area element. In other words, <m>(\vr_s \times \vr_t)\, dA =  d\vec{A} =  d\vec{s}</m>.
     </p>
   </remark>
   <example xml:id="flux_int_example1">

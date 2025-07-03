@@ -30,7 +30,8 @@
         </li>
       </ul>
   </objectives>
-  <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       In the first five sections of this chapter, we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as a limit of a double Riemann sum, which paralleled the single-variable integral of a function <m>g = g(x)</m> on an interval <m>[a,b]</m>. Moreover, this double integral has natural interpretations and applications, and can be considered over non-rectangular regions, <m>D</m>. For instance, given a continuous function <m>f</m> over a region <m>D</m>, the average value of <m>f</m>, <m>f_{\operatorname{AVG}(D)}</m>, is given by
       <me>
@@ -179,7 +180,7 @@
     <p>
       In the Preview Activity above, we covered most of the classic calculus approach to set up integration of a density function in three dimensions. In the next subsection, we will generalize these ideas and work on activities and examples that highlight the definition of a triple integral and how to convert triple integrals to iterated integrals for efficient calculation. 
     </p>
-  </introduction>
+  </subsection>
 
   <subsection>
     <title>Triple Riemann Sums and Triple Integrals</title>

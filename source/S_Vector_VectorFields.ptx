@@ -41,7 +41,8 @@
         </li>
       </ul>
     </objectives>
-  <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       Vectors have played a central role in our study of multivariable calculus. We know how to do operations on vectors
       (addition, scalar multiplication, dot product, etc.), and we have seen how vectors can be used to describe curves in <m>\R^2</m> and <m>\R^3</m>. The examples of using vectors to describe curves was our first example of a vector-valued function. In <xref ref="vvf1_def" /> a curve is traced by the terminal point of <m>\vr(t)</m>, a function that has a real number as an input and produces a vector in <m>\R^2</m> or <m>\R^3</m>. In this section, we will expand our understanding of vector-valued functions to take a point <m>(x,y)</m> in <m>\R^2</m> (or a point <m>(x,y,z)</m> in <m>\R^3</m>) as an input and produce a vector (typically in <m>\R^2</m> or <m>\R^3</m>, respectively) as output.
@@ -312,7 +313,7 @@
           </solution>
         </task>
     </exploration>
-  </introduction>
+  </subsection>
 
   <subsection xml:id="SS_Vector_VectorFields_Examples">
     <title>Examples of Vector Fields</title>

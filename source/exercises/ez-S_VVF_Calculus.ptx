@@ -72,7 +72,7 @@
   <exercise xml:id="Ez_9_7_1">
     <statement>
       <p>
-        Compute the derivative of each of the following functions in two different ways: (1) use the rules provided in the theorem stated just after <xref ref="A_9_7_2">Activity</xref>, and (2) rewrite each given function so that it is stated as a single function (either a scalar function or a vector-valued function with three components), and differentiate component-wise. Compare your answers to ensure that they are the same.
+        Compute the derivative of each of the following functions in two different ways: (1) use the rules provided in the theorem stated just after <xref ref="act-vvf-calculus-diff">Activity</xref>, and (2) rewrite each given function so that it is stated as a single function (either a scalar function or a vector-valued function with three components), and differentiate component-wise. Compare your answers to ensure that they are the same.
         <ol marker="a.">
           <li>
             <p>
@@ -386,7 +386,8 @@
       </ol>
     </solution>
   </exercise>
-  <exercise xml:id="Ez_9_7_3">
+  <!-- TODO See if this exercise survives for use somewhere else. We don't have the idea of a "trace" yet, so misplaced here. -->
+  <!-- <exercise xml:id="Ez_9_7_3">
     <statement>
       <p>
         In this exercise, we determine the equation of a plane tangent to the surface defined by <m>f(x,y) = \sqrt{x^2+y^2}</m> at the point <m>(3,4,5)</m>.
@@ -465,7 +466,7 @@
         </li>
       </ol>
     </solution>
-  </exercise>
+  </exercise> -->
   <exercise xml:id="Ez_9_7_4">
     <statement>
       <p>

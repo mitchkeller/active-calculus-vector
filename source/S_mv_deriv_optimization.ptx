@@ -34,7 +34,8 @@
       </li>
     </ul>
   </objectives>
-  <introduction>
+  <subsection>
+    <title>Introduction</title>
     <p>
       In <url href="https://activecalculus.org/single/sec-3-1-tests.html">single-variable calculus</url> we learned that the derivative is useful for finding the local maxima and minima of functions and these ideas are often employed in applied settings. In particular, if a function <m>f</m>, such as the one shown in <xref ref="F_10_7_preview_1">Figure</xref> is differentiable everywhere, we know that the tangent line is horizontal at any point where <m>f</m> has a local maximum or minimum. Horizontal tangent lines occur when the derivative <m>f'</m> is zero at any such point. Thus, one way we can find possible extreme values of a given function is to first find where the derivative of the function is zero. Remember that not every point where <m>f'(a)=0</m> will correspond to either a local maximum or local minimum. 
     </p>
@@ -253,7 +254,7 @@
   
 
     </exploration> -->
-  </introduction>
+  </subsection>
 
   <subsection>
     <title>Extrema and Critical Points</title>
