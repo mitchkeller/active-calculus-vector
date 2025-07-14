@@ -266,7 +266,7 @@
       <task>
         <statement>
           <p>
-            Draw an example of a curve such that <m>\vT\, '</m> does not exist at a point on your curve but <m>\vT</m> <em>does</em> exist at that point. Identify the point at which <m>\vT\, '</m> failes to exist. Explain both why <m>\vT\, '</m> does not exist at that point based on your plot and why <m>\vN</m> does not exist at the same point.
+            Draw an example of a curve such that <m>\vT\, '</m> does not exist at a point on your curve but <m>\vT</m> <em>does</em> exist at that point. Identify the point at which <m>\vT\, '</m> fails to exist. Explain both why <m>\vT\, '</m> does not exist at that point based on your plot and why <m>\vN</m> does not exist at the same point.
           </p>
         </statement>
       </task>
@@ -286,21 +286,21 @@
     <p>
       From our work in <xref ref="helix-T" />, we calculated
       <me> \vT(t)= \frac{\vv(t)}{\vecmag{{\vv(t)}}}= \frac{1}{\sqrt{1+\frac{1}{\pi^2}}}\left\langle -\sin(t),\cos(t),\frac{1}{\pi} \right\rangle </me>
-      Using the definition of <m>\vN</m>, we need to compute the derivative of <m>\vT</m> with respect to <m>t</m>. 
-      <me> \vT'(t)=\frac{d\vT}{dt}= \frac{1}{\sqrt{1+\frac{1}{\pi^2}}}\langle -\cos(t),-\sin(t),0 \rangle </me>
-      Note that in this example, the derivative of <m>\vT</m> is easily calculated for all time but this will rarely be the case. Further, making a unit vector in the direction of <m>\vT(t)'=\frac{d\vT}{dt}</m> will be fairly easy and give us the following calculation:
+      Using the definition of <m>\vN</m>, we need to compute the derivative of <m>\vT</m> with respect to <m>t</m>:
+      <me> \vT\, '(t)=\frac{d\vT}{dt}= \frac{1}{\sqrt{1+\frac{1}{\pi^2}}}\langle -\cos(t),-\sin(t),0 \rangle </me>
+      Note that in this example, the derivative of <m>\vT</m> is easily calculated for all time values but this will rarely be the case. Further, making a unit vector in the direction of <m>\vT(t)'=\frac{d\vT}{dt}</m> is routine and gives us the following calculation:
       <md>
-        <mrow> \vec{N}(t) \amp= \frac{\vT'(t)}{\vecmag{{\vT'(t)}}} </mrow>
-        <mrow>            \amp= \frac{ \frac{1}{\sqrt{1+\frac{1}{\pi^2}}}\langle -\cos(t),-\sin(t),0 \rangle }{\frac{1}{\sqrt{1+\frac{1}{\pi^2}}}} </mrow>
+        <mrow> \vec{N}(t) \amp= \frac{\vT\, '(t)}{\vecmag{{\vT'(t)}}} </mrow>
+        <mrow>            \amp= \frac{ \frac{1}{\sqrt{1+(1/\pi^)}}\langle -\cos(t),-\sin(t),0 \rangle }{\frac{1}{\sqrt{1+1/(\pi^2)}}} </mrow>
         <mrow>            \amp=  \langle -\cos(t),-\sin(t),0 \rangle </mrow>
       </md> 
     </p>
     <p>
-      We can calculate <m>\vN(\frac{\pi}{2})=\langle 0,-1,0 \rangle</m> and <m>\vN(\frac{5\pi}{4})=\langle \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2},0 \rangle</m>. If we add these vectors to the plot of the helix with the Unit Tangent Vectors, as in <xref ref="helix-plot2" />, we can see that the direction of turning (as measured by <m>\vN</m>) is pointing toward the center of the helix. It should make sense the the direction you are turning to stay on the helix is toward the inside of the circular trace. Note that the Unit Tangent vector has a vertical component which corresponds to going <q>up</q> the helix but there is no vertical component to <m>\vN</m>. This is because there is vertical motion, but there is no turning in the vertical direction. The z component of <m>\vT</m> is unchanging so the vertical component of <m>\vT'</m> will be zero. 
+      We can calculate <m>\vN(\frac{\pi}{2})=\langle 0,-1,0 \rangle</m> and <m>\vN(\frac{5\pi}{4})=\langle \frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2},0 \rangle</m>. If we add these vectors to the plot of the helix with the unit tangent vectors, as in <xref ref="helix-plot2" />, we can see that the direction of turning (as measured by <m>\vN</m>) is pointing toward the center of the helix. It should make sense the the direction you are turning to stay on the helix is toward the inside of the circular trace. Note that the unit tangent vector has a vertical component which corresponds to going <q>up</q> the helix but there is no vertical component to <m>\vN</m>. This is because there is vertical motion, but there is no <em>turning</em> in the vertical direction. That is, the <m>z</m>-component of <m>\vT</m> is unchanging, which means that the vertical component of <m>\vT\, '</m> must be be zero. 
     </p>
     <figure xml:id="helix-plot3">
       <caption> A plot of the helix with <m>\vT</m> and <m>\vN</m> plotted for a couple points</caption>
-      <interactive label="interactive-helix-plot3" platform="sage" width="100%" aspect="1:1">
+      <interactive label="interactive-helix-plot3" platform="sage" width="91%" aspect="1:1">
         <slate surface="sage">
           var('t')
           offset=0.2
@@ -340,11 +340,10 @@
         </slate>
       </interactive>
     </figure>
+  </example>
   <p>
-    This example is the exceptional case where <m>\vN</m> is easily calculated directly from the definition and the calculations are fairly clean. In the next activity, we will look at a curve with a simple polynomial parameterization that will demonstrate how easily the calculation of <m>\vN</m> can go off the rails.
+    <xref ref="helix-N"/> is the exceptional case where <m>\vN</m> is easily calculated directly from the definition and the calculations are fairly clean. In the next activity, we will look at a curve with a  polynomial parameterization that will demonstrate how easily the calculation of <m>\vN</m> can go off the rails.
   </p>
-
-</example>
 <activity xml:id="difficult-calcN">
   <introduction>
     <p>
@@ -354,7 +353,7 @@
   <task>
     <statement>
       <p>
-        Given the parameterization, <m>\vr(t) =\langle t,t^2,t^3\rangle </m>, calculate <m>\vv(t)</m> and <m>\text{speed}(t)</m>.
+        Calculate velocity <m>\vv(t)</m> and <m>\text{speed}(t)</m> for the parameterization <m>\vr(t) =\langle t,t^2,t^3\rangle </m>.
       </p>
     </statement>
     <answer>
@@ -378,56 +377,61 @@
   <task>
     <statement>
       <p>
-        We are going to take it slow and calculate the first component of <m>\vT'=\frac{d\vT}{dt}</m>. Remember that the derivative with respect to <m>t</m> is computed componentwise.  
+        Calculate the first component of <m>\vT\, '=\frac{d\vT}{dt}</m>.   
       </p>
     </statement>
+    <hint>
+      <p>
+        Remember that the derivative with respect to <m>t</m> is computed componentwise.
+      </p>
+    </hint>
     <answer>
       <p>
-        The first component of <m>\vT'=\frac{d\vT}{dt}</m> is <m>-\frac{1}{2}\left(1+4t^2+9t^4\right)^{-3/2} (8t+36t^3)</m>
+        The first component of <m>\vT\, '</m> is <m>-\frac{1}{2}\left(1+4t^2+9t^4\right)^{-3/2} (8t+36t^3)</m>
       </p>
     </answer>
   </task>
   <task>
     <statement>
       <p>
-        Now calculate the second component of <m>\vT'=\frac{d\vT}{dt}</m>. 
+        Calculate the second component of <m>\vT\, '</m>. 
       </p>
     </statement>
     <answer>
       <p>
-        The second component of <m>\vT'=\frac{d\vT}{dt}</m> is <m>(2)(1+4t^2+9t^4)^{-1/2}+(2t)\left(-\frac{1}{2}(1+4t^2+9t^4)^{-3/2} (8t+36t^3)\right)</m>
+        The second component of <m>\vT\, '</m> is <m>(2)(1+4t^2+9t^4)^{-1/2}+(2t)\left(-\frac{1}{2}(1+4t^2+9t^4)^{-3/2} (8t+36t^3)\right)</m>
       </p>
     </answer>
   </task>
   <task>
     <statement>
       <p>
-        Now calculate the third component of <m>\vT'=\frac{d\vT}{dt}</m>. 
+        Calculate the third component of <m>\vT\, '</m>. 
       </p>
     </statement>
     <answer>
       <p>
-        The third component of <m>\vT'=\frac{d\vT}{dt}</m> is <m>(6t)(1+4t^2+9t^4)^{-1/2}+(3t^2)\left(-\frac{1}{2}(1+4t^2+9t^4)^{-3/2} (8t+36t^3)\right)</m>
+        The third component of <m>\vT\, '</m> is <m>(6t)(1+4t^2+9t^4)^{-1/2}+(3t^2)\left(-\frac{1}{2}(1+4t^2+9t^4)^{-3/2} (8t+36t^3)\right)</m>
       </p>
     </answer>
   </task>
   <task>
     <statement>
       <p>
-        Put together your work for the three components of <m>\vT'=\frac{d\vT}{dt}</m> and compute <m>\vecmag{\frac{d\vT}{dt}}</m>.
+        Put together your work for the three components of <m>\vT\, '</m> and compute <m>\vecmag{\frac{d\vT}{dt}}</m>.
       </p>
     </statement>
   </task>
   <task>
     <statement>
       <p>
-        You likely gave up on the previous task or ran out of paper to write out <m>\frac{d\vT}{dt}</m> and <m>\vecmag{\frac{d\vT}{dt}}</m>. Instead of more punishing algebra, describe how you would calculate <m>\vN</m> if you had <m>\frac{d\vT}{dt}</m> and <m>\vecmag{\frac{d\vT}{dt}}</m>.
+        In the previous part, you likely decided that trying to simplify your formulas for <m>\frac{d\vT}{dt}</m> and <m>\vecmag{\frac{d\vT}{dt}}</m> was more complicated than you had space for on your paper. Instead of doing more intricate algebraic computations, describe how you would calculate <m>\vN</m> if you had nice formulas for <m>\frac{d\vT}{dt}</m> and <m>\vecmag{\frac{d\vT}{dt}}</m>.
       </p>
     </statement>
   </task>
 </activity>
 <p>
-  As talked about in <xref ref="subsec-unit-tangent" />, the unit tangent vector, <m>\vT</m>, measures the direction of travel along a parameterized curve. The unit normal vector, <m>\vN</m>, measures the direction that an object is turning (in order to stay on the curve). In <xref ref="helix-plot3" />, we saw that the unit tangent and unit normal vectors were orthogonal to each other (when measured at the same point).
+  As talked about in <xref ref="subsec-unit-tangent" />, the unit tangent vector <m>\vT</m> measures the direction of <em>travel</em> along a parameterized curve. The unit normal vector <m>\vN</m> measures the direction that an object is <em>turning</em> in order to stay on the curve. In <xref ref="helix-plot3" />, we observed that the unit tangent and unit normal vectors as at each point along the curve were orthogonal to each other.
 </p>
 <question>
   <p>
@@ -435,48 +439,66 @@
   </p>
 </question>
 <p>
-  We will first answer this question with a conceptual, geometric argument. By <xref ref="def-unit-normal" />, the unit normal vector is parallel to <m>\vT'=\frac{d\vT}{dt}</m>. The derivative of the unit tangent vector will measure the change in <m>\vT</m>, and since <m>\vT</m> is a vector, this will include change in the magnitude and direction of <m>\vT</m>. Since the length of <m>\vT</m> does not change, then <em>all</em> of <m>\vT'=\frac{d\vT}{dt}</m> will be a change in the direction of <m>\vT</m> and not at all in the direction of <m>\vT</m>. This is an intuitive argument for why <m>\vT</m> and <m>\vN</m> are orthogonal.
+  We first answer this question with a conceptual, geometric argument. By <xref ref="def-unit-normal" />, the unit normal vector is parallel to <m>\vT\, '=\frac{d\vT}{dt}</m>. The derivative of the unit tangent vector will measure the change in <m>\vT</m>, and since <m>\vT</m> is a vector, this includes change in both the magnitude and the direction of <m>\vT</m>. Since the length of <m>\vT</m> does not change, <em>all</em> of <m>\vT\, '</m> represents change in the direction of <m>\vT</m>. This is an intuitive argument for why <m>\vT</m> and <m>\vN</m> are orthogonal. We next state this formally for future reference and present a formal, algebraic argument.
 </p>
-<p xml:id="TdotNzero">
-  We can also give a more rigorous algebraic argument, but this argument does not provide insight into the measurements or relationship between <m>\vT</m> and <m>\vN</m>. For this algebraic argument, we will look at the derivative of <m>\vecmag{\vT}^2</m>. Because the length of <m>\vT</m> is constant, then <m> \frac{d}{dt}\left(\vecmag{\vT}^2 \right)=0</m>. To simplify <m> \frac{d}{dt}\left(\vecmag{\vT}^2 \right)</m>, we will use properties of the dot product related to the magnitude, the derivative product rule (across the dot product), then the commutative property of the dot product, respectively.
-  <md>
-    <mrow> \frac{d}{dt}\left(\vecmag{ \vT }^2 \right) \amp=\frac{d}{dt}\left(\vT \cdot \vT \right)  </mrow>
-    <mrow> \amp= \vT' \cdot \vT + \vT \cdot \vT' </mrow>
-    <mrow> \amp= 2 \vT \cdot \vT'</mrow>
-  </md>
-  If <m>2 \vT \cdot \vT' =0</m>, then <m>\vT</m> and <m>\vT'</m> are orthogonal. Since <m>\vN</m> is parallel to <m>\vT'</m>, then <m>\vT</m> and <m>\vN</m> are orthogonal.
-</p>
+<proposition xml:id="TdotNzero">
+  <statement>
+    <p>
+      The unit tangent vector <m>\vT</m> and the unit normal vector <m>\vN</m> are orthogonal so that 
+      <me>
+        \vT\cdot \vN = 0
+      </me>.
+      
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Here we give a rigorous, algebraic argument. However, this argument does not provide insight into the measurements or relationship between <m>\vT</m> and <m>\vN</m> that the paragraph before this Key Idea presents. For this algebraic argument, we consider at the derivative of <m>\vecmag{\vT}^2</m>. Because the length of <m>\vT</m> is constant, we must have that <m> \frac{d}{dt}\left(\vecmag{\vT}^2 \right)=0</m>. To simplify <m> \frac{d}{dt}\left(\vecmag{\vT}^2 \right)</m>, we use properties of the dot product related to the magnitude, the derivative product rule for the dot product, and finall  the commutative property of the dot product. Hence, we see
+      <md>
+        <mrow> \frac{d}{dt}\left(\vecmag{ \vT }^2 \right) \amp=\frac{d}{dt}\left(\vT \cdot \vT \right)  </mrow>
+        <mrow> \amp= \vT' \cdot \vT + \vT \cdot \vT' </mrow>
+        <mrow> \amp= 2 \vT \cdot \vT'</mrow>
+      </md>
+      If <m>0=\frac{d}{dt}\left(\vecmag{\vT}^2\right) = 2 \vT \cdot \vT'</m>, then <m>\vT</m> and <m>\vT'</m> are orthogonal. Since <m>\vN</m> is parallel to <m>\vT'</m>, we must also have that <m>\vT</m> and <m>\vN</m> are orthogonal.
+    </p>
+  </proof>
+</proposition>
+
 </subsection>
 <subsection xml:id="subsec-B">
   <title>The Binormal Vector</title>
-  <definition xml:id="def-B">
+  <p>
+    Since the title of this section is <xref ref="S-VVF-TNB" text="title"/> and we have defined <m>\vT</m> and <m>\vN</m>, you likely are expecting the definition of a vector called <m>\vB</m>, which we do in this subsection. Since we saw in <xref ref="TdotNzero"/> that the unit tangent and unit normal vectors are orthogonal, this final vector will be defined in a way that completes a right-handed coordinate system with <m>\vT</m> and <m>\vN</m>.
+  </p>
+  <definition xml:id="def-binormal">
     <statement>
       <p>
-        The <term>Binormal vector</term>, <m>\vec{B}</m>, for a parameterized curve is defined as <me> \vec{B}=\vT \times \vec{N}</me>
+        The <term>binormal vector</term>, denoted <m>\vec{B}</m>, for a parameterized curve is defined as <me> \vec{B}=\vT \times \vec{N}</me>.
       </p>
     </statement>
   </definition>
   <p>
-    This definition of <m>\vB</m> creates a three dimensional right handed coordinate system that is relative to the motion along the curve. The Binormal vector will be a unit vector because <m>\vecmag{\vT \times \vN } = \vecmag{\vT} \vecmag{\vN} \sin(\theta)</m> where <m>\theta</m> is the angle between <m>\vT</m> and <m>\vN</m>. Since <m>\vT</m> and <m>\vN</m> are unit vectors and orthogonal to each other, then <m>\vecmag{\vT}\vecmag{\vN} \sin(\theta)= 1</m>. The binormal vector, <m>\vB</m>, will give the axis of rotation for the motion along the curve. Note that this measure of rotation follows our right handed measure of rotation. If you put the fingers of your right hand in the direction of travel (<m>\vT</m>) and curl your fingers in the direction of turning (<m>\vN</m>), then your thumb will correspond to the axis of rotation based on how you are moving along the curve.
+    This definition of <m>\vB</m> creates a three-dimensional right-handed coordinate system that is relative to the motion along the curve. Notice that while we had to divide by magnitude to ensure that <m>\vT</m> and <m>\vN</m> were unit vectors, the binormal vector is a unit vector because <m>\vecmag{\vT \times \vN } = \vecmag{\vT} \vecmag{\vN} \sin(\theta)</m> where <m>\theta</m> is the angle between <m>\vT</m> and <m>\vN</m>. Since <m>\vT</m> and <m>\vN</m> are unit vectors and orthogonal to each other, we see that <m>\vecmag{\vT}\vecmag{\vN} \sin(\theta)= 1</m>. The binormal vector <m>\vB</m> gives the axis of rotation for the motion along the curve. This measure of rotation follows our right-handed measure of rotation. If you put the fingers of your right hand in the direction of travel (<m>\vT</m>) and curl your fingers in the direction of turning (<m>\vN</m>), then your thumb will correspond to the axis of rotation based on how you are moving along the curve.
   </p>
   <p>
-    This TNB frame is also called the Frenet frame and is very useful in environments like aviation and space travel because so much of the important flight information needs be in terms of relative measurements to the craft and it's motion.
+    The <term>TNB frame</term> is also called the <term>Frenet frame</term><idx><h>frame</h><h>TNB</h></idx><idx><h>frame</h><h>Frenet</h></idx><idx><h>TNB frame</h></idx><idx><h>Frenet frame</h></idx> and is frequently used in fields such as aviation and space travel because much of the important flight information is expressed in terms of relative measurements to the craft and its motion.
   </p>
   <example>
     <p>
-      In this example, we will complete our calculation of the TNB frame for the helix given by <m>\vr(t)=\langle \cos(t),\sin(t)\frac{t}{\pi}\rangle </m>. From <xref ref="helix-T" /> and <xref ref="helix-N" /> we have the following:
+      In this example, we complete the  calculation of the TNB frame for the helix given by <m>\vr(t)=\langle \cos(t),\sin(t)\frac{t}{\pi}\rangle </m>. From <xref ref="helix-T" /> and <xref ref="helix-N" /> we have the following:
         <md>
-          <mrow> \vT(t) \amp= \frac{\vv(t)}{\vecmag{{\vv(t)}}}= \frac{1}{\sqrt{1+\frac{1}{\pi^2}}}\langle -\sin(t),\cos(t),\frac{1}{\pi} \rangle </mrow>
+          <mrow> \vT(t) \amp= \frac{\vv(t)}{\vecmag{{\vv(t)}}}= \frac{1}{\sqrt{1+\frac{1}{\pi^2}}}\left\langle -\sin(t),\cos(t),\frac{1}{\pi} \right\rangle </mrow>
           <mrow> \vN \amp= \langle -\cos(t),-\sin(t),0\rangle </mrow>
         </md> 
-      Using the definition for <m>\vB</m>, we get 
-      <me> \vB = \vT \times \vN = \frac{1}{\sqrt{1+\frac{1}{\pi^2}}} \langle -\frac{1}{\pi}\sin(t), -\frac{1}{\pi}\cos(t), \sin(t)^2+\cos(t)^2 \rangle </me>
+      Using the definition for <m>\vB</m>, we have
+      <me> \vB = \vT \times \vN = \frac{1}{\sqrt{1+\frac{1}{\pi^2}}} \left\langle -\frac{1}{\pi}\sin(t), -\frac{1}{\pi}\cos(t), \sin(t)^2+\cos(t)^2 \right\rangle </me>
       Factoring out <m>\frac{1}{\pi}</m> from each component and simplifying the coefficient gives
-      <me> \vB = \frac{1}{\sqrt{\pi^2+1}} \langle -\sin(t), -\cos(t), \pi \rangle  </me>
+      <me> \vB = \frac{1}{\sqrt{\pi^2+1}} \langle -\sin(t), -\cos(t), \pi \rangle  </me>.
+      <xref ref="helix-plot4"/> shows the helix with the TNB frame depicted at a single point. You can adjust the location of the TNB frame by moving the slider.
     </p>
     <figure xml:id="helix-plot4">
       <caption> A plot of the helix with the TNB frame plotted</caption>
-      <interactive label="interactive-helix-plot4" platform="sage" width="100%" aspect="1:1">
+      <interactive label="interactive-helix-plot4" platform="sage" width="93%" aspect="1:1.11">
         <slate surface="sage">
           var('t')
           r2(t)=(cos(t),sin(t),t/pi)
@@ -509,34 +531,38 @@
       </interactive>
     </figure>
     <p>
-      Note that as you change the <m>t</m>-value and move around the helix, the unit tangent points in the direction of travel, the unit normal points in the direction the object is turning (always to the left while going up the helix), and the Binormal vector is the axis of rotation for the <m>\vT</m> and <m>\vN</m> vectors. If you curl the fingers on your right hand from the direction of <m>\vT</m> toward the direction of <m>\vN</m>, notice that your thumb will point in the direction of <m>\vB</m>. This sets up the TNB frame as a right-handed coordinate system that changes relative to the motion of the object. 
+      Note that as you change the <m>t</m>-value and move around the helix, the unit tangent points in the direction of travel, the unit normal points in the direction the object is turning (always to the left while going up the helix), and the binormal vector is the axis of rotation for the <m>\vT</m> and <m>\vN</m> vectors. If you curl the fingers on your right hand from the direction of <m>\vT</m> toward the direction of <m>\vN</m>, notice that your thumb will point in the direction of <m>\vB</m>. This sets up the TNB frame as a right-handed coordinate system that changes relative to the motion of the object. 
     </p>
   </example>
 </subsection>
 <subsection xml:id="subsec-driverroadTNB">
   <title>The Driver or the Road: TNB Frame</title>
   <p>
-    In this subsection, we will consider whether the measurements of <m>\vT</m>, <m>\vN</m>, and <m>\vB</m> will be properties of the driver or the road. A parameterized curve  has a stated orientation (direction of travel). Remember that a measurement involving a parameterized curve is a property of the driver if two different parameterizations can have different measurements at the same location on the curve. Remember that this does not mean that you look at the same parameter value on the curve, but rather the same <em>location</em> on the curve. A measurement on a parameterized curve is a property of the road if <em>every</em> parameterization of this curve must have the same measurement for a fixed location on the curve. These are the same ideas that were first discussed in <xref ref="driver_road_act" />. In the analogy of a parameterization being a description for how a particular racecar travels around a track as a function of time, a measurement will be a property of the driver if that measurement can have different values for different drivers (when measured at the same point on the racetrack). A measurement will be a property of the road if that measurement MUST have the same value for ALL drivers (when measured at the same point on the racetrack).
+    To conclude this section, we consider whether the measurements of <m>\vT</m>, <m>\vN</m>, and <m>\vB</m> are properties of the driver or the road. A parameterized curve  has a stated orientation (direction of travel). Remember that a measurement involving a parameterized curve is a property of the driver if two different parameterizations can have different measurements at the same location on the curve. It is important to remember that this does not mean that you look at the same parameter value on the curve, but rather the same <em>location</em> on the curve. A measurement on a parameterized curve is a property of the road if <em>every</em> parameterization of this curve must have the same measurement for a fixed location on the curve. These are the same ideas that were first discussed in <xref ref="driver_road_act" />. In the analogy of a parameterization being a description for how a particular racecar travels around a track as a function of time, a measurement is a property of the driver if that measurement can have different values for different drivers when measured at the same point on the racetrack. A measurement is a property of the road if that measurement <em>must</em> have the same value for <em>all</em> drivers when measured at the same point on the racetrack.
   </p>
-  <activity>
-    <task>
+  
+  <activity xml:id="act-S-VVF-TNB-driver-road">
+    <task xml:id="task-S-VVF-TNB-direction-travel">
+      <title>Direction of Travel</title>
       <statement>
         <p>
-          <em>Direction of Travel</em>: Each race car has a 1 meter arrow attached to the hood of the car which points straight ahead. This arrow will measure the three dimensional vector that is the direction of travel. Is the direction of travel a property of the driver or the road? Be sure to explain your answer.
+          Each race car has a 1 meter arrow attached to the hood of the car which points straight ahead. This arrow will measure the three dimensional vector that is the direction of travel. Is the direction of travel a property of the driver or the road? Be sure to explain your answer.
         </p>
       </statement>
     </task>
     <task>
+      <title>Turn Signal</title>
       <statement>
         <p>
-          <em>Turn Signal</em>: The turn signal is measured by checking to see if the steering wheel is turned left or right. We are not measuring how much the steering wheel is turned in either direction, just whether the wheel is turned left or right. If the steering wheel is not turned either way at the instant we measure , then we say there is no turn signal (because the car isn't turning at that instant). Is the turn signal a property of the driver or the road? Be sure to explain your answer.
+          The turn signal is measured by checking to see if the steering wheel is turned left or right. We are not measuring how much the steering wheel is turned in either direction, just whether the wheel is turned left or right. If the steering wheel is not turned either way at the instant we measure , then we say there is no turn signal because the car isn't turning at that instant. Is the turn signal a property of the driver or the road? Be sure to explain your answer.
         </p>
       </statement>
     </task>
-    <task>
+    <task xml:id="task-S-VVF-TNB-direction-turning">
+      <title>Direction of Turning</title>
       <statement>
         <p>
-          <em>Direction of Turning</em>: The direction of turning is measured by using a 1 meter arrow that sticks perpendicularly out of the left side of the car when the steering wheel is turned left and out of the right side of the car when the steering wheel is turned right. We are not measuring how much the wheel is turned in either direction, just whether the wheel is turned left or right. If the steering wheel is not turned either way at the instant we measure the direction of turning, then we say there is no direction of turning (because the car isn't turning at that instant). Is the direction of turning (as a vector in <m>\mathbb{R}^3</m>) a property of the driver or the road? Be sure to explain your answer.
+          The direction of turning is measured by using a 1 meter arrow that sticks perpendicularly out of the left side of the car when the steering wheel is turned left and out of the right side of the car when the steering wheel is turned right. We are not measuring how much the wheel is turned in either direction, just whether the wheel is turned left or right. If the steering wheel is not turned either way at the instant we measure the direction of turning, then we say there is no direction of turning because the car isn't turning at that instant. Is the direction of turning as a vector in <m>\mathbb{R}^3</m> a property of the driver or the road? Be sure to explain your answer.
         </p>
       </statement>
     </task>
@@ -548,7 +574,7 @@
       </statement>
       <hint>
         <p>
-          Use the definition of <m>\vB</m> and your answers to parts (a) and (c).
+          Use the definition of <m>\vB</m> and your answers to <xref ref="task-S-VVF-TNB-direction-travel" text="type-local"/> and <xref ref="task-S-VVF-TNB-direction-turning" text="type-local"/>.
         </p>
       </hint>
     </task>
@@ -559,19 +585,19 @@
     <ul>
       <li>
         <p>
-          The unit tangent vector, <m>\vT(t)=\frac{\vv}{\vecmag{\vv}}</m>, measures the direction of travel for an object along a parameterized curve
+          The unit tangent vector, <m>\vT(t)=\frac{\vv}{\vecmag{\vv}}</m>, measures the direction of travel for an object along a parameterized curve.
         </p>
       </li>
 
       <li>
         <p>
-          The unit normal vector, <m>\vN(t)=\frac{\vT'}{\vecmag{\vT'}}</m>, measures the direction that an object is turning in order to stay on a parameterized curve
+          The unit normal vector, <m>\vN(t)=\frac{\vT\, '}{\vecmag{\vT\, '}}</m>, measures the direction that an object is turning in order to stay on a parameterized curve.
         </p>
       </li>
 
       <li>
         <p>
-          The binormal vector, <m>\vB(t)= \vT \times \vN</m>, is the direction of the axis for which <m>\vT</m> and <m>\vN</m> are rotating around
+          The binormal vector, <m>\vB(t)= \vT \times \vN</m>, is the direction of the axis for which <m>\vT</m> and <m>\vN</m> are rotating around.
         </p>
       </li>
     </ul>
