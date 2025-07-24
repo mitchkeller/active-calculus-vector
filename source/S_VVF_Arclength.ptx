@@ -255,7 +255,7 @@
   Note that formula <xref ref="eq_arclength"/> applies to curves in any dimensional space. Moreover, this formula has a natural interpretation: if <m>\vr(t)</m> records the position of a moving object, then <m>\vr\, '(t)=\vv(t)</m> is the object's velocity and <m>\vecmag{\vr\, '(t)}</m> its speed. Formula <xref ref="eq_arclength"/> says that we can integrate the speed of an object traveling over the curve to find the distance traveled by the object. This distance is the length of the curve and is analogous to the formula for <url href="https://activecalculus.org/single/sec-6-1-area.html#sec-6-1-area-6-9">finding the arc length of a graph</url> from single-variable calculus.
 </p>
 
-<activity xml:id="A_9_8_1">
+<activity xml:id="act-VVF-arclength-circle-helix">
   <introduction>
     <p>
       In this activity, we will use parameterizations to find the length of some common curves.
@@ -264,26 +264,26 @@
   <task>
     <statement>
       <p>
-        Parameterize a circle of radius <m>R</m> centered at the origin. Give bounds on the parameter.
+        Parameterize a circle of radius <m>3</m> centered at the origin. Give bounds on the parameter.
       </p>
     </statement>
     <solution>
       <p>
-        We can parameterize a circle of radius <m>R</m> centered at the origin by <m>\vr(t) = \langle R\cos(t), R\sin(t) \rangle</m> for <m>t</m> in the interval <m>[0, 2\pi]</m>.
+        We can parameterize a circle of radius <m>3</m> centered at the origin by <m>\vr_1(t) = \langle 3\cos(t), 3\sin(t) \rangle</m> for <m>t</m> in the interval <m>[0, 2\pi]</m>.
       </p>
     </solution>
   </task>
   <task>
     <statement>
       <p>
-        Use your parameterization from the previous task in the definite integral of <xref ref="Length-of-a-curve" /> to calculate the circumference of a circle of radius <m>R</m>.
+        Use your parameterization from the previous part in the definite integral of <xref ref="Length-of-a-curve" /> to calculate the circumference of a circle of radius <m>3</m>.
       </p>
     </statement>
     <solution>
       <p>
-        The circumference of this circle is the length of curve defined by <m>R</m>, or
+        The circumference of this circle is the length of curve defined by <m>\\vr_1(t)</m>, or
         <me>
-          \int_0^{2\pi} \Vert \vr'(t) \Vert \, dt = \int_0^{2\pi} \sqrt{(-R\sin(t))^2 + (R\cos(t))^2} \, dt = \int_0^{2\pi} R \, dt = 2 \pi R
+          \int_0^{2\pi} \vecmag{\vr_1\, '(t) } \, dt = \int_0^{2\pi} \sqrt{(-3\sin(t))^2 + (3\cos(t))^2} \, dt = \int_0^{2\pi} 3 \, dt = 2 \pi \cdot 3= 6\pi
         </me>
         as expected.
       </p>
@@ -292,15 +292,15 @@
   <task>
     <statement>
       <p>
-        Find the exact length of the spiral defined by <m>\vr(t) = \langle R\cos(t), R\sin(t), t \rangle</m> on the interval <m>[0,2\pi]</m>.
+        Find the exact length of the spiral defined by <m>\vr(t) = \langle 3\cos(t), 3\sin(t), t \rangle</m> on the interval <m>[0,2\pi]</m>.
       </p>
     </statement>
     <solution>
       <p>
         The length of curve defined by <m>\vr</m> on the interval <m>[0,2 \pi]</m> is
         <me>
-          \int_0^{2\pi} \lvert \vr'(t) \rvert \, dt = \int_0^{2\pi} \sqrt{(-R\sin(t))^2 + (R\cos(t))^2 + 1^2} \, dt = \int_0^{2\pi} R \sqrt{2} \, dt = 2 \pi \sqrt{2} R
-        </me>
+          \int_0^{2\pi} \vecmag{\vr'(t)} \, dt = \int_0^{2\pi} \sqrt{(-3\sin(t))^2 + (3\cos(t))^2 + 1^2} \, dt = \int_0^{2\pi} \sqrt{10} \, dt = 2 \pi \sqrt{10}
+        </me>.
       </p>
     </solution>
   </task>
@@ -311,6 +311,11 @@
       </p>
     </statement>
   </task>
+  <conclusion>
+    <p>
+      Notice here that while we focused on the circle of radius <m>3</m>, changing to the more general radius of <m>R</m> for the circle gives a parameterization of <m>\langle R\cos(t),R\sin(t)</m> with <m>0\leq t\leq 2\pi</m>. The work to use the arc length integral to find the circumference of this circle requires only small modifications to the work you did in this activity.
+    </p>
+  </conclusion>
 </activity>
 <p>
   <xref ref="ex-VVF-arclength-fn" text="type-local" /> will apply <xref ref="def-arclength"/> and <xref ref="Length-of-a-curve" /> to arrive at a formula for the length of a graph given by <m>y=f(x)</m> that may be familiar from single-variable calculus courses.   
@@ -319,28 +324,31 @@
 <subsection>
   <title>Moving with Unit Speed</title>
   <p>
-    In <xref ref="A_9_8_1" />, we considered parameterizations of a circle and a helix. The computation of the arc length in these problems was made easier by the fact that the speed of an object with motion described by the parameterizations used did not depend on the time <m>t</m>. That is, the speed of an object moving according to the parameterization was <em>constant</em>. Since there are many parameterizations for the same curve, you may be wondering if it is possible to create a parameterization for each curve that moves with constant speed. The answer is <q>Yes</q>, but in practice this parameterization might be difficult to write out algebraically. 
+    In <xref ref="act-VVF-arclength-circle-helix" />, we considered parameterizations of a circle and a helix. The computation of the arc length in these problems was made easier by the fact that the speed of an object with motion described by the parameterizations used did not depend on the time <m>t</m>. That is, the speed of an object moving according to the parameterization was <em>constant</em>. Since there are many parameterizations for the same curve, you may be wondering if it is possible to create a parameterization for each curve that moves with constant speed. The answer is <q>Yes</q>, but in practice this parameterization might be difficult to write out algebraically. 
   </p>
   <p>  
     Before we examine the details of this constant-speed parameterization, we restrict our focus to trying find a parameterization that describes traveling along our curve with unit speed. In other words, we want to find a parameterization  <m>\vr(t)</m> of the curve that has speed one for all parameter values. That is, we want <m>\vecmag{\vr\, '(t)} = \vecmag{\vv(t)}=1</m>. We call such a parameterization a <term>unit speed parameterization</term> of the curve.
   </p>
   <p>
-    If an object moves with constant speed one, then the distance it travels <em>is</em> the time elapsed. For example, if you walk at exactly 1 meter per second for 47 seconds, how far have you gone? If you walk at exactly 1 meter per second, how long will it take you to travel 47 meters? The answer to both is 47 but the units are different. Remember that we do not have to walk in a straight line (i.e., with constant direction) to keep speed constant.
+    If an object moves with constant speed one, then the numerical value of the distance it travels <em>is</em> the numerical value of the time elapsed. For example, if you walk at exactly 1 meter per second for 47 seconds, how far have you gone? If you walk at exactly 1 meter per second, how long will it take you to travel 47 meters? The answer to both is 47 but the units are different. Remember that we do not have to walk in a straight line (i.e., with constant direction) to keep speed constant.
   </p>
   <example xml:id="linearclength">
     <p>
-      In this example, we look at a linear path and explore how to write a parameterization that moves with unit speed. We will look at the parameterization of the line through <m>(1,2,3)</m> and <m>(-2,3,1)</m>. We are using these values to make the calculations less abstract but there is nothing special about these values and the methods will work for any linear parameterization.
+      In this example, we look at a linear path and explore how to write a parameterization that moves with unit speed. We will look at the parameterization of the line through <m>(1,2,3)</m> and <m>(2,0,5)</m>. We are using these values to make the calculations less abstract but there is nothing special about these values and the methods will work for any linear parameterization.
     </p>
     <p>
-      An easy to find parameterization will have the base point <m>(1,2,3)</m> and direction vector given by the difference between our points, <m>\langle -2-1,3-2,1-3\rangle = \langle -3,1,-2 \rangle</m>. This leads to an initial parameterization of the line as <m>\vr(t)=\langle 1,2,3\rangle + t \langle -3,1,-2 \rangle</m>. We want to convert this to a parameterization with unit speed. The speed of this parameterization is
-      <me>\vecmag{\vr(t)}=\vecmag{\frac{d\vr}{dt}}=\vecmag{\langle -3,1,2\rangle}=\sqrt{14}</me>.
-      This means that we need to adjust our parameterization to travel <m>\sqrt{14}</m> times slower, which can be accomplished by replacing <m>t</m> in our parameterization with <m>\frac{t}{\sqrt{14}}</m>. In other words, we adjusted the parameter used to make sure the speed with respect to the new parameter will be one. This adjustment was easy to do because the amount we needed to change the parameter did not change at different times.
+      An easy-to-find parameterization will have the base point <m>(1,2,3)</m> and direction vector given by the difference between our points, <m>\langle 2-1, 0-2, 5-3\rangle = \langle 1,-2,2 \rangle</m>. This leads to an initial parameterization of the line as <m>\vr(t)=\langle 1,2,3\rangle + t \langle 1,-2,2 \rangle</m>. Notice that with this parameterization, restricting to <m>0\leq t\leq 1</m> gives a domain for <m>\vr(t)</m> for the line segment from <m>(1,2,3)</m> when <m>t=0</m> to <m>(2,0,5)</m> when <m>t=1</m>. The arc length of this segment can be computed using the distance formula, so it is <m>3</m>.
+    </p>
+    <p>
+      We want to convert this to a parameterization with unit speed. To think of this another way, we are aiming to have the parameter value when we reach the point <m>(2,0,5)</m> be equal to the distance from the base point <m>(1,2,3)</m>. This will mean we seek a parameterization where the domain <m>0\leq t\leq 3</m> corresponds to the line segment from <m>(1,2,3)</m> to <m>(2,0,5)</m>. The speed of this parameterization is
+      <me>\vecmag{\vr\, '(t)}=\vecmag{\frac{d\vr}{dt}}=\vecmag{\langle 1,-2,2\rangle}=\sqrt{9}=3</me>.
+      This means that we need to adjust our parameterization to travel <m>3</m> times slower, which can be accomplished by replacing <m>t</m> in our parameterization with <m>t/3</m>. In other words, we adjusted the parameter used to make sure the speed with respect to the new parameter will be one. This adjustment was easy to do because the amount we needed to change the parameter did not change at different times.
     </p> 
     <p>
-      Our proposed unit speed parameterization is <me>\vr_1(t)= \langle 1,2,3\rangle + \frac{t}{\sqrt{14}} \langle -3,1,-2 \rangle</me>. Computing the speed here gives
-      <me>\vecmag{\vr_1(t)}=\vecmag{\frac{1}{\sqrt{14}}\langle -3,1,2\rangle}=\frac{\sqrt{14}}{\sqrt{14}}=1</me>.
-      Algebraically, we can describe this change by thinking of <m>\vr(u)</m> as the <q>old</q> parameterization with parameter <m>u</m>, and we aim to replace <m>u</m> with a function <m>\alpha(t)</m> so that <m>\vecmag{\vr\, '(t)}=1</m> for all <m>t</m>. In our linear path case, the choice of <m>\alpha(t) = \frac{t}{\sqrt{14}}</m> meant that applying the chain rule to <m>\vecmag{\vr\, '(t)}</m> gives
-      <men xml:id="unitspeedidea">\vecmag{\vr(\alpha(t))}= \vecmag{\frac{d\vr}{du}} \left\vert\frac{d\alpha}{dt}\right\vert=\sqrt{14} \frac{1}{\sqrt{14}} =1</men>.
+      Our proposed unit speed parameterization is <me>\vr_1(t)= \langle 1,2,3\rangle + \frac{t}{3} \langle 1,-2,2 \rangle</me>. Computing the speed here gives
+      <me>\vecmag{\vr_1(t)}=\vecmag{\frac{1}{3}\langle 1,-2,2\rangle}=\frac{\sqrt{9}}{3}=1</me>.
+      Algebraically, we can describe this change by thinking of <m>\vr(u)</m> as the <q>old</q> parameterization with parameter <m>u</m>, and we aim to replace <m>u</m> with a function <m>\alpha(t)</m> so that <m>\vecmag{\vr\, '(t)}=1</m> for all <m>t</m>. In our linear path case, the choice of <m>\alpha(t) = t/3</m> meant that applying the chain rule to <m>\vecmag{\vr\, '(t)}</m> gives
+      <men xml:id="unitspeedidea">\vecmag{\vr\, '(\alpha(t))}= \vecmag{\frac{d\vr}{du}} \left\vert\frac{d\alpha}{dt}\right\vert=3 \frac{1}{3} =1</men>.
     </p>
     
     <!-- <p>

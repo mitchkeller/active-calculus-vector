@@ -33,28 +33,77 @@
 <subsection>
   <title>Introduction</title>
     <p>
-      In <xref ref="S-VVF-TNB" />, we defined <m>\vT</m> and <m>\vN</m> to measure the direction of travel and the direction of turning for an oriented curve in space. Both <m>\vT</m> and <m>\vN</m> are unit vectors that are used to capture <q>direction</q> aspects of motion. In the next couple of sections, we will look at a few different ways to measure the magnitude of various aspects of our motion and turning on a curve in space. 
+      In <xref ref="S-VVF-TNB" />, we defined <m>\vT</m> and <m>\vN</m> to measure the direction of travel and the direction of turning for an oriented curve in space. Both <m>\vT</m> and <m>\vN</m> are unit vectors that are used to capture <em>direction</em> aspects of motion. In the next couple of sections, we will look at a few different ways to measure the <em>magnitude</em> of various aspects of our motion and turning on a curve in space. 
     </p>
     <p>
-      Note here that given a parameterization of a curve in space, the speed will give us an idea about how fast we are moving along the curve, but we don't have a way to measure how much turning is happening at a given location. In this section, we will measure how quickly a curve is turning. How quickly a curve is turning is a different measurement from how fast an object is turning as it moves along a path. We will return to the idea of how fast an object is turning as it moves along a path in <xref ref="S-VVF-Spliting-Acceleration" />.
+      Given a parameterization of a curve in space, the speed will give us an idea about how fast an object moves <em>along the curve</em> at any given parameter value. We learned in the previous section that <m>\vN</m> tells us the <em>direction of turning</em>, but we have not yet developed a way to measure <em>how much turning</em> is happening at a given location. For example, consider the three curves shown in <xref ref="fig-VVF-curvature-3-curves"/>. We would like to be able to measure how much turning is happening at the indicated point on each curve. Right now, you probably intuitively would say there is no turning in the first curve, a small amount in the second, and considerably more in the third. However, how can we assign a number to measure this amount of turning?
+    </p>
+    <figure xml:id="fig-VVF-curvature-3-curves">
+      <caption>Three curves demonstrating variation in amount of turning</caption>
+      <sidebyside widths="30% 30% 30%">
+        <image>
+          <shortdescription>A straight line</shortdescription>
+          <prefigure xmlns="https://prefigure.org"
+                     label="img-VVF-curvature-line">
+            <diagram dimensions="(180,180)" margins="5">
+              <definition>f(x)=2*x-0.75</definition>
+              <coordinates bbox="(-4,-4,4,4)">
+                <graph function="f"/>
+                <point p="(1.1,f(1.1))" />
+              </coordinates>
+            </diagram>                     
+          </prefigure>
+        </image>
+        <image>
+          <shortdescription>An arc with gentle curving</shortdescription>
+          <prefigure xmlns="https://prefigure.org"
+                     label="img-VVF-curvature-ellipse-arc">
+            <diagram dimensions="(180, 180)" margins="5">
+              <definition>f(t) = (3.9*cos(t) , 8*sin(t))</definition>
+              <coordinates bbox="[-4,-4,4,4]">
+                <parametric-curve function="f" domain="[-pi/3,pi/3]" stroke="blue" />
+                <point p="f(0)" />
+              </coordinates>
+            </diagram>                   
+          </prefigure>
+        </image>
+        <image>
+          <shortdescription>An arc of a circle of small radius</shortdescription>
+          <prefigure xmlns="https://prefigure.org"
+                     label="img-VVF-curvature-small-circle">
+            <diagram dimensions="(180, 180)" margins="5">
+              <definition>f(t) = (2*cos(t) , 2*sin(t))</definition>
+              <coordinates bbox="[-4,-4,4,4]">
+                <parametric-curve function="f" domain="[pi/2,pi]" stroke="blue" />
+                <point p="f(5*pi/6)" />
+              </coordinates>
+            </diagram>                   
+          </prefigure>
+        </image>
+      </sidebyside>
+    </figure>
+    <p>  
+      In this section, we focus on measuring how quickly <em>a curve</em> is turning. Keeping our running example in mind, we can think of this as measuring a property of <em>the road</em>. How quickly a curve is turning is a different measurement from how fast <em>an object</em> is turning as it moves along a path. That is a property of <em>the driver</em> to which we will return in <xref ref="S-VVF-Spliting-Acceleration" />.
     </p>
     <exploration>
       <introduction>
         <p>
-          As Chief Engineer and CEO at <em>Steer Clear</em>, you have done great work in transforming information from your location tracking system (LTS) into information on the position, velocity, and distance traveled by your car. In order to make the <q>self-driving</q> part of the self-driving car company, you will need to compare information from the LTS (which describes how your car is moving) to GPS location data for the network of roads (which describe the paths your car should be taking). Since everyone on the road drives differently, we would like to measure how quickly a stretch of road is turning in different places. This measurement should not depend on the particular driver but should be a property of the path the road takes. Remember that your car cannot look forward in time to see how it will need to turn, but the car can look forward along the road to see how the path changes.
+          As Chief Engineer and CEO at <em>Steer Clear</em>, you have done great work in transforming information from your location tracking system (LTS) into information on the position, velocity, and distance traveled by your car. In order to make the <q>self-driving</q> part of the self-driving car, you will need to compare information from the LTS (which describes how your car is moving) to GPS location data for the network of roads (which describe the paths your car should be taking). Since everyone on the road drives differently, you realize that you need to measure how quickly a stretch of road is turning in different places, which leads you to contact a friend who is a civil engineer for help understanding highway construction specifications.
+          <!-- This measurement should not depend on the particular driver but should be a property of the path the road takes. Remember that your car cannot look forward in time to see how it will need to turn, but the car can look forward along the road to see how the path changes. -->
         </p>
       </introduction>
       <task>
         <statement>
           <p>
-            <xref ref="PA-curvatureplot1" /> shows a map of a section of road on your testing route for your self-driving car with points labeled <m>P_0</m> and <m>P_1</m> which are 10 meters apart (along the road). Draw a vector in the direction of travel at <m>P_0</m> and <m>P_1</m> and use these vectors to describe how the direction of travel is changing on the path from <m>P_0</m> to <m>P_1</m>.
+            <xref ref="PA-curvatureplot1" /> shows a map of a section of road on your testing route for your self-driving car with points labeled <m>P_0</m> and <m>P_1</m> which are 10 meters apart (along the road). Draw a vector in the direction of travel at both <m>P_0</m> and <m>P_1</m>. Use these vectors to describe how the direction of travel is changing along the path from <m>P_0</m> to <m>P_1</m>.
           </p>
           <figure xml:id="PA-curvatureplot1">
-            <caption> A plot of the section of road with points <m>P_0</m> and <m>P_1</m> separated by 10 meters</caption>
-            <image width="55%" xml:id="img-curvatureplot1">
-              <description><p>A 2D curve points <m>P_0</m> and <m>P_1</m> labeled </p></description>
-              <sageplot>
-                tpoints=[1,1.2]
+            <caption>A plot of the section of road with points <m>P_0</m> and <m>P_1</m> separated by 10 meters</caption>
+            <image width="75%">
+              <shortdescription>A 2D curve with two points marked</shortdescription>
+              <description><p>A two-dimensional curve with points <m>P_0</m> and <m>P_1</m> labeled </p></description>
+              <sageplot label="img-curvatureplot1">
+                tpoints=[0.9,1.3]
                 offsetx=[0.1,-0.1]
                 offsety=[-0.2,-0.2]
                 labels=["$P_0$","$P_1$"]
@@ -65,7 +114,7 @@
                 for i in range(len(tpoints)):
                     position=r1(tpoints[i])
                     withoffset=(position[0]+offsetx[i],position[1]+offsety[i])
-                    plot1+=point([position],color='black',size=50)+text(labels[i],withoffset,fontsize=20,color='black')
+                    plot1+=point([position],color='black',size=50)+text(labels[i],withoffset,fontsize=24,color='black')
                 plot1
               </sageplot>
             </image>
@@ -75,14 +124,15 @@
       <task>
         <statement>
           <p>
-            <xref ref="PA-curvatureplot2" /> shows a map of a section of road on your testing route for your self-driving car with points labeled <m>Q_0</m> and <m>Q_1</m> which are 10 meters apart (along the road). Draw a vector in the direction of travel at <m>Q_0</m> and <m>Q_1</m> and use these vectors to describe how the direction of travel is changing on the path from <m>Q_0</m> to <m>Q_1</m>.
+            <xref ref="PA-curvatureplot2" /> shows a map of a section of road on your testing route for your self-driving car with points labeled <m>Q_0</m> and <m>Q_1</m> which are 10 meters apart (along the road). Draw a vector in the direction of travel at both <m>Q_0</m> and <m>Q_1</m>. Use these vectors to describe how the direction of travel is changing along the path from <m>Q_0</m> to <m>Q_1</m>.
           </p>
           <figure xml:id="PA-curvatureplot2">
             <caption> A plot of the section of road with points <m>Q_0</m> and <m>Q_1</m> separated by 10 meters</caption>
-            <image width="55%" xml:id="img-curvatureplot2">
-              <description><p>A 2D curve points <m>P_0</m> and <m>P_1</m> labeled </p></description>
-              <sageplot>
-                tpoints=[3.1,3.4]
+            <image width="75%">
+              <shortdescription>A 2D curve with two points marked</shortdescription>
+              <description><p>A two-dimensional curve with points <m>Q_0</m> and <m>Q_1</m> labeled </p></description>
+              <sageplot label="img-curvatureplot2">
+                tpoints=[3,3.4]
                 offsetx=[-0.1,-0.2]
                 offsety=[0.2,0.1]
                 labels=["$Q_0$","$Q_1$"]
@@ -93,7 +143,7 @@
                 for i in range(len(tpoints)):
                     position=r1(tpoints[i])
                     withoffset=(position[0]+offsetx[i],position[1]+offsety[i])
-                    plot2+=point([position],color='black',size=50)+text(labels[i],withoffset,fontsize=20,color='black')
+                    plot2+=point([position],color='black',size=50)+text(labels[i],withoffset,fontsize=24,color='black')
                 plot2
               </sageplot>
             </image>
@@ -107,37 +157,38 @@
           </p>
         </statement>
       </task>
-      <task>
+      <!-- <task>
         <statement>
           <p>
             Let <m>P_2</m> be the point on the path that is 5 meters ahead of <m>P_0</m> and <m>Q_2</m> be the point on the path that is 5 meters ahead of <m>Q_0</m>. Draw the points <m>P_2</m> and <m>Q_2</m> on your plots above. Is the direction of travel changing faster over the path from <m>P_0</m> to <m>P_2</m> or to the path from <m>Q_0</m> to <m>Q_2</m>? Explain your reasoning and compare your answer to the previous question.
           </p>
         </statement>
-      </task>
+      </task> -->
     </exploration>
     <p>
-      Our preview activity showed how looking at the change in <m>\vT</m>, the direction of travel, for small steps (in terms of arclength) along our curve will allow us to measure the rate at which a curve is turning. Note that this will be different than measuring how quickly an object traveling along the path needs to turn in order to stay on the path. The arguments in the preview activity do not depend on how an object is traveling along the path, only on the path itself.
+      The Preview Activity showed how looking at the change in <m>\vT</m>, the direction of travel, for small steps in terms of arc length along our curve will allow us to measure the rate at which a curve is turning. This is different than measuring how quickly an object traveling along the path needs to turn in order to stay on the path. The arguments in the Preview Activity depend only on intrinsic geometric properties of the path (road) rather than how an object (car) moves along that path.
     </p>
   </subsection>
   <subsection>
     <title>Curvature</title>
     <p>
-      We claim that <m>\vr_1(t)</m>, the unit speed parameterization of a curve is unique; If you and I drive the same path and both maintain a speed of exactly 1 meter per second, then for any point on the path, we will both reach that point in the same amount of time. For instance, it will take us both exactly 15 seconds to reach the point that is 15 meters down the path (remember that the parameter value for <m>\vr_1</m> is the same as the distance traveled along the curve). Conceptually, you can see how using the unit speed parameterization will allow us to measure properties of the curve and avoid questions about how different ways of moving along the path will affect our measurements. 
+      Hopefully it is not surprising that the unit speed parameterization of a curve <m>\vr_1(s)</m>. One way to think about this is that if two drivers follow the same path, each at a speed of exactly 1 meter per second, then for any point on the path, the two drivers both reach that point in the same amount of time. For instance, it will take both drivers exactly 15 seconds to reach the point that is 15 meters down the path. (Remember the most useful property of a unit speed parameterization is that the parameter value for <m>\vr_1</m> is equal to the numeric value of the distance traveled along the curve, albeit with different units.) Conceptually, you can see how using the unit speed parameterization allows us to measure geometric properties of the curve independent of how an object moves along the path.
     </p>
     <p>
-      We will measure how quickly a path turns by examining how quickly the direction of travel changes in terms of the unit speed parameterization. We will apply the a classic calculus approach to this measurment in order to have a precise measuremet. If <m>\vr_1(t)</m> is the <em>unit</em> speed parameterization of our curve <m>C</m> and we look a section of our path from <m>\vr(t_0)</m> to <m>\vr(t_0+\Delta h)</m>, then we will first look at how different the direction of travel is over this segment of length <m>\Delta H</m>. A plot a sample curve and two points separated by an arclength of <m>\Delta h</m> is shown in <xref ref="curvatureplot7" />.
+      We have already explored how <m>\vN</m> points in the direction of turning. Now, however, we are looking for a <em>scalar</em> quantity that measures <em>how quickly</em> a curve turns. To measure how quickly a path turns, we examine how quickly the direction of travel changes in terms of the unit speed parameterization. We apply the classic calculus approach to this measurement in order to obtain the exact value of this measurement. Suppose <m>\vr_1(s)</m> is the unit speed parameterization of a curve <m>C</m> and consider a section of <m>C</m> from <m>\vr_1(s_0)</m> to <m>\vr_1(s_0+\Delta s)</m>. We first consider how different the direction of travel is over this curve of length <m>\Delta s</m>. (Remember, the change in parameter value here corresponds to the arc length along the curve because <m>\vr_1</m> is a unit speed parameterization.) A plot a sample curve and two points separated by an arc length of <m>\Delta s</m> is shown in <xref ref="curvatureplot7" />.
       
     </p> 
     <figure xml:id="curvatureplot7">
       <caption> A plot of a curve with <m>\vT</m> shown for two points</caption>
-      <image width="55%" xml:id="img-curvatureplot7">
-        <description><p>A 2D curve with points </p></description>
-        <sageplot>
+      <image width="45%">
+        <shortdescription>A parameterized curve with two points and unit tangent vectors</shortdescription>
+        <description><p>A two-dimensional curve with points corresponding to the tips of <m>\vr_1(s_0)</m> and <m>\vr_1(s_0+\Delta s)</m> marked. Also depictred are the unit tangent vectors to the curve at these points.</p></description>
+        <sageplot label="img-curvatureplot7">
           tpoints=[3.1,3.4]
           offsetx=[0.2,0.35]
           offsety=[0,0]
-          labels=["$\\vec{r}_1(t_0)$","$\\vec{r}_1(t_0+\\Delta h)$"]
-          vlabels=["$\\vec{T}(t_0)$","$\\vec{T}(t_0+\\Delta h)$"]
+          labels=["$\\vec{r}_1(s_0)$","$\\vec{r}_1(s_0+\\Delta s)$"]
+          vlabels=["$\\vec{T}(s_0)$","$\\vec{T}(s_0+\\Delta s)$"]
           var('t');
           r1(t)=((t^2/15+2)*cos(t),(1.5-t/12)*sin(t))
           v1(t)=diff(r1,t)
@@ -155,13 +206,35 @@
       </image>
     </figure>
     <p>
-      We want to know how fast the direction of travel is changing at a particular point (say <m>\vr(t_0)</m>), so we will approximate the change in the direction of travel on an interval around this point and take the limit as the size of the interval goes to zero. In order to compute the difference between the directions of travel at the beginning and end of our interval, we will put both <m>\vT(t_0+\Delta h)</m> and <m>\vT(t_0)</m> starting at the same location, then we can use vector subtraction to find <m>\vT(t_0+\Delta h)-\vT(t_0)</m>, the change in the direction of travel over the given interval. This vector subtraction is shown using the triangle of vectors on the left of <xref ref="curvatureplot3" />.
+      We want to know how fast the direction of travel is changing at the point <m>\vr_1(s_0)</m>. To do this, we approximate the change in the direction of travel on an interval around this point and take the limit as the size of the interval goes to zero. We compute the difference between the directions of travel at the beginning and end of our interval by putting both <m>\vT(s_0+\Delta s)</m> and <m>\vT(s_0)</m> starting at the same location. This allows us to use vector subtraction to find <m>\vT(s_0+\Delta s)-\vT(s_0)</m>, which is the change in the direction of travel over the given interval. This vector subtraction is shown using the triangle of vectors in <xref ref="curvatureplot3" />.
     </p>
     <figure xml:id="curvatureplot3">
       <caption> A plot of a curve with <m>\vT</m> shown for two points</caption>
-      <image width="55%" xml:id="img-curvatureplot3">
-        <description><p>A 2D curve with points </p></description>
-        <sageplot>
+      <image width="45%">
+        <shortdescription>Unit tangent vectors and the vector between their tips</shortdescription>
+        <description><p>The unit tangent vectors from <xref ref="curvatureplot7"/> drawn with their initial points at the same location. The vector <m>\vT(s_0+\Delta s)-\vT(s_0)</m> pointing from the tip of <m>\vT(s_0)</m> to the tip of <m>\vT(s_0+\Delta s)</m> is also shown.</p></description>
+        <sageplot label="img-curvatureplot3">
+          tpoints=[3.1,3.4]
+          offsetx=[0.2,0.35]
+          offsety=[0,0]
+          labels=["$\\vec{r}_1(s_0)$","$\\vec{r}_1(s_0+\\Delta s)$"]
+          vlabels=["$\\vec{T}(s_0)$","$\\vec{T}(s_0+\\Delta s)$"]
+          var('t');
+          r1(t)=((t^2/15+2)*cos(t),(1.5-t/12)*sin(t))
+          v1(t)=diff(r1,t)
+          T(t)=v1(t)/norm(v1(t))
+          plot3=text("$\\vec{T}(s_0+\\Delta s)-\\vec{T}(s_0)$",((T(3.1)[0]-4+T(3.4)[0]-4)/2,(T(3.1)[1]+T(3.4)[1])/2-0.1),color="red",fontsize=15,aspect_ratio=1,axes=False)
+          for i in range(len(tpoints)):
+              position=r1(tpoints[i])
+              withoffset=(position[0]+offsetx[i],position[1]+offsety[i])
+              voffset=(position[0]+(T(tpoints[i])[0])/1.2-0.15-0.15*i,position[1]+(T(tpoints[i])[1])/1.2)
+              vvoffset=(-4+(T(tpoints[i])[0])/2-0.15+0.45*i,(T(tpoints[i])[1])/2)
+              plot3+=arrow((-4,0),(T(tpoints[i])[0]-4,T(tpoints[i])[1]),color="blue")
+              plot3+=text(vlabels[i],vvoffset,color="blue",fontsize=15)
+          plot3+=arrow((T(3.1)[0]-4,T(3.1)[1]),(T(3.4)[0]-4,T(3.4)[1]),color="red")
+          dT=T(3.4)-T(3.1)
+          plot3
+<!-- 
           tpoints=[3.1,3.4]
           offsetx=[0.2,0.35]
           offsety=[0,0]
@@ -187,28 +260,28 @@
           plot3+=text("$\\vec{T}(t_0+\\Delta h)-\\vec{T}(t_0)$",((T(3.1)[0]-4+T(3.4)[0]-4)/2,(T(3.1)[1]+T(3.4)[1])/2-0.1),color="red",fontsize=15)
           plot3+=arrow((T(3.1)[0]-4,T(3.1)[1]-0.5),(T(3.1)[0]-4+2.5*dT[0],T(3.1)[1]-0.5+dT[1]*2.5),color="red")
           plot3+=text("$\\frac{\\vec{T}(t_0+\\Delta h)-\\vec{T}(t_0)}{\\Delta h}$",(T(3.1)[0]-4+1.2*dT[0],T(3.1)[1]+dT[1]*1.2-0.65),color="red",fontsize=20)
-          plot3
+          plot3 -->
         </sageplot>
       </image>
     </figure>
     <p>
-      So for a step of size <m>\Delta h</m> in arclength along our curve, we have a change in direction of <m>\vT(t_0+\Delta h)-\vT(t_0)</m> in the direction of travel. In order to approximate the rate of change for the direction of travel, we will need to look at the ratio 
-      <me>\frac{\vT(t_0+\Delta h)-\vT(t_0)}{\Delta h}</me>
-      which is shown as the scaled red vector at the bottom of <xref ref="curvatureplot3" />.
+      So for a step of size <m>\Delta s</m> in arc length along our curve, we have a change in direction of <m>\vT(s_0+\Delta s)-\vT(s_0)</m> in the direction of travel. In order to approximate the rate of change for the direction of travel, we will need to look at the ratio 
+      <me>\frac{\vT(s_0+\Delta s)-\vT(s_0)}{\Delta s}</me>.
     </p>
     <p>
-      The unit normal vector, <m>\vN</m>, already measures the direction of turning (the direction in which the direction of travel is changing). We want to measure as a scalar how quickly the direction of turning is changing along our path, so we take the magnitude of this difference quotient as our approximation of rate of change for the direction of travel over our interval.
-      <me>\left\Vert \frac{\vT(t_0+\Delta h)-\vT(t_0)}{\Delta h}  \right\Vert</me>
-      This completes step one of our classic calculus approach. As we take smaller step sizes in our parameter (arclength), we can see that our approximation will give a better approximation of how fast the direction of travel is changing along our path at the point <m>\vr(t_0)</m>. 
+      The unit normal vector <m>\vN</m> points in the direction of turning. We want to measure as a <em>scalar</em> how quickly the direction of turning is changing along our path. To do this, we compute the magnitude of this difference quotient as an approximation of rate of change for the direction of travel on the interval <m>[s_0,s_0+\Delta s]</m>. This gives
+      <me>\vecmag{ \frac{\vT(s_0+\Delta s)-\vT(s_0)}{\Delta s}  }</me>,
+      which completes the first step of the classic calculus approach. We now consider smaller step sizes in the parameter, which corresponds to smaller changes in arc length along the curve because we have a unit speed parameterization. In doing so, we obtain a better approximation of how fast the direction of travel is changing along the path at the point <m>\vr_1(s_0)</m>. 
     </p>
     <p>
-      If we take the limit as <m>\Delta h \rightarrow 0</m>, then we have step three of our classic calculus approach to measure how quickly a curve is turning at the point <m>P=\vr_1(t_0)</m>, which can be calculated by
+      Taking the limit as <m>\Delta s \rightarrow 0</m>, completes step three of the classic calculus approach to measure how quickly a curve is turning at the point <m>P=\vr_1(s_0)</m>. Calculating, we have
       <me>
-        \lim_{\Delta h \rightarrow 0} \left\Vert \frac{\vT(t_0+\Delta h)-\vT(t_0)}{\Delta h}  \right\Vert  = \left\Vert \frac{d\vT}{ds} \right\Vert
-      </me>
-      Remember that the parameterization used in every part of the above argument is the unit speed parameterization which is why are able to take the derivative of <m>\vT</m> with respect to the arclength.
+        \lim_{\Delta s \rightarrow 0} \vecmag{ \frac{\vT(s_0+\Delta s)-\vT(s_0)}{\Delta s}  }  = \vecmag{ \frac{d\vT}{ds} }
+      </me>.
     </p>
-
+    <p>
+      This leads us to the following definition:
+    </p>
     <definition>
       <statement>
         <p>
@@ -216,12 +289,14 @@
           <me>
             \kappa = \kappa(s) = \vecmag{ \frac{d \vT}{ds} }
           </me>
-          Remember that the parameter for the unit speed parameterization <m>C</m> is the arclength traveled along the curve. Note that curvature is denoted with <m>\kappa</m>, the Greek lowercase letter <q>kappa</q>.
         </p> 
       </statement>
     </definition>
+    <p>
+      Remember that the parameter <m>s</m> for the unit speed parameterization <m>C</m> is the arc length traveled along the curve. Curvature is denoted by <m>\kappa</m>, the lowercase Greek letter <q>kappa</q>.
+    </p>
 
-    <activity xml:id="A_9_8_5">
+    <activity xml:id="act-VVF-curvature-line-circle">
       <introduction>
         <p>
           In this activity we will use our previous work in finding unit speed parameterizations of lines and circles to make sense of the definition of curvature.
@@ -230,44 +305,34 @@
       <task>
         <statement>
           <p>
-            Recall that in <xref ref="linearclength"/> we found that the unit speed parameterization of a line through the points <m>(1,2,3)</m> and <m>(-2,3,1)</m> to be <m>\vr_1(t)= \langle 1,2,3\rangle + \frac{t}{\sqrt{14}} \langle -3,1,-2 \rangle</m>. The generalization of this example would be that the unit speed parameterization of a line through <m>(x_0,y_0,z_0)</m> with direction vector <m>\langle a,b,c\rangle</m> can be given by 
-          <me>
-            \vr(s)=\langle x(s),y(s),z(s) \rangle  = \langle x_0+\frac{a}{\sqrt{a^2+b^2+c^2}}s , y_0+\frac{b}{\sqrt{a^2+b^2}}s ,z_0+  \frac{c}{\sqrt{a^2+b^2+c^2}}s\rangle
-          </me>
-          Compute the speed of this parameterization to verify that this has unit speed. This will also show that <m>\vr'(s)=\vv(s)=\vT(s)</m> (which is not true in general).
+            Recall that in <xref ref="linearclength"/> we found that the unit speed parameterization of a line through the points <m>(1,2,3)</m> and <m>(2,0,5)</m> to be <m>\vr_1(t)= \langle 1,2,3\rangle + \frac{t}{3} \langle 1,-2,2 \rangle</m>. 
+            Calculate <m>\vT(s)</m>, <m>\frac{d\vT}{ds}</m>, and <m>\vecmag{ \frac{d\vT}{ds} }</m> for the unit speed parameterization of this line.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Calculate <m>\vT(s)</m>, <m>\frac{d\vT}{ds}</m>, and <m>\left\Vert \frac{d\vT}{ds} \right\Vert</m> for the unit speed parameterization of a line.
+            Write a few sentences to explain why your result for the calculation of the curvature <m>\kappa=\vecmag{ \frac{d\vT}{ds} }</m> for this line makes sense. <xref ref="ez-VVF-curvature-line" text="type-local"/> asks you to do the calculations to confirm this property of an arbitrary line.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Write a few sentences to explain why your result for the calculation of <m>\kappa=\left\Vert \frac{d\vT}{ds} \right\Vert</m> of a line makes sense.
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Recall that in <xref ref="A_9_8_1"/> we found that a constant speed parameterization of circle in 2-space of radius <m>R</m> centered at
-            the origin. Modifying this parameterization by multiplying the parameter by <m>\frac{1}{\text{speed}}</m> will give the following parameterization.
+            Recall that we concluded <xref ref="act-VVF-arclength-circle-helix"/> by noting giving a  parameterization of circle in 2-space of radius <m>R</m> centered at
+            the origin as <m>\langle R\cos(t),R\sin(t)</m>. A quick calculation can verify that this parameterization has constant speed and that speed is <m>R</m>. Modifying this parameterization by multiplying the parameter by <m>\frac{1}{\text{speed}}=\frac{1}{R}</m> gives the following parameterization:
           <me>
             \vr(s) = \left\langle R \cos\left(\frac{s}{R}\right), R \sin\left(\frac{s}{R}\right)\right\rangle
           </me>
-          Compute the speed of this parameterization to verify that this has unit speed. This will also show that <m>\vr'(s)=\vv(s)=\vT(s)</m> (which is not true in general).
+          Compute the speed of this parameterization to verify that this has unit speed. This will also show that <m>\vr\, '(s)=\vv(s)=\vT(s)</m>. (Recall that this fact is not true in general!)
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Calculate <m>\vT(s)</m>, <m>\frac{d\vT}{ds}</m>, and <m>\left\Vert \frac{d\vT}{ds} \right\Vert</m> for the unit speed parameterization of a circle centered at the origin.
+            Calculate <m>\vT(s)</m>, <m>\frac{d\vT}{ds}</m>, and <m>\vecmag{ \frac{d\vT}{ds} }</m> for the unit speed parameterization of a circle of radius <m>R</m> centered at the origin.
           </p>
         </statement>
         <solution>
@@ -276,43 +341,38 @@
             <me>
               \vT(s) = \left\langle -\sin\left(\frac{s}{R}\right), \cos\left(\frac{s}{R}\right) \right\rangle
             </me>.
-          </p>
-          <p>
-            So the curvature of a circle of radius <m>a</m> is
+            Thus, the curvature of a circle of radius <m>R</m> is
             <md>
               <mrow>\kappa \amp = \left\lvert \frac{d \vT}{ds} \right\rvert</mrow>
               <mrow>\amp = \left\lvert \left\langle -\frac{1}{R}\cos\left(\frac{s}{R}\right), -\frac{1}{R}\sin\left(\frac{s}{R}\right) \right\rangle \right\rvert</mrow>
               <mrow>\amp = \frac{1}{R}</mrow>
-            </md>.
-          </p>
-          <p>
-            So, as expected, larger circles have smaller curvature.
+            </md>. 
           </p>
         </solution>
       </task>
       <task>
         <statement>
           <p>
-            Write a few sentences to explain why your result for the calculation of <m>\kappa=\left\Vert \frac{d\vT}{ds} \right\Vert</m> of circle will be constant. You should also address why circles with larger radii will have have smaller curvature.
+            Write a few sentences to explain why your result for the calculation of <m>\kappa=\vecmag{ \frac{d\vT}{ds} }</m> of circle will be constant. You should also address why circles with larger radii will have have smaller curvature.
           </p>
         </statement>
       </task>
     </activity>
     <p>
-      Notice that a unit speed parameterization will have the property that <m>\vr'(s)=\vv(s)=\vT(s)</m> which is not true in general, but rather the calculation and interpretation of <m>\vT</m> is as simple as possible.
+      Notice that a unit speed parameterization will have the property that <m>\vr_1\, '(s)=\vv(s)=\vT(s)</m>. While this fact is not true in general, it does make the calculation and interpretation of <m>\vT</m> as simple as possible. It is also helpful to observe that a unit speed parameterization has the property that <m>\vT(s) = \va(s)</m>, the acceleration vector of the curve. Thus, when we have a unit speed parameterization for a path, we can think of the curvature of the path at a point as being the magnitude of the acceleration vector.
     </p>
     <p>
-      The definition of curvature relies on our ability to parameterize curves with unit speed. Since finding unit speed parametrization is <alert>very</alert> difficult to compute directly, we would like to be able to calculate the curvature of a curve in terms of <em>any</em> parametrization <m>\vr(t)</m>.
+      The definition of curvature relies on our ability to parameterize curves with unit speed. Since finding unit speed parametrization is frequently difficult to compute directly, the following theorem gives a way of computing the curvature of a curve in terms of <em>any</em> parametrization <m>\vr(t)</m>.
     </p>
     <theorem xml:id="thm-calc-curvature">
       <statement>
         <p>
-          If <m>\vr</m> is a parameterization of a curve <m>C</m>, and if <m>\vr'(t)\neq \vzero</m> and <m>\vr''(t)</m> exists, then the curvature <m>\kappa</m> of <m>C</m> can be calculated by
-          <me> \kappa(t) = \frac{\left\Vert \vT'(t) \right\Vert}{ \left\Vert \vr'(t) \right\Vert}</me>
+          If <m>\vr</m> is a parameterization of a curve <m>C</m>, and if <m>\vr\, '(t)\neq \vzero</m> and <m>\vr\, ''(t)</m> exists, then the curvature <m>\kappa</m> of <m>C</m> can be calculated by
+          <me> \kappa(t) = \frac{\vecmag{ \vT'(t) }}{ \vecmag{ \vr\, '(t) }}</me>.
         </p>
         <p>
-          Further, we can efficiently calculate curvature in terms of the velocity and acceleration functions by
-          <men xml:id="ec-curv">\kappa = \frac{\Vert \vr'(t) \times \vr''(t) \Vert}{\Vert \vr'(t) \Vert^3}= \frac{\Vert \vv(t) \times \va(t) \Vert}{\Vert \vv(t) \Vert^3}</men>
+          Further, we can efficiently calculate curvature in terms of the velocity and acceleration functions as
+          <men xml:id="ec-curv">\kappa = \frac{\vecmag{ \vr\, '(t) \times \vr\, ''(t) }}{\vecmag{ \vr\, '(t) }^3}= \frac{\vecmag{ \vv(t) \times \va(t) }}{\vecmag{ \vv(t) }^3}</men>.
         </p>
       </statement>
       <proof>
@@ -320,34 +380,35 @@
           We will give the outline of a proof of the first result here in order to emphasize that this result comes from a chain rule argument related to <xref ref="coordchangetounitspeed" text="custom">the change of parameters going to a unit speed parameterization</xref>. 
         </p>
         <p>
-          Let <m>\vr(t)</m> be some parameterization of our curve <m>C</m>. Remember that in order to calculate the curvature, <m>\vT</m> will need to have an input corresponding to the parameter of the unit speed parameterization, which means the input of the <m>\vT</m> will need to measure the arclength of <m>C</m> to the point of interest. We will use a function <m>s(t)</m> with input being the parameter of <m>\vr(t)</m> and the output of <m>s(t)</m> will be the arclength on <m>C</m> to the point <m>\vr(t)</m>. Note that <m>s(t)</m> is computed using <xref ref="Length-of-a-curve" /> and that the derivative <m>\frac{ds}{dt}</m> will be <m>\Vert\vr'(t)\Vert</m>. 
+          Let <m>\vr(t)</m> be some parameterization of the curve <m>C</m>. To calculate the curvature, <m>\vT</m> must have an input corresponding to the parameter of the unit speed parameterization. This means that the input of <m>\vT</m> must measure the arc length of <m>C</m> to the point of interest. We will use a function <m>s(t)</m>. The input to this function is the parameter of <m>\vr(t)</m>, and the output of <m>s(t)</m> is the arc length on <m>C</m> to the point <m>\vr(t)</m>. Note that <m>s(t)</m> is computed using <xref ref="Length-of-a-curve" /> and that the derivative <m>\frac{ds}{dt}</m> will be <m>\vecmag{\vr\, '(t)}</m>. 
         </p>
         <p>
-          We can write <m>\vT</m> as a function of the parameter <m>t</m> by the composition <m>\vT(t)=\vT(s(t))</m>. Taking the derivative of this composition with respect to <m>t</m> will utilize a chain rule argument.
+          We can write <m>\vT</m> as a function of the parameter <m>t</m> by the composition <m>\vT(t)=\vT(s(t))</m>. Taking the derivative of this composition with respect to <m>t</m> uses a chain rule argument:
           <me>
             \frac{d\vT}{dt}=\frac{d}{dt}\left(\vT(s(t))\right)=\frac{d\vT}{ds} \frac{ds}{dt}
-          </me>
-          Note here that <m>\frac{d\vT}{dt}=\vT'</m> is the same derivative of <m>\vT</m> we have seen a few times. 
+          </me>.
+          Note here that <m>\frac{d\vT}{dt}=\vT\, '</m> is the same derivative of <m>\vT</m> we have seen a few times. 
         </p>
         <p>
-          Because <m>\frac{ds}{dt}</m> is a scalar valued function we can divide both sides of the equation by it to get
+          Because <m>\frac{ds}{dt}</m> is a scalar-valued function, we can divide both sides of the equation by it to get
           <me>
-           \frac{\vT'}{\frac{ds}{dt}}=\frac{d\vT}{ds}
-          </me>
-          Using our idea above from <xref ref="Length-of-a-curve" />, we can substitute <m>\frac{ds}{dt}= \Vert\vr'(t)\Vert</m> and take the magnitude of each side to get the following
-          <men xml:id="eqn-curv">\left\Vert \frac{\vT'}{\Vert\vr'(t)\Vert} \right\Vert = \left\Vert\frac{d\vT}{ds} \right\Vert =\kappa</men>
+           \frac{\vT\, '}{\frac{ds}{dt}}=\frac{d\vT}{ds}
+          </me>.
+          Using the idea above from <xref ref="Length-of-a-curve" />, we can substitute <m>\frac{ds}{dt}= \vecmag{\vr\, '(t)}</m>. Computing the magnitude of each side yields
+          <men xml:id="eqn-curv">\vecmag{ \frac{\vT\, '}{\vecmag{\vr\, '(t)}} } = \vecmag{\frac{d\vT}{ds} } =\kappa</men>.
         </p>
         <p>
-          If this chain rule argument seems a little technical to you, there is a nice conceptual interpretation of the equation above. Specifically, if we want to convert a measurement like curvature or the derivative of <m>\vT</m> between the unit speed parameterization and any other parameterization, we literally need to adjust by the speed. Equation <xref ref="eqn-curv"/> shows that the adjustment between the derivative of <m>\vT</m> with respect to the unit speed parameter and another parameter is to divide by the variable speed. 
+          There is also a nice conceptual interpretation of the equation above. Specifically, if we want to convert a measurement such as curvature or the derivative of <m>\vT</m> between the unit speed parameterization and any other parameterization, we adjust by the speed. Equation <xref ref="eqn-curv"/> shows that the adjustment between the derivative of <m>\vT</m> with respect to the unit speed parameter and another parameter is to divide by the speed, which may vary depending on time (or position).
         </p>
         <p>
-          We omit the proof of <xref ref="ec-curv"/> because the argument involves a lot of technical algebraic ideas that do not offer a lot of insight into what is measured by curvature. <xref ref="Ez_9_8_5" /> will guide you through this calculation if you are interested in these steps.
+          We omit the proof of <xref ref="ec-curv"/> because the argument involves technical algebraic ideas that do not offer geometric insight into what curvature measures. <xref ref="Ez_9_8_5" text="type-local" /> guides you through this calculation.
         </p>
       </proof>
     </theorem>
     <p>
-      Before we do our examples and activities that calculate curvature for other kinds of paths, we will take a moment to use <xref ref="ec-curv"/> to make sense of when curvature will not be defined or make sense. From an algebraic perspective, the curvature will not be defined when the speed is zero. This should make sense by the fact that if you are not moving along the curve (speed is zero), then it does not make sense to measure how quickly the curve is turning. In <xref ref="S-VVF-Spliting-Acceleration" />, we will make sense of why <m>\Vert \vv(t) \times \va(t) \Vert</m> being zero means that there will be zero curvature, which is very different than the curvature being undefined.
+      Soon we will turn to an example of calculating curvature and then some activities for you to practice. Frist, however, we consider how we can use <xref ref="ec-curv"/> to make sense of when curvature is undefined (or does not make sense). From an algebraic perspective, the curvature cannot be defined when the speed is zero. This should make sense because if you are not moving along the curve, as indicated by having speed equal to zero, then it does not make sense to measure how quickly the curve is turning. In <xref ref="S-VVF-Spliting-Acceleration" />, we consider why <m>\vecmag{ \vv(t) \times \va(t) }</m> being zero means that there will be zero curvature. This is different than the curvature being undefined!
     </p>
+    <!-- TODO Resume here -->
     <example>
       <p>
         In this example, we will calculate the curvature of the parabola given by <m>y=x^2</m> for <m>-2 \lt x \lt 2</m>. We will parameterize this curve in three dimensions so that we can use <xref ref="ec-curv" /> (cross product is defined in 3D only). The vector-valued function <m>\vr(t)=\langle t,t^2,0\rangle</m> with <m>t\in[-2,2]</m> will parameterize the curve given by <m>y=x^2</m> for <m>-2 \lt x \lt 2</m>.
@@ -368,15 +429,15 @@
       <p>  
         Using this parameterization, we get the following set of results:
         <md>
-          <mrow>\vr'(t)=\vv(t) \amp=\langle1,2t,0\rangle </mrow>
-          <mrow>\vr''(t)=\va(t) \amp=\langle0,2,0\rangle </mrow>
+          <mrow>\vr\, '(t)=\vv(t) \amp=\langle1,2t,0\rangle </mrow>
+          <mrow>\vr\, ''(t)=\va(t) \amp=\langle0,2,0\rangle </mrow>
           <mrow>\vv(t)\times\va(t) \amp=\langle0,0,2\rangle </mrow>
-          <mrow>\Vert\vv(t)\times\va(t)\Vert \amp=2 </mrow>
-          <mrow>\Vert\vv(t)\Vert \amp=\sqrt{1+4t^2} </mrow>
+          <mrow>\vecmag{\vv(t)\times\va(t)} \amp=2 </mrow>
+          <mrow>\vecmag{\vv(t)} \amp=\sqrt{1+4t^2} </mrow>
         </md>
         Using <xref ref="ec-curv" />, we get the curvature to be
         <me>
-          \kappa(t) = \frac{\Vert \vv(t) \times \va(t) \Vert}{\Vert \vv(t) \Vert^3} = \frac{2}{(1+4t^2)^{3/2}}
+          \kappa(t) = \frac{\vecmag{ \vv(t) \times \va(t) }}{\vecmag{ \vv(t) }^3} = \frac{2}{(1+4t^2)^{3/2}}
         </me>
       </p>
       <p>
@@ -400,7 +461,7 @@
         Suppose at the instant <m>t=x=0</m> you were driving along the path given by <m>y=x^2</m> at unit speed and your steering wheel locked up preventing you from changing how you were turning. Because the steering wheel is held fixed, you will no longer stay on the path given by <m>y=x^2</m> but instead will drive in a circle. What do you think the radius of the circle will be?
       </p>
       <p>
-        It turns out that the radius of this circle will be <m>\frac{1}{\kappa(0)}=\frac{1}{2}</m>! This shouldn't be too surprising because in <xref ref="A_9_8_5"/>, we saw that the curvature of a circle of radius <m>R</m> is <m>\frac{1}{R}</m>. In general, the <term>radius of curvature</term> is defined to be <m>\frac{1}{\kappa}</m> and the circle that is tangent to the curve and has radius <m>\frac{1}{\kappa}</m> is called the <term>osculating circle</term>. The osculating circle can be described as the circle that best approximates the curve at the tangent point since the osculating circle goes through the tangent point and has the same curvature as the original path. 
+        It turns out that the radius of this circle will be <m>\frac{1}{\kappa(0)}=\frac{1}{2}</m>! This shouldn't be too surprising because in <xref ref="act-VVF-curvature-line-circle"/>, we saw that the curvature of a circle of radius <m>R</m> is <m>\frac{1}{R}</m>. In general, the <term>radius of curvature</term> is defined to be <m>\frac{1}{\kappa}</m> and the circle that is tangent to the curve and has radius <m>\frac{1}{\kappa}</m> is called the <term>osculating circle</term>. The osculating circle can be described as the circle that best approximates the curve at the tangent point since the osculating circle goes through the tangent point and has the same curvature as the original path. 
       </p>
       <p>  
         In <xref ref="paracurv2" />, you can see a plot of the path <m>y=x^2</m> with the osculating circle drawn at a particular point. You can use the slider to change the parameter value at which the osculating circle is drawn. You should notice how the radius of the circle becomes much larger as you move farther away from the vertex in either direction. Remember that curvature and the radius of curvature have an reciprocal relationship; large curvature means small radius and small curvature means a large radius. 
@@ -494,7 +555,7 @@
           <p>
             Here we have
               <me>
-                \vr'(t) = (-\sin(t)) \vi + \cos(t) \vj + \vk
+                \vr\, '(t) = (-\sin(t)) \vi + \cos(t) \vj + \vk
               </me>
               and
               <me>
@@ -549,7 +610,7 @@
         <p>
           We define the curvature <m>\kappa</m> of a curve in 2- or 3-space to be the rate of change of the magnitude of the unit tangent vector with respect to arc length, or
           <me>
-            \kappa = \left\Vert \frac{d\vT}{ds} \right\Vert
+            \kappa = \vecmag{ \frac{d\vT}{ds} }
           </me>
         </p>
       </li>
@@ -557,7 +618,7 @@
         <p>
           Curvature can be efficiently calculated by the following formula for curves in space:
           <me>
-            \kappa = \frac{\Vert \vr'(t) \times \vr''(t) \Vert}{\Vert \vr'(t) \Vert^3}= \frac{\Vert \vv(t) \times \va(t) \Vert}{\Vert \vv(t) \Vert^3}
+            \kappa = \frac{\vecmag{ \vr\, '(t) \times \vr\, ''(t) }}{\vecmag{ \vr\, '(t) }^3}= \frac{\vecmag{ \vv(t) \times \va(t) }}{\vecmag{ \vv(t) }^3}
           </me>
         </p>
       </li>
