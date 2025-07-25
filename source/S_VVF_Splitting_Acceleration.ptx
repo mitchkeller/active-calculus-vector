@@ -27,141 +27,72 @@
   <subsection>
     <title>Introduction</title>
     <p>
-      Position is the central measurement of kinematics, the study of motion. Velocity and acceleration are the first and second derivatives of position, respectively and often serve as vital properties in the study of physics and mechanics. To better understand velocity as a vector-valued function of time, we examined how the magnitude and direction of position change separately. In particular, we separated velocity into its critical parts, namely speed (magnitude of velocity) and unit tangent vector (direction of travel). Speed is a scalar measurement for how fast the position of an object is changing as a function of time and <m>\vT</m> is a unit vector that measures in what direction position is changing.
+      Position is the central measurement of the study of motion, which is known as kinematics. Velocity and acceleration are the first and second derivatives of position, respectively, and are frequently important properties in the study of physics and mechanics. To better understand velocity as a vector-valued function of time, we examined how the magnitude and direction of position change separately. We separated velocity into its critical parts: speed (magnitude of velocity) and direction of travel (unit tangent vector). Speed is a scalar measurement for how fast the position of an object is changing as a function of time, while <m>\vT</m> is a unit vector that measures the direction in which position is changing.
     </p>
     <p>
-      Acceleration (as a vector quantity) is related to many important physical laws and descriptions. For example, Newton's Second Law of Motion relates the forces acting on an object to its acceleration through the formula <m> \vec{F}_{net}= m \vec{a}</m>. This is often summarized as the sum of the forces acting on an object is the mass times the acceleration of the object. This description relates a combination of forces on a object to the position and velocity (through integration of <m>\va</m>). For a basic example of these calculations look at <xref ref="projectilemotion" />. 
+      As a vector quantity, acceleration is related to many important physical laws and descriptions. For example, Newton's Second Law of Motion relates the forces acting on an object to its acceleration through the formula <m> \vec{F}_{net}= m \vec{a}</m>. This is often summarized as the sum of the forces acting on an object is the mass times the acceleration of the object. This description relates a combination of forces on a object to its position and velocity through integration of <m>\va</m>. For an example of these calculations, refer back to <xref ref="projectilemotion" />. 
     </p>
     <p>
-      In order to understand acceleration better as a vector quantity, we will examine acceleration as a change in the magnitude and direction of the velocity vector. In this section, we will use our knowledge of calculus and vector measurements to split the acceleration vector into parts related to the changes in the magnitude and direction of the velocity vector. Further, we will make sense of these different measurements as they relate to physical contexts. 
+      To understand acceleration better as a vector quantity, we will examine acceleration as a change in the magnitude and direction of the velocity vector. In this section, we will use our knowledge of calculus and vector measurements to split the acceleration vector into parts related to the changes in the magnitude and direction of the velocity vector. We will also consider how these measurements relate to physical contexts. 
     </p>
     <exploration xml:id="PA_split_a">
     <introduction>
       <p>
-        All your good work as CEO and lead engineer at <em>Steer Clear</em> has started to pay off, literally. When you showed your work on using the location tracking system (LTS) to develop navigation and telemetry tools to an investment group (your grandparents), they were impressed and decided to give you money to further develop your self-driving car. You decided to use this new infusion of cash to buy a gyroscopic accelerometer which will measure the acceleration as a vector with magnitude and direction. In order to use your new instrument for information on the <q>driving</q> part of our self-driving car, you need to understand how your accelerometer readings will relate to the operations needed to drive a car.
+        All your good work as CEO and lead engineer at <em>Steer Clear</em> has started to pay off, literally. When you showed your work on using the location tracking system (LTS) to develop navigation and telemetry tools to an investment group (your grandparents), they were impressed and decided to give you money to further develop your self-driving car. You decided to use this infusion of cash to buy a gyroscopic accelerometer which will measure acceleration as a vector with magnitude and direction. In order to use your new instrument for information on the <q>driving</q> part of your self-driving car, you need to understand how your accelerometer readings will relate to the operations needed to drive a car.
       </p>
     </introduction>
     <task>
       <statement>
         <p>
-          <xref ref="PA-splita-P1" /> shows the path you drove on a test drive with the point <m>P</m> and the direction of travel labeled. Draw and label vectors in the directions of <m>\vT</m> and <m>\vN</m> at the point <m>P</m>.
+          The image below shows the path you drove on a test drive along with points <m>P</m> and <m>Q</m> and the direction of travel. At the points <m>P</m> and <m>Q</m>, we have draw three vectors. The acceleration vector <m>\va</m> provided by your new gyroscopic accelerometer is shown in magenta. The two blue vectors are the unit tangent vector <m>\vT</m> and unit normal vector <m>\vN</m> at that point. Label each of the blue vectors as being <m>\vT</m> or <m>\vN</m>.
         </p>
-        <figure xml:id="PA-splita-P1">
-          <caption>The curve <m>C</m> with direction of travel and point <m>P</m> labeled</caption>
-          <image width="55%" xml:id="img-splita-PA1">
-            <description><p>A 2D plot with a point P on a curve with direction traveled labeled</p></description>
-            <sageplot>
-              var('t')
-              r1(t)=((t^2/15+2)*cos(t),(1.5-t/12)*sin(t))
-              tval=0.75
-              plot1=parametric_plot(r1(t),(t,0.5,4),aspect_ratio=1,color='black',thickness=2,axes=False)
-              plot1+=point(r1(tval),color="black",size=50)+text("$P$",(r1(tval)[0]+0.1,r1(tval)[1]+0.2),color="black",fontsize=20)
-              plot1+=arrow(r1(2),r1(2.01),color="black")
-              plot1            
-            </sageplot>
-          </image>
-        </figure>
+        <image width="65%">
+          <shortdescription>A curve with two points marked</shortdescription>
+          <description><p>A two-dimensional curve with two points indicated. At each point, there are three vectors.</p></description>
+          <prefigure xmlns="https://prefigure.org" label="img-splita-PA1">
+            <diagram dimensions="(377,192)" margins="5"
+                    xmlns="https://prefigure.org">
+              <definition>s(t) = ((t^2/15+2)*cos(t),(1.5-t/12)*sin(t))</definition>
+              <definition>del_g(x,y)=grad(g, (x,y))</definition>
+              <coordinates bbox="(-3.1,-0.9,1.8,1.6)">
+                <parametric-curve function="s" domain="(0.5,4)" stroke="black" arrows="1" />
+                <definition>ds(t)=deriv(s,t)</definition>
+                <definition>a(t)=deriv(ds,t)</definition>
+                <definition>T(t)=1/length(ds(t))*ds(t)</definition>
+                <definition>dT(t)=deriv(T,t)</definition>
+                <definition>N(t)=1/length(dT(t))*dT(t)</definition>
+                <vector-field function="T" curve="s"
+                              domain="(1,3)" N="2" stroke="#1E88E5" />
+                <vector-field function="N" curve="s"
+                              domain="(1,3)" N="2" stroke="#1E88E5" />
+                <vector-field function="a" curve="s"
+                              domain="(1,3)" N="2" stroke="#D81B60"/>
+                <point p="s(1)" fill="black"><m>P</m></point>
+                <point p="s(3)" fill="black" alignment="nw"><m>Q</m></point>              
+              </coordinates>
+            </diagram>
+          </prefigure>
+        </image>
       </statement>
     </task>
     <task xml:id="PA-splita-part2">
       <statement>
         <p>
-          <xref ref="PA-splita-P2" /> shows <m>\va</m>, the acceleration vector of your test car at the point <m>P</m> (drawn in red). Draw the projection of <m>\va</m> on <m>\vT</m> and the projection of <m>\va</m> on <m>\vN</m> at the point <m>P</m>.
-        </p>
-        <figure xml:id="PA-splita-P2">
-          <caption> A 2D curve with acceleration vector shown in red at the point <m>P</m></caption>
-          <image width="55%" xml:id="img-splita-PA2">
-            <description><p>A 2D curve with acceleration vector shown in red at the point <m>P</m></p></description>
-            <sageplot>
-              var('t')
-              r1(t)=((t^2/15+2)*cos(t),(1.5-t/12)*sin(t))
-              tval=0.75
-              rx,ry =r1(tval)
-              plot2=parametric_plot(r1(t),(t,0.5,4),aspect_ratio=1,color='black',thickness=2,axes=False)
-              plot2+=point(r1(tval),color="black",size=50)+text("$P$",(rx+0.1,ry+0.2),color="black",fontsize=20)
-              plot2+=arrow(r1(2),r1(2.01),color="black")
-              plot2+=arrow((rx,ry),(rx-3/4,ry+1/5),color="red")
-              plot2           
-            </sageplot>
-          </image>
-        </figure>
-      </statement>
-    </task>
-    <task>
-      <statement>
-        <p>
-          Based on your plot for <xref ref="PA-splita-part2" />, is <m> \va \cdot \vT</m> is positive, negative, or zero at <m>P</m>? Write a sentence or two to justify your answer.
+          Draw the projection of <m>\va</m> on <m>\vT</m> and the projection of <m>\va</m> on <m>\vN</m> at point <m>P</m> and at point <m>Q</m> in the graph above.
         </p>
       </statement>
     </task>
     <task>
       <statement>
         <p>
-          Based on your plot for <xref ref="PA-splita-part2" />, is <m> \va \cdot \vN</m> is positive, negative, or zero at <m>P</m>? Write a sentence or two to justify your answer.
+          Is <m> \va \cdot \vT</m> is positive, negative, or zero at <m>P</m>? What about at <m>Q</m>? Write a sentence or two to justify your answers.
         </p>
       </statement>
     </task>
     <task>
       <statement>
         <p>
-          We will now look at a different acceleration vector places at a new point <m>Q</m> on our curve. 
-        </p>
-        <p>
-          <xref ref="PA-splita-P1" /> shows the path you drove on a test drive with the point <m>Q</m> and the direction of travel labeled. Draw and label vectors in the directions of <m>\vT</m> and <m>\vN</m> at the point <m>Q</m>.
-        </p>
-        <figure xml:id="PA-splita-Q1">
-          <caption>The curve <m>C</m> with direction of travel and point <m>Q</m> labeled</caption>
-          <image width="55%" xml:id="img-splita-Q1">
-            <description><p>A 2D plot with a point P on a curve with direction traveled labeled</p></description>
-            <sageplot>
-              var('t')
-              r1(t)=((t^2/15+2)*cos(t),(1.5-t/12)*sin(t))
-              tval=3.1
-              rx,ry =r1(tval)
-              plot3=parametric_plot(r1(t),(t,0.5,4),aspect_ratio=1,color='black',thickness=2,axes=False)
-              plot3+=point(r1(tval),color="black",size=30)+text("$Q$",(rx+0.2,ry-0.1),color="black",fontsize=20)
-              plot3+=arrow(r1(2),r1(2.01),color="black")
-              plot3           
-            </sageplot>
-          </image>
-        </figure>
-      </statement>
-    </task>
-    <task xml:id="PA-splita-part6">
-      <statement>
-        <p>
-          <xref ref="PA-splita-Q2" /> shows <m>\va</m>, the acceleration vector at the point <m>Q</m> (drawn in red). Draw the projection of <m>\va</m> on <m>\vT</m> and the projection of <m>\va</m> on <m>\vN</m> at the point <m>Q</m>.
-        </p>
-        <figure xml:id="PA-splita-Q2">
-          <caption> A 2D curve with acceleration vector shown in red at the point <m>Q</m></caption>
-          <image width="55%" xml:id="img-splita-Q2">
-            <description><p>A 2D curve with acceleration vector shown in red at the point <m>Q</m></p></description>
-            <sageplot>
-              var('t')
-              r1(t)=((t^2/15+2)*cos(t),(1.5-t/12)*sin(t))
-              tval=3.1
-              rx,ry =r1(tval)
-              plot4=parametric_plot(r1(t),(t,0.5,4),aspect_ratio=1,color='black',thickness=2,axes=False)
-              plot4+=point(r1(tval),color="black",size=30)+text("$Q$",(rx+0.2,ry-0.1),color="black",fontsize=20)
-              plot4+=arrow(r1(2),r1(2.01),color="black")
-              plot4+=arrow((rx,ry),(rx+2/3,ry+2/5),color="red")
-              plot4           
-            </sageplot>
-          </image>
-        </figure>
-      </statement>
-    </task>
-    <task>
-      <statement>
-        <p>
-          Based on your plot for <xref ref="PA-splita-part6" />, is <m> \va \cdot \vT</m> is positive, negative, or zero at <m>Q</m>? Write a sentence or two to justify your answer.
-        </p>
-      </statement>
-    </task>
-    <task>
-      <statement>
-        <p>
-          Based on your plot for <xref ref="PA-splita-part6" />, is <m> \va \cdot \vN</m> is positive, negative, or zero at <m>Q</m>? Write a sentence or two to justify your answer.
+          Is <m> \va \cdot \vN</m> is positive, negative, or zero at <m>P</m>? What about at <m>Q</m>? Write a sentence or two to justify your answers.
         </p>
       </statement>
     </task>
@@ -173,10 +104,13 @@
 <subsection>
   <title>Splitting Acceleration</title>
   <p>
-    Recall that by <xref ref="def-unit-tangent" text="custom">the definition of <m>\vT</m></xref>, <m>\vv</m> is parallel to <m>\vT</m> (when <m>\vv</m> exists and is nonzero) and by <xref ref="TdotNzero"/>, <m>\vT \cdot \vN =0 </m>. In other words, ALL of the velocity is in a direction parallel to the unit tangent vector and the unit normal is <em>always</em> orthogonal to the unit tangent to a curve (when they exist). In this subsection, we will look at splitting the acceleration vector into parts in the direction of travel and the direction of turning.
+    Recall that by <xref ref="def-unit-tangent" text="custom">the definition of <m>\vT</m></xref>, <m>\vv</m> is parallel to <m>\vT</m> when <m>\vv</m> exists and is nonzero. Additionally, <xref ref="TdotNzero"/> states that <m>\vT \cdot \vN =0 </m>. In other words, <em>all</em> of the velocity is in a direction parallel to the unit tangent vector and the unit normal vector is <em>always</em> orthogonal to the unit tangent vector to a curve, when they exist. In this subsection, we will look at splitting the acceleration vector into parts in the direction of travel and the direction of turning.
   </p>
   <p>
-    For right now, let's suppose that we have the acceleration vector, <m>\va(t)</m>, for the motion along some curve in <m>\mathbb{R}^3</m>. From <xref ref="S-VVF-TNB" />, we have the TNB frame as a way of describing key directions related to motion along a curve in space. We would like to split the acceleration vector up into parts in each of these directions (<m>\vT</m>, <m>\vN</m>, and <m>\vB</m>). In particular, we want to find <m>c_1</m>, <m>c_2</m>, and <m>c_3</m> such that <m>\va= c_1 \vT + c_2 \vN +c_3 \vB</m>. Remember that <m>\vT \cdot \vN =0</m>, <m>\vT \cdot \vB =0</m>, <m>\vN \cdot \vB =0</m>, and <m>\vecmag{\vT}=\vecmag{\vN}=\vecmag{\vB}=1</m>. We can take the dot product of each of <m>\vT</m>, <m>\vN</m>, and <m>\vB</m> with our expression for <m>\va</m> to get the following:
+    Suppose <m>\va(t)</m> is the acceleration vector for the motion along a curve in <m>\mathbb{R}^3</m>. From <xref ref="S-VVF-TNB" />, we have the TNB frame as a way of describing key directions related to motion along a curve in space. We would like to split the acceleration vector into a part in each of directions corresponding to <m>\vT</m>, <m>\vN</m>, and <m>\vB</m>. Algebraically, we want to find scalars <m>c_1</m>, <m>c_2</m>, and <m>c_3</m> such that <m>\va= c_1 \vT + c_2 \vN +c_3 \vB</m>. To do so, we will make use of several key facts from <xref ref="S-VVF-TNB" />:
+    <md>
+      <mrow> \vT \cdot \vN \amp=0 \amp \vT \cdot \vB \amp =0 \amp \vN \cdot \vB \amp=0 \amp\vecmag{\vT}\amp=\vecmag{\vN}=\vecmag{\vB}=1</mrow>
+    </md>. If we compute the dot product of each of <m>\vT</m>, <m>\vN</m>, and <m>\vB</m> with the expression for <m>\va</m>, we find
     <md>
       <mrow>\va \cdot \vT \amp= (c_1 \vT + c_2 \vN +c_3 \vB)\cdot \vT </mrow>
       <mrow> \amp= c_1 (\vT \cdot \vT) + c_2 (\vN \cdot \vT) +c_3 (\vB \cdot \vT) </mrow>
@@ -188,18 +122,19 @@
       <mrow> \amp= c_1 (\vT \cdot \vB) + c_2 (\vN \cdot \vB) +c_3 (\vB \cdot \vB) </mrow>
       <mrow> \amp=c_3 </mrow>
     </md>
-    Because we our TNB frame directions are all orthogonal to each other and unit vectors, we can compute the amount of acceleration in each of these directions with a dot product!
+    These computations demonstrate that because the TNB frame directions are all unit vectors that are orthogonal to each other, we can compute the amount of acceleration in each of these directions with a dot product!
  </p>
   <definition xml:id="def-aTaN">
     <statement>
       <p>
-        The <term>tangential component of acceleration</term> is defined as <m>a_{\vT} = \va \cdot \vT </m> and the <term>normal component of acceleration</term> is defined as <m>a_{\vN} = \va \cdot \vN </m>. Because <m>\vT</m> and <m>\vN</m> are orthogonal to each other and unit vectors, <m>a_{\vT}</m> and  <m>a_{\vN}</m> will give the amount of acceleration in the direction of travel and the direction of turning, respectively. 
+        The <term>tangential component of acceleration</term> is <m>a_{\vT} = \va \cdot \vT </m> and the <term>normal component of acceleration</term> is <m>a_{\vN} = \va \cdot \vN </m>. 
       </p>
     </statement>
   </definition>
   <p>
-    You may notice that we only gave names for the accelerations in the tangential and normal directions above. It turns out that the acceleration vector for motion along a curve can <em>only</em> have components in the tangential and normal directions to the curve. It is not possible for the acceleration vector of parameterized curve to have any component in another direction (like <m>\vB</m>).
+    Our use of the word <q>component</q> in <xref ref="def-aTaN"/> is consistent with our use in <xref ref="S-Precalc-DotProduct" /> here because <m>\vT</m> and <m>\vN</m> are both unit vectors. Furthermore, because the unit tangent and unit normal vectors are also orthogonal to each other, <m>a_{\vT}</m> and  <m>a_{\vN}</m> give the amount of acceleration in the direction of travel and the direction of turning, respectively. You may notice that we only gave names for acceleration in the tangential and normal directions above. The acceleration vector for motion along a curve can <em>only</em> have components in the tangential and normal directions to the curve. It is not possible for the acceleration vector of parameterized curve to have any component in a direction, such as that of <m>\vB</m>, that does not lie in the plane defined by <m>\vT</m> and <m>\vN</m>, which we state formally and justify below.
   </p>
+  <!-- TODO Resume here. -->
   <proposition xml:id="prop-aTaN">
     <statement>
       <p>

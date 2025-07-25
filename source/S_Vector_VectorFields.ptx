@@ -553,6 +553,19 @@
                     var('x,y')
                     contour_plot(4*x^2 + 4*x*y + 7*y^2, (x,-8,8), (y,-7,7), contours=[25, 50, 75, 100, 125, 150, 175, 200],fill=False,labels=True,frame=False,aspect_ratio=1,axes=True,cmap=['blue'],label_fmt="%1.0f",label_colors='black',fig_tight=True,axes_labels=["$x$","$y$"])                    
                   </sageplot>
+                  <!-- 
+                  <diagram dimensions="(300,300)" margins="5">
+                    <definition>f(x,y)=4*x^2 + 4*x*y + 7*y^2</definition>
+                    <definition>del_f(x,y) = grad(f, (x,y))</definition>
+                    <definition>contours = (25, 50, 75, 100, 125, 150, 175, 200)</definition>
+                    <coordinates bbox="(-8,-7,8,7)">
+                      <grid-axes/>
+                      <repeat parameter="c in contours">
+                        <implicit-curve function="f" k="c" stroke="blue"/>
+                      </repeat>
+                    </coordinates>
+                  </diagram>
+                  -->
                 </image>
               </figure>
               <figure>
