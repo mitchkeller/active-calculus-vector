@@ -408,40 +408,53 @@
     <p>
       Soon we will turn to an example of calculating curvature and then some activities for you to practice. Frist, however, we consider how we can use <xref ref="ec-curv"/> to make sense of when curvature is undefined (or does not make sense). From an algebraic perspective, the curvature cannot be defined when the speed is zero. This should make sense because if you are not moving along the curve, as indicated by having speed equal to zero, then it does not make sense to measure how quickly the curve is turning. In <xref ref="S-VVF-Spliting-Acceleration" />, we consider why <m>\vecmag{ \vv(t) \times \va(t) }</m> being zero means that there will be zero curvature. This is different than the curvature being undefined!
     </p>
-    <!-- TODO Resume here -->
     <example>
       <p>
-        In this example, we will calculate the curvature of the parabola given by <m>y=x^2</m> for <m>-2 \lt x \lt 2</m>. We will parameterize this curve in three dimensions so that we can use <xref ref="ec-curv" /> (cross product is defined in 3D only). The vector-valued function <m>\vr(t)=\langle t,t^2,0\rangle</m> with <m>t\in[-2,2]</m> will parameterize the curve given by <m>y=x^2</m> for <m>-2 \lt x \lt 2</m>.
+        In this example, we will calculate the curvature of the parabola given by <m>y=x^2</m> for <m>-2 \lt x \lt 2</m>. We would like to use <xref ref="ec-curv" /> to calculate the curvature, so we must parameterize this curve in three dimensions with the <m>z</m>-component constantly zero. This is because the cross product is only defined for three-dimensional vectors. The vector-valued function <m>\vr(t)=\langle t,t^2,0\rangle</m> with <m>-2\leq t\leq 2</m> will parameterize the curve given by <m>y=x^2</m> for <m>-2 \lt x \lt 2</m>.
       </p>
       <figure xml:id="paracurv1">
-        <caption> A plot of <m>y=x^2</m> with points <m>(0,0)</m> and <m>(-\frac{3}{2},\frac{9}{4})</m></caption>
-        <image width="55%" xml:id="img-paracurv1">
-          <description><p>A 2D curve with points </p></description>
-          <sageplot>
+        <caption> A plot of <m>y=x^2</m> with points <m>(0,0)</m> and <m>(-2,4)</m></caption>
+        <image width="55%">
+          <shortdescription>A parabola with two points marked</shortdescription>
+          <description><p>A parabola with vertex a the origin. The points <m>(0,0)</m> and <m>(-2,4)</m> are marked on the parabola. </p></description>
+          <prefigure xmlns="https://prefigure.org"
+                     label="img-paracurv1">
+            <diagram dimensions="(320,320)" margins="5">
+              <definition>f(x)=x^2</definition>
+              <definition>a = 1</definition>
+              <coordinates bbox="(-2.5,-0.5,2.5,4.5)">
+                <grid-axes xlabel="x" ylabel="y"/>
+                <graph function="f"/>
+                <point p="(0,f(0))"/>
+                <point p="(-2,f(-2))"/>  
+              </coordinates>
+            </diagram>
+          </prefigure>
+          <!-- <sageplot>
             var('t,x')
             plot4=plot(x^2, (x,-2,2),aspect_ratio=1,gridlines=True,color="black",thickness=2,axes_labels=["$x$","$y$"])
             plot4+=point((0,0),size=50,color="black",xmin=-2,xmax=2,ymin=-0.5,ymax=4)
             plot4+=point((-1.5,9/4),size=50,color="black",xmin=-2,xmax=2,ymin=-0.5,ymax=4)
             plot4
-          </sageplot>
+          </sageplot> -->
         </image>
       </figure>
       <p>  
-        Using this parameterization, we get the following set of results:
+        Using this parameterization, we compute the following:
         <md>
-          <mrow>\vr\, '(t)=\vv(t) \amp=\langle1,2t,0\rangle </mrow>
-          <mrow>\vr\, ''(t)=\va(t) \amp=\langle0,2,0\rangle </mrow>
+          <mrow>\vv(t) = \vr\, '(t) \amp=\langle1,2t,0\rangle </mrow>
+          <mrow>\va(t) = \vr\, ''(t) \amp=\langle0,2,0\rangle </mrow>
           <mrow>\vv(t)\times\va(t) \amp=\langle0,0,2\rangle </mrow>
           <mrow>\vecmag{\vv(t)\times\va(t)} \amp=2 </mrow>
           <mrow>\vecmag{\vv(t)} \amp=\sqrt{1+4t^2} </mrow>
         </md>
-        Using <xref ref="ec-curv" />, we get the curvature to be
+        Using <xref ref="ec-curv" />, the curvature is
         <me>
           \kappa(t) = \frac{\vecmag{ \vv(t) \times \va(t) }}{\vecmag{ \vv(t) }^3} = \frac{2}{(1+4t^2)^{3/2}}
-        </me>
+        </me>.
       </p>
       <p>
-        Comparing the points <m>(0,0)</m> and <m>(-\frac{3}{2},\frac{9}{4})</m> on <xref ref="paracurv1" />, you can see that the parabola will have a larger curvature at <m>(0,0)</m> because the path is bending more at <m>(0,0)</m> than at <m>(-\frac{3}{2},\frac{9}{4})</m>. Using our result above, we can see that the curvature at <m>(0,0)</m>(when <m>t=0</m>) is <m>\kappa(0)=2</m> and the curvature at <m>(-\frac{3}{2},\frac{9}{4})</m> (when <m>t=-\frac{3}{2}</m>) is <m>\kappa(-\frac{3}{2})=\frac{2}{(10)^{3/2}}\approx0.06325</m>. This calculation of curvature matches with our visual description from above.
+        Comparing the points <m>(0,0)</m> and <m>(-2,4)</m> on <xref ref="paracurv1" />, you can see that the path bends more at <m>(0,0)</m> than at <m>-2</m> parabola will have a larger curvature at <m>(0,0)</m> because the path is bending more at <m>(0,0)</m> than at <m>(-\frac{3}{2},\frac{9}{4})</m>. Using our result above, we can see that the curvature at <m>(0,0)</m>(when <m>t=0</m>) is <m>\kappa(0)=2</m> and the curvature at <m>(-\frac{3}{2},\frac{9}{4})</m> (when <m>t=-\frac{3}{2}</m>) is <m>\kappa(-\frac{3}{2})=\frac{2}{(10)^{3/2}}\approx0.06325</m>. This calculation of curvature matches with our visual description from above.
       </p>
       <p>
         We can also think of the curvature as a function of the parameter being used (in our case <m>t=x</m>). A plot of <m>\kappa(t) = \frac{2}{(1+4t^2)^{3/2}}</m> as a function of <m>t=x</m> is shown in <xref ref="curvparabola"/>. You can see that the curvature is highest near the vertex of the parabola and the curvature gets closer to zero as you look farther up the parabola. This should make sense because the parabola is <q>flatter</q> away from the origin.
