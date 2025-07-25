@@ -586,29 +586,28 @@
     </task>
   </activity>
 </subsection>
-<subsection>
-    <title>Summary</title>
-    <ul>
-      <li>
-        <p>
-          The unit tangent vector, <m>\vT(t)=\frac{\vv}{\vecmag{\vv}}</m>, measures the direction of travel for an object along a parameterized curve.
-        </p>
-      </li>
+<outcomes>
+  <ul>
+    <li>
+      <p>
+        The unit tangent vector, <m>\vT(t)=\frac{\vv}{\vecmag{\vv}}</m>, measures the direction of travel for an object along a parameterized curve.
+      </p>
+    </li>
 
-      <li>
-        <p>
-          The unit normal vector, <m>\vN(t)=\frac{\vT\, '}{\vecmag{\vT\, '}}</m>, measures the direction that an object is turning in order to stay on a parameterized curve.
-        </p>
-      </li>
+    <li>
+      <p>
+        The unit normal vector, <m>\vN(t)=\frac{\vT\, '}{\vecmag{\vT\, '}}</m>, measures the direction that an object is turning in order to stay on a parameterized curve.
+      </p>
+    </li>
 
-      <li>
-        <p>
-          The binormal vector, <m>\vB(t)= \vT \times \vN</m>, is the direction of the axis for which <m>\vT</m> and <m>\vN</m> are rotating around.
-        </p>
-      </li>
-    </ul>
+    <li>
+      <p>
+        The binormal vector, <m>\vB(t)= \vT \times \vN</m>, is the direction of the axis for which <m>\vT</m> and <m>\vN</m> are rotating around.
+      </p>
+    </li>
+  </ul>
 
-    </subsection>
+</outcomes>
 
     <xi:include href="exercises/ez-S_VVF_TNB.ptx" />
     
