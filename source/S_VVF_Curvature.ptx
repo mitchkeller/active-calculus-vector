@@ -413,20 +413,20 @@
         In this example, we will calculate the curvature of the parabola given by <m>y=x^2</m> for <m>-2 \lt x \lt 2</m>. We would like to use <xref ref="ec-curv" /> to calculate the curvature, so we must parameterize this curve in three dimensions with the <m>z</m>-component constantly zero. This is because the cross product is only defined for three-dimensional vectors. The vector-valued function <m>\vr(t)=\langle t,t^2,0\rangle</m> with <m>-2\leq t\leq 2</m> will parameterize the curve given by <m>y=x^2</m> for <m>-2 \lt x \lt 2</m>.
       </p>
       <figure xml:id="paracurv1">
-        <caption> A plot of <m>y=x^2</m> with points <m>(0,0)</m> and <m>(-2,4)</m></caption>
+        <caption> A plot of <m>y=x^2</m> with points <m>(0,0)</m> and <m>(-1,1)</m></caption>
         <image width="55%">
           <shortdescription>A parabola with two points marked</shortdescription>
-          <description><p>A parabola with vertex a the origin. The points <m>(0,0)</m> and <m>(-2,4)</m> are marked on the parabola. </p></description>
+          <description><p>A parabola with vertex a the origin. The points <m>(0,0)</m> and <m>(-1,1)</m> are marked on the parabola. </p></description>
           <prefigure xmlns="https://prefigure.org"
                      label="img-paracurv1">
             <diagram dimensions="(320,320)" margins="5">
               <definition>f(x)=x^2</definition>
               <definition>a = 1</definition>
-              <coordinates bbox="(-2.5,-0.5,2.5,4.5)">
+              <coordinates bbox="(-2.1,-0.5,2.1,4.1)">
                 <grid-axes xlabel="x" ylabel="y"/>
-                <graph function="f"/>
+                <graph function="f" domain="[-2,2]" />
                 <point p="(0,f(0))"/>
-                <point p="(-2,f(-2))"/>  
+                <point p="(-1,f(-1))"/>  
               </coordinates>
             </diagram>
           </prefigure>
@@ -454,9 +454,10 @@
         </me>.
       </p>
       <p>
-        Comparing the points <m>(0,0)</m> and <m>(-2,4)</m> on <xref ref="paracurv1" />, you can see that the path bends more at <m>(0,0)</m> than at <m>-2</m> parabola will have a larger curvature at <m>(0,0)</m> because the path is bending more at <m>(0,0)</m> than at <m>(-\frac{3}{2},\frac{9}{4})</m>. Using our result above, we can see that the curvature at <m>(0,0)</m>(when <m>t=0</m>) is <m>\kappa(0)=2</m> and the curvature at <m>(-\frac{3}{2},\frac{9}{4})</m> (when <m>t=-\frac{3}{2}</m>) is <m>\kappa(-\frac{3}{2})=\frac{2}{(10)^{3/2}}\approx0.06325</m>. This calculation of curvature matches with our visual description from above.
+        Comparing the points <m>(0,0)</m> and <m>(-2,4)</m> on <xref ref="paracurv1" />, you can see that the path bends more at <m>(0,0)</m> than at <m>(-1,1)</m>, which corresponds to the parabola having larger curvature at <m>(0,0)</m> than at <m>(-1,1)</m>. Using the formula we obtained above, we can see that at <m>(0,0)</m>, when <m>t=0</m>, the curvature is <m>\kappa(0)=2</m> while at <m>(-1,1)</m>, when <m>t=-1</m>, the curvature is <m>\kappa(-1)=\frac{2}{(5)^{3/2}}\approx0.179</m>. This calculation of curvature matches with our visual description from above.
       </p>
-      <p>
+    </example>
+      <!-- <p>
         We can also think of the curvature as a function of the parameter being used (in our case <m>t=x</m>). A plot of <m>\kappa(t) = \frac{2}{(1+4t^2)^{3/2}}</m> as a function of <m>t=x</m> is shown in <xref ref="curvparabola"/>. You can see that the curvature is highest near the vertex of the parabola and the curvature gets closer to zero as you look farther up the parabola. This should make sense because the parabola is <q>flatter</q> away from the origin.
       </p>
       <figure xml:id="curvparabola">
@@ -469,15 +470,15 @@
             plot5
           </sageplot>
         </image>
-      </figure>
+      </figure> -->
       <p>
-        Suppose at the instant <m>t=x=0</m> you were driving along the path given by <m>y=x^2</m> at unit speed and your steering wheel locked up preventing you from changing how you were turning. Because the steering wheel is held fixed, you will no longer stay on the path given by <m>y=x^2</m> but instead will drive in a circle. What do you think the radius of the circle will be?
+        Suppose at the instant <m>t=x=0</m> you were driving along the path given by <m>y=x^2</m> at unit speed and your steering wheel locked up preventing you from changing how you were turning. Because the steering wheel is held fixed, you will no longer stay on the path given by <m>y=x^2</m>. Instead, your car will drive in a circle, and we can figure out what the radius of that circle would be by using curvature.
       </p>
       <p>
-        It turns out that the radius of this circle will be <m>\frac{1}{\kappa(0)}=\frac{1}{2}</m>! This shouldn't be too surprising because in <xref ref="act-VVF-curvature-line-circle"/>, we saw that the curvature of a circle of radius <m>R</m> is <m>\frac{1}{R}</m>. In general, the <term>radius of curvature</term> is defined to be <m>\frac{1}{\kappa}</m> and the circle that is tangent to the curve and has radius <m>\frac{1}{\kappa}</m> is called the <term>osculating circle</term>. The osculating circle can be described as the circle that best approximates the curve at the tangent point since the osculating circle goes through the tangent point and has the same curvature as the original path. 
+        In <xref ref="act-VVF-curvature-line-circle"/>, we saw that the curvature of a circle of radius <m>R</m> is <m>\frac{1}{R}</m>, so it hopefully is not too surprising that the radius of the circle in which the car would match. In fact, the radius of this circle will be <m>\frac{1}{\kappa(0)}=\frac{1}{2}</m>. In general, the <term>radius of curvature</term> is defined to be <m>\frac{1}{\kappa}</m> and the circle that is tangent to the curve at the point where the curvature is measured with radius <m>\frac{1}{\kappa}</m> is called the <term>osculating circle</term>. The osculating circle can be described as the circle that best approximates the curve at the point since the osculating circle goes through the point and has the same curvature as the original path. 
       </p>
       <p>  
-        In <xref ref="paracurv2" />, you can see a plot of the path <m>y=x^2</m> with the osculating circle drawn at a particular point. You can use the slider to change the parameter value at which the osculating circle is drawn. You should notice how the radius of the circle becomes much larger as you move farther away from the vertex in either direction. Remember that curvature and the radius of curvature have an reciprocal relationship; large curvature means small radius and small curvature means a large radius. 
+        In <xref ref="paracurv2" />, you can see a plot of the path <m>y=x^2</m> with the osculating circle drawn at a particular point. Adjust the slider to change the parameter value (and thus point) at which the osculating circle is drawn. Notice how the radius of the circle becomes larger as the point moves farther away from the vertex in either direction. Remember that curvature and the radius of curvature have an <em>reciprocal relationship</em>: large curvature means small radius and small curvature means large radius. 
       </p>
       <figure xml:id="paracurv2">
         <caption>A plot of <m>y=x^2</m> with the osculating circle drawn tangent to the curve</caption>
@@ -494,35 +495,64 @@
           </slate>
         </interactive>
       </figure>
-    </example>
-    <activity xml:id="A_9_8_6">
+    
+    <activity xml:id="act-VVF-curvature-ellipse-helix">
       <introduction>
         <p>
-          In this activity, we will calculate the curvature for an ellipse and a helix, then make sense of these results in terms of their graphs. 
+          In this activity, we calculate the curvature of an ellipse and of a helix and use graphs to help with our understanding
         </p>
       </introduction>
-      <task>
+      <task workspace="3cm">
         <statement>
           <p>
-             The ellipse <m>\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1</m> has parameterization
+            Consider the ellipse shown below. We have omitted the scale on the axes because we want to think of this as the general ellipse <m>\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1</m>, which has parameterization
             <me>
-              \vr(t) = \langle a\cos(t), b\sin(t) \rangle.
-            </me>
-            Find the following:
-            <ul>
-              <li><m>\vv(t)</m></li>
-              <li><m>\va(t)</m></li>
-              <li>the parameter values that correspond to the extreme points of the ellipse (the points with the largest and smallest <m>x</m> or <m>y</m> coordinates)</li>
-            </ul>
+              \vr_1(t) = \langle a\cos(t), b\sin(t) \rangle
+            </me>.
+            (The ellipse pictured below has <m>a\gt b</m>.)
+          </p>
+          <image width="50%">
+            <shortdescription>An ellipse</shortdescription>
+            <description>
+              <p>An ellipse centered at the origin. The ellipse is wider than it is tall.
+              </p>
+            </description>
+            <prefigure xmlns="https://prefigure.org" label="img-VVF-curvature-ellipse-no-labels">
+              <diagram dimensions="(300,300)" margins="5">
+                <definition>f(x,y)=x^2/7+y^2/2</definition>
+                <definition>a = 1</definition>
+                <coordinates bbox="(-3,-3,3,3)">
+                  <grid-axes xlabel="x" ylabel="y" decorations="no" />
+                  <implicit-curve function="f" k="1" stroke="blue" />
+                  <point p="(0,f(0))"/>
+                  <point p="(-1,f(-1))"/>  
+                </coordinates>
+              </diagram>
+            </prefigure>
+          </image>
+          <p>
+            On the graph, identify the points at which you believe the curvature to be the largest and the points at which you believe the curvature is smallest.
+          </p>
+        </statement>
+      </task>
+      <task xml:id="task-act-VVF-curvature-ellipse-helix-v-a">
+        <statement>
+          <p>
+            For the given parameterization of the ellipse, find <m>\vv(t)</m> and <m>\va(t)</m>. Also identify the parameter values that correspond to the points of the ellipse with the largest and smallest <m>x</m> or <m>y</m> coordinates.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Using your calculations for <m>\vv(t)</m> and <m>\va(t)</m> from part (a) in Equation <xref ref="ec-curv" /> to find the curvature of an ellipse (in terms of the given parameterization).
+            Using your calculations for <m>\vv(t)</m> and <m>\va(t)</m> from part <xref ref="task-act-VVF-curvature-ellipse-helix-v-a" text="local"/> in Equation <xref ref="ec-curv" /> to find a formula for the curvature of the ellipse with the given parameterization. Use your formula to find the curvature of the ellipse at the parameter values you identified in part <xref ref="task-act-VVF-curvature-ellipse-helix-v-a" text="local"/> as corresponding to the extreme points of the ellipse.
           </p>
         </statement>
+        <hint>
+          <p>
+            Remember that to compute the cross product here, you will need to consider <m>\vv</m> and <m>\va</m> as three-dimensional vectors.
+          </p>
+        </hint>
         <solution>
           <p>
             We have
@@ -545,12 +575,15 @@
       <task>
         <statement>
           <p>
-            Plot the ellipse given by <m>\frac{x^2}{4} + \frac{y^2}{1} = 1</m>. Use your result from the previous task (with <m>a=2</m> and <m>b=1</m>) to compare the curvature at the extreme points on this ellipse. Write a few sentences that describes which points on the ellipse with have the largest curvature (in terms of both your plot and your calculation). Additionally, describe which points on the ellipse with have the smallest curvature (in terms of both your plot and your calculation).
+            While it is possible to use single-variable calculus techniques to find the parameter values that maximize and minimize <m>\kappa(t)</m> on the interval <m>[0,2\pi]</m>, the algebra involved masks much of the insight. Use graphing technology such as Desmos to plot the curvature function you found above, preferably with sliders that allow you to adjust the values of <m>a</m> and <m>b</m>. Write a couple of sentences about what you observe about the parameter values that maximize and minimize curvature and how they depend on <m>a</m> and <m>b</m>. Then use the general form of the curvature function from above to find the curvature at these parameter values, simplifying as much as possible.
           </p>
         </statement>
         <solution>
           <p>
-            If we assume that <m>0 \lt  b \lt  a</m>, then we should expect that ellipse to have the largest curvature at the points <m>(\pm a, 0)</m> and the smallest at the points <m>(0, \pm b)</m> (when <m>t = \frac{\pi}{2} + \pi k</m> for some integer <m>k</m>). The denominator of our curvature function can be written as
+            Working in Desmos, it becomes clear that with <m>a\gt b</m>, the curvature is always maximized at the points where <m>t=0</m> (or <m>t=2\pi</m>) and <m>t=\pi</m> and the curvature is minimized at the points where <m>t=\pi/2</m> and <m>t=3\pi/2</m>. Simplifying gives <m>\kappa(0)=\kappa(\pi)=a/b^2</m> and <m>\kappa(\pi/2)=\kappa(3\pi/2) = b/a^2</m>.
+          </p>
+          <p>
+            To more rigorously verify thse claims, consider the following. If we assume that <m>0 \lt  b \lt  a</m>, then we should expect that ellipse to have the largest curvature at the points <m>(\pm a, 0)</m> and the smallest at the points <m>(0, \pm b)</m> (when <m>t = \frac{\pi}{2} + \pi k</m> for some integer <m>k</m>). The denominator of our curvature function can be written as
             <me>
               a^2(1-\cos^2(t)) + b^2 \cos^2(t) = a^2 - (a^2-b^2)\cos^2(t)
             </me>
@@ -561,14 +594,14 @@
       <task>
         <statement>
           <p>
-            The standard helix has parameterization <m>\vr(t) = \cos(t) \vi + \sin(t) \vj + t \vk</m>.  Find the curvature of the helix using this parameterization.
+            The standard helix has parameterization <m>\vr_2(t) = \cos(t) \vi + \sin(t) \vj + t \vk</m>.  Find the curvature of the helix using this parameterization.
           </p>
         </statement>
         <solution>
           <p>
             Here we have
               <me>
-                \vr\, '(t) = (-\sin(t)) \vi + \cos(t) \vj + \vk
+                \vr_2\, '(t) = (-\sin(t)) \vi + \cos(t) \vj + \vk
               </me>
               and
               <me>
@@ -593,10 +626,19 @@
         </statement>
       </task>
     </activity>
+
+    <p>
+      Before concluding this section, it may be helpful to think about what the units are on curvature. To do this, we again consider the formula that is in terms of velocity and acceleration:
+      <me>
+        \kappa = \frac{\vecmag{\vv\times\va}}{\vecmag{\vv}^3}
+      </me>
+      If we assume that our parameterization has distance with units of meters and input is thought of as time measured in seconds, then the units on <m>\vv</m> are meters per second and the units on <m>\va</m> are meters per second-squared. This means the numerator of <m>\kappa</m> has units meters per second-cubed and the denominator is measured in meters-cubed per second-cubed. Simplifying, we find that curvature has units one over meters. This aligns with the idea of the radius of curvature being <m>1/\kappa</m>, as it results radius of curvature having meters as its unit. That makes sense for something that we call a radius!
+    </p>
+
     <activity>
       <introduction>
         <p>
-          In this activity we will look at the measurement of curvature and determine if curvature is a property of the driver or a property of the road. This is a continuation of <xref ref="driver_road_act" />. As a reminder, a measurement is a property of the driver if the value(s) of that measurement <alert>can</alert> be different for different drivers (when measured at the same location on the racetrack). A measurement is a property of the road when different drivers <alert>must</alert> have the same value(s) (when measured at the same location on the racetrack). The explanations for the next tasks may be difficult for you to write but will be very helpful in ensuring you understand the vector calculus concepts of this chapter.
+          In this activity we will look at the measurement of curvature and determine if curvature is a property of the driver or a property of the road. This is a continuation of <xref ref="driver_road_act" />. As a reminder, a measurement is a property of the driver if the value(s) of that measurement <em>can</em> be different for different drivers (when measured at the same location on the racetrack). A measurement is a property of the road when different drivers <em>must</em> have the same value(s) (when measured at the same location on the racetrack).
         </p>
       </introduction>
       <task>
@@ -616,8 +658,7 @@
       </task>
     </activity>
   </subsection>
-  <subsection>
-    <title>Summary</title>
+  <outcomes>
     <ul>
       <li>
         <p>
@@ -642,7 +683,7 @@
       </li>
     </ul>
     
-    </subsection>
+  </outcomes>
 
     <xi:include href="exercises/ez-S_VVF_Curvature.ptx" />
     
