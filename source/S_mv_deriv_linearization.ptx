@@ -34,6 +34,12 @@
       </li>
     </ul>
   </objectives>
+  <introduction component="instructor">
+    <title>Notes to the Instructor and Dependencies</title>
+    <p>
+      This section relies on the ideas of planes from <xref ref="S-Precalc-Lines"/> and first partial derivatives as measuring the tilt of a surface plot at a particular location from <xref ref="S-10-2-First-Order-Partial-Derivatives"/>. Some instructors will only cover a subset of the linearization tools covered here (tangent plane, total differential, linearization for approximation, differentiabilty, locally linear) but these tools are introduced and defined in such a way that each conceptually flows from the idea of locally linear functions.
+    </p>
+  </introduction>
   <subsection>
     <title>Introduction</title>
     <p>

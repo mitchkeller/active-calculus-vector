@@ -15,28 +15,33 @@
 <!-- **********************************************************************-->
 <section xml:id="S-MV-Functions" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Functions of Several Variables</title>
-  
-    <objectives>
-        <ul>
-          <li>
-            <p>
-              What is a function of several variables?  What do we mean by the domain of a function of several variables?
-            </p>
-          </li>
+  <objectives>
+      <ul>
+        <li>
+          <p>
+            What is a function of several variables?  What do we mean by the domain of a function of several variables?
+          </p>
+        </li>
 
-          <li>
-            <p>
-              What is a trace of a function of two variables? What does a trace tell us about a function?
-            </p>
-          </li>
+        <li>
+          <p>
+            What is a trace of a function of two variables? What does a trace tell us about a function?
+          </p>
+        </li>
 
-          <li>
-            <p>
-              What is a level curve of a function of two variables? What does a level curve tell us about a function?
-            </p>
-          </li>
-        </ul>
-    </objectives>
+        <li>
+          <p>
+            What is a level curve of a function of two variables? What does a level curve tell us about a function?
+          </p>
+        </li>
+      </ul>
+  </objectives>
+  <introduction component="instructor">
+    <title>Notes to the Instructor and Dependencies</title>
+    <p>
+      This section expects students to have familiarity with our discussion of 3D coordinates and fundamental planes in <xref ref="S-Precalc-3Dcoord"/> and properties of functions from precalculus (domain, range, etc.).
+    </p>
+  </introduction>
   <subsection>
     <title>Introduction</title> 
     <p>
