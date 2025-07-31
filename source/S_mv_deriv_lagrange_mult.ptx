@@ -15,22 +15,27 @@
 <!-- **********************************************************************-->
 <section xml:id="S-10-8-Lagrange-Multipliers">
   <title>Constrained Optimization: Lagrange Multipliers</title>
-  
-    <objectives>
-        <ul>
-          <li>
-            <p>
-              What geometric condition enables us to optimize a function <m>f=f(x,y)</m> subject to a constraint given by <m>g(x,y) = k</m>, where <m>k</m> is a constant?
-            </p>
-          </li>
+  <objectives>
+      <ul>
+        <li>
+          <p>
+            What geometric condition enables us to optimize a function <m>f=f(x,y)</m> subject to a constraint given by <m>g(x,y) = k</m>, where <m>k</m> is a constant?
+          </p>
+        </li>
 
-          <li>
-            <p>
-              How can we exploit this geometric condition to find the extreme values of a function subject to a constraint?
-            </p>
-          </li>
-        </ul>
-    </objectives>
+        <li>
+          <p>
+            How can we exploit this geometric condition to find the extreme values of a function subject to a constraint?
+          </p>
+        </li>
+      </ul>
+  </objectives>
+  <introduction component="instructor">
+    <title>Notes to the Instructor and Dependencies</title>
+    <p>
+      This section requires the optimization tools from <xref ref="S-10-7-Optimization"/> and the interpretations of the gradient from <xref ref="S-10-6-Directional-Derivative"/> and <xref ref="S-MV-HD"/>. As of August 2025, this section has not be edited as part of the updates for the Second Edition of ACM but will get updates before August 2026.
+    </p>
+  </introduction>
   <subsection>
     <title>Introduction</title>
     <p>

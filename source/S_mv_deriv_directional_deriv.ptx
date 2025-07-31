@@ -32,7 +32,10 @@
   <introduction component="instructor">
     <title>Notes to the Instructor and Dependencies</title>
     <p>
-      This section relies on many of the tools we have developed throughout <xref ref="C_MVF"/>, most importantly we will use the linearization from <xref ref="S-10-4-Linearization"/>. We relate the directional derivative and gradient to the geometry of surface plots. 
+      This section relies on many of the tools we have developed throughout <xref ref="C_MVF"/>, most importantly we will use the linearization from <xref ref="S-10-4-Linearization"/>. The chain rule introduced in <xref ref="S-10-5-Chain-Rule"/> is used to define an efficient calculation of the directional derivative but is not critical for this section.
+    </p>
+    <p>
+      You will likely want to cover this section over several classes since these ideas are important to many other partner fields. The gradient is defined after the development of the directional derivative because the interpretations of the gradient are dependent on the directional derivative. 
     </p>
   </introduction>
   <subsection>
