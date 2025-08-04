@@ -523,9 +523,7 @@
                 <definition>a = 1</definition>
                 <coordinates bbox="(-3,-3,3,3)">
                   <grid-axes xlabel="x" ylabel="y" decorations="no" />
-                  <implicit-curve function="f" k="1" stroke="blue" />
-                  <point p="(0,f(0))"/>
-                  <point p="(-1,f(-1))"/>  
+                  <implicit-curve function="f" k="1" stroke="blue" /> 
                 </coordinates>
               </diagram>
             </prefigure>

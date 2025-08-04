@@ -53,7 +53,6 @@
             <diagram dimensions="(377,192)" margins="5"
                     xmlns="https://prefigure.org">
               <definition>s(t) = ((t^2/15+2)*cos(t),(1.5-t/12)*sin(t))</definition>
-              <definition>del_g(x,y)=grad(g, (x,y))</definition>
               <coordinates bbox="(-3.1,-0.9,1.8,1.6)">
                 <parametric-curve function="s" domain="(0.5,4)" stroke="black" arrows="1" />
                 <definition>ds(t)=deriv(s,t)</definition>
