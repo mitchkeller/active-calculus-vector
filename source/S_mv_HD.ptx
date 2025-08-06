@@ -46,7 +46,9 @@
     <p>
       In the following preview activity, we will look at level sets for two familiar functions of two variables and start to explore how level sets can help visualize functions of three variables. 
     </p>
-    <exploration xml:id="PA-MV-HD">
+    <worksheet>
+  <exploration
+ xml:id="PA-MV-HD">
       <task>
         <statement>
           <p>
@@ -96,6 +98,7 @@
         </statement>
       </task>
     </exploration>
+</worksheet>
     <p>
       We will now generalize these ideas of level sets to start our exploration for functions of three or more variables. As we have for most kinds of functions in previous precalculus and calculus courses, we will look at the following ideas in order: domain and range of functions, graphs of functions, limits of functions, and finally, measuring change of function. 
     </p>
@@ -191,7 +194,8 @@
         <xref ref="plot4d"/> may look like a three dimensional plot, but we really have a four dimensional plot with the fourth dimensional axis given by the slider. We saw a similar case in <xref ref="vvf-example1"/> where the plot of <m>\vr(t)</m> was really a four dimensional idea (one dimension for the input changing with the <m>t</m>-axis for the slider and the three dimensional output of <m>\vr</m> is shown with the vector in standard position or a plot of the terminal point). With our vector-valued functions of one variables, we simplified our four dimensional plot to include <em>all</em> of the 3D outputs but we often ignored plotting how those outputs depended on the value of the parameter <m>t</m>.
       </p>
     </example>
-    <activity xml:id="level-grad">
+    <worksheet>
+  <activity xml:id="level-grad">
       <introduction>
         <p>
           In this activity, we will look at level surfaces created by two relatively basic three variable functions and consider the direction in which the output is increasing or decreasing as fast as possible. 
@@ -226,6 +230,7 @@
         </statement>
       </task>
     </activity>
+</worksheet>
   </subsection>
   <subsection xml:id="subsec-3plusdiff">
     <title>Measuring Change with Functions of Three or More Variables</title>
@@ -498,7 +503,8 @@
         You can use the slider to change the value of <m>k</m> using the slider at the top of <xref ref="hypconetanplanes"/> to see how even though the shape of the level surface changes, the gradient vector at <m>P_k</m> will still be orthogonal to the surface and will serve as a normal vector for our tangent plane.
       </p>
       </example>
-      <activity>
+      <worksheet>
+  <activity>
         <introduction>
           <p>
             In this activity, we will look at the calculation and interpretation of the gradient for <m>f(x,y,z)=x+y-z</m> and <m>g(x,y,z)=z-x^2-y^2</m>.
@@ -540,6 +546,7 @@
           </statement>
         </task>
       </activity>
+</worksheet>
       <p>
         The level surfaces of the function <m>g(x)=z-x^2-y^2</m> from the previous activity were of the form <m>z=x^2+y^2+C</m> for some constant <m>C</m>, which meant that the gradient of <m>g</m> gives a convenient way of calculating a vector that will be perpendicular to the surface <m>z=x^2+y^2+C</m>. In fact, if we have a surface of the form <m>z=h(x,y)</m>, then the same surface will be a level surface of the three variable function <m>g(x,y,z)=z-h(x,y)</m>.
       </p>

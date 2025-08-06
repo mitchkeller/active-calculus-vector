@@ -80,7 +80,9 @@
     <p>
       In this book, we will use the structure of the <xref ref="C_VVF_classic-calc-approach" text="custom">classic calculus approach</xref> to investigate properties of new kinds of functions, equations, and graphs. Later in this section, we will investigate the meaning of limits, derivatives, and integrals of vector-valued functions of one variable. Additionally, we will connect these measurements to properties of curves in space as the graphs of these vector-valued functions. 
     </p>
-    <exploration xml:id="PA-VVF-Calculus">
+    <worksheet>
+  <exploration
+ xml:id="PA-VVF-Calculus">
       <introduction>
         <p>
           As the only employee of <em>Steer Clear</em>, you have decided that you need to understand how the timing of position measurements will change different properties related to your self-driving car. You decide to drive in a figure eight path described by <m>\vr_8(t)=\langle \cos(t),\sin(2t) \rangle </m> for <m>0 \leq t \leq 2 \pi</m>. A plot of this path is given in <xref ref="fig-PA-vvfcalc1" />.
@@ -203,6 +205,7 @@
         </ol>
       </solution> -->
     </exploration>
+</worksheet>
     <p>
       In <xref ref="vvf-limitPA" text="type-local" /> of the Preview Activity, we examined what the limit of a vector-valued function will look like. Specifically, the limit of a vector-valued function of one variable has the same meaning as in your first calculus course. The limit of a function is a measure of what the output approaches as the input gets closer to a particular value. We will not state the formal version of limits of vector-valued functions of one variable, but rather will appeal to the important idea that limits can be defined and calculated componentwise. If <m>\vr(t)=\langle x_1(t),\ldots,x_n(t)\rangle</m>, then the limit of <m>\vr</m> as <m>t\rightarrow a</m> exists if all of the limits of <m>x_i(t)</m> exist as <m>t\rightarrow a</m>. In other words, the limit of a vector-valued function of one variable is the same as the limits of the <m>n</m> component functions organized as a vector. In <m>\mathbb{R}^3</m>, we can express this algebraically as
       <me>
@@ -238,7 +241,8 @@
       We will take a moment here to note that both the single variable calculus definition of derivative and <xref ref="vvf-derivative-defn" /> have the form of the classic calculus approach described above. In particular, both definitions are of the form
       <me>\text{derivative}=\lim_{\text{stepsize}\rightarrow 0} \frac{\text{change in output of function}}{\text{change in input of function}}</me>
     </p>
-    <!-- <activity xml:id="A_9_7_1">
+    <!-- <worksheet>
+  <activity xml:id="A_9_7_1">
       <statement>
       <p>
         Let's investigate how we can interpret the derivative <m>\vr\, '(t)</m>. Let <m>\vr</m> be the vector-valued function whose graph is shown in <xref ref="F_9_7_VVF_tan_vector">Figure</xref>, and let <m>h</m> be a scalar that represents a small change in time. The vector <m>\vr(t)</m> is the blue vector in <xref ref="F_9_7_VVF_tan_vector">Figure</xref> and <m>\vr(t+h)</m> is the green vector.
@@ -328,7 +332,8 @@
         </li>
       </ol>
     </solution>
-    </activity> -->
+    </activity>
+</worksheet> -->
     <p>
       Let <m>\vr</m> be the vector-valued function whose graph is shown in <xref ref="F_9_7_VVF_tan_vector">Figure</xref>, and let <m>h</m> be a scalar that represents a small change in time. The vector <m>\vr(t)</m> is the blue vector in <xref ref="F_9_7_VVF_tan_vector">Figure</xref> and <m>\vr(t+h)</m> is the green vector.
     </p>
@@ -460,6 +465,7 @@
   <p>
     Our next activity gives you a chance to practice with componentwise differentiation and also asks you to think about when limits of vector-valued functions do not exist.
   </p>
+  <worksheet>
   <activity xml:id="act-vvf-calculus-diff">
     <introduction> 
       <p>
@@ -531,6 +537,7 @@
       </solution>
     </task>
   </activity>
+</worksheet>
   <p>
     In first-semester calculus, we developed several important differentiation rules, including the constant multiple, product, quotient, and chain rules. For instance, we can formally state the product rule as
     <me>
@@ -629,6 +636,7 @@
       </slate>
     </interactive>
   </figure>
+  <worksheet>
   <activity xml:id="A_9_7_4">
     <task>
       <statement>
@@ -695,6 +703,7 @@
       </solution>
     </task>
   </activity>
+</worksheet>
   <p>
     Our work in <xref ref="A_9_7_4">Activity</xref> can be generalized to give a method for finding an equation of the line tangent to a curve described by a vector-valued function.
   </p>
@@ -797,6 +806,7 @@
   <p>
     In the next activity, we look at relationships between position, velocity, and acceleration in a situation that is more complicated than the constant acceleration of <xref ref="projectilemotion" />. The process of using integration and differentiation will remain the same, but the results will not be nearly as simple.
   </p>
+  <worksheet>
   <activity xml:id="act-vvf-calc-position">
     <introduction>
       <p>
@@ -878,6 +888,7 @@
       </solution>
     </task>
   </activity>
+</worksheet>
   <p>
     The previous activity shows a case where the motion of our object is driven by forces that either turn the object or change the speed of the object in the <m>z</m>-coordinate direction. We will spend the rest of this chapter looking at measurements related to motion along curves like this. Key to these measurements will be the combined use of our new calculus for vector-valued functions with the vector tools from the previous chapter. 
   </p>

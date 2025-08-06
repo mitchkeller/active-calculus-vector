@@ -60,7 +60,9 @@
       It is useful, therefore, to be able to translate to other coordinate systems where the limits of integration and evaluation of the involved integrals is simpler. In this section we provide a quick discussion of one such system <mdash/> polar coordinates <mdash/> and then introduce and investigate their ramifications for double integrals. The rectangular coordinate system allows us to consider domains and graphs relative to a rectangular grid. The polar coordinate system is an alternate coordinate system that allows us to consider domains less suited to rectangular coordinates, such as circles.
     </p>
 
-    <exploration xml:id="PA_11_5">
+    <worksheet>
+  <exploration
+ xml:id="PA_11_5">
       <statement>
         <p>
           The coordinates of a point determine its location. In particular, the rectangular coordinates of a point <m>P</m> are given by an ordered pair <m>(x,y)</m>, where <m>x</m> is the (signed) distance the point lies from the <m>y</m>-axis to <m>P</m> and <m>y</m> is the (signed) distance the point lies from the <m>x</m>-axis to <m>P</m>. In polar coordinates, we locate the point by considering the distance the point lies from the origin, <m>O = (0,0)</m>, and the angle the line segment from the origin to <m>P</m> forms with the positive <m>x</m>-axis.
@@ -280,6 +282,7 @@
       </solution>
   
     </exploration>
+</worksheet>
   </subsection>
 
   <subsection>
@@ -339,7 +342,8 @@
       We can draw graphs of curves in polar coordinates in a similar way to how we do in rectangular coordinates. However, when plotting in polar coordinates, we use a grid that considers changes in angles and changes in distance from the origin. In particular, the angles <m>\theta</m> and distances <m>r</m> partition the plane into small wedges as shown at right in <xref ref="F_11_5_Polar_coords">Figure</xref>.
     </p>
 
-    <activity xml:id="A_11_5_2">
+    <worksheet>
+  <activity xml:id="A_11_5_2">
       <statement>
         <p>
           Most polar graphing devices can plot curves in polar coordinates of the form <m>r = f(\theta)</m>. Use such a device to complete this activity.
@@ -466,6 +470,7 @@
       </solution>
 
     </activity>
+</worksheet>
   </subsection>
 
 
@@ -498,7 +503,8 @@
     
 
 
-    <activity xml:id="A_11_5_3">
+    <worksheet>
+  <activity xml:id="A_11_5_3">
       <statement>
         <p>
           Consider a polar rectangle <m>R</m>, with <m>r</m> between <m>r_i</m> and <m>r_{i+1}</m> and <m>\theta</m> between <m>\theta_j</m> and <m>\theta_{j+1}</m> as shown at left in <xref ref="F_11_5_Polar_area_a">Figure</xref>. Let <m>\Delta r = r_{i+1}-r_i</m> and <m>\Delta \theta = \theta_{j+1}-\theta_j</m>. Let <m>\Delta A</m> be the area of this region.
@@ -669,6 +675,7 @@
 
 
     </activity>
+</worksheet>
 
     <p>
       From the result of <xref ref="A_11_5_3">Activity</xref>, we see when we convert an integral from rectangular coordinates to polar coordinates, we must not only convert <m>x</m> and <m>y</m> to being in terms of <m>r</m> and <m>\theta</m>, but we also have to change the area element to <m>dA = r \, dr \, d\theta</m> in polar coordinates. As we saw in <xref ref="A_11_5_3">Activity</xref>, the reason the additional factor of <m>r</m> in the polar area element is due to the fact that in polar coordinates, the cross sectional area element increases as <m>r</m> increases, while the cross sectional area element in rectangular coordinates is constant. So, given a double integral <m>\iint_D f(x,y) \, dA</m> in rectangular coordinates, to write a corresponding iterated integral in polar coordinates, we replace <m>x</m> with <m>r \cos(\theta)</m>, <m>y</m> with <m>r \sin(\theta)</m> and <m>dA</m> with <m>r \, dr \, d\theta</m>. Of course, we need to describe the region <m>D</m> in polar coordinates as well. To summarize:
@@ -725,7 +732,8 @@
       While there is no firm rule for when polar coordinates can or should be used, they are a natural alternative anytime the domain of integration may be expressed simply in polar form, and/or when the integrand involves expressions such as <m>\sqrt{x^2 + y^2}.</m>
     </p>
 
-    <activity xml:id="A_11_5_4">
+    <worksheet>
+  <activity xml:id="A_11_5_4">
       <statement>
         <p>
           Let <m>f(x,y) = x+y</m> and <m>D = \{(x,y) : x^2 + y^2 \leq 4\}</m>.
@@ -824,10 +832,12 @@
       </solution>
 
     </activity>
+</worksheet>
 
 
 
-    <activity xml:id="A_11_5_5">
+    <worksheet>
+  <activity xml:id="A_11_5_5">
       <statement>
         <p>
           Consider the circle given by <m>x^2 + (y-1)^2 = 1</m> as shown in <xref ref="F_11_5_Polar_exercise">Figure</xref>.
@@ -949,6 +959,7 @@
       </solution>
 
     </activity>
+</worksheet>
   </subsection>
 
 

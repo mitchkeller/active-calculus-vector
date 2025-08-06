@@ -67,7 +67,9 @@
     </me>.
     However, if this curve is a portion of a road on which we drive a car, the distance traveled as measured by the change in the car's odometer value from point <m>P</m> to point <m>Q</m> will be different to the staight-line distance <m>\vert PQ\vert</m> calculated by the distance formula. You likely saw how to calculate the length of a portion of a curve <m>y=f(x)</m> in your <url href="https://activecalculus.org/single/sec-6-1-area.html" visual="activecalculus.org/single/sec-6-1-area.html">single-variable calculus class</url>. In this section, we will use the idea of vector-valued functions to find the lengths of a larger family of curves.
   </p>
-<exploration xml:id="PA-arclength" >
+<worksheet>
+  <exploration
+ xml:id="PA-arclength" >
   <introduction>
     <p>
       In <xref ref="PA-VVF-Plotting" /> and <xref ref="PA-VVF-Calculus" /> we saw how the position reported by the location tracking system (LTS) of a self-driving car corresponds to a vector-valued function that describes the location of the car at a given time. We want to relate the location at different times to properties about how the car is being driven. In order to attract investors and drive shareholder value in <em>Steer Clear</em>, you decide to use the location tracking system's output to build a customized navigation and telemetry tool for a self-driving car. The first element you will need to build is a way to use the LTS output to calculate how far the car has driven in a given time. 
@@ -116,6 +118,7 @@
     </statement>
   </task>
 </exploration>
+</worksheet>
 <!-- If we restore any of this, it needs edits based on notes from David and Kathy. -->
 <!-- <p>
   The last part of the Preview Activity is an example of algorithmic thinking, a vital skill in mathematical, scientific, and engineering fields. Algorithmic thinking involves breaking larger problems into different tasks where a precise set of rules or operations can be stated for each task. We have referred to the <xref ref="C_VVF_classic-calc-approach" text="custom">classic calculus approach</xref> in a few scenarios and will again this section. However, now we take a moment to mention how the classic calculus approach has the structure of this algorithmic thinking. Specifically, the tasks for the classic calculus approach can be summarized as
@@ -258,7 +261,8 @@
   Note that formula <xref ref="eq_arclength"/> applies to curves in any dimensional space. Moreover, this formula has a natural interpretation: If <m>\vr(t)</m> records the position of a moving object, then <m>\vr\, '(t)=\vv(t)</m> is the object's velocity and <m>\vecmag{\vr\, '(t)}</m> its speed. Formula <xref ref="eq_arclength"/> says that we can integrate the speed of an object traveling over the curve to find the distance traveled by the object. Thinking in terms of units, if we are measuring distance in meters and time in seconds, the units on <m>\vecmag{\vr\, '(t)}</m> will be meters per second and the units on <m>dt</m> will be seconds. Thus, the units on the integral will be meters, which is exactly what we expect when finding the <em>length</em> of a curve or distance traveled by an object along a curve. This formula is analogous to the formula for <url href="https://activecalculus.org/single/sec-6-1-area.html#sec-6-1-area-6-9">finding the arc length of a graph</url> from single-variable calculus.
 </p>
 
-<activity xml:id="act-VVF-arclength-circle-helix">
+<worksheet>
+  <activity xml:id="act-VVF-arclength-circle-helix">
   <introduction>
     <p>
       In this activity, we will use parameterizations to find the length of some common curves.
@@ -320,6 +324,7 @@
     </p>
   </conclusion>
 </activity>
+</worksheet>
 <p>
   <xref ref="ex-VVF-arclength-fn" text="type-local" /> will apply <xref ref="def-arclength"/> and <xref ref="Length-of-a-curve" /> to arrive at a formula for the length of a graph given by <m>y=f(x)</m> that may be familiar from single-variable calculus courses.   
 </p>
@@ -538,6 +543,7 @@
   <p>
     All of the drivers are going the same way around the track, all start at the same location at <m>t=0</m>, all complete one lap of the track, and all of the cars have perfect grip of the road (the race cars are never sliding). The picture of the racetrack above is given so you have an example to help you think about the tasks in this problem, not because any particular feature of the track needs to be considered for the following activity.
   </p>
+  <worksheet>
   <activity xml:id="driver_road_act">
     <title>Is it a property of the driver or the road?</title>
     <introduction>
@@ -594,6 +600,7 @@
       </statement>
     </task>
   </activity>
+</worksheet>
   <p>
     When we are using the analogy of the racetrack for a curve in space, each different driver corresponds to a different parameterization of the curve. If a measurement is a property of the driver, that measurement can take different values for different parameterizations. If a measurement is a property of the road, then every parameterization <em>must</em> have the same measured value when considered at the same location on the curve. In short, parameterizations are drivers and the curve in space is the racetrack.
   </p>

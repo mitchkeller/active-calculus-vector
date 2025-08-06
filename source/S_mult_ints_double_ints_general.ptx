@@ -55,7 +55,9 @@
       It is very rare to have applied or theoretical problems that apply to a rectangular region, so we would like to extend the idea of using iterated integrals to evaluate non-rectangular regions; we explore one such example in the following preview activity.
     </p>
 
-    <exploration xml:id="PA_11_3">
+    <worksheet>
+  <exploration
+ xml:id="PA_11_3">
       <introduction>
         <p>
           A tetrahedron is a three-dimensional figure with four faces, each of which is a triangle. A picture of the tetrahedron <m>T</m> with vertices <m>(0,0,0)</m>, <m>(1,0,0)</m>, <m>(0,1,0)</m>, and <m>(0,0,1)</m> is shown at in <xref ref="F_11_3_Tetrahedron_PA">Figure</xref>. If we place one vertex at the origin and let vectors <m>\va</m>, <m>\vb</m>, and <m>\vc</m> be determined by the edges of the tetrahedron that have one end at the origin, then a formula that tells us the volume <m>V</m> of the tetrahedron is
@@ -288,6 +290,7 @@
         </solution>
       </task>
     </exploration>
+</worksheet>
   </subsection>
 
   <subsection>
@@ -350,7 +353,8 @@
       In the next activity, you will be asked to assess and justify your thoughts about whether the double integrals stated will be positive, negative, or zero. Your justifications should consider both the area of different parts of the region of integration, as well as the outputs on these areas. 
     </p>
 
-    <activity xml:id="dbintpmz">
+    <worksheet>
+  <activity xml:id="dbintpmz">
       <introduction>
         <p>
           Let <m>D</m> be the region inside the unit circle centered at the origin, let <m>R</m> be the right half of <m>D</m>, and let <m>B</m> be the bottom half of <m>D</m>. 
@@ -397,6 +401,7 @@
         </solution>
       </task>
     </activity>
+</worksheet>
 
     <p>
       The key idea to calculating double integrals using iterated integrals (as shown in <xref ref="S-11-2-Iterated-Integrals"/> and <xref ref="PA_11_3"/>) is to slice the region of integration along a trace (one of the coordinates held constant) and express the range of the other coordinate in terms of an inequality. In <xref ref="PA_11_3"/>, we saw how the region given in <xref ref="tetrahedron_base"/> can be described by the inequalities <m>0 \leq x \leq 1</m> and <m>0 \leq y \leq 1-x</m>. Notice how for different values of <m>x</m> there is a different range of values for <m>y</m>, which means our region is <em>NOT</em> rectangular. Compare this to the rectangular regions of integration from <xref ref="S-11-2-Iterated-Integrals"/> which were all of the form <m>a \leq x \leq b</m> and <m>c \leq y \leq d</m> (with <m>a,b,c,d</m> constants).
@@ -644,6 +649,7 @@
       </statement>
     </task>
   </example>
+  <worksheet>
   <activity xml:id="trianglesimple">
     <introduction>
       <p>
@@ -693,6 +699,7 @@
       </statement>
     </task>
   </activity>
+</worksheet>
   <p>
     In single variable calculus, we were able to split integrals into multiple parts. The integral of <m>f(x)</m> over <m>[a,b]</m> could be split to subintervals separately:
     <me>\int^b_a f(x) \, dx = \int_a^c f(x) \, dx + \int_c^b f(x) \, dx</me>
@@ -702,6 +709,7 @@
     <me>\iint_D f(x,y) \, dA = \iint_{H_1} f(x,y) \, dA+\iint_{H_2} f(x,y) \, dA+\iint_{H_3} f(x,y) \, dA</me>
     where each of the double integrals on the right can be written as an iterated integral using a horizontally simple description.
   </p>
+  <worksheet>
   <activity xml:id="simpregions">
     <task>
       <statement>
@@ -728,6 +736,7 @@
       </statement>
     </task>
   </activity>
+</worksheet>
   <p>
     The process for describing a 2D region as either horizontally or vertically simple is exactly the procedure needed to set up iterated integral that will allow us to evaluate a double integral. If the region <m>D</m> can be described by the inequalities <m>a \leq x \leq b</m> and <m>g_1(x) \leq y \leq g_2(x)</m> (vertically simple), where <m>g_1=g_1(x)</m> and <m>g_2=g_2(x)</m> are functions of only <m>x</m>, then
     <me>
@@ -901,7 +910,8 @@
     <p>
       In the next activity, we will practice the process of understanding a region of integration, using horizontally simple and vertically simple descriptions of the region, setting up and evaluating the corresponding iterated integrals. 
     </p>
-    <activity xml:id="A_11_3_1">
+    <worksheet>
+  <activity xml:id="A_11_3_1">
       <introduction>
         <p>
           Consider the double integral <m>\displaystyle{\iint_D (4-x-2y) \, dA}</m>, where <m>D</m> is the triangular region with vertices (0,0), (4,0), and (0,2). 
@@ -1041,10 +1051,12 @@
         </solution>
       </task>
     </activity>
+</worksheet>
     <p>
       In the next activity, we will explore to understand a region of integration, with some non-linear sides, given as bounds in an iterated integral, then we will switch the order of integration, evaluate which ever order is most convinient and finally interpret the result using the average value approach.
     </p>
-    <activity xml:id="A_11_3_2">
+    <worksheet>
+  <activity xml:id="A_11_3_2">
       <introduction>
         <p>
           Consider the iterated integral <m>\int_{x=0}^{x=1} \int_{y=x}^{y=\sqrt{x}} (4x+10y) \, dy \, dx</m>.
@@ -1175,10 +1187,12 @@
         </solution>
       </task>
     </activity>
+</worksheet>
     <p>
       In the following activity, we will explore how switching the order of integration can sometimes yield a much easier set of iterated integral to evaluate algebraically.
     </p>
-    <activity xml:id="A_11_3_3">
+    <worksheet>
+  <activity xml:id="A_11_3_3">
       <introduction>
         <p>
           Consider the iterated integral <m>\int_{x=0}^{x=4} \int_{y=x/2}^{y=2} e^{y^2} \, dy \, dx</m>.
@@ -1285,6 +1299,7 @@
         </solution>
       </task>
     </activity>
+</worksheet>
   </subsection>
 
   <subsection>

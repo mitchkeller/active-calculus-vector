@@ -85,7 +85,9 @@
     <p>  
       In this section, we focus on measuring how quickly <em>a curve</em> is turning. Keeping our running example in mind, we can think of this as measuring a property of <em>the road</em>. How quickly a curve is turning is a different measurement from how fast <em>an object</em> is turning as it moves along a path. That is a property of <em>the driver</em> to which we will return in <xref ref="S-VVF-Spliting-Acceleration" />.
     </p>
-    <exploration>
+    <worksheet>
+  <exploration
+>
       <introduction>
         <p>
           As Chief Engineer and CEO at <em>Steer Clear</em>, you have done great work in transforming information from your location tracking system (LTS) into information on the position, velocity, and distance traveled by your car. In order to make the <q>self-driving</q> part of the self-driving car, you will need to compare information from the LTS (which describes how your car is moving) to GPS location data for the network of roads (which describe the paths your car should be taking). Since everyone on the road drives differently, you realize that you need to measure how quickly a stretch of road is turning in different places, which leads you to contact a friend who is a civil engineer for help understanding highway construction specifications.
@@ -165,6 +167,7 @@
         </statement>
       </task> -->
     </exploration>
+</worksheet>
     <p>
       The Preview Activity showed how looking at the change in <m>\vT</m>, the direction of travel, for small steps in terms of arc length along our curve will allow us to measure the rate at which a curve is turning. This is different than measuring how quickly an object traveling along the path needs to turn in order to stay on the path. The arguments in the Preview Activity depend only on intrinsic geometric properties of the path (road) rather than how an object (car) moves along that path.
     </p>
@@ -296,7 +299,8 @@
       Remember that the parameter <m>s</m> for the unit speed parameterization <m>C</m> is the arc length traveled along the curve. Curvature is denoted by <m>\kappa</m>, the lowercase Greek letter <q>kappa</q>.
     </p>
 
-    <activity xml:id="act-VVF-curvature-line-circle">
+    <worksheet>
+  <activity xml:id="act-VVF-curvature-line-circle">
       <introduction>
         <p>
           In this activity we will use our previous work in finding unit speed parameterizations of lines and circles to make sense of the definition of curvature.
@@ -358,6 +362,7 @@
         </statement>
       </task>
     </activity>
+</worksheet>
     <p>
       Notice that a unit speed parameterization will have the property that <m>\vr_1\, '(s)=\vv(s)=\vT(s)</m>. While this fact is not true in general, it does make the calculation and interpretation of <m>\vT</m> as simple as possible. It is also helpful to observe that a unit speed parameterization has the property that <m>\vT(s) = \va(s)</m>, the acceleration vector of the curve. Thus, when we have a unit speed parameterization for a path, we can think of the curvature of the path at a point as being the magnitude of the acceleration vector.
     </p>
@@ -496,7 +501,8 @@
         </interactive>
       </figure>
     
-    <activity xml:id="act-VVF-curvature-ellipse-helix">
+    <worksheet>
+  <activity xml:id="act-VVF-curvature-ellipse-helix">
       <introduction>
         <p>
           In this activity, we calculate the curvature of an ellipse and of a helix and use graphs to help with our understanding
@@ -624,6 +630,7 @@
         </statement>
       </task>
     </activity>
+</worksheet>
 
     <p>
       Before concluding this section, it may be helpful to think about what the units are on curvature. To do this, we again consider the formula that is in terms of velocity and acceleration:
@@ -633,7 +640,8 @@
       If we assume that our parameterization has distance with units of meters and input is thought of as time measured in seconds, then the units on <m>\vv</m> are meters per second and the units on <m>\va</m> are meters per second-squared. This means the numerator of <m>\kappa</m> has units meters per second-cubed and the denominator is measured in meters-cubed per second-cubed. Simplifying, we find that curvature has units one over meters. This aligns with the idea of the radius of curvature being <m>1/\kappa</m>, as it results radius of curvature having meters as its unit. That makes sense for something that we call a radius!
     </p>
 
-    <activity>
+    <worksheet>
+  <activity>
       <introduction>
         <p>
           In this activity we will look at the measurement of curvature and determine if curvature is a property of the driver or a property of the road. This is a continuation of <xref ref="driver_road_act" />. As a reminder, a measurement is a property of the driver if the value(s) of that measurement <em>can</em> be different for different drivers (when measured at the same location on the racetrack). A measurement is a property of the road when different drivers <em>must</em> have the same value(s) (when measured at the same location on the racetrack).
@@ -655,6 +663,7 @@
         </statement>
       </task>
     </activity>
+</worksheet>
   </subsection>
   <outcomes>
     <ul>

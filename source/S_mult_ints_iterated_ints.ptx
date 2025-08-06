@@ -54,7 +54,9 @@
     <p>  
       We will look at an example of this approach in the following Preview Activity, we will look at how use single variable integrals along traces in a similar way to the rotation volume described above. We will generalize this approach in this section for double integrals over rectangular regions. In <xref ref="S-11-3-Double-Integrals-General"/>, we will look at using this technique on non-rectangular regions of integration. 
     </p>
-    <exploration xml:id="PA_11_2">
+    <worksheet>
+  <exploration
+ xml:id="PA_11_2">
       <introduction>
         <p>
           In this activity we will explore the double integral of <m>f(x,y) = 25-x^2-y^2</m> on the rectangular domain <m>R = [-3,3] \times [-4,4]</m>.
@@ -209,6 +211,7 @@
         </solution>
       </task>
     </exploration>
+</worksheet>
   </subsection>
 
   <subsection>
@@ -344,7 +347,8 @@
         <shortdescription>(for accessibility)</shortdescription>
        </image>
     </aside>
-    <activity xml:id="A_11_2_1">
+    <worksheet>
+  <activity xml:id="A_11_2_1">
       <introduction>
         <p>
           Let <m>f(x,y) = 25-x^2-y^2</m> on the rectangular domain <m>R = [-3,3] \times [-4,4]</m>.
@@ -427,8 +431,10 @@
         </solution>
       </task>
     </activity>
+</worksheet>
 
-    <activity xml:id="A_11_2_2">
+    <worksheet>
+  <activity xml:id="A_11_2_2">
       <introduction>
         <p>
           Let <m>f(x,y) = x+y^2</m> on the rectangle <m>R = [0,2] \times [0,3]</m>.
@@ -483,6 +489,7 @@
         </solution>
       </task>
     </activity>
+</worksheet>
   </subsection>
   <subsection>
     <title>Summary</title>
