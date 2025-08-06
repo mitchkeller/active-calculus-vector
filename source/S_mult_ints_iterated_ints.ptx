@@ -15,16 +15,21 @@
 <!-- **********************************************************************-->
 <section xml:id="S-11-2-Iterated-Integrals" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Iterated Integrals</title>
-  
-    <objectives>
-        <ul>
-          <li>
-            <p>
-              How do we evaluate a double integral over a rectangle as an iterated integral, and why does this process work?
-            </p>
-          </li>
-        </ul>
-    </objectives>
+  <objectives>
+      <ul>
+        <li>
+          <p>
+            How do we evaluate a double integral over a rectangle as an iterated integral, and why does this process work?
+          </p>
+        </li>
+      </ul>
+  </objectives>
+  <introduction component="instructor">
+    <title>Notes to the Instructor and Dependencies</title>
+    <p>
+      This section introduces iterated integrals as an algebraic tool and motivates their use in evaluating double integrals by using a horizontal or vertical slicing of the domain. Because we are still using rectangular regions of integration, we do not yet introduce horizontally or vertically simple descriptions of regions in the plane. This section can likely be done in a single class but sets up many of the elements that will be defined and used in double integrals over non-rectangular regions. While this section can be given a quick description, the practice with the mechanics of slicing and setting up interated integrals to evaluate double integrals is a very valuable step in student understanding. 
+    </p>
+  </introduction>
   <subsection>
     <title>Introduction</title>
     <p>

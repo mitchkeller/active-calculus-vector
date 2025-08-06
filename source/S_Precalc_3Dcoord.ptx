@@ -37,6 +37,12 @@
           
         </ul>
     </objectives>
+  <introduction component="instructor">
+    <title>Notes to the Instructor and Dependencies</title>
+    <p>
+      This section only expects students to have familiarity with measuring distance in two dimensions. This can likely be covered in around 50 minutes and should offer opportunities for users to get used to the 3D interactable plots and the structure of in class activities. 
+    </p>
+  </introduction>
   <subsection>
     <title>Introduction</title> 
     <p>
@@ -710,13 +716,6 @@
     </ul>
 
   </outcomes>
-<xi:include href="exercises/ez-S_Precalc_3Dcoord.ptx" />
-
-<subsection component="instructor">
-  <title>Notes to the Instructor</title>
-  <p>
-    This section only expects students to have familiarity with measuring distance in two dimensions.
-  </p>
-</subsection>
+  <xi:include href="exercises/ez-S_Precalc_3Dcoord.ptx" />
 </section>
 

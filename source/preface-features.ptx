@@ -30,17 +30,22 @@
         <p>
           There are dozens of calculus texts with (collectively) tens of thousands of exercises.  Rather than repeat a large list of standard and routine exercises in this text, we recommend the use of <webwork /> with its access to the National Problem Library and its many multivariable calculus problems. In this text, each section begins with several anonymous <webwork /> exercises, and follows with several  challenging problems. The <webwork /> exercises are best completed in <url href="https://activecalculus.org/multi/"><c>the .html version of the text</c></url>. Almost every non-<webwork /> problem has multiple parts, requires the student to connect several key ideas, and expects that the student will do at least a modest amount of writing to answer the questions and explain their findings.  For instructors interested in a more conventional source of exercises, consider the freely available <url href="www.apexcalculus.com"><c>APEX Calculus</c></url> text by Greg Hartmann et al.
         </p>
+        <p>
+          Our Fall 2025 preview release includes at least some <webwork/> exercises in each of the sections of our Second Edition preview, but we welcome suggestions of additional <webwork /> exercises that faculty would consider good inclusions and feedback on any aspect of this edition. The best way to provide feedback is through the <url href="https://groups.google.com/u/0/g/active-calculus-multivariable" >Active Calculus - Multivariable Google Group</url>. We have also set up a <url href="https://forms.gle/R1YNrPMC6q9Z2H3n8" visual="forms.gle/R1YNrPMC6q9Z2H3n8">Google Form</url> to collect feedback. If you are comfortable with GitHub and/or PreTeXt, you can submit your suggested changes as a Pull Request or Issue to the <url href="https://github.com/active-calculus/active-calculus-vector">repository</url>. We will occasionally give some updates through the blog on <url href="https://activecalculus.org/" />.
+        </p>
       </li>
 
       <li>
       <title>Graphics</title>
-        <p>
-          As much as possible, we strive to demonstrate key fundamental ideas visually, and to encourage students to do the same. Throughout the text, we use full-color graphics to exemplify and magnify key ideas, and to use this graphical perspective alongside both numerical and algebraic representations of calculus. When the text itself refers to color in images, one needs to view the .html or .pdf electronically. The figures and the software to generate them have been created by David Austin. 
-        </p>
-        <p>
-          In Chapter 12, the authors have used interactive Sage figure to allow users of the html version to rotate and zoom on dynamic visuals. In some figures, the user can manipulate different parameters to see how a featured element will change. 
-        </p>
-      </li>
+      <p>
+        As much as possible, we strive to demonstrate key fundamental ideas visually, and to encourage students to do the same. Throughout the text, we use full-color graphics to exemplify and magnify key ideas, and to use this graphical perspective alongside both numerical and algebraic representations of calculus. Because so much of vector calculus relies upon visualizing things in three dimensions, we elected to produce almost all of the 3D graphics using SageMath. This allows for a degree of consistency between the two-dimensional graphics, which are typically static, and the three-dimensional graphics, which are almost always interactive. Thus, you can grab a three-dimensional plot, rotate it, zoom in on it, etc.
+        <ul>
+          <li>To <em>rotate</em> a three-dimensional graphic, click and drag with your mouse.</li>
+          <li>To <em>zoom</em> on an interactive three-dimensional graphic, use your mouse's scroll wheel or make your operating system's scroll gesture on your touchpad.</li>
+          <li>To <em>move</em> a three-dimensional graphic instead of rotating, hold down the space bar while clicking and dragging.</li>
+        </ul>
+      </p>
+    </li>
 
       <li>
       <title>Summary of Key Ideas</title>
@@ -56,38 +61,38 @@
         </p>
       </li>      
     </dl>
-
-          <ul>
-            <li>
-              <p> 
-                <url href="https://c3d.libretexts.org/CalcPlot3D/index.html"><c>CalcPlot3D</c></url>, good all-purpose 3D graphing tool 
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <url href="http://www.wolframalpha.com/"><c>Wolfram Alpha</c></url>, useful for graphing surfaces in 2D and 3D, and for general calculations
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <url href="http://www.wolframalpha.com/widgets/gallery/?category=math"><c>Wolfram Alpha widgets</c></url>, searchable site for simple to use programs using Wolfram Alpha
-              </p>
-            </li>
-
-            <li>
-              <p>
-                <url href="https://www.geogebra.org/"><c>GeoGebra</c></url>, all purpose graphing tool with some computer algebra capabilities. Clicking on the magnifying glass icon allows you to search a large database of GeoGebra applets.  
-              </p>
-            </li>
-
-            <li>
-              <p> 
-                <url href="http://www.math.uri.edu/~bkaskosz/"><c>A collection of Flash Mathlets</c></url> for graphing surfaces, parametric curves in 3D, spherical coordinates and other 3D tools. Requires Flash Player. 
-              </p>
-            </li>
-          </ul>
-
+    <ul>
+      <li>
+        <p> 
+          <url href="https://c3d.libretexts.org/CalcPlot3D/index.html"><c>CalcPlot3D</c></url>, good all-purpose 3D graphing tool 
+        </p>
+      </li>
+      <li>
+        <p>
+          <url href="http://www.wolframalpha.com/"><c>Wolfram Alpha</c></url>, useful for graphing surfaces in 2D and 3D, and for general calculations
+        </p>
+      </li>
+      <li>
+        <p>
+          <url href="http://www.wolframalpha.com/widgets/gallery/?category=math"><c>Wolfram Alpha widgets</c></url>, searchable site for simple to use programs using Wolfram Alpha
+        </p>
+      </li>
+      <li>
+        <p>
+          <url href="https://www.geogebra.org/"><c>GeoGebra</c></url>, all purpose graphing tool with some computer algebra capabilities and <url href="https://www.geogebra.org/3d">a 3D set of features</url>. Clicking on the magnifying glass icon allows you to search a large database of GeoGebra applets.  
+        </p>
+      </li>
+      <li>
+        <p>
+          <url href="https://www.desmos.com/calculator">Desmos</url> all purpose graphing tool with some computational capabilities and <url href="https://www.desmos.com/3d">a 3D set of features</url>.
+        </p>
+      </li>
+      <!-- <li>
+        <p> 
+          <url href="http://www.math.uri.edu/~bkaskosz/"><c>A collection of Flash Mathlets</c></url> for graphing surfaces, parametric curves in 3D, spherical coordinates and other 3D tools. Requires Flash Player. 
+        </p>
+      </li> -->
+    </ul>
   </p>
+  
 </preface>

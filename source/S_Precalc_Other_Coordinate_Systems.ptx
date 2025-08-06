@@ -39,6 +39,15 @@
       </li>
     </ul>
   </objectives>
+  <introduction component="instructor" >
+    <title>Notes to Instructors and Dependencies</title>
+    <p>
+      We have included a comprehensive treatment of polar coordinates here because many students will not have a lot of experience with polar coordinates and because these ideas of angular coordinate measurements are fundamental to cylindrical and spherical coordinates in three dimensions. The preview activity is designed to help student use right triangle angle and side relationships outside of the rigid settings used in Trigonometry. We do not anticipate that instructors will use every example or activity in this section, but we have offered a broad selection of ideas covered to allow instructors to tailor this material to the experience and needs of their students.
+    </p>
+    <p>
+      Other traditional texts often wait to introduce cylindrical and spherical coordinates until multiple integration. We have opted into include this material here to further develop students thinking about paths, surfaces, and regions having angular symmetry about an axis (cylindrical) or a point (spherical). This thinking is not strictly required but the authors have found this useful when parameterizing paths in 3D (in <xref ref="S-VVF-Plotting"/>), translating geometric features to algebraic forms (throughout the rest of this text), and with evaluating limits of multivariable functions (<xref ref="S-10-1-Limits"/>), as well as many other places where rotational/angular symmetry or descriptions occur.
+    </p>
+  </introduction>
 <subsection>
   <title>Introduction</title>
   <p>

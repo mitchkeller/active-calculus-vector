@@ -15,22 +15,27 @@
 <!-- **********************************************************************-->
 <section xml:id="S-11-9-Change-of-Variable" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Change of Variables</title>
-  
-    <objectives>
-        <ul>
-          <li>
-            <p>
-              What is a change of variables in a multivariable coordinate system?
-            </p>
-          </li>
+  <objectives>
+      <ul>
+        <li>
+          <p>
+            What is a change of variables in a multivariable coordinate system?
+          </p>
+        </li>
 
-          <li>
-            <p>
-              How can we measure how area and volume are distorted for a change of variables in two or three dimensions?
-            </p>
-          </li>
-        </ul>
-    </objectives>
+        <li>
+          <p>
+            How can we measure how area and volume are distorted for a change of variables in two or three dimensions?
+          </p>
+        </li>
+      </ul>
+  </objectives>
+  <introduction component="instructor">
+    <title>Notes to the Instructor and Dependencies</title>
+    <p>
+      Many instructors use <xref ref="S-11-8-Triple-Integrals-Cylindrical-Spherical"/> as an introduction to the general setting of this section and other skip this generalization. We do not address how to find these advantageous changes of coordinates which will transform regions from non-rectangular to rectangular (in the new coordinate space), but rather we develop the Jacobian as the key element in these transitions between coordinates. Also of note, the more time you spent on visualizing regions and setting boundary conditions will yield great benefits in the time needed for students to practice the ideas in this section.
+    </p>
+  </introduction>
   <subsection>
     <title>Introduction</title>
     <p>

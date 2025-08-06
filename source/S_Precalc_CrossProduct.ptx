@@ -36,6 +36,15 @@
           </li>
         </ul>
     </objectives>
+  <introduction component="instructor">
+    <title>Notes to the Instructor and Dependencies</title>
+    <p>
+      This section only expects students to have familiarity with the notation and operations of vectors from <xref ref="S-Precalc-Vectors"/> and only when working with the triple product do we use the dot product in this section. This section emphasizes the cross product as a tool for finding a third vector orthogonal to the two input vectors that will create a right handed coordinate system. We introduce the ideas of determinants of two by two and three by three matrices without motivation or context (other than as a useful computational tool). In our discussion of applications, the idea of area for the associated parallelogram is described and used.
+    </p>
+    <p>
+      We encourage all users to look at <xref ref="vecnotation" /> to see an activity that encourages students to think about the types of objects being used in the many vector operations. This is a key meta skill for student to improve on before courses like linear algebra and differential equations which can be notationally difficult for students. 
+    </p>
+  </introduction>
 <subsection>
   <title>Introduction</title>
     <p>
