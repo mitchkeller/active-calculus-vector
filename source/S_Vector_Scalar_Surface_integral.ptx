@@ -34,7 +34,9 @@
     </objectives>
   <subsection>
     <title>Introduction</title>
-    <exploration>
+    <worksheet>
+  <exploration workspace="1.5in"
+>
       <introduction>
         <p>
           In <xref ref="PA_ScalarLI" /> we looked at how to understand line integrals of scalar functions through the analogy of running a mining machine along a given path. In short, the amount of copium mined depended on the density of copium at points on the path and the length of the path driven by the mining rig. 
@@ -162,6 +164,7 @@
         </solution>
       </task>
     </exploration>
+</worksheet>
   <p>
     In <xref ref="S_Vector_FluxInt"/>, the idea of a flux integral was introduced by looking at how much of a vector field flows through a given section of a surface in space. In particular, the flux integral measured the accumulated amount of the vector field that is orthogonal to the surface, which changes at different points on the surface. <xref ref="thm_flux_int_calc"/> gives an efficient way to calculate a flux integral in terms of a parameterization of the surface. This was an extension of the method for computing the surface area given in <xref ref="S-11-6-Parametric-Surfaces-Surface-Area"/>.
   </p>
@@ -329,7 +332,8 @@
   <p>
     In the next activity, we consider some situations where we can reason about the sign of a surface integral of a scalar function.
   </p>
-  <activity xml:id="ScalarSurfaceInt_Sensemaking">
+  <worksheet>
+  <activity workspace="1.5in" xml:id="ScalarSurfaceInt_Sensemaking">
     <introduction>
       <p>
         In this activity, we will try to understand the scalar surface integral by looking at whether the value of the scalar surface integral will be positive, negative, or zero over common surfaces. In each part below, you are given a function and a surface. For each surface, first draw a plot of the surface and make sure you have labeled a proper scale for each coordinate direction. Then reason if the given surface integral is positive, negative, or zero. Be sure to justify your answers in terms of the function being integrated <em>and</em> the particulars of the surface of integration.
@@ -392,6 +396,7 @@
       </solution>
     </task>
   </activity>
+</worksheet>
   </subsection>
 <subsection>
   <title>Properties of Scalar Surface Integrals</title>
@@ -426,7 +431,8 @@
           </ol>
         </p>
       </assemblage>
-    <activity xml:id="Explain_SSI_Properties">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="Explain_SSI_Properties">
       <title>Explaining Properties of Scalar Surface Integrals</title>
       <introduction>
         <p>
@@ -503,6 +509,7 @@
         </solution>
       </task>
     </activity>
+</worksheet>
     <p>
       We will conclude this section with one more example of computing a scalar surface integral and then an activity that asks you to compute one for yourself using a parameterization of a surface.
     </p>
@@ -534,7 +541,8 @@
         This result should match your answer for <xref ref="task_SSIS_2" text="phrase-global" /> since the values of the function <m>f(x,y,z)=x</m> are symmetric but opposite in sign for the parts of the surface in the octants with <m>x\gt 0</m> as compared to the octants with <m>x\lt 0</m>.
       </p>
     </example>
-    <activity xml:id="act_Vector_ScalarSurfaceInt_UseParam">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="act_Vector_ScalarSurfaceInt_UseParam">
       <statement>
         <p>
           Compute the value of the scalar surface integral in <xref ref="task_SSIS_4" text="phrase-global" />. That is, compute <m>\iint_{S_3} x+z \, dS</m> where <m>S_3</m> is the disc of radius one centered at <m>(1,0,0)</m> on the plane <m>x=1</m>. Explain why your answer makes sense geometrically.
@@ -571,6 +579,7 @@
       </p>
       </solution>
     </activity>
+</worksheet>
   </subsection>
   <subsection>
     <title>Summary</title>

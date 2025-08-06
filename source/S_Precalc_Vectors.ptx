@@ -59,7 +59,9 @@
       If we are at a point <m>x</m> in the domain of a function of one variable, there are only two directions in which we can move: in the positive or negative <m>x</m>-direction. If, however, we are at a point <m>(x,y)</m> in the domain of a function of two variables, there are many directions in which we can move. Thus, it is important for us to have a means to indicate direction, and we will do so using vectors. This notion of direction in space will be critical for us to find direction vectors for lines, tangent lines to curves, normal vectors to planes, and to determine direction of motion. 
     </p> -->
 
-    <exploration xml:id="PA-Precalc-Vectors">
+    <worksheet>
+  <exploration workspace="1.5in"
+ xml:id="PA-Precalc-Vectors">
       <introduction>
         <p>
           Postscript is a programming language whose primary purpose is to specify how to generate text or graphics. The following is a simple set of Postscript commands that produces the triangle in the plane with vertices <m>(0,0)</m>, <m>(1,1)</m>, and <m>(1,-1)</m>:
@@ -155,6 +157,7 @@
         </solution>
       </task>
     </exploration>
+</worksheet>
   </subsection>
 
   <subsection>
@@ -284,7 +287,8 @@
       Our next activity will help us to become accustomed to vectors and their relationship to points in three dimensions.
     </p>
 
-    <activity xml:id="A-9-2-1">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A-9-2-1">
       <introduction>
         <p>
           <!-- An article by C.Kenneth Tanner of the University of Georgia argues that, due to the concept of social distance, a secondary school classroom for 20 students should have 1344 square feet of floor space. Suppose a classroom is 32 feet by 42 feet by 8 feet. --> 
@@ -361,6 +365,7 @@
         </solution>
       </task>
   </activity>
+</worksheet>
   </subsection>
 
   <subsection>
@@ -390,7 +395,8 @@
     <historical component="instructor">
       <xref ref="Act-Precalc-navigation"/> is a conceptual activity that motivates the addition, the subtraction, and the rescaling of vectors and we recommend that you do this with a graph or grid paper for students to label and plot the locations and associated vectors.
     </historical>
-  <activity xml:id="Act-Precalc-navigation">
+  <worksheet>
+  <activity workspace="1.5in" xml:id="Act-Precalc-navigation">
     <introduction>
       <p>
         In this problem, we will be navigating to help find a friend who is lost at a local state park. We will be navigating using traditional map coordinates with east going in the positive <m>x</m>-direction and north going in the positive <m>y</m>-direction.
@@ -433,7 +439,9 @@
       </p>
     </task>
   </activity>
-    <!-- <activity xml:id="A-9-2-3">
+</worksheet>
+    <!-- <worksheet>
+  <activity workspace="1.5in" xml:id="A-9-2-3">
       <statement>
         <p>
           Let <m>\vu = \langle 2, 3 \rangle</m>, <m>\vv = \langle -1, 4 \rangle</m>.
@@ -534,7 +542,8 @@
            </ol>
         </p>
       </solution>
-    </activity> -->
+    </activity>
+</worksheet> -->
     <p>
       In <xref ref="Act-Precalc-navigation" /> we saw how adding two vectors componentwise gave a vector that represented the total change of traveling along one vector followed by doing the change described by the other vector. Additionally, we saw that to go three times as far in a direction given by a vector, we can describe the total change by multiplying each component by three. Finally, we saw that we can find the difference between two vectors by componentwise subtraction. This difference vector completed a triangle formed by positioning the two subtracted vectors with the same initial point. The ideas of adding vectors or multiplying a scalar by a vector generalizes beyond the context of <xref ref="Act-Precalc-navigation" />.
     </p>
@@ -645,7 +654,8 @@
      <p>
       We verified the first property for vectors in <m>\R^2</m>. The other properties can be verified to hold for all vectors in <m>\R^n</m> in a similar manner because the operations are done componentwise on the vectors.
     </p>
-    <activity>
+    <worksheet>
+  <activity workspace="1.5in">
       <introduction>
         <p>
           In this activity, use <xref ref="Vectors-operations" text="title" /> to simplify each of the following expressions into a single vector of the form <m>\langle a,b,c \rangle</m>. For this activity, let <m>\vu=\langle 1,-2,3 \rangle</m>, <m>\vv=\langle 2,-2,5\rangle</m>, and <m>\vw=\langle -3,0,3\rangle</m>.
@@ -694,6 +704,7 @@
         </statement>
       </task>
     </activity>
+</worksheet>
   </subsection>
 
 
@@ -828,7 +839,8 @@
     <p>
       <xref ref="F-9-2-vector-sum7" /> motivates the following definition of parallel vectors: vectors <m>\vv</m> and <m>\vw</m> in <m>\R^n</m> are <term>parallel</term> <idx><h>vector</h><h>parallel</h></idx> <idx><h>parallel</h><h>vectors</h></idx> provided that there exists a non-zero scalar <m>k\in\R</m> such that <m>\vv = k \vw</m>. In other words, parallel vectors are (non-zero) scalar multiples of each other. There are a couple of things to note that are important about parallel vectors. First, the zero vector <m>\vzero = \langle 0, \ldots, 0\rangle \in \R^n</m> is not parallel to any other vector. Geometrically, this should make sense because the zero vector is the only vector that has no change and that will not correspond to any direction. Second, parallel vectors do not have to be in the same direction; in fact, parallel vectors can be in exactly opposite directions, as shown by <m>\vv</m> and <m>-2\vv</m> in <xref ref="F-9-2-vector-sum7" />. Parallel vectors are important when trying to classify the orientation of lines, planes, and changes on surfaces.
     </p>
-    <activity xml:id="A-9-2-5">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A-9-2-5">
       <introduction>
         <p>
           Suppose that <m>\vu</m> and <m>\vv</m> are the vectors shown in <xref ref="F-9-2-vector-activity1a" />.
@@ -938,6 +950,7 @@
         </solution>
       </task>
     </activity>
+</worksheet>
     <p>
       Before we move on to the magnitude of a vector, we will take a moment to point out a concept that permeates most the mathematics you will see for awhile. Our definitions of vector addition and scalar multiplication give us a way to take a few vectors and generate entire spaces with both familiar algebraic and geometric properties. We say that <m>a\vv + b\vw</m> is a <term>linear combination</term> of the vectors <m>\vv</m> and <m>\vw</m> (where <m>a</m> and <m>b</m> are scalars). Earlier in this section we mentioned how every vector in <m>\R^3</m> can be written as a linear combination of <m>\vi</m>, <m>\vj</m>, and <m>\vk</m>. Important questions in the next few math courses include <q>Can you write any vector in <m>\R^n</m> as a linear combination of <m>\vu</m>, <m>\vv</m>, and <m>\vw</m>?</q> For now, we will point out that much of what has been done in this section is setting up the algebraic and geometric properties of linear combinations as a function of the vectors used.
     </p>
@@ -997,7 +1010,8 @@
         <me>\vecmag{\left\langle \frac{2}{\sqrt{20}},\frac{4}{\sqrt{20}}\right\rangle}=\sqrt{\left(\frac{2}{\sqrt{20}}\right)^2+\left(\frac{4}{\sqrt{20}}\right)^2}=\sqrt{\frac{4}{20}+\frac{16}{20}}=1</me>
       </p>
     </example>
-    <activity xml:id="A-9-2-7">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A-9-2-7">
       <!-- <task>
         <statement>
           <p>
@@ -1191,6 +1205,7 @@
         </solution>
       </task>
     </activity>
+</worksheet>
   </subsection>
 
   <outcomes>

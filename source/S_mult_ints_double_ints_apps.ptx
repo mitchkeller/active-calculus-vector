@@ -58,7 +58,9 @@
       The following preview activity explores our third interpretation of double integrals: a double integral can be used to determine the mass of a thin plate with a  density distribution, <m>\delta(x,y)</m>. Recall that in single-variable calculus, we considered a similar problem and computed the mass of a one-dimensional rod with a mass-density distribution. There, as here, the key idea is that if density is constant, mass is the product of density and volume.
     </p>
 
-    <exploration xml:id="PA_11_4">
+    <worksheet>
+  <exploration workspace="1.5in"
+ xml:id="PA_11_4">
       <introduction>
         <p>
           Suppose that we have a flat, thin object (called a <term>lamina</term>) whose density varies across the object. We can think of the density on a lamina as a measure of mass per unit area. As an example, consider a circular plate <m>D</m> of radius 1 cm centered at the origin whose density <m>\delta</m> varies depending on the distance from its center so that the density in grams per square centimeter at point <m>(x, y)</m> is
@@ -164,6 +166,7 @@
         </solution>
       </task> 
     </exploration>
+</worksheet>
   </subsection>
 
   <subsection>
@@ -180,7 +183,8 @@
     </assemblage>
     
 
-    <activity xml:id="A_11_4_3">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_11_4_3">
       <statement>
         <p>
           Let <m>D</m> be a half-disk lamina of radius 3 in quadrants IV and I, centered at the origin as shown in <xref ref="F_11_4_Mass_exercise">Figure</xref>. Assume the density at point <m>(x,y)</m> is given by <m>\delta(x,y) = x</m>. Find the exact mass of the lamina.
@@ -223,6 +227,7 @@
         </p>
       </solution>
     </activity>
+</worksheet>
   </subsection>
 
 
@@ -237,7 +242,8 @@
       As the following activity demonstrates, we can also see this fact by considering a three-dimensional solid whose height is always 1.
     </p>
 
-    <activity xml:id="A_11_4_1">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_11_4_1">
       <introduction>
         <p>
           Suppose we want to find the area of the bounded region <m>D</m> between the curves
@@ -321,6 +327,7 @@
         </solution>
       </task>
     </activity>
+</worksheet>
     <p>
       We now formally state the conclusion from our earlier discussion and <xref ref="A_11_4_1">Activity</xref>.
     </p>
@@ -448,7 +455,8 @@
       </me>.
     </p>
 
-    <activity xml:id="A_11_4_4">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_11_4_4">
       <introduction>
         <p>
           In this activity we determine integrals that represent the center of mass of a lamina <m>D</m> described by the triangular region bounded by the <m>x</m>-axis and the lines <m>x = 1</m> and <m>y = 2x</m> in the first quadrant if the density at point <m>(x, y)</m> is <m>\delta(x, y) = 6x + 6y + 6</m>. A picture of the lamina is shown in <xref ref="F_11_4_COM_ex_1">Figure</xref>.
@@ -512,6 +520,7 @@
         </solution>
       </task>
     </activity>
+</worksheet>
   </subsection>
   <subsection>
     <title>Probability</title>
@@ -577,7 +586,8 @@
         P((x,y)\in R) = \iint_R f(x,y) \, dA.
       </me>
     </p>
-    <activity xml:id="A_11_4_6">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_11_4_6">
       <introduction>
         <p>
           A firm manufactures smoke detectors. Two components for the detectors come from different suppliers <mdash/> one in Michigan and one in Ohio. The company studies these components for their reliability and their data suggests that if <m>x</m> is the life span (in years) of a randomly chosen component from the Michigan supplier and <m>y</m> the life span (in years) of a randomly chosen component from the Ohio supplier, then the joint probability density function <m>f</m> might be given by
@@ -717,6 +727,7 @@
         </solution>
       </task>
     </activity>
+</worksheet>
   </subsection>
   <subsection>
     <title>Summary</title>

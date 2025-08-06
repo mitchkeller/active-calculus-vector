@@ -46,7 +46,9 @@
     <p>
       In the following preview activity, we will explore how to calculate the four different second-order partial derivatives of a function of two variables as well as what these various derivatives tell us about the function's behavior.
     </p>
-    <exploration xml:id="PA_10_3">
+    <worksheet>
+  <exploration workspace="1.5in"
+ xml:id="PA_10_3">
     <introduction>
       <p>
          Once again, let's consider the function <m>f</m> defined by <m>f(x,y) = \frac{x^2\sin(2y)}{32}</m> that measures a projectile's range as a function of its initial speed <m>x</m> and launch angle <m>y</m>. The graph of this function, including traces with <m>x=150</m> and <m>y=0.6</m>, is shown in <xref ref="F_10_3_preview">Figure</xref>.
@@ -260,6 +262,7 @@
       </solution>
     </task>
   </exploration>
+</worksheet>
   <p>
     As we saw in the preview activity, we can relate properties of second derivatives from single variable calculus to the behavior of our trace functions. In this section, we will formalize our definitions of the second partial derivatives for a function of two variables and interpret how these give information about the functions behavior. Later in this section, we will briefly generalize to functions of more than two variables and higher order derivatives.
   </p>
@@ -324,7 +327,8 @@
       In both notations, we use the same order of operations idea of working inside out. With the Leibniz notation, that means our partial derivative operators are written before the function we are taking partials of, whereas with the subscript notation writes order of derivatives <em>after</em> the function.
     </p>
 
-    <activity xml:id="A_10_3_1">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_10_3_1">
     <task>
       <statement>
         <p>
@@ -464,6 +468,7 @@
       </answer>
     </task>
   </activity>
+</worksheet>
   <p>
     In <xref ref="PA_10_3">Preview Activity</xref> and <xref ref="A_10_3_1">Activity</xref>, you may have noticed that the mixed second-order partial derivatives are equal. This observation holds generally and is known as Clairaut's Theorem.
   </p>
@@ -667,7 +672,8 @@
   <p>
     In the following activity, we further explore what second-order partial derivatives tell us about the geometric behavior of a surface.
   </p>
-  <activity xml:id="A_10_3_2a">
+  <worksheet>
+  <activity workspace="1.5in" xml:id="A_10_3_2a">
   <introduction>
     <p>
       We will continue to work with the function <m>f</m> defined by <m>f(x,y) = \sin(x) e^{-y}</m>.
@@ -901,6 +907,7 @@
     </answer>
   </task>
   </activity>
+</worksheet>
   <p>
     As we have found in <xref ref="A_10_3_2a">Activities</xref> and <xref ref="A_10_3_6"/>, we may think of <m>f_{xy}</m> as measuring the <q>twist</q> of the graph as we increase <m>y</m> along a particular trace where <m>x</m> is held constant. In the same way, <m>f_{yx}</m> measures how the graph twists as we increase <m>x</m>. If we remember that Clairaut's theorem tells us that <m>f_{xy} = f_{yx}</m>, we see that the amount of twisting is the same in both directions. This twisting is perhaps more easily seen in <xref ref="F_10_3_ruled">Figure</xref>, which shows the graph  of <m>f(x,y) = -xy</m>, for which <m>f_{xy} = -1</m>.
   </p>
@@ -939,7 +946,8 @@
   <p>
     Just as with the first-order partial derivatives, we can approximate second-order partial derivatives in the situation where we have information about the function only at certain inputs, like with tables or contour plots.
   </p>
-  <activity xml:id="A_10_3_6">
+  <worksheet>
+  <activity workspace="1.5in" xml:id="A_10_3_6">
     <introduction>
       <p>
         As we saw in <xref ref="A_10_2_12">Activity</xref>, the wind chill <m>w(v,T)</m>, in degrees Fahrenheit, is a function of the wind speed, in miles per hour, and the air temperature, in degrees Fahrenheit. Some values of the wind chill are recorded in <xref ref="T_10_3_wind_chill">Table</xref>.
@@ -1244,6 +1252,7 @@
       </solution>
     </task>
   </activity>
+</worksheet>
   
   </subsection>
 

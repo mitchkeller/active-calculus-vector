@@ -84,7 +84,9 @@
     <p>
       If we look at a function of two variables where <m>z = f(x,y)</m>, it might be that both <m>x</m> and <m>y</m> depend on another variable <m>t</m>. A change in <m>t</m> then produces changes in <em>both</em> <m>x</m> and <m>y</m>, which then causes <m>z</m> to change. In this section, we will see how to describe the change in <m>z</m> that is caused by a change in <m>t</m>, leading us to multivariable versions of the Chain Rule involving both regular and partial derivatives.
     </p>
-    <exploration xml:id="PA-chain">
+    <worksheet>
+  <exploration workspace="1.5in"
+ xml:id="PA-chain">
       <introduction>
         <p>
           Your self-driving car company, <em>Steer Clear</em>, is doing well and almost ready to launch its first car. Some of your engineers have reported that the car has problems when the air intake encounters too much large particulate matter in the air (like sand, dust, large pollen, smog, etc.). In order to fix this issue, you have created a new type of filter that uses a sophisticated mesh and gravity to filter out large particulate matter, but this new type of filter gets clogged if exposed to too much large particulate matter too quickly. So we will need to measure the rate at which your car's intake will be exposed to large particulate matter per unit time. 
@@ -152,7 +154,10 @@
         </statement>
       </task>
     </exploration>
-    <!-- <exploration xml:id="PA_10_5">
+</worksheet>
+    <!-- <worksheet>
+  <exploration workspace="1.5in"
+ xml:id="PA_10_5">
       <statement>
         <p>
           Suppose you are driving around in the
@@ -316,7 +321,8 @@
         </ol>
       </solution>
   
-    </exploration> -->
+    </exploration>
+</worksheet> -->
   </subsection>
   <subsection>
     <title>The Chain Rule</title>
@@ -370,7 +376,8 @@
       Because the amount of large particulate matter in terms of the <m>x</m> coordinate is governed by tree pollen, the term <m>\frac{\partial P}{\partial x} \frac{dx}{dt}</m> describes the rate of change in the large particulate matter per unit time along our drive due to tree pollen. Similarly, the amount of large particulate matter in terms of the <m>y</m> coordinate is governed by industrial pollution, so the second term, <m>\frac{\partial P}{\partial y} \frac{dy}{dt}</m>, describes the rate of change in the large particulate matter per unit time along our drive due to industrial pollution. Because our function is locally linear, the total rate of change in large particulate matter is the sum of these individual rates of change. 
     </p>
 
-    <activity xml:id="PA_10_11">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="PA_10_11">
     <introduction>
       <p>
          In the following questions, we apply the Chain Rule in several different contexts.
@@ -594,6 +601,7 @@
       </solution>
     </task>  
   </activity>
+</worksheet>
   <p>
     The previous activity and discussion have all dealt with a multivariable function where each of the inputs of the function depend on a separate variable, <m>t</m>. The next example generalizes the concept of the chain rule for multivariable functions with more than two inputs as well as the situation that the input variables depend on more than one separate variable.
   </p>
@@ -695,7 +703,8 @@
       </me>
     </p>
 
-    <activity xml:id="PA_10_13">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="PA_10_13">
       <statement>
         <ol marker="a.">
           <li>
@@ -863,5 +872,6 @@
       </solution>  
       
     </activity>
+</worksheet>
   </subsection> -->
 </section>

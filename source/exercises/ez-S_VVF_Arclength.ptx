@@ -35,7 +35,27 @@
       </exercise> -->
 
       
-   
+   <exercise xml:id="ex-VVF-verify-unit">
+      <statement>
+         <p>
+            Verify that the parameterization <m>\vr_1(s)</m> of the curve <m>C</m> in <xref ref="ex-VVF-find-arclength-fn"/> has unit speed.
+         </p>
+      </statement>
+      <solution>
+         <p>
+                  If we are diligent and persistent with our calculations, we can show that <m>\vecmag{\vr_{1}'}=1</m>:
+      <md>
+        <mrow> \vr_{1}' =\amp \left\langle 2(-2+\sqrt{4+s})\frac{1/2}{\sqrt{4+s}} \right., </mrow>
+        <mrow>  \amp \quad \quad   \left.  \frac{8}{3}\left(\frac{3}{2}\left(-2+\sqrt{4+s}\right)^{1/2}\left(\frac{1/2}{\sqrt{4+s}}\right)\right) ,  4 \frac{1/2}{\sqrt{4+s}} \right\rangle </mrow>
+        <mrow> =\amp \frac{1}{\sqrt{4+s}} \left\langle -2+\sqrt{4+s},2\sqrt{-2+\sqrt{4+s}},2 \right\rangle </mrow>
+        <mrow> \vecmag{\vr_{1}'} =\amp \frac{1}{\sqrt{4+s}} \sqrt{\left( \left(-2+\sqrt{4+s}\right)^2+\left(2\sqrt{-2+\sqrt{4+s}}\right)^2+(2)^2 \right)} </mrow>
+        <mrow> =\amp \frac{1}{\sqrt{4+s}} \sqrt{\left( (-2+\sqrt{4+s})+2\right)^2}  </mrow>
+        <mrow> =\amp \sqrt{\frac{4+s}{4+s}} = 1</mrow>
+      </md>
+
+         </p>
+      </solution>
+   </exercise>
    <exercise xml:id="ex-VVF-arclength-fn">
    <statement> 
       <p>

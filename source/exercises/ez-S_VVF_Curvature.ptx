@@ -301,7 +301,7 @@
             <ol marker="a.">
               <li>
                 <p>
-                  Use <xref ref="def-T"/> to find <m>\vT(t)</m> for our function <m>f</m>.
+                  Use <xref ref="def-unit-tangent"/> to find <m>\vT(t)</m> for our function <m>f</m>.
                 </p>
               </li>
 
@@ -350,6 +350,39 @@
           </p>
         </statement>
         
+      </exercise>
+      <exercise xml:id="ez-VVF-curvature-line">
+        <introduction>
+          <p>
+            In <xref ref="act-VVF-curvature-line-circle"/>, you verified for a <em>specific</em> line that the curvature is <m>0</m>. The generalization of this is that the unit speed parameterization of a line through <m>(x_0,y_0,z_0)</m> with direction vector <m>\langle a,b,c\rangle</m> can be given by 
+          <md>
+            <mrow>
+            \vr(s)\amp =\langle x(s),y(s),z(s) \rangle</mrow>
+            <mrow>  \amp= \left\langle x_0+\frac{a}{\sqrt{a^2+b^2+c^2}}s , y_0+\frac{b}{\sqrt{a^2+b^2}}s ,z_0+  \frac{c}{\sqrt{a^2+b^2+c^2}}s\right\rangle</mrow>
+          </md>.
+          </p>
+        </introduction>
+        <task>
+          <statement>
+            <p>
+              Compute the speed of this parameterization to verify that this has unit speed. This will also show that <m>\vr\, '(s)=\vv(s)=\vT(s)</m> (which is not true in general).
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Calculate <m>\vT(s)</m>, <m>\frac{d\vT}{ds}</m>, and <m>\vecmag{ \frac{d\vT}{ds} }</m> for this unit speed parameterization of a line.
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Write a few sentences to explain why your result for the calculation of the curvature of a line makes sense in general.
+            </p>
+          </statement>
+        </task>
       </exercise>
   <exercise>
     <p>

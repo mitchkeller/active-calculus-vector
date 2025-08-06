@@ -67,7 +67,9 @@
       Throughout our mathematical careers we have studied functions of a single variable. We define a function of one variable as a rule that assigns exactly one output to each input. We analyze these functions by looking at their graphs, calculating limits, differentiating, integrating, and more. Functions of several variables will be the main focus of Chapters 10 and 11, where we will analyze these functions by looking at their graphs, calculating limits, differentiating, integrating, and more. We will see that many of the ideas from single variable calculus translate well to functions of several variables, but we will have to make some adjustments as well. In this chapter we introduce functions of several variables and then discuss some of the tools (vectors and vector-valued functions) that will help us understand and analyze functions of several variables. 
     </p> -->
     <!-- This preview activity is about getting students used to evaluating the function of several variables. I think this needs to be less generic and an introduction to one of the functions we will use as examples and applications throughout this chapter. Don't know that I care which one. -->
-    <exploration xml:id="PA-9-1">
+    <worksheet>
+  <exploration workspace="1.5in"
+ xml:id="PA-9-1">
       <introduction>
         <p>
           Suppose you invest money in an account that pays 5% interest compounded continuously. If you have an initial investment of <m>P</m> dollars in the account, then <m>A</m>, the amount of money in the account after <m>t</m> years is given by 
@@ -273,7 +275,8 @@
           </p>
         </solution>
       </task>
-    </exploration>   
+    </exploration>
+</worksheet>   
    </subsection>
 
   <subsection>
@@ -366,7 +369,8 @@
         </p>
       </task>
     </example>
-    <activity xml:id="A-9-1-1">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A-9-1-1">
     <introduction>
       <p>
         Identify the domain and range of each of the following functions. Draw a picture of each domain in the <m>xy</m>-plane.
@@ -441,6 +445,7 @@
       </solution>
     </task>
   </activity>
+</worksheet>
 </subsection>
 
 <subsection>
@@ -520,7 +525,8 @@
       </row>
     </tabular>
   </table>
-  <activity xml:id="A-9-1-2">
+  <worksheet>
+  <activity workspace="1.5in" xml:id="A-9-1-2">
     <statement>
       <p>
         Complete <xref ref="T-9-1-range">Table</xref> by filling in the missing values of the function <m>f</m>. Round entries to the nearest tenth. 
@@ -561,6 +567,7 @@
       </p>
     </solution>
   </activity>
+</worksheet>
   <p>
     Representing a function with a table should reinforce the idea that each of the two independent values for the input variables will have a corresponding output value, but you probably struggled to gain insight into the relationship described by the function when looking at a large table of values. Additionally, the table is only useful for the input values selected in the rows and columns. While this may seem like a very limited use case, many applied problems involve tables like this because an algebraic function can be extremely difficult to find for every case and it can be very expensive to test many input values to obtain the corresponding output values. You likely have already used spreadsheets to organize information in a multivariable setting like this. 
   </p>
@@ -717,7 +724,8 @@
     <p>
       Understanding trends in the behavior of functions of two variables can be challenging, as can sketching their graphs; traces help us with both of these tasks.
     </p>
-    <activity>
+    <worksheet>
+  <activity workspace="1.5in">
       <introduction>
         <p>
           In the following activity, we investigate the use of traces to better understand a function through both tables and graphs.
@@ -797,6 +805,7 @@
         </statement>
       </task>
     </activity>
+</worksheet>
     <p>
       The previous activity shows how drawing traces on a plot of a surface can give the viewer more information on the orientation of the graph. In <xref ref="traceonoff"/> you can see a plot of the surface generated in our projectile motion example. Without any of the traces drawn on the surface, it is difficult to understand the shape of the surface (and would be even harder if not for the shading on the computer generated graphics). You can click on the check box at the top of the figure to add traces to the plot and notice how much easier it is to distinguish the shape of the surface at different points.  
     </p>
@@ -816,7 +825,8 @@
     <p>
       When drawing plots by hand, it is very important to use parallel structure to make it easier for the viewer to orient the traces as being in a direction parallel to one of the coordinate axes. It may take time for you to feel comfortable drawing these kinds of features by hand but good visual representations of surfaces and their features will be very valuable in our work for the next several chapters. 
     </p>
-    <!-- <activity xml:id="A-9-1-6">
+    <!-- <worksheet>
+  <activity workspace="1.5in" xml:id="A-9-1-6">
       <statement>
         <p>
           In the following questions, we investigate the use of traces to better understand a function through both tables and graphs.
@@ -932,7 +942,8 @@
       </ol>
     </p>
 </solution>
-    </activity> -->
+    </activity>
+</worksheet> -->
 
   </subsection>
   <subsection>
@@ -949,7 +960,8 @@
       <image width="100%" source="images/9_1_porcupine_crop"/>
     </figure>
 
-    <activity xml:id="A-9-1-8">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A-9-1-8">
       <introduction>
         <p>
           Use the topographical map of the Porcupine Mountains in <xref ref="F-9-1-porcupine">Figure</xref> to answer the following questions. Note that points of interest are sometimes marked with an X and have their altitude listed.
@@ -1048,6 +1060,7 @@
         </p>
       </solution> -->
     </activity>
+</worksheet>
 
     <p>
       Curves on a surface that describe points at the same height or level are called <em>level curves</em> and as you saw in the topographic map above, a plot with level curves can be useful for representing information on a surface using just a two dimensional plot. 
@@ -1141,7 +1154,8 @@
       <caption>An isotherm map with temperatures at major cities (from NCEP/NWS/NOAA) </caption>
       <image width="60%" xml:id="img-isotherms" source="isotherms.png"/>
     </figure>
-    <activity xml:id="A-9-1-9">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A-9-1-9">
       <introduction>
         <p>
           In this activity, we will be making contour plots by hand and looking at how the spacing of contours in your plot should give an idea about how different surface shapes can be distinguished. 
@@ -1225,6 +1239,7 @@
         </solution>
       </task>
     </activity>
+</worksheet>
     <p>
       The traces and level curves of a function of two variables are curves in space. Traces are much easier to parameterize as a curve in space because one input variable is fixed and the other input variable can act as the parameter. For example, the trace with <m>y=b</m> of the surface given by <m>z=f(x,y)</m> will be parameterized by <m>\vr(t)=\langle t,b,f(t,b)\rangle</m> because the <m>z</m>-coordinate can be expressed in terms of the fixed input value and the other input variable (as the parameter). Parameterizing contours can be quite difficult and often relies on knowing the particular shape of the contours. Remember that it may not be possible to express a curve of the form <m> k=f(x,y)</m> with one coordinate as a function of the other.
     </p>
