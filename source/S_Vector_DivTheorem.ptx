@@ -114,7 +114,9 @@
       </slate>
     </interactive>
   </figure>
-<exploration xml:id="PA_Vector_Divthm">
+<worksheet>
+  <exploration workspace="1.5in"
+ xml:id="PA_Vector_Divthm">
   <title>Locating sources of a poisonous gas</title>
   <introduction>
   <p>
@@ -232,6 +234,7 @@
     </solution>
   </task>
 </exploration>
+</worksheet>
   <p>
     The preview activity showed how the flux through a closed surface can be subdivided into the flux through surfaces which combine to be the closed surface (with orientation switches corresponding to additive inverse). The net flux through the closed surface measures the net amount of the vector field that is created or destroyed on the interior of the closed surface.
   </p>
@@ -339,7 +342,8 @@
   <p>
     The next activity walks you through evaluating both the flux integrals necessary to calculate the flux directly and the triple integral given in the <xref ref="thm_Div" text="title" /> for a specific vector field and closed surface. 
   </p>
-  <activity xml:id="act_Vector_DivThm_Verify">
+  <worksheet>
+  <activity workspace="1.5in" xml:id="act_Vector_DivThm_Verify">
     <introduction>
       <p>
         In this activity, we will look at calculating both sides of a non-trivial example of the <xref ref="thm_Div" text="title"/>. We will look at the region inside the right circular cylinder shown in <xref ref="fig_Vector_DivThm_Cylinder"/>. Let <m>S</m> be the closed surface formed by combining <m>S_{\text{top}}</m> (in yellow), <m>S_{\text{sides}}</m> (in blue), and <m>S_{\text{bottom}}</m> (in magenta). The solid volume <m>Q</m> is the volume bounded by <m>S</m>. The region shown has radius <m>2</m>, and its height is <m>1</m>. The vector field we consider in this activity is given by <me>\vF=\langle xy-2z,y^2-yz,3x+z^2\rangle</me>.
@@ -543,10 +547,12 @@
       </solution>
     </task>
   </activity>
+</worksheet>
   <p>
     The next activity asks you to compute flux in some circumstances where it may be wise to apply <xref ref="thm_Div" text="title" />.
   </p>
-  <activity>
+  <worksheet>
+  <activity workspace="1.5in">
     <task>
       <statement>
         <p>
@@ -593,6 +599,7 @@
       </solution>
     </task>
   </activity>
+</worksheet>
 </subsection>
 <subsection>
   <title>Summary</title>

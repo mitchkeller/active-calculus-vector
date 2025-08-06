@@ -98,7 +98,9 @@
       </image>
     </sidebyside>
   </figure>
-  <exploration xml:id="PA_Vector_Curl">
+  <worksheet>
+  <exploration workspace="1.5in"
+ xml:id="PA_Vector_Curl">
     <introduction>
       <p>
         We would like to understand and measure rotation of a vector field near a particular point. In order to investigate this concept, we will look at some two-dimensional vector fields and think about whether the vector field shown will rotate a small pinwheel or spinner placed at a particular location. The sort of
@@ -240,6 +242,7 @@
       </solution>
     </task>
   </exploration>
+</worksheet>
 </subsection>
 <subsection xml:id="SS_Vector_Curl_Development">
   <title>Measuring the Circulation Density of Vector Field in <m>\R^2</m></title>
@@ -361,7 +364,8 @@
   <p>
     We could have used a shape other than a square in the development of the circulation density, but a square allows for calculations that are easier to understand as the area of the shape decreases. <!--Our use of rectangular coordinates made it easiest to use rectangular figures but more general arguments exist.-->
   </p>
-<activity xml:id="act_Vector_Curl_2D">
+<worksheet>
+  <activity workspace="1.5in" xml:id="act_Vector_Curl_2D">
   <title>Matching Visual Measurements to Algebraic Calculations</title>
   <introduction>
     <p>
@@ -452,6 +456,7 @@
     </solution>
   </task>
 </activity>
+</worksheet>
 </subsection>
 <subsection xml:id="SS_Vector_Curl_Development3D">
   <title>Measuring Rotation in Three Dimensions</title>
@@ -633,7 +638,8 @@
       Therefore, <m>\curl(\vH)=\langle 0,2x,-1\rangle</m>. This tells us that the vector field <m>\vH</m> will have a non-zero curl for every point. However, it will be quite difficult to <q>see</q> the curl at a particular point. The next activity will take you through the process of trying to visualize and understand the output of curl in three dimensions.
     </p>
   </example>
-  <activity xml:id="act_Vector_Curl_3DEstimate">
+  <worksheet>
+  <activity workspace="1.5in" xml:id="act_Vector_Curl_3DEstimate">
     <title>Estimating Curl in Three Dimensions</title>
     <task xml:id="task_act_Vector_Curl_3DEstimate_Eyeball">
       <statement>
@@ -817,6 +823,7 @@
       </solution>
     </task>
   </activity>
+</worksheet>
 </subsection>
 <subsection xml:id="SS_Vector_Curl_Interpretation">
   <title>Interpretation and Usage of Curl</title>
@@ -877,7 +884,8 @@
     </interactive>
     </figure>
   -->
-  <activity xml:id="act_Vector_Curl_Calculate">
+  <worksheet>
+  <activity workspace="1.5in" xml:id="act_Vector_Curl_Calculate">
     <introduction>
       <p>In this activity, we will work on calculating curl algebraically and interpreting it.
       </p>
@@ -1047,6 +1055,7 @@
     </solution>
   </task>
 </activity>
+</worksheet>
 <!--  <p>
     Talk about vector potential functions?
   </p>
@@ -1093,7 +1102,8 @@
   </p>
 </subsection>
 <xi:include href="exercises/ez-S_Vector_Curl.ptx" />
-<!--<activity>
+<!--<worksheet>
+  <activity workspace="1.5in">
   <introduction>
     <p>This exercise will usethe idea of a spinner from <xref ref="PA_Vector_Curl" /></p>
   </introduction>
@@ -1265,7 +1275,8 @@
       </statement>
     </task>
   </task>
-  </activity>-->
+  </activity>
+</worksheet>-->
 <subsection component="instructor" >
   <title>Notes to Instructors and Dependencies</title>
 <p>

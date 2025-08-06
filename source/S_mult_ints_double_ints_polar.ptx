@@ -124,7 +124,9 @@
       <caption>The polar coordinate grid</caption>      
       <image width="60%" source="images/fig_11_5_polar_grid"/>
     </figure>
-    <exploration>
+    <worksheet>
+  <exploration workspace="1.5in"
+>
       <introduction>
         <p>
           In this Preview Activity, we will practice converting some equations and regions between rectangular and polar coordinates.
@@ -170,6 +172,7 @@
         </statement>
       </task>
     </exploration>
+</worksheet>
   </subsection>
 
 
@@ -208,7 +211,8 @@
     
 
 
-    <activity xml:id="A_11_5_3">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_11_5_3">
       <statement>
         <p>
           Consider a polar rectangle <m>R</m>, with <m>r</m> between <m>r_i</m> and <m>r_{i+1}</m> and <m>\theta</m> between <m>\theta_j</m> and <m>\theta_{j+1}</m> as shown at left in <xref ref="F_11_5_Polar_area_a">Figure</xref>. Let <m>\Delta r = r_{i+1}-r_i</m> and <m>\Delta \theta = \theta_{j+1}-\theta_j</m>. Let <m>\Delta A</m> be the area of this region.
@@ -378,7 +382,8 @@
       </solution>
 
 
-    </activity> -->
+    </activity>
+</worksheet> -->
     <p>
       Remember that our classic calculus approach to defining the double integral involved breaking each coordinate into smaller pieces which created a collection of smaller areas that we used to create our Riemann sum. We can do the same procedure in terms of polar coordinates (instead of rectangular coordinates) and we could have our smaller pieces be in terms of some small changes in <m>r</m> and <m>\theta</m> (like the regions on the polar grid in <xref ref="F_11_5_Polar_coords"/>). We will now need to understand how to measure the area of a piece described by <m>R_0\leq r \leq R_1 \quad \theta_0 \leq \theta \leq \theta_1</m>, as shown in <xref ref="areapolar"/>. 
     </p>
@@ -647,7 +652,8 @@
       While there is no firm rule for when polar coordinates can or should be used, they are a natural alternative anytime the domain of integration may be expressed simply in polar form, and/or when the integrand involves expressions such as <m>\sqrt{x^2 + y^2}</m>.
     </p>
 
-    <activity xml:id="A_11_5_4">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_11_5_4">
       <introduction>
         <p>
           Let <m>f(x,y) = x+y</m> and <m>D = \{(x,y) : x^2 + y^2 \leq 4\}</m>.
@@ -728,10 +734,12 @@
         </solution>
       </task>
     </activity>
+</worksheet>
     <p>
       In the next activity, we will convert an equation from rectangular to polar coordinates and use this polar equation to give bounds of integration for two different integrals.
     </p>
-    <activity xml:id="A_11_5_5">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_11_5_5">
       <introduction>
         <p>
           Consider the circle given by <m>x^2 + (y-1)^2 = 1</m> as shown in <xref ref="F_11_5_Polar_exercise">Figure</xref>.
@@ -857,6 +865,7 @@
         </solution>
       </task>
     </activity>
+</worksheet>
   </subsection>
 
 

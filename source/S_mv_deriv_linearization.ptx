@@ -210,7 +210,9 @@
         </p>
       </proof>
     </proposition>
-    <exploration xml:id="PA_10_4">
+    <worksheet>
+  <exploration workspace="1.5in"
+ xml:id="PA_10_4">
     <introduction>
       <p>
         We want to find the equation of the plane (using the form given in <xref ref="nvplaneeqn"/>) that best describes the surface given by <m>z=f(x,y)=6-\frac{x^2}2 - y^2</m> for input values around <m>(x_0,y_0) = (1,1)</m>. In particular, we will need to find how the values of <m>z_0</m>, <m>a</m>, and <m>b</m> will be related to <m>f(x,y)</m>. 
@@ -395,6 +397,7 @@
             </li>
  -->
     </exploration>
+</worksheet>
   </subsection>
 
   <subsection>
@@ -489,7 +492,8 @@
       Having the equation for a tangent plane in the form given by <m>z = f(x_0,y_0) + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)</m> will allow us to quickly state some important information about the function <m>f</m> at the point <m>(x_0,y_0)</m>. For example, if we have a particular tangent plane given by <m>z = 7 - 2(x-3) + 4(y+1)</m>, then we can immediately read from this form that <m>f_x(3,-1) = -2</m> and <m>f_y(3,-1) = 4</m>; furthermore, <m>f_x(3,-1)=-2</m> is the slope of the trace to both <m>f</m> and the tangent plane in the <m>x</m>-direction at <m>(3,-1)</m>. In the same way, <m>f_y(3,-1) = 4</m> is the slope of the trace of both <m>f</m> and the tangent plane in the <m>y</m>-direction at <m>(3,-1)</m>.
     </p>
     <!-- I don't really like this activity but this might be a nice low end thing to do after the heavier discussion of not locally linear -->
-    <activity xml:id="A_10_4_1">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_10_4_1">
     <task>
       <statement>
         <p>
@@ -563,6 +567,7 @@
       </solution>
     </task>  
     </activity>
+</worksheet>
   </subsection>
   <subsection>
     <title>Linearization</title>
@@ -646,7 +651,8 @@
         Because we have the algebraic form of our function would could have evaluated <m>f(0.9,1.2)</m> but as the next activity shows, many applications of multivariable functions use tables or graphs where it is not possible to have the function's output at every possible point. 
       </p>
     </example>
-    <activity xml:id="A_10_4_11">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_10_4_11">
     <introduction>
       <p>
         In this activity, we will find the linearization of several different functions that are given in algebraic, tabular, or graphical form.
@@ -856,6 +862,7 @@
       </answer>
     </task>
     </activity>
+</worksheet>
   </subsection>
   <subsection>
     <title>Differentials</title>
@@ -952,7 +959,8 @@
     <p>  
       As <xref ref="F_10_4_differential" /> shows visually, the difference between our functions output at <m>(x_0,y_0)</m> and <m>(x,y)</m> is given by <m>\Delta f</m> whereas the difference between the linearization at <m>(x_0,y_0)</m> and <m>(x,y)</m> is given by <m>df</m>. If we look at a small enough scale, the difference between the differential and <m>\Delta f</m> will be small. The differential is a primarily algebraic tool that will allow us to talk how the change in the output of our function will vary depending on the location we want to look at (<m>f_x</m> and <m>f_y</m>) and how much change we will allow in the input variables (<m>dx</m> and <m>dy</m>).
     </p>
-    <activity xml:id="A_10_4_12">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_10_4_12">
       <task>
         <statement>
           <p>
@@ -1041,6 +1049,7 @@
         </answer>
       </task>
     </activity>
+</worksheet>
     <p>
       We will take a moment here to point out an idea that was used throughout this section and will be used time and again in this chapter. For a <q>nice</q> function (locally linear/differentiable/continuously differentiable), the rate of change in the output of the function as you approach a point will be same as the rate of change along the linearization. In other words, we can approximate change near a point by looking at the change on the linearization; we can also evaluate the rates of changes along our surface by evaluating the corresponding change on the linearization and regardless of the direction, these rates of change will be the same at the base point.
     </p>

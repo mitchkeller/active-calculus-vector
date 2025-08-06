@@ -42,7 +42,9 @@
       We previously considered how to find the extreme values of functions on both unrestricted domains and on closed, bounded domains. Other types of optimization problems involve maximizing or minimizing a quantity subject to an external constraint. In these cases the extreme values frequently won't occur at the points where the gradient is zero, but rather at other points that satisfy an important geometric condition. These problems are often called <em>constrained optimization</em> problems and can be solved with the method of Lagrange Multipliers, which we study in this section.
     </p>
 
-    <exploration xml:id="PA_10_8">
+    <worksheet>
+  <exploration workspace="1.5in"
+ xml:id="PA_10_8">
       <statement>
         <p>
           According to U.S.<nbsp/>postal regulations, the girth plus the length of a parcel sent by mail may not exceed 108 inches, where by <q>girth</q> we mean the perimeter of the smallest end. Our goal is to find the largest possible volume of a rectangular parcel with a square end that can be sent by mail. (We solved this applied optimization problem in single variable <em>Active Calculus</em>, so it may look familiar. We take a different approach in this section, and this approach allows us to view most applied optimization problems from single variable calculus as constrained optimization problems, as well as provide us tools to solve a greater variety of optimization problems.) If we let <m>x</m> be the length of the side of one square end of the package and <m>y</m> the length of the package, then we want to maximize the volume <m>f(x,y) = x^2y</m> of the box subject to the constraint that the girth (<m>4x</m>) plus the length (<m>y</m>) is as large as possible, or <m>4x+y = 108</m>. The equation <m>4x + y = 108</m> is thus an external constraint on the variables.
@@ -152,6 +154,7 @@
       </solution>
 
     </exploration>
+</worksheet>
   </subsection>
 
   <subsection>
@@ -235,7 +238,8 @@
 
     
 
-    <activity xml:id="A_10_8_1">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_10_8_1">
       <statement>
         <p>
           A cylindrical soda can holds about 355 cc of liquid. In this activity, we want to find the dimensions of such a can that will minimize the surface area. For the sake of simplicity, assume the can is a perfect cylinder. 
@@ -399,12 +403,14 @@
 
 
     </activity>
+</worksheet>
 
     <p>
       The method of Lagrange multipliers also works for functions of more than two variables.
     </p>
 
-    <activity xml:id="A_10_8_2">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_10_8_2">
       <statement>
         <p>
           Use the method of Lagrange
@@ -520,6 +526,7 @@
       </solution>
 
     </activity>
+</worksheet>
 
     <p> 
       The method of Lagrange multipliers also works for functions of three variables. That is, if we have a function <m>f = f(x,y,z)</m> that we want to optimize subject to a constraint <m>g(x,y,z) = k</m>, the optimal point <m>(x,y,z)</m> lies on the level surface <m>S</m> defined by the constraint <m>g(x,y,z) = k</m>. As we did in <xref ref="PA_10_8">Preview Activity</xref>, we can argue that the optimal value occurs at the level surface <m>f(x,y,z) = c</m> that is tangent to <m>S</m>. Thus, the gradients of <m>f</m> and <m>g</m> are parallel at this optimal point. So, just as in the two variable case, we can optimize <m>f = f(x,y,z)</m> subject to the constraint <m>g(x,y,z) = k</m> by finding all points <m>(x,y,z)</m> that satisfy <m>\nabla f = \lambda \nabla g</m> and <m>g(x,y,z) = k</m>. 

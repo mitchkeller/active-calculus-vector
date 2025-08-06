@@ -34,7 +34,9 @@
   <p>
     When we studied <xref ref="thm_Green" text="title"/> in <xref ref="S_Vector_GreensTheorem" text="type-global"/>, we saw how integrating the circulation density over a region in the plane bounded by a simple closed curve is equivalent to calculating the circulation along the boundary curve. When we consider simple closed curves in <m>\R^3</m>, the situation gets more complicated. However, there is an interesting, and perhaps surprising, generalization of <xref ref="thm_Green" text="title"/> for us to examine.
   </p>
-  <exploration xml:id="PA_Vector_StokesThm">
+  <worksheet>
+  <exploration workspace="1.5in"
+ xml:id="PA_Vector_StokesThm">
     <introduction>
       <p>
        In this activity, we will look at how we can apply the ideas about circulation along overlapping curves from the beginning of <xref ref="SS_Vector_GreensTheorem_Circulation" text="type-global"/> to curves in space.
@@ -194,6 +196,7 @@
       </solution>
     </task>
   </exploration>
+</worksheet>
 </subsection>
 <subsection xml:id="SS_Vector_StokesThm_Development">
   <title>Circulation in three dimensions and Stokes' Theorem</title>
@@ -367,7 +370,8 @@
   <p>
     We close this subsection with a pair of activities. The first focuses on calculating both of the integrals in <xref ref="thm_Stokes" text="title"/>. The second asks you to calculate some line integrals along simple closed curves and gives you the discretion to choose the best method to use for this (as well as the best surface to use, if you choose Stokes' Theorem).
     </p>
-    <activity xml:id="act_Vector_StokesThm_verify">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="act_Vector_StokesThm_verify">
       <introduction>
         <p>
           In this activity, we will verify <xref ref="thm_Stokes" text="title"/> by calculating both a line integral and a flux integral.
@@ -513,7 +517,9 @@
         </task>
       </task>
     </activity>
-    <activity xml:id="act_Vector_StokesThm_use">
+</worksheet>
+    <worksheet>
+  <activity workspace="1.5in" xml:id="act_Vector_StokesThm_use">
       <task xml:id="task_act_Vector_StokesThm_use_cylinder">
         <statement>
           <p>
@@ -553,6 +559,7 @@
         </solution>
       </task>
     </activity>
+</worksheet>
     <p>
       In part <xref ref="task_act_Vector_StokesThm_use_circle" text="phrase-global" />, there are two <q>reasonable</q> choices for the surface bounded by the circle. If you did not do so while doing the activity, we encourage you to identify both of them and compare which one makes doing the flux integral easier. In general, this will vary depending on the curl of the vector field in question, so we cannot give a rule for determining what surface or coordinate system to use. However, we do encourage you to think about which surface will make evaluating the flux integral easiest.
     </p>
@@ -562,7 +569,8 @@
   <p>
     When we looked <xref ref="thm_Green" text="title"/>, it was generally most useful when we were given a line integral and we calculated it using a double integral. In fact, except in the circumstances described in <xref ref="ez_Vector_GreensTheorem_AreaViaLineInt" text="type-local"/> and <xref ref="ez_Vector_GreensTheorem_centroid" text="type-local"/> of <xref ref="S_Vector_GreensTheorem" />, we did not use Green's Theorem to rewrite a double integral as a line integral because of the difficulty of finding a suitable vector field. The situation for <xref ref="thm_Stokes" text="title"/> will be similar, with the exception of <xref ref="ez_Vector_StokesThm_potential" text="type-local"/> in this section. However, Stokes' Theorem gives us an interesting additional piece of freedom: selecting the surface <m>S</m> through which we calculate the flux of <m>\curl(\vF)</m> from amongst possibly several reasonable surfaces with boundary <m>C</m>. The next two activities focus on the relationships between surfaces and their boundary.
   </p>
-  <activity xml:id="act_Vector_StokesThm_boundary">
+  <worksheet>
+  <activity workspace="1.5in" xml:id="act_Vector_StokesThm_boundary">
     <introduction>
       <p>
 	      Because <xref ref="thm_Stokes" text="title"/> requires us to consider a surface (with normal vector) and the boundary of	the surface, this activity will give you a chance to practice	identifying the boundary of some surfaces in <m>\R^3</m>. For	each surface below:
@@ -719,7 +727,9 @@
       </solution> 
     </task>
   </activity>
-  <activity xml:id="act_Vector_StokesThm_surface">
+</worksheet>
+  <worksheet>
+  <activity workspace="1.5in" xml:id="act_Vector_StokesThm_surface">
     <introduction>
       <p>In some sense, this activity considers the reverse problem of that considered in <xref ref="act_Vector_StokesThm_boundary"/>. Here, each part of the activity gives you an oriented simple closed curve <m>C</m> in <m>\R^3</m>, and your task is to find
       <ul>
@@ -786,6 +796,7 @@
       </solution>
     </task>
   </activity>
+</worksheet>
 </subsection>
 <subsection>
   <title>Summary</title>

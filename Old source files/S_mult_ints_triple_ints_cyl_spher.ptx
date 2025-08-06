@@ -50,7 +50,8 @@
       Just as with rectangular coordinates, where we usually write <m>z</m> as a function of <m>x</m> and <m>y</m> to plot the resulting surface, in cylindrical coordinates, we often express <m>z</m> as a function of <m>r</m> and <m>\theta</m>. In the following activity, we explore several basic equations in cylindrical coordinates and the corresponding surface each generates.
     </p>
 
-    <activity xml:id="A_11_8_1">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_11_8_1">
       <statement> 
       <p>
         In this activity, we graph some surfaces using cylindrical coordinates. To improve your intuition and test your understanding, you should first think about what each graph should look like before you plot it using appropriate technology.
@@ -136,6 +137,7 @@
         </p>
       </solution>
     </activity>
+</worksheet>
 
     <p>
       As the name and <xref ref="A_11_8_1">Activity</xref> suggests, cylindrical coordinates are useful for describing surfaces that are cylindrical in nature.
@@ -149,7 +151,8 @@
       To evaluate a triple integral <m>\iiint_S f(x,y,z) \, dV</m> as an iterated integral in Cartesian coordinates, we use the fact that the volume element <m>dV</m> is equal to <m>dz \, dy \, dx</m> (which corresponds to the volume of a small box). To evaluate a triple integral in cylindrical coordinates, we similarly must understand the volume element <m>dV</m> in cylindrical coordinates.
     </p>
 
-    <activity xml:id="A_11_8_2">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_11_8_2">
       <statement> 
       <p>
         A picture of a cylindrical box,
@@ -199,6 +202,7 @@
       </p>
       </solution>
     </activity>
+</worksheet>
 
     <p>
       <xref ref="A_11_8_2">Activity</xref> demonstrates that the volume element <m>dV</m> in cylindrical coordinates is given by <m>dV = r \, dz \, dr \, d\theta</m>, and hence the following rule holds in general.
@@ -224,7 +228,8 @@
       Of course, to complete the task of writing an iterated integral in cylindrical coordinates, we need to determine the limits on the three integrals: <m>\theta</m>, <m>r</m>, and <m>z</m>. In the following activity, we explore how to do this in several situations where cylindrical coordinates are natural and advantageous.
     </p>
 
-    <activity xml:id="A_11_8_3">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_11_8_3">
       <statement> 
       <p>
         In this activity we work with triple integrals in cylindrical coordinates. 
@@ -341,6 +346,7 @@
         </p>
       </solution>
     </activity>
+</worksheet>
   </subsection>
 
 
@@ -356,7 +362,8 @@
       In the following activity, we explore several basic equations in spherical coordinates and the surfaces they generate.
     </p>
 
-    <activity xml:id="A_11_8_7">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_11_8_7">
       <statement> 
       <p>
         In this activity, we graph some surfaces using spherical coordinates. To improve your intuition and test your understanding, you should first think about what each graph should look like before you plot it using appropriate technology.
@@ -427,6 +434,7 @@
         </p>
       </solution>
     </activity>
+</worksheet>
 
     <p>
       As the name and <xref ref="A_11_8_7">Activity</xref> indicate, spherical coordinates are particularly useful for describing surfaces that are spherical in nature; they are also convenient for working with certain conical surfaces.
@@ -440,7 +448,8 @@
       As with rectangular and cylindrical coordinates, a triple integral <m>\iiint_S f(x,y,z) \, dV</m> in spherical coordinates can be evaluated as an iterated integral once we understand the volume element <m>dV</m>.
     </p>
 
-    <activity xml:id="A_11_8_8">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_11_8_8">
       <statement> 
       <p>
         To find the volume element <m>dV</m> in spherical coordinates, we need to understand how to determine the volume of a spherical box of the form <m>\rho_1 \leq \rho \leq \rho_2</m> (with <m>\Delta \rho = \rho_2-\rho_1)</m>, <m>\phi_1 \leq \phi \leq \phi_2</m> (with <m>\Delta \phi = \phi_2-\phi_1</m>), and <m>\theta_1 \leq \theta \leq \theta_2</m> (with <m>\Delta \theta = \theta_2-\theta_1</m>). An illustration of such a box is given at left in <xref ref="F_11_8_Spherical_Vol_Element">Figure</xref>. This spherical box is a bit more complicated than the cylindrical box we encountered earlier. In this situation, it is easier to approximate the volume <m>\Delta V</m> than to compute it directly. Here we can approximate the volume <m>\Delta V</m> of this spherical box with the volume of a Cartesian box whose sides have the lengths of the sides of this spherical box. In other words,
@@ -531,6 +540,7 @@
         </p>
       </solution>
     </activity>
+</worksheet>
 
     <p>
       Letting <m>\Delta \rho</m>, <m>\Delta \theta</m>, and <m>\Delta \phi</m> go to 0, it follows from the final result in <xref ref="A_11_8_8">Activity</xref> that <m>dV = \rho^2 \, \sin(\phi) \, d\rho \, d\theta \, d\phi </m> in spherical coordinates, and thus allows us to state the following general rule.
@@ -557,7 +567,8 @@
       Finally, in order to actually evaluate an iterated integral in spherical coordinates, we must of course determine the limits of integration in <m>\phi</m>, <m>\theta</m>, and <m>\rho</m>. The process is similar to our earlier work in the other two coordinate systems.
     </p>
 
-    <activity xml:id="A_11_8_10">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="A_11_8_10">
       <statement> 
       <p>
         We can use spherical coordinates to help us more easily understand some natural geometric objects.
@@ -619,6 +630,7 @@
         </p>
       </solution>
     </activity>
+</worksheet>
   </subsection>
 
  

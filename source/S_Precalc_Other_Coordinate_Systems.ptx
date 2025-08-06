@@ -53,7 +53,9 @@
   <p>
     In this preview activity, we will investigate some measurements that will be useful when defining new ways to specify locations. Many of these measurements involve measuring the length of specific line segments and angles between line segments in three dimensions. 
   </p>
-  <exploration>
+  <worksheet>
+  <exploration workspace="1.5in"
+>
     <introduction>
       <p>
         An angle in the <m>xy</m>-plane is in standard position if the initial side of the angle is on the positive <m>x</m>-axis and is measured with the positive direction going counterclockwise.
@@ -182,6 +184,7 @@
       </task>
     </task>
   </exploration>
+</worksheet>
   <p>
     In this section we will define and work with new ways to specify the location of a point. These new measurements will be useful as coordinate systems and as a way of thinking about how to describe different shapes relative to rotational or other symmetries.
   </p>
@@ -464,7 +467,8 @@
 <p>
   The following activity gives you an opportunity to practice converting between rectangular and polar coordinates.
 </p>
-<activity>
+<worksheet>
+  <activity workspace="1.5in">
   <task>
     <introduction>
       <p>
@@ -572,6 +576,7 @@
     </task>
   </task>
 </activity>
+</worksheet>
 <p>
   We now want to look at converting an equation between rectangular and polar coordinates. Remember that the graph of an equation is the set of all points that satisfy the equation. When we say that we want to convert an equation such as <m>x=y^2</m> to polar coordinates, we mean that we want to find an equation in <m>r</m> and <m>\theta</m> whose graph will be exactly the same set of points as <m>x=y^2</m>. This will be fairly easy because we have conversion equations that are solved explicitly and uniquely for <m>x</m> and <m>y </m>: <m>x=r\cos(\theta)</m> and <m>y=r\sin(\theta)</m>.
 </p>  
@@ -659,7 +664,8 @@
     </sageplot>
   </image>
 </figure>
-<activity>
+<worksheet>
+  <activity workspace="1.5in">
   <introduction>
     <p>
       This activity gives you an opportunity to graph some equations in polar coordinates where <m>r</m> is expressed as a function of <m>\theta</m>. 
@@ -726,10 +732,12 @@
       <p>What are the points of intersections for the graphs of <m>r=1+\cos(\theta)</m> and <m>r=1-\cos(\theta)</m></p>
     </task>
   </activity>
+</worksheet>
   <p>
     Now that you have some experience with plotting polar equations, the next activity will allow you to practice converting between polar and rectangular forms and seeing how graphs can help you with understanding these equations.
   </p>
-  <activity>
+  <worksheet>
+  <activity workspace="1.5in">
     <introduction>
       <p>
         Below are several equations, some in polar form and some in rectangular form. For each equation, complete the following steps:
@@ -794,6 +802,7 @@
         </hint>
       </task>
   </activity>
+</worksheet>
   <p>
     In <xref ref="coord2d-PA" />, you saw how a rectangular grid makes it easy to determine the rectangular coordinates of a point. A polar grid gives the same tools by plotting an array of constant coordinate graphs. An example of a polar grid is given in <xref ref="polargrid"/>, and thinking about this polar grid should help you answer the questions in <xref ref="act-polar-constant"/>
   </p>
@@ -807,7 +816,8 @@
       </description>
     </image>
   </figure>
-  <activity xml:id="act-polar-constant">
+  <worksheet>
+  <activity workspace="1.5in" xml:id="act-polar-constant">
     <task>
       <statement>
         <p>
@@ -823,6 +833,7 @@
       </statement>
     </task>
   </activity>
+</worksheet>
   <p>
     The last idea of conversion we will look at between rectangular and polar coordinates is how to convert regions or inequalities between coordinate systems. Just as a graph of a an equation is a plot of the set of points that satisfies the equation, the graph of an inequality (or set of inequalities) is the region of points that satisfy the inequality. 
   </p>
@@ -874,7 +885,8 @@
   <p>
     Our final two activities on polar coordinates ask you to plot regions that satisfy inequalities in rectangular and polar coordinates.
   </p>
-  <activity>
+  <worksheet>
+  <activity workspace="1.5in">
     <task>
       <statement>
         <p>
@@ -909,7 +921,9 @@
       </statement>
     </task>
   </activity>
-  <activity>
+</worksheet>
+  <worksheet>
+  <activity workspace="1.5in">
     <task>
       <statement>
         <p>
@@ -939,6 +953,7 @@
       </statement>
     </task>
   </activity>
+</worksheet>
 
   </subsection>
   <subsection xml:id="subsec-cylindrical">
@@ -1145,7 +1160,8 @@
     <p>
       The activities that close this subsection are meant to give you not only some algebraic experience with the cylindrical coordinate measurements but also some examples where you can make sense of your results from a geometric perspective. 
     </p>
-    <activity>
+    <worksheet>
+  <activity workspace="1.5in">
       <task>
         <statement>
           <p>
@@ -1182,8 +1198,10 @@
         </statement>
       </task>
     </activity>
+</worksheet>
 
-    <activity xml:id="CylCoorSurfaces">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="CylCoorSurfaces">
       <introduction>
         <p>
           In this activity, we graph some surfaces using cylindrical coordinates. To improve your intuition and test your understanding, you should first think about what each graph should look like before you plot it using appropriate technology.
@@ -1250,6 +1268,7 @@
         </solution>
       </task>
     </activity>
+</worksheet>
     </subsection>
     <subsection xml:id="subsec-SphCoord">
       <title>Spherical Coordinates</title>
@@ -1395,7 +1414,8 @@
     <p>
       Our first spherical coordinates activity focuses on understanding how spherical coordinates can be converted to rectangular coordinates and visualizing what the spherical coordinates measure.
     </p>
-    <activity xml:id="Act-sph-rect-points">
+    <worksheet>
+  <activity workspace="1.5in" xml:id="Act-sph-rect-points">
       <task xml:id="Act-sph-rect-points1">
         <introduction>
           <p>
@@ -1432,6 +1452,7 @@
         </statement>
       </task>
     </activity>
+</worksheet>
     <p>
       Now that we have worked through how to think about <em>points</em> in spherical coordinates, we will do as we did with the other coordinate systems in this section and think about equations and surfaces.
     </p>
@@ -1539,7 +1560,8 @@
     <p>
       The next two activities help you develop your understanding of the angle <m>\phi</m> in spherical coordinates and then ask you to think about some surfaces and how you can express them using spherical coordinates.
     </p>
-    <activity>
+    <worksheet>
+  <activity workspace="1.5in">
       <introduction>
         <p>
           For many students, the measurement of <m>\phi</m> is the most difficult and most unfamiliar measurement for spherical coordinates. In order to help understand the measurement of the <m>\phi</m>-coordinate, we will look at the collection of points described by a constant value of <m>\phi</m>. For each of the equations below, you should:
@@ -1593,7 +1615,9 @@
         </statement>
       </task>
     </activity>
-    <activity>
+</worksheet>
+    <worksheet>
+  <activity workspace="1.5in">
       <introduction>
         <p>
           For each of the surfaces described below, do the following:
@@ -1626,6 +1650,7 @@
         </statement>
       </task>
     </activity>
+</worksheet>
     <example>
       <p>
         In this example, we will develop a method for understanding the region given by the spherical coordinates <m> 0 \leq \theta \leq \pi </m>, <m>1 \leq \rho \leq 2 </m>, and <m>\frac{\pi}{4} \leq \phi \leq \pi</m>. We will look at these inequalities in sequence to figure out what the set of points that satisfies all three looks like. Our first inequality,  <m> 0 \leq \theta \leq \pi </m>, corresponds to all points in the first, second, fifth, and sixth octants. It may be tempting to draw this region with a spherical outer boundary. However, with no restrictions on the other coordinates, your plot should emphasize that the region continues throughout all of these octants (without an outer boundary).
@@ -1691,7 +1716,8 @@
     <p>
       The next activity gives you a chance to apply some of the skills introduced in the previous example.
     </p>
-    <activity>
+    <worksheet>
+  <activity workspace="1.5in">
       <task>
         <statement>
           <p>
@@ -1714,6 +1740,7 @@
         </statement>
       </task>
     </activity>
+</worksheet>
     <example>
       <p>
         For many people, the idea of latitude and longitude are the most familiar use of spherical coordinates. In particular, if you look at a globe as a map of the earth, then you will notice a grid of lines that run from the top to bottom or around the globe (horizontally). These lines measure latitude and longitude of different locations on the surface of the Earth. This latitude and longitude method of describing locations is actually spherical coordinates with a (slightly incorrect) assumption that the surface of the Earth corresponds to a constant value of <m>\rho</m>. 
