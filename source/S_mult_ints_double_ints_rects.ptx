@@ -15,27 +15,31 @@
 <!-- **********************************************************************-->
 <section xml:id="S-11-1-Double-Integrals-Rectangles" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Double Riemann Sums and Double Integrals over Rectangles</title>
-      <objectives>
-        <ul>
-          <!-- <li>
-            <p>
-              What is a double Riemann sum?
-            </p>
-          </li> -->
-
-          <li>
-            <p>
-              How is the double integral of a continuous function <m>f = f(x,y)</m> defined?
-            </p>
-          </li>
-
-          <li>
-            <p>
-              What are three things the double integral of a function can tell us?
-            </p>
-          </li>
-        </ul>
-    </objectives>
+  <objectives>
+    <ul>
+      <!-- <li>
+        <p>
+          What is a double Riemann sum?
+        </p>
+      </li> -->
+      <li>
+        <p>
+          How is the double integral of a continuous function <m>f = f(x,y)</m> defined?
+        </p>
+      </li>
+      <li>
+        <p>
+          What are three things the double integral of a function can tell us?
+        </p>
+      </li>
+    </ul>
+  </objectives>
+  <introduction component="instructor">
+    <title>Notes to the Instructor and Dependencies</title>
+    <p>
+      This section only requires the material from <xref ref="S-MV-Functions"/>. This section begins the development of double integrals with rectangular domains and does a mix of approximations and using geometric information to find exact answers. This section can likely be covered in one class and some instructors may want to emphasize more approximations of double integrals and discuss over- versus under-estimation.
+    </p>
+  </introduction>
   <subsection>
     <title>Introduction</title>
 

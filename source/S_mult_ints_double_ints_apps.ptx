@@ -15,34 +15,39 @@
 <!-- **********************************************************************-->
 <section xml:id="S-11-4-Double-Integrals-Applications" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Applications of Double Integrals</title>
-  
-    <objectives>
-        <ul>
-          <li>
-            <p>
-              If we have a mass density function for a lamina (thin plate), how does a double integral determine the mass of the lamina?
-            </p>
-          </li>
+  <objectives>
+      <ul>
+        <li>
+          <p>
+            If we have a mass density function for a lamina (thin plate), how does a double integral determine the mass of the lamina?
+          </p>
+        </li>
 
-          <li>
-            <p>
-              How can a double integral be used to find the area between two curves?
-            </p>
-          </li>
+        <li>
+          <p>
+            How can a double integral be used to find the area between two curves?
+          </p>
+        </li>
 
-          <li>
-            <p>
-              Given a mass density function on a lamina, how can we find the lamina's center of mass?
-            </p>
-          </li>
+        <li>
+          <p>
+            Given a mass density function on a lamina, how can we find the lamina's center of mass?
+          </p>
+        </li>
 
-          <li>
-            <p>
-              What is a joint probability density function? How do we determine the probability of an event if we know a probability density function?
-            </p>
-          </li>
-        </ul>
-    </objectives>
+        <li>
+          <p>
+            What is a joint probability density function? How do we determine the probability of an event if we know a probability density function?
+          </p>
+        </li>
+      </ul>
+  </objectives>
+  <introduction component="instructor">
+    <title>Notes to the Instructor and Dependencies</title>
+    <p>
+      This section will be given very different coverage by different instructors. We have tried to keep the essential elements of double integrals in the first three sections of this chapter and include many other topics related to double integrals in this section. The idea of double integrals being an accumulation of density functions is mentioned in the first three sections of this chapter but is explored fully in this section. 
+    </p>
+  </introduction>
   <subsection>
     <title>Introduction</title>
     <p>

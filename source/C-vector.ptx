@@ -14,6 +14,16 @@
 <!-- **********************************************************************-->
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"	 xml:id="C_Vector">
   <title>Vector Calculus</title>
+  <introduction>
+    <p>
+      Recognizing that not all institutions will cover all the material in the chapter on vector calculus, we have created the following chart for the dependencies of the topics in Chapter 12.
+    </p>
+    <image source="TopicFlowChart.png" width="90%">
+      <description>(for accessibility)</description>
+    </image>
+  </introduction>
+  
+  
   <xi:include  href="S_Vector_VectorFields.ptx" />
   <xi:include  href="S_Vector_IdeaLineIntegral.ptx" />
   <xi:include  href="S_Vector_ParamLineIntegrals.ptx" />

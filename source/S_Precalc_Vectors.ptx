@@ -43,6 +43,12 @@
           </li>
         </ul>
     </objectives>
+  <introduction component="instructor">
+    <title>Notes to the Instructor and Dependencies</title>
+    <p>
+      This section only expects students to have familiarity with measuring distance and coordinates in three dimensions. If your students are very familiar with vectors and their basic operations, then this section can be covered in one class day. Many instructors present the notation and definitions of vectors and associated operations without a lot of motivation. <xref ref="Act-Precalc-navigation"/> offers motivation for why you would want to add, subtract, and rescale vectors using a navigation/mapping motivation. 
+    </p>
+  </introduction>
   <subsection>
     <title>Introduction</title>
     <p>
@@ -381,6 +387,9 @@
     <p>
       Vectors are not numbers (scalars), but we can now represent them with components that are real numbers. As such, we naturally wonder if it is possible to add two vectors together, multiply two vectors, or combine vectors in any other ways. In this section, we will study two operations on vectors: vector addition and scalar multiplication. To begin, we investigate a natural way to think about combining vectors in the context of measuring the change of location.
     </p>
+    <historical component="instructor">
+      <xref ref="Act-Precalc-navigation"/> is a conceptual activity that motivates the addition, the subtraction, and the rescaling of vectors and we recommend that you do this with a graph or grid paper for students to label and plot the locations and associated vectors.
+    </historical>
   <activity xml:id="Act-Precalc-navigation">
     <introduction>
       <p>

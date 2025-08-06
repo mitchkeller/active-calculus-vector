@@ -15,21 +15,29 @@
 <!-- **********************************************************************-->
 <section xml:id="S-11-3-Double-Integrals-General" xmlns:xi="http://www.w3.org/2001/XInclude"> 
   <title>Double Integrals over General Regions</title>
-  
-    <objectives>
-        <ul>
-          <li>
-            <p>
-              How do we define a double integral over a non-rectangular region?
-            </p>
-          </li>
-          <li>
-            <p>
-              What general forms do iterated integrals over a non-rectangular region have?
-            </p>
-          </li>
-        </ul>
-    </objectives>
+  <objectives>
+      <ul>
+        <li>
+          <p>
+            How do we define a double integral over a non-rectangular region?
+          </p>
+        </li>
+        <li>
+          <p>
+            What general forms do iterated integrals over a non-rectangular region have?
+          </p>
+        </li>
+      </ul>
+  </objectives>
+  <introduction component="instructor">
+    <title>Notes to the Instructor and Dependencies</title>
+    <p>
+      This section builds off of the previous two sections and generalizes the horizontal or vertical slicing of the region of integration and demonstrates how this geometric description exactly matches with the algebraic description given by an iterated integral. There are several important conceptual checks that you should pay attention to: 1) identification of horizontally or vertically simple regions, 2) understanding when double integrals will be positive/negative/zero without any calculations (<xref ref="dbintpmz"/>), and identifying when the algebra of an iterated integral does not make sense as a double integral (<xref ref="simpregions"/>).
+    </p>
+    <p>
+      There is a lot for students to practice in this section, so we recommend spending a couple of class periods on this topic. These ideas will be used throughout every section for this chapter and through most of <xref ref="C_Vector"/>, so making sure students understand what is being measured in a double integral and how to set up appropriate iterated integrals is very important. 
+    </p>
+  </introduction>
   <subsection>
     <title>Introduction</title>
     <p>
@@ -342,7 +350,7 @@
       In the next activity, you will be asked to assess and justify your thoughts about whether the double integrals stated will be positive, negative, or zero. Your justifications should consider both the area of different parts of the region of integration, as well as the outputs on these areas. 
     </p>
 
-    <activity>
+    <activity xml:id="dbintpmz">
       <introduction>
         <p>
           Let <m>D</m> be the region inside the unit circle centered at the origin, let <m>R</m> be the right half of <m>D</m>, and let <m>B</m> be the bottom half of <m>D</m>. 
@@ -694,7 +702,7 @@
     <me>\iint_D f(x,y) \, dA = \iint_{H_1} f(x,y) \, dA+\iint_{H_2} f(x,y) \, dA+\iint_{H_3} f(x,y) \, dA</me>
     where each of the double integrals on the right can be written as an iterated integral using a horizontally simple description.
   </p>
-  <activity>
+  <activity xml:id="simpregions">
     <task>
       <statement>
         <p>

@@ -15,22 +15,27 @@
 <!-- **********************************************************************-->
 <section xml:id="S-10-5-Chain-Rule" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>The Multivariable Chain Rule</title>
-  
-    <objectives>
-        <ul>
-          <li>
-            <p>
-              How can we take derivatives involving compositions of multivariable functions?
-            </p>
-          </li>
+  <objectives>
+      <ul>
+        <li>
+          <p>
+            How can we take derivatives involving compositions of multivariable functions?
+          </p>
+        </li>
 
-          <li>
-            <p>
-              For locally linear functions, how can a partial derivative of a composition of multivariable functions separate into dependence on the input variables?
-            </p>
-          </li>
-        </ul>
-    </objectives>
+        <li>
+          <p>
+            For locally linear functions, how can a partial derivative of a composition of multivariable functions separate into dependence on the input variables?
+          </p>
+        </li>
+      </ul>
+  </objectives>
+  <introduction component="instructor">
+    <title>Notes to the Instructor and Dependencies</title>
+    <p>
+      This section use the ideas of partial derivatives and provides an algebraic description for the chain rule (which is used in <xref ref="S-10-6-Directional-Derivative"/>). Some instructors will do a cursory coverage this material, but we relate the concept and development of the chain rule to our tools of linearization from <xref ref="S-10-4-Linearization"/>. 
+    </p>
+  </introduction>
   <subsection>
     <title>Introduction</title>
     <p>
