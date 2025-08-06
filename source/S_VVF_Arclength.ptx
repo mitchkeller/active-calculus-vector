@@ -334,16 +334,15 @@
     <caption>A plot of <m>y = x^2/2</m> with <m>x\in[0,2]</m> with points equally spaced in the parameter value (on left) and in arc length (on right)</caption>
     <image width="100%" source="images/fig_9_8_param"/>
   </figure>
-  <p>
-    In many ways, a parameterization with unit speed is a natural parametrization. Consider an interstate highway cutting across a state. One way to parametrize the curve defined by the highway is to drive along the highway and record our position at every time <m>t</m>, thus creating a function <m>\vr(t)</m>. If we encounter an accident or road construction, however, this parametrization might not be at all relevant to another person driving the same highway. A parameterization using unit speed is like using the mile markers on the side of road to specify our position on the highway. If we know how far we've traveled along the highway, we know exactly where we are. Another way to think about this is that by driving at exactly one mile per hour, we can put mile markers down every hour.
-  </p>
-
   <aside>
     <title>Terminology</title>
     <p>
       Many other textbooks will refer to the unit speed parameterization of a curve as the arc length parameterization. Conceptually, we motivated this parameterization by wanting to move with a constant speed of 1, which is why we have opted to use the name <q>unit speed parameterization</q>. After seeing the motivation for wanting to move with unit speed, you can see the correspondence between the arc length and the parameter necessary to give this new description.
     </p>
   </aside>
+  <p>
+    In many ways, a parameterization with unit speed is a natural parametrization. Consider an interstate highway cutting across a state. One way to parametrize the curve defined by the highway is to drive along the highway and record our position at every time <m>t</m>, thus creating a function <m>\vr(t)</m>. If we encounter an accident or road construction, however, this parametrization might not be at all relevant to another person driving the same highway. A parameterization using unit speed is like using the mile markers on the side of road to specify our position on the highway. If we know how far we've traveled along the highway, we know exactly where we are. Another way to think about this is that by driving at exactly one mile per hour, we can put mile markers down every hour.
+  </p>
 
   <example xml:id="linearclength">
     <p>
@@ -380,7 +379,7 @@
   </example>
   <!-- TODO Come up with a valid way to be able to xref back to this in the curvature section. -->
   <p xml:id="coordchangetounitspeed">
-    The left part of equation <xref ref="unitspeedidea"/> shows the important idea needed to find a unit speed parameterization: we will need to pick a transformation <m>\alpha(t)</m> to satisfy 
+    The left part of equation <xref ref="unitspeedidea"/> shows the important idea needed to find a unit speed parameterization: we can adjust the speed of the parameterization. This requires that we pick a transformation <m>s(t)</m> to satisfy 
     <me>\vecmag{\frac{d\vr}{ds}} \left\vert\frac{ds}{dt}\right\vert =1</me>.
     Algebraically, this is <alert>very</alert> difficult to write out in closed form. However, it will be possible because the arc length traveled as a function of the parameter cannot decrease. If we make a two-dimensional plot with the parameter value on the horizontal axis and the arc length traveled on the vertical axis, then we have a graph that passes the horizontal line test. This means that this function has an inverse! An example of this kind of plot is shown in <xref ref="arclengthplot" />. The point highlighted on the graph indicates that at the parameter value <m>t=4</m>, the arc length from the point with <m>t=0</m> (or the distance traveled by an object following the curve from <m>t=0</m> to <m>t=4</m>) is approximately <m>48.134</m>. In other words, when finding a parameterization by arc length or unit speed parameterization, we will need to arrive at the same point on the curve when the parameter value is <m>48.134</m>.
   </p>
@@ -416,8 +415,7 @@
   <p>
     In the next example, we will work through how to transform a parameterization with variable speed into one that has unit speed.
   </p>
-  <!-- TODO Resume in this example. Need to  -->
-  <example>
+  <example xml:id="ex-VVF-find-arclength-fn">
     <p>
       In this example, we will consider the curve <m>C</m> parameterized by
         <me>
@@ -441,18 +439,48 @@
         <mrow>\amp = \left(t^2+4t\right)\restrict{0}^{a}</mrow>
         <mrow>\amp = a^2+4a</mrow>
       </md>
-      This computation shows us that the arc length traveled from <m>t=0</m> to <m>t=a</m> along the curve <m>C</m> is <m>a^2+4a</m>. Remember that we want to transform our parameterization to have unit speed, which will mean that the arc length up to a point and the parameter value corresponding to that point will be the same value. We want to state a function that has an input of arc length along the curve <m>C</m> and outputs the time at which the original parameter reaches that location. In other words, we want the inverse function of <m>s(a)=a^2+4a</m>, because the output of <m>s(a)</m> is arc length up to the point corresponding to the parameter value <m>a</m>. Since <m>a \geq 0</m>, we can solve the equation <m>s = a^2+4a</m> (or <m>a^2+4a-s=0</m>) for <m>a</m> to obtain <m>a = \frac{-4 +\sqrt{16+4s}}{2} = -2 + \sqrt{4+s}</m>. Note again that by restricting to positive parameter values, we only need to consider one solution. 
+      This computation shows us that the arc length traveled from <m>t=0</m> to <m>t=a</m> along the curve <m>C</m> is <m>a^2+4a</m>. Remember that we want to transform our parameterization to have unit speed, which will mean that the arc length up to a point and the parameter value corresponding to that point will be the same value. We want to state a function that has an input of arc length along the curve <m>C</m> and outputs the time at which the original parameter reaches that location. In other words, we want the inverse function of <m>s(a)=a^2+4a</m>, because the output of <m>s(a)</m> is arc length up to the point corresponding to the parameter value <m>a</m>. In <xref ref="fig-arclength-inverse"/>, we show the graph of the function <m>s(a)</m>.
+    </p>
+    <figure xml:id="fig-arclength-inverse">
+      <caption>The arc length function for the curve <m>\vr(t)</m></caption>
+      <image width="51%">
+        <shortdescription>A graph of the arc length function</shortdescription>
+        <description>
+          <p>The graph of an increasing curve in the first quadrant. The horizontal axis is labeled <m>t</m> and the vertical axis is labeled <m>s</m>. A point on the graph is identified and labeled <m>(a,s(a))</m>. Vertical and horizontal dashed lines from this point to the axes are included as well.
+          </p>
+        </description>
+        <prefigure xmlns="https://prefigure.org" label="img-arclength-inverse">
+          <diagram dimensions="(300,300)" margins="5">
+            <definition>f(x)=x^2+4*x</definition>
+            <definition>a = 1.35</definition>
+            <coordinates bbox="(-0.5,-2,3,20)">
+              <grid-axes xlabel="t" ylabel="s"/>
+              <line endpoints="((a,0),(a,f(a)))" stroke="gray" dash="9 9" />
+              <line endpoints="((0,f(a)),(a,f(a)))" stroke="gray" dash="9 9" />
+              <graph function="f" domain="(0,3)"/>
+              <point p="(a,f(a))" alignment="e">
+                <m>(a,s(a))</m>
+              </point>
+            </coordinates>
+          </diagram>
+        </prefigure>        
+      </image>
+
+    </figure>
+    <p>
+      Since <m>a \geq 0</m>, we can solve the equation <m>s = a^2+4a</m> (or <m>a^2+4a-s=0</m>) for <m>a</m> to obtain <m>a = \frac{-4 +\sqrt{16+4s}}{2} = -2 + \sqrt{4+s}</m>. Note again that by restricting to positive parameter values, we only need to consider one solution. Another way of thinking about this is that the point labeled <m>(a,a^2+4a)</m> in <xref ref="fig-arclength-inverse"/> could also be labeled <m>(-2+\sqrt{4+s},s)</m>.
     </p>
     <p>
-       Let's slow down and make sure we understand our two functions and their composition. The original parameterization <m>\vr(t)</m> has inputs of parameter values (<m>t</m>) and outputs corresponding to locations on our curve <m>C</m>. Our function <m>a(s)</m> has an input that is arc length (specifically, the arc length traveled from <m>t=0</m> to <m>t=a</m> along the curve <m>C</m>) and output corresponding to <m>t</m>, the parameter value of the original parameterization corresponding to when the arc length is <m>s</m>.  
+      Let's take a moment to further discuss the relationship between our two functions and their composition. The original parameterization <m>\vr(t)</m> has inputs of parameter values (<m>t</m>) and outputs corresponding to locations on our curve <m>C</m>. The function value <m>s(a)</m> gives the arc length along <m>C</m> from <m>t=0</m> to <m>t=a</m>, so the inputs to this function are parameter values and the outputs are arc lengths. The new function <m>a(s)</m> is the inverse of <m>s</m>, and thus its input is arc length. (Specifically, the input is the arc length traveled from <m>t=0</m> to <m>t=a</m> along the curve <m>C</m>.) The output from <m>a(s)</m> is a parameter value of the original parameterization corresponding to when the arc length is <m>s</m>.  
     </p>
     <p>
       We can now compose our result of <m>a=-2+\sqrt{4+s}</m> with the original parameterization to get our unit speed parameterization. Specifically, we claim that <m>\vr(a(s))</m> will be a unit speed parameterization. Remember that a unit speed parameterization of a curve is equivalent to the idea that <q>parameter value = time elapsed = arc length traveled</q>. 
     </p>
     <p>  
-      The parameterization <m>\vr(a(s))</m> is a unit speed parameterization because the parameter being used <em>is</em> the amount of arc length being traveled. The input of the composition <m>\vr(a(s))</m> will be the arc length traveled as its parameter and the <q>inner</q> function, <m>a(s)</m>, will output the parameter value <em>of the original parameterization</em> where that arc length is achieved. This means that <m>\vr(a(s))</m> outputs the location on <m>C</m> where an arc length of <m>s</m> is achieved. A visulaization of these relationships is shown in <xref ref="unitspeeddiagram"/>.
+      The parameterization <m>\vr(a(s))</m> is a unit speed parameterization because the parameter <m>s</m> <em>is</em> the amount of arc length traveled. In terms of the mile marker analogy, the value of <m>s</m> is the value you see on the mile marker. The input of the composition <m>\vr(a(s))</m> will be the arc length traveled. The <q>inner</q> function, <m>a(s)</m>,  outputs the parameter value <em>of the original parameterization</em> where that arc length is achieved. (Keep in mind <xref ref="fig-arclength-inverse"/>, which illustrates the inverse relationship between <m>a</m> and <m>s</m>.) This means that <m>\vr(a(s))</m> outputs the location on <m>C</m> where an arc length of <m>s</m> is achieved. 
+      <!-- A visualization of these relationships is shown in <xref ref="unitspeeddiagram"/>. -->
     </p>
-    <figure xml:id="unitspeeddiagram">
+    <!-- <figure xml:id="unitspeeddiagram">
       <caption>Composition of <m>\alpha(s)</m> and <m>\vr(t)</m> to get the unit speed parameterization</caption>
       <image width="50%" label="img_unitspeeddiagram">
         <shortdescription>A diagram showing the relationships involved in the composition</shortdescription>
@@ -467,26 +495,18 @@
           (4,0) node (t) {$(t)$}
           (4,-4) node[align=center] (C) {position};
           \begin{scope}[nodes={midway,scale=.75}]
-          \draw[->] (s)--(t) node[above]{$\alpha(s)$};
-          \draw[->] (t)--(C) node[left]{$\vec{r}(t)$};
-          \draw[->] (s)--(C) node[left]{$\vec{r}(\alpha(s))$};
+          \draw[->] (s)- -(t) node[above]{$\alpha(s)$}; % If this is restored, remove the space between the dashes on this line and the two below. They break XML comments.
+          \draw[->] (t)- -(C) node[left]{$\vec{r}(t)$};
+          \draw[->] (s)- -(C) node[left]{$\vec{r}(\alpha(s))$};
           \end{scope}
           \end{tikzpicture}   
         </latex-image>
       </image>
-    </figure>
+    </figure> -->
     <p>
       To illustrate the concepts of the previous paragraph concretely, we return to the algebra of our problem. For our example, the composition <m>\vr(a(s))</m> gives the following as the unit speed parameterization:
-      <me>\vr_{new}(s)=\left\langle \left(-2 + \sqrt{4+s}\right)^2, \frac{8}{3}\left(-2 + \sqrt{4+s}\right)^{3/2}, 4\left(-2 + \sqrt{4+s}\right) \right\rangle</me>
-      If we are diligent and persistent with our calculations, we can show that <m>\vecmag{\vr_{new}'}=1</m>:
-      <md>
-        <mrow> \vr_{new}' =\amp \left\langle 2(-2+\sqrt{4+s})\frac{1/2}{\sqrt{4+s}} \right., </mrow>
-        <mrow>  \amp \quad \quad   \left.  \frac{8}{3}\left(\frac{3}{2}\left(-2+\sqrt{4+s}\right)^{1/2}\left(\frac{1/2}{\sqrt{4+s}}\right)\right) ,  4 \frac{1/2}{\sqrt{4+s}} \right\rangle </mrow>
-        <mrow> =\amp \frac{1}{\sqrt{4+s}} \left\langle -2+\sqrt{4+s},2\sqrt{-2+\sqrt{4+s}},2 \right\rangle </mrow>
-        <mrow> \vecmag{\vr_{new}'} =\amp \frac{1}{\sqrt{4+s}} \sqrt{\left( \left(-2+\sqrt{4+s}\right)^2+\left(2\sqrt{-2+\sqrt{4+s}}\right)^2+(2)^2 \right)} </mrow>
-        <mrow> =\amp \frac{1}{\sqrt{4+s}} \sqrt{\left( (-2+\sqrt{4+s})+2\right)^2}  </mrow>
-        <mrow> =\amp \sqrt{\frac{4+s}{4+s}} = 1</mrow>
-      </md>
+      <me>\vr_{1}(s)=\left\langle \left(-2 + \sqrt{4+s}\right)^2, \frac{8}{3}\left(-2 + \sqrt{4+s}\right)^{3/2}, 4\left(-2 + \sqrt{4+s}\right) \right\rangle</me>.
+      <xref ref="ex-VVF-verify-unit" text="type-local"/> asks you to compute the speed of <m>\vr_1(s)</m> to verify that the speed is in fact <m>1</m> for all values of <m>s</m>.
     </p>
     <p>
       The crucial step, both algebraically and conceptually, in our work was the inverse function of <m>s(a)</m>, which was relatively simple for this example. In general, this can be difficult to write out explicitly.
@@ -517,7 +537,7 @@
     <title>Is it a property of the driver or the road?</title>
     <introduction>
       <p>
-        In this activity, we want to determine if the different measurements we have described are a property of the driver or the road. A measurement is a <term>property of the driver</term> if the values of that measurement <em>can</em> be different for different drivers when measured at the same location on the racetrack. A measurement is a <term>property of the road</term> when different drivers <em>must</em> have the same values when measured at the same location on the racetrack.
+        In this activity, we want to determine if the different measurements we have described are a property of the driver or the road. A measurement is a <term>property of the driver</term> provided that the values of that measurement <em>can be different</em> for different drivers when measured at the same location on the racetrack. A measurement is a <term>property of the road</term> provided that different drivers <em>must have the same values</em> when measured at the same location on the racetrack.
       </p>
     </introduction>
     <task>
