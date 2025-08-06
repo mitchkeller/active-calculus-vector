@@ -72,7 +72,7 @@
     <m>\vr_s\times \vr_t</m> (plotted in green) will be orthogonal to both <m>\vr_s</m> and <m>\vr_t</m> and its magnitude will be given by the area of the parallelogram.
   </p>
   <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_Vector_FluxInt">
     <introduction>
       <p>
@@ -394,7 +394,7 @@ parse="text"
     If we have a parameterization of the surface, then the vector <m>\vr_s \times \vr_t</m> varies smoothly across our surface and gives a consistent way to describe which direction we choose as <q>through</q> the surface. If we define a positive flow through our surface as being consistent with the yellow vector in <xref ref="fig_Vector_FluxInt_FieldSurface3"/>, then there is more positive flow (in terms of both magnitude and area) than negative flow through the surface. Thus, the <em>net</em> flow of the vector field through this surface is positive.
   </p>
   <worksheet>
-  <activity>
+  <activity workspace="1.5in">
     <title>Visualizing flux through a surface</title>
     <statement>
       <p>
@@ -635,7 +635,7 @@ parse="text"
     The next activity asks you to carefully go through the process of calculating the flux of some vector fields through a cylindrical surface.
   </p>
   <worksheet>
-  <activity>
+  <activity workspace="1.5in">
     <title>Checking the Visualization for Flux</title>
     <task>
       <introduction>

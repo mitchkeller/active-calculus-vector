@@ -54,7 +54,7 @@
       In <xref ref="S-Precalc-OtherCoordSystems" />, we introduced both cylindrical and spherical coordinate systems and explore converting points, equations, and regions between these and rectangular coordinate systems in three dimensions. Cylindrical coordinates are most commonly used in situations with rotational symmetry around the <m>z</m>-axis, whereas spherical coordinates are primarily used when there is rotational symmetry around the origin. We encourage you to review these elements, including the <xref ref="Cartesian-cylindrical" text="custom">conversion equations between cylindrical and rectangular coordinates</xref> and <xref ref="Spherical-rect" text="custom">conversion equations between spherical and rectangular coordinates</xref>. The following preview activity will include some descriptions of common surfaces given in either cylindrical or spherical coordinates.
     </p>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
 >
       <introduction>
         <p>
@@ -180,7 +180,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_8_3">
+  <activity workspace="1.5in" xml:id="A_11_8_3">
       <introduction>
         <p>
           In this activity, we will work with a few triple integrals and look at the advantages of utilizing cylindrical coordinates for the iterated integral calculation.
@@ -393,7 +393,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_8_10">
+  <activity workspace="1.5in" xml:id="A_11_8_10">
       <introduction>
         <p>
           In this activity, we will use spherical coordinates to help us more easily understand some natural geometric objects.

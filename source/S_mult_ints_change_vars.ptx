@@ -58,7 +58,7 @@
     </p>
 
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_11_9">
       <task>
         <statement>
@@ -377,7 +377,7 @@
     </p>
 
     <!-- <worksheet>
-  <activity xml:id="A_11_9_1">
+  <activity workspace="1.5in" xml:id="A_11_9_1">
       <statement> 
       <p>
         Consider the change of variables
@@ -458,7 +458,7 @@
     </activity>
 </worksheet> -->
     <worksheet>
-  <activity xml:id="A_11_9_1">
+  <activity workspace="1.5in" xml:id="A_11_9_1">
       <introduction>
         <p>
           In this activity, we will be looking at what happens to the region <m>D</m>, as shown in <xref ref="irreg-region"/>, under the change of coordinates given by 
@@ -786,7 +786,7 @@
     </assemblage>
 
     <worksheet>
-  <activity xml:id="A_11_9_2">
+  <activity workspace="1.5in" xml:id="A_11_9_2">
       <introduction>
         <p>
           In this activity, we will look at a few familiar Jacobians and their interpretations. 
@@ -834,7 +834,7 @@
       Given a particular double integral, it is natural to ask, <q>how can we find a useful change of variables?</q> There are two general factors to consider: if the integrand is particularly difficult, we might choose a change of variables that would make the integrand easier; or, given a complicated region of integration, we might choose a change of variables that transforms the region of integration into one that has a simpler form. These ideas are illustrated in the next activities.
     </p>
     <worksheet>
-  <activity xml:id="A_11_9_3">
+  <activity workspace="1.5in" xml:id="A_11_9_3">
       <introduction>
         <p>
           Consider the problem of finding the area of the region <m>D'</m> defined by the ellipse <m>x^2 + \frac{y^2}{4} = 1</m>. In this activity, we will look at what happens when we use a change of variables so that the pre-image of the domain is a circle.
@@ -894,7 +894,7 @@
 </worksheet>
 
     <worksheet>
-  <activity xml:id="A_11_9_4">
+  <activity workspace="1.5in" xml:id="A_11_9_4">
       <introduction>
         <p>
           Let <m>D'</m> be the region in the <m>xy</m>-plane bounded by the lines <m>y=0</m>, <m>x=0</m>, and <m>x+y=1</m>. We will evaluate the double integral
@@ -1041,7 +1041,7 @@
       </p>
     </assemblage>
     <worksheet>
-  <activity xml:id="A_11_9_5">
+  <activity workspace="1.5in" xml:id="A_11_9_5">
       <introduction>
         <p>
           Consider the solid <m>S'</m> defined by the inequalities <m>0 \leq x \leq 2</m>, <m>\frac{x}{2} \leq y \leq \frac{x}{2}+1</m>, and <m>0 \leq z \leq 6</m>. Consider the transformation defined by <m>s = \frac{x}{2}</m>, <m>t = \frac{x-2y}{2}</m>,  and <m>u = \frac{z}{3}</m>. Let <m>f(x,y,x) = x-2y+z</m>. 

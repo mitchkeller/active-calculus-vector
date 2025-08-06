@@ -86,7 +86,7 @@
       In this section, we focus on measuring how quickly <em>a curve</em> is turning. Keeping our running example in mind, we can think of this as measuring a property of <em>the road</em>. How quickly a curve is turning is a different measurement from how fast <em>an object</em> is turning as it moves along a path. That is a property of <em>the driver</em> to which we will return in <xref ref="S-VVF-Spliting-Acceleration" />.
     </p>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
 >
       <introduction>
         <p>
@@ -300,7 +300,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="act-VVF-curvature-line-circle">
+  <activity workspace="1.5in" xml:id="act-VVF-curvature-line-circle">
       <introduction>
         <p>
           In this activity we will use our previous work in finding unit speed parameterizations of lines and circles to make sense of the definition of curvature.
@@ -502,7 +502,7 @@
       </figure>
     
     <worksheet>
-  <activity xml:id="act-VVF-curvature-ellipse-helix">
+  <activity workspace="1.5in" xml:id="act-VVF-curvature-ellipse-helix">
       <introduction>
         <p>
           In this activity, we calculate the curvature of an ellipse and of a helix and use graphs to help with our understanding
@@ -641,7 +641,7 @@
     </p>
 
     <worksheet>
-  <activity>
+  <activity workspace="1.5in">
       <introduction>
         <p>
           In this activity we will look at the measurement of curvature and determine if curvature is a property of the driver or a property of the road. This is a continuation of <xref ref="driver_road_act" />. As a reminder, a measurement is a property of the driver if the value(s) of that measurement <em>can</em> be different for different drivers (when measured at the same location on the racetrack). A measurement is a property of the road when different drivers <em>must</em> have the same value(s) (when measured at the same location on the racetrack).

@@ -51,7 +51,7 @@
     </ul>
   </p>
   <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_ScalarLI" >
     <introduction>
       <p>
@@ -290,7 +290,7 @@
   Before delving into the exact computation of line integrals of scalar-valued functions, here is an activity that allows you to practice arguments similar to <xref ref="sli_pm" />.
 </p>
   <worksheet>
-  <activity xml:id="Act_ScalarLI1">
+  <activity workspace="1.5in" xml:id="Act_ScalarLI1">
     <introduction>
       <p>
         In this activity, we will be making sense of scalar line integrals by examining a few common functions and justifying whether the scalar line integrals given are positive, negative, or zero. Let the functions <m>f_1</m>, <m>f_2</m>, <m>f_3</m>, and <m>f_4</m> be defined as
@@ -818,7 +818,7 @@
   </example>
 
   <worksheet>
-  <activity xml:id="act_Vector_ScalarLineIntegral_caution">
+  <activity workspace="1.5in" xml:id="act_Vector_ScalarLineIntegral_caution">
     <introduction>
       <p>
         In this activity, we will examine why we must be careful when using symmetry to make arguments about scalar line integral. Let <m>C_1</m> and <m>C_2</m> be the paths shown in <xref ref="fig_sli_caution" />. We will consider the function <m>f(x,y)=x</m> for this activity.
@@ -942,7 +942,7 @@
 </p>
 
 <worksheet>
-  <activity xml:id="Explain_LineInt_Properties">
+  <activity workspace="1.5in" xml:id="Explain_LineInt_Properties">
   <title>Explaining Properties of Scalar Line Integrals</title>
   <introduction>
     <p>

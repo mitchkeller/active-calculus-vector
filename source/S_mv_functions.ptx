@@ -68,7 +68,7 @@
     </p> -->
     <!-- This preview activity is about getting students used to evaluating the function of several variables. I think this needs to be less generic and an introduction to one of the functions we will use as examples and applications throughout this chapter. Don't know that I care which one. -->
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA-9-1">
       <introduction>
         <p>
@@ -370,7 +370,7 @@
       </task>
     </example>
     <worksheet>
-  <activity xml:id="A-9-1-1">
+  <activity workspace="1.5in" xml:id="A-9-1-1">
     <introduction>
       <p>
         Identify the domain and range of each of the following functions. Draw a picture of each domain in the <m>xy</m>-plane.
@@ -526,7 +526,7 @@
     </tabular>
   </table>
   <worksheet>
-  <activity xml:id="A-9-1-2">
+  <activity workspace="1.5in" xml:id="A-9-1-2">
     <statement>
       <p>
         Complete <xref ref="T-9-1-range">Table</xref> by filling in the missing values of the function <m>f</m>. Round entries to the nearest tenth. 
@@ -725,7 +725,7 @@
       Understanding trends in the behavior of functions of two variables can be challenging, as can sketching their graphs; traces help us with both of these tasks.
     </p>
     <worksheet>
-  <activity>
+  <activity workspace="1.5in">
       <introduction>
         <p>
           In the following activity, we investigate the use of traces to better understand a function through both tables and graphs.
@@ -826,7 +826,7 @@
       When drawing plots by hand, it is very important to use parallel structure to make it easier for the viewer to orient the traces as being in a direction parallel to one of the coordinate axes. It may take time for you to feel comfortable drawing these kinds of features by hand but good visual representations of surfaces and their features will be very valuable in our work for the next several chapters. 
     </p>
     <!-- <worksheet>
-  <activity xml:id="A-9-1-6">
+  <activity workspace="1.5in" xml:id="A-9-1-6">
       <statement>
         <p>
           In the following questions, we investigate the use of traces to better understand a function through both tables and graphs.
@@ -961,7 +961,7 @@
     </figure>
 
     <worksheet>
-  <activity xml:id="A-9-1-8">
+  <activity workspace="1.5in" xml:id="A-9-1-8">
       <introduction>
         <p>
           Use the topographical map of the Porcupine Mountains in <xref ref="F-9-1-porcupine">Figure</xref> to answer the following questions. Note that points of interest are sometimes marked with an X and have their altitude listed.
@@ -1155,7 +1155,7 @@
       <image width="60%" xml:id="img-isotherms" source="isotherms.png"/>
     </figure>
     <worksheet>
-  <activity xml:id="A-9-1-9">
+  <activity workspace="1.5in" xml:id="A-9-1-9">
       <introduction>
         <p>
           In this activity, we will be making contour plots by hand and looking at how the spacing of contours in your plot should give an idea about how different surface shapes can be distinguished. 

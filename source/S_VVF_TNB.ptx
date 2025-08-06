@@ -60,7 +60,7 @@
       For example, consider the curve in space that we are exploring to be a race track as shown in <xref ref="rc-plot1" />. Not every driver will travel along this racetrack in the same way, but every driver has to go through these same points in space, since we assume that everyone will stay on the track and not take shortcuts. In the vocabulary of this chapter, any parameterization of this curve has to contain the same points, but can possibly go through these <m>(x,y,z)</m>-coordinates at different parameter values. More generally, some properties we measure will depend on the particular way that a driver goes along the course and some properties will be the same for all drivers when measured at the same location on the track.
     </p>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA-vvf-tnb">
       <introduction>
         <p>
@@ -189,7 +189,7 @@
       The next activity gives you an opportunity to practice with the velocity and unit tangent vectors and speed.
     </p>
     <worksheet>
-  <activity>
+  <activity workspace="1.5in">
       <task>
         <statement>
           <p>
@@ -267,7 +267,7 @@
       </ol>
     </p>
     <worksheet>
-  <activity>
+  <activity workspace="1.5in">
       <task>
         <statement>
           <p>
@@ -358,7 +358,7 @@
     <xref ref="helix-N"/> is the exceptional case where <m>\vN</m> is easily calculated directly from the definition and the calculations are fairly clean. In the next activity, we will look at a curve with a  polynomial parameterization that will demonstrate how easily the calculation of <m>\vN</m> can go off the rails.
   </p>
 <worksheet>
-  <activity xml:id="difficult-calcN">
+  <activity workspace="1.5in" xml:id="difficult-calcN">
   <introduction>
     <p>
       In general, calculating <m>\vN</m> as a function of the parameter <m>t</m> ends up being very difficult because there are multiple compositions of functions involved which means there is a nesting of chain rules involved in the definition. In this activity, we will examine how to go through the direct calculation of <m>\vN</m> for a curve parameterized by <m>\vr(t) =\langle t,t^2,t^3\rangle </m>.
@@ -557,7 +557,7 @@
   </p>
   
   <worksheet>
-  <activity xml:id="act-S-VVF-TNB-driver-road">
+  <activity workspace="1.5in" xml:id="act-S-VVF-TNB-driver-road">
     <task xml:id="task-S-VVF-TNB-direction-travel">
       <title>Direction of Travel</title>
       <statement>

@@ -85,7 +85,7 @@
       If we look at a function of two variables where <m>z = f(x,y)</m>, it might be that both <m>x</m> and <m>y</m> depend on another variable <m>t</m>. A change in <m>t</m> then produces changes in <em>both</em> <m>x</m> and <m>y</m>, which then causes <m>z</m> to change. In this section, we will see how to describe the change in <m>z</m> that is caused by a change in <m>t</m>, leading us to multivariable versions of the Chain Rule involving both regular and partial derivatives.
     </p>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA-chain">
       <introduction>
         <p>
@@ -156,7 +156,7 @@
     </exploration>
 </worksheet>
     <!-- <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_10_5">
       <statement>
         <p>
@@ -377,7 +377,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="PA_10_11">
+  <activity workspace="1.5in" xml:id="PA_10_11">
     <introduction>
       <p>
          In the following questions, we apply the Chain Rule in several different contexts.
@@ -704,7 +704,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="PA_10_13">
+  <activity workspace="1.5in" xml:id="PA_10_13">
       <statement>
         <ol marker="a.">
           <li>

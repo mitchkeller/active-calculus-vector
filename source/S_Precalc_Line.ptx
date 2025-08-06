@@ -72,7 +72,7 @@
       In your study of one-variable functions, you probably worked with slope, direction, and measuring change using lines several times before you generalized those ideas for a curve in general. Similarly, we will want to understand how we talk about direction and measuring change along flat objects in <m>\R^3</m> (lines and planes) before we start generalizing to curved objects. In this section, we discuss how we can use vectors to describe lines in space. The next section will be dedicated to understanding planes.
     </p>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_9_5">
       <introduction>
        <p>
@@ -417,7 +417,7 @@
     </figure> -->
 
     <worksheet>
-  <activity xml:id="ActLines3D1">
+  <activity workspace="1.5in" xml:id="ActLines3D1">
       <introduction>
         <p>
           Let <m>P_1 = (1,2,-1)</m> and <m>P_2 = (-2,1,-2)</m> and let <m>\mathcal{L}</m> be the line in <m>\R^3</m> through <m>P_1</m> and <m>P_2</m>. Note that <xref ref="Lineplot3d">Figure</xref> shows a similar example of a line in 3D defined by two points.
@@ -539,7 +539,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_9_5_3">
+  <activity workspace="1.5in" xml:id="A_9_5_3">
       <introduction>
        <p>
           Let <m>P_1 = (1,2,-1)</m> and <m>P_2 = (-2,1,-2)</m>, and let <m>\mathcal{L}</m> be the line in <m>\R^3</m> through <m>P_1</m> and <m>P_2</m>. (This is the same line as in <xref ref="ActLines3D1">Activity</xref>.)

@@ -56,7 +56,7 @@
     </p>
 
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_11_3">
       <introduction>
         <p>
@@ -354,7 +354,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="dbintpmz">
+  <activity workspace="1.5in" xml:id="dbintpmz">
       <introduction>
         <p>
           Let <m>D</m> be the region inside the unit circle centered at the origin, let <m>R</m> be the right half of <m>D</m>, and let <m>B</m> be the bottom half of <m>D</m>. 
@@ -650,7 +650,7 @@
     </task>
   </example>
   <worksheet>
-  <activity xml:id="trianglesimple">
+  <activity workspace="1.5in" xml:id="trianglesimple">
     <introduction>
       <p>
         In this activity, we will be breaking the region <m>D</m> from the previous example into parts which are horizontally or vertically simple.
@@ -710,7 +710,7 @@
     where each of the double integrals on the right can be written as an iterated integral using a horizontally simple description.
   </p>
   <worksheet>
-  <activity xml:id="simpregions">
+  <activity workspace="1.5in" xml:id="simpregions">
     <task>
       <statement>
         <p>
@@ -911,7 +911,7 @@
       In the next activity, we will practice the process of understanding a region of integration, using horizontally simple and vertically simple descriptions of the region, setting up and evaluating the corresponding iterated integrals. 
     </p>
     <worksheet>
-  <activity xml:id="A_11_3_1">
+  <activity workspace="1.5in" xml:id="A_11_3_1">
       <introduction>
         <p>
           Consider the double integral <m>\displaystyle{\iint_D (4-x-2y) \, dA}</m>, where <m>D</m> is the triangular region with vertices (0,0), (4,0), and (0,2). 
@@ -1056,7 +1056,7 @@
       In the next activity, we will explore to understand a region of integration, with some non-linear sides, given as bounds in an iterated integral, then we will switch the order of integration, evaluate which ever order is most convinient and finally interpret the result using the average value approach.
     </p>
     <worksheet>
-  <activity xml:id="A_11_3_2">
+  <activity workspace="1.5in" xml:id="A_11_3_2">
       <introduction>
         <p>
           Consider the iterated integral <m>\int_{x=0}^{x=1} \int_{y=x}^{y=\sqrt{x}} (4x+10y) \, dy \, dx</m>.
@@ -1192,7 +1192,7 @@
       In the following activity, we will explore how switching the order of integration can sometimes yield a much easier set of iterated integral to evaluate algebraically.
     </p>
     <worksheet>
-  <activity xml:id="A_11_3_3">
+  <activity workspace="1.5in" xml:id="A_11_3_3">
       <introduction>
         <p>
           Consider the iterated integral <m>\int_{x=0}^{x=4} \int_{y=x/2}^{y=2} e^{y^2} \, dy \, dx</m>.

@@ -50,7 +50,7 @@
     </image>
   </figure>
   <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_Vector_Div">
     <introduction>
       <p>
@@ -290,7 +290,7 @@
       not change in magnitude as you move along the flow of the vector field, then the divergence is zero. Also, remember that the divergence of a vector field is often a variable quantity and will change depending on location. The next activity asks you to graphically examine the divergence of three vector fields.
   </p>
   <worksheet>
-  <activity xml:id="act_Vector_Div_Graphical">
+  <activity workspace="1.5in" xml:id="act_Vector_Div_Graphical">
     <title>Graphical Representations of Divergence</title>
     <task xml:id="task_act_Vector_Div_Graphical_-x-y">
       <introduction>
@@ -467,7 +467,7 @@
   The next activity of this section asks you to do some algebraic calculations of divergence using <xref ref="defn_Div"/>.
 </p>
 <worksheet>
-  <activity xml:id="act_Vector_Div_Algebraic">
+  <activity workspace="1.5in" xml:id="act_Vector_Div_Algebraic">
   <task xml:id="task_act_Vector_Div_Algebraic_Calculate">
     <statement>
       <p>Calculate the divergence of the vector fields given below.

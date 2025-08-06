@@ -36,7 +36,7 @@
       To understand acceleration better as a vector quantity, we will examine acceleration as a change in the magnitude and direction of the velocity vector. In this section, we will use our knowledge of calculus and vector measurements to split the acceleration vector into parts related to the changes in the magnitude and direction of the velocity vector. We will also consider how these measurements relate to physical contexts. 
     </p>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_split_a">
     <introduction>
       <p>
@@ -215,7 +215,7 @@
     </interactive>
   </figure>
   <worksheet>
-  <activity>
+  <activity workspace="1.5in">
     <introduction>
       <p>
         In this activity, we will work to understand the sign of <m>a_{\vT}</m> and <m>a_{\vN}</m>.
@@ -420,7 +420,7 @@
     </p>
   </assemblage>
   <worksheet>
-  <activity>
+  <activity workspace="1.5in">
     <statement>
       <p>
         Compute the splitting of the acceleration for the curve given by <m>\vr(t)= \langle t, \frac{t^2}{2},\frac{t^3}{6} \rangle</m> at <m>t=1</m>. You should calculate <m>a_{\vT}</m>, <m>a_{\vN}</m>, <m>\vT</m>, and <m>\vN</m>. Additionally, you should verify <m>\va = a_{\vT} \vT +a_{\vN} \vN </m> and that <m>\vT</m> is orthogonal to <m>\vN</m>.
@@ -453,7 +453,7 @@
     Equation <xref ref="kaN" /> helps demonstrate the difference between <m>a_{\vN}</m> and <m>\kappa</m>. Specifically, <m>\kappa</m> measures how fast the path is curving and <m>a_{\vN}</m>, the normal component of acceleration, measures the acceleration felt due to turning. Equation <xref ref="kaN" /> shows that if two drivers are driving along the same road but the first driver is going twice as fast as the second driver is going, then the first driver feels <em>four times</em> as much acceleration due to turning  as the second driver does, even though both drivers are following the exact same road. Curvature is how fast the <em>road</em> is turning and <m>a_{\vN}</m> is how fast it feels like the driver is turning based on speed, which is determined by the parameterization.
   </p>
   <worksheet>
-  <activity>
+  <activity workspace="1.5in">
     <title>The Driver or the Road?</title>
     <introduction>
       <p>

@@ -51,7 +51,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_8_1">
+  <activity workspace="1.5in" xml:id="A_11_8_1">
       <statement> 
       <p>
         In this activity, we graph some surfaces using cylindrical coordinates. To improve your intuition and test your understanding, you should first think about what each graph should look like before you plot it using appropriate technology.
@@ -152,7 +152,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_8_2">
+  <activity workspace="1.5in" xml:id="A_11_8_2">
       <statement> 
       <p>
         A picture of a cylindrical box,
@@ -229,7 +229,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_8_3">
+  <activity workspace="1.5in" xml:id="A_11_8_3">
       <statement> 
       <p>
         In this activity we work with triple integrals in cylindrical coordinates. 
@@ -363,7 +363,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_8_7">
+  <activity workspace="1.5in" xml:id="A_11_8_7">
       <statement> 
       <p>
         In this activity, we graph some surfaces using spherical coordinates. To improve your intuition and test your understanding, you should first think about what each graph should look like before you plot it using appropriate technology.
@@ -449,7 +449,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_8_8">
+  <activity workspace="1.5in" xml:id="A_11_8_8">
       <statement> 
       <p>
         To find the volume element <m>dV</m> in spherical coordinates, we need to understand how to determine the volume of a spherical box of the form <m>\rho_1 \leq \rho \leq \rho_2</m> (with <m>\Delta \rho = \rho_2-\rho_1)</m>, <m>\phi_1 \leq \phi \leq \phi_2</m> (with <m>\Delta \phi = \phi_2-\phi_1</m>), and <m>\theta_1 \leq \theta \leq \theta_2</m> (with <m>\Delta \theta = \theta_2-\theta_1</m>). An illustration of such a box is given at left in <xref ref="F_11_8_Spherical_Vol_Element">Figure</xref>. This spherical box is a bit more complicated than the cylindrical box we encountered earlier. In this situation, it is easier to approximate the volume <m>\Delta V</m> than to compute it directly. Here we can approximate the volume <m>\Delta V</m> of this spherical box with the volume of a Cartesian box whose sides have the lengths of the sides of this spherical box. In other words,
@@ -568,7 +568,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_8_10">
+  <activity workspace="1.5in" xml:id="A_11_8_10">
       <statement> 
       <p>
         We can use spherical coordinates to help us more easily understand some natural geometric objects.

@@ -54,7 +54,7 @@
     In this preview activity, we will investigate some measurements that will be useful when defining new ways to specify locations. Many of these measurements involve measuring the length of specific line segments and angles between line segments in three dimensions. 
   </p>
   <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
 >
     <introduction>
       <p>
@@ -468,7 +468,7 @@
   The following activity gives you an opportunity to practice converting between rectangular and polar coordinates.
 </p>
 <worksheet>
-  <activity>
+  <activity workspace="1.5in">
   <task>
     <introduction>
       <p>
@@ -665,7 +665,7 @@
   </image>
 </figure>
 <worksheet>
-  <activity>
+  <activity workspace="1.5in">
   <introduction>
     <p>
       This activity gives you an opportunity to graph some equations in polar coordinates where <m>r</m> is expressed as a function of <m>\theta</m>. 
@@ -737,7 +737,7 @@
     Now that you have some experience with plotting polar equations, the next activity will allow you to practice converting between polar and rectangular forms and seeing how graphs can help you with understanding these equations.
   </p>
   <worksheet>
-  <activity>
+  <activity workspace="1.5in">
     <introduction>
       <p>
         Below are several equations, some in polar form and some in rectangular form. For each equation, complete the following steps:
@@ -817,7 +817,7 @@
     </image>
   </figure>
   <worksheet>
-  <activity xml:id="act-polar-constant">
+  <activity workspace="1.5in" xml:id="act-polar-constant">
     <task>
       <statement>
         <p>
@@ -886,7 +886,7 @@
     Our final two activities on polar coordinates ask you to plot regions that satisfy inequalities in rectangular and polar coordinates.
   </p>
   <worksheet>
-  <activity>
+  <activity workspace="1.5in">
     <task>
       <statement>
         <p>
@@ -923,7 +923,7 @@
   </activity>
 </worksheet>
   <worksheet>
-  <activity>
+  <activity workspace="1.5in">
     <task>
       <statement>
         <p>
@@ -1161,7 +1161,7 @@
       The activities that close this subsection are meant to give you not only some algebraic experience with the cylindrical coordinate measurements but also some examples where you can make sense of your results from a geometric perspective. 
     </p>
     <worksheet>
-  <activity>
+  <activity workspace="1.5in">
       <task>
         <statement>
           <p>
@@ -1201,7 +1201,7 @@
 </worksheet>
 
     <worksheet>
-  <activity xml:id="CylCoorSurfaces">
+  <activity workspace="1.5in" xml:id="CylCoorSurfaces">
       <introduction>
         <p>
           In this activity, we graph some surfaces using cylindrical coordinates. To improve your intuition and test your understanding, you should first think about what each graph should look like before you plot it using appropriate technology.
@@ -1415,7 +1415,7 @@
       Our first spherical coordinates activity focuses on understanding how spherical coordinates can be converted to rectangular coordinates and visualizing what the spherical coordinates measure.
     </p>
     <worksheet>
-  <activity xml:id="Act-sph-rect-points">
+  <activity workspace="1.5in" xml:id="Act-sph-rect-points">
       <task xml:id="Act-sph-rect-points1">
         <introduction>
           <p>
@@ -1561,7 +1561,7 @@
       The next two activities help you develop your understanding of the angle <m>\phi</m> in spherical coordinates and then ask you to think about some surfaces and how you can express them using spherical coordinates.
     </p>
     <worksheet>
-  <activity>
+  <activity workspace="1.5in">
       <introduction>
         <p>
           For many students, the measurement of <m>\phi</m> is the most difficult and most unfamiliar measurement for spherical coordinates. In order to help understand the measurement of the <m>\phi</m>-coordinate, we will look at the collection of points described by a constant value of <m>\phi</m>. For each of the equations below, you should:
@@ -1617,7 +1617,7 @@
     </activity>
 </worksheet>
     <worksheet>
-  <activity>
+  <activity workspace="1.5in">
       <introduction>
         <p>
           For each of the surfaces described below, do the following:
@@ -1717,7 +1717,7 @@
       The next activity gives you a chance to apply some of the skills introduced in the previous example.
     </p>
     <worksheet>
-  <activity>
+  <activity workspace="1.5in">
       <task>
         <statement>
           <p>

@@ -49,7 +49,7 @@
     </p>
 
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_Vector_VectorFields">
       <introduction>
         <p>
@@ -431,7 +431,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="act_Vector_VectorFields_curves">
+  <activity workspace="1.5in" xml:id="act_Vector_VectorFields_curves">
       <introduction>
         <p>
           The plot in <xref ref="fig_Vector_VectorFields_circle" /> illustrates the vector field <m>\vF(x,y) = y\vi -x\vj</m>.
@@ -540,7 +540,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="act_Vector_VectorFields_Gradient">
+  <activity workspace="1.5in" xml:id="act_Vector_VectorFields_Gradient">
       <task xml:id="part_act_Vector_VectorFields_Gradient_LevelCurves">
 	      <statement>
           <p>

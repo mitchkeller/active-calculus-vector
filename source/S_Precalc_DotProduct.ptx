@@ -62,7 +62,7 @@
       For instance, we have <m>\langle 2,-1\rangle\cdot \langle 1,4\rangle = 2\cdot 1 +(-1)\cdot 4 = -2</m>. At first glance, this may feel like we've <em>lost</em> information, as we have taken two objects with both magnitude and direction, multiplied them, and obtained a scalar. However, this scalar allows us to draw many useful conclusions, as you will now begin exploring.
     </p>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA-dotproduct">
       <introduction>
         <p> 
@@ -315,7 +315,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="Act-dotprod-calc">
+  <activity workspace="1.5in" xml:id="Act-dotprod-calc">
       <task>
         <introduction>
           <p>
@@ -524,7 +524,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_9_3_2_a">
+  <activity workspace="1.5in" xml:id="A_9_3_2_a">
       <introduction>
         <p>
           Determine each of the following:
@@ -689,7 +689,7 @@
       These different orientations of vectors will lead us to seeking to understand how to construct a vector that represents the portion of one vector that is in the direction of (or parallel to) another vector. We examine this question in depth in the next subsection.
     </p>
     <worksheet>
-  <activity xml:id="act-precalc-dotproduct-orthogonal">
+  <activity workspace="1.5in" xml:id="act-precalc-dotproduct-orthogonal">
       <statement>
         <p>
           Return to <xref ref="PA-dotproduct"/> and use the results of this subsection to determine which pairs of vectors are orthogonal. Also classify the angles between nonorthogonal pairs of vectors as acute or obtuse.
@@ -750,7 +750,7 @@
       Notice that if the angle between <m>\vu</m> and <m>\vv</m> is obtuse, then the amount of <m>\vu</m> that is parallel to <m>\vv</m> will be in the direction opposite <m>\vv</m>. Before we look at how to calculate the vectors <m>\vw_1</m> and <m>\vw_2</m>, we will do an activity about drawing the graphical representation of this splitting of a vector into parts that are parallel to and orthogonal to another vector.
     </p>
     <worksheet>
-  <activity xml:id="act-Precalc-DotProject-DrawProj">
+  <activity workspace="1.5in" xml:id="act-Precalc-DotProject-DrawProj">
       <introduction>
         <p>
           In <xref ref="projexamples"/>, you can see illustrations of splitting <m>\vu</m> into two parts: <m>\vw_1</m>, which is parallel to <m>\vv</m>, and <m>\vw_2</m>, which is orthogonal to <m>\vv</m>. Use this figure for reference as you do the following. 
@@ -1071,7 +1071,7 @@
       Now that we have visually explored the relationship between <m>\vu</m>, <m>\vv</m>, <m>\vw_1</m>, and <m>\vw_2</m>, we will see how we can find formulas that allow us to compute <m>\vw_1</m> and <m>\vw_2</m> in terms of <m>\vu</m> and <m>\vv</m>.
     </p>
     <worksheet>
-  <activity xml:id="act-dotproduct-proj-formula">
+  <activity workspace="1.5in" xml:id="act-dotproduct-proj-formula">
       <introduction>
         <p>
           Suppose that <m>\vu</m> and <m>\vv</m> are vectors in <m>\R^n</m>. We wish to find <m>\vw_1</m> and <m>\vw_2</m> so that <m>\vw_1</m> is parallel to <m>\vv</m> and <m>\vw_2</m> is orthogonal to <m>\vv</m>, as shown in <xref ref="projexamples"/>.
@@ -1286,7 +1286,7 @@
       The following activity gives you an opportunity to practice the computations involved with finding parallel and orthogonal projections.
     </p>
     <worksheet>
-  <activity xml:id="A_9_3_4">
+  <activity workspace="1.5in" xml:id="A_9_3_4">
       <introduction>
         <p>
           Let <m>\vu = \langle 2, 6 \rangle</m>.
@@ -1417,7 +1417,7 @@
 
     </p>
     <worksheet>
-  <activity xml:id="A_9_3_1">
+  <activity workspace="1.5in" xml:id="A_9_3_1">
       <task>
       <statement>
         <p>

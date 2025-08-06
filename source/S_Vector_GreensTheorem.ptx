@@ -37,7 +37,7 @@
       We know from <xref ref="S_Vector_FTCLI"/> that a vector field is path-independent if and only if the circulation around every closed curve in its domain is <m>0</m>. It is probably not surprising that, given the multitude of names we have for path-independent vector fields, they are important vector fields that arise frequently. However, not every vector field is path-independent, and many times we will want to calculate the circulation around a closed curve in a vector field that is not path-independent. This section explores a connection between line integrals and double integrals that you may find surprising. It will be the first of three major theorems that connect types of integrals that seem very different on the surface.
     </p>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_Vector_GreensTheorem">
       <introduction>
         <p>
@@ -228,7 +228,7 @@
       along the boundaries that lie inside the region <m>R</m> will all offset. Thus the value should equal <m>\oint_C\vF\cdot d\vr</m>. If we make our grid fine enough, all of the smaller regions into which <m>R</m> is divided will be very close to rectangular. 
     </p>
     <!-- <worksheet>
-  <activity xml:id="act_Vector_GreensTheorem_rectangle">
+  <activity workspace="1.5in" xml:id="act_Vector_GreensTheorem_rectangle">
       <introduction>
 	<p>
 	  For this activity, we will consider the region <m>R</m> satisfying <m>a\leq x\leq c</m> and <m>b\leq y\leq
@@ -562,7 +562,7 @@
 	</example>
 
     <worksheet>
-  <activity xml:id="act_Vector_GreensTheorem_verify">
+  <activity workspace="1.5in" xml:id="act_Vector_GreensTheorem_verify">
       <introduction>
 		<p>
 			For each of the curves described below, find the circulation of the given vector field around the curve. Do this both by calculating the line integral directly as well as by calculating the double integral from <xref ref="thm_Green" text="title"/>.
@@ -618,7 +618,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="act_Vector_GreensTheorem_not_smooth">
+  <activity workspace="1.5in" xml:id="act_Vector_GreensTheorem_not_smooth">
       <introduction>
 	<p>Consider the vector field <m>\vF =
 	\displaystyle\frac{-y}{{x^2+y^2}}\vi +

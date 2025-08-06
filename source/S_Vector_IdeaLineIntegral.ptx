@@ -58,7 +58,7 @@
       </image>
     </figure>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_Vector_IdeaLineIntegral">
         <introduction>
             <p>
@@ -179,7 +179,7 @@
       </image>
     </figure>
     <worksheet>
-  <activity xml:id="act_Vector_IdeaLineIntegral_OrientCurve">
+  <activity workspace="1.5in" xml:id="act_Vector_IdeaLineIntegral_OrientCurve">
       <introduction>
         <p>
         For each curve below, find a parametrization of the curve. Ensure that each curve's orientation matches the one
@@ -472,7 +472,7 @@
 
 
     <worksheet>
-  <activity xml:id="act_Vector_IdeaLineIntegral_Sign">
+  <activity workspace="1.5in" xml:id="act_Vector_IdeaLineIntegral_Sign">
       <introduction>
         <p>
           Shown in <xref ref="fig_Vector_IdeaLineIntegral_Sign" /> are two vector fields, <m>\vF</m> and <m>\vG</m> and four oriented curves, as labeled in the plots.  For each of the line integrals below, determine if its value should be positive, negative, or zero. Do this by thinking about if the vector field is helping or hindering a particle moving along the oriented curve, rather than by doing calculations.
@@ -800,7 +800,7 @@
     </assemblage>
 
     <worksheet>
-  <activity xml:id="act_Vector_IdeaLineIntegral_Order">
+  <activity workspace="1.5in" xml:id="act_Vector_IdeaLineIntegral_Order">
       <introduction>
         <p>
           <xref ref="fig_Vector_IdeaLineIntegral_Order" /> shows a vector field <m>\vF</m> as well as six oriented
@@ -891,7 +891,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="act_Vector_IdeaLineIntegral_Circulation">
+  <activity workspace="1.5in" xml:id="act_Vector_IdeaLineIntegral_Circulation">
       <statement>
         <p>
           Determine if the circulation of the vector field around each of the closed curves shown in <xref

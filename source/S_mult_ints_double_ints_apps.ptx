@@ -59,7 +59,7 @@
     </p>
 
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_11_4">
       <introduction>
         <p>
@@ -184,7 +184,7 @@
     
 
     <worksheet>
-  <activity xml:id="A_11_4_3">
+  <activity workspace="1.5in" xml:id="A_11_4_3">
       <statement>
         <p>
           Let <m>D</m> be a half-disk lamina of radius 3 in quadrants IV and I, centered at the origin as shown in <xref ref="F_11_4_Mass_exercise">Figure</xref>. Assume the density at point <m>(x,y)</m> is given by <m>\delta(x,y) = x</m>. Find the exact mass of the lamina.
@@ -243,7 +243,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_4_1">
+  <activity workspace="1.5in" xml:id="A_11_4_1">
       <introduction>
         <p>
           Suppose we want to find the area of the bounded region <m>D</m> between the curves
@@ -456,7 +456,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_4_4">
+  <activity workspace="1.5in" xml:id="A_11_4_4">
       <introduction>
         <p>
           In this activity we determine integrals that represent the center of mass of a lamina <m>D</m> described by the triangular region bounded by the <m>x</m>-axis and the lines <m>x = 1</m> and <m>y = 2x</m> in the first quadrant if the density at point <m>(x, y)</m> is <m>\delta(x, y) = 6x + 6y + 6</m>. A picture of the lamina is shown in <xref ref="F_11_4_COM_ex_1">Figure</xref>.
@@ -587,7 +587,7 @@
       </me>
     </p>
     <worksheet>
-  <activity xml:id="A_11_4_6">
+  <activity workspace="1.5in" xml:id="A_11_4_6">
       <introduction>
         <p>
           A firm manufactures smoke detectors. Two components for the detectors come from different suppliers <mdash/> one in Michigan and one in Ohio. The company studies these components for their reliability and their data suggests that if <m>x</m> is the life span (in years) of a randomly chosen component from the Michigan supplier and <m>y</m> the life span (in years) of a randomly chosen component from the Ohio supplier, then the joint probability density function <m>f</m> might be given by

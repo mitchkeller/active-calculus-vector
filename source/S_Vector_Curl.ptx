@@ -99,7 +99,7 @@
     </sidebyside>
   </figure>
   <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_Vector_Curl">
     <introduction>
       <p>
@@ -365,7 +365,7 @@
     We could have used a shape other than a square in the development of the circulation density, but a square allows for calculations that are easier to understand as the area of the shape decreases. <!--Our use of rectangular coordinates made it easiest to use rectangular figures but more general arguments exist.-->
   </p>
 <worksheet>
-  <activity xml:id="act_Vector_Curl_2D">
+  <activity workspace="1.5in" xml:id="act_Vector_Curl_2D">
   <title>Matching Visual Measurements to Algebraic Calculations</title>
   <introduction>
     <p>
@@ -639,7 +639,7 @@
     </p>
   </example>
   <worksheet>
-  <activity xml:id="act_Vector_Curl_3DEstimate">
+  <activity workspace="1.5in" xml:id="act_Vector_Curl_3DEstimate">
     <title>Estimating Curl in Three Dimensions</title>
     <task xml:id="task_act_Vector_Curl_3DEstimate_Eyeball">
       <statement>
@@ -885,7 +885,7 @@
     </figure>
   -->
   <worksheet>
-  <activity xml:id="act_Vector_Curl_Calculate">
+  <activity workspace="1.5in" xml:id="act_Vector_Curl_Calculate">
     <introduction>
       <p>In this activity, we will work on calculating curl algebraically and interpreting it.
       </p>
@@ -1103,7 +1103,7 @@
 </subsection>
 <xi:include href="exercises/ez-S_Vector_Curl.ptx" />
 <!--<worksheet>
-  <activity>
+  <activity workspace="1.5in">
   <introduction>
     <p>This exercise will usethe idea of a spinner from <xref ref="PA_Vector_Curl" /></p>
   </introduction>

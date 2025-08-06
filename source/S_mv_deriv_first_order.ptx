@@ -59,7 +59,7 @@
     <!-- Preview <xref ref="PA_10_2">Activity</xref> explores some issues with what we will come to call <em>partial derivatives</em>. -->
   </p>
   <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_10_2">
     <introduction>
       <p>
@@ -388,7 +388,7 @@
     </definition>
 
     <worksheet>
-  <activity xml:id="A_10_2_10">
+  <activity workspace="1.5in" xml:id="A_10_2_10">
     <introduction>
       <p>
         In this activity, we will be examining the function <m>f</m> defined by
@@ -518,7 +518,7 @@
     Thus, computing partial derivatives is straightforward: we use the standard algebraic rules from single variable calculus, but do so while holding all but one of the variables constant.
   </p>
   <worksheet>
-  <activity xml:id="A_10_2_2">
+  <activity workspace="1.5in" xml:id="A_10_2_2">
   <task>
     <statement>
       <p>
@@ -694,7 +694,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_10_2_11">
+  <activity workspace="1.5in" xml:id="A_10_2_11">
     <introduction>
       <p>
         The speed of sound <m>C</m> traveling through ocean water is a function of temperature, salinity and depth. It may be modeled by the function
@@ -787,7 +787,7 @@
     Remember that functions of two variables can be represented numerical or graphically as either a table of data or a contour plot. In single variable calculus, if we only know the value of the function at a few points, then we can use the difference quotient to approximate derivatives. The same idea applies to partial derivatives; we need to make sure we are holding other input variables constant when we compute the difference quotient. The next two activities are focused on the meaning of partial derivatives using a table as a numerical representation of a multivariable function (<xref ref="A_10_2_11" />) and using a contour plot as a graphical representation of a multivariable function (<xref ref="A_10_2_12"/>).
   </p>
   <worksheet>
-  <activity xml:id="A_10_2_12">
+  <activity workspace="1.5in" xml:id="A_10_2_12">
     <introduction>
       <p>
         The wind chill, as frequently reported, is a measure of how cold it feels outside when the wind is blowing. In <xref ref="T_10_2_wind_chill">Table</xref>, the wind chill <m>w</m>, measured in degrees Fahrenheit, is a function of the wind speed <m>v</m>, measured in miles per hour, and the ambient air temperature <m>T</m>, also measured in degrees Fahrenheit. We thus view <m>w</m> as being of the form <m>w = w(v, T)</m>.
@@ -1096,7 +1096,7 @@
   </activity>
 </worksheet>
   <worksheet>
-  <activity xml:id="A_10_2_13">
+  <activity workspace="1.5in" xml:id="A_10_2_13">
     <introduction>
       <p>
         Shown below in <xref ref="F_10_2_activity_contour">Figure</xref> is a contour plot of a function <m>f</m>. The values of the function on a few of the contours are indicated to the left of the figure.

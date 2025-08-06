@@ -47,7 +47,7 @@
       In the following preview activity, we will explore how to calculate the four different second-order partial derivatives of a function of two variables as well as what these various derivatives tell us about the function's behavior.
     </p>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_10_3">
     <introduction>
       <p>
@@ -328,7 +328,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_10_3_1">
+  <activity workspace="1.5in" xml:id="A_10_3_1">
     <task>
       <statement>
         <p>
@@ -673,7 +673,7 @@
     In the following activity, we further explore what second-order partial derivatives tell us about the geometric behavior of a surface.
   </p>
   <worksheet>
-  <activity xml:id="A_10_3_2a">
+  <activity workspace="1.5in" xml:id="A_10_3_2a">
   <introduction>
     <p>
       We will continue to work with the function <m>f</m> defined by <m>f(x,y) = \sin(x) e^{-y}</m>.
@@ -947,7 +947,7 @@
     Just as with the first-order partial derivatives, we can approximate second-order partial derivatives in the situation where we have information about the function only at certain inputs, like with tables or contour plots.
   </p>
   <worksheet>
-  <activity xml:id="A_10_3_6">
+  <activity workspace="1.5in" xml:id="A_10_3_6">
     <introduction>
       <p>
         As we saw in <xref ref="A_10_2_12">Activity</xref>, the wind chill <m>w(v,T)</m>, in degrees Fahrenheit, is a function of the wind speed, in miles per hour, and the air temperature, in degrees Fahrenheit. Some values of the wind chill are recorded in <xref ref="T_10_3_wind_chill">Table</xref>.

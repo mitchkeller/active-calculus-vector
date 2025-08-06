@@ -68,7 +68,7 @@
     However, if this curve is a portion of a road on which we drive a car, the distance traveled as measured by the change in the car's odometer value from point <m>P</m> to point <m>Q</m> will be different to the staight-line distance <m>\vert PQ\vert</m> calculated by the distance formula. You likely saw how to calculate the length of a portion of a curve <m>y=f(x)</m> in your <url href="https://activecalculus.org/single/sec-6-1-area.html" visual="activecalculus.org/single/sec-6-1-area.html">single-variable calculus class</url>. In this section, we will use the idea of vector-valued functions to find the lengths of a larger family of curves.
   </p>
 <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA-arclength" >
   <introduction>
     <p>
@@ -262,7 +262,7 @@
 </p>
 
 <worksheet>
-  <activity xml:id="act-VVF-arclength-circle-helix">
+  <activity workspace="1.5in" xml:id="act-VVF-arclength-circle-helix">
   <introduction>
     <p>
       In this activity, we will use parameterizations to find the length of some common curves.
@@ -544,7 +544,7 @@
     All of the drivers are going the same way around the track, all start at the same location at <m>t=0</m>, all complete one lap of the track, and all of the cars have perfect grip of the road (the race cars are never sliding). The picture of the racetrack above is given so you have an example to help you think about the tasks in this problem, not because any particular feature of the track needs to be considered for the following activity.
   </p>
   <worksheet>
-  <activity xml:id="driver_road_act">
+  <activity workspace="1.5in" xml:id="driver_road_act">
     <title>Is it a property of the driver or the road?</title>
     <introduction>
       <p>

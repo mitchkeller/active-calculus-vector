@@ -54,7 +54,7 @@
       </image>
     </figure>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA-DD">
       <introduction>
         <p>
@@ -146,7 +146,7 @@
       As you saw in the preview activity, visual information like a contour plot or a surface plot will be helpful in determining information about how quickly the output of a function is changing as your inputs change in different directions. In the next subsections, we will focus on how to calculate this kind of directional derivative using either algebraic or numerical representations of our function, then we will relate this calculation to other ways we have described change for a function. 
     </p>
     <!-- <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA-DD">
       <statement>
         <p>
@@ -483,7 +483,7 @@
       In the following activity, we will explore how to calculate and make sense of directional derivatives for a new function without using surface graphs.
     </p>
     <worksheet>
-  <activity xml:id="A_10_6_2">
+  <activity workspace="1.5in" xml:id="A_10_6_2">
       <introduction>
         <p>
           In this activity, we will use Equation <xref ref="eq_10_6_DD"/> to calculate some directional derivatives and make sense of these results for a few cases. For all parts of this activity, let <m>f(x,y) = 3xy-x^2y^3</m>.
@@ -686,7 +686,7 @@
      In the following activity, we investigate some of what the gradient tells us about the behavior of a function <m>f</m>.
     </p>
     <worksheet>
-  <activity xml:id="A_10_6_10">
+  <activity workspace="1.5in" xml:id="A_10_6_10">
       <introduction>
         <p>
           Let's consider the function <m>f</m> defined by <m>f(x,y) = \frac{1}{3}(x^2-y^2)</m>. Some contours for this function are shown in <xref ref="CCA-DD4">Figure</xref>.
@@ -892,7 +892,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_10_6_3">
+  <activity workspace="1.5in" xml:id="A_10_6_3">
       <statement>
         <p>
           In this activity we investigate how the gradient is related to the directions of greatest increase and decrease of a function. Let <m>f</m> be a differentiable function and <m>\vu</m> a unit vector.
@@ -1089,7 +1089,7 @@
       In <xref ref="DD-sensemaking1" />, we will look at how the directional derivative will change as a function of the direction used or of the point where the directional derivative is being evaluated. The goals of these tasks are to understand the directional derivative as a geometric measurement using visually-based sense making prompts in terms of the location and directions being used. These activities are adapted from materials developed by Rafael Martinez-Planell.
     </p>
   <worksheet>
-  <activity xml:id="DD-sensemaking1">
+  <activity workspace="1.5in" xml:id="DD-sensemaking1">
       <task>
         <p>
           <xref ref="DD-Act1"/> shows a graph of <m>z=f(x,y)</m> that you should use for the following:
@@ -1200,7 +1200,7 @@
 </worksheet>
 
     <!-- <worksheet>
-  <activity xml:id="A_10_6_11">
+  <activity workspace="1.5in" xml:id="A_10_6_11">
       <statement>
         <p>
           Consider the function <m>f</m> defined by <m>f(x,y) = -x + 2xy - y</m>.
@@ -1476,7 +1476,7 @@
       The gradient has many natural applications. For example, situations often arise <mdash/> for instance, constructing a road through the mountains or planning the flow of water across a landscape <mdash/> where we are interested in knowing the direction in which a function is increasing or decreasing most rapidly. In the next activity, we will look at how the gradient can help you navigate to the top of a mountain in foggy conditions.
     </p>
     <worksheet>
-  <activity xml:id="foggymtn1">
+  <activity workspace="1.5in" xml:id="foggymtn1">
       <introduction>
         <p>
           In this activity, we will make sense of the directional derivatives and gradients in terms of a function that measures the elevation. We are hiking in a foggy park and cannot see anything more than a few feet in front of us. There is nothing blocking us from walking in any particular direction but because of the fog we cannot see where the highest point on the mountain is. We want to try to find the top of the mountain, but we don't have a map or trail or any line of sight to other landmarks. Our compass still works in the fog, so we can tell what direction North/South/East/West are.
@@ -1588,7 +1588,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_10_6_13">
+  <activity workspace="1.5in" xml:id="A_10_6_13">
       <statement>
         <ol marker="a.">
           <li>

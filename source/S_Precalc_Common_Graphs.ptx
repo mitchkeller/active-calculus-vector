@@ -47,7 +47,7 @@
       In this section, we will introduce some examples of graphs in three dimensions that have nice algebraic properties and a variety of interesting geometric features. In the Preview Activity, we ask you to practice identifying conic sections such as circles, parabolas, ellipses, and hyperbolas from their equations. The section will then help you see how to use your knowledge of conic sections to identify key properties of graphs in <em>three</em> dimensions. For a complete discussion of conic sections, see <xref ref="S-app-conics"/>.
     </p>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA-Precalc-CG">
       <statement>
        <p>
@@ -321,7 +321,7 @@
       The next activity prompts you to look at the most important cylinder surfaces. The conic sections that were reviewed in <xref ref="PA-Precalc-CG"/> will be helpful as you do this.
     </p>
     <worksheet>
-  <activity>
+  <activity workspace="1.5in">
       <introduction>
         <p>
           Each equation below is a cylinder surface in <m>\R^3</m>. To sketch the cylinder surfaces in <m>xyz</m>-space, you should first draw the generating curve in the <m>xy</m>-plane, <m>xz</m>-plane, or <m>yz</m>-plane (depending on which two variables appear in the equation) and then then sketch a three-dimensional cylinder surface by thinking about how the rulings will run.
@@ -391,7 +391,7 @@
       The defining characteristic of the equations of cylinder surfaces is that one variable is completely omitted from the equation. Now we will examine  surfaces with algebraic equations that are <em>quadratic</em> in <m>x</m>, <m>y</m>, and <m>z</m>. This will give us a category of example surfaces that are simple algebraically but exhibit a variety of interesting and important characteristics. To understand these <term>quadric surfaces</term>, we focus on the intercepts and two-dimensional graphs formed by the intersection of the quadric surface with fundamental planes. Next activity leads you through this process to help you learn to recognize and sketch quadric surfaces. After this, we will summarize the key ideas for recognizing and sketching quadric surfaces and then you will have the opportunity to apply those key ideas in additional activities.
     </p>
     <worksheet>
-  <activity xml:id="act-hyperboloid-one">
+  <activity workspace="1.5in" xml:id="act-hyperboloid-one">
       <introduction>
         <p>
           For this activity, we will be looking at a variety properties that will help us draw a graph of the surface described by <m>\frac{x^2}{4}+\frac{y^2}{9}-\frac{z^2}{1}=1</m>.
@@ -568,7 +568,7 @@
       </p>
     </historical>
     <worksheet>
-  <activity xml:id="act-Precalc_CommonGraphs-quadric-describe">
+  <activity workspace="1.5in" xml:id="act-Precalc_CommonGraphs-quadric-describe">
       <introduction>
         <p>
           For each equation below, use the process in <xref ref="key-idea-quadrics"/> to determine the shape of the quadric surface defined by the equation and identify the graph of the quadric surface in <xref ref="quadsurfex3"/>.

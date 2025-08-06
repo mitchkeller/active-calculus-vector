@@ -81,7 +81,7 @@
       In this book, we will use the structure of the <xref ref="C_VVF_classic-calc-approach" text="custom">classic calculus approach</xref> to investigate properties of new kinds of functions, equations, and graphs. Later in this section, we will investigate the meaning of limits, derivatives, and integrals of vector-valued functions of one variable. Additionally, we will connect these measurements to properties of curves in space as the graphs of these vector-valued functions. 
     </p>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA-VVF-Calculus">
       <introduction>
         <p>
@@ -242,7 +242,7 @@
       <me>\text{derivative}=\lim_{\text{stepsize}\rightarrow 0} \frac{\text{change in output of function}}{\text{change in input of function}}</me>
     </p>
     <!-- <worksheet>
-  <activity xml:id="A_9_7_1">
+  <activity workspace="1.5in" xml:id="A_9_7_1">
       <statement>
       <p>
         Let's investigate how we can interpret the derivative <m>\vr\, '(t)</m>. Let <m>\vr</m> be the vector-valued function whose graph is shown in <xref ref="F_9_7_VVF_tan_vector">Figure</xref>, and let <m>h</m> be a scalar that represents a small change in time. The vector <m>\vr(t)</m> is the blue vector in <xref ref="F_9_7_VVF_tan_vector">Figure</xref> and <m>\vr(t+h)</m> is the green vector.
@@ -466,7 +466,7 @@
     Our next activity gives you a chance to practice with componentwise differentiation and also asks you to think about when limits of vector-valued functions do not exist.
   </p>
   <worksheet>
-  <activity xml:id="act-vvf-calculus-diff">
+  <activity workspace="1.5in" xml:id="act-vvf-calculus-diff">
     <introduction> 
       <p>
         For each of the following vector-valued functions, state any values of <m>a</m> for which <m>\displaystyle\lim_{t\to a}\vr(t)</m> will <em>not</em> exist and find <m>\vr\, '(t)</m>.
@@ -637,7 +637,7 @@
     </interactive>
   </figure>
   <worksheet>
-  <activity xml:id="A_9_7_4">
+  <activity workspace="1.5in" xml:id="A_9_7_4">
     <task>
       <statement>
         <p>
@@ -807,7 +807,7 @@
     In the next activity, we look at relationships between position, velocity, and acceleration in a situation that is more complicated than the constant acceleration of <xref ref="projectilemotion" />. The process of using integration and differentiation will remain the same, but the results will not be nearly as simple.
   </p>
   <worksheet>
-  <activity xml:id="act-vvf-calc-position">
+  <activity workspace="1.5in" xml:id="act-vvf-calc-position">
     <introduction>
       <p>
         Suppose a moving object in space has its velocity given by

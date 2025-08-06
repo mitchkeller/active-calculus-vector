@@ -45,7 +45,7 @@
       In <xref ref="S-Precalc-Lines" />, we saw how to describe a line in <m>\R^n</m> by setting an initial point and allowing unrestricted movement in a direction given by a direction vector. In this section's Preview Activity, we will be looking at what happens when we allow only movement that is perpendicular to a given direction. Since we will specify the given direction by a vector, we will find the perpendicular directions using orthogonal vectors.    
     </p>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_planes">
       <introduction>
         <p>
@@ -324,7 +324,7 @@
       </p>
     </example>
     <worksheet>
-  <activity xml:id="A_9_5_9">
+  <activity workspace="1.5in" xml:id="A_9_5_9">
       <task>
         <statement>
           <p>
@@ -471,7 +471,7 @@
       The final activity of this section allows you to practice with finding an equation of a plane passing through three points.
     </p>
     <worksheet>
-  <activity xml:id="A_9_5_7">
+  <activity workspace="1.5in" xml:id="A_9_5_7">
       <introduction>
         <p>
           Let <m>P_0 = (1,2,-1)</m>, <m>P_1 = (1, 0 ,-1)</m>, and <m>P_2 = (0,1,3)</m> and let <m>p</m> be the plane containing <m>P_0</m>, <m>P_1</m>, and <m>P_2</m>.

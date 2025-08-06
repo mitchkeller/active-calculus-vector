@@ -31,7 +31,7 @@
       The next activity will go over a couple of basic coordinate transformation ideas that will be helpful in generalizing our common graphs. 
     </p>
     <worksheet>
-  <activity xml:id="coord-translation">
+  <activity workspace="1.5in" xml:id="coord-translation">
       <title>Translation of Coordinates</title>
       <introduction>
         <p>
@@ -106,7 +106,7 @@
     </activity>
 </worksheet>
     <worksheet>
-  <activity xml:id="coord-scale">
+  <activity workspace="1.5in" xml:id="coord-scale">
       <introduction>
         <p>
           In this activity, we look at how transform the coordinates of points when changing the scale of your coordinate system. 
@@ -217,7 +217,7 @@
     While the definition of the ellipse given above has applications in engineering, orbital mechanics, and optics, we will focus on the ellipse as a transformation of a circle. While this is not obvious and the details take a little while to prove, any ellipse in the plane can be obtained by transforming a circle (through translation, horizontal/vertical coordinate stretches that are not the same as each other, and rotations of the coordinate systems). 
    </p>
    <worksheet>
-  <activity>
+  <activity workspace="1.5in">
     <task>
       <statement>
         <p>
@@ -332,7 +332,7 @@
 
 
    <worksheet>
-  <activity>
+  <activity workspace="1.5in">
     <task>
       <statement>
         <p>
@@ -451,7 +451,7 @@
 
     
    <worksheet>
-  <activity>
+  <activity workspace="1.5in">
     <task>
       <statement>
         <p>

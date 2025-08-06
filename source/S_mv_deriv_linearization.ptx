@@ -211,7 +211,7 @@
       </proof>
     </proposition>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_10_4">
     <introduction>
       <p>
@@ -493,7 +493,7 @@
     </p>
     <!-- I don't really like this activity but this might be a nice low end thing to do after the heavier discussion of not locally linear -->
     <worksheet>
-  <activity xml:id="A_10_4_1">
+  <activity workspace="1.5in" xml:id="A_10_4_1">
     <task>
       <statement>
         <p>
@@ -652,7 +652,7 @@
       </p>
     </example>
     <worksheet>
-  <activity xml:id="A_10_4_11">
+  <activity workspace="1.5in" xml:id="A_10_4_11">
     <introduction>
       <p>
         In this activity, we will find the linearization of several different functions that are given in algebraic, tabular, or graphical form.
@@ -960,7 +960,7 @@
       As <xref ref="F_10_4_differential" /> shows visually, the difference between our functions output at <m>(x_0,y_0)</m> and <m>(x,y)</m> is given by <m>\Delta f</m> whereas the difference between the linearization at <m>(x_0,y_0)</m> and <m>(x,y)</m> is given by <m>df</m>. If we look at a small enough scale, the difference between the differential and <m>\Delta f</m> will be small. The differential is a primarily algebraic tool that will allow us to talk how the change in the output of our function will vary depending on the location we want to look at (<m>f_x</m> and <m>f_y</m>) and how much change we will allow in the input variables (<m>dx</m> and <m>dy</m>).
     </p>
     <worksheet>
-  <activity xml:id="A_10_4_12">
+  <activity workspace="1.5in" xml:id="A_10_4_12">
       <task>
         <statement>
           <p>

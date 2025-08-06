@@ -61,7 +61,7 @@
     </p>
 
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_11_5">
       <statement>
         <p>
@@ -343,7 +343,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_5_2">
+  <activity workspace="1.5in" xml:id="A_11_5_2">
       <statement>
         <p>
           Most polar graphing devices can plot curves in polar coordinates of the form <m>r = f(\theta)</m>. Use such a device to complete this activity.
@@ -504,7 +504,7 @@
 
 
     <worksheet>
-  <activity xml:id="A_11_5_3">
+  <activity workspace="1.5in" xml:id="A_11_5_3">
       <statement>
         <p>
           Consider a polar rectangle <m>R</m>, with <m>r</m> between <m>r_i</m> and <m>r_{i+1}</m> and <m>\theta</m> between <m>\theta_j</m> and <m>\theta_{j+1}</m> as shown at left in <xref ref="F_11_5_Polar_area_a">Figure</xref>. Let <m>\Delta r = r_{i+1}-r_i</m> and <m>\Delta \theta = \theta_{j+1}-\theta_j</m>. Let <m>\Delta A</m> be the area of this region.
@@ -733,7 +733,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_5_4">
+  <activity workspace="1.5in" xml:id="A_11_5_4">
       <statement>
         <p>
           Let <m>f(x,y) = x+y</m> and <m>D = \{(x,y) : x^2 + y^2 \leq 4\}</m>.
@@ -837,7 +837,7 @@
 
 
     <worksheet>
-  <activity xml:id="A_11_5_5">
+  <activity workspace="1.5in" xml:id="A_11_5_5">
       <statement>
         <p>
           Consider the circle given by <m>x^2 + (y-1)^2 = 1</m> as shown in <xref ref="F_11_5_Polar_exercise">Figure</xref>.

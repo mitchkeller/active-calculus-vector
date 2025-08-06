@@ -49,7 +49,7 @@
       The functions you are most familiar with have the form <m>y=f(x)</m> where <m>x</m> is the input or domain variable and <m>y</m> is viewed as the output variable. The graphs of these functions are plotted on a coordinate plane with the input expressed in terms of the horizontal coordinate and the output as the vertical coordinate. The following preview activity asks you to recall some algebraic and geometric ideas from before your single variable calculus course. 
     </p>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA-2D-coord">
       <introduction>
         <p>
@@ -355,7 +355,7 @@
       If you select the <q>Show Segments</q> option and turn off the <q>Show Coordinate Planes</q> in <xref ref="point-in3d"/>, you can see how it is easier to understand the location of the point <m>(1,-2,3)</m> because of the parallel structures that are shown on the plot. In particular, you can see the <m>x</m>- and <m>y</m>-coordinates measured in the <m>xy</m>-plane with the <m>z</m>-coordinate extended up. The segments drawn in this plot are usually reasonable to add to a drawing done by hand as well. Remember that interacting with and exploring different features you notice in the three-dimensional plots is an important part of building your understanding.
     </p> 
     <worksheet>
-  <activity xml:id="rect3d_followup">
+  <activity workspace="1.5in" xml:id="rect3d_followup">
       <title>Drawing Points in 3D</title>
       <introduction>
         <p>
@@ -435,7 +435,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A-9-1-3">
+  <activity workspace="1.5in" xml:id="A-9-1-3">
       <task>
         <statement>
           <p>
@@ -542,7 +542,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="act-precalc-3dcoord-Distance">
+  <activity workspace="1.5in" xml:id="act-precalc-3dcoord-Distance">
       <introduction>
         <p>
           Remember that in two dimensions, the distance between <m>P=(x_0, y_0)</m> and <m>Q=(x_1, y_1)</m> is 

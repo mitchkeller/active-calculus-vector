@@ -35,7 +35,7 @@
   <subsection>
     <title>Introduction</title>
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
 >
       <introduction>
         <p>
@@ -333,7 +333,7 @@
     In the next activity, we consider some situations where we can reason about the sign of a surface integral of a scalar function.
   </p>
   <worksheet>
-  <activity xml:id="ScalarSurfaceInt_Sensemaking">
+  <activity workspace="1.5in" xml:id="ScalarSurfaceInt_Sensemaking">
     <introduction>
       <p>
         In this activity, we will try to understand the scalar surface integral by looking at whether the value of the scalar surface integral will be positive, negative, or zero over common surfaces. In each part below, you are given a function and a surface. For each surface, first draw a plot of the surface and make sure you have labeled a proper scale for each coordinate direction. Then reason if the given surface integral is positive, negative, or zero. Be sure to justify your answers in terms of the function being integrated <em>and</em> the particulars of the surface of integration.
@@ -432,7 +432,7 @@
         </p>
       </assemblage>
     <worksheet>
-  <activity xml:id="Explain_SSI_Properties">
+  <activity workspace="1.5in" xml:id="Explain_SSI_Properties">
       <title>Explaining Properties of Scalar Surface Integrals</title>
       <introduction>
         <p>
@@ -542,7 +542,7 @@
       </p>
     </example>
     <worksheet>
-  <activity xml:id="act_Vector_ScalarSurfaceInt_UseParam">
+  <activity workspace="1.5in" xml:id="act_Vector_ScalarSurfaceInt_UseParam">
       <statement>
         <p>
           Compute the value of the scalar surface integral in <xref ref="task_SSIS_4" text="phrase-global" />. That is, compute <m>\iint_{S_3} x+z \, dS</m> where <m>S_3</m> is the disc of radius one centered at <m>(1,0,0)</m> on the plane <m>x=1</m>. Explain why your answer makes sense geometrically.

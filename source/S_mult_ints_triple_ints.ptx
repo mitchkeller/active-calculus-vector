@@ -54,7 +54,7 @@
     </p>
 
     <worksheet>
-  <exploration
+  <exploration workspace="1.5in"
  xml:id="PA_11_7">
       <introduction>
         <p>
@@ -290,7 +290,7 @@
       If we want to evaluate a triple integral as an iterated integral over a solid <m>S</m> that is not a box, then we need to describe the solid in terms of variable limits that correspond to appropriate inequalities.
     </p>
   <worksheet>
-  <activity xml:id="A_11_7_3_1">
+  <activity workspace="1.5in" xml:id="A_11_7_3_1">
     <statement>
       <p>
         Set up and evaluate iterated integrals that will evaluate the triple integral of <m>f(x,y,z) = x-y+2z</m> over the box <m>B = [-2,3] \times [1,4] \times [0,2]</m>.
@@ -318,7 +318,7 @@
   </activity>
 </worksheet>
   <worksheet>
-  <activity xml:id="A_11_7_3">
+  <activity workspace="1.5in" xml:id="A_11_7_3">
     <introduction>
       <p>
         Let <m>S</m> be the solid cone bounded by <m>z = \sqrt{x^2+y^2}</m> and <m>z=3</m>. A picture of <m>S</m> is shown in <xref ref="F_11_7_Cone">Figure</xref>. Our goal in this activity is to set up an iterated integral of the form
@@ -595,7 +595,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_7_4">
+  <activity workspace="1.5in" xml:id="A_11_7_4">
       <introduction>
         <p>
           There are several other ways we could have set up the integral to give the mass of the tetrahedron in <xref ref="ex_11_7_Tetrahedron_mass">Example</xref>.
@@ -692,7 +692,7 @@
     </p>
 
     <worksheet>
-  <activity xml:id="A_11_7_6">
+  <activity workspace="1.5in" xml:id="A_11_7_6">
       <introduction>
         <p>
            A solid <m>S</m> is bounded below by the square <m>z=0</m>, <m>-1 \leq x \leq 1</m>, <m>-1 \leq y \leq 1</m> and above by the surface <m>z = 2-x^2-y^2</m>. A picture of the solid is shown in <xref ref="F_11_7_COM3D">Figure</xref>.
