@@ -19,19 +19,19 @@
       <ul>
         <li>
           <p>
-            What is a function of several variables?  What do we mean by the domain of a function of several variables?
+            How can we use the idea of a function to model relationships that depend on multiple inputs? 
           </p>
         </li>
 
         <li>
           <p>
-            What is a trace of a function of two variables? What does a trace tell us about a function?
+            How does thinking about fixing one of the inputs in a multivariable relationship help us understand that relationship?
           </p>
         </li>
 
         <li>
           <p>
-            What is a level curve of a function of two variables? What does a level curve tell us about a function?
+            How does thinking about the collection of input values that result in the same output from a multivariable relationship help us understand that relationsihp?
           </p>
         </li>
       </ul>
@@ -969,14 +969,14 @@
     
 
     <worksheet>
-  <activity workspace="1.5in" xml:id="act-mv_functions-porcupine">
+  <activity workspace="0.5in" xml:id="act-mv_functions-porcupine">
       <introduction>
         <p>
           Use the topographical map of the Porcupine Mountains below to answer the following questions. Note that points of interest are sometimes marked with an X and have their elevation listed.
         </p>
         <!-- <figure xml:id="fig-mv_functions-porcupine"> -->
       <!-- <caption>Topographical map of the Porcupine Mountains.</caption> -->
-      <image width="100%" source="images/9_1_porcupine_crop">
+      <image width="95%" source="images/9_1_porcupine_crop">
         <shortdescription>A topographical map of the Porcupine Mountains</shortdescription>
         <description>
           <p>A map with many curves indicating locations of constant elevation. There are also some waterways and points of interest marked on the map.
@@ -999,7 +999,7 @@
           </p>
         </statement>
       </task>
-      <task>
+      <task workspace="1in">
         <statement>
           <p>
             If you walk along the Big Carp River Trail (in the top left part of the image), describe which parts of the trail will have steep increases in elevation and which parts you think will be the most like level ground. 
@@ -1144,7 +1144,7 @@
     </p>
     <figure xml:id="contour3">
       <caption>A plot of the contours and traces of <m>f(x,y) = \frac{x^2 \sin(2y)}{32}</m> at the appropriate values</caption>
-      <interactive title="interactive-contour3" platform="sage" width="100%" aspect="1:1">
+      <interactive title="interactive-contour3" platform="sage" width="91%" aspect="1:1">
         <slate surface="sage">
           var('x,y,z,t,s')
           g(x,y)=x^2*sin(2*y)/32
@@ -1164,53 +1164,37 @@
         </slate>
       </interactive>
     </figure>
-    <!-- TODO resume here -->
+    
     <p>
-      Isotherms are another example of where you are likely to encounter level curves. Isotherms are a plot of locations that have the same temperature and a plot with lots of isotherms will allow you to see how the temperature changes over a region. 
+      Isotherms are another example of where you are likely to encounter level curves. Isotherms are a plot in which the curves on the map connect locations that have the same temperature. A plot with lots of isotherms will allow you to see how the temperature changes over a region. 
     </p>
     <!--https://edu.ametsoc.org/dstreme/extras/usr_guide/Temperature.html  -->
     <figure xml:id="isotherms">
       <caption>An isotherm map with temperatures at major cities (from NCEP/NWS/NOAA) </caption>
-      <image width="60%" xml:id="img-isotherms" source="isotherms.png"/>
+      <image width="70%" xml:id="img-isotherms" source="isotherms.png"/>
     </figure>
     <worksheet>
-  <activity workspace="1.5in" xml:id="A-9-1-9">
+  <activity workspace="0.75in" xml:id="act-mv_functions-draw-contours">
       <introduction>
         <p>
-          In this activity, we will be making contour plots by hand and looking at how the spacing of contours in your plot should give an idea about how different surface shapes can be distinguished. 
+          In this activity, you will make contour plots by hand and look at how the spacing of contours in your plot should give an idea about how different surface shapes can be distinguished. 
         </p>
-        <figure xml:id="F-9-1-contour-activity">
-          <caption>Left: Level curves for <m>f(x,y) = x^2+y^2</m>. Right: Level curves for <m>g(x,y) = \sqrt{x^2+y^2}</m>.</caption>
-          <sidebyside widths="50% 50%" margins="0%">
-          <image width="45%" label="img-fig_9_1_activity_empty_1">
-            <sageplot>
-              from matplotlib import ticker
-              var('x,y')
-              tic=[i for i in range(-6,7)]
-              plot21=point((0,0),size=0,color="black",gridlines=True,ymin=-6,ymax=6,xmin=-6,xmax=6,ticks=[tic,tic],axes_labels=["$x$","$y$"],aspect_ratio=1,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
-              plot21
-            </sageplot>
-          </image>
-          <image width="45%" label="img-fig_9_1_activity_empty_2">
-            <sageplot>
-              from matplotlib import ticker
-              var('x,y')
-              tic=[i for i in range(-6,7)]
-              plot21=point((0,0),size=0,color="black",gridlines=True,ymin=-6,ymax=6,xmin=-6,xmax=6,ticks=[tic,tic],axes_labels=["$x$","$y$"],aspect_ratio=1,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
-              plot21
-            </sageplot>
-          </image>
-          <!-- <image source="images/fig_9_1_activity_empty_1"/>
-          <image source="images/fig_9_1_activity_empty_2"/> -->
-          </sidebyside>
-        </figure>
 
       </introduction>
       <task>
         <statement>
           <p>
-            Let <m>f(x,y) = x^2+y^2</m>. Draw the level curves <m>f(x,y) = k</m> for <m>k=1</m>, <m>k=2</m>, <m>k=3</m>, and <m>k=4</m> on the left set of axes given in <xref ref="F-9-1-contour-activity">Figure</xref>. (You decide on the scale of the axes.) Explain what the surface defined by <m>f</m> looks like.
+            Let <m>f(x,y) = x^2+y^2</m>. Draw the level curves <m>f(x,y) = k</m> for <m>k=1</m>, <m>k=2</m>, <m>k=3</m>, and <m>k=4</m> on the axes below. Be sure to label the scale of the axes. Explain what the surface defined by <m>f</m> looks like.
           </p>
+          <image width="45%" >
+            <sageplot label="img-fig_9_1_activity_empty_1">
+              from matplotlib import ticker
+              var('x,y')
+              tic=[i for i in range(-6,7)]
+              plot21=point((0,0),size=0,color="black",gridlines=True,ymin=-6,ymax=6,xmin=-6,xmax=6,ticks=[tic,tic],axes_labels=["$x$","$y$"],aspect_ratio=1,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
+              plot21
+            </sageplot>
+          </image>
         </statement>
         <answer>
           <p>
@@ -1226,8 +1210,17 @@
       <task>
         <statement>
           <p>
-            Let <m>g(x,y) = \sqrt{x^2+y^2}</m>. Draw the level curves <m>g(x,y) = k</m> for <m>k=1</m>, <m>k=2</m>, <m>k=3</m>, and <m>k=4</m> on the right set of axes given in <xref ref="F-9-1-contour-activity">Figure</xref>. You should use the same scale on these axes as in the previous task. Explain what the surface defined by <m>g</m> looks like
+            Let <m>g(x,y) = \sqrt{x^2+y^2}</m>. Draw the level curves <m>g(x,y) = k</m> for <m>k=1</m>, <m>k=2</m>, <m>k=3</m>, and <m>k=4</m> on the axes below. Use the same scale on these axes as in the previous part. Explain what the surface defined by <m>g</m> looks like.
           </p>
+          <image width="45%">
+            <sageplot label="img-fig_9_1_activity_empty_2">
+              from matplotlib import ticker
+              var('x,y')
+              tic=[i for i in range(-6,7)]
+              plot21=point((0,0),size=0,color="black",gridlines=True,ymin=-6,ymax=6,xmin=-6,xmax=6,ticks=[tic,tic],axes_labels=["$x$","$y$"],aspect_ratio=1,frame=False,tick_formatter=(ticker.NullFormatter(),ticker.NullFormatter()))
+              plot21
+            </sageplot>
+          </image>
         </statement>
         <answer>
           <p>
@@ -1260,7 +1253,7 @@
     </activity>
 </worksheet>
     <p>
-      The traces and level curves of a function of two variables are curves in space. Traces are much easier to parameterize as a curve in space because one input variable is fixed and the other input variable can act as the parameter. For example, the trace with <m>y=b</m> of the surface given by <m>z=f(x,y)</m> will be parameterized by <m>\vr(t)=\langle t,b,f(t,b)\rangle</m> because the <m>z</m>-coordinate can be expressed in terms of the fixed input value and the other input variable (as the parameter). Parameterizing contours can be quite difficult and often relies on knowing the particular shape of the contours. Remember that it may not be possible to express a curve of the form <m> k=f(x,y)</m> with one coordinate as a function of the other.
+      The traces and level curves of a function of two variables are curves in space. Traces are easier to parameterize as a curve in space because one input variable is fixed and the other input variable can act as the parameter. For example, the trace with <m>y=b</m> of the surface given by <m>z=f(x,y)</m> will be parameterized by <m>\vr(t)=\langle t,b,f(t,b)\rangle</m> because the <m>z</m>-coordinate can be expressed in terms of the fixed input value and the other input variable (as the parameter). Parameterizing contours, however, can be difficult and often relies on knowing the particular shape of the contours. Remember that it may not be possible to express a curve of the form <m> k=f(x,y)</m> with one coordinate as a function of the other.
     </p>
 
   </subsection>
@@ -1268,11 +1261,11 @@
   <subsection>
     <title>A gallery of functions</title>
     <p>
-      We end this section by considering a collection of functions and illustrating their surface graphs and contour plots.
+      We end this section by considering a collection of functions and illustrating their surface graphs and contour plots. Many (but not all) of these surfaces will be familiar to you from <xref ref="S-Precalc-CommonGraphs"/>, so now you will have an opportunity to see how the contour plots relate to the analyses you did in that section.
     </p>
     <figure xml:id="contourgallery">
       <caption>A plot of various functions and their contour plots</caption>
-      <interactive title="interactive-contourgallery" platform="sage" width="100%" aspect="1:1.85">
+      <interactive title="interactive-contourgallery" platform="sage" width="100%" aspect="1:1.90">
         <slate surface="sage">
           <xi:include href="./interacts/contourgallerycode.txt" parse="text"/>
         </slate>
@@ -1337,27 +1330,26 @@
 
   </subsection>
 
-  <subsection>
-    <title>Summary</title>
+  <outcomes>
     <ul>
       <li>
         <p>
-          A function <m>f</m> of several variables is a rule that assigns a unique number to an ordered collection of independent inputs.  The domain of a function of several variables is the set of all inputs for which the function is defined.
+          A function <m>f</m> of several variables is a rule that assigns a single number to an ordered collection of independent inputs.  The domain of a function of several variables is the set of all inputs for which the function is defined.
         </p>
       </li>
       <li>
         <p>
-          A trace of a function <m>f</m> of two independent variables <m>x</m> and <m>y</m> is a curve of the form <m>z = f(x,c)</m> (for a x-trace) or <m>z = f(c,y)</m> (for a y-trace), where <m>c</m> is a constant. A trace tells us how the function depends on a single independent variable if we treat the other independent variable as a constant. 
+          A trace of a function <m>f</m> of two independent variables <m>x</m> and <m>y</m> is a curve of the form <m>z = f(x,c)</m> (for an <m>x</m>-trace) or <m>z = f(c,y)</m> (for a <m>y</m>-trace), where <m>c</m> is a constant. A trace tells us how the function depends on a single independent variable if we treat the other independent variable as a constant. 
         </p>
       </li>
       <li>
         <p>
-          A level curve of a function <m>f</m> of two independent variables <m>x</m> and <m>y</m> is a curve of the form <m>k = f(x,y)</m>, where <m>k</m> is a constant. A level curve describes the set of inputs that lead to a specific output of the function.
+          A level curve of a function <m>f</m> of two independent variables <m>x</m> and <m>y</m> is a curve of the form <m>k = f(x,y)</m>, where <m>k</m> is a constant. A level curve describes the set of inputs that lead to a specific output of the function. A level curve is also called a contour.
         </p>
       </li>
     </ul>
 
-    </subsection>
+  </outcomes>
 <xi:include href="./exercises/ez-S_mv_functions.ptx" />
       
 </section>
