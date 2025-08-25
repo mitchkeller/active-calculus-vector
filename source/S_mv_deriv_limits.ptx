@@ -46,34 +46,32 @@
   <subsection>
     <title>Introduction</title>
   <p>
-    In this section, we want to study limits of functions of several variables and will primarily look at limits of functions of two variables. In single variable calculus, we studied the idea of a limit, which turned out to be a critical concept which served as the critical third step in the classic calculus approach 
-    <fn>Remember the steps to the classic calculus approach: 1) approximate the measurement, 2) quantify how the approximation changes on a finer scale, and 3) use a limit to show how the approximation converges to the measurement of interest </fn>
-    to understanding the derivative and the definite integral. In this section, we will begin to understand how the concept of limit for functions of two variables is similar to what we encountered for functions of a single variable. We will use the notion of the limit of a function of several variables as the last step in understanding and defining important concepts related to differentiability later in this chapter. 
+    In this section, we want to study limits of functions of several variables and will primarily look at limits of functions of two variables. In single variable calculus, we studied the idea of a limit, which turned out to be a critical concept which served as the critical third step in the <xref ref="C_VVF_classic-calc-approach" text="title"/> to understanding the derivative and the definite integral. In this section, we will study how the concept of limit for functions of two variables is similar to what we encountered for functions of a single variable. We will use the notion of the limit of a function of several variables as the last step in understanding and defining important concepts related to differentiability later in this chapter. 
   </p>
   <p>
-   We did not need to generalize our ideas related to limits when we looked at vector-valued functions of one variable (in <xref ref="C_VVF" />) because we applied our one variable limits componentwise. The limit of a of function like <m>\vr(t)=\langle x(t),y(t),z(t) \rangle</m> is evaluated as three separate one variable limits. 
+   We did not need to generalize our ideas related to limits when we looked at vector-valued functions of one variable in <xref ref="C_VVF" /> because we applied our one-variable limits componentwise. That is, the limit of the function <m>\vr(t)=\langle x(t),y(t),z(t) \rangle</m> is evaluated as three separate one-variable limits. 
   </p>
   <p>
-    Let's begin by reviewing the idea behind a limit of a function of one variable. We say that a function <m>f</m> has a limit <m>L</m> as <m>x</m> approaches <m>a</m> provided that we can make the values <m>f(x)</m> as close to <m>L</m> as we like by taking <m>x</m> sufficiently close (but not equal) to <m>a</m>. We denote this behavior by writing
+    We begin by reviewing the idea behind a limit of a function of one variable. We say that a function <m>f</m> has a limit <m>L</m> as <m>x</m> approaches <m>a</m> provided that we can make the values <m>f(x)</m> as close to <m>L</m> as we like by taking <m>x</m> sufficiently close (but not equal) to <m>a</m>. We denote this behavior by writing
     <me>
       \lim_{x\to a}f(x) = L
-    </me>
+    </me>.
     Remember that you may need to look at the outputs of the function <m>f</m> as you approach the input <m>x=a</m> from the right and left separately in order to ensure that the limit exists. 
   </p>
 <worksheet>
   <exploration workspace="1.5in"
- xml:id="PA_10_1">
+ xml:id="PA-mv_deriv-limits">
   <introduction>
     <p>
-      In this Preview Activity, we will relook at several ideas related to limits of (single variable) functions by working with tables, graphs, and the algebraic forms of these functions. 
+      In this Preview Activity, we will consider several ideas related to limits of single-variable functions by working with tables, graphs, and the algebraic forms of these functions. 
     </p>
   </introduction>
-  <task>
+  <task xml:id="task-PA-mv_deriv-limits-table">
     <statement>
       <p>
-        Let <m>f</m> defined by <m> f(x) = 3-x</m>. Complete <xref ref="T-10-1-PA1_a">Table</xref>. 
-        <table xml:id="T-10-1-PA1_a">
-          <title>Values of <m>f(x) = 3-x</m>.</title>
+        Let <m>f</m> defined by <m> f(x) = 3-x</m>. Complete the table below.
+      </p>
+
           <tabular halign="center">
           <row bottom="medium">
             <cell right="medium"><m> x</m></cell>
@@ -94,13 +92,8 @@
             <cell/>
           </row>              
           </tabular>
-        </table>
-      </p>
     </statement>
     <answer>
-      <p>
-        <table>
-          <title>Values of <m>f(x) = 3-x</m>.</title>
           <tabular halign="center" >
             <row bottom="medium">
               <cell right="medium"><m> x</m></cell>
@@ -119,13 +112,8 @@
               <cell><nbsp/> <m>2.8</m> <nbsp/></cell>
             </row>              
           </tabular>
-        </table>
-      </p>
     </answer>
     <solution>
-      <p>
-        <table >
-          <title>Values of <m>f(x) = 3-x</m>.</title>
           <tabular halign="center" >
             <row bottom="medium">
               <cell right="medium"><m> x</m></cell>
@@ -144,14 +132,12 @@
               <cell><nbsp/> <m>2.8</m> <nbsp/></cell>
             </row>              
           </tabular>
-        </table>
-      </p>
     </solution>
   </task>
   <task>
     <statement>
       <p>
-        Write a sentence about what <xref ref="T-10-1-PA1_a">Table</xref> suggests regarding <me>\lim_{x\to 0}f(x)</me>
+        Write a sentence about what the table in <xref ref="task-PA-mv_deriv-limits-table" text="type-local"/> suggests regarding <m>\displaystyle\lim_{x\to 0}f(x)</m>.
       </p>
     </statement>
     <answer>
@@ -168,22 +154,15 @@
   <task>
     <statement>
       <p>
-        Write a couple of sentences to explain how your values in <xref ref="T-10-1-PA1_a">Table</xref> and the <me>\lim_{x\to 0}f(x)</me> are demonstrated in <xref ref="F_10_1_activity_1">Figure</xref>.
+        Write a couple of sentences to explain how your values in the table in <xref ref="task-PA-mv_deriv-limits-table" text="type-local"/> and <m>\displaystyle\lim_{x\to 0}f(x)</m> are demonstrated in the graph below.
       </p>
-      <figure xml:id="F_10_1_activity_1">
-        <caption>A plot of <m>f(x)=3-x</m> </caption>
-        <image width="50%" xml:id="img-F_10_1_activity_1">
-          <sageplot>
+        <image width="50%" >
+          <sageplot label="img-F_10_1_activity_1">
             var('t')
             plot8=parametric_plot((t,3-t),(t,-2,3),thickness=2,color="blue",axes=True,axes_labels=["$x$","$y$"],gridlines=True,xmin=-3,xmax=3,ymin=0,ymax=5)
             plot8
           </sageplot>
         </image>
-      </figure>
-      <!-- <figure xml:id="F_10_1_activity_1">
-        <caption>The graph of <m>f(x) = 3-x</m>.</caption>
-        <image width="50%" source="images/fig_10_1_activity_3"/>
-      </figure> -->
     </statement>
     <answer>
       <p>
@@ -196,13 +175,11 @@
       </p>
     </solution>
   </task>
-  <task>
+  <task xml:id="task-PA-mv_deriv-limits-table2">
     <statement>
       <p>
-        Let <me>g(x) = \frac{x}{|x|}</me>. Fill in the blanks of <xref ref="T-10-1-PA1_b">Table</xref> with the appropriate outputs of <m>g</m> for values near <m>x = 0</m>. Note that <m>g</m> is not defined at <m>x=0</m>.
+        Let <m>\displaystyle g(x) = \frac{x}{|x|}</m>. Fill in the blanks of the table below with the appropriate outputs of <m>g</m> for values near <m>x = 0</m>. Note that <m>g</m> is not defined at <m>x=0</m>.
       </p>
-      <table xml:id="T-10-1-PA1_b">
-        <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
         <tabular halign="center" >
           <row bottom="medium">
             <cell right="medium"><m> x</m></cell>
@@ -223,12 +200,8 @@
             <cell/>
           </row>              
         </tabular>
-      </table>
     </statement>
     <answer>
-      <p>
-        <table >
-          <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
           <tabular halign="center">
           <row bottom="medium">
             <cell right="medium"><m> x</m></cell>
@@ -249,13 +222,8 @@
             <cell><nbsp/> <m>1</m> <nbsp/></cell>
           </row>              
           </tabular>
-        </table>
-      </p>
     </answer>
     <solution>
-      <p>
-        <table >
-          <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
           <tabular halign="center" >
           <row bottom="medium">
             <cell><m> x</m></cell>
@@ -276,14 +244,12 @@
             <cell><nbsp/> <m>1</m> <nbsp/></cell>
           </row>              
           </tabular>
-        </table>
-      </p>
     </solution>
   </task>
   <task xml:id="PA-limit-LR">
     <statement>
       <p>
-        Write a few sentences about what the values in <xref ref="T-10-1-PA1_b">Table</xref> suggests about <m>\lim_{x \to 0}g(x)</m>.
+        Write a few sentences about what the values in the table in <xref ref="task-PA-mv_deriv-limits-table2" text="type-local"/> suggests about <m>\displaystyle\lim_{x \to 0}g(x)</m>.
       </p>
     </statement>
     <answer>
@@ -300,12 +266,10 @@
   <task>
     <statement>
       <p>
-        Write a couple of sentences to explain how your values in <xref ref="T-10-1-PA1_b">Table</xref> and the <me>\lim_{x\to 0} g(x)</me> are demonstrated in <xref ref="F_10_1_activity_2">Figure</xref>.
+        Write a couple of sentences to explain how your values in the table in <xref ref="task-PA-mv_deriv-limits-table2" text="type-local"/> and <me>\lim_{x\to 0} g(x)</me> are demonstrated in the plot below.
       </p>
-      <figure xml:id="F_10_1_activity_2">
-        <caption>A plot of <m>g(x)=\frac{x}{|x|}</m></caption>
-        <image width="50%" xml:id="img-F_10_1_activity_2">
-          <sageplot>
+        <image width="50%">
+          <sageplot  label="img-F_10_1_activity_2">
             var('t')
             plot9=parametric_plot((t,-1),(t,-1.5,0),thickness=2,color="blue",axes=True,axes_labels=["$x$","$y$"],gridlines=True,xmin=-1.5,xmax=1.5,ymin=-1.5,ymax=1.5)
             plot9+=circle((0,-1),radius=0.05,thickness=2,edgecolor="black",fill=True,facecolor="white",zorder=5)
@@ -314,11 +278,6 @@
             plot9
           </sageplot>
         </image>
-      </figure>
-      <!-- <figure xml:id="F_10_1_activity_2">
-        <caption>The graph of <m>g(x) = \frac{x}{|x|}</m>.</caption>
-        <image width="50%" source="images/fig_10_1_activity_2"/>
-      </figure> -->
     </statement>
     <answer>
       <p>
@@ -334,7 +293,7 @@
   <task>
     <statement>
       <p>
-        Let <m>h(x)=\frac{1-x^2}{x+1}</m>. At what point(s) is <m>h</m> undefined? 
+        Let <m>\displaystyle h(x)=\frac{1-x^2}{x+1}</m>. At what point(s) is <m>h</m> undefined? 
       </p>
     </statement>
     <answer>
@@ -363,7 +322,7 @@
   <task>
     <statement>
       <p>
-        Graph <m>h(x)</m> for a region around <m>x=-1</m> and explain how this graph relates to your answer to the previous two tasks.
+        Graph <m>h(x)</m> for a region around <m>x=-1</m> and explain how this graph relates to your answer to the previous two parts.
       </p>
     </statement>
   </task>
@@ -676,16 +635,16 @@
             </answer>
  -->
   <p>
-    In <xref ref="PA_10_1">Preview Activity</xref>, we used the notion of limit from single variable calculus and saw several different outcomes for limits in terms of tables and graphs. Specifically, the limit <m>\displaystyle{\lim_{x \rightarrow a} f(x)}</m> (if it exists) will be the value that the output of <m>f</m> approaches as the inputs (<m>x</m>-values) get closer to <m>a</m>. We must look at whether the output of <m>f</m> approaches the same value for as the input values approach <m>x=a</m> from different directions. Tables of values for the function can give evidence that a limit will either exist or not but will not have enough evidence to show a limit exists. Similarly, we can use graphs to visually represent the behavior of the output values as we approach a particular input from different directions.
+    In <xref ref="PA-mv_deriv-limits">Preview Activity</xref>, we used the notion of limit from single variable calculus and saw several different outcomes for limits in terms of tables and graphs. Specifically, when the limit <m>\displaystyle{\lim_{x \rightarrow a} f(x)}</m> exists, its value will be the value that the output of <m>f</m> approaches as the <m>x</m>-values input get closer to <m>a</m>. We must look at whether the output of <m>f</m> approaches the same value 0as the input values approach <m>x=a</m> from different directions. Tables of values for the function can give evidence that a limit will either exist or not but will not have enough evidence to show a limit exists. Similarly, we can use graphs to visually represent the behavior of the output values as we approach a particular input from different directions.
   </p>
 </subsection>
 <subsection>
   <title>Limits of Functions of Two Variables</title>
   <p>
-    In this section, we will look at how the concepts of limits on single variable functions can be expanded to work with functions of two variables. We will focus on two variables here because tools like tables and graphs readily make sense for a function of the form <m>f(x,y)</m> but become more difficult to use for functions of more than two variables. All of the concepts of limits and continuity can be expanded to functions of any number of variables but that kind of generalization involves a lot of mathematical tools that are not appropriate at this time. <!-- In a natural followup to our work in <xref ref="PA_10_1">Preview Activity</xref>, we now formally define what it means for a function of two variables to have a limit at a point. -->
+    In this section, we will look at how the concepts of limits on single variable functions can be expanded to work with functions of two variables. We will focus on two variables here because tools like tables and graphs readily make sense for a function of the form <m>f(x,y)</m> but become more difficult to use for functions of more than two variables. All of the concepts of limits and continuity can be expanded to functions of any number of variables but discussion of the details of this type of generalization will be deferred to a later mathematics course. <!-- In a natural followup to our work in <xref ref="PA-mv_deriv-limits">Preview Activity</xref>, we now formally define what it means for a function of two variables to have a limit at a point. -->
   </p>
   <p>
-    The biggest difference between limits of single variable functions and multivariable functions is the number of ways we can approach a particular input. For a single variable function, there are only two directions in which we can approach an input like <m>x=a</m>, which we call approaching from the left and approaching from the right, as shown in <xref ref="LR1" />. When considering a limit of a single variable function, you only have to evaluate and compare the output of your function in these two directions. If the output of your function did not agree as you approach from the left and right, then the limit did not exist (like in <xref ref="PA-limit-LR" />)
+    The biggest difference between limits of single-variable functions and multivariable functions is the number of ways we can approach a particular input. For a single-variable function, there are only two directions in which we can approach an input like <m>x=a</m>, which we call approaching from the left and approaching from the right. We illustrate this in <xref ref="LR1" />. When considering a limit of a single-variable function, we can evaluate and compare the output of a function in these two directions. If the output of the function does not agree as you approach from the left and right, then the limit does not exist, as we saw in <xref ref="PA-limit-LR" />.
   </p> 
   <figure xml:id="LR1">
     <caption>The two ways to approach an input in 1D </caption>
@@ -705,13 +664,14 @@
     </image>
   </figure> 
   <p>
-    In contrast to the single variable case, there are <alert>A LOT</alert> of different ways to approach a point like <m>(a,b)</m>, the input for a function like <m>f(x,y)</m>. In <xref ref="LR2">Figure</xref>, you can see a plot of seven different ways to approach the point <m>(a,b)</m>. When we look at how to get close to a input in two dimensions, we will need to think about more than just the straight-line directions; we have to consider curved paths and other collections of points that aren't even a continuous path. In the next example, we will explore how we can think about the various representations of a multivariable function and what it would mean to examine the output of a multivariable function as the inputs get close to a particular value. 
+    In contrast to the single variable case, there are <alert>many</alert> different ways to approach a point <m>(a,b)</m>, when considering this point as the input for a function <m>f(x,y)</m>. In <xref ref="LR2">Figure</xref>, we show seven different ways to approach the point <m>(a,b)</m>. When we look at how to get close to an input in two dimensions, we must think about more than just the straight-line directions. For example, we have to consider curved paths. In the next example, we will explore how we can think about the various representations of a multivariable function and what it would mean to examine the output of a multivariable function as the inputs get close to a particular value. 
   </p>
   <figure xml:id="LR2">
-    <caption>Seven different ways to approach a point in 2D</caption>
-    <image width="65%" label="img-LR2">
-      <description><p> A plot of two vectors with an acute angle between them</p></description>
-      <sageplot>
+    <caption>Seven different ways to approach a point in two dimensions</caption>
+    <image width="65%" >
+      <shortdescription>Approaching a point in two dimentions</shortdescription>
+      <description><p>The point <m>(a,b)</m> is indicated in the first quadrant. Seven paths are illustrated approaching the point. Four approaches are paralell to the coordinate axes, approaching <m>(a,b)</m> from the left, right, above, and below. One other path is a straight line, coming in diagonally from the upper left. The other two paths are curved. One is approximately parabolic and approaches from the upper right. There is also a path approaching from the lower left that bends several times as it approaches the point.</p></description>
+      <sageplot label="img-LR2">
         var('t')
         paths=[(t+1,1),(1,t+1),(1,1-t),(1-t,1),(1-t,1+t),(1+t,1+2*t^2),(1-t,1-t-0.1*sin(20*t))]
         plot4=point((1,1),size=40,color="black",ticks=[[],[]],zorder=5,ymin=-0.1,ymax=2,xmin=-0.1,xmax=2,axes_labels=["$x$","$y$"],aspect_ratio=1)
@@ -726,7 +686,7 @@
   </figure> 
   <example xml:id="LimitEx1">
     <p>
-      In this example, we will examine the same tools used in <xref ref="PA_10_1">Preview Activity</xref> (tables and graphs) to think about what the output of the function <m>f(x,y)=3-x-2y</m> approaches as the inputs get close to <m>(0,0)</m>. <xref ref="tableE1">Table</xref> shows a spreadsheet of output values for <m>f</m> near the input <m>(0,0)</m>. We have purposefully omitted the value of <m>f(0,0)</m> because we need to look at what is happening to <m>f</m> <em>near</em> <m>(0,0)</m>, not what is happening at <m>(0,0)</m>. 
+      In this example, we will examine the same tools used in <xref ref="PA-mv_deriv-limits">Preview Activity</xref> (tables and graphs) to think about what the output of the function <m>f(x,y)=3-x-2y</m> approaches as the inputs get close to <m>(0,0)</m>. <xref ref="tableE1">Table</xref> shows a spreadsheet of output values for <m>f</m> near the input <m>(0,0)</m>. We have purposefully omitted the value of <m>f(0,0)</m> because we need to look at what is happening to <m>f</m> <em>near</em> <m>(0,0)</m>, not what is happening at <m>(0,0)</m>. 
     </p>
     <table xml:id="tableE1" >
       <title>Values of <m>f(x,y) = 3 - x - 2y</m></title>
@@ -782,14 +742,14 @@
       </tabular>
     </table>
     <p>
-      <xref ref="tableE1"/> shows that as the inputs, <m>(x,y)</m>, get closer to <m>(0,0)</m> the output of <m>f(x,y)</m> gets closer to 3. We can look at some aspect of directionality using a table, like how the row corresponding to <m>x=0</m> shows values of <m>f</m> for inputs on the <m>y</m>-axis and the values on the diagonal (from top left to bottom right) shows values of <m>f</m> for inputs with the same <m>x</m>- and <m>y</m>-coordinates. 
+      <xref ref="tableE1"/> shows that as the inputs <m>(x,y)</m> get closer to <m>(0,0)</m> the output of <m>f(x,y)</m> gets closer to 3. We can look at some aspect of directionality using a table, like how the row corresponding to <m>x=0</m> shows values of <m>f</m> for inputs on the <m>y</m>-axis and the values on the diagonal (from top left to bottom right) shows values of <m>f</m> for inputs with equal <m>x</m>- and <m>y</m>-coordinates. 
     </p>
     <p>
-      Visual representations like contour graphs and surface plots will give more information with respect to the different directions we can approach <m>(0,0)</m>. <xref ref="contourE1"/> shows a contour plot of <m>f(x,y)=3-x-2y</m> where you can use the slider to change the number of contours used in the plot. The input point <m>(0,0)</m> is highlighted in red and you can see that regardless of how many contours are displayed, the output value of <m>f</m> seems to approach 3 near the red point. Just as with the table, you can get some idea on the directionality of how the outputs will approach 3 but because the contour plot does not give information about what is happening in-between contours, you are left to mentally fill in this information. 
+      Visual representations like contour graphs and surface plots will give more information with respect to the different directions we can approach <m>(0,0)</m>. <xref ref="contourE1"/> shows a contour plot of <m>f(x,y)=3-x-2y</m> where you can use the slider to change the number of contours used in the plot. The input point <m>(0,0)</m> is highlighted in red and you can see that regardless of how many contours are displayed, the output value of <m>f</m> seems to approach 3 near the red point. Just as with the table, you can get some idea on the directionality of how the outputs will approach 3, but because the contour plot does not give information about what is happening between contours, you are left to mentally fill in this information. 
     </p>
     <figure xml:id="contourE1">
       <caption>A contour plot of <m>f(x,y) = 3-x-2y</m> with the point <m>(0,0)</m> highlighted in red</caption>
-      <interactive title="interactive-contourE1" platform="sage" width="100%" aspect="1:1.15">
+      <interactive label="interactive-contourE1" platform="sage" width="118%" aspect="1.15:1">
         <slate surface="sage">
           var('x,y,z')
           @interact
@@ -803,14 +763,15 @@
       </interactive>  
     </figure>
     <p>
-      A plot of the surface <m>z=f(x,y)=3-x-2y</m> will give more information about what is happening in different directions as the inputs approach <m>(0,0)</m>. The drawback to using surface plots is that they are very difficult to create by hand; Even computer generated plots of surfaces can be difficult to interpret and are prone to errors because of imprecise numerical calculations. In our case, the plot of <m>z=f(x,y)=3-x-2y</m> is quite straightforward because the surface is a plane. We can see in <xref ref="Limitplot1"/> that if we approach the input point <m>(0,0)</m> in any direction or along any path, then the output of <m>f</m> (as shown by the z-coordinate on the plot) will get closer to 3.
+      A plot of the surface <m>z=f(x,y)=3-x-2y</m> will give more information about what is happening in different directions as the inputs approach <m>(0,0)</m>. The drawback to using surface plots is that they are very difficult to create by hand; Even computer generated plots of surfaces can be difficult to interpret and are prone to errors because of imprecise numerical calculations. In our case, the plot of <m>z=f(x,y)=3-x-2y</m> is a plane, which we have experience with from earlier in the course. We can see in <xref ref="Limitplot1"/> that if we approach the input point <m>(0,0)</m> in any direction or along any path, then the output of <m>f</m> (as shown by the z-coordinate on the plot) gets closer to 3.
     </p>
     <figure xml:id="Limitplot1">
       <caption>A plot of <m>z=f(x,y) = 3-x-2y</m> with several paths approaching the input <m>(0,0)</m></caption>
-      <interactive title="interactive-contourE1" platform="sage" width="100%" aspect="1:1">
+      <interactive title="interactive-contourE1" platform="sage" width="100%" aspect="1:1.05">
         <slate surface="sage">
           from sage.plot.plot3d.plot3d import axes
           @interact
+
           def limitplot(s1=checkbox(True,label="Show Surface")):
             var('t')
             xscale=.75;yscale=.75;zscale=4
@@ -837,7 +798,7 @@
       </interactive>  
     </figure>
     <p>
-      If you were not convinced that the output of <m>f</m> approaches 3 as <m>(x,y) \to (0,0)</m>, you could look at approaching the origin along a particular path. For instance, we could look to simplify our limit to look at approaching the origin along the path given by <m>y=2x</m>. This means that we don't really need to examine our function's output at all points around the origin, but rather only at points of the form <m>(x,2x)</m>. Our limit expression becomes a 1-dimensional problem in this case because along the path given by <m>y=2x</m>
+      If you were not convinced that the output of <m>f</m> approaches 3 as <m>(x,y)</m> approaches <m>(0,0)</m>, you could look at approaching the origin along a particular path. For instance, we could look to simplify our limit to look at approaching the origin along the path given by <m>y=2x</m>. This means that we don't really need to examine our function's output at all points around the origin. Instead, we consider only points of the form <m>(x,2x)</m>. Our limit expression becomes a one-dimensional problem in this case because along the path given by <m>y=2x</m>
       <md>
         <mrow> (\text{along }y=2x) \quad \lim_{(x,y)\to (0,0)} f(x,y) \amp\Rightarrow </mrow>
         <mrow> \quad \quad \lim_{(x,2x)\to (0,0)} f(x,2x) \amp= \lim_{x \to 0} 3-x-2(2x) </mrow>
