@@ -686,7 +686,7 @@
   </figure> 
   <example xml:id="LimitEx1">
     <p>
-      In this example, we will examine the same tools used in <xref ref="PA-mv_deriv-limits">Preview Activity</xref> (tables and graphs) to think about what the output of the function <m>f(x,y)=3-x-2y</m> approaches as the inputs get close to <m>(0,0)</m>. <xref ref="tableE1">Table</xref> shows a spreadsheet of output values for <m>f</m> near the input <m>(0,0)</m>. We have purposefully omitted the value of <m>f(0,0)</m> because we need to look at what is happening to <m>f</m> <em>near</em> <m>(0,0)</m>, not what is happening at <m>(0,0)</m>. 
+      In this example, we will use tables and graphs to examine a function of two variables just as you did in <xref ref="PA-mv_deriv-limits">Preview Activity</xref> for functions of one variable. Here we consider the output of the function <m>f(x,y)=3-x-2y</m> approaches as the inputs get close to <m>(0,0)</m>. <xref ref="tableE1">Table</xref> shows a spreadsheet of output values for <m>f</m> near the input <m>(0,0)</m>. We have purposefully omitted the value of <m>f(0,0)</m> because we need to look at what is happening to <m>f</m> <em>near</em> <m>(0,0)</m>, not what is happening at <m>(0,0)</m>. 
     </p>
     <table xml:id="tableE1" >
       <title>Values of <m>f(x,y) = 3 - x - 2y</m></title>
@@ -742,7 +742,7 @@
       </tabular>
     </table>
     <p>
-      <xref ref="tableE1"/> shows that as the inputs <m>(x,y)</m> get closer to <m>(0,0)</m> the output of <m>f(x,y)</m> gets closer to 3. We can look at some aspect of directionality using a table, like how the row corresponding to <m>x=0</m> shows values of <m>f</m> for inputs on the <m>y</m>-axis and the values on the diagonal (from top left to bottom right) shows values of <m>f</m> for inputs with equal <m>x</m>- and <m>y</m>-coordinates. 
+      <xref ref="tableE1"/> shows that as the inputs <m>(x,y)</m> get closer to <m>(0,0)</m>, the output of <m>f(x,y)</m> gets closer to 3. We can look at some aspect of directionality using a table, like how the row corresponding to <m>x=0</m> shows values of <m>f</m> for inputs on the <m>y</m>-axis and the values on the diagonal (from top left to bottom right) shows values of <m>f</m> for inputs with equal <m>x</m>- and <m>y</m>-coordinates. 
     </p>
     <p>
       Visual representations like contour graphs and surface plots will give more information with respect to the different directions we can approach <m>(0,0)</m>. <xref ref="contourE1"/> shows a contour plot of <m>f(x,y)=3-x-2y</m> where you can use the slider to change the number of contours used in the plot. The input point <m>(0,0)</m> is highlighted in red and you can see that regardless of how many contours are displayed, the output value of <m>f</m> seems to approach 3 near the red point. Just as with the table, you can get some idea on the directionality of how the outputs will approach 3, but because the contour plot does not give information about what is happening between contours, you are left to mentally fill in this information. 
@@ -763,7 +763,7 @@
       </interactive>  
     </figure>
     <p>
-      A plot of the surface <m>z=f(x,y)=3-x-2y</m> will give more information about what is happening in different directions as the inputs approach <m>(0,0)</m>. The drawback to using surface plots is that they are very difficult to create by hand; Even computer generated plots of surfaces can be difficult to interpret and are prone to errors because of imprecise numerical calculations. In our case, the plot of <m>z=f(x,y)=3-x-2y</m> is a plane, which we have experience with from earlier in the course. We can see in <xref ref="Limitplot1"/> that if we approach the input point <m>(0,0)</m> in any direction or along any path, then the output of <m>f</m> (as shown by the z-coordinate on the plot) gets closer to 3.
+      A plot of the surface <m>z=f(x,y)=3-x-2y</m> will give more information about what is happening in different directions as the inputs approach <m>(0,0)</m>. The drawback to using surface plots is that they are difficult to create by hand. Even computer-generated plots of surfaces can be difficult to interpret and are prone to errors because of imprecise numerical calculations. In our case, the plot of <m>z=f(x,y)=3-x-2y</m> is a plane, which we have experience with from earlier in the course. We can see in <xref ref="Limitplot1"/> that if we approach the input point <m>(0,0)</m> in any direction or along any path, then the output of <m>f</m> (as shown by the <m>z</m>-coordinate on the plot) gets closer to 3.
     </p>
     <figure xml:id="Limitplot1">
       <caption>A plot of <m>z=f(x,y) = 3-x-2y</m> with several paths approaching the input <m>(0,0)</m></caption>
@@ -798,15 +798,11 @@
       </interactive>  
     </figure>
     <p>
-      If you were not convinced that the output of <m>f</m> approaches 3 as <m>(x,y)</m> approaches <m>(0,0)</m>, you could look at approaching the origin along a particular path. For instance, we could look to simplify our limit to look at approaching the origin along the path given by <m>y=2x</m>. This means that we don't really need to examine our function's output at all points around the origin. Instead, we consider only points of the form <m>(x,2x)</m>. Our limit expression becomes a one-dimensional problem in this case because along the path given by <m>y=2x</m>
-      <md>
-        <mrow> (\text{along }y=2x) \quad \lim_{(x,y)\to (0,0)} f(x,y) \amp\Rightarrow </mrow>
-        <mrow> \quad \quad \lim_{(x,2x)\to (0,0)} f(x,2x) \amp= \lim_{x \to 0} 3-x-2(2x) </mrow>
-      </md>
-      Note that the limit along this path is now something like what you evaluated in your single variable calculus work. In fact, you can evaluate <m>\displaystyle{\lim_{x \to 0} 3-x-2(2x)}</m> to get 3.
+      If you were not convinced that the output of <m>f</m> approaches 3 as <m>(x,y)</m> approaches <m>(0,0)</m>, you could look at approaching the origin along a particular path. For instance, we could look to simplify our limit to look at approaching the origin along the path given by <m>y=2x</m>. This means that we don't really need to examine our function's output at all points around the origin. Instead, we consider only points of the form <m>(x,2x)</m>. The limit expression becomes a one-dimensional problem in this case because along the path given by <m>y=2x</m>, <m>\displaystyle\lim_{(x,y)\to (0,0)} f(x,y) </m> becomes <m>\displaystyle\lim_{(x,2x)\to (0,0)} f(x,2x)</m>, which is the same as <m>\displaystyle\lim_{x \to 0} 3-x-2(2x) </m>.
+      Note that the limit along this path is now of the type you evaluated in your single-variable calculus course. In fact, you can evaluate <m>\displaystyle{\lim_{x \to 0} 3-x-2(2x)}</m> to get <m>3</m>. It would be possible to use other paths such as <m>x=\sin(y)</m> or even a parameterized path of the form <m>\vr(t)= \langle t \cos(t) , t \sin(t) \rangle</m> to consider a two-variable limit. However, we can <em>never</em> test <em>all</em> possible paths that approach this limit point. Thus, while the idea of reducing a two-variable limit to a one-variable limit along a particular path can be helpful, we will not be able to exhaust all possible ways to approach our limit point and show a limit exists. 
     </p>
-    <p>
-      This idea for reducing a two variable limit to a one variable limit is very versatile, but has a significant drawback. If you wanted to approach the origin along the path given by <m>x=sin(y)</m> or along the path parameterized by <m>\vr(t)= \langle t \cos(t) , t \sin(t) \rangle</m>, then you would get the following:
+    <!-- <p>
+      This idea for reducing a two-variable limit to a one-variable limit is versatile, but has a significant drawback. If we want to approach the origin along the path given by <m>x=sin(y)</m> or along the path parameterized by <m>\vr(t)= \langle t \cos(t) , t \sin(t) \rangle</m>, then you would get the following:
       <md>
         <mrow> (\text{along }x=\sin(y)) \quad\amp \lim_{(x,y)\to (0,0)} f(x,y)\Rightarrow </mrow>
         <mrow> \lim_{(\sin(y),y)\to (0,0)} f(\sin(y),y) \amp= \lim_{y \to 0} 3-\sin(y)-2(y) </mrow>
@@ -817,10 +813,7 @@
         <mrow> \quad \quad \lim_{t \to 0} f(t \cos(t), t \sin(t)) \amp= \lim_{t \to 0} 3-t \cos(t)-2(t \sin(t)) </mrow>
         <mrow>  \amp= 3-0-0 = 3 </mrow>
       </md>
-    </p>
-    <p>
-      Remember that you will <em>never</em> be able to test all possible paths that approach this limit point, so while this idea to reduce down to a particular path is helpful, we will not be able to exhaust all possible ways to approach our limit point and show a limit exists. 
-    </p>
+    </p> -->
     <p>
       In all of our representations, we see evidence that if the input of our function, <m>(x,y)</m>, approaches <m>(0,0)</m>, then the output of our function goes to 3, regardless of the direction or way we approach <m>(0,0)</m>. We generalize this idea with the following definition.
     </p>
@@ -843,18 +836,16 @@
     To investigate the limit of a single variable function, <m>\displaystyle{\lim_{x\to a}f(x)}</m>, we often consider the behavior of <m>f</m> as <m>x</m> approaches <m>a</m> from the right and from the left. Similarly, we may investigate limits of two-variable functions, <m>\displaystyle{\lim_{(x,y)\to(a,b)} f(x,y)}</m> by considering the behavior of <m>f</m> as <m>(x,y)</m> approaches <m>(a,b)</m> along a particular path. Remember that the multivariable function situation is more complicated because there are infinitely many ways in which <m>(x,y)</m> may approach <m>(a,b)</m>, so we will not be able to check every possible path. In the next activity, we see how it is important to consider a variety of those paths in investigating whether or not a limit exists.
   </p>
   <worksheet>
-  <activity workspace="1.5in" xml:id="A_10_1_1">
+  <activity workspace="1.5in" xml:id="act-mv_deriv-limits-paths">
     <introduction>
       <p>
         Consider the function <m>f</m>, defined by
         <me>
           f(x,y) = \frac{y}{\sqrt{x^2+y^2}}
-        </me>
-        whose graph is shown below in <xref ref="F_10_1_disc_2">Figure</xref>
+        </me>.
+        The graph of this function is shown below.
       </p>
-      <figure xml:id="F_10_1_disc_2">
-        <caption>A plot of <m>z=f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m></caption>
-        <interactive title="interactive-surfaceLim1" platform="sage" width="100%" aspect="1:1">
+        <interactive title="interactive-surfaceLim1" platform="sage" width="91%" aspect="1:1">
           <slate surface="sage">
             from sage.plot.plot3d.plot3d import axes
             var('t,x,y')
@@ -866,8 +857,7 @@
             show(plot5,viewpoint=[[-0.8872,-0.296,-0.354],86.61],camera_position=[3.1343,-3.8823,1.0265])
           </slate>
         </interactive>  
-      </figure>
-      <!-- <figure xml:id="F_10_1_disc_2">
+      <!-- <figure xml:id="act-mv_deriv-limits-paths">
         <caption>The graph of <m>f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m>.</caption>
         <image width="50%" source="images/fig_10_1_disc_2"/>
       </figure> -->
@@ -892,10 +882,8 @@
     <task>
       <statement>
         <p>
-          Values of <m>f</m> (to three decimal places) at several points close to <m>(0,0)</m> are shown in <xref ref="T-10-1-data">Table</xref>.
+          Values of <m>f</m> (to three decimal places) at several points close to <m>(0,0)</m> are shown below.
         </p>
-        <table xml:id="T-10-1-data">
-          <title>Values of the function <m>f=\frac{y}{\sqrt{x^2+y^2}}</m></title>
           <tabular halign="right">
             <row >
               <cell halign="center" ><m>x\backslash y</m></cell>
@@ -946,7 +934,6 @@
               <cell><m>0.707</m></cell>
             </row>
           </tabular>
-        </table>
         <p>              
           Based on these calculations, state whether you think <m>f</m> has a limit at <m>(0,0)</m> and give an argument supporting your statement.
         </p>
@@ -970,7 +957,7 @@
     <task>
       <statement>
         <p>
-          Now we formalize your conjecture from the previous part by considering what happens if we restrict our attention to different paths. First, we look at <m>f</m> for points in the domain along the <m>x</m>-axis;  that is, we consider what happens when <m>y = 0</m>. Write out what the output of <m>f</m> will when <m>y=0</m>. In other words, <m>f(x,0)= </m>?
+          Now we formalize your conjecture from the previous part by considering what happens if we restrict our attention to different paths. First, we look at <m>f</m> for points in the domain along the <m>x</m>-axis.  That is, we consider what happens when <m>y = 0</m>. Write out what the output of <m>f</m> will when <m>y=0</m>. In other words, what is <m>f(x,0)</m> equal to?
         </p> 
         <p> 
           What is the behavior of <m>f(x,0)</m> as <m>x \to 0</m>?  If we approach <m>(0,0)</m> by moving along the <m>x</m>-axis, what value do we find as the limit?
@@ -990,9 +977,14 @@
     <task>
       <statement>
         <p>
-          What is the behavior of <m>f</m> along the line <m>y=x</m> when <m>x \gt 0</m>;  that is, what is the value of <m>f(x,x)</m> when <m>x&gt;0</m>?  If we approach <m>(0,0)</m> by moving along the line <m>y=x</m> in the first quadrant (thus considering <m>f(x,x)</m> as <m>x \to 0^+</m>), what value do we find as the limit?
+          What is the behavior of <m>f</m> along the line <m>y=x</m> when <m>x \gt 0</m>. That is, what is the value of <m>f(x,x)</m> when <m>x&gt;0</m>?  If we approach <m>(0,0)</m> by moving along the line <m>y=x</m> in the first quadrant, what value do we find as the limit?
         </p>
       </statement>
+      <hint>
+        <p>
+          Here you are considering the limit of <m>f(x,x)</m> as <m>x \to 0^+</m>.
+        </p>
+      </hint>
       <answer>
         <p>
            When <m>x \gt 0</m> we have <m>f(x,y) = f(x,x) = \frac{x}{\sqrt{2x^2}} = \frac{1}{\sqrt{2}}</m>. So <m>\lim_{x \to 0} f(x,x) = \frac{1}{\sqrt{2}} \approx 0.707</m> as illustrated in the table.
@@ -1007,7 +999,7 @@
     <task>
       <statement>
         <p>
-          In general, if <m>\displaystyle{\lim_{(x,y)\to(0,0)}f(x,y) = L}</m>, then <m>f(x,y)</m> approaches <m>L</m> as <m>(x,y)</m> approaches <m>(0,0)</m>, regardless of the path we take in letting <m>(x,y) \to (0,0)</m>. Based on the last two parts of this activity, can the limit <me>\lim_{(x,y)\to(0,0)} f(x,y)</me> exist? Write a sentence or two to justify your idea.
+          In general, if <m>\displaystyle{\lim_{(x,y)\to(0,0)}f(x,y) = L}</m>, then <m>f(x,y)</m> approaches <m>L</m> as <m>(x,y)</m> approaches <m>(0,0)</m>, regardless of the path we take in letting <m>(x,y) \to (0,0)</m>. Based on the last two parts of this activity, can the limit <me>\lim_{(x,y)\to(0,0)} f(x,y)</me> exist? Write a sentence or two to explain your reasoning.
         </p>
       </statement>
       <answer>
@@ -1025,8 +1017,8 @@
       <statement>
         <p>
           Substitute <m>y=mx</m> into <m>f(x,y)</m> and simplify your result for <m>f(x,mx)</m>. Use your expression and limit rules to evaluate 
-          <me>\lim_{x\rightarrow 0} f(x,mx)</me>
-          Use this limit to explain the the behavior of <m>f(x,y)</m> as <m>(x,y)</m> approaches <m>(0,0)</m> along line of the form <m>y=mx</m> and how this observation reinforces your conclusion about the existence of <m>\displaystyle{\lim_{(x,y)\to(0,0)}f(x,y)}</m> from the previous part of this activity?
+          <me>\lim_{x\rightarrow 0} f(x,mx)</me>.
+          Use this limit to explain the the behavior of <m>f(x,y)</m> as <m>(x,y)</m> approaches <m>(0,0)</m> along lines of the form <m>y=mx</m> and how this observation reinforces your conclusion about the existence of <m>\displaystyle{\lim_{(x,y)\to(0,0)}f(x,y)}</m> from the previous part of this activity.
         </p>
       </statement>
       <answer>
@@ -1050,12 +1042,12 @@
                 <image width="50%" source="images/fig_10_1_limit_contour_2"/>
               </figure> -->
   <p>
-    As we have seen in <xref ref="A_10_1_1">Activity</xref>, if <m>f(x,y)</m> has two different limits along two different paths as <m>(x,y)</m> approaches <m>(a,b)</m>, then we can conclude that <m>\displaystyle{\lim_{(x,y)\to(a,b)}f(x,y)}</m> does not exist. This is similar to the one-variable example <m>g(x)=x/|x|</m> as shown in <xref ref="F_10_1_one_variable">Figure</xref>; <m>\displaystyle{\lim_{x \to 0}g(x)}</m> does not exist because we see different limits as <m>x</m> approaches 0 from the left and the right.
+    As we have seen in <xref ref="act-mv_deriv-limits-paths">Activity</xref>, if <m>f(x,y)</m> has two different limits along two different paths as <m>(x,y)</m> approaches <m>(a,b)</m>, then we can conclude that <m>\displaystyle{\lim_{(x,y)\to(a,b)}f(x,y)}</m> does <em>not</em> exist. This is similar to the one-variable example <m>g(x)=x/|x|</m> as shown in <xref ref="fig-mv_deriv-limits-x-over-abs-x">Figure</xref>; <m>\displaystyle{\lim_{x \to 0}g(x)}</m> does not exist because we see different limits as <m>x</m> approaches 0 from the left and the right.
   </p>
-  <figure xml:id="F_10_1_one_variable">
+  <figure xml:id="fig-mv_deriv-limits-x-over-abs-x">
     <caption>A plot of <m>g(x)=\frac{x}{|x|}</m> on right</caption>
-    <image width="50%" xml:id="img-F_10_1_one_variable">
-      <sageplot>
+    <image width="50%" >
+      <sageplot label="img-fig-mv_deriv-limits-x-over-abs-x">
         var('t')
         plot9=parametric_plot((t,-1),(t,-1.5,0),thickness=2,color="blue",axes=True,axes_labels=["$x$","$y$"],gridlines=True,xmin=-1.5,xmax=1.5,ymin=-1.5,ymax=1.5)
         plot9+=circle((0,-1),radius=0.05,thickness=2,edgecolor="black",fill=True,facecolor="white",zorder=5)
@@ -1065,13 +1057,13 @@
       </sageplot>
     </image>
   </figure>
-    <!-- <figure xml:id="F_10_1_one_variable">
+    <!-- <figure xml:id="fig-mv_deriv-limits-x-over-abs-x">
       <caption>The graph of <m>g(x) = \frac{x}{|x|}</m>.</caption>
       <image width="50%" source="images/fig_10_1_activity_2"/>
     </figure> -->
 
     <p>
-      As a general rule, we have
+      As a general rule, we have the following fact:
     </p>
 
     <assemblage xml:id="Limits-paths">
@@ -1084,14 +1076,14 @@
       As the next activity shows, studying the limit of a two-variable function <m>f</m> by considering the behavior of <m>f</m> along various paths can require subtle insights.
     </p>
     <worksheet>
-  <activity workspace="1.5in" xml:id="A_10_1_2">
+  <activity workspace="1.5in" xml:id="act-mv_deriv-limits-parabloa">
     <introduction>
       <p>
-        Let's consider the function <m>g</m> defined by
+        Define the function <m>g</m> by
           <me>
             g(x,y) = \frac{x^2y}{x^4 + y^2}
-          </me>
-          and investigate the limit <m>\displaystyle{\lim_{(x,y)\to(0,0)}g(x,y)}</m>.
+          </me>.
+          We will investigate the limit <m>\displaystyle{\lim_{(x,y)\to(0,0)}g(x,y)}</m>.
       </p>
     </introduction>
     <task>
@@ -1148,7 +1140,7 @@
     <task>
       <statement>
         <p>
-          Based on what you have seen so far, do you think <m>\lim_{(x,y)\to(0,0)}g(x,y)</m> exists?  If so, what do you think its value is?
+          Based on what you have seen so far, do you think <m>\displaystyle\lim_{(x,y)\to(0,0)}g(x,y)</m> exists?  If so, what do you think its value is?
         </p>
       </statement>
       <answer>
@@ -1199,18 +1191,18 @@
   </activity>
 </worksheet>
   <p>
-    This activity shows that we need to be careful when studying the limit of a two-variable functions by considering its behavior along different paths. If we find two different paths that result in two different limits, then we may conclude that the limit does not exist. However, we can never conclude that the limit of a function exists only by considering its behavior along different paths.
+    This activity shows that we need to be careful when studying the limit of a two-variable functions by considering its behavior along different paths. If we find two different paths that result in two different limits, then we conclude that the limit does not exist. However, we can <em>never</em> conclude that the limit of a function <em>does</em> exist <em>only</em> by considering its behavior along different paths.
   </p>
   <p>
-    Generally speaking, demonstrating that a limit, <m>\displaystyle{\lim_{(x,y)\to(a,b)}f(x,y)}</m>, exists requires a more careful argument. 
+    Generally speaking, demonstrating that the limit <m>\displaystyle{\lim_{(x,y)\to(a,b)}f(x,y)}</m> exists requires a more careful argument. 
   </p>
-  <example xml:id="A_10_1_Limit_exists">
+  <example xml:id="ex-mv_deriv-limits-exists">
     <p>
-      We will consider the function <m>f</m> defined by
+      We consider the function <m>f</m> defined by
       <me>
-        f(x,y) = \frac{x^2y^2}{x^2+y^2}.
-      </me>
-      and we will try to determine whether <m>\displaystyle{\lim_{(x,y)\to(0,0)}f(x,y)}</m> exists or not.
+        f(x,y) = \frac{x^2y^2}{x^2+y^2}
+      </me>.
+      We will try to determine whether <m>\displaystyle{\lim_{(x,y)\to(0,0)}f(x,y)}</m> exists or not.
     </p>
     <p>
       Note that if either <m>x</m> or <m>y</m> is 0, then <m>f(x,y) = 0</m>. Therefore, if <m>f</m> has a limit at <m>(0,0)</m>, it must be 0. We will therefore argue that
@@ -1223,23 +1215,19 @@
       Since <m>0 \leq x^2</m>, we have
       <me>
         y^2 \leq x^2+y^2
-      </me>
+      </me>,
       which implies that
       <me>
         \frac{y^2}{x^2+y^2} \leq 1
-      </me>
-    </p>
-    <p>
+      </me>.
       Multiplying both sides by <m>x^2</m> and observing that <m>f(x,y) \ge 0</m> for all <m>(x,y)</m> gives
       <me>
-        0\leq f(x,y) = \frac{x^2y^2}{x^2+y^2} = x^2\left(\frac{y^2}{x^2+y^2}\right) \leq x^2
-      </me>
-    </p>
-    <p>
+        x^2 \geq x^2\left(\frac{y^2}{x^2+y^2}\right) = \frac{x^2y^2}{x^2+y^2} = f(x,y) \geq 0
+      </me>.
       Thus, <m> 0 \leq f(x,y) \leq x^2</m>. Since <m>x^2 \to 0</m> as <m>x \to 0</m>, we can make <m>f(x,y)</m> as close to <m>0</m> as we like by taking <m>x</m> sufficiently close to <m>0</m>. For this example, it turns out that we don't even need to worry about making <m>y</m> close to 0. Therefore,
       <me>
         \lim_{(x,y) \to (0,0)} \frac{x^2y^2}{x^2+y^2} = 0
-      </me>
+      </me>.
     </p>
   </example>
   <p>
@@ -1297,36 +1285,36 @@
   <subsection xml:id="subsec-polarlimit">
     <title>Using Polar Coordinates in Limits</title>
     <p>
-      In <xref ref="A_10_1_2"/>, we saw how looking at all different types of paths that approach the input of interest is necessary to determine whether the limit exists. Additionally, <xref ref="A_10_1_Limit_exists" /> shows how a careful set of algebra and inequalities can be used to prove a limit does exist. When working with limits in single variable calculus, you often either used properties like those listed above or had to use other tools related to measuring the rates of change in different functions.
+      In <xref ref="act-mv_deriv-limits-parabloa"/>, we saw how looking at all different types of paths that approach the input of interest is necessary to determine whether the limit exists. Additionally, <xref ref="ex-mv_deriv-limits-exists" /> shows how a careful set of algebra and inequalities can be used to prove a limit does exist. When working with limits in single variable calculus, you often either used properties like those listed above or had to use other tools related to measuring the rates of change in different functions.
     </p>
     <p>
       One tool that will work well for functions with two independent input variables is polar coordinates. If we convert our problem (both the function and the limit) to polar coordinates with the point of interest at the origin, then we can evaluate our limit in terms of <m>r</m> going to zero. Remember from <xref ref="subsec-polar" /> that polar coordinates allow us to separate the distance from the origin and the rotation around the origin. In other words, the <m>r</m>-coordinate measures how far we are from the origin (our limit point) and <m>\theta</m> will describe the direction with which we are approaching the origin (our limit point). In <xref ref="subsec-polar" />, there are several examples of converting points and equations into polar coordinates so will refer you there to review as necessary.
     </p>
     <example xml:id="polarlimitex">
-      <introduction>
+      <!-- <introduction>
         <p>
-          In this example, we will look at how polar coordinates can give some additional algebraic tools with respect to the functions explored in <xref ref="A_10_1_1"/> and <xref ref="A_10_1_Limit_exists" />.
+          In this example, we use polar coordinates to provide additional algebraic tools with respect to the functions explored in <xref ref="act-mv_deriv-limits-paths"/> and <xref ref="ex-mv_deriv-limits-exists" />.
         </p>
       </introduction>
-      <task>
+      <task> -->
         <statement>
           <p>
-            For this part, we will look at converting the limit from <xref ref="A_10_1_1"/> to polar coordinates and seeing how this algebra will give the same determination of our limit. In particular, we want to understand the following limit:
+            We want to understand the following limit, which we first saw in <xref ref="act-mv_deriv-limits-paths"/>, by using polar coordinates:
             <me>
               \lim_{(x,y) \to (0,0)} \frac{y}{\sqrt{x^2+y^2}}
             </me>
-            First, we will convert our function to polar coordinates, which is pretty straighforward because we can write <m>x</m> and <m>y</m> in terms of <m>r</m> and <m>\theta</m>. Substituting in <m>x=r \cos(\theta)</m> and <m>y=r \sin(\theta)</m> (as well as <m>r^2=x^2+y^2</m>) into our function we get:
-            <me>\frac{y}{\sqrt{x^2+y^2}} = \frac{r\sin(\theta)}{\sqrt{r^2}} = \sin(\theta) </me>
-            Note that we can can simplify our expression to <m>\sin(\theta)</m>.
+            First, we note that this function is well-suited to convert to polar coordinates by writing <m>x</m> and <m>y</m> in terms of <m>r</m> and <m>\theta</m>. Substituting in <m>y=r \sin(\theta)</m> and  <m>r^2=x^2+y^2</m> into our function we have
+            <me>\frac{y}{\sqrt{x^2+y^2}} = \frac{r\sin(\theta)}{\sqrt{r^2}} = \sin(\theta) </me>.
+            Notice that this further simplifies to <m>\sin(\theta)</m>.
           </p>
           <p>
-            We now convert the limit expression from <m>(x,y) \to (0,0)</m> to <m>r \to 0</m>. The whole conversion of the limit looks like 
-            <me>\lim_{(x,y) \to (0,0)} \frac{y}{\sqrt{x^2+y^2}} = \lim_{r \to 0} \sin(\theta) </me>
-            Evaluating the limit of <m>\sin(\theta)</m> as <m>r</m> goes to 0 will give a result of <m>\sin(\theta)</m>. The result of our algebraic limit calculation may seem weird to you because the limit of a function should either be a scalar or not exist. The conversion from rectangular to polar coordinates means you must to interpret your result in terms of rectangular coordinates. We found that the limit of our function had a dependence on the direction in which we approached the origin. Specifically, if you approach the origin along an angle <m>\theta</m>, then the output of our function will approach <m>\sin(\theta)</m>. In terms of rectangular coordinates, we say that the limit of <m>\frac{y}{\sqrt{x^2+y^2}}</m> does not exist because the limits along different paths going to the origin do not agree with each other.
+            We now convert the limit expression from <m>(x,y) \to (0,0)</m> to <m>r \to 0</m>. The whole conversion of the limit becomes
+            <me>\lim_{(x,y) \to (0,0)} \frac{y}{\sqrt{x^2+y^2}} = \lim_{r \to 0} \sin(\theta) </me>.
+            Evaluating the limit of <m>\sin(\theta)</m> as <m>r</m> goes to <m>0</m> gives <m>\sin(\theta)</m>. The result of our algebraic limit calculation may seem surprising at first, because your prior experience with limits suggests that the limit of a function should either be a scalar or not exist. The conversion from rectangular to polar coordinates means we must interpret this result in terms of rectangular coordinates. Another way of saying what it means for the limit to be <m>\sin(\theta)</m> is that our conclusion is that the limit has a dependence on the <em>direction</em> in which we approached the origin. Specifically, when approaching the origin along a line that makes an angle of <m>\theta</m> with the positive <m>x</m>-axis, the output of the function approaches <m>\sin(\theta)</m>. In terms of rectangular coordinates, we say that the limit of <m>\frac{y}{\sqrt{x^2+y^2}}</m> as <m>(x,y)\to(0,0)</m> does not exist because the limits along different paths going to the origin do not agree with each other.
           </p> 
           <figure xml:id="limpaths2">
             <caption>A plot of <m>z=f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m> with a variety of paths approaching the origin</caption>
-            <interactive title="interactive-limpaths2" platform="sage" width="100%" aspect="1:1">
+            <interactive title="interactive-limpaths2" platform="sage" width="91%" aspect="1:1">
               <slate surface="sage">
                 from sage.plot.plot3d.plot3d import axes
                 var('x,y,t')
@@ -1366,33 +1354,74 @@
             </interactive>  
           </figure>
           <p>  
-            <xref ref="limpaths2" /> shows a collection of paths in the <m>xy</m>-plane that approach the origin (shown in blue). Each of these paths is shown on the surface given by <m>z=f(x,y)=\frac{y}{\sqrt{x^2+y^2}}</m> in red to demonstrate how the height/output of <m>f</m> will approach different values as these paths each approach <m>(0,0)</m>. Note that the limit along each of these paths exists, but because the values of the limit along every path is not the same, the limit as <m>(x,y) \to (0,0)</m> does not exist. This should give you a greater appreciation for a surface plot like <xref ref="F_10_1_disc_2"/>. Computer generated plots will create a surface plot but it is important for you to identify features on that plot that will have behaviour quite different than the smooth, continuous appearance. 
+            <xref ref="limpaths2" /> shows in blue a collection of paths in the <m>xy</m>-plane that approach the origin. Each of these paths is shown in red on the surface <m>z=f(x,y)=\frac{y}{\sqrt{x^2+y^2}}</m> to demonstrate how the output of <m>f</m>, which is represented as the height of the surface, approaches different values as these paths each approach <m>(0,0)</m>. Note that the limit along each of these paths exists, but the limit as <m>(x,y) \to (0,0)</m> does not exist because there are paths that yield different limits. This should give you a greater appreciation for a surface plot like we saw in <xref ref="act-mv_deriv-limits-paths"/>. Computer-generated plots will create a surface plot but it is important for you to identify features on that plot that will have behaviour quite different than the smooth, continuous appearance. 
           </p>
         </statement>
-      </task>
-      <task>
-        <statement>
+      <!-- </task> -->
+      </example>
+      <worksheet>
+      <activity>
+        
+      
+      <!-- <task> -->
+        <introduction>
           <p>
-            In this task, we want to look at the limit as <m>(x,y)</m> goes to <m>(0,0)</m> of <m>g(x,y)=\frac{x^2y^2}{x^2+y^2}</m> as in <xref ref="A_10_1_Limit_exists" />. Converting <m>g</m> to polar coordinates gives
-            <me>
+            In this activity, we again consider the limit as <m>(x,y)</m> goes to <m>(0,0)</m> of <m>g(x,y)=\frac{x^2y^2}{x^2+y^2}</m>, which we previously saw in <xref ref="ex-mv_deriv-limits-exists" />. 
+          </p>
+        </introduction>
+        <task workspace="3cm">
+          <statement>
+            <p>
+              Convert <m>g</m> to polar coordinates.
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <me>
+              r^2 (\cos(\theta)\sin(\theta))^2
+              </me>
+            </p>
+          </answer>
+          <solution>
+            <p>
+              <me>
               \frac{x^2y^2}{x^2+y^2}=\frac{r^4 (\cos(\theta)\sin(\theta))^2}{r^2}=r^2 (\cos(\theta)\sin(\theta))^2
-            </me>
-            When we convert the limit <m>(x,y)</m> goes to <m>(0,0)</m> to the limit as <m>r</m> goes to 0 and evaluate, we get the following result.
-            <me>
+              </me>
+            </p>
+          </solution>
+        </task>
+        <task workspace="3cm">
+          <statement>
+            <p>
+              Find the limit as <m>r\to 0</m> of your expression in polar coordinates.
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <m>0</m>
+            </p>
+          </answer>
+          <solution>
+            <p>
+              <me>
               \lim_{(x,y) \to (0,0) } \frac{x^2y^2}{x^2+y^2}= \lim_{r \to 0} r^2 (\cos(\theta)\sin(\theta))^2 = 0
             </me>
-            So as we approach the origin (from any direction), the output of <m>g</m> will approach 0. You can see how the different dependence on <m>r</m> of the output of our function causes there to be a different result on the limit (as compared to part (a) of this example). As we showed in <xref ref="A_10_1_Limit_exists" />, 
-             <me>
-              \lim_{(x,y) \to (0,0) } \frac{x^2y^2}{x^2+y^2}= 0
-            </me>
-            but the polar coordinate approach presented here likely helps you see where the argument used in <xref ref="A_10_1_Limit_exists" /> came from. 
-          </p>
-          
-        </statement>
-      </task>
-    </example>
+            </p>
+          </solution>
+        </task>
+        <task workspace="5cm">
+          <statement>
+            <p>
+              Write a couple of sentences explaining how your answer to the previous part shows that the original limit is <m>0</m> and contrast with the previous example.
+            </p>
+          </statement>
+        </task>
+        </activity>
+      </worksheet>
+      <!-- </task> -->
+    <!-- </example> -->
     <p>
-      These examples may seem like the only tool you need is to convert to polar coordinates but that simplification misses how convienent the conversions to polar coordinates were for the expressions used in <xref ref="polarlimitex"/>. If you were examining an expression that did not have a convienent conversion to polar coordinates or the algebra to simplify and evaluate your limit in polar coordinates was difficult, then polar coordinates will not be a great tool for evaluating limits. Polar coordinates as a tool is presented here because it highlights how to geometrically separate your measurements in two dimensions into a distance and a measure of directionality. These ideas come up in many places throughout this text and have already been used in our work on vectors. For instance, we often analyze the magnitude of vector measurements differently than we analyze direction aspects of vectors.
+      These examples may tempt you to conclude that polar coordinates will solve all problems related to finding limits of functions of two variables. However, that simplification misses the importance of how convienent it was to convert to polar coordinates in these functions. If we were examining a function that did not have a convienent conversion to polar coordinates or the algebra to simplify and evaluate the limit in polar coordinates was difficult, then polar coordinates will not be a great tool for evaluating limits. Polar coordinates as a tool is presented here because it highlights how to geometrically separate position in two dimensions into a distance and a measure of directionality. These ideas recur in many places throughout this text and have already been used in our work on vectors. For instance, we often analyze the magnitude of vector measurements differently than we analyze direction aspects of vectors.
     </p>
   </subsection>
 
@@ -1489,8 +1518,7 @@
   </subsection>
 
 
-  <subsection>
-    <title>Summary</title>
+  <outcomes>
     <ul>
       <li>
         <p>
@@ -1520,7 +1548,7 @@
       </li>
     </ul>
 
-    </subsection>
+  </outcomes>
 
 <xi:include href="./exercises/ez-S_mv_limits.ptx" />
 
