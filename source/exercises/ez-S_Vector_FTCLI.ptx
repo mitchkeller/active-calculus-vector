@@ -10,7 +10,7 @@
   <!-- MTK: Revise so that it doesn't use ColumnTable and it should work
        Also ditch the PG graph image and replace with a TikZ image?
   <exercise>
-    <webwork source="webwork-open-problem-library/OpenProblemLibrary/FortLewis/Calc3/18-3-Gradient-fields/HGM4-18-3-27-Gradient-fields.pg" />
+<webwork><xi:include href="wwpgfiles/FtLewisHGM4-20-1-09-Divergence.pg" parse="text"/></webwork>    
     </exercise>
   -->  
   <exercise xml:id="ez_Vector_FTCLI_Applies">

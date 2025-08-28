@@ -655,56 +655,56 @@
       We verified the first property for vectors in <m>\R^2</m>. The other properties can be verified to hold for all vectors in <m>\R^n</m> in a similar manner because the operations are done componentwise on the vectors.
     </p>
     <worksheet>
-  <activity workspace="1.5in">
-      <introduction>
-        <p>
-          In this activity, use <xref ref="Vectors-operations" text="title" /> to simplify each of the following expressions into a single vector of the form <m>\langle a,b,c \rangle</m>. For this activity, let <m>\vu=\langle 1,-2,3 \rangle</m>, <m>\vv=\langle 2,-2,5\rangle</m>, and <m>\vw=\langle -3,0,3\rangle</m>.
-        </p>
-      </introduction>
-      <task>
-        <statement>
-          <p>
-            <m>\vu+2\vv+3\vw</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>2\vw-3\vu</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>-4(\vv-\vw)</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>-2(3\vu)</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Give the components of the vector that fills in the blank: <m>(2\vw-3\vu) - \underline{\hspace{2.5cm}} = \vzero</m>
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Explain why the following expression does not make sense: <me> 2 \langle 2,4,-7 \rangle - 3 \langle -\pi, \sqrt{7} \rangle</me>
-          </p>
-        </statement>
-      </task>
-    </activity>
-</worksheet>
+      <activity workspace="1.5in">
+          <introduction>
+            <p>
+              In this activity, use <xref ref="Vectors-operations" text="title" /> to simplify each of the following expressions into a single vector of the form <m>\langle a,b,c \rangle</m>. For this activity, let <m>\vu=\langle 1,-2,3 \rangle</m>, <m>\vv=\langle 2,-2,5\rangle</m>, and <m>\vw=\langle -3,0,3\rangle</m>.
+            </p>
+          </introduction>
+          <task>
+            <statement>
+              <p>
+                <m>\vu+2\vv+3\vw</m>
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                <m>2\vw-3\vu</m>
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                <m>-4(\vv-\vw)</m>
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                <m>-2(3\vu)</m>
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Give the components of the vector that fills in the blank: <m>(2\vw-3\vu) - \underline{\hspace{2.5cm}} = \vzero</m>
+              </p>
+            </statement>
+          </task>
+          <task>
+            <statement>
+              <p>
+                Explain why the following expression does not make sense: <me> 2 \langle 2,4,-7 \rangle - 3 \langle -\pi, \sqrt{7} \rangle</me>
+              </p>
+            </statement>
+          </task>
+        </activity>
+    </worksheet>
   </subsection>
 
 

@@ -7,7 +7,8 @@
     <webwork source="Library/Michigan/Chap18Sec4/Q23.pg" />
   </exercise>
   <exercise label="Library__FortLewis__Calc3__18-4-Greens-theorem__HGM4-18-4-17-Greens-theorem.pg">
-    <webwork source="webwork-open-problem-library/OpenProblemLibrary/FortLewis/Calc3/18-4-Greens-theorem/HGM4-18-4-17-Greens-theorem.pg" />
+    <!-- <webwork source="webwork-open-problem-library/OpenProblemLibrary/FortLewis/Calc3/18-4-Greens-theorem/HGM4-18-4-17-Greens-theorem.pg" /> -->
+<webwork><xi:include href="wwpgfiles/FtLewisHGM4-18-4-17-Greens-theorem.pg" parse="text"/></webwork>
   </exercise>
   <exercise label="Library__Michigan__Chap18Sec4__Q37.pg">
     <webwork source="Library/Michigan/Chap18Sec4/Q37.pg" />
