@@ -6,7 +6,7 @@
   <html>
     <analytics google-gst="G-QJKN634F7R" />
     <calculator model="geogebra-graphing"/>
-    <css colors="blue_grey" />
+    <css theme="salem" palette="ice-fire" />
     <knowl example="no" />
     <webwork divisional="dynamic" />
     <baseurl href="https://activecalculus.org/multi/" />
@@ -25,7 +25,7 @@
     <divisions chapter-start="9" />
   </numbering>
     <webwork server="https://webwork-ptx.aimath.org"
-	   course="mitchkeller-dev" password="anonymous"
+	   course="anonymous" password="anonymous"
 	   user="anonymous"/>
 
 </publication>
