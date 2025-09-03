@@ -32,7 +32,7 @@
   <introduction component="instructor">
     <title>Notes to the Instructor and Dependencies</title>
     <p>
-      This section heavily relies on students to understand traces as the intersection of the surface plot of <m>z=f(x,y)</m> with a fundamental plane and uses several ideas related to second derivatives from single variable calculus (concavity and increasing/decreasing slopes). This section can be covered in a single class meeting and some instructors pair this with the material on first partial derivatives from <xref ref="S-10-2-First-Order-Partial-Derivatives"/>. The geometric meaning of the different second derivatives is used in the development of the optimization tools for functions of two variables in <xref ref="S-10-7-Optimization"/>.
+      This section heavily relies on students to understand traces as the intersection of the surface plot of <m>z=f(x,y)</m> with a fundamental plane and uses several ideas related to second derivatives from single variable calculus (concavity and increasing/decreasing slopes). This section can be covered in a single class meeting and some instructors pair this with the material on first partial derivatives from <xref ref="S-mv_deriv-first_order"/>. The geometric meaning of the different second derivatives is used in the development of the optimization tools for functions of two variables in <xref ref="S-10-7-Optimization"/>.
     </p>
   </introduction>
   <subsection>
@@ -950,7 +950,7 @@
   <activity workspace="1.5in" xml:id="A_10_3_6">
     <introduction>
       <p>
-        As we saw in <xref ref="A_10_2_12">Activity</xref>, the wind chill <m>w(v,T)</m>, in degrees Fahrenheit, is a function of the wind speed, in miles per hour, and the air temperature, in degrees Fahrenheit. Some values of the wind chill are recorded in <xref ref="T_10_3_wind_chill">Table</xref>.
+        As we saw in <xref ref="act-mv_deriv-first_order-table">Activity</xref>, the wind chill <m>w(v,T)</m>, in degrees Fahrenheit, is a function of the wind speed, in miles per hour, and the air temperature, in degrees Fahrenheit. Some values of the wind chill are recorded in <xref ref="T_10_3_wind_chill">Table</xref>.
       </p>
       <table xml:id="T_10_3_wind_chill">
           <title>Wind chill as a function of wind speed and temperature</title>
