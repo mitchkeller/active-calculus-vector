@@ -484,7 +484,7 @@
       </answer>
       <solution>
         <p>
-          Here we have <m>f(x,2) = \frac{4x}{x+1}</m>. At the point where <m>x=1</m>, the tangent line to this trace has slope <m>\frac{d}{dx} f(x,2) \left. \restrict{x=1} = 1</m>, and so the line tangent to the graph of this trace at <m>x=1</m> has equation <m>z=2+(x-1)</m>.
+          Here we have <m>f(x,2) = \frac{4x}{x+1}</m>. At the point where <m>x=1</m>, the tangent line to this trace has slope <m>\frac{d}{dx} f(x,2) \restrict{x=1} = 1</m>, and so the line tangent to the graph of this trace at <m>x=1</m> has equation <m>z=2+(x-1)</m>.
         </p>
       </solution>
     </task>
@@ -524,7 +524,7 @@
       </answer>
       <solution>
         <p>
-          Here we have <m>f(1,y) = \frac{1}{2}y^2</m>. At the point where <m>y=2</m>, the tangent line to this trace has slope <m>\frac{d}{dy} f(1,y) \left. \restrict{y=2} = 2</m>, and so the line tangent to the graph of this trace at <m>y=2</m> has equation <m>z=2+2(y-2)</m>.
+          Here we have <m>f(1,y) = \frac{1}{2}y^2</m>. At the point where <m>y=2</m>, the tangent line to this trace has slope <m>\frac{d}{dy} f(1,y) \restrict{y=2} = 2</m>, and so the line tangent to the graph of this trace at <m>y=2</m> has equation <m>z=2+2(y-2)</m>.
         </p>
       </solution>
     </task>           
