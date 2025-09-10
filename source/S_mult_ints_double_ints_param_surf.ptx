@@ -469,9 +469,9 @@
                 We can find the surface area of the cylinder by multiplying the circumference of the circle of radius <m>a</m> by the height <m>h</m> to obtain <m>2 \pi a h</m>.
                 Evaluating the iterated integral yields
                 <md>
-                  <mrow>\int_{0}^{h} \int_{0}^{2 \pi} a^2 \, ds \, dt \amp = a \int_{0}^{h} \left. s \restrict{0}^{2 \pi}  \, dt</mrow>
+                  <mrow>\int_{0}^{h} \int_{0}^{2 \pi} a^2 \, ds \, dt \amp = a \int_{0}^{h} s \restrict{0}^{2 \pi}  \, dt</mrow>
                   <mrow>\amp = 2 \pi a \int_{0}^{h}  \, dt</mrow>
-                  <mrow>\amp = 2 \pi a \left. t \restrict{0}^{h}</mrow>
+                  <mrow>\amp = 2 \pi a t \restrict{0}^{h}</mrow>
                   <mrow>\amp = 2 \pi a h</mrow>
                 </md>.
               </p>

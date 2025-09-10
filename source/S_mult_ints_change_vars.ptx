@@ -61,7 +61,7 @@
   <exploration workspace="1.5in"
  xml:id="PA_11_9">
       <task>
-        <statement>
+        <introduction>
           <p>
             Consider the double integral
             <men xml:id="eq_11_9_COV_PA"> 
@@ -72,6 +72,7 @@
               x = r \cos(\theta)  \quad \text{ and }  \quad y = r \sin(\theta)
             </men>
           </p>
+        </introduction>
           <task>
             <statement>
               <p>
@@ -136,13 +137,13 @@
               </p>
             </solution>
           </task>
-        </statement>
       </task>
       <task>
-        <statement>
+        <introduction>
           <p>
             Suppose you are calibrating a new radar system for your self driving car. This radar system is mounted at the center of your front bumper and can detect objects up to 45 degrees to either side of the forward direction at distances from 1 meter to 3 meters.
           </p>
+          </introduction>
           <task>
             <statement>
               <p>
@@ -229,7 +230,6 @@
               </image>   
             </solution>
           </task>
-        </statement>
       </task>
       
 
@@ -1000,10 +1000,10 @@
             <md>
               <mrow>\iint_D \sqrt{x+y}(x-y)^2 \, dA \amp = \iint_S \sqrt{s}t^2 \left|\frac{\partial(x,y)}{\partial(s,t)}\right| \, ds \, dt</mrow>
               <mrow>\amp = \int_0^1 \int_{-s}^{s} \sqrt{s}t^2 \frac{1}{2} \, dt \, ds</mrow>
-              <mrow>\amp = \frac{1}{2} \int_0^1 \left. \sqrt{s} \frac{t^3}{3} \restrict{-s}^{s} \, ds</mrow>
+              <mrow>\amp = \frac{1}{2} \int_0^1 \sqrt{s} \frac{t^3}{3} \restrict{-s}^{s} \, ds</mrow>
               <mrow>\amp = \frac{1}{3} \int_0^1 \sqrt{s}s^3 \, ds</mrow>
               <mrow>\amp = \frac{1}{3} \int_0^1 s^{7/2} \, ds</mrow>
-              <mrow>\amp = \frac{2}{27} \left. s^{9/2} \restrict0^1</mrow>
+              <mrow>\amp = \frac{2}{27} s^{9/2} \restrict{0}^1</mrow>
               <mrow>\amp = \frac{2}{27}</mrow>
             </md>
           </p>

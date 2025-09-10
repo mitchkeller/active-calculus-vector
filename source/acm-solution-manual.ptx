@@ -50,6 +50,7 @@
     \newcommand{\nin}{}
     \newcommand{\vecmag}[1]{|#1|}
     \newcommand{\grad}{\nabla}
+    \newcommand\restrict[1]{\raise-.5ex\hbox{$\Big|$}_{#1}}
     \DeclareMathOperator{\curl}{curl}
     \DeclareMathOperator{\divg}{div}
 </macros>
@@ -109,18 +110,19 @@
       <title><line>Solutions Manual</line>
       <line>for</line>
       <line>Active Calculus - Multivariable</line>
+      <line>Second Edition</line>
       </title>
     <frontmatter>
             <!-- Don't xi:include the titlepage, since solution authors differ -->
-      <titlepage >
+      <bibinfo >
 
       <author>
-        <personname>Steve Schlicker</personname>
-        <department>Department of Mathematics</department>
-        <institution>Grand Valley State University</institution>
-        <email>schlicks@gvsu.edu</email>
-      </author>
-
+          <personname>Nicholas Long</personname>
+          <department>Department of Mathematics and Statistics</department>
+          <institution>Stephen F. Austin State University</institution>
+          <email>longne@sfasu.edu</email>
+        </author>
+      
         <author>
           <personname>Mitchel T. Keller</personname>
           <department>Department of Mathematics</department>
@@ -128,14 +130,16 @@
           <email>mitch@rellek.net</email>
         </author>
         <author>
-          <personname>Nicholas Long</personname>
-          <department>Department of Mathematics and Statistics</department>
-          <institution>Stephen F. Austin State University</institution>
-          <email>longne@sfasu.edu</email>
+          <personname>Steve Schlicker</personname>
+          <department>Department of Mathematics</department>
+          <institution>Grand Valley State University</institution>
+          <email>schlicks@gvsu.edu</email>
         </author>
+  
 
       <date><today /></date>
-      </titlepage>
+      </bibinfo>
+      <titlepage><titlepage-items/></titlepage>
 
       <preface permid="vBG">
         <p permid="HPY">
@@ -167,7 +171,8 @@
     </frontmatter>
 
 
-    <xi:include href="./C-mv-fns.ptx" />
+    <xi:include href="./C-mvprecalc.ptx" />
+    <xi:include href="./C-vvf.ptx" />
     <xi:include href="./C-mv-deriv.ptx" />
     <xi:include href="./C-mult-ints.ptx" />
     <xi:include href="./C-vector.ptx" />
