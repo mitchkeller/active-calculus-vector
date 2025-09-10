@@ -37,7 +37,7 @@
   <introduction component="instructor">
     <title>Notes to the Instructor and Dependencies</title>
     <p>
-      This section relies on the geometric tools developed with in the sections on the first and second partial derivatives (<xref ref="S-mv_deriv-first_order"/> and <xref ref="S-10-3-Second-Order-Partial-Derivatives"/>). If you omit the material on absolute extrema, then this can be covered in a single class meeting. Because absolute extrema involve a significant amount more work to do optimization on the boundary, that is likely a separate class meeting (or could be paired with Lagrange Multipliers).
+      This section relies on the geometric tools developed with in the sections on the first and second partial derivatives (<xref ref="S-mv_deriv-first_order"/> and <xref ref="S-mv_deriv-second_order"/>). If you omit the material on absolute extrema, then this can be covered in a single class meeting. Because absolute extrema involve a significant amount more work to do optimization on the boundary, that is likely a separate class meeting (or could be paired with Lagrange Multipliers).
     </p>
   </introduction>
   <subsection>
@@ -904,7 +904,7 @@
       </interactive>
     </figure>
     <p>
-      The good news is that we have a couple of convenient directions to look at concavity in (parallel to the <m>x</m> and <m>y</m> axes). Recall from <xref ref="S-10-3-Second-Order-Partial-Derivatives"/> that <m>f_{xx}</m> and <m>f_{yy}</m> will measure the concavity of the traces in the <m>x</m> and <m>y</m> directions, respectively. If <m>f_{xx} \gt 0</m> at our critical point, then in the direction parallel to the <m>x</m>-axis, the trace curve will be concave up. If <m>f_{xx} \lt 0</m> at our critical point, then in the direction parallel to the <m>x</m>-axis, the trace curve will be concave down. Similar statements hold for <m>f_{yy}</m>. 
+      The good news is that we have a couple of convenient directions to look at concavity in (parallel to the <m>x</m> and <m>y</m> axes). Recall from <xref ref="S-mv_deriv-second_order"/> that <m>f_{xx}</m> and <m>f_{yy}</m> will measure the concavity of the traces in the <m>x</m> and <m>y</m> directions, respectively. If <m>f_{xx} \gt 0</m> at our critical point, then in the direction parallel to the <m>x</m>-axis, the trace curve will be concave up. If <m>f_{xx} \lt 0</m> at our critical point, then in the direction parallel to the <m>x</m>-axis, the trace curve will be concave down. Similar statements hold for <m>f_{yy}</m>. 
     </p>
     <p>
       Suppose that <m>f_{xx} (a,b) \lt 0</m> and <m>f_{yy} \gt 0</m> at a critical point <m>(a,b)</m>. Because the concavity is different (up/down) for two different direction, the critical point <m>(a,b)</m> <em>must</em> be a saddle point. Unfortunately, if <m>f_{xx} (a,b) \gt 0</m> and <m>f_{yy} \gt 0</m> at a critical point <m>(a,b)</m>, then we do not necessarily have a local minimum, as shown in <xref ref="critpoints3"/>.
@@ -942,7 +942,7 @@
       </interactive>
     </figure>
     <p>
-      As the plot in <xref ref="critpoints3"/> shows, we will need to look at the concavity in more than the coordinate axes directions. Recall from <xref ref="A_10_3_2a">Activities</xref> and <xref ref="A_10_3_6"/>, our mixed second partial derivative <m>f_{xy}</m> measures the <q>twist</q> of the graph as we vary <m>y</m> along a particular trace where <m>x</m> is held constant. In the same way, <m>f_{yx}</m> measures how the graph twists as we vary <m>x</m>. For our nice functions, remember that Clairaut's theorem tells us that <m>f_{xy} = f_{yx}</m>, so we will see that the amount of twisting is the same in both directions. These mixed second partial derivatives will be used to see if there is enough twist to change the concavity in the directions between the coordinate axes. 
+      As the plot in <xref ref="critpoints3"/> shows, we will need to look at the concavity in more than the coordinate axes directions. Recall from <xref ref="act-mv_deriv-second_order-shape">Activities</xref> and <xref ref="act-mv_deriv-second_order-windchill"/>, our mixed second partial derivative <m>f_{xy}</m> measures the <q>twist</q> of the graph as we vary <m>y</m> along a particular trace where <m>x</m> is held constant. In the same way, <m>f_{yx}</m> measures how the graph twists as we vary <m>x</m>. For our nice functions, remember that Clairaut's theorem tells us that <m>f_{xy} = f_{yx}</m>, so we will see that the amount of twisting is the same in both directions. These mixed second partial derivatives will be used to see if there is enough twist to change the concavity in the directions between the coordinate axes. 
     </p>
     <!-- <p>
       <xref ref="A_10_7_4">Activity</xref> provides the basic ideas for the Second Derivative Test for functions of two variables. 
