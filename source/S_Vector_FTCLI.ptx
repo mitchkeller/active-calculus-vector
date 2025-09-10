@@ -223,7 +223,7 @@
 </worksheet>
 
 <p>
-	In <xref ref="act_Vector_ParamLineIntegrals_Gradient" />, we used <xref ref="Clairaut" text="title"/> to argue that a vector field in <m>\R^2</m> is not a gradient vector field when <m>\partial F_1/\partial y\neq \partial F_2/\partial x</m>. In <xref ref="PA_Vector_FTCLI" />, you verified that a given vector field was the gradient of a particular function of two variables. Clairaut's Theorem holds for functions of three variables. However, in that case there are six mixed partials to calculate, and thus it can be rather tedious. <xref ref="find_potential" /> suggest a process for determining if a vector field in <m>\R^3</m> is a gradient vector field as well as finding a potential function for the vector field.
+	In <xref ref="act_Vector_ParamLineIntegrals_Gradient" />, we used <xref ref="thm-clairaut" text="title"/> to argue that a vector field in <m>\R^2</m> is not a gradient vector field when <m>\partial F_1/\partial y\neq \partial F_2/\partial x</m>. In <xref ref="PA_Vector_FTCLI" />, you verified that a given vector field was the gradient of a particular function of two variables. Clairaut's Theorem holds for functions of three variables. However, in that case there are six mixed partials to calculate, and thus it can be rather tedious. <xref ref="find_potential" /> suggest a process for determining if a vector field in <m>\R^3</m> is a gradient vector field as well as finding a potential function for the vector field.
 </p>
 
 <worksheet>

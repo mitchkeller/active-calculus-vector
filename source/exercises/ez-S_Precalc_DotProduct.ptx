@@ -338,19 +338,19 @@
                   </p>
   
                   <p>
-                    <m>\Vertoverline{PQ}\Vert = \sqrt{(-2)^2 + (-4)^2 + (5)^2} = \sqrt{45}</m>, <m>\Vertoverline{PR}\Vert = \sqrt{(1)^2 + (2)^2 + (1)^2} = \sqrt{6}</m>, and <m>\Vertoverline{PQ}\Vert = \sqrt{(3)^2 + (6)^2 + (-4)^2} = \sqrt{61}</m>. 
+                    <m>\Vert\overline{PQ}\Vert = \sqrt{(-2)^2 + (-4)^2 + (5)^2} = \sqrt{45}</m>, <m>\Vert\overline{PR}\Vert = \sqrt{(1)^2 + (2)^2 + (1)^2} = \sqrt{6}</m>, and <m>\Vert\overline{PQ}\Vert = \sqrt{(3)^2 + (6)^2 + (-4)^2} = \sqrt{61}</m>. 
                   </p>
   
                   <p>
-                    The angle between <m>\overline{PR}</m> and <m>\overline{PQ}</m> is <m>\cos^-1{\frac{\overline{PR} \cdot \overline{PQ}}{\VertPR\Vert*\VertPQ\Vert}} = \cos^-1(\frac{(1)(-2) + (2)(-4) + (1)(5)}{\sqrt{6}*\sqrt{45}}) = 107.72^{\circ}</m>.
+                    The angle between <m>\overline{PR}</m> and <m>\overline{PQ}</m> is <m>\cos^-1{\frac{\overline{PR} \cdot \overline{PQ}}{\Vert PR\Vert*\Vert PQ\Vert}} = \cos^-1(\frac{(1)(-2) + (2)(-4) + (1)(5)}{\sqrt{6}*\sqrt{45}}) = 107.72^{\circ}</m>.
                   </p>
   
                   <p>
-                    The angle between <m>\overline{RQ}</m> and <m>\overline{RP}</m> is <m>\cos^-1{\frac{\overline{RQ} \cdot \overline{RP}}{\VertRQ\Vert*\VertRP\Vert}} = \cos^-1(\frac{(-3)(-1) + (-6)(-2) + (-4)(-1)}{\sqrt{61}*\sqrt{6}}) = 54.90^{\circ}</m>.
+                    The angle between <m>\overline{RQ}</m> and <m>\overline{RP}</m> is <m>\cos^-1{\frac{\overline{RQ} \cdot \overline{RP}}{\Vert RQ\Vert*\Vert RP\Vert}} = \cos^-1(\frac{(-3)(-1) + (-6)(-2) + (-4)(-1)}{\sqrt{61}*\sqrt{6}}) = 54.90^{\circ}</m>.
                   </p>
   
                   <p>
-                    The angle between <m>\overline{QR}</m> and <m>\overline{QP}</m> is <m>\cos^-1{\frac{\overline{QR} \cdot \overline{QP}}{\VertQR\Vert*\VertQP\Vert}} = \cos^-1(\frac{(3)(2) + (6)(4) + (-4)(-5)}{\sqrt{61}*\sqrt{45}}) = 17.38^{\circ}</m>.
+                    The angle between <m>\overline{QR}</m> and <m>\overline{QP}</m> is <m>\cos^-1{\frac{\overline{QR} \cdot \overline{QP}}{\Vert QR\Vert*\Vert QP\Vert}} = \cos^-1(\frac{(3)(2) + (6)(4) + (-4)(-5)}{\sqrt{61}*\sqrt{45}}) = 17.38^{\circ}</m>.
                   </p>
                 </li>
   

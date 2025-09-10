@@ -28,10 +28,10 @@
       <li>
       <title>Exercises</title>
         <p>
-          There are dozens of calculus texts with (collectively) tens of thousands of exercises.  Rather than repeat a large list of standard and routine exercises in this text, we recommend the use of <webwork /> with its access to the National Problem Library and its many multivariable calculus problems. In this text, each section begins with several anonymous <webwork /> exercises, and follows with several  challenging problems. The <webwork /> exercises are best completed in <url href="https://activecalculus.org/multi/"><c>the .html version of the text</c></url>. Almost every non-<webwork /> problem has multiple parts, requires the student to connect several key ideas, and expects that the student will do at least a modest amount of writing to answer the questions and explain their findings.  For instructors interested in a more conventional source of exercises, consider the freely available <url href="www.apexcalculus.com"><c>APEX Calculus</c></url> text by Greg Hartmann et al.
+          There are dozens of calculus texts with (collectively) tens of thousands of exercises.  Rather than repeat a large list of standard and routine exercises in this text, we recommend the use of <webwork /> with its access to the National Problem Library and its many multivariable calculus problems. In this text, each section begins with several anonymous <webwork /> exercises, and follows with several  challenging problems. The <webwork /> exercises are best completed in <url href="https://activecalculus.org/multi/">the .html version of the text</url>. Almost every non-<webwork /> problem has multiple parts, requires the student to connect several key ideas, and expects that the student will do at least a modest amount of writing to answer the questions and explain their findings.  For instructors interested in a more conventional source of exercises, consider the freely available <url href="https://www.apexcalculus.com">APEX Calculus</url> text by Greg Hartmann et al.
         </p>
         <p>
-          Our Fall 2025 preview release includes at least some <webwork/> exercises in each of the sections of our Second Edition preview, but we welcome suggestions of additional <webwork /> exercises that faculty would consider good inclusions and feedback on any aspect of this edition. The best way to provide feedback is through the <url href="https://groups.google.com/u/0/g/active-calculus-multivariable" >Active Calculus - Multivariable Google Group</url>. We have also set up a <url href="https://forms.gle/R1YNrPMC6q9Z2H3n8" visual="forms.gle/R1YNrPMC6q9Z2H3n8">Google Form</url> to collect feedback. If you are comfortable with GitHub and/or PreTeXt, you can submit your suggested changes as a Pull Request or Issue to the <url href="https://github.com/active-calculus/active-calculus-vector">repository</url>. We will occasionally give some updates through the blog on <url href="https://activecalculus.org/" />.
+          Our Fall 2025 preview release includes at least some <webwork/> exercises in each of the sections of our Second Edition preview, but we welcome suggestions of additional <webwork /> exercises that faculty would consider good inclusions and feedback on any aspect of this edition. The best way to provide feedback is through the <url href="https://groups.google.com/u/0/g/active-calculus-multivariable" >Active Calculus - Multivariable Google Group</url> or through this <url href="https://forms.gle/qFGuZa9gg8fPAost7" visual="forms.gle/qFGuZa9gg8fPAost7">Google Form</url>. If you are comfortable with GitHub and/or PreTeXt, you can submit your suggested changes as a Pull Request or Issue to the <url href="https://github.com/active-calculus/active-calculus-vector">ACM repository</url>. We will occasionally give some updates through the blog on <url href="https://activecalculus.org/">activecalculus.org</url>.
         </p>
       </li>
 
@@ -44,18 +44,19 @@
           <li>To <em>zoom</em> on an interactive three-dimensional graphic, use your mouse's scroll wheel or make your operating system's scroll gesture on your touchpad.</li>
           <li>To <em>move</em> a three-dimensional graphic instead of rotating, hold down the space bar while clicking and dragging.</li>
         </ul>
+        For a more comprehensive description with examples and suggestions on other tools, please see our <xref ref="graphtech">Preface on Graphics and Technology</xref>
       </p>
     </li>
-
-      <li>
-      <title>Summary of Key Ideas</title>
-        <p>
-          Each section concludes with a summary of the key ideas encountered in the preceding section; this summary normally reflects responses to the motivating questions that began the section.
-        </p>
-      </li>
-
-      <li>
-      <title>Links to technological tools</title>
+    <li>
+    <title>Summary of Key Ideas</title>
+      <p>
+        Each section concludes with a summary of the key ideas encountered in the preceding section; this summary normally reflects responses to the motivating questions that began the section.
+      </p>
+    </li>
+  </dl>
+  </p>
+      <!--<li>
+       <title>Links to technological tools</title>
         <p>
           Many of the ideas of multivariable calculus are best understood dynamically, and we encourage readers to make frequent use of technology to analyze graphs and data. Since technology changes so often, we refrain from indicating specific programs to use in the text. However, aside from computer algebra systems like <em>Maple</em>, <em>Mathematica</em>, or <em>Sage</em>, there are many free graphing tools available for drawing three-dimensional surfaces or curves. These programs can be used by instructors and students to assist in the investigations and demonstrations. The use of these freely available applets is in accord with our philosophy that no one should be required to purchase materials to learn calculus. We are indebted to everyone who allows their expertise to be openly shared. Below is a list of a few of the technological tools that are available (links active at the writing of this edition). Of course, you can find your own by searching the web. 
         </p>
@@ -64,22 +65,22 @@
     <ul>
       <li>
         <p> 
-          <url href="https://c3d.libretexts.org/CalcPlot3D/index.html"><c>CalcPlot3D</c></url>, good all-purpose 3D graphing tool 
+          <url href="https://c3d.libretexts.org/CalcPlot3D/index.html">CalcPlot3D</url>, good all-purpose 3D graphing tool 
         </p>
       </li>
       <li>
         <p>
-          <url href="http://www.wolframalpha.com/"><c>Wolfram Alpha</c></url>, useful for graphing surfaces in 2D and 3D, and for general calculations
+          <url href="http://www.wolframalpha.com/">Wolfram Alpha</url>, useful for graphing surfaces in 2D and 3D, and for general calculations
         </p>
       </li>
       <li>
         <p>
-          <url href="http://www.wolframalpha.com/widgets/gallery/?category=math"><c>Wolfram Alpha widgets</c></url>, searchable site for simple to use programs using Wolfram Alpha
+          <url href="http://www.wolframalpha.com/widgets/gallery/?category=math">Wolfram Alpha widgets</url>, searchable site for simple to use programs using Wolfram Alpha
         </p>
       </li>
       <li>
         <p>
-          <url href="https://www.geogebra.org/"><c>GeoGebra</c></url>, all purpose graphing tool with some computer algebra capabilities and <url href="https://www.geogebra.org/3d">a 3D set of features</url>. Clicking on the magnifying glass icon allows you to search a large database of GeoGebra applets.  
+          <url href="https://www.geogebra.org/">GeoGebra</url>, all purpose graphing tool with some computer algebra capabilities and <url href="https://www.geogebra.org/3d">a 3D set of features</url>. Clicking on the magnifying glass icon allows you to search a large database of GeoGebra applets.  
         </p>
       </li>
       <li>
@@ -87,12 +88,11 @@
           <url href="https://www.desmos.com/calculator">Desmos</url> all purpose graphing tool with some computational capabilities and <url href="https://www.desmos.com/3d">a 3D set of features</url>.
         </p>
       </li>
-      <!-- <li>
+      <li>
         <p> 
-          <url href="http://www.math.uri.edu/~bkaskosz/"><c>A collection of Flash Mathlets</c></url> for graphing surfaces, parametric curves in 3D, spherical coordinates and other 3D tools. Requires Flash Player. 
+          <url href="http://www.math.uri.edu/~bkaskosz/">A collection of Flash Mathlets</url> for graphing surfaces, parametric curves in 3D, spherical coordinates and other 3D tools. Requires Flash Player. 
         </p>
-      </li> -->
+      </li>
     </ul>
-  </p>
-  
+  </p> -->
 </preface>

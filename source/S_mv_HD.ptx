@@ -259,7 +259,7 @@
       </p>
     </example>
     <p>
-      <xref ref="Clairaut" text="custom">Clairaut's Theorem</xref> also generalizes to higher dimensions; if all mixed partials are continuous near an input point for our function of three or more variables, then the comparable mixed partials will be equal. 
+      <xref ref="thm-clairaut" text="custom">Clairaut's Theorem</xref> also generalizes to higher dimensions; if all mixed partials are continuous near an input point for our function of three or more variables, then the comparable mixed partials will be equal. 
     </p>
     <p>
       In <xref ref="S-10-4-Linearization"/>, we saw how the ideas of locally linear functions and differentiability meant that for small scales, the change in the output of our function could be expressed as a linear combination of the changes in each variable separately. This connected to the idea that the linearization of a function approximates the original function well for small neighborhoods around the point at which the linearization was created. We visualized this linearization with the tangent plane and saw that geometrically speaking, the tangent plane was a good approximation for the surface at small scales. 

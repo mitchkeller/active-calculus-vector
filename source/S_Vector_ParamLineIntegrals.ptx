@@ -182,7 +182,7 @@
 			<p> Is <m>\vF=\langle xy,y^2\rangle</m> a gradient vector field? Why or why not? </p>
 		</statement>
 		<hint>
-			<p> What would <xref ref="Clairaut" text="title" /> tell you about a potential function <m>f</m> such that <m>\vF = \grad{f}</m>? </p>
+			<p> What would <xref ref="thm-clairaut" text="title" /> tell you about a potential function <m>f</m> such that <m>\vF = \grad{f}</m>? </p>
 		</hint>
 		<answer>
 			<p>No.</p>
@@ -587,7 +587,7 @@
 			</statement>
 			<answer><p>No</p></answer>
 			<solution>
-  			<p>No. One way to observe this would be to check the partial derivative with respect to <m>y</m> of the <m>\vi</m> component and compare it to the partial derivative with respect to <m>x</m> of the <m>\vj</m> component. Since they are not equal, <xref ref="Clairaut" text="title"/> tells us that this vector field is not a gradient vector field.</p>
+  			<p>No. One way to observe this would be to check the partial derivative with respect to <m>y</m> of the <m>\vi</m> component and compare it to the partial derivative with respect to <m>x</m> of the <m>\vj</m> component. Since they are not equal, <xref ref="thm-clairaut" text="title"/> tells us that this vector field is not a gradient vector field.</p>
 			</solution>
     </task>
   </activity>

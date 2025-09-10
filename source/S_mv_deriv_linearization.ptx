@@ -37,7 +37,7 @@
   <introduction component="instructor">
     <title>Notes to the Instructor and Dependencies</title>
     <p>
-      This section relies on the ideas of planes from <xref ref="S-Precalc-Lines"/> and first partial derivatives as measuring the tilt of a surface plot at a particular location from <xref ref="S-10-2-First-Order-Partial-Derivatives"/>. Some instructors will only cover a subset of the linearization tools covered here (tangent plane, total differential, linearization for approximation, differentiabilty, locally linear) but these tools are introduced and defined in such a way that each conceptually flows from the idea of locally linear functions. To cover all the topics in this section will likely take a couple of class meetings. 
+      This section relies on the ideas of planes from <xref ref="S-Precalc-Lines"/> and first partial derivatives as measuring the tilt of a surface plot at a particular location from <xref ref="S-mv_deriv-first_order"/>. Some instructors will only cover a subset of the linearization tools covered here (tangent plane, total differential, linearization for approximation, differentiabilty, locally linear) but these tools are introduced and defined in such a way that each conceptually flows from the idea of locally linear functions. To cover all the topics in this section will likely take a couple of class meetings. 
     </p>
   </introduction>
   <subsection>
@@ -788,7 +788,7 @@
           </tabular>
         </table>
         <p>
-          Use the data to first estimate the appropriate partial derivatives, and then find the linearization <m>L(v,T)</m> at the point <m>(20,-10)</m>.  Finally, use the linearization to estimate <m>w(10,-10)</m>, <m>w(20,-12)</m>, and <m>w(18,-12)</m>. Compare your results to what you obtained in <xref ref="A_10_2_12">Activity</xref>.
+          Use the data to first estimate the appropriate partial derivatives, and then find the linearization <m>L(v,T)</m> at the point <m>(20,-10)</m>.  Finally, use the linearization to estimate <m>w(10,-10)</m>, <m>w(20,-12)</m>, and <m>w(18,-12)</m>. Compare your results to what you obtained in <xref ref="act-mv_deriv-first_order-table">Activity</xref>.
         </p>
       </statement>
       <answer>
