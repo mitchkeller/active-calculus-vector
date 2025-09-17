@@ -262,7 +262,7 @@
       <xref ref="thm-clairaut" text="custom">Clairaut's Theorem</xref> also generalizes to higher dimensions; if all mixed partials are continuous near an input point for our function of three or more variables, then the comparable mixed partials will be equal. 
     </p>
     <p>
-      In <xref ref="S-10-4-Linearization"/>, we saw how the ideas of locally linear functions and differentiability meant that for small scales, the change in the output of our function could be expressed as a linear combination of the changes in each variable separately. This connected to the idea that the linearization of a function approximates the original function well for small neighborhoods around the point at which the linearization was created. We visualized this linearization with the tangent plane and saw that geometrically speaking, the tangent plane was a good approximation for the surface at small scales. 
+      In <xref ref="S-mv_deriv-linearization"/>, we saw how the ideas of locally linear functions and differentiability meant that for small scales, the change in the output of our function could be expressed as a linear combination of the changes in each variable separately. This connected to the idea that the linearization of a function approximates the original function well for small neighborhoods around the point at which the linearization was created. We visualized this linearization with the tangent plane and saw that geometrically speaking, the tangent plane was a good approximation for the surface at small scales. 
     </p>
     <p>
       Unfortunately, we will not be able to use this kind of visualization for functions of three or more variables because our graphing techniques are limited to looking at plots of level surfaces. We can however use linearizations to approximate the change in functions of three or more variables. For example, if we consider <m>T(x,y,z,t)</m> to be the function that measures the air temperature at some location given by <m>(x,y,z)</m> spatial coordinates at time <m>t</m>, then the linearization of this function at a location at location <m>(a,b,c)</m> with time <m>t=d</m> will be 
@@ -323,7 +323,7 @@
       </p>
     </assemblage>
     <p>
-      The first idea above will be very important tool in finding an equation for the plane tangent to an implicit surface. Let <m>P_1</m> be a point on <m>S_1</m>, an implicit surface given by <m>F(P)=k</m>. The tools of <xref ref="S-10-4-Linearization"/> will not work because our surface is not of the form <m>z=f(x,y)</m>. Because <m>\nabla F(P_1)</m> is perpendicular to the surface <m>S_1</m>, <m>\nabla F(P_1)</m> will be a normal vector for the tangent plane at <m>P_1</m>. This leads to the following key idea.
+      The first idea above will be very important tool in finding an equation for the plane tangent to an implicit surface. Let <m>P_1</m> be a point on <m>S_1</m>, an implicit surface given by <m>F(P)=k</m>. The tools of <xref ref="S-mv_deriv-linearization"/> will not work because our surface is not of the form <m>z=f(x,y)</m>. Because <m>\nabla F(P_1)</m> is perpendicular to the surface <m>S_1</m>, <m>\nabla F(P_1)</m> will be a normal vector for the tangent plane at <m>P_1</m>. This leads to the following key idea.
     </p>
     <proposition xml:id="implicittanplane">
       <statement>

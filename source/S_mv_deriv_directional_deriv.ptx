@@ -32,7 +32,7 @@
   <introduction component="instructor">
     <title>Notes to the Instructor and Dependencies</title>
     <p>
-      This section relies on many of the tools we have developed throughout <xref ref="C_MVF"/>, most importantly we will use the linearization from <xref ref="S-10-4-Linearization"/>. The chain rule introduced in <xref ref="S-10-5-Chain-Rule"/> is used to define an efficient calculation of the directional derivative but is not critical for this section.
+      This section relies on many of the tools we have developed throughout <xref ref="C_MVF"/>, most importantly we will use the linearization from <xref ref="S-mv_deriv-linearization"/>. The chain rule introduced in <xref ref="S-10-5-Chain-Rule"/> is used to define an efficient calculation of the directional derivative but is not critical for this section.
     </p>
     <p>
       You will likely want to cover this section over several classes since these ideas are important to many other partner fields. The gradient is defined after the development of the directional derivative because the interpretations of the gradient are dependent on the directional derivative. 
@@ -626,7 +626,7 @@
     </activity>
 </worksheet>
     <p>
-      We found Equation<xref ref="eq_10_6_DD"/> by considering our <xref ref="defn-DD">definition for the directional derivative</xref> as a composition of functions and utilizing our chain rule. A very useful idea when we have multivariable functions that are locally linear is that evaluating a limit for how the function is changing near a point will give the same result as asking what the corresponding change would be on the linearization or tangent plane. Remember that on very small scales there is virtually no difference between the (locally linear) function and the linearization as demonstrated by <xref ref="F_10_4_tangent_4"/>. 
+      We found Equation<xref ref="eq_10_6_DD"/> by considering our <xref ref="defn-DD">definition for the directional derivative</xref> as a composition of functions and utilizing our chain rule. A very useful idea when we have multivariable functions that are locally linear is that evaluating a limit for how the function is changing near a point will give the same result as asking what the corresponding change would be on the linearization or tangent plane. Remember that on very small scales there is virtually no difference between the (locally linear) function and the linearization as demonstrated by <xref ref="fig-mv_deriv-linearization-tangent_4"/>. 
     </p>
     <p>
       The equation of the plane tangent to the graph of <m>f</m> at the point <m>(x_0,y_0,f(x_0,y_0))</m> is
