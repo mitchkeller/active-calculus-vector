@@ -39,8 +39,9 @@
   <subsection>
     <title>Introduction</title>
     <p>
-      In single-variable calculus, we encountered situations in which some quantity was related through a composition of related quantities. For instance, let <m>P</m> be the price of a product and <m>P</m> depends on <m>x</m>, the wages of people making the product. The wages of people making the product will also change over time, denoted <m>t</m>, because of seasonal availability and other factors. So a change in the value of <m>t</m> will produce a change in the value of <m>x</m>, which will produce a change in the value of <m>P</m>. This means that we can write <m>P</m> as a function of <m>x</m> and <m>x</m> as a function of <m>t</m>, thus we can express <m>P</m>'s dependence on <m>t</m> by a composition of functions:
+      In single-variable calculus, we encountered situations in which some quantity was related through a composition of related quantities. For instance, suppose <m>P</m> is the price of a product and <m>P</m> depends on the wages <m>x</m> of people making the product. The wages of people making the product will also change over time because of seasonal availability and other factors. So a change in the value of time <m>t</m> produces a change in the value of <m>x</m>, which produces a change in the value of <m>P</m>. This means that we can write <m>P</m> as a function of <m>x</m> and <m>x</m> as a function of <m>t</m>, thus we can express <m>P</m>'s dependence on <m>t</m> by a composition of functions: <m>(P\circ x)(t) = P(x(t))</m>.
     </p> 
+    <!-- If restoring this image, there are two lines in the image that need fixing since they broke XML comments.
     <figure xml:id="compositionoffns">
       <caption>Composition of <m>P(x)</m> and <m>x(t)</m> </caption>
       <image width="50%">
@@ -54,35 +55,30 @@
           \begin{scope}[xshift=8cm]
           \node[font=\large] (P) at (0, 4) {\(P\)};
           \end{scope}
-          \draw [->] (t) -- (X) node [pos=0.5, above] {\(x(t)\)};
-          \draw [->] (X) -- (P) node [pos=0.5, above] {\(P(x)\)};
+          \draw [->] (t) - - (X) node [pos=0.5, above] {\(x(t)\)}; % FIX ME BY REMOVING THE SPACE BETWEEN THE DASHES
+          \draw [->] (X) - - (P) node [pos=0.5, above] {\(P(x)\)}; % FIX ME BY REMOVING THE SPACE BETWEEN THE DASHES
           \draw [->,out=60, in=120, line width=1.5pt, red!80!black] (t) .. controls ++(1, 1) and ++(-1, 1) .. (P) node [pos=0.5, above] {\(P(x(t))= (P \circ x) (t)\)};
           \end{tikzpicture}      
         </latex-image>
       </image>
-    </figure>
-    <p>  
-      Using the language of differentials that we saw in the previous section and the ideas of local linearity we can express these changes as follows. 
-      For a small change in <m>x</m>, the change in the price of the product will be approximately proportional to the change in <m>x</m>
-      <me> dP = (m) dx  </me>
-      with <m>m</m> being the value of <m>\frac{dP}{dx}</m> at <m>x_0</m>, the current value of <m>x</m>. We can write <m>v</m> as <m>m=\frac{dP}{dx}\restrict{x=x_0}</m> because <m>m</m> is current instantaneous rate of change in the product price per unit of labor cost. 
-    </p>
-    <p>  
-      A small change in the value of <m>t</m> will also cause a proportional change in the value of <m>x</m>.
-      <me> dx = (v) dt</me>
-      with <m>v</m> being the value of <m>\frac{dx}{dt}</m> at the current value of <m>t</m>, which we will call <m>t_0</m>. So <m>v=\frac{dx}{dt}\restrict{t=t_0}</m>.
+    </figure>-->
+    <p>
+      Applying the <url href="https://activecalculus.org/single/sec-2-5-chain.html#chain-rule" >chain rule</url> from single-variable calculus to find the rate of change of the price <m>P</m> with respect to time <m>t</m> likely leads you to write
+      <me>
+        \frac{dP}{dt} = P'(x(t))x'(t)
+      </me>.
+      However, this form of the chain rule is only useful when we have algebraic expressions for <m>P(x)</m> and <m>x(t)</m>. It may be that we know about the rate of change of <m>P</m> with respect to <m>x</m> at a specific value <m>x_0</m> and the rate of change of <m>x</m> with respect to <m>t</m> at a specific value <m>t_0</m> for which we have <m>x(t_0)=x_0</m>. Using the language of differentials and local linearity we can express these changes as follows.  For a small change in <m>x</m>, the change in the price of the product is approximately proportional to the change in <m>x</m>:
+      <me> dP = \frac{dP}{dx}\restrict{x=x_0} dx  </me>,
+      where <m>\frac{dP}{dx}\restrict{x=x_0}</m> denotes the instantaneous rate of change in the product price per unit of labor cost at <m>x=x_0</m>. Similarly, a small change in the value of <m>t</m> will also cause a proportional change in the value of <m>x</m>:
+      <me> dx = \frac{dx}{dt}\restrict{t=t_0} dt</me>.
     </p>
     <p>
-      We can now combine these relationships to express how a change in <m>t</m> will produce a change in <m>P</m>.
-      <me>dP=(m) dx = (m)(v)dt = \left( \frac{dP}{dx}\restrict{x=x_0} \right)\left( \frac{dx}{dt}\restrict{t=t_0} \right) dt</me>
-      In particular, this says that a change in the price of our product will the current instantaneous rate of change of the price per step in <m>x</m> times the current rate of change in the price of labor times the step in time. 
+      We can combine these relationships to express how a change in <m>t</m> produces a change in <m>P</m>:
+      <me>dP=\frac{dP}{dx}\restrict{x=x_0} dx =  \left( \frac{dP}{dx}\restrict{x=x_0} \right)\left( \frac{dx}{dt}\restrict{t=t_0} \right) dt</me>
+      We should interpret this as telling us that the change in the price of the product is approximately the current instantaneous rate of change of the price per step in <m>x</m> times the current rate of change in the price of labor times the step in time. 
     </p>
     <p>
-      The previous equation is called the <em>Chain Rule</em>. In single variable calculus, you likely saw the <url href="https://activecalculus.org/single/sec-2-5-chain.html#chain-rule" >Chain Rule</url> stated as: If <m>C</m> is the composition of functions <m>f</m> and <m>g</m> such <m>C(x)=f(g(x))</m>, <m>f</m> is differentiable at <m>g(x)</m>, and <m>g</m> is differentiable at <m>x</m>, then 
-      <me>C'(x)=f'(g(x)) g'(x)</me>
-    </p>
-    <p>
-      If we look at a function of two variables where <m>z = f(x,y)</m>, it might be that both <m>x</m> and <m>y</m> depend on another variable <m>t</m>. A change in <m>t</m> then produces changes in <em>both</em> <m>x</m> and <m>y</m>, which then causes <m>z</m> to change. In this section, we will see how to describe the change in <m>z</m> that is caused by a change in <m>t</m>, leading us to multivariable versions of the Chain Rule involving both regular and partial derivatives.
+      As we look at functions of two (or more) variables in this text, we will encounter a situation where <m>z = f(x,y)</m> and both <m>x</m> and <m>y</m> depend on another variable <m>t</m>. A change in <m>t</m> then produces changes in <em>both</em> <m>x</m> and <m>y</m>, which then causes <m>z</m> to change. In this section, we will see how to describe the change in <m>z</m> that is caused by a change in <m>t</m>, leading us to multivariable versions of the chain rule involving both regular and partial derivatives.
     </p>
     <worksheet>
   <exploration workspace="1.5in"
