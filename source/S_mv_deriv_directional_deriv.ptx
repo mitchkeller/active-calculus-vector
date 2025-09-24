@@ -32,7 +32,7 @@
   <introduction component="instructor">
     <title>Notes to the Instructor and Dependencies</title>
     <p>
-      This section relies on many of the tools we have developed throughout <xref ref="C_MVF"/>, most importantly we will use the linearization from <xref ref="S-mv_deriv-linearization"/>. The chain rule introduced in <xref ref="S-10-5-Chain-Rule"/> is used to define an efficient calculation of the directional derivative but is not critical for this section.
+      This section relies on many of the tools we have developed throughout <xref ref="C_MVF"/>, most importantly we will use the linearization from <xref ref="S-mv_deriv-linearization"/>. The chain rule introduced in <xref ref="S_mv_deriv-chain_rule"/> is used to define an efficient calculation of the directional derivative but is not critical for this section.
     </p>
     <p>
       You will likely want to cover this section over several classes since these ideas are important to many other partner fields. The gradient is defined after the development of the directional derivative because the interpretations of the gradient are dependent on the directional derivative. 
@@ -388,7 +388,7 @@
   <subsection>
     <title>Efficiently Computing the Directional Derivative</title>
     <p>
-      In a similar way to how we developed algebraic rules for calculating standard derivatives in single variable calculus and for partial derivatives in multivariable calculus, we want to find a way to evaluate directional derivatives without resorting to evaluating the limit definition (Equation <xref ref="E_DirDerDef"/>). We will look at this algebraic shortcuts from two perspectives; First, we will look at <xref ref="E_DirDerDef">Equation</xref> as a composition of functions and use the chain rule from <xref ref="S-10-5-Chain-Rule"/> to define a simple algebraic rule which will allow us to efficiently calculate directional derivatives. Second, we will look at how directional derivatives can be computed using the linearization (when we have a locally linear/differentiable function).
+      In a similar way to how we developed algebraic rules for calculating standard derivatives in single variable calculus and for partial derivatives in multivariable calculus, we want to find a way to evaluate directional derivatives without resorting to evaluating the limit definition (Equation <xref ref="E_DirDerDef"/>). We will look at this algebraic shortcuts from two perspectives; First, we will look at <xref ref="E_DirDerDef">Equation</xref> as a composition of functions and use the chain rule from <xref ref="S_mv_deriv-chain_rule"/> to define a simple algebraic rule which will allow us to efficiently calculate directional derivatives. Second, we will look at how directional derivatives can be computed using the linearization (when we have a locally linear/differentiable function).
     </p>
     <p>
       We are interested in the instantaneous rate of change of <m>f</m> at a point <m>(x_0,y_0)</m> in the direction <m>\vu = \langle u_1, u_2 \rangle</m>, where <m>\vu</m> is a unit vector. In particular, the input variables <m>x</m> and <m>y</m> are therefore changing according to
