@@ -230,43 +230,6 @@
         </sageplot>
       </image>
     </figure>
-
-
-
-    <!-- <p>
-      Given a function <m>z = f(x,y)</m>, the partial derivative <m>f_x(x_0,y_0)</m> measures the instantaneous rate of change of <m>f</m> as only the <m>x</m> variable changes; likewise, <m>f_y(x_0,y_0)</m> measures the rate of change of <m>f</m> at <m>(x_0,y_0)</m> as only <m>y</m> changes. Note particularly that <m>f_x(x_0,y_0)</m> is measured in <q>units of <m>f</m> per unit of change in <m>x</m>,</q> and that the units on <m>f_y(x_0,y_0)</m> are similar.
-    </p>
-
-    <p>
-      In <xref ref="PA-DD">Preview Activity</xref>, we saw how we could measure the rate of change of <m>f</m> in a situation where both <m>x</m> and <m>y</m> were changing; in that activity, however, we found that this rate of change was measured in <q>units of <m>f</m> per unit of <em>time</em>.</q> In a given unit of time, we may move more than one unit of distance. In fact, in <xref ref="PA-DD">Preview Activity</xref>, in each unit increase in time we move a distance of <m>\vecmag{\vv}  = 5</m> feet. To generalize the notion of partial derivatives to any direction of our choice, we instead want to have a rate of change whose units are <q>units of <m>f</m> per unit of distance in the given direction.</q>
-    </p>
-
-    <p>
-      In this light, in order to formally define the derivative in a particular direction of motion, we want to represent the change in <m>f</m> for a given <em>unit</em> change in the direction of motion. We can represent this unit change in direction with a unit vector, say <m>\vu = \langle u_1, u_2 \rangle</m>. If we move a distance <m>h</m> in the direction of <m>\vu</m> from a fixed point <m>(x_0,y_0)</m>, we then arrive at the new point <m>(x_0+u_1h, y_0+u_2h)</m>. It now follows that the slope of the secant line to the curve on the surface through <m>(x_0,y_0)</m> in the direction of <m>\vu</m> through the points <m>(x_0,y_0)</m> and <m>(x_0+u_1h, y_0+u_2h)</m> is
-      <men xml:id="eq_10_6_diff_quot">
-        m_{\mbox{sec} } = \frac{f(x_0+u_1h, y_0+u_2h) - f(x_0,y_0)}{h}.
-      </men>
-    </p>
-
-    <p>
-      To get the instantaneous rate of change of <m>f</m> in the direction <m>\vu = \langle u_1, u_2 \rangle</m>, we must take the limit of the quantity in Equation<nbsp/><xref ref="eq_10_6_diff_quot"/> as <m>h \to 0</m>. Doing so results in the formal definition of the directional derivative.
-    </p>
-
-    <definition>
-      <statement>
-        <p>
-          Let <m>f = f(x,y)</m> be given. The <term>derivative of <m>f</m> at the point <m>(x,y)</m> in the direction of the unit vector <m>\vu = \langle u_1, u_2 \rangle</m></term><idx><h>directional derivative</h></idx> is denoted <m>D_{\vu}f(x,y)</m> and is given by
-          <men xml:id="E_DirDerDef">
-            D_{\vu}f(x,y) = \lim_{h \to 0} \frac{f(x+u_1h, y+u_2h) - f(x,y)}{h}
-          </men>
-          for those values of <m>x</m> and <m>y</m> for which the limit exists.
-        </p>
-      </statement>
-    </definition> -->
-
-   <!--  <p>
-      The quantity <m>D_{\vu} f(x,y)</m> is called a <em>directional derivative</em>. When we evaluate the directional derivative <m>D_{\vu} f(x,y)</m> at a point <m>(x_0, y_0)</m>, the result <m>D_{\vu} f(x_0,y_0)</m> tells us the instantaneous rate at which <m>f</m> changes at <m>(x_0, y_0)</m> per unit increase in the direction of the vector <m>\vu</m>. In addition, the quantity <m>D_{\vu} f(x_0,y_0)</m> tells us the slope of the line tangent to the surface in the direction of <m>\vu</m> at the point <m>(x_0,y_0,f(x_0,y_0))</m>.
-    </p> -->
   </subsection>
 
 
