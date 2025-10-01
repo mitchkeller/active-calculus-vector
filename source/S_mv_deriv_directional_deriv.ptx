@@ -61,13 +61,13 @@
         <p>
           Below is a contour plot showing the elevations for a region of a nearby park. <!-- The elevations are given in meters above sea level and the horizontal and vertical grid lines are 1 km apart. Several locations are labeled on <xref ref="PA-DDcontour1"/> with capital letters. --> We will be referring to <m>h(x,y)</m> as the function of two variables that gives the elevation as a function of <m>x</m>-coordinate (location in the east-west or horizontal direction) and <m>y</m>-coordinates (location in the north-south or vertical direction).
         </p>
-        <image width="60%" xml:id="img-PA-DDcontour1">
+        <image width="60%">
           <shortdescription>A contour plot with three locations marked</shortdescription>
           <description>
             <p>A contour plot on which three points (<m>A</m>, <m>B</m>, and <m>C</m>) are marked.
             </p>
           </description>
-          <sageplot>
+          <sageplot label="img-PA-DDcontour1">
             from matplotlib import ticker
             var('x,y,z,s,t')
             f(x,y)=(x*y+(y-20)^2)/125+90*exp(-(((x-70)/90)^2+((y+10)/30)^2))+100+100*exp(-(((x+75)/30)^2+((y-50)/60)^2))
@@ -154,31 +154,31 @@
   <subsection>
     <title>Directional Derivatives</title>
     <p>
-      The first goal of this section is to measure the rate of change for a function of two variables in a direction that is not parallel to one of the coordinate directions. We will use the classic calculus approach to set up this measurement: approximate our measurement, quantify how the approximation changes on a smaller scale, then use a limit to find the actual value. In order to measure the rate of change in the output of our function, we will use a typical difference quotient 
+      We begin by determining how to measure the rate of change for a function of two variables in a direction that is not parallel to one of the coordinate directions. We use the classic calculus approach to set up this measurement: approximate the measurement, quantify how the approximation changes on a smaller scale, and finally use a limit to find the value. To measure the rate of change in the output of a function, we use a difference quotient:
       <me>
         \text{rate of change} = \frac{\text{change in output}}{\text{change in input}}
-      </me>
+      </me>.
     </p>
     <p>
-      Let <m>f</m> be a function of two variables, <m>x</m> and <m>y</m>, where we wish to measure the rate of change in the <m>\langle a,b\rangle</m> direction for <m>f</m> at the base point <m>(x_0,y_0)</m>. So we can set up the difference quotient using the input points <m>(x_0+a,y_0+b)</m> and <m>(x_0,y_0</m>).
-      <me>\frac{f(x_0+a,y_0+b)-f(x_0,y_0)}{\sqrt{a^2+b^2}}</me>
-      Note here that we use the distance formula to measure the change in the input as distance on the <m>xy</m>-plane. <xref ref="CCA-DD1" /> shows the plot of a surface given by <m>z=f(x,y)</m> with the points used in the difference quotient labeled.
+      Let <m>f</m> be a function of the variables <m>x</m> and <m>y</m>. We wish to measure the rate of change of <m>f</m> at the base point <m>(x_0,y_0)</m> in the direction of the vector <m>\langle a,b\rangle</m>. To do this, we write the difference quotient using the points <m>(x_0+a,y_0+b)</m> and <m>(x_0,y_0</m>):
+      <me>\frac{f(x_0+a,y_0+b)-f(x_0,y_0)}{\sqrt{a^2+b^2}}</me>.
+      The denominator comes from using the distance formula to measure the change in the input as distance in the <m>xy</m>-plane. <xref ref="CCA-DD1" /> shows the plot of a surface given by <m>z=f(x,y)</m> with the points used in the difference quotient labeled.
     </p>
     <figure xml:id="CCA-DD1">
       <caption>A plot of <m>f(x,y)</m> with the measurements of change in input and output labeled for a change of inputs given by <m>\langle a,b\rangle</m></caption>
-      <interactive title="interactive-CCA-DD1" platform="sage" width="100%" aspect="1:1">
+      <interactive label="interactive-CCA-DD1" platform="sage" width="91%" aspect="1:1">
         <slate surface="sage">
           <xi:include href="interacts/CCA-DD1.txt" parse="text" />
         </slate>
       </interactive>
     </figure>
     <p>
-      The difference quotient given above is a good start to approximating the rate of change for the output of <m>f</m> in the direction <m>\langle a,b\rangle</m> (the first step in our classic calculus approach), but it is not clear how this approximation will change when we look at smaller scales. Specifically, we will need to look at what happens to this approximation as we shrink the step size, <m>\sqrt{a^2+b^2}\to 0</m> while maintaining the same direction of change. In order to maintain our direction <em>and</em> look at smaller step sizes, we will need to separate the length of the vector <m>\langle a,b \rangle </m> from its direction using the unit vector in the direction of <m>\langle a,b \rangle</m>.
+      The difference quotient above is the first step in the classic calculus approach and provides a good start to approximating the rate of change for the output of <m>f</m> in the direction <m>\langle a,b\rangle</m>. However, it is not clear how this approximation changes when we look at smaller scales. Specifically, we need to look at what happens to this approximation as we shrink the step size <m>\sqrt{a^2+b^2}</m> to <m>0</m> while maintaining the same direction of change. In order to maintain our direction <em>and</em> look at smaller step sizes, we must separate the length of the vector <m>\langle a,b \rangle </m> from its direction. To do this, we use the unit vector in the direction of <m>\langle a,b \rangle</m>.
     </p>
     <p>
-      Let <m>\vu=\langle u_1,u_2\rangle </m> be the unit vector in the same direction as <m>\langle a,b \rangle</m>. We can express the vectors in the same direction as <m>\langle a,b \rangle</m> using the form <m> t \langle u_1,u_2\rangle</m>, where <m>t</m> is the step size and <m>\vu=\langle u_1,u_2\rangle </m> is our unit vector. Taking a step of length <m>t</m> in the direction <m>\langle u_1,u_2 \rangle</m>, our difference quotient becomes 
-      <me>\frac{f(x_0+t (u_1),y_0+t(u_2))-f(x_0,y_0)}{t}</me>
-      We will need to look how this difference quotient changes at smaller scales (as our step size <m>t</m> gets smaller). This accomplishes the second step of our classic calculus approach in quantifying how our approximation will work on smaller scales. We can now take the limit as <m>t \to 0</m> to get our definition for the directional derivative.
+      Let <m>\vu=\langle u_1,u_2\rangle </m> be the unit vector in the same direction as <m>\langle a,b \rangle</m>. Vectors in the same direction as <m>\langle a,b \rangle</m> can be written in the form <m> t \langle u_1,u_2\rangle</m>, where <m>t</m> is the step size and <m>\vu=\langle u_1,u_2\rangle </m> is the unit vector. Taking a step of length <m>t</m> in the direction <m>\langle u_1,u_2 \rangle</m>, the difference quotient can be written as
+      <me>\frac{f(x_0+t (u_1),y_0+t(u_2))-f(x_0,y_0)}{t}</me>.
+      We will look at how this difference quotient changes at smaller scales, i.e., when the step size <m>t</m> gets smaller. This accomplishes the second step of the classic calculus approach because it quantifyies how the approximation works on smaller scales. We can now take the limit as <m>t \to 0</m> to define the directional derivative.
     </p>
     <definition xml:id="defn-DD">
       <statement>
@@ -192,26 +192,31 @@
       </statement>
     </definition>
     <p>
-      The notation <m>D_{\vu}f(x,y)</m> can also be read as <q>the directional derivative of <m>f</m> in the direction <m>\vu</m> at the point <m>(x,y)</m>.</q> While this may seem like a handful, each piece of this statement is necessary for a directional derivative; We need to specify what function we are looking at, the location at which we are looking for the rate of change, AND the direction in which we will change the inputs. When we evaluate the directional derivative <m>D_{\vu} f(x,y)</m> at a point <m>(x_0, y_0)</m>, the result <m>D_{\vu} f(x_0,y_0)</m> tells us the instantaneous rate at which <m>f</m> changes at <m>(x_0, y_0)</m> per unit increase in the direction of the vector <m>\vu</m>.
+      The notation <m>D_{\vu}f(x,y)</m> can also be read as <q>the directional derivative of <m>f</m> in the direction <m>\vu</m> at the point <m>(x,y)</m>.</q> While this may seem like a mouthful, each piece of this phrase is necessary to specify a directional derivative: we must specify the function, the location at which to measure the rate of change, <em>and</em> the direction in which the inputs change. When we evaluate the directional derivative <m>D_{\vu} f(x,y)</m> at a point <m>(x_0, y_0)</m>, the result <m>D_{\vu} f(x_0,y_0)</m> tells us the instantaneous rate at which <m>f</m> changes at <m>(x_0, y_0)</m> per unit increase in the direction of the vector <m>\vu</m>.
     </p>
     <p>
-      We will take a moment to connect <xref ref="E_DirDerDef">Equation</xref> to our work on traces earlier in this chapter. When initially exploring surface plots, we simplified our approach by looking at slices that were parallel to one of the coordinate axes (by holding the other input variable constant). This allowed us to use our single variable calculus knowledge to understand a bit more about the surface as well as motivating the definitions for partial derivatives. Similarly, if we cut our surface in the <m>\langle u_1,u_2\rangle </m> direction through our base point, then we can think about the directional derivative as a single variable calculus problem. 
+      We can connect <xref ref="E_DirDerDef">equation</xref> to our work on traces earlier in this chapter. When initially exploring surface plots, we simplified our approach by looking at slices that were parallel to one of the coordinate axes, obtained by holding the other input variable constant. This allowed us to use ideas from single-variable calculus to understand more about the surface and to motivate the definitions of partial derivatives. Similarly, we can cut the surface in the <m>\langle u_1,u_2\rangle </m> direction through the base point and then think about the directional derivative as a single-variable calculus problem. In particular, we can parameterize the trace along the surface by noticing our inputs correspond to the line in the xy-plane given by <m>\langle x_0+ u_1 t, y_0 + u_2 t\rangle</m>, which is shown in red on <xref ref="CCA-DD2"/>. 
     </p>
     <figure xml:id="CCA-DD2">
       <caption>A plot of <m>f(x,y)</m> with a trace shown from the point <m>(x_0,y_0)</m> in the direction <m>\langle u_1,u_2 \rangle</m></caption>
-      <interactive title="interactive-CCA-DD2" platform="sage" width="100%" aspect="1:1">
+      <interactive label="interactive-CCA-DD2" platform="sage" width="91%" aspect="1:1">
         <slate surface="sage">
           <xi:include href="interacts/CCA-DD2.txt" parse="text" />
         </slate>
       </interactive>
     </figure>
     <p>
-      In particular, we can parameterize the trace along the surface by noticing our inputs correspond to the line in the xy-plane given by <m>\langle x_0+ u_1 t, y_0 + u_2 t\rangle</m> (shown in red on <xref ref="CCA-DD2"/>). Note that when <m>t=0</m> the location will be <m>(x_0,y_0)</m>. Our trace along the surface will be given by <m>\vr(t)=\langle x_0+ u_1 t, y_0 + u_2 t , f(x_0+ u_1 t, y_0 + u_2 t) \rangle</m> (shown in blue on <xref ref="CCA-DD2"/>). We can plot the trace of our surface in the direction of <m>\langle u_1,u_2 \rangle</m> (as a function of <m>t</m>) as a 2D plot like <xref ref="CCA-DD3"/>. We can visualize the directional derivative as the slope of a tangent line at our base point as drawn in black on <xref ref="CCA-DD3"/>. The scalar <m>D_{\vu} f(x_0,y_0)</m> tells us the slope of the line tangent to the surface in the direction of <m>\vu</m> at the point <m>(x_0,y_0,f(x_0,y_0))</m>. 
+      When <m>t=0</m>, the location is <m>(x_0,y_0)</m>. The trace along the surface is given by <m>\vr(t)=\langle x_0+ u_1 t, y_0 + u_2 t , f(x_0+ u_1 t, y_0 + u_2 t) \rangle</m>. This trace is shown in blue in <xref ref="CCA-DD2"/>. We can also plot the trace of this surface in the direction of <m>\langle u_1,u_2 \rangle</m> as a function of <m>t</m> using a two-dimensional plot. This plot is shown in <xref ref="CCA-DD3"/>. We can visualize the directional derivative as the slope of a tangent line at the base point. This tangent line is drawn in black on <xref ref="CCA-DD3"/>. The scalar <m>D_{\vu} f(x_0,y_0)</m> tells us the slope of the line tangent to the surface in the direction of <m>\vu</m> at the point <m>(x_0,y_0,f(x_0,y_0))</m>. 
     </p>
     <figure xml:id="CCA-DD3">
       <caption>A plot of the trace of <m>f</m> along the direction <m>\langle u_1,u_2\rangle</m> with tangent line drawn at point corresponding to <m>(x_0,y_0)</m></caption>
-      <image width="60%" xml:id="img-PA-DDcontour3">
-        <sageplot>
+      <image width="60%" >
+        <shortdescription>A curve with a tangent line</shortdescription>
+        <description>
+          <p>A two-dimensional plot of the trace <m>f(x_0+tu_1,y_0+tu_2)</m> with the horizontal axis labeled <m>t</m>. A tangent line to the trace is also shown.
+          </p>
+        </description>
+        <sageplot label="img-PA-DDcontour3">
           from matplotlib import ticker
           var('x,y,z,t,s')
           f(x,y)=3*exp(-(x-1/2)^2/2-y^2/4)-1
