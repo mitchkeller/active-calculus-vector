@@ -13,7 +13,7 @@
 <!-- derivatives for profit.  All trademarks are the registered marks of   -->
 <!-- their respective owners.                                              -->
 <!-- **********************************************************************-->
-<section xml:id="S-10-6-Directional-Derivative" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="S-mv_deriv-directional" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Directional Derivatives and the Gradient</title>
   <objectives>
       <ul>
@@ -41,16 +41,17 @@
   <subsection>
     <title>Introduction</title>
     <p>
-      The partial derivatives of a multivariable function tell us the instantaneous rate at which the function's output changes as we hold all but one independent variable constant (allowing the remaining independent variable to change). It is natural to wonder how we can measure the rate at which a function changes in a direction other than parallel to a coordinate axes. In this section, we investigate this question and will connect the rates of change in other directions to the rates of change given by the partial derivatives. In our preview activity, we will investigate these concepts in terms of a contour map representing elevation in terms of location.
+      The partial derivatives of a multivariable function tell us the instantaneous rate at which the function's output changes as we hold all but one input variable constant (allowing the remaining input variable to change). It is natural to wonder how we can measure the rate at which a function changes in a direction other than parallel to a coordinate axes. In this section, we investigate this question and will connect the rates of change in other directions to the rates of change given by the partial derivatives. The Preview Activity investigates these concepts in terms of a contour map representing elevation in terms of location.
     </p>
     <p>
-      The preview activity uses cardinal directions to specify the direction of displacement vectors. These directions can be described by a compass rose. The compass rose given in <xref ref="comp_rose1" /> is an example of a sixteen point rose. Note that directions like ESE are read as <q>east-southeast</q> half way between east and southeast.
+      We can use cardinal directions to specify the direction of displacement vectors. These directions can be described by a compass rose. The compass rose given in <xref ref="comp_rose1" /> is an example of a sixteen point compass rose. Directions of the form ESE are read as <q>east-southeast</q> and point in the direction halfway between east and southeast.
     </p>
     <figure xml:id="comp_rose1">
-      <caption>An example of a sixteen point compass rose (from <url
+      <caption>An example of a sixteen-point compass rose (from <url
       href="https://commons.wikimedia.org/w/index.php?curid=667281" visual="commons.wikimedia.org/w/index.php?curid=667281">By Brosen~commonswiki - Own work, CC BY 2.5</url>)</caption>
       <image width="50%" source="/Brosen_windrose.png">
-        <description><p>A sixteen point compass rose</p></description>
+        <shortdescription>A sixteen-point compass rose</shortdescription>
+        <description><p>A sixteen-point compass rose</p></description>
       </image>
     </figure>
     <worksheet>
@@ -58,36 +59,38 @@
  xml:id="PA-DD">
       <introduction>
         <p>
-          <xref ref="PA-DDcontour1"/> is a contour plot showing the elevations for a region of a nearby park. <!-- The elevations are given in meters above sea level and the horizontal and vertical grid lines are 1 km apart. Several locations are labeled on <xref ref="PA-DDcontour1"/> with capital letters. --> We will be referring to <m>h(x,y)</m> as the function of two variables that gives the elevation as a function of x-coordinates (location in East-West, horizontal direction) and y-coordinates (location North-South, vertical direction).
+          Below is a contour plot showing the elevations for a region of a nearby park. <!-- The elevations are given in meters above sea level and the horizontal and vertical grid lines are 1 km apart. Several locations are labeled on <xref ref="PA-DDcontour1"/> with capital letters. --> We will be referring to <m>h(x,y)</m> as the function of two variables that gives the elevation as a function of <m>x</m>-coordinate (location in the east-west or horizontal direction) and <m>y</m>-coordinates (location in the north-south or vertical direction).
         </p>
-        <figure xml:id="PA-DDcontour1">
-          <caption>A contour plot representing the elevation of locations in a nearby park with three locations labeled</caption>
-          <image width="60%" xml:id="img-PA-DDcontour1">
-            <sageplot>
-              from matplotlib import ticker
-              var('x,y,z,s,t')
-              f(x,y)=(x*y+(y-20)^2)/125+90*exp(-(((x-70)/90)^2+((y+10)/30)^2))+100+100*exp(-(((x+75)/30)^2+((y-50)/60)^2))
-              n=30
-              c=[70+i*5 for i in range(n)]
-              plot2=contour_plot(f(x,y),(x,-100,100),(y,-100,100),fill=False,labels=True,linewidths=1,contours=c,label_fmt="%1.0f",gridlines=True,plot_points=100,tick_formatter=(ticker.NullFormatter(),
-              ticker.NullFormatter()))
-              plot2+=arrow((-90,-90),(-80,-90),color="black",arrowsize=2)+arrow((-90,-90),(-90,-80),color="black",arrowsize=2)
-              plot2+=arrow((-90,-90),(-100,-90),color="black",arrowsize=2)+arrow((-90,-90),(-90,-100),color="black",arrowsize=2)
-              plot2+=text("N",(-90,-75),color="black")+text("S",(-90,-105),color="black")
-              plot2+=text("E",(-75,-90),color="black")+text("W",(-105,-90),color="black")
-              plot2+=text("A",(0,10),color="black")
-              plot2+=text("B",(50,-35),color="black")
-              plot2+=text("C",(60,60),color="black")
-              plot2
-            </sageplot>
-          </image>
-        </figure>
+        <image width="60%" xml:id="img-PA-DDcontour1">
+          <shortdescription>A contour plot with three locations marked</shortdescription>
+          <description>
+            <p>A contour plot on which three points (<m>A</m>, <m>B</m>, and <m>C</m>) are marked.
+            </p>
+          </description>
+          <sageplot>
+            from matplotlib import ticker
+            var('x,y,z,s,t')
+            f(x,y)=(x*y+(y-20)^2)/125+90*exp(-(((x-70)/90)^2+((y+10)/30)^2))+100+100*exp(-(((x+75)/30)^2+((y-50)/60)^2))
+            n=30
+            c=[70+i*5 for i in range(n)]
+            plot2=contour_plot(f(x,y),(x,-100,100),(y,-100,100),fill=False,labels=True,linewidths=1,contours=c,label_fmt="%1.0f",gridlines=True,plot_points=100,tick_formatter=(ticker.NullFormatter(),
+            ticker.NullFormatter()))
+            plot2+=arrow((-90,-90),(-80,-90),color="black",arrowsize=2)+arrow((-90,-90),(-90,-80),color="black",arrowsize=2)
+            plot2+=arrow((-90,-90),(-100,-90),color="black",arrowsize=2)+arrow((-90,-90),(-90,-100),color="black",arrowsize=2)
+            plot2+=text("N",(-90,-75),color="black")+text("S",(-90,-105),color="black")
+            plot2+=text("E",(-75,-90),color="black")+text("W",(-105,-90),color="black")
+            plot2+=text("A",(0,10),color="red")
+            plot2+=text("B",(50,-35),color="red")
+            plot2+=text("C",(60,60),color="red")
+            plot2
+          </sageplot>
+        </image>
       </introduction>
       <task>
         <statement>
           <p>
-            Using <xref ref="PA-DDcontour1"/> and treating the elevation as a multivariable function <m>h(x,y)</m>, state whether each of the following is positive, negative, or zero. Write a sentence to justify your reasoning.
-            <ol marker="i.">
+            Using the contour plot and treating the elevation as a multivariable function <m>h(x,y)</m>, state whether each of the following is positive, negative, or zero. Write a sentence to justify your reasoning.
+            <ol marker="i." cols="3">
               <li><m>h_x(A)</m></li>
               <li><m>h_y(A)</m></li>
               <li><m>h_x(B)</m></li>
@@ -101,49 +104,49 @@
       <task>
         <statement>
           <p>
-            Suppose we are at point B. Would you expect the elevation to be increasing, decreasing, or constant if you took a step in the Northeast direction?
+            Suppose you are standing at point <m>B</m>. Do you expect the elevation to increase, decrease, or remain constant if you take a step in the northeast direction? Write a sentence to explain your reasoning.
           </p>
         </statement>
       </task>
        <task>
         <statement>
           <p>
-            Suppose we are at point B. Would you expect the elevation to be increasing, decreasing, or constant if you took a step in the Southeast direction?
+            Suppose you are standing at point <m>B</m>. Do you expect the elevation to increase, decrease, or remain constant if you take a step in the southeast direction? Write a sentence to explain your reasoning.
           </p>
         </statement>
       </task>
        <task>
         <statement>
           <p>
-            Suppose we are at point A. Would you expect the elevation to be increasing, decreasing, or constant if you took a step in the Southwest direction?
+            Suppose you are standing at point <m>A</m>. Do you expect the elevation to increase, decrease, or remain constant if you take a step in the southwestdirection? Write a sentence to explain your reasoning.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Suppose we are at point C. In what direction would you take a step to move in the steepest downhill direction?
+            Suppose you are standing at point <m>C</m>. In what direction would you take a step to move in the steepest downhill direction? Write a sentence to explain your reasoning.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Suppose we are at point A. In what direction would you take a step to move in the steepest uphill direction?
+            Suppose you are standing at point <m>A</m>. In what direction would you take a step to move in the steepest uphill direction? Write a sentence to explain your reasoning.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Suppose we are at point B. Rank the following directions in order of steepness (from most steep and uphil to level to most steep downhill): Northeast, North, East, West, South
+            Suppose you are standing at point <m>B</m>. Rank the following directions in order of steepness (from most steep and uphill to level to most steep downhill): northeast, north, east, west, south
           </p>
         </statement>
       </task>
     </exploration>
 </worksheet>
     <p>
-      As you saw in the preview activity, visual information like a contour plot or a surface plot will be helpful in determining information about how quickly the output of a function is changing as your inputs change in different directions. In the next subsections, we will focus on how to calculate this kind of directional derivative using either algebraic or numerical representations of our function, then we will relate this calculation to other ways we have described change for a function. 
+      The Preview Activity demonstrates how visual information such as a contour plot or a surface plot can be helpful in determining information about how quickly the output of a function changes as its inputs change in different directions. In this section, we will focus on how to calculate this kind of directional derivative using algebraic or numerical representations of functions and relate this calculation to other ways we have described change for a function. 
     </p>
     <!-- <worksheet>
   <exploration workspace="1.5in"

@@ -32,7 +32,7 @@
   <introduction component="instructor">
     <title>Notes to the Instructor and Dependencies</title>
     <p>
-      This section expands on the idea of level curves from <xref ref="S-MV-Functions"/> and the interpretations of the gradient from <xref ref="S-10-6-Directional-Derivative"/>. This section can likely be covered in a single class or split up and incorporated into work for <xref ref="S-MV-Functions"/> and <xref ref="S-10-6-Directional-Derivative"/>. 
+      This section expands on the idea of level curves from <xref ref="S-MV-Functions"/> and the interpretations of the gradient from <xref ref="S-mv_deriv-directional"/>. This section can likely be covered in a single class or split up and incorporated into work for <xref ref="S-MV-Functions"/> and <xref ref="S-mv_deriv-directional"/>. 
     </p>
   </introduction>
   <subsection>
@@ -282,7 +282,7 @@
   <subsection xml:id="HD-gradient">
     <title>Directional Derivatives and Gradients</title>
     <p>
-      Directional derivatives and gradients for functions of three or more variables will come up several times in this course (and in many subsequent math/physical science/economics courses), so we will take a little bit of time to talk about the definitions and interpretations now. Recall that the <xref ref="S-10-6-Directional-Derivative">directional derivative</xref> measures the instantaneous rate of change of a multivariable function when the inputs are changed in a particular direction. None of the arguments in <xref ref="S-10-6-Directional-Derivative"/> were specific to functions of two variables, but rather than stating these results in terms of an abstract function of <m>n</m>-variables, we will state the various definitions and results in terms of functions of either three or four variables, <m>f(x,y,z)</m> or <m>g(x,y,z,w)</m>. 
+      Directional derivatives and gradients for functions of three or more variables will come up several times in this course (and in many subsequent math/physical science/economics courses), so we will take a little bit of time to talk about the definitions and interpretations now. Recall that the <xref ref="S-mv_deriv-directional">directional derivative</xref> measures the instantaneous rate of change of a multivariable function when the inputs are changed in a particular direction. None of the arguments in <xref ref="S-mv_deriv-directional"/> were specific to functions of two variables, but rather than stating these results in terms of an abstract function of <m>n</m>-variables, we will state the various definitions and results in terms of functions of either three or four variables, <m>f(x,y,z)</m> or <m>g(x,y,z,w)</m>. 
     </p>
     <p>
       Let <m>f = f(x,y,z)</m> be a function of three variables. The <term>derivative of <m>f</m> at the point <m>(x,y,z)</m> in the direction of the unit vector <m>\vu = \langle u_1, u_2 , u_3 \rangle</m></term><idx><h>directional derivative</h></idx> is denoted <m>D_{\vu}f(x,y,z)</m> and is given by
