@@ -232,54 +232,53 @@
     </figure>
   </subsection>
 
-
   <subsection>
     <title>Efficiently Computing the Directional Derivative</title>
     <p>
-      In a similar way to how we developed algebraic rules for calculating standard derivatives in single variable calculus and for partial derivatives in multivariable calculus, we want to find a way to evaluate directional derivatives without resorting to evaluating the limit definition (Equation <xref ref="E_DirDerDef"/>). We will look at this algebraic shortcuts from two perspectives; First, we will look at <xref ref="E_DirDerDef">Equation</xref> as a composition of functions and use the chain rule from <xref ref="S_mv_deriv-chain_rule"/> to define a simple algebraic rule which will allow us to efficiently calculate directional derivatives. Second, we will look at how directional derivatives can be computed using the linearization (when we have a locally linear/differentiable function).
+      We want to find a way to evaluate directional derivatives without resorting to evaluating the limit definition in <xref ref="E_DirDerDef">equation</xref> every time. We will look at this algebraic approach from two perspectives. First, we will use the chain rule from <xref ref="S_mv_deriv-chain_rule"/> to define a simple algebraic rule which will allow us to efficiently calculate directional derivatives. Second, we will use the linearization of a locally linear function to compute directional derivatives.
     </p>
     <p>
-      We are interested in the instantaneous rate of change of <m>f</m> at a point <m>(x_0,y_0)</m> in the direction <m>\vu = \langle u_1, u_2 \rangle</m>, where <m>\vu</m> is a unit vector. In particular, the input variables <m>x</m> and <m>y</m> are therefore changing according to
+      We are interested in the instantaneous rate of change of <m>f</m> at a point <m>(x_0,y_0)</m> in the direction of a unit vector <m>\vu = \langle u_1, u_2 \rangle</m>. In particular, the input variables <m>x</m> and <m>y</m> are changing according to
       <me>
         x = x_0 + u_1t \quad \text{ and }  \quad y = y_0 + u_2t
-      </me>
-      Therefore, our trace along the surface in the direction <m>\langle u_1,u_2\rangle</m> will be given by <m>\vr(t)=\langle x_0+ u_1 t, y_0 + u_2 t , f(x_0+ u_1 t, y_0 + u_2 t) \rangle</m>.
+      </me>.
+      A trace along the surface in the direction of <m>\langle u_1,u_2\rangle</m> is given by <m>\vr(t)=\langle x_0+ u_1 t, y_0 + u_2 t , f(x_0+ u_1 t, y_0 + u_2 t) \rangle</m>. Observe that <m>\frac{dx}{dt} = u_1</m> and <m>\frac{dy}{dt} = u_2</m> for all values of <m>t</m>. Since <m>\vu</m> is a unit vector in the <m>xy</m>-plane, a unit change in the parameter <m>t</m> corresponds to moving one unit in the <m>\vu</m> direction. This allows us to use the multivariable chain rule to calculate the directional derivative as a measure of the instantaneous rate of change of <m>f</m> in the direction <m>\vu</m>.
     </p>
     <p>
-      Observe that <m>\frac{dx}{dt} = u_1</m> and <m>\frac{dy}{dt} = u_2</m> for all values of <m>t</m>. Since <m>\vu</m> is a unit vector in the xy-plane, a single unit change in the parameter <m>t</m> corresponds to moving a single unit of distance in the <m>\vu</m> direction. This observation allows us to use the multivariable chain rule to calculate the directional derivative as a measure of the instantaneous rate of change of <m>f</m> with respect to change in the direction <m>\vu</m>.
-    </p>
-    <p>
-      We can express the output of our function along the given direction as a composition of functions, <m>f(t)=f(\vr(t))=f(x(t), y(t))</m>, which means we can apply the chain rule to get
+      The output of <m>f</m> along the given direction can be written as a composition of functions, <m>f(t)=f(\vr(t))=f(x(t), y(t))</m>, which means we can apply the multivariable chain rule:
       <md>
         <mrow>D_{\vu}f(x_0,y_0) \amp = \frac{d}{dt}\left[ f(\vr(t)) \right] </mrow>
         <mrow> \amp = f_x(x_0,y_0)\frac{dx}{dt} + f_y(x_0,y_0)\frac{dy}{dt} </mrow>
         <mrow> \amp = f_x(x_0,y_0) u_1 + f_y(x_0,y_0) u_2 </mrow>
       </md>
-    </p>
-    <p>
       This allows us to compute the directional derivative at an arbitrary point according to the following formula.
     </p>
 
     <theorem xml:id="Directional-derivative">
       <title>Calculating Directional Derivatives</title>
       <p>
-        Given a differentiable function <m>f = f(x,y)</m> and a unit vector <m>\vu = \langle u_1, u_2 \rangle</m>, <m>D_{\vu}f(x,y)</m> can be computed by
+        Given a differentiable function <m>f = f(x,y)</m> and a unit vector <m>\vu = \langle u_1, u_2 \rangle</m>, the directional derivative <m>D_{\vu}f(x,y)</m> can be computed by
         <men xml:id="eq_10_6_DD">
           D_{\vu}f(x,y) = f_x(x,y) u_1 + f_y(x,y) u_2
-        </men>
+        </men>.
       </p>
     </theorem>
     <p>
-      To use Equation <xref ref="eq_10_6_DD"/>, we must have a <em>unit</em> vector <m>\vu = \langle u_1, u_2 \rangle</m> in the direction of motion. In the event that we have a direction prescribed by a non-unit vector, we must first scale the vector to have length 1. 
+      To use <xref ref="eq_10_6_DD">equation</xref>, we must have a <em>unit</em> vector <m>\vu = \langle u_1, u_2 \rangle</m> in the direction of motion. In the event that we have a direction prescribed by a non-unit vector, we must first scale the vector to have length 1. 
     </p>
     <example>
       <p>
-        We will look at an example that is algebraically and geometrically simple but allows us to use <xref ref="Directional-derivative"/> and the concepts stated in this section up to this point. We will look at the rate of change for the function <m>f(x,y)=2.5-\frac{(x-1)^2}{2}-\frac{(y+1)^2}{9}</m> in several directions around the input point <m>(2,2)</m>. Note that <m>f(2,2)=2.5-\frac{(2-1)^2}{2}-\frac{(2-2)^2}{9}=2.5-0.5-1=1</m> so our point will lie on the level curve with output 1 as shown in <xref ref="DDexample1"/>.
+        We will look at an example that is algebraically and geometrically simple but allows us to use <xref ref="Directional-derivative"/>. We will consider the rate of change for the function <m>f(x,y)=2.5-\frac{(x-1)^2}{2}-\frac{(y+1)^2}{9}</m> at the input point <m>(2,2)</m> in several directions. Because <m>f(2,2)=2.5-\frac{(2-1)^2}{2}-\frac{(2-2)^2}{9}=2.5-0.5-1=1</m>, this point lies on the level curve with value <m>1</m> as shown in <xref ref="DDexample1"/>.
       </p>
       <figure xml:id="DDexample1">
         <caption>A contour plot of <m>f(x,y)=2.5-\frac{(x-1)^2}{2}-\frac{(y+1)^2}{9}</m> with the point <m>(2,2)</m> highlighted</caption>
-        <image width="60%" xml:id="img-DDexample1">
-          <sageplot>
+        <image width="60%">
+          <shortdescription>A contour plot</shortdescription>
+          <description>
+            <p>A contour plot that shows several concentric ellipses. The point <m>(2,2)</m> is marked as is a vector pointing left and up from this point.
+            </p>
+          </description>
+          <sageplot label="img-DDexample1">
             var('x,y,z,t,s')
             f(x,y)=2.5-(x-1)^2/2-(y+1)^2/9
             plot7=contour_plot(f(x,y),(x,-2,4),(y,-4,4),aspect_ratio=1,labels=True,label_fmt="%1.0f",gridlines=True,label_inline=True,label_inline_spacing=5,fill=True)
@@ -290,30 +289,33 @@
         </image>
       </figure>
       <p>
-        We would like to find the directional derivative of <m>f</m> at the point <m>(2,2)</m> in the direction of <m>\langle-2,-1\rangle</m>. Since <m>\langle-2,1\rangle</m> is not a unit vector, we will use <m>\vu=\frac{1}{\sqrt{5}}\langle -2,1\rangle</m> as the unit vector in the direction of <m>\langle-2,1\rangle</m>. We would like to use <xref ref="eq_10_6_DD"/>, so we first calculate the partial derivatives of <m>f</m>.
+        We will compute the directional derivative of <m>f</m> at the point <m>(2,2)</m> in the direction of <m>\langle-2,-1\rangle</m>. Since <m>\langle-2,1\rangle</m> is not a unit vector, we use <m>\vu=\frac{1}{\sqrt{5}}\langle -2,1\rangle</m> as the unit vector in this direction. To use <xref ref="eq_10_6_DD">equation</xref>, we will need the partial derivatives of <m>f</m>:
         <me> f_x= -\frac{2(x-1)}{2} \quad \text{ and } \quad f_y=-\frac{2(y+1)}{9} </me>
-        At our base point, we have <m>f_x(2,2)=-1</m> and <m>f_y(2,2)=-\frac{2}{3}</m>. By <xref ref="eq_10_6_DD">Equation</xref>, our directional derivative of <m>f</m> at <m>(2,2)</m> in the direction <m>\vu</m> will be
-        <me>Df_\vu (2,2)=f_x(2,2) u_1 + f_y(2,2) u_2 = (-1)(-3)+\left(-\frac{2}{3}\right)(1)=\frac{7}{3} </me>
-        So for a small step in the direction of <m>\vu</m> at the input <m>(2,2)</m> we would expect the output of <m>f</m> to increase by <m>\frac{7}{3}</m> times the step size.
+        At <m>(2,2)</m>, we have <m>f_x(2,2)=-1</m> and <m>f_y(2,2)=-\frac{2}{3}</m>. By <xref ref="eq_10_6_DD">equation</xref>, the directional derivative of <m>f</m> at <m>(2,2)</m> in the direction <m>\vu</m> is
+        <me>Df_\vu (2,2)=f_x(2,2) u_1 + f_y(2,2) u_2 = (-1)(-3)+\left(-\frac{2}{3}\right)(1)=\frac{7}{3} </me>.
+        We can interpret this as saying that for a small step in the direction of <m>\vu</m> at <m>(2,2)</m>, we would expect the output of <m>f</m> to increase by <m>\frac{7}{3}</m> times the step size.
       </p>
       <p>
-        This may be a bit difficult to see based on <xref ref="DDexample1"/>, but if we look at surface plot and parameterize the path of inputs along the direction <m>\vu</m> we can give a better visualization. In <xref ref="DDexample2"/>, we see a surface plot of <m>z=f(x,y)</m> with the trace in the <m>\vu</m>-direction shown in blue and the direction vector <m>\vu</m> shown in red (on the <m>xy</m>-plane). The black line segment shows how <m>Df_\vu(2,2)</m> is positive because the <m>z</m>-coordinate of this tangent line will increase (as we step away from <m>(2,2)</m> in the <m>\vu</m> direction).
+        This may be a bit difficult to see based on the contour plot in <xref ref="DDexample1"/>. However, the surface plot combined with a plot of the path of inputs in the direction <m>\vu</m> gives a better visualization. <xref ref="DDexample2"/> shows a surface plot of <m>z=f(x,y)</m> with the trace in the <m>\vu</m>-direction shown in blue and the direction vector <m>\vu</m> shown in red on the <m>xy</m>-plane. The black line segment shows how <m>Df_\vu(2,2)</m> is positive because the <m>z</m>-coordinate of this tangent line increases as we move away from <m>(2,2)</m> in the <m>\vu</m>-direction.
       </p>
       <figure xml:id="DDexample2">
-      <caption>A plot of <m>z=f(x,y)</m> with trace in the direction <m>\vu</m> through (2,2,1) shown including the tangent line</caption>
-        <interactive title="interactive-DDexample2" platform="sage" width="100%" aspect="1:1">
+      <caption>A plot of <m>z=f(x,y)</m> with trace in the direction <m>\vu</m> through <m>(2,2,1)</m> shown including the tangent line</caption>
+        <interactive label="interactive-DDexample2" platform="sage" width="91%" aspect="1:1">
           <slate surface="sage">
             <xi:include href="interacts/DDexample2.txt" parse="text" />
           </slate>
         </interactive>
       </figure>
       <p>  
-        Remember that the directional derivative is a local measurement and only applies in a small neighborhood of our point and only in the direction <m>\vu</m>. In other words, <m>Df_\vu(2,2)</m> does not describe the the rate of change at other points along the blue curve, only the rate of change along the blue curve for a small step away from our base point in the red direction. With plots like <xref ref="DDexample1"/>, you will be tempted to use information far away from the point of interest to try to figure out the rate of change, but like most calculus measurements, we will need to only take from plots information on what is happening right around our point of interest. 
+        Remember that the directional derivative is a local measurement and only applies in a small neighborhood of a point and only in the direction <m>\vu</m>. In other words, <m>Df_\vu(2,2)</m> does not describe the the rate of change at other points along the blue curve, only the rate of change along the blue curve for a small step away from our base point in the red direction. With plots like <xref ref="DDexample1"/>, you may be tempted to use information far away from the point of interest to try to figure out the rate of change. However, like most calculus measurements, we must only use plots to provide information on what is happening near a specific point. 
       </p>
       <p>
-        If we look at <m>Df_\vj(2,2)</m>, the rate of change for the output of <m>f</m> in the direction <m>\vj=\langle 0,1\rangle</m> at the input <m>(2,2)</m>, <xref ref="eq_10_6_DD"/> gives the following result
-        <me>Df_\vj (2,2)=f_x(2,2) u_1+f_y(2,2) u_2=(-1)(0)+(-\frac{2}{3})(1)=-\frac{2}{3} </me>
-        which corresponds to the partial derivative of <m>f</m> with respect to <m>y</m>. The default direction displayed in <xref ref="DDexample3"/> shows the direction vector <m>\vj</m>, the cooresponding trace, and tangent line to the surface in the <m>\vj</m> direction. 
+        If we compute <m>Df_\vj(2,2)</m>, the rate of change for the output of <m>f</m> in the direction <m>\vj=\langle 0,1\rangle</m> at <m>(2,2)</m>, using <xref ref="eq_10_6_DD">equation</xref>, then we have
+        <me>Df_\vj (2,2)=f_x(2,2) u_1+f_y(2,2) u_2=(-1)(0)+(-\frac{2}{3})(1)=-\frac{2}{3} </me>.
+        This corresponds to the partial derivative of <m>f</m> with respect to <m>y</m>.
+      </p>
+      <p>
+        <xref ref="DDexample3"/> allows you to adjust the direction of the trace shown. By default, it shows the direction vector <m>\vj</m>, the cooresponding trace, and tangent line to the surface in the <m>\vj</m> direction. Use the slider at the top of <xref ref="DDexample3"/> to change the direction in which you want to evaluate the directional derivative. As you do so, examine how the steepness of the black tangent segment varies depending on the direction. 
       </p>
       <figure xml:id="DDexample3">
       <caption>An intereactive plot of <m>z=f(x,y)</m> with trace in the direction <m>\vu</m> through (2,2,1) shown including the tangent line</caption>
@@ -323,18 +325,15 @@
           </slate>
         </interactive>
       </figure>
-      <p>
-        You can use the slider at the top of <xref ref="DDexample3"/> to change the direction in which you want to evaluate the directional derivative. You should look to see how the steepness of the black segment will change in different directions. 
-      </p>
     </example>
     <p>
-      In the following activity, we will explore how to calculate and make sense of directional derivatives for a new function without using surface graphs.
+      In the following activity, we use algebraic techniques to calculate and interpret the of directional derivative of a function.
     </p>
     <worksheet>
-  <activity workspace="1.5in" xml:id="A_10_6_2">
+  <activity workspace="1.5in" xml:id="act-mv_deriv-directional-algebraic">
       <introduction>
         <p>
-          In this activity, we will use Equation <xref ref="eq_10_6_DD"/> to calculate some directional derivatives and make sense of these results for a few cases. For all parts of this activity, let <m>f(x,y) = 3xy-x^2y^3</m>.
+          In this activity, we will use <xref ref="eq_10_6_DD">equation</xref> to calculate and interpret directional derivatives for the function <m>f(x,y) = 3xy-x^2y^3</m>.
         </p>
       </introduction>
       <task>
@@ -361,9 +360,14 @@
       <task>
         <statement>
           <p>
-            Use Equation<nbsp/><xref ref="eq_10_6_DD"/> to determine <m>D_{\vi} f(x,y)</m> and <m>D_{\vj} f(x,y)</m>. Write a couple of sentences to describe what familiar functions <m>D_{\vi} f</m> and <m>D_{\vj} f</m> are. Remember that <m>\vi</m> is the unit vector in the positive <m>x</m>-direction and <m>\vj</m> is the unit vector in the positive <m>y</m>-direction.
+            Use <xref ref="eq_10_6_DD">equation</xref> to determine <m>D_{\vi} f(x,y)</m> and <m>D_{\vj} f(x,y)</m>. Write a couple of sentences to describe what familiar functions <m>D_{\vi} f</m> and <m>D_{\vj} f</m> are. 
           </p>
         </statement>
+        <hint>
+          <p>
+            Remember that <m>\vi</m> is the unit vector in the positive <m>x</m>-direction and <m>\vj</m> is the unit vector in the positive <m>y</m>-direction.
+          </p>
+        </hint>
         <answer>
           <p>
             <me>
@@ -391,9 +395,14 @@
       <task>
         <statement>
           <p>
-            Use Equation<nbsp/><xref ref="eq_10_6_DD"/> to find the derivative of <m>f</m> in the direction of the vector <m>\vv = \langle 2, 3 \rangle</m> at the point <m>(1,-1)</m>.  Remember that a unit direction vector is needed.
+            Use <xref ref="eq_10_6_DD">equation</xref> to find the derivative of <m>f</m> in the direction of the vector <m>\vv = \langle 2, 3 \rangle</m> at the point <m>(1,-1)</m>.  
           </p>
         </statement>
+        <hint>
+          <p>
+            Remember that a <em>unit</em> direction vector is needed.
+          </p>
+        </hint>
         <answer>
           <p>
             <me>
@@ -418,7 +427,7 @@
       <task>
         <statement>
           <p>
-            Use Equation<nbsp/><xref ref="eq_10_6_DD"/> to find the derivative of <m>f</m> in the direction of the vector <m>\vv = \langle 4, 6 \rangle</m> at the point <m>(1,-1)</m>.           
+            Find the derivative of <m>f</m> in the direction of the vector <m>\vv = \langle 4, 6 \rangle</m> at the point <m>(1,-1)</m>.           
           </p>
         </statement>
          <answer>
@@ -446,7 +455,7 @@
       <task>
         <statement>
           <p>
-            Use Equation<nbsp/><xref ref="eq_10_6_DD"/> to find the derivative of <m>f</m> in the direction of the vector <m>\vv = \langle -2, -3 \rangle</m> at the point <m>(1,-1)</m>. Write a couple of sentences to explain why this result is different than your answer to the previous two tasks, even though the direction vectors are parallel.
+            Use <xref ref="eq_10_6_DD">equation</xref> to find the derivative of <m>f</m> in the direction of the vector <m>\vv = \langle -2, -3 \rangle</m> at the point <m>(1,-1)</m>. Write a couple of sentences to explain why this result is different from your answer to the previous two tasks, even though the direction vectors are parallel.
           </p>
         </statement>
          <answer>
@@ -467,14 +476,14 @@
             <me>
               D_{\vv}f(1,-1) = f_x(1,-1) \left(\frac{-2}{\sqrt{13}}\right) + f_y(1,-1) \left(\frac{-3}{\sqrt{13}}\right) = \frac{2}{\sqrt{13}}
             </me>
-            Because our direction vector is in the opposite direction, we ended up with a directional derivative having the same magnitude but a positive value. This should make sense because if we were going down the surface in the direction <m>\langle 2, 3 \rangle</m>, then the surface is going up in exactly the same way in the direction <m>\langle -2, -3 \rangle</m>. 
+            Because our direction vector is in the opposite direction, we ended up with a directional derivative having the same magnitude but a positive value. This makes sense because if we were going down the surface in the direction <m>\langle 2, 3 \rangle</m>, then the surface is going up in exactly the same way in the direction <m>\langle -2, -3 \rangle</m>. 
           </p>
         </solution>
       </task>    
     </activity>
 </worksheet>
     <p>
-      We found Equation<xref ref="eq_10_6_DD"/> by considering our <xref ref="defn-DD">definition for the directional derivative</xref> as a composition of functions and utilizing our chain rule. A very useful idea when we have multivariable functions that are locally linear is that evaluating a limit for how the function is changing near a point will give the same result as asking what the corresponding change would be on the linearization or tangent plane. Remember that on very small scales there is virtually no difference between the (locally linear) function and the linearization as demonstrated by <xref ref="fig-mv_deriv-linearization-tangent_4"/>. 
+      <xref ref="eq_10_6_DD">Equation</xref> arose through consideration of the <xref ref="defn-DD" text="custom">definition for the directional derivative</xref> as a composition of functions and application of the chain rule. When considering multivariable functions that are locally linear, reclal that we have discussed that we can evaluate the limit of such a function near a point by analyzing the linearization or tangent plane. Remember that on very small scales there is virtually no difference between the (locally linear) function and the linearization as demonstrated by <xref ref="fig-mv_deriv-linearization-tangent_4"/>. 
     </p>
     <p>
       The equation of the plane tangent to the graph of <m>f</m> at the point <m>(x_0,y_0,f(x_0,y_0))</m> is
