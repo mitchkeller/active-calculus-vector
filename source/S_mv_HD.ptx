@@ -19,12 +19,12 @@
     <ul>
       <li>
         <p>
-          What is a level set of a function of three or more variables and what kinds of graphs can you describe with a level set like this?
+          How does the idea of a level curve for a function of two variables generalize to functions of three or more variables?
         </p>
       </li>
       <li>
         <p>
-          How do measurese of change like partial derivatives, differentials, directional derivatives, and gradients generalize to functions of more than two variables?
+          How do measures of change such as partial derivatives, directional derivatives, and gradients generalize to functions of more than two variables?
         </p>
       </li>
     </ul>
@@ -38,13 +38,13 @@
   <subsection>
     <title>Introduction</title> 
     <p>
-      In this chapter, we have primarily worked with functions of two variables including understand graphs of the form <m>z=f(x,y)</m> and measuring change with two variable functions. In this section, we will look at how many of the tools we have developed for understanding two variable functions can be easily generalized for functions of three or more variables. We will not give new definitions for the various ideas in this section since the definitions would often be too technical and would not change how we use or understand these ideas.
+      In this chapter, we have primarily worked with functions of two variables including understanding graphs of the form <m>z=f(x,y)</m> and measuring change with functions of two variables. In this section, we explore how many of the tools we have developed for understanding two-variable functions can be generalized to functions of three or more variables. 
     </p>
     <p>  
-      A significant impediment to expanding the ideas in this chapter to functions of three or more variables will be that is it difficult (or impossible) to draw plots of these functions, which means we can only make sense of the measurements we are working with geometrically using simplifications or analogies. For this reason, most of our work in this section and where you will see these topics used in future classes will be more algebraically focused.
+      A significant impediment to expanding the ideas in this chapter to functions of three or more variables will be that is it difficult (or impossible) to draw plots of these functions, which means we must rely on simplifications or analogies to understand these measurements geometrically. For this reason, most efforts to understand functions of three or more variables is algebraically-focused.
     </p>
     <p>
-      In the following preview activity, we will look at level sets for two familiar functions of two variables and start to explore how level sets can help visualize functions of three variables. 
+      We start in the Preview Activity by generalizing the idea of level curves.
     </p>
     <worksheet>
   <exploration workspace="1.5in"
@@ -52,7 +52,7 @@
       <task>
         <statement>
           <p>
-            Find the level curves for the function <m>f(x,y)=x^2+y^2</m> over the values <m>k=\{-2,-1,0,1,2\}</m>. State the equation and shape of the level curves for each value.
+            State the equation and shape of the level curves for the function <m>f(x,y)=x^2+y^2</m> for the values <m>-2,-1,0,1,2</m>.
           </p>
         </statement>
         <hint>
@@ -64,17 +64,17 @@
       <task>
         <statement>
           <p>
-            Find the level curves for the function <m>g(x,y)=x^2-y^2</m> over the values <m>k=\{-2,-1,0,1,2\}</m>. State the equation and shape of the level curves for each value.
+            State the equation and shape of the level curves for the function <m>g(x,y)=x^2-y^2</m> for the values <m>-2,-1,0,1,2</m>.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            In general, the <term>level set</term> of a function <m>f</m> will be the set of points for which <m>f(P)=k</m> for some constant <m>k</m>. We will look at some algebraically simple functions of three variables to see what kinds of level sets are possible. We use the term level set here because the set of inputs for a function of three or more variables that gives a particular output value will likely not be a curve.
+            For a constant <m>k</m> and a function <m>f</m>, the <term>level set</term> is the set of points <m>P</m> for which <m>f(P)=k</m>. The remainder of this Preview Activity asks you to consider level sets of some functions of three variables. We use the term <q>level set</q> here because the set of inputs for a function of three or more variables that gives a particular output value will likely not be a curve.
           </p>
           <p>
-            Find the level set for the function <m>f(x,y,z)=x^2+y^2+z^2</m> over the values <m>k=\{-2,-1,0,1,2\}</m>. Be sure to state the equation and shape of the level set for each value. 
+            State the equation and shape of the level sets for the function <m>f(x,y,z)=x^2+y^2+z^2</m> for <m>-2,-1,0,1,2</m>.
           </p>
         </statement>
         <hint>
@@ -86,50 +86,50 @@
       <task>
         <statement>
           <p>
-            Find the level set for the function <m>g(x,y,z)=x^2+y^2-z^2</m> over the values <m>k=\{-2,-1,0,1,2\}</m>. Be sure to state the equation and shape of the level set for each value. These level set values should give three different types of surfaces.
+            State the equation and shape of the level sets for the function <m>g(x,y,z)=x^2+y^2-z^2</m> for <m>-2,-1,0,1,2</m>. These level set values should give three different types of surfaces.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Find the level set for the function <m>h(x,y,z)=x+y-z</m> over the values <m>k=\{-2,-1,0,1,2\}</m>. Be sure to state the equation and shape of the level set for each value.
+            State the equation and shape of the level sets for the function <m>h(x,y,z)=x+y-z</m> for  <m>-2,-1,0,1,2</m>.
           </p>
         </statement>
       </task>
     </exploration>
 </worksheet>
     <p>
-      We will now generalize these ideas of level sets to start our exploration for functions of three or more variables. As we have for most kinds of functions in previous precalculus and calculus courses, we will look at the following ideas in order: domain and range of functions, graphs of functions, limits of functions, and finally, measuring change of function. 
+      In this section, we will often use the idea of level sets to explore functions of three or more variables. The topics we explore are not likely to surprise you: domain and range, graphs, limits, and rates of change.
     </p>
   </subsection>
   <subsection>
     <title>Inputs and Outputs with Functions of Three or More Variables</title>
     <p>
-      We will first generalize the notion of function and the corresponding ideas of domain and range to deal with three or more input variables. A function is a rule that assigns an single output for each allowed input. For instance, your school likely uses a function that takes your student ID number as an input and outputs your name. While you may not be the only student at your school with your name, this function should not associate more than one name with each student ID number.
+      A function is a rule that assigns an single output for each allowed input. For instance, your school likely uses a function that takes your student ID number as an input and outputs your name. While you may not be the only student at your school with your name, this function should not associate more than one name with each student ID number. A function of <m>n</m> variables can be thought of as taking points in <m>\R^n</m> as input and outputing a real number for each valid input.
     </p>  
     <p>  
-      Recall from <xref ref="domainrange_defn"/>, that the domain of a function is the set of inputs for which a function is defined and the range is the set of outputs that a function actually uses. 
+      Recall from <xref ref="domainrange_defn"/> that the domain of a function is the set of input values for which a function is defined. The range of a function is the set of values actually output by the function.
     </p>
     <example>
       <p>
-        For example, the function <m>g(x,y,z)= \sqrt{1-x}+e^{y^2+z^2}</m> could only have a domain as large as <m>\{(x,y,z) \in \mathbb{R}^3| x \leq 1\}</m> because we need <m>x</m> to be greater than 1 (in order for the first term to make sense) and there is no restriction on what values of <m>y</m> and <m>z</m> will make sense as an input of <m>g</m>. You may be tempted to say the range of <m>g</m> is all real numbers since <m>g</m> does have a scalar output, but negative numbers are not possible to get as an output for <m>g</m>. Since the outputs of our exponential and square root functions will be non-negative, the range of <m>g</m> will be the interval <m>(0,\infty)</m>.
+        Consider the function <m>g(x,y,z)= \sqrt{1-x}+e^{y^2+z^2}</m>. We see here that we need <m>\sqrt{1-x}</m> to be defined, which requires that <m>1-x\geq 0</m> or <m>x\leq 1</m>. However, there is is no restriction on the values of <m>y</m> or <m>z</m>. Thus, we can say that the domain of <m>g</m> is all points <m>(x,y,z)</m> for which <m>x\leq 1</m>. You may be tempted to say the range of <m>g</m> is all real numbers since <m>g</m> outputs scalars. However, a closer look shows that <m>g</m> cannot output negative numbers. Since the outputs of the exponential portion of <m>g</m> is always positive and the square root portion is always nonnegative, the range of <m>g</m> is the interval <m>(0,\infty)</m>.
     </p>
   </example>  
   </subsection>  
   <subsection>
-    <title>Attempting to Graph Functions of Three or More Variables</title>
+    <title>Visualizing Functions of Three or More Variables</title>
     <p>
-      Given a function of several variables, <m>f</m>, we call the level set of <m>f</m> at the value <m>k</m> to be the collection of inputs such that the output of <m>f</m> is exactly <m>k</m>. A level set must be a subset of the domain of the function <m>f</m> because the level set is a collection of the input points.
+      Given a function <m>f</m> of several variables the <term>level set</term> of <m>f</m> at the value <m>k</m> is the collection of input points <m>P</m> for which <m>f(P)=k</m>. A level set is a subset of the domain of the function <m>f</m> because the level set is a collection of input points.
     </p>
     <p>
-      If <m>f(x,y)</m> is a function of two variables, then a level set would correspond to a contour or a level curve of the form <m>f(x,y)=k</m>. Notice that the level set in this case is a set of points in the <m>xy</m>-plane (the space of inputs for our function <m>f</m>). As we saw in <xref ref="S-MV-Functions"/>, we can make a contour plot by graphing a collection of these level curves on the same 2D-plot, which will give us an idea of what the surface corresponding to <m>z=f(x,y)</m> would look like. In other words, we were able to give enough information in a 2D-plot to describe a figure in three dimensions.
+      If <m>f(x,y)</m> is a function of two variables, then a level set is a contour or a level curve of the form <m>f(x,y)=k</m>. Notice that the level set in this case is a set of points in the <m>xy</m>-plane. As we saw in <xref ref="S-MV-Functions"/>, we can make a contour plot by graphing a collection of these level curves on the same two-dimensional plot, which will give us an idea of what the surface corresponding to <m>z=f(x,y)</m> looks like. In other words, we were able to give enough information in a two-dimensional plot to describe a three-dimensional surface.
     </p>
     <p>
-      If <m>g(x,y,z)</m> is a function of three variables, then a graph of <m>g</m> function would require four dimensions (three dimensions for the inputs and one dimension for the output). Drawing plots in three dimensions is hard enough; four dimensions feels like too much to attempt. Similar to how we used contour plots to express a higher dimensional plot in a lower dimensional setting, we would like to use level sets of <m>g(x,y,z)</m> to understand a graph of <m>w=g(x,y,z)</m> and help measure change in the output of <m>g</m>.
+      If <m>g(x,y,z)</m> is a function of three variables, then a graph of <m>g</m> function would require four dimensions: three dimensions for the inputs and one dimension for the output. Drawing plots in three dimensions is challenging, but we will use three-dimensional graphs to understand functions of three variables rather than attempting to visualize four-dimensional graphs directly. We will do this by generalizing our approach of using contour plots to express a three-dimensional plot in a two-dimensional setting. Specifically, we will use level sets of <m>g(x,y,z)</m> to understand a graph of <m>w=g(x,y,z)</m> and help measure change in the output of <m>g</m>.
     </p>
     <p>
-      A level set of <m>g</m> is a collection of points in <m>xyz</m>-space (the set of inputs for our function <m>g</m>) and would correspond to a surface of the form <m>g(x,y,z)=k</m>. As you saw in <xref ref="PA-MV-HD"/>, the level sets of a function of three variables will often be a surface. For example, if <m>g(x,y,z)=x^2+y^2+z^2</m>, then the level surface corresponding to the value 1 will be given by the equation <m>x^2+y^2+z^2=1</m>, a sphere of radius one centered at the origin. 
+      A level set of <m>g</m> is a collection of points in <m>xyz</m>-space that corresponds to a surface of the form <m>g(x,y,z)=k</m>. As you saw in <xref ref="PA-MV-HD"/>, the level sets of a function of three variables are often surfaces. For example, if <m>g(x,y,z)=x^2+y^2+z^2</m>, then the level surface corresponding to the value <m>1</m> is all points that satisfy the equation <m>x^2+y^2+z^2=1</m>. This set of points forms the sphere of radius <m>1</m> centered at the origin. 
     </p>
     <p>
       These level surfaces will often be a different kind of surface than we have been working with throughout <xref ref="C_MVF"/>. Surfaces of the form <m>z=f(x,y)</m> are called <term>explicit surfaces</term> because one of the coordinates can be solved (explicitly) as a function of the other coordinates. Surfaces like spheres or hyperboloids are NOT explicit surfaces because there is no way to solve for one variable as a function of the other coordinates (that pesky <m>\pm</m> that comes with square roots prevents this for many quadric surfaces). 
