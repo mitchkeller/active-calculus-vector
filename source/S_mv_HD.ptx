@@ -292,7 +292,7 @@
     </p>
     <p>
       We can easily generalize related ideas like the differential to functions of three or more variables. The differential for the temperature function is given by 
-      <me>dT = \frac{\partial T}{\partial x} dx + \frac{\partial T}{\partial y} dy + \frac{\partial T}{\partial z} dz + \frac{\partial T}{\partial t} dt </me>
+      <me>dT = \frac{\partial T}{\partial x} dx + \frac{\partial T}{\partial y} dy + \frac{\partial T}{\partial z} dz + \frac{\partial T}{\partial t} dt </me>.
       Other important ideas, like the classic calculus approach or our interpretation of the gradient, did not depend on using a function of two variables, so we can adapt these arguments and results to higher dimensional cases as well. Again, the downside to this abstraction is that we do not have the geometric tools to help us interpret and understand these measurements in higher dimensions.
     </p>
   </subsection>
