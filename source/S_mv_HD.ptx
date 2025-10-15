@@ -129,22 +129,22 @@
       If <m>g(x,y,z)</m> is a function of three variables, then a graph of <m>g</m> function would require four dimensions: three dimensions for the inputs and one dimension for the output. Drawing plots in three dimensions is challenging, but we will use three-dimensional graphs to understand functions of three variables rather than attempting to visualize four-dimensional graphs directly. We will do this by generalizing our approach of using contour plots to express a three-dimensional plot in a two-dimensional setting. Specifically, we will use level sets of <m>g(x,y,z)</m> to understand a graph of <m>w=g(x,y,z)</m> and help measure change in the output of <m>g</m>.
     </p>
     <p>
-      A level set of <m>g</m> is a collection of points in <m>xyz</m>-space that corresponds to a surface of the form <m>g(x,y,z)=k</m>. As you saw in <xref ref="PA-MV-HD"/>, the level sets of a function of three variables are often surfaces. For example, if <m>g(x,y,z)=x^2+y^2+z^2</m>, then the level surface corresponding to the value <m>1</m> is all points that satisfy the equation <m>x^2+y^2+z^2=1</m>. This set of points forms the sphere of radius <m>1</m> centered at the origin. 
+      A level set of <m>g</m> is a collection of points in <m>xyz</m>-space that corresponds to a surface of the form <m>g(x,y,z)=k</m>. As you saw in <xref ref="PA-MV-HD"/>, the level sets of a function of three variables are often surfaces, which we call <term>level surfaces</term>. For example, if <m>g(x,y,z)=x^2+y^2+z^2</m>, then the level surface corresponding to the value <m>1</m> is all points that satisfy the equation <m>x^2+y^2+z^2=1</m>. This set of points forms the sphere of radius <m>1</m> centered at the origin. 
     </p>
     <p>
-      These level surfaces will often be a different kind of surface than we have been working with throughout <xref ref="C_MVF"/>. Surfaces of the form <m>z=f(x,y)</m> are called <term>explicit surfaces</term> because one of the coordinates can be solved (explicitly) as a function of the other coordinates. Surfaces like spheres or hyperboloids are NOT explicit surfaces because there is no way to solve for one variable as a function of the other coordinates (that pesky <m>\pm</m> that comes with square roots prevents this for many quadric surfaces). 
+      These level surfaces will often be a different kind of surface than we have been working with throughout <xref ref="C_MVF"/>. Surfaces of the form <m>z=f(x,y)</m> are called <term>explicit surfaces</term> because one of the coordinates can be solved explicitly as a function of the other coordinates. Surfaces such as spheres or hyperboloids are <em>not</em> explicit surfaces because there is no way to solve for one variable as a function of the other coordinates. Two perspectives from which you can recognize that are first that these surfaces fail the vertical line test in <m>\R^3</m> and algebraically, the <m>\pm</m> that comes from needing to take square roots prevents this for many quadric surfaces. 
     </p>
     <p>
-      Surfaces like spheres and hyperboloids are called <term>implicit surfaces</term> because they can be described the set of points that satisfy an implicit equation. For instance, a hyperboloid of one sheet can be described by an equation of the following form.
-      <me>\frac{(x-x_0)^2}{a^2}+\frac{(y-y_0)^2}{b^2}=1+\frac{(z-z_0)^2}{c^2} </me>
+      Surfaces like spheres and hyperboloids are called <term>implicit surfaces</term> because they can be described as the set of points that satisfy an implicit equation. For instance, a hyperboloid of one sheet can be described by an equation of the form
+      <me>\frac{(x-x_0)^2}{a^2}+\frac{(y-y_0)^2}{b^2}=1+\frac{(z-z_0)^2}{c^2} </me>.
       Conveniently, level sets for functions of several variables have an associated implicit equation, <m>g(x,y,z)=k</m>. 
     </p>
     <p>
-      This insight goes the other way as well; Any implicit surface can be thought of as a level set for some function of three variables. If <m>S_1</m> is the surface described by <m>x^2-xyz=y^2 z^3-2</m>, then we can also think of <m>S_1</m> as the level set of the three variable function <m>F(x,y,z)=x^2-xyz-y^2 z^3</m> with the output of <m>-2</m> because any <m>(x,y,z)</m> point that satisfies <m>x^2-xyz=y^2 z^3-2</m> must also satisfy <m>x^2-xyz-y^2 z^3=-2</m>.
+      This insight goes the other way as well. Any implicit surface can be thought of as a level set for some function of three variables. If <m>S_1</m> is the surface described by <m>x^2-xyz=y^2 z^3-2</m>, then we can also think of <m>S_1</m> as the level set of the three-variable function <m>F(x,y,z)=x^2-xyz-y^2 z^3</m> for the output value <m>-2</m> because any point in three dimensions that satisfies <m>x^2-xyz=y^2 z^3-2</m> must also satisfy <m>x^2-xyz-y^2 z^3=-2</m>.
     </p>
     <example xml:id="implicitex1">
       <p>
-        Analogous to how a (two-dimensional) contour plot gives us a lot of information about the corresponding (three-dimensional) surface plot, we would like to see if we can graph multiple level sets of a three variable function to understand the 4D graph of a function of the form <m>w=g(x,y,z)</m>. In this example, we will work with the three variable function <m>g(x,y,z)=x^2+y^2-z^2</m>.
+        Analogous to how a two-dimensional contour plot provides useful information about the corresponding three-dimensional surface plot, we would like to see if we can graph multiple level sets of a three variable function to understand the four-dimensional graph of a function of the form <m>w=g(x,y,z)</m>. In this example, we will work with the three-variable function <m>g(x,y,z)=x^2+y^2-z^2</m>.
       </p>
       <p>
         If we consider the level sets corresponding to the values <m>k=\{-4,-1,0,1,4\}</m>, we get the following level surfaces:
@@ -155,11 +155,11 @@
           <li>If <m>k=1</m>, then we are looking at the implicit equation <m> x^2+y^2-z^2=1</m> which corresponds to a hyperboloid of one-sheet given by <m> x^2+y^2-z^2=1 </m>.</li>
           <li>If <m>k=4</m>, then we are looking at the implicit equation <m> x^2+y^2-z^2=-4</m> which corresponds to a hyperboloid of one-sheet given by <m> \frac{x^2}{4}+\frac{y^2}{4}-\frac{z^2}{4}=1 </m>.</li>
         </ul>
-        We can plot these level sets together to get the analogous plot to a contour plot. <xref ref="contour3d"/> shows a graph of these surfaces with colors that go from red (at <m>k=-4</m>) to blue (at <m>k=4</m>). You can see how a 3D plot of multiple level sets gets visually cluttered very quickly, but you can see how the output of <m>g</m> will increase as you move away the <m>z</m>-axis or if you move closer to the <m>xy</m>-plane. Later in this section we will explore how these level surfaces are related to questions like <q>In what direction will the output of <m>g</m> have the greatest rate of increase?</q>
+        We can plot these level sets together to create the analogous plot to a contour plot. <xref ref="contour3d"/> shows a graph of these surfaces with colors that go from red (at <m>k=-4</m>) to blue (at <m>k=4</m>). You can see how a three-dimensional plot of multiple level sets gets visually cluttered very quickly, but you can see how the output of <m>g</m> increases as you move away from the <m>z</m>-axis or if you move closer to the <m>xy</m>-plane. Later in this section, we will explore how these level surfaces are related to questions such as <q>In what direction will the output of <m>g</m> have the greatest rate of increase?</q>
       </p>
       <figure xml:id="contour3d">
         <caption>A plot of the level surfaces for <m>g(x,y,z)=x^2+y^2-z^2</m> for values <m>k=\{-4,1,0,1,4\}</m> in colors from red to blue, respectively. </caption>
-        <interactive title="interactive-contour3d" platform="sage" width="85%" aspect="1:1">
+        <interactive title="interactive-contour3d" platform="sage" width="91%" aspect="1:1">
           <slate surface="sage">
             from sage.plot.plot3d.plot3d import axes
             var('x,y,z,t,s')
@@ -180,54 +180,68 @@
         </interactive>
       </figure>
       <p>
-        While the plot of multiple level surfaces may be a bit overwhelming, we can show each of these level sets in a separate plot. <xref ref="plot4d"/> plots a level surface for the value given by the slider at the top. You should use the slider to change the value of <m>k</m> over the entire range from -4 to 4 and look at how the shape of the corresponding level surface morphs from hyperboloid of two sheets to a cone to a hyperbola of one sheet.
+        While the plot of multiple level surfaces may be a bit overwhelming, we can show each of these level sets in a separate plot. <xref ref="plot4d"/> plots a level surface for the value given by the slider at the top. Use the slider to change the value of <m>k</m> over the entire range from <m>-4</m> to <m>4</m>. As you do so, look at how the shape of the corresponding level surface morphs from a hyperboloid of two sheets to a cone to a hyperbola of one sheet.
       </p>
       <figure xml:id="plot4d">
         <caption>A plot of the level surface for <m>g(x,y,z)=x^2+y^2-z^2</m> with a slider for changing the level curve value from -4 to 4 </caption>
-        <interactive title="interactive-plot4d" platform="sage" width="100%" aspect="1:1.25">
+        <interactive title="interactive-plot4d" platform="sage" width="93%" aspect="1:1.1">
           <slate surface="sage">
             <xi:include href="interacts/implicitplotslider.txt" parse="text" />
           </slate>
         </interactive>
       </figure>
       <p>
-        <xref ref="plot4d"/> may look like a three dimensional plot, but we really have a four dimensional plot with the fourth dimensional axis given by the slider. We saw a similar case in <xref ref="vvf-example1"/> where the plot of <m>\vr(t)</m> was really a four dimensional idea (one dimension for the input changing with the <m>t</m>-axis for the slider and the three dimensional output of <m>\vr</m> is shown with the vector in standard position or a plot of the terminal point). With our vector-valued functions of one variables, we simplified our four dimensional plot to include <em>all</em> of the 3D outputs but we often ignored plotting how those outputs depended on the value of the parameter <m>t</m>.
+        <xref ref="plot4d"/> may look like a three-dimensional plot, but we really have a four-dimensional plot with slider providing the axis for the fourth dimension. We saw a similar case in <xref ref="vvf-example1"/> where the plot of <m>\vr(t)</m> was a four dimensional idea. In that plot, one dimension was the input changing, with the <m>t</m>-axis for the slider. The other three dimensions were represented by the vector <m>\vr</m> in standard position, which we can also think of as being a plot of the vector's terminal point. With vector-valued functions of one variables, we simplified the four-dimensional plot to include <em>all</em> of the three-dimensional outputs, frequently ignoring plotting how those outputs depended on the value of the parameter <m>t</m>.
       </p>
     </example>
     <worksheet>
   <activity workspace="1.5in" xml:id="level-grad">
       <introduction>
         <p>
-          In this activity, we will look at level surfaces created by two relatively basic three variable functions and consider the direction in which the output is increasing or decreasing as fast as possible. 
+          In this activity, we will look at level surfaces created by two three-variable functions and consider the direction in which the output is increasing or decreasing as fast as possible. 
         </p>
       </introduction>
       <task>
-        <statement>
+        <introduction>
           <p>
-            What shape and characteristics will the level surfaces of <m>f(x,y,z)=2x-y+z</m> have? You should talk about all of the possibilities for the different types of level surfaces and compare what is the same or different about these level surfaces (relating the differences to the level value, <m>k</m>).
+            Let <m>f(x,y,z)=2x-y+z</m>.
           </p>
-        </statement>
+        </introduction>
+        <task>
+          <statement>
+            <p>
+              Write a couple of sentences to describe shape and characteristics will the level surfaces of <m>f</m>. Be sure to include all possibilities for different types of level surfaces. Compare what is the same or different about these level surfaces and relate the differences to the level value, <m>k</m>.
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              If you are at the point <m>(1,1,-1)</m>, in what direction should you change the input of <m>f</m> to see the greatest increase in the output of <m>f</m>? You should think about how a change in each variable will change the output of <m>f</m> and talk about this in your reasoning. 
+            </p>
+          </statement>
+        </task>
       </task>
       <task>
-        <statement>
+        <introduction>
           <p>
-            If you are at the point <m>(1,1,-1)</m>, in what direction should you change the input of <m>f(x,y,z)=2x-y+z</m> to see the greatest increase in the output of <m>f</m>? You should think about how a change in each variable will change the output of <m>f</m> and talk about this in your reasoning. 
+            Let <m>g(x,y,z)=x^2+y^2+z^2</m>.
           </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            What shape and characteristics will the level surfaces of <m>g(x,y,z)=x^2+y^2+z^2</m> have? You should talk about <em>all</em> of the possibilities for the different types of level surfaces and compare what is the same or different about these level surfaces (relating the differences to the level value, <m>k</m>).
-          </p>
-        </statement>
-      </task>
-      <task>
-        <statement>
-          <p>
-            If you at the point <m>(2,0,-2)</m>, in what direction should you change the input of <m>g(x,y,z)=x^2+y^2+z^2</m> to see the greatest increase in the output of <m>f</m>? You should think about how a change in each variable will change the output of <m>f</m> and talk about this in your reasoning. 
-          </p>
-        </statement>
+        </introduction>
+        <task>
+          <statement>
+            <p>
+              Write a couple of sentences to describe shape and characteristics will the level surfaces of <m>g</m>. Be sure to include all possibilities for different types of level surfaces. Compare what is the same or different about these level surfaces and relate the differences to the level value, <m>k</m>.
+            </p>
+          </statement>
+        </task>
+        <task>
+          <statement>
+            <p>
+              If you at the point <m>(2,0,-2)</m>, in what direction should you change the input of <m>g</m> to see the greatest increase in the output of <m>g</m>? You should think about how a change in each variable will change the output of <m>g</m> and talk about this in your reasoning. 
+            </p>
+          </statement>
+        </task>
       </task>
     </activity>
 </worksheet>
@@ -235,48 +249,51 @@
   <subsection xml:id="subsec-3plusdiff">
     <title>Measuring Change with Functions of Three or More Variables</title>
     <p>
-      Conceptually, limits for functions of three or more variables works the same as for functions of two variables. 
+      Conceptually, limits for functions of three or more variables work the same as for functions of two variables. 
       Given a function <m>f</m>, we say that <m>f</m> <term>has limit <m>L</m> as the inputs approach <m>P_0</m></term> provided that we can make <m>f(P)</m> as close to <m>L</m> as we like by taking <m>P</m> sufficiently close (but not equal) to <m>P_0</m>. We write
         <me>
           \lim_{P \to P_0} f(P) = L
-        </me>
-      Conceptually, if the limit of a function <m>f</m> along every path through an input point <m>P_0</m> exists and all of those limits are the same value, <m>L,</m>, then we say the limit of <m>f</m> at <m>P</m> is <m>L</m>. There is not much more insight into limits of multivariable functions to be had at this point, so we will move on to measuring the change in output of our multivariable functions of three or more variables. 
+        </me>.
+      If the limit of a function <m>f</m> along every path through an input point <m>P_0</m> exists and all of those limits are the same value <m>L</m> then we say the limit of <m>f</m> at <m>P</m> is <m>L</m>. There is not much more insight into limits of multivariable functions to be had at this point, so we will move on to measuring the change in output of our multivariable functions of three or more variables. 
     </p>
 
     <p>
-      Generally speaking, the partial derivative of a multivariable function measures the rate of change in the output of the function when one variable is changed and all others are held constant. Our definition and notation of partial derivatives only needs to account for three or more input variables.
+      The partial derivative of a multivariable function measures the rate of change in the output of the function when one variable is changed and all others are held constant. Our definition and notation of partial derivatives given for functions of two variables only needs to be updated to account for three or more input variables.
     </p>
-    <example>
+    <example xml:id="ex-mv_HD-temp-time">
       <p>
-        If we consider <m>T(x,y,z,t)</m> to be the function that measures the air temperature at some location given by <m>(x,y,z)</m> spatial coordinates at time <m>t</m>, then we have four (first) partial derivatives: <m>T_x=\frac{\partial T}{\partial x}</m>, <m>T_y=\frac{\partial T}{\partial y}</m>, <m>T_z=\frac{\partial T}{\partial z}</m>, and <m>T_t=\frac{\partial T}{\partial t}</m>. The limit definition of the partial derivative with respect to <m>t</m> at a point <m>(x_0,y_0,z_0,t_0)</m> would be 
-        <me>\frac{\partial T}{\partial z} =\lim_{h \to 0} \frac{T(x_0,y_0,z_0,t_0+h)-T(x_0,y_0,z_0,t_0)}{h} </me>
-        and would measure the instantaneous rate of change in temperature over time at the location <m>(x_0,y_0,z_0)</m> for when <m>t=t_0</m>.
+        If we consider <m>T(x,y,z,t)</m> to be a function that measures the air temperature at a location with spatial coordinates <m>(x,y,z)</m> at time <m>t</m>, then we have four first partial derivatives: 
+        <me>T_x=\frac{\partial T}{\partial x} \qquad T_y=\frac{\partial T}{\partial y}\qquad T_z=\frac{\partial T}{\partial z}\qquad T_t=\frac{\partial T}{\partial t}</me>
+        The limit definition of the partial derivative with respect to <m>t</m> at a point <m>(x_0,y_0,z_0,t_0)</m> is
+        <me>\frac{\partial T}{\partial z} =\lim_{h \to 0} \frac{T(x_0,y_0,z_0,t_0+h)-T(x_0,y_0,z_0,t_0)}{h} </me>.
+        This partial derivative measures the instantaneous rate of change in temperature with respect to time at the location <m>(x_0,y_0,z_0)</m> at time <m>t=t_0</m>.
       </p>
       <p>
-        Second partial derivatives will work the same as for functions with two variable functions. For example, 
+        Second partial derivatives work the same as for functions with two variable functions. For example, 
         <me>T_{yt}=\frac{\partial T_y}{\partial t} = \frac{\partial }{\partial t}\left[ \frac{\partial T}{\partial y} \right]</me>
-        would measure the rate of change with respect to time of <m>T_y</m>. Our function will have sixteen second partial derivatives (4 unmixed partials and 12 mixed partials).
+        measure the rate of change with respect to time of <m>T_y</m>. This function has sixteen second partial derivatives: four unmixed partials and 12 mixed partials.
       </p>
     </example>
     <p>
-      <xref ref="thm-clairaut" text="custom">Clairaut's Theorem</xref> also generalizes to higher dimensions; if all mixed partials are continuous near an input point for our function of three or more variables, then the comparable mixed partials will be equal. 
+      <xref ref="thm-clairaut" text="custom">Clairaut's Theorem</xref> also generalizes to higher dimensions: if all mixed partials are continuous near an input point of a function of three or more variables, then the mixed partials at that point are equal. 
+    </p>
+    <!-- TODO review the following paragraphs in light of revisions to linearization -->
+    <p>
+      In <xref ref="S-mv_deriv-linearization"/>, we saw how the ideas of locally linear functions and differentiability meant that for small scales, the change in the output of a function could be expressed as a linear combination of the changes in each variable separately. This connected to the idea that the linearization of a function approximates the original function well for small neighborhoods around the point at which the linearization was created. We visualized this linearization with the tangent plane and saw that geometrically speaking, the tangent plane was a good approximation for the surface at small scales. 
     </p>
     <p>
-      In <xref ref="S-mv_deriv-linearization"/>, we saw how the ideas of locally linear functions and differentiability meant that for small scales, the change in the output of our function could be expressed as a linear combination of the changes in each variable separately. This connected to the idea that the linearization of a function approximates the original function well for small neighborhoods around the point at which the linearization was created. We visualized this linearization with the tangent plane and saw that geometrically speaking, the tangent plane was a good approximation for the surface at small scales. 
-    </p>
-    <p>
-      Unfortunately, we will not be able to use this kind of visualization for functions of three or more variables because our graphing techniques are limited to looking at plots of level surfaces. We can however use linearizations to approximate the change in functions of three or more variables. For example, if we consider <m>T(x,y,z,t)</m> to be the function that measures the air temperature at some location given by <m>(x,y,z)</m> spatial coordinates at time <m>t</m>, then the linearization of this function at a location at location <m>(a,b,c)</m> with time <m>t=d</m> will be 
+      Unfortunately, we will not be able to use this kind of visualization for functions of three or more variables because our graphing techniques are limited to looking at plots of level surfaces. However, we can use linearizations to approximate the change in functions of three or more variables. For example, if <m>T</m> is the four-variable function of <xref ref="ex-mv_HD-temp-time"/>, then the linearization of this function at location <m>(a,b,c)</m> and time <m>t=d</m> is
       <md>
-        <mrow> L(x,y,z,t)=\amp T(a,b,c,d)(x-a)+ T_x(a,b,c,d) (x-a) </mrow>
+        <mrow> L(x,y,z,t)=\amp\ T(a,b,c,d)(x-a)+ T_x(a,b,c,d) (x-a) </mrow>
         <mrow> \amp \quad +T_y(a,b,c,d) (y-b)+T_z(a,b,c,d) (z-c)</mrow>
         <mrow> \amp \quad +T_t(a,b,c,d) (t-d)</mrow>
-      </md>
-      Notice this is the same form as we have used for all of our linear ideas; namely the change in the output is a linear combination of the changes with respect to a change in a single input variable (while holding all other inputs constant).
+      </md>.
+      Notice this is the same form as we have used for all of our linear ideas: the change in the output is a linear combination of the changes with respect to a change in a single input variable, while holding all other inputs constant.
     </p>
     <p>
-      We can easily generalize related ideas like the differential to functions of three or more variables. The differential for our temperature function is given by 
+      We can easily generalize related ideas like the differential to functions of three or more variables. The differential for the temperature function is given by 
       <me>dT = \frac{\partial T}{\partial x} dx + \frac{\partial T}{\partial y} dy + \frac{\partial T}{\partial z} dz + \frac{\partial T}{\partial t} dt </me>
-      Other important ideas, like the classic calculus approach or our interpretation of the gradient, did not depend on using a function of two variables, so we can easily adapt these arguments and results to higher dimensional cases. Again, the downside to all of this abstraction is that we do not have the geometric tools to interpret and understand our measurements in higher dimensions.
+      Other important ideas, like the classic calculus approach or our interpretation of the gradient, did not depend on using a function of two variables, so we can adapt these arguments and results to higher dimensional cases as well. Again, the downside to this abstraction is that we do not have the geometric tools to help us interpret and understand these measurements in higher dimensions.
     </p>
   </subsection>
   <subsection xml:id="HD-gradient">
