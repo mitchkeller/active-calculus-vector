@@ -13,7 +13,7 @@
 <!-- derivatives for profit.  All trademarks are the registered marks of   -->
 <!-- their respective owners.                                              -->
 <!-- **********************************************************************-->
-<section xml:id="S-10-7-Optimization" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="S-mv_deriv-optimization" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Optimization</title>
   <objectives>
     <ul>
@@ -37,108 +37,98 @@
   <introduction component="instructor">
     <title>Notes to the Instructor and Dependencies</title>
     <p>
-      This section relies on the geometric tools developed with in the sections on the first and second partial derivatives (<xref ref="S-mv_deriv-first_order"/> and <xref ref="S-mv_deriv-second_order"/>). If you omit the material on absolute extrema, then this can be covered in a single class meeting. Because absolute extrema involve a significant amount more work to do optimization on the boundary, that is likely a separate class meeting (or could be paired with Lagrange Multipliers).
+      This section relies on the geometric tools developed in the sections on the first and second partial derivatives (<xref ref="S-mv_deriv-first_order"/> and <xref ref="S-mv_deriv-second_order"/>). If you omit the material on absolute extrema, then this can be covered in a single class meeting. Because absolute extrema involve a significant amount more work to do optimization on the boundary, that is likely a separate class meeting (or could be paired with Lagrange Multipliers).
     </p>
   </introduction>
   <subsection>
     <title>Introduction</title>
     <p>
-      In <url href="https://activecalculus.org/single/sec-3-1-tests.html">single-variable calculus</url> we learned that the derivative is useful for finding the local maxima and minima of functions and these ideas are often employed in applied settings. In particular, if a function <m>f</m>, such as the one shown in <xref ref="F_10_7_preview_1">Figure</xref> is differentiable everywhere, we know that the tangent line is horizontal at any point where <m>f</m> has a local maximum or minimum. Horizontal tangent lines occur when the derivative <m>f'</m> is zero at any such point. Thus, one way we can find possible extreme values of a given function is to first find where the derivative of the function is zero. Remember that not every point where <m>f'(a)=0</m> will correspond to either a local maximum or local minimum. 
+      In <url href="https://activecalculus.org/single/sec-3-1-tests.html">single-variable calculus</url> we learned that the derivative is useful for finding the local maxima and minima of functions. We also saw how these ideas can be employed in applied settings. In particular, if a function <m>f</m>, such as the one shown in <xref ref="fig-mv_deriv-opt-intro">Figure</xref> is differentiable everywhere, we know that the tangent line is horizontal at any point where <m>f</m> has a local maximum or minimum. Horizontal tangent lines occur when the derivative <m>f'</m> is zero. Thus, one way to find possible extreme values of a function is to first find where the function's derivative is zero. Not every point where <m>f'(a)=0</m> will correspond to either a local maximum or local minimum, however. You may also recall that the concavity at a location where the derivative is zero can be used to help determine if a point is a local maximum or local minimum. 
     </p>
-    <figure xml:id="F_10_7_preview_1">
+    <figure xml:id="fig-mv_deriv-opt-intro">
       <caption>The graph of <m>y=f(x)</m>.</caption>
       <image width="50%" source="images/fig_10_7_preview_1"/>
     </figure>
     <p>
-      After finding the critical points by looking where <m>f'(a)=0</m> or is undefined, you may have used the derivative of <m>f</m> to determine whether the output of <m>f</m> at the critical point changed from increasing to decreasing or vice versa. This change would determine if the critical point was a local maximum, local minimum, or something else. Additionally, the concavity at the critical point could sometimes be used to classify critical points. 
-    </p>
-    <p>
-      In multivariable calculus, we are often similarly interested in finding the greatest or least value(s) that a function may achieve. Moreover, there are many applied settings in which a quantity of interest depends on several different variables. In the preview activity below, we will use the application of elevation being a function of location (with coordinates in terms of North/South and East/West) to look at what characteristics are necessary for an input to a function of two variables to correspond with a local maximum or minimum. An emphasis of this activity is that we can only look at measurements at our current location (local information) to determine if a point is a local maximum or minimum. 
+      In multivariable calculus, we are often similarly interested in finding the greatest or least values that a function may achieve. Moreover, there are many applied settings in which a quantity of interest depends on several variables. In the preview activity below, we will use the application of elevation as a function of location to consider the characteristics that are necessary for an input to a function of two variables to correspond to a local maximum or local minimum. An emphasis of this activity is that we can only look at measurements at our current location to determine if a point is a local maximum or minimum. 
       <!-- In the following preview activity, we begin to see how some key ideas in multivariable calculus can help us answer such questions by thinking about the geometry of the surface generated by a function of two variables. -->
     </p>
     <worksheet>
-  <exploration workspace="1.5in"
- xml:id="PA_10_7">
+  <exploration workspace="1.5in" xml:id="PA-mv_deriv-opt">
       <introduction>
         <p>
-          In this activity, we will use a function corresponding to elevation (as a function of 2D location) to explore what properties a point corresponding to a local maximum or local minimum (of a function of two variables) must have. Similar to <xref ref="foggymtn1"/>, we are hiking in a foggy park and cannot see anything more than a few feet in front of us. There is nothing blocking us from walking in any particular direction, but because of the fog, we cannot see where the highest point on the mountain is. We want to try to find the top of the mountain, but we don't have a map or trail or any line of sight to other landmarks. Our compass still works in the fog, so we can tell what direction North/South/East/West are.
-        </p>
-        <p>  
-          We also brought a level that we can place on the ground at our feet to measure how steep the change in elevation will be in a particular direction. In other words, the level can measure the directional derivative at our current location. Conceptually, we want to understand how the measurements we can take with our level will allow us to identify when we have reached the top of the mountain. 
+          In this activity, we will use a function that takes a two-dimensional location as its input and outputs the elevation of a surface at that point to explore what properties a point corresponding to a local maximum or local minimum of a function of two variables must have. Similar to <xref ref="foggymtn1"/>, imagine that you are hiking in a foggy park and cannot see anything more than a few feet in front of you. There is nothing blocking you from walking in any particular direction, but because of the fog, you cannot see where the highest point on the mountain is. You want to try to find the top of the mountain, but you don't have a map to consult or trail to follow or even a line of sight to other landmarks. You do have a compass that works in the fog, which you can use to determine directions. You also have a level that can be placed on the ground at your feet to measure how steep the change in elevation is in a particular direction. In other words, the level can measure the directional derivative at a location. Conceptually, our goal in this preview activity is to understand how the measurements you can take with your level allows you to identify when you have reached the top of the mountain. 
         </p>
       </introduction>
       <task>
         <statement>
           <p>
-            In <xref ref="foggymtn1"/>, we saw how we can move toward the top of the mountain by taking steps in the <q>uphill</q> direction (the direction of greatest rate of increase for elevation). We want to state some conditions for our measurement using the level that will determine if we have reached the top of the mountain.
-          </p>
-          <p>
-            Suppose you are actually standing at the top of the mountain (which will correspond to a local maximum for the elevation) and you set the level at your feet in the East direction. Will the level measure that the elevation is increasing, decreasing, or constant elevation? Write a couple of sentences to justify your answer.
+            In <xref ref="foggymtn1"/>, you saw how you can move toward the top of the mountain by taking steps in the <q>uphill</q> direction, which is the direction of greatest rate of increase for elevation. Suppose you are standing at the top of the mountain, which corresponds to a local maximum for elevation, and you set the level at your feet while facing east. Will the level measure that the elevation is increasing, decreasing, or constant? Write a couple of sentences to justify your answer.
           </p>
         </statement>
         <hint>
           <p>
-            Remember that the level will measure the instantaneous rate of change of elevation at your current location, but will not describe what happens for a small step in the East direction. 
+            Remember that the level measures the <em>instantaneous</em> rate of change of elevation at your current location, but will not describe what happens for a small step to the east. 
           </p>
         </hint>
       </task>
       <task>
         <statement>
           <p>
-            If you are at the top of the mountain and set the level at your feed in the South direction, will the level measure that the elevation is increasing, decreasing, or constant elevation? Write a couple of sentences to justify your answer.
+            If you are at the top of the mountain and set the level at your feed while facing south, will the level measure that the elevation is increasing, decreasing, or constant? Write a couple of sentences to justify your answer.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Write a few sentences to explain why your level MUST show a zero rate of change in <em>every</em> direction at the top of the mountain.
+            Write a few sentences to explain why your level <em>must</em> show a zero rate of change in <em>every</em> direction at the top of the mountain.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            If you took a step to the West from the top of the mountain, should your level measurement in the West direction at your new location be increasing, decreasing, or constant elevation? Explain your reasoning.
+            If you took a small step to the west from the top of the mountain, should your level measurement to the west at your new location indicate that the elevation is increasing, decreasing, or constant? Explain your reasoning.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            If you took at step in <em>any direction</em> from the top of the mountain, should your level measurement in the direction you took the step at your new location be increasing, decreasing, or constant elevation? Explain your reasoning. 
+            If you took a small step in <em>any direction</em> from the top of the mountain, should your level measurement in the direction you took the step at your new location indicate that the elevation is increasing, decreasing, or constant? Explain your reasoning. 
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            If you were at the lowest point in the foggy park, write a few sentences to explain why your level MUST show a zero rate of change in <em>every</em> direction.
+            Now imagine that you are at the <em>lowest</em> point in the foggy park. Write a couple of sentences to explain why your level <em>must</em> show a zero rate of change in <em>every</em> direction.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            If you took at step in <em>any direction</em> from the lowest point in the park, should your level measurement in the forward direction (the direction in which you took the step) at your new location be increasing, decreasing, or constant elevation? Explain your reasoning.
+            If you took at step in <em>any direction</em> from the lowest point in the park, should your level measurement at your new location in the the direction in which you took the step indicate that the elevation is increasing, decreasing, or constant? Explain your reasoning.
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            Is it possible on your hike in the fog that you find a point where your level shows constant elevation in every direction but you are NOT at the top of the mountain or lowest point on the mountain? Explain what the the terrain would look like at this kind of location. 
+            Is it possible on your hike in the fog that you find a point where your level shows constant elevation in every direction but you are <em>not</em> at the top of the mountain or lowest point on the mountain? Explain what the the terrain would look like at this type of location. 
           </p>
         </statement>
       </task>
     </exploration>
 </worksheet>
     <p>
-      As you saw in the preview activity, you saw how points corresponding to local minimums and local maximums must have a zero slope in <em>every</em> direction and the rate of the change after taking a small step in any direction will also need to be either positive or negative (respectively). This will form the conceptual basis of our attempt to find and classify extreme points of functions of two variables.
+      As the Preview Activity demonstrates, points corresponding to local minima and local maxima must have a zero slope in <em>every</em> direction and the rate of the change after taking a small step in any direction must also be positive or negative, respectively. This will form the conceptual basis of our attempt to find and classify extreme points of functions of two variables.
     </p>
     <!-- <worksheet>
   <exploration workspace="1.5in"
- xml:id="PA_10_7">
+ xml:id="PA-mv_deriv-opt">
       <statement>
         <p>
           Let <m>z = f(x,y)</m> be a differentiable function, and suppose that at the point <m>(x_0, y_0)</m>, <m>f</m> achieves a local maximum. That is, the value of <m>f(x_0,y_0)</m> is greater than the value of <m>f(x,y)</m> for all <m>(x,y)</m> nearby <m>(x_0,y_0)</m>. You might find it helpful to sketch a rough picture of a possible function <m>f</m> that has this property.
@@ -353,7 +343,7 @@
     </figure> -->
 
     <p>
-      In single-variable calculus, we saw that the extrema of a continuous function <m>f</m> always occur at <em>critical points</em>, values of <m>x</m> where <m>f</m> fails to be differentiable or where <m>f'(x) = 0</m>. Said differently, critical points provide the locations where the extrema of a function may appear. Our work in <xref ref="PA_10_7">Preview Activity</xref> suggests that something similar happens with two-variable functions.
+      In single-variable calculus, we saw that the extrema of a continuous function <m>f</m> always occur at <em>critical points</em>, values of <m>x</m> where <m>f</m> fails to be differentiable or where <m>f'(x) = 0</m>. Said differently, critical points provide the locations where the extrema of a function may appear. Our work in <xref ref="PA-mv_deriv-opt">Preview Activity</xref> suggests that something similar happens with two-variable functions.
     </p>
 
     <p>
@@ -368,7 +358,7 @@
       </statement>
     </definition>
     <p>
-      In the analogy of <xref ref="PA_10_7"/>, these critical points correspond to locations where our level will measure no change in elevation for every direction. How can we ensure that directional derivative will be zero in every direction? If <m> \nabla f =\vec{0}</m>, then <m>Df_{\vu} = \vec{0}\cdot\vu = 0 </m> for <em>every direction</em>. Geometrically, if <m>\nabla f =\vec{0}</m> at a point <m>(x_0,y_0)</m>, then the tangent plane at this point will be horizontal (of the form <m>z=\text{constant}</m>).
+      In the analogy of <xref ref="PA-mv_deriv-opt"/>, these critical points correspond to locations where our level will measure no change in elevation for every direction. How can we ensure that directional derivative will be zero in every direction? If <m> \nabla f =\vec{0}</m>, then <m>Df_{\vu} = \vec{0}\cdot\vu = 0 </m> for <em>every direction</em>. Geometrically, if <m>\nabla f =\vec{0}</m> at a point <m>(x_0,y_0)</m>, then the tangent plane at this point will be horizontal (of the form <m>z=\text{constant}</m>).
     </p>
     <p>
       We can therefore find critical points of a function <m>f</m> by computing partial derivatives and identifying any values of <m>(x,y)</m> for which one of the partials doesn't exist or for which both partial derivatives are simultaneously zero. For the latter, note that we have to solve the system of equations
