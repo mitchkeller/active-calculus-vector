@@ -365,7 +365,7 @@
         </p>
       </proof>
     </proposition>
-    <example>
+    <example>      
     <p>
       This example examines the function <m>f(x,y,z)=x^2+y^2+z^2</m> and the meaning of its gradient <m>\nabla f = \langle 2x,2y,2z\rangle </m>. In order to visualize the graph of <m>f</m> we can look at a level surface given by <m> f(x,y,z)=k</m>. <xref ref="gradspheres"/> shows a plot of the level surface for a value of <m>k</m>. Note that the level surfaces of <m>f</m> are spheres of radius <m>R=\sqrt{k}</m> centered at the origin. Move the slider at the top of <xref ref="gradspheres"/> to change the value of <m>k</m>. This illustrates how the scale of the level surface changes but the shape does not.
     </p>
@@ -431,98 +431,110 @@
         This point, normal vector, and tangent plane is shown in green in <xref ref="spheretanplanes"/>.
       </p>
       </example>
-      <!-- TODO This example needs help. Hard to suss out what it's trying to convey. -->
       <example>
-        <p>
-          In this example, we will look at the function <m>g(x,y,z)=x^2+y^2-z^2</m>, the level surfaces of <m>g</m>, and the meaning of the gradient of <m>g</m>, given by <m>\nabla g = \langle 2x,2y,-2z\rangle </m>. In <xref ref="implicitex1"/> we saw how different values of <m>k</m> for the level surfaces gives rise to different types of surfaces. In <xref ref="gradhypcone" />, you can use the slider to change the level surface value and see how the shape of the level surfaces changes depending on the value of <m>k</m>. In particular, you should notice that 
-          <ul>
-            <li>if <m>k\lt 0</m>, the level surface will be a hyperboloid of two sheets</li>
-            <li>if <m>k = 0</m>, the level surface will be a cone</li>
-            <li>if <m>k \gt 0</m>, the level surface will be a hyperboloid of one sheet</li>
-          </ul>
-        </p>
-        <figure xml:id="gradhypcone">
-        <caption>A plot of a level surfaces for <m>g(x,y,z)=x^2+y^2+z^2</m> with the option to plot gradient vectors for some points on the level surface </caption>
-        <interactive title="interactive-gradhypcone" platform="sage" width="100%" aspect="1:1.15">
-          <slate surface="sage">
-            from sage.plot.plot3d.plot3d import axes
-            var('x,y,z,t,s')
-            scale=5;
-            @interact
-            def hypconegrad(k=slider(-6,6,0.5,default=2,label="level surface value, k="),g=checkbox(default=False,label="Show Gradient Vectors")):
-              n=5;m=6;d=4;
-              plot3=axes(scale,1,color="black",aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-              if(sign(k)==-1):
-                param(s,t)=(s*cos(t),s*sin(t),-sqrt(s^2-k))
-                param2(s,t)=(s*cos(t),s*sin(t),sqrt(s^2-k))
-                grad(s,t)=(2*s*cos(t),2*s*sin(t),2*sqrt(s^2-k))
-                grad2(s,t)=(2*s*cos(t),2*s*sin(t),-2*sqrt(s^2-k))
-                n=20;m=20;a1=-d;a2=d;b1=0;b2=2*pi; 
-                #c1 is surface color     o1 is surface opacity
-                #c2 and o2 are for constant t value traces
-                #c3 and o3 are for constant s value traces
-                c1="lightblue"; c2="gray"; c3="gray"; o1=0.5; o2=0.5; o3=0.5;
-                plot3+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,plot_points=200)
-                plot3+=parametric_plot3d(param2,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,plot_points=200)
-                for i in range(n+1):
-                  sv=a1+i/n*(a2-a1)
-                  plot3+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c3,opacity=o3)
-                  plot3+=parametric_plot3d(param2(sv,t),(t,b1,b2),color=c3,opacity=o3)
-                for i in range(m+1):
-                  tv=b1+i/m*(b2-b1)
-                  plot3+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
-                  plot3+=parametric_plot3d(param2(s,tv),(s,a1,a2),color=c3,opacity=o3)
-              else:
-                param(s,t)=(sqrt(k+s^2)*cos(t),sqrt(k+s^2)*sin(t),s)
-                grad(s,t)=(2*sqrt(k+s^2)*cos(t),2*sqrt(k+s^2)*sin(t),-2*s)
-                n=20;m=20;a1=-d;a2=d;b1=0;b2=2*pi; 
-                #c1 is surface color     o1 is surface opacity
-                #c2 and o2 are for constant t value traces
-                #c3 and o3 are for constant s value traces
-                c1="lightblue"; c2="gray"; c3="gray"; o1=0.5; o2=0.5; o3=0.5;
-                plot3+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,plot_points=200)
-                for i in range(n+1):
-                  sv=a1+i/n*(a2-a1)
-                  plot3+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c3,opacity=o3)
-                for i in range(m+1):
-                  tv=b1+i/m*(b2-b1)
-                  plot3+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
-              m=7
-              if(g):
-                for i in range(n+1):
-                  sv=-d+i*2*d/n;
-                  for j in range(m):
-                    tv=j*2*pi/m;
-                    plot3+=arrow(param(sv,tv),param(sv,tv)+grad(sv,tv)/4,color="red",opacity=0.5,width=3)
-                    if(sign(k)==-1):
-                      tv=j*2*pi/m+pi/m
-                      plot3+=arrow(param2(sv,tv),param2(sv,tv)+grad2(sv,tv)/4,color="red",opacity=0.5,width=3)
-              show(plot3,viewpoint=[[-0.2556,-0.5906,-0.7655],143.35],camera_position=[22.801,21.411,8.8665])
-          </slate>
-        </interactive>
-      </figure>
-      <p>
-        It may be a bit weird to think that all three of these surfaces are a level surface of <m>g</m> where the algebraic form of <m>\nabla g</m> is not changing. If you select the checkbox in <xref ref="gradhypcone"/> to plot gradient vectors at points along your level surface, you will see that the gradient vectors will be perpendicular to the level surface. You can use the slider to change the value of the level surface, which will also change the shape of the level surface when you go from positive to negative or viceversa. 
-      </p>
-      <p>
+        <task>
+        <statement>
+          <p>
+            Suppose we wish to find an equation for the tangent plane to the hyperboloid of one sheet with equation <m>x^2+y^2-z^2 = 1</m> at the point <m>(-1,0,1)</m>. Because this is an implicit surface for which we cannot solve for <m>z</m> as a function of <m>x</m> and <m>y</m>, the techniques we developed in <xref ref="S-mv_deriv-linearization"/> do not apply directly. However, we can use the gradient vector as we did in the previous example. To do so, we recognize that the surface is a level surface of the three-variable function <m>g(x,y,z) = x^2+y^2-z^2</m> for the value <m>1</m>. Thus, we know that the gradient vector for <m>g</m> at the point <m>(-1,0,1)</m> is normal to the surface at that point and can be used as the normal vector for the tangent plane.
+          </p>
+          <p>
+            We can compute <m>\nabla g = \langle 2x,2y,-2z\rangle </m>, which tells us that <m>\nabla g(-1,0,1) = \langle -2,0,-2\rangle</m> is normal to the hyperboloid of one sheet at <m>(-1,0,1)</m>. Thus, we can write an equation for the tangent plane to this surface at this point as 
+            <me>
+              -2(x+1)+0(y-0)-2(z-1)=0
+            </me>.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            A particularly nice aspect of the approach of viewing surfaces in three-dimensional space as level surfaces of functions of three variables is that the method does not change even as the surface changes. To continue with the function <m>g</m> from the previous part, we saw in <xref ref="implicitex1"/> that different values of <m>k</m> for the level surfaces gives rise to different types of surfaces. In particular,
+            <ul>
+              <li>if <m>k\lt 0</m>, the level surface is a hyperboloid of two sheets (as we saw in the previous part),</li>
+              <li>if <m>k = 0</m>, the level surface is a cone, and</li>
+              <li>if <m>k \gt 0</m>, the level surface is a hyperboloid of one sheet.</li>
+            </ul>
+            Even as the type of surface changes, the gradient's algebraic form <m>\nabla g = \langle 2x,2y,-2z\rangle </m> does not change. If you select the checkbox in <xref ref="gradhypcone"/> to plot gradient vectors at points along the level surface, you will see that the gradient vectors are perpendicular to the level surface. Use the slider to change the value of the level surface, which changes the shape of the level surface when the sign of <m>k</m> changes. 
+          </p>
+          <figure xml:id="gradhypcone">
+            <caption>A plot to view level surfaces for <m>g(x,y,z)=x^2+y^2-z^2</m> with the option to plot gradient vectors for some points on the level surface </caption>
+            <interactive title="interactive-gradhypcone" platform="sage" width="100%" aspect="1:1.20">
+              <slate surface="sage">
+                from sage.plot.plot3d.plot3d import axes
+                var('x,y,z,t,s')
+                scale=5;
+                @interact
+                def hypconegrad(k=slider(-6,6,0.5,default=2,label="level surface value, k="),g=checkbox(default=False,label="Show Gradient Vectors")):
+                  n=5;m=6;d=4;
+                  plot3=axes(scale,1,color="black",aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+                  if(sign(k)==-1):
+                    param(s,t)=(s*cos(t),s*sin(t),-sqrt(s^2-k))
+                    param2(s,t)=(s*cos(t),s*sin(t),sqrt(s^2-k))
+                    grad(s,t)=(2*s*cos(t),2*s*sin(t),2*sqrt(s^2-k))
+                    grad2(s,t)=(2*s*cos(t),2*s*sin(t),-2*sqrt(s^2-k))
+                    n=20;m=20;a1=-d;a2=d;b1=0;b2=2*pi; 
+                    #c1 is surface color     o1 is surface opacity
+                    #c2 and o2 are for constant t value traces
+                    #c3 and o3 are for constant s value traces
+                    c1="lightblue"; c2="gray"; c3="gray"; o1=0.5; o2=0.5; o3=0.5;
+                    plot3+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,plot_points=200)
+                    plot3+=parametric_plot3d(param2,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,plot_points=200)
+                    for i in range(n+1):
+                      sv=a1+i/n*(a2-a1)
+                      plot3+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c3,opacity=o3)
+                      plot3+=parametric_plot3d(param2(sv,t),(t,b1,b2),color=c3,opacity=o3)
+                    for i in range(m+1):
+                      tv=b1+i/m*(b2-b1)
+                      plot3+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+                      plot3+=parametric_plot3d(param2(s,tv),(s,a1,a2),color=c3,opacity=o3)
+                  else:
+                    param(s,t)=(sqrt(k+s^2)*cos(t),sqrt(k+s^2)*sin(t),s)
+                    grad(s,t)=(2*sqrt(k+s^2)*cos(t),2*sqrt(k+s^2)*sin(t),-2*s)
+                    n=20;m=20;a1=-d;a2=d;b1=0;b2=2*pi; 
+                    #c1 is surface color     o1 is surface opacity
+                    #c2 and o2 are for constant t value traces
+                    #c3 and o3 are for constant s value traces
+                    c1="lightblue"; c2="gray"; c3="gray"; o1=0.5; o2=0.5; o3=0.5;
+                    plot3+=parametric_plot3d(param,(s,a1,a2),(t,b1,b2),color=c1,opacity=o1,plot_points=200)
+                    for i in range(n+1):
+                      sv=a1+i/n*(a2-a1)
+                      plot3+=parametric_plot3d(param(sv,t),(t,b1,b2),color=c3,opacity=o3)
+                    for i in range(m+1):
+                      tv=b1+i/m*(b2-b1)
+                      plot3+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
+                  m=7
+                  if(g):
+                    for i in range(n+1):
+                      sv=-d+i*2*d/n;
+                      for j in range(m):
+                        tv=j*2*pi/m;
+                        plot3+=arrow(param(sv,tv),param(sv,tv)+grad(sv,tv)/4,color="red",opacity=0.5,width=3)
+                        if(sign(k)==-1):
+                          tv=j*2*pi/m+pi/m
+                          plot3+=arrow(param2(sv,tv),param2(sv,tv)+grad2(sv,tv)/4,color="red",opacity=0.5,width=3)
+                  show(plot3,viewpoint=[[-0.2556,-0.5906,-0.7655],143.35],camera_position=[22.801,21.411,8.8665])
+              </slate>
+            </interactive>
+          </figure>
+          <p>
+            To see this in action, we can find a general way to express the tangent plane at a point on these level surfaces. Let <m>S_k</m> be the level surface with value <m>k</m>. In other words, <m>g(x,y,z)=k=x^2+y^2-z^2</m>. Let <m>P_k=(-1,1,\sqrt{2-k})</m> be a point, which you can verify for yourself is on <m>S_k</m>. This means that <m>\nabla g(P_k)=\langle -2,2,-2\sqrt{2-k}\rangle</m>. Hence by <xref ref="implicittanplane"/>, the tangent plane to <m>S_k</m> at <m>P_k</m> can be written as
+            <me> (-2)(x+1)+(2)(y-1)+(-2\sqrt{2-k})(z-\sqrt{2-k})=0</me>.
+            This point, the gradient vector (drawn at half length), and tangent plane are shown in red in <xref ref="hypconetanplanes"/>. Use the slider to change the value of <m>k</m> using the slider at the top of <xref ref="hypconetanplanes"/> to see how even though the shape of the level surface changes, the gradient vector at <m>P_k</m> remains orthogonal to the surface and will serves as a normal vector for our tangent plane.
+          </p>
+          <figure xml:id="hypconetanplanes">
+            <caption>A plot of a level surface for <m>g(x,y,z)=x^2+y^2-z^2</m> along with the normal vector and tangent plane at the point <m>(-1,1,\sqrt{2-k})</m> </caption>
+              <interactive title="interactive-hypconetanplanes" platform="sage" width="100%" aspect="1:1">
+                <slate surface="sage">
+                  <xi:include href="interacts/hypconetanplanes.txt" parse="text" />
+                </slate>
+              </interactive>
+          </figure>
+        </statement>
+      </task>
+      <!-- <p>
         Returning to the function <m>g(x,y,z)=x^2+y^2-z^2</m>, we can ask <q>For an input point <m>(a,b,c)</m>, in what direction will the output of <m>g</m> be increasing at the greatest rate?</q> We can group the output of <m>g</m> into two terms <m>x^2+y^2</m> which increases as you move away from the <m>z</m>-axis and <m>-z^2</m> which increases as you get closer to the <m>xy</m>-plane (<m>z=0</m>). An input point of <m>(a,b,c)</m> for the gradient vector gives <m>\nabla g (a,b,c)=\langle 2a,2b,-2c\rangle</m>. Notice that for any point in our space, this gradient vector will point away from the <m>z</m>-axis and toward the <m>xy</m>-plane, as demonstrated by the red vectors in <xref ref="gradhypcone"/>. Note that our arguments are rotationally symmetric about the <m>z</m>-axis. 
       </p>
-      <p>
-        We can verify <xref ref="implicittanplane"/> by looking at tangent points for a point on these level surfaces. Let <m>S_k</m> be the level surface with value k, <m>g(x,y,z)=1=x^2+y^2-z^2</m> where <m>P_k=(-1,1,\sqrt{2-k})</m> is on <m>S_k</m> and <m>\nabla g(P_k)=\langle -2,2,-2\sqrt{2-k}\rangle</m>. So by <xref ref="implicittanplane"/>, the tangent plane to <m>S_k</m> at <m>P_k</m> will be given by 
-        <me> (-2)(x+1)+(2)(y-1)+(-2\sqrt{2-k})(z-\sqrt{2-k})=0</me>
-        This point, the gradient vector (drawn at half length), and tangent plane are shown in red for <xref ref="hypconetanplanes"/>.
-      </p>
-      <figure xml:id="hypconetanplanes">
-        <caption> </caption>
-          <interactive title="interactive-hypconetanplanes" platform="sage" width="100%" aspect="1:1">
-            <slate surface="sage">
-              <xi:include href="interacts/hypconetanplanes.txt" parse="text" />
-            </slate>
-          </interactive>
-      </figure>
-      <p>
-        You can use the slider to change the value of <m>k</m> using the slider at the top of <xref ref="hypconetanplanes"/> to see how even though the shape of the level surface changes, the gradient vector at <m>P_k</m> will still be orthogonal to the surface and will serve as a normal vector for our tangent plane.
-      </p>
+       -->
       </example>
       <worksheet>
   <activity workspace="1.5in">
