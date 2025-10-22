@@ -299,7 +299,7 @@
   <subsection xml:id="HD-gradient">
     <title>Directional Derivatives and Gradients</title>
     <p>
-      Directional derivatives and gradients for functions of three or more variables will come up several times in this course (and in many subsequent math/physical science/economics courses), so we will take a little bit of time to talk about the definitions and interpretations now. Recall that the <xref ref="S-mv_deriv-directional">directional derivative</xref> measures the instantaneous rate of change of a multivariable function when the inputs are changed in a particular direction. None of the arguments in <xref ref="S-mv_deriv-directional"/> were specific to functions of two variables, but rather than stating these results in terms of an abstract function of <m>n</m>-variables, we will state the various definitions and results in terms of functions of either three or four variables, <m>f(x,y,z)</m> or <m>g(x,y,z,w)</m>. 
+      Directional derivatives and gradients for functions of three or more variables are critical concepts, both in this course and in future coursework in math, economics, and the physical sciences. Recall that the <xref ref="S-mv_deriv-directional" text="custom">directional derivative</xref> measures the instantaneous rate of change of a multivariable function when the inputs are changed in a particular direction. None of the arguments in <xref ref="S-mv_deriv-directional"/> were specific to functions of two variables, but rather than stating these results in terms of an abstract function of <m>n</m> variables, we will illustrate the various definitions and results in terms of functions of three or four variables: <m>f(x,y,z)</m> or <m>g(x,y,z,w)</m>. 
     </p>
     <p>
       Let <m>f = f(x,y,z)</m> be a function of three variables. The <term>derivative of <m>f</m> at the point <m>(x,y,z)</m> in the direction of the unit vector <m>\vu = \langle u_1, u_2 , u_3 \rangle</m></term><idx><h>directional derivative</h></idx> is denoted <m>D_{\vu}f(x,y,z)</m> and is given by
@@ -309,22 +309,27 @@
       for those values of <m>x</m>, <m>y</m>, and <m>z</m> for which the limit exists. We can make a similar limit definition for a function of more than three variables because we are able to separate the length of the step in a particular direction (<m>t</m> in the above statement) and the unit vector in that particular direction (<m>\vu</m> from above) for vectors with any number of components. 
     </p>
     <p>
-      We can <xref ref="Directional-derivative">calculate the directional derivative</xref> in terms of partial derivatives of our function and <m>\vu</m>. This result comes from using the chain rule on a composition of our multivariable function with line in the direction of <m>\vu</m>. So if <m>f(x,y,z)</m> and <m>g(x,y,z,w)</m>, then
+      We can <xref ref="Directional-derivative" text="custom">calculate the directional derivative</xref> in terms of partial derivatives of the function and <m>\vu</m>. This result comes from using the chain rule on a composition of the multivariable function with the line in the direction of <m>\vu</m>. If <m>f(x,y,z)</m> and <m>g(x,y,z,w)</m> are functions of three and four variables, respectively, then
       <me>D_{\vu} f(x,y,z)= f_x(x,y,z) u_1 + f_y(x,y,z) u_2 +f_z(x,y,z) u_3</me>
       and
-      <me>D_{\vu} g(x,y,z,w)= g_x(x,y,z,w) u_1 + g_y(x,y,z,w) u_2 +g_z(x,y,z,w) u_3+ g_w(x,y,z,w) u_4</me>
-      Remember that the direction vector will have as many components as there are inputs to our function because the direction vector corresponds to a change in the inputs of the function. 
+      <!-- TODO Look at this after PreTeXt implements MathJax 4 to see if we can line break it better. -->
+      <!-- <me>D_{\vu} g(x,y,z,w)= g_x(x,y,z,w) u_1 + g_y(x,y,z,w) u_2 +g_z(x,y,z,w) u_3+ g_w(x,y,z,w) u_4</me> -->
+      <md>
+        <mrow>D_{\vu} g(x,y,z,w)= g_x(x,y,z,w) u_1 \amp+ g_y(x,y,z,w) u_2 </mrow>
+        <mrow> \amp +g_z(x,y,z,w) u_3+ g_w(x,y,z,w) u_4</mrow>
+      </md>.
+      Remember that the direction vector will have as many components as there are inputs to the function because the direction vector corresponds to a change in the inputs of the function. 
     </p>
     <p>
-      The formulas above have the same form of a dot product of the gradient and the direction vector:
+      The formulas above have the same form of a dot product of the gradient and the direction vector, so we more compactly write
       <me>D_{\vu} f(x,y,z)= \nabla f \cdot \langle u_1,u_2, u_3\rangle</me>
       and 
       <me>D_{\vu} g(x,y,z,w)= \nabla g \cdot \langle u_1,u_2, u_3,u_4\rangle </me>
-      where <m>\nabla f =\langle f_x(x,y,z), f_y(x,y,z) , f_z(x,y,z)\rangle</m> and <m>\nabla g = \langle g_x(x,y,z,w), g_y(x,y,z,w) , g_z(x,y,z,w), g_w(x,y,z,w)\rangle</m>.
+      where <m>\nabla f =\langle f_x(x,y,z), f_y(x,y,z) , f_z(x,y,z)\rangle</m> and <me>\nabla g = \langle g_x(x,y,z,w), g_y(x,y,z,w) , g_z(x,y,z,w), g_w(x,y,z,w)\rangle</me>.
       This generalization shows that in any dimension, the directional derivative can be calculated as the dot product of the gradient and the direction vector. 
     </p>
     <p>
-      This also means that all of our work to <xref ref="ss-vec-grad">understand the meaning of the gradient</xref> will generalize to any dimension as well. In particular, we update our summary of the meaning of the gradient below. 
+      This also means that all of our work to <xref ref="ss-vec-grad" text="custom">understand the meaning of the gradient</xref> will generalize to any dimension as well. In particular, we update our summary of the meaning of the gradient below. 
     </p>
     <assemblage xml:id="Gradient2">
       <title>The Meaning of the Gradient as a Vector</title>
@@ -333,32 +338,36 @@
       </p>
       <p>
         <ul>
-          <li>The gradient, <m>\nabla f (P)</m> points in a direction perpendicular to the level curve <m>f(P)=k</m>.</li>
-          <li>The gradient, <m>\nabla f (P)</m>, points in the direction of greatest rate of increase for <m>f</m> at <m>P</m>, and the instantaneous rate of change of <m>f</m> in that direction is the length of the gradient vector. That is, if <m>\vu = \frac{1}{\vecmag{\nabla f(P)}} \nabla f(P)</m>, then <m>\vu</m> is a unit vector in the direction of greatest increase of <m>f</m> at <m>P</m>, and <m>D_{\vu} f(P) = \vecmag{\nabla f(P)}</m>. </li>
-          <li>The gradient, <m>\nabla f(P)</m>, points in the opposite direction of greatest rate of decrease for <m>f</m> at <m>P</m>, and the instantaneous rate of change of <m>f</m> in that direction is negative the length of the gradient vector. That is, if <m>\vu = - \frac{1}{\vecmag{\nabla f(P)}} \nabla f(P)</m>, then <m>\vu</m> is a unit vector in the direction of greatest decrease of <m>f</m> at <m>(P)</m>, and <m>D_{\vu} f(P) = -\vecmag{\nabla f(P)}</m>. </li>
+          <li>The gradient points in a direction perpendicular to the level set <m>f(P)=k</m>.</li>
+          <li>The gradient <m>\nabla f(P)</m> points in the direction of greatest rate of increase for <m>f</m> at <m>P</m>, and the instantaneous rate of change of <m>f</m> in that direction is the length of the gradient vector.</li>
+          <li>
+            If <m>\vu = \frac{1}{\vecmag{\nabla f(P)}} \nabla f(P)</m>, then <m>\vu</m> is a unit vector in the direction of greatest increase of <m>f</m> at <m>P</m>, and <m>D_{\vu} f(P) = \vecmag{\nabla f(P)}</m>. </li>
+          <li>The gradient <m>\nabla f(P)</m> points in the opposite direction of greatest rate of decrease for <m>f</m> at <m>(P)</m>, and the instantaneous rate of change of <m>f</m> in that direction is the length of the gradient vector times <m>-1</m>.</li>
+          <li>If <m>\vu = -\frac{1}{\vecmag{\nabla f(P)}} \nabla f(P)</m>, then <m>\vu</m> is a unit vector in the direction of greatest decrease of <m>f</m> at <m>(P)</m>, and <m>D_{\vu} f(P) =  -\vecmag{\nabla f(P)}</m>. </li>
         </ul>
       </p>
     </assemblage>
     <p>
-      The first idea above will be very important tool in finding an equation for the plane tangent to an implicit surface. Let <m>P_1</m> be a point on <m>S_1</m>, an implicit surface given by <m>F(P)=k</m>. The tools of <xref ref="S-mv_deriv-linearization"/> will not work because our surface is not of the form <m>z=f(x,y)</m>. Because <m>\nabla F(P_1)</m> is perpendicular to the surface <m>S_1</m>, <m>\nabla F(P_1)</m> will be a normal vector for the tangent plane at <m>P_1</m>. This leads to the following key idea.
+      The first idea above is useful when finding an equation for the plane tangent to an implicit surface. Let <m>P_1</m> be a point on <m>S_1</m>, an implicit surface given by <m>F(P)=k</m>. The tools of <xref ref="S-mv_deriv-linearization"/> will not work because our surface is not of the form <m>z=f(x,y)</m>. Because <m>\nabla F(P_1)</m> is perpendicular to the surface <m>S_1</m>, <m>\nabla F(P_1)</m> is a normal vector for the tangent plane at <m>P_1</m>. This leads to the following key idea.
     </p>
     <proposition xml:id="implicittanplane">
       <statement>
         <p>
-          Let <m>S_1</m> be an implicit surface given by <m>F(x,y,z)=k</m> and let <m>P_0=(x_0,y_0,z_0)</m> be a point on <m>S_1</m>. The tangent plane to <m>S_1</m> at <m>P_0</m> will be given by 
-          <me>\frac{\partial F}{\partial x}(P_0) (x-x_0)+ \frac{\partial F}{\partial y}(P_0) (y-y_0) +\frac{\partial F}{\partial z}(P_0) (z-z_0)=0</me>
+          Let <m>S_1</m> be an implicit surface given by <m>F(x,y,z)=k</m> and let <m>P_0=(x_0,y_0,z_0)</m> be a point on <m>S_1</m>. The tangent plane to <m>S_1</m> at <m>P_0</m> is given by 
+          <me>\frac{\partial F}{\partial x}(P_0) (x-x_0)+ \frac{\partial F}{\partial y}(P_0) (y-y_0) +\frac{\partial F}{\partial z}(P_0) (z-z_0)=0</me>.
         </p>
       </statement>
       <proof>
         <p>
-          By <xref ref="Plane-scalar-equation" text="title"/> we need to find a normal vector for the plane and a point on the plane. The point <m>P_0=(x_0,y_0,z_0)</m> is the location where our tangent plane will intersect <m>S_1</m> so we only need to find a normal vector for our plane. By our interpretation of the gradient above, <m>\nabla F (P_0)= \langle \frac{\partial F}{\partial x}(P_0), \frac{\partial F}{\partial y}(P_0), \frac{\partial F}{\partial z}\rangle</m> will be perpendicular to the level surface <m>S_1</m>. Therefore, 
+          By <xref ref="Plane-scalar-equation" text="title"/> we need to find a normal vector for the plane and a point on the plane. The point <m>P_0=(x_0,y_0,z_0)</m> is the location where the tangent plane will be tangent to <m>S_1</m>. Thus, we only need to find a normal vector for the plane. By the interpretation of the gradient above, <m>\nabla F (P_0)= \langle \frac{\partial F}{\partial x}(P_0), \frac{\partial F}{\partial y}(P_0), \frac{\partial F}{\partial z}(P_0)\rangle</m> is perpendicular to <m>S_1</m> because this is a level surface. Therefore, 
           <me>\frac{\partial F}{\partial x}(P_0) (x-x_0)+ \frac{\partial F}{\partial y}(P_0) (y-y_0) +\frac{\partial F}{\partial z}(P_0) (z-z_0)=0</me>
+          is an equation for this tangent plane in scalar form.
         </p>
       </proof>
     </proposition>
     <example>
     <p>
-      In this example, we will look at the function <m>f(x,y,z)=x^2+y^2+z^2</m> and the meaning of its gradient, <m>\nabla f = \langle 2x,2y,2z\rangle </m>. In order to visualize the graph of <m>f</m> we can look at a level surface given by <m> f(x,y,z)=k</m>. In <xref ref="gradspheres"/>, you can see a plot of the level surface for a value of <m>k</m>. Note that the level surfaces of <m>f</m> will be spheres centered at the origin or radius <m>R=\sqrt{k}</m>. You can use the slider at the top of <xref ref="gradspheres"/> to change the value of <m>k</m> and see how the scale of the level surface changes but the shape does not.
+      This example examines the function <m>f(x,y,z)=x^2+y^2+z^2</m> and the meaning of its gradient <m>\nabla f = \langle 2x,2y,2z\rangle </m>. In order to visualize the graph of <m>f</m> we can look at a level surface given by <m> f(x,y,z)=k</m>. <xref ref="gradspheres"/> shows a plot of the level surface for a value of <m>k</m>. Note that the level surfaces of <m>f</m> are spheres of radius <m>R=\sqrt{k}</m> centered at the origin. Move the slider at the top of <xref ref="gradspheres"/> to change the value of <m>k</m>. This illustrates how the scale of the level surface changes but the shape does not.
     </p>
     <figure xml:id="gradspheres">
         <caption>A plot of a level surfaces for <m>g(x,y,z)=x^2+y^2+z^2</m> with the option to plot gradient vectors for some points on the level surface </caption>
@@ -398,30 +407,31 @@
         </interactive>
       </figure>
       <p>
-        On <xref ref="gradspheres" />, you can use the checkbox to show the gradient vector plotted at a collection of points on the level surface. If you turn on the gradient vectors, you can see that the gradient vector will be perpendicular to the level surface and this relationship is true regardless of what value of <m>k</m> is used for the level surface. Two other properties should be noticed as well; First, the gradient always points out of the sphere in a direction opposite the origin and second, the length of the gradient is increasing as <m>k</m> is increasing. 
+        Use the checkbox in <xref ref="gradspheres" /> to show the gradient vector plotted at a collection of points on the level surface. If you turn on the gradient vectors, you can see that the gradient vector is perpendicular to the level surface and this relationship is true regardless of what value of <m>k</m> is used for the level surface. Two other properties should be noticed as well. First, the gradient always points <em>out</em> of the sphere (in the direction opposite the origin). Second, the length of the gradient increases as <m>k</m> increases. 
       </p>
       <p>  
-        The function <m>f</m> will take a point <m>(x,y,z)</m> as input and output the square of the distance to this point from the origin. So <m>f</m> will increase as long as you move away from the origin, but the direction of <em>greatest</em> increase is to move directly away from the origin. The rate of increase in <m>f</m> also increases as you get farther away from the origin. Both of these ideas are demonstrated in <xref ref="gradspheres"/> by the red gradient vectors. Specifically, you can see that length of the gradient vectors increases as you increase <m>k</m> and the direction of the gradient vectors is always perpendicular to the level surface/sphere. You can also reason that the direction for greatest decrease in <m>f</m> will be in the direction going toward the origin.
+        The function <m>f</m> takes a point <m>(x,y,z)</m> as input and outputs the square of the distance to this point from the origin. This means that <m>f</m> increases as the point considered moves away from the origin, but the direction of <em>greatest</em> increase is to move directly away from the origin. The rate of increase of <m>f</m> also increases as the point gets farther from the origin. Both of these ideas are demonstrated in <xref ref="gradspheres"/> by the red gradient vectors. Specifically, you can see that length of the gradient vectors increases as you increase <m>k</m> and the direction of the gradient vectors is always perpendicular to the level surface/sphere. You can also reason that the direction for greatest decrease in <m>f</m> will be in the direction going toward the origin.
       </p>
       <p>
-        We can verify <xref ref="implicittanplane"/> by looking at tangent points for a few points on these spheres as level surfaces. Let <m>S_1</m> be the level surface with value 1, <m>f(x,y,z)=1=x^2+y^2+z^2</m>. Note that <m>P_0=(0,-1,0)</m> is on <m>S_1</m> and <m>\nabla f(P_0)=\langle 0,-2,0\rangle</m>. So by <xref ref="implicittanplane"/>, the tangent plane to <m>S_1</m> at <m>P_0</m> will be given by 
-        <me> (0)(x-0)+(-2)(y+1)+(0)(z-0)=0 \rightarrow y=-1</me>
-        This point, normal vector, and tangent plane is shown in red for <xref ref="spheretanplanes"/>.
+        We can verify <xref ref="implicittanplane"/> by looking at tangent points for a few points on these spheres as level surfaces. Let <m>S_1</m> be the level surface with value 1, <m>1=f(x,y,z)=x^2+y^2+z^2</m>. Note that <m>P_0=(0,-1,0)</m> is on <m>S_1</m> and <m>\nabla f(P_0)=\langle 0,-2,0\rangle</m>. By <xref ref="implicittanplane"/>, the tangent plane to <m>S_1</m> at <m>P_0</m> is given by 
+        <me> (0)(x-0)+(-2)(y+1)+(0)(z-0)=0 \rightarrow y=-1</me>.
+        This point, normal vector, and tangent plane is shown in red in <xref ref="spheretanplanes"/>.
       </p>
       <figure xml:id="spheretanplanes">
         <caption> </caption>
-          <interactive title="interactive-spheretanplanes" platform="sage" width="100%" aspect="1:1">
+          <interactive title="interactive-spheretanplanes" platform="sage" width="91%" aspect="1:1">
             <slate surface="sage">
               <xi:include href="interacts/sphtanplanes.txt" parse="text" />
             </slate>
           </interactive>
       </figure>
       <p>
-        If we look at another point on <m>S_1</m> like <m>P_1=(\frac{\sqrt{2}}{2},0,-\frac{\sqrt{2}}{2}) </m>, we can apply the same argument. Note that <m> \nabla f(P_1)=\langle \sqrt{2},0,-\sqrt{2}\rangle</m>, so our tangent plane will be given by
-        <me> (\sqrt{2})\left(x-\frac{\sqrt{2}}{2}\right)+(0)(y-0)+(-\sqrt{2})\left(z-\frac{\sqrt{2}}{2}\right)=0 \rightarrow x-z=\sqrt{2}</me>
-        This point, normal vector, and tangent plane is shown in green for <xref ref="spheretanplanes"/>.
+        If we consider the point  <m>P_1=(\frac{\sqrt{2}}{2},0,-\frac{\sqrt{2}}{2}) </m>, which his also on <m>S_1</m>, we can apply the same argument. Note that <m> \nabla f(P_1)=\langle \sqrt{2},0,-\sqrt{2}\rangle</m>, which means that the tangent plane has equation
+        <me> (\sqrt{2})\left(x-\frac{\sqrt{2}}{2}\right)+(0)(y-0)+(-\sqrt{2})\left(z-\frac{\sqrt{2}}{2}\right)=0 \Rightarrow x-z=\sqrt{2}</me>.
+        This point, normal vector, and tangent plane is shown in green in <xref ref="spheretanplanes"/>.
       </p>
       </example>
+      <!-- TODO This example needs help. Hard to suss out what it's trying to convey. -->
       <example>
         <p>
           In this example, we will look at the function <m>g(x,y,z)=x^2+y^2-z^2</m>, the level surfaces of <m>g</m>, and the meaning of the gradient of <m>g</m>, given by <m>\nabla g = \langle 2x,2y,-2z\rangle </m>. In <xref ref="implicitex1"/> we saw how different values of <m>k</m> for the level surfaces gives rise to different types of surfaces. In <xref ref="gradhypcone" />, you can use the slider to change the level surface value and see how the shape of the level surfaces changes depending on the value of <m>k</m>. In particular, you should notice that 
@@ -490,12 +500,6 @@
               show(plot3,viewpoint=[[-0.2556,-0.5906,-0.7655],143.35],camera_position=[22.801,21.411,8.8665])
           </slate>
         </interactive>
-        <p>
-          We can use the same type of argument as the previous example to create tangent planes to the implicit surfaces of the form <m>g(x,y,z)=k</m>. Remember that <m>\nabla g=\langle 2x,2y,-2z\rangle </m>. We will describe a tangent plane at each of the following points on each of the following surfaces:
-          <ul>
-            <li>The tangent plane to the surface with <m>k=-1</m> at the point <m>P_1=(-1,1,\sqrt{3})</m> will be given by </li>
-          </ul>
-        </p>
       </figure>
       <p>
         It may be a bit weird to think that all three of these surfaces are a level surface of <m>g</m> where the algebraic form of <m>\nabla g</m> is not changing. If you select the checkbox in <xref ref="gradhypcone"/> to plot gradient vectors at points along your level surface, you will see that the gradient vectors will be perpendicular to the level surface. You can use the slider to change the value of the level surface, which will also change the shape of the level surface when you go from positive to negative or viceversa. 
@@ -537,35 +541,35 @@
         <task>
           <statement>
             <p>
-              Draw the level surfaces of <m>f</m> for the values <m>k=\{-2,-1,0,1,2\}</m>. Write a few sentences about the shape of each of these level surfaces and describe how the level surfaces is changing in terms of the value of <m>k</m>.
+              Sketch the level surfaces of <m>f</m> for the values <m>k=\{-2,-1,0,1,2\}</m>. Write a few sentences about the shape of each of these level surfaces and describe how the level surfaces change in terms of the value of <m>k</m>.
             </p>
           </statement>
         </task>
         <task>
           <statement>
             <p>
-              Write a few sentences about how the direction and magnitude of <m>\nabla f</m> is related to the level surfaces from the previous task. 
+              Write a few sentences about how the direction and magnitude of <m>\nabla f</m> is related to the level surfaces from the previous part. 
             </p>
           </statement>
         </task>
         <task>
           <statement>
             <p>
-              Draw the level surfaces of <m>g</m> for the values <m>k=\{-2,-1,0,1,2\}</m>. Write a few sentences about the shape of each of these level surfaces and describe how the level surfaces are changing in terms of the value of <m>k</m>. Note here that each of the level surfaces can be expressed with <m>z</m> as a function of <m>x</m> and <m>y</m>.
+              Sketch the level surfaces of <m>g</m> for the values <m>k=\{-2,-1,0,1,2\}</m>. Write a few sentences about the shape of each of these level surfaces and describe how the level surfaces change in terms of the value of <m>k</m>. You may find it helpful to notice that each of the level surfaces can be expressed with <m>z</m> as a function of <m>x</m> and <m>y</m>.
             </p>
           </statement>
         </task>
         <task>
           <statement>
             <p>
-              Write a few sentences about how the direction and magnitude of <m>\nabla g</m> is related to the level surfaces from the previous task. 
+              Write a few sentences about how the direction and magnitude of <m>\nabla g</m> is related to the level surfaces from the previous part. 
             </p>
           </statement>
         </task>
       </activity>
 </worksheet>
       <p>
-        The level surfaces of the function <m>g(x)=z-x^2-y^2</m> from the previous activity were of the form <m>z=x^2+y^2+C</m> for some constant <m>C</m>, which meant that the gradient of <m>g</m> gives a convenient way of calculating a vector that will be perpendicular to the surface <m>z=x^2+y^2+C</m>. In fact, if we have a surface of the form <m>z=h(x,y)</m>, then the same surface will be a level surface of the three variable function <m>g(x,y,z)=z-h(x,y)</m>.
+        The level surfaces of the function <m>g(x)=z-x^2-y^2</m> from the previous activity were of the form <m>z=x^2+y^2+C</m> for some constant <m>C</m>. This means that the gradient of <m>g</m> gives a convenient way to calculate a vector perpendicular to the surface <m>z=x^2+y^2+C</m>. In fact, for any surface of the form <m>z=h(x,y)</m>, the same surface will be a level surface of the three variable function <m>g(x,y,z)=z-h(x,y)</m>.
       </p>
   </subsection>
   <subsection>
