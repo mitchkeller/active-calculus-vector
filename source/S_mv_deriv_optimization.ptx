@@ -131,7 +131,7 @@
   <subsection>
     <title>Extrema and Critical Points</title>
     <p>
-      One of the important applications of single-variable calculus is the use of derivatives to identify local extremes of functions (that is, local maxima and local minima). Using the tools we have developed so far, we can naturally extend the concept of local maxima and minima to several-variable functions.
+      One of the important applications of single-variable calculus is the use of derivatives to identify local extremes of functions (that is, local maxima and local minima). Using the tools we have developed so far, we can extend the concept of local maxima and minima to multivariable functions.
     </p>
 
     <definition>
@@ -172,13 +172,13 @@
     </p>
     <figure xml:id="F_10_7_extrema">
       <caption>An local maxima and a local minima</caption>
-      <interactive title="interactive-F_10_7_extrema" platform="sage" width="100%" aspect="1:1">
+      <interactive title="interactive-F_10_7_extrema" platform="sage" width="100%" aspect="1:1.1">
         <slate surface="sage">
           from sage.plot.plot3d.plot3d import axes
           var('x,y,z,t,s')
           scale=3
           @interact
-          def maxmin(sb=selector(['Local Maximum','Local Minimum'],label="Surface Options:")):
+          def maxmin(sb=selector(['Local Minimum','Local Maximum'],label="Surface Options:")):
             if(sb=='Local Maximum'):
               param(s,t)=(s*cos(t),s*sin(t),1/2+s^2)
             else:
@@ -213,42 +213,42 @@
     </figure> -->
 
     <p>
-      In single-variable calculus, we saw that the extrema of a continuous function <m>f</m> always occur at <em>critical points</em>, values of <m>x</m> where <m>f</m> fails to be differentiable or where <m>f'(x) = 0</m>. Said differently, critical points provide the locations where the extrema of a function may appear. Our work in <xref ref="PA-mv_deriv-opt">Preview Activity</xref> suggests that something similar happens with two-variable functions.
+      In single-variable calculus, we saw that the extrema of a continuous function <m>f</m> always occur at <term>critical numbers</term>, which are values of <m>x</m> where <m>f</m> fails to be differentiable or where <m>f'(x) = 0</m>. Said differently, critical numbers provide the locations where the extrema of a function may appear. Our work in <xref ref="PA-mv_deriv-opt">Preview Activity</xref> suggests that something similar happens with two-variable functions.
     </p>
 
     <p>
-      Suppose that a continuous function <m>f</m> has an extremum at <m>(x_0,y_0)</m>. In this case, the trace <m>f(x,y_0)</m> has an extremum at <m>x_0</m>, which means that <m>x_0</m> is a critical value of <m>f(x,y_0)</m>. Therefore, either <m>f_x(x_0,y_0)</m> does not exist or <m>f_x(x_0,y_0) = 0</m>. Similarly, either <m>f_y(x_0,y_0)</m> does not exist or <m>f_y(x_0,y_0) = 0</m>. This implies that the extrema of a two-variable function occur at points that satisfy the following definition.
+      Suppose that a continuous function <m>f</m> has an extremum at <m>(x_0,y_0)</m>. In this case, the trace <m>f(x,y_0)</m> has an extremum at <m>x_0</m>, which means that <m>x_0</m> is a critical number of <m>f(x,y_0)</m>. Therefore, either <m>f_x(x_0,y_0)</m> does not exist or <m>f_x(x_0,y_0) = 0</m>. Similarly, either <m>f_y(x_0,y_0)</m> does not exist or <m>f_y(x_0,y_0) = 0</m>. This implies that the extrema of a two-variable function occur at points that satisfy the following definition.
     </p>
 
     <definition>
       <statement>
         <p>
-          A <term>critical point</term><idx><h>critical point</h></idx> <m>(x_0,y_0)</m> of a function <m>f=f(x,y)</m> is a point in the domain of <m>f</m> at which <m>f_x(x_0,y_0) = 0</m> and <m>f_y(x_0,y_0) = 0</m>, or such that one of <m>f_x(x_0,y_0)</m> or <m>f_y(x_0,y_0)</m> fails to exist.
+          A <term>critical point</term><idx><h>critical point</h></idx> <m>(x_0,y_0)</m> of a function <m>f=f(x,y)</m> is a point in the domain of <m>f</m> at which either <m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m> are both zero or at least one of <m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m> fails to exist.
         </p>
       </statement>
     </definition>
     <p>
-      In the analogy of <xref ref="PA-mv_deriv-opt"/>, these critical points correspond to locations where our level will measure no change in elevation for every direction. How can we ensure that directional derivative will be zero in every direction? If <m> \nabla f =\vec{0}</m>, then <m>Df_{\vu} = \vec{0}\cdot\vu = 0 </m> for <em>every direction</em>. Geometrically, if <m>\nabla f =\vec{0}</m> at a point <m>(x_0,y_0)</m>, then the tangent plane at this point will be horizontal (of the form <m>z=\text{constant}</m>).
+      In the analogy of <xref ref="PA-mv_deriv-opt"/>, these critical points correspond to locations where our level will measure no change in elevation for every direction. How can we ensure that directional derivative will be zero in every direction? If <m> \nabla f =\vec{0}</m>, then <m>Df_{\vu} = \vec{0}\cdot\vu = 0 </m> for <em>every direction</em>. Geometrically, if <m>\nabla f =\vec{0}</m> at a point <m>(x_0,y_0)</m>, then the tangent plane at this point will be horizontal, meaning its equation has the form <m>z=c</m> for a constant <m>c</m>.
     </p>
     <p>
-      We can therefore find critical points of a function <m>f</m> by computing partial derivatives and identifying any values of <m>(x,y)</m> for which one of the partials doesn't exist or for which both partial derivatives are simultaneously zero. For the latter, note that we have to solve the system of equations
+      This means that we can find critical points of a function <m>f</m> by computing partial derivatives and identifying any values of <m>(x,y)</m> for which one of the partials doesn't exist or for which both partial derivatives are simultaneously zero. For the latter, note that we have to solve the system of equations
       <md>
         <mrow>f_x(x,y) \amp = 0</mrow>
         <mrow>f_y(x,y) \amp  = 0</mrow>
-      </md>
+      </md>.
     </p>
     <example>
       <p>
-        In this example, we will look for the critical points of the two variable function <m>f(x,y)=4x^4+y^2-16xy</m>. By the definition of critical points above, we will need to solve for the <m>(x,y)</m> points with both <m>f_x</m> and <m>f_y</m> equal to zero. Note here that there will be no points for which the partial derivatives of <m>f</m> will be undefined. Because <m>f_x=16x^3-16y</m> and <m>f_y=2y-16x</m>, critical points will be solutions to the system of equations
+        In this example, we will look for the critical points of the two-variable function <m>f(x,y)=4x^4+y^2-16xy</m>. By the definition of critical points above, we will need to solve for the <m>(x,y)</m> points with both <m>f_x</m> and <m>f_y</m> equal to zero. There are no points for which the partial derivatives of <m>f</m> are undefined for this function because <m>f_x=16x^3-16y</m> and <m>f_y=2y-16x</m> are polynomials. The critical points will be solutions to the system of equations
         <md>
           <mrow>16x^3-16y \amp=0 </mrow>
           <mrow>2y-16x   \amp=0 </mrow>
-        </md>
+        </md>.
       </p>
       <p>
-        Solving the second equation for <m>y</m>, we get <m>y=8x</m>, which we can plug into the first equation to get <m>16x^3-16(8x)=0</m>. Factoring this equation, we get
-        <me>16x(x-\sqrt{8})(x+\sqrt{8})=0</me>
-        which means our critical points must have either <m>x=0</m>, <m>x=\sqrt{8}</m>, or <m>x=-\sqrt{8}</m>. We can substitute each of these values back into <m>y=8x</m> to get the following critcal points:
+        Solving the second equation for <m>y</m>, we get <m>y=8x</m>, which we can substitute into the first equation: <m>16x^3-16(8x)=0</m>. Factoring this equation, we have
+        <me>16x(x-\sqrt{8})(x+\sqrt{8})=0</me>,
+        which means our critical points must have <m>x=0</m>, <m>x=\sqrt{8}</m>, or <m>x=-\sqrt{8}</m>. We can substitute each of these values into <m>y=8x</m> to obtain the following critical points:
         <ol>
           <li><m>(x,y)=(0,0)</m> </li>
           <li><m>(x,y)=(\sqrt{8},8\sqrt{8})</m> </li>
@@ -256,11 +256,11 @@
         </ol>
       </p>
       <p>
-        For each point above, <xref ref="critvals1"/> will show a plot of <m>z=f(x,y)</m> for a small region around the critical value. You can use the selector at the top of <xref ref="critvals1"/> to choose which critical point to look at. Pay attention to how the coordinate values are changing in each case. 
+        For each point above, you can use <xref ref="critvals1"/> to show a plot of <m>z=f(x,y)</m> for a small region around the critical point by selecting from the selector. Pay attention to how the coordinate values on the axes change in each case!
       </p>
       <figure xml:id="critvals1">
       <caption>Plots of <m>z=f(x,y)</m> around each of the critical points</caption>
-      <interactive title="interactive-critvals1" platform="sage" width="100%" aspect="1:1">
+      <interactive title="interactive-critvals1" platform="sage" width="100%" aspect="1:1.1">
         <slate surface="sage">
           var('x,y,z')
           f(x,y)=4*x^4+y^2-16*x*y
@@ -280,27 +280,29 @@
         </interactive>
       </figure>
       <p>
-        You can see from the plots around each of the critical points in <xref ref="critvals1"/>, that our first critical point <m>(x,y)=(0,0)</m> will NOT be a local maximum or local minimum, but both of <m>(x,y)=(\sqrt{8},8\sqrt{8})</m> and <m>(x,y)=(-\sqrt{8},-8\sqrt{8})</m> will be local minimums. 
+        You can see from the plots around each of the critical points in <xref ref="critvals1"/>, that the first critical point <m>(x,y)=(0,0)</m> will <em>not</em> be a local maximum or local minimum, but both of <m>(x,y)=(\sqrt{8},8\sqrt{8})</m> and <m>(x,y)=(-\sqrt{8},-8\sqrt{8})</m> will be local minima. 
       </p>
     </example>
     <p>
-      The previous example shows how between minimums there does not have to be maximum (like was the case for continuous functions of one variable). We encourage you to think carefully about how possibilities can be very different than in one variable functions as we move forward. 
+      For continuous functions of one variable, you may recall that between two local minima, there must be a local maximum. The previous example shows how for functions of more than one variable, there does not need to be a local maximum between two local minima. We encourage you to think carefully about how possibilities can be different than for one-variable functions as we move forward. 
     </p>
 
     <worksheet>
-  <activity workspace="1.5in" xml:id="A_10_7_3">
+  <activity workspace="1.5in" xml:id="act-mv_deriv-opt-classify">
     <introduction>
       <p>
-        For each of the functions below, do the following
+        For each of the functions below, do the following:
         <ol>
           <li>Find all critical points for the function. </li>
-          <li>Use <xref ref="critvalsact"/> to plot the surface near each of your critical points. You will need to put in the coordinates of your critical point as <m>(a,b)</m> and the function you are using for <m>f(x,y)</m>. </li>
+          <li>Use <xref ref="critvalsact"/> to plot the surface near each critical point. Enter the coordinates of your critical point as <m>(a,b)</m> and the function you are using for <m>f(x,y)</m>. </li>
           <li>Use your plots of the surfaces <m>z=f(x,y)</m> near your critical point to decide whether each critical point is a local maximum, a local minimum, or not an extreme point. </li>
         </ol>
       </p>
+      <!-- TODO Why does this have both a submit button and an Update button and why do they look different? -->
+      <!-- TODO The plotting of the 5th function here is really bad. Can't tell that it's a saddle point. -->
       <figure xml:id="critvalsact">
         <caption>Plots of <m>z=f(x,y)</m> around each of the critical points</caption>
-        <interactive title="interactive-critvalsact" platform="sage" width="100%" aspect="1:1">
+        <interactive label="interactive-critvalsact" platform="sage" width="100%" aspect="1:1.2">
           <slate surface="sage">
             var('x,y,z')
             d=0.25
@@ -376,6 +378,11 @@
           <m>f(x,y) = 2x-x^2-\frac{1}{4}y^2</m>
         </p>
       </statement>
+      <hint>
+        <p>
+          The interactive requires that multiplication be entered explicitly, so you need to enter <c>2*x</c> instead of <m>2x</m>, and you will need to type <c>(1/4)*y^2</c> for the last term.
+        </p>
+      </hint>
       <answer>
         <p>
           Here, <m>(1,0)</m> is the only critical point of <m>f</m>. The graph of <m>f</m> is a paraboloid that opens in the negative <m>z</m>-direction, so we should expect only one critical point (at which <m>f</m> has an absolute maximum value).
@@ -397,6 +404,11 @@
           <m>f(x,y) = |x| + |y|</m>
         </p>
       </statement>
+      <hint>
+        <p>
+          To enter the absolute value function in the interactive, use <c>abs(x)</c>.
+        </p>
+      </hint>
       <answer>
         <p>
           This function has infinitely many critical points <mdash/> those points of the form <m>(0,y)</m> or <m>(x,0)</m>. The graph of <m>f</m> has sharp folds along the <m>x</m>-axis or <m>y</m>-axis, so we should expect that <m>f</m> is not differentiable at those points. The graph of <m>f</m> also indicates that <m>f</m> has an absolute minimum value at the point <m>(0,0)</m>.
@@ -438,7 +450,7 @@
   <subsection>
     <title>Classifying Critical Points: The Second Derivative Test</title>
     <p>
-      While the extreme values of a continuous function <m>f</m> always occur at critical points, it is important to note that not every critical point leads to an extremum. Recall, for instance, <m>f(x) = x^3</m> from single variable calculus. We know that <m>x_0=0</m> is a critical point since <m>f'(x_0) = 0</m>, but <m>x_0 = 0</m> is neither a local maximum nor a local minimum of <m>f</m>. Geometrically, this corresponds to the tangent line <m>x_0=0</m> being horizontal (as seen in <xref ref="critptx3"/>) but the critical point does not correspond to a place where <m>f</m> is not increasing or decreasing in all directions away from the <m>x_0=0</m> critical point.
+      While the extreme values of a continuous function <m>f</m> always occur at critical numbers, it is important to note that not every critical point leads to an extremum. Recall, for instance, <m>f(x) = x^3</m> from single variable calculus. Because <m>f'(0)=0</m>, we know that <m>x_0=0</m> is a critical number. However, <m>x_0 = 0</m> is not the location of a local maximum or a local minimum of <m>f</m>. Geometrically, this corresponds to the tangent line <m>x_0=0</m> being horizontal as seen in <xref ref="critptx3"/> but at a critical number where <m>f(x_0)</m> is neither greater than or equal to or less than or equal to all values <m>f(x)</m> with <m>x</m> near <m>x_0</m>.
     </p>
     <figure xml:id="critptx3">
       <caption>A plot of <m>y=x^3</m> with the horizontal tangent line at <m>x_0=0</m></caption>
@@ -452,11 +464,11 @@
       </image>
     </figure>
     <p>
-      As you have seen a few times already, a similar situation can arise in a multivariable setting. Let's look at the function <m>f</m> defined by <m>f(x,y) = x^2 - y^2</m> whose graph and contour plot are shown in <xref ref="F_10_7_saddle">Figure</xref>. Because <m>\nabla f = \langle 2x, -2y\rangle</m>, we see that the origin <m>(x_0,y_0)=(0,0)</m> is a critical point. However, this critical point is neither a local maximum or minimum; the origin is a local minimum on the trace defined by <m>y=0</m>, while the origin is a local maximum on the trace defined by <m>x=0</m>. We call such a critical point a <em>saddle point</em> due to the shape of the graph near the critical point.
+      As we have seen a few times already, a similar situation can arise in a multivariable setting. Let's look at the function <m>f(x,y) = x^2 - y^2</m> whose graph and contour plot are shown in <xref ref="fig-mv_deriv-opt-saddle">Figure</xref>. Because <m>\nabla f = \langle 2x, -2y\rangle</m>, we see that the origin <m>(x_0,y_0)=(0,0)</m> is a critical point. However, this critical point is neither a local maximum nor a local minimum. We can explain why this happens by noticing that the origin is a local <em>minimum</em> on the trace defined by <m>y=0</m>, while the origin is a local <em>maximum</em> on the trace defined by <m>x=0</m>. We call such a critical point a <term>saddle point</term> due to the shape of the graph near the critical point.
     </p>
-    <figure xml:id="F_10_7_saddle">
+    <figure xml:id="fig-mv_deriv-opt-saddle">
     <caption>The surface plot and contour plot of  <m>f(x,y)=x^2-y^2</m></caption>
-      <interactive title="interactive-F_10_7_saddle" platform="sage" width="100%" aspect="1:1.75">
+      <interactive title="interactive-fig-mv_deriv-opt-saddle" platform="sage" width="100%" aspect="1:1.75">
         <slate surface="sage">
           from sage.plot.plot3d.plot3d import axes
           var('x,y,z,t,s')
@@ -488,7 +500,7 @@
         </slate>
       </interactive>
     </figure>
-    <!-- <figure xml:id="F_10_7_saddle">
+    <!-- <figure xml:id="fig-mv_deriv-opt-saddle">
       <caption>A saddle point.</caption>
       <sidebyside widths="50% 50%">
       <image source="images/saddle"/>
@@ -497,21 +509,21 @@
     </figure> -->
 
     <p>
-      As in single-variable calculus, we would like to have an algebraic test to help us identify whether a critical point is a local maximum, local minimum, or neither. Recall that the <em>Second Derivative Test</em> for single-variable functions states that if <m>x_0</m> is a critical point of a function <m>f</m> so that <m>f'(x_0)=0</m> and if <m>f''(x_0)</m> exists, then
+      As in single-variable calculus, we would like to have an algebraic test to help us identify whether a critical point is a local maximum, local minimum, or neither. Recall that the <term>Second Derivative Test</term> for single-variable functions states that if <m>x_0</m> is a critical number of a function <m>f</m> for which <m>f'(x_0)=0</m> and <m>f''(x_0)</m> exists, then we can conclude that
       <ul>
-        <li>if <m>f''(x_0) \lt  0</m>, then <m>x_0</m> is a local maximum </li>
+        <li>if <m>f''(x_0) \lt  0</m>, then <m>x_0</m> is a local maximum, </li>
 
-        <li> if <m>f''(x_0) \gt 0</m>, then <m>x_0</m> is a local minimum </li>
+        <li> if <m>f''(x_0) \gt 0</m>, then <m>x_0</m> is a local minimum, and </li>
 
-        <li> if <m>f''(x_0) = 0</m>, then the test is inconclusive </li>
+        <li> if <m>f''(x_0) = 0</m>, then the test is inconclusive. </li>
       </ul>
-      The first two cases are shown geometrically in <xref ref="seconddertest"/>. The inconclusive case does not necessarily mean that you have critical point like the one shown in <xref ref="critptx3"/>, but that you need more information to determine the behavior of the critical point.
+      The first two cases are shown geometrically in <xref ref="seconddertest"/>. The inconclusive case does not necessarily mean that you have critical number like the one shown in <xref ref="critptx3"/>, but that you need more information to determine the behavior of <m>f</m> at the critical number.
     </p>
     <figure xml:id="seconddertest">
-      <caption>Three possible outcomes of the Second Derivative Test</caption>
-      <sidebyside widths="30% 30% 30%" >
-      <image  xml:id="img-PA-2der1">
-        <sageplot>
+      <caption>Conclusive outcomes of the single-variable Second Derivative Test</caption>
+      <sidebyside widths="40% 40%" >
+      <image>
+        <sageplot label="img-PA-2der1">
           var('x,y')
           plot8=plot((x-0.5)^2+0.5,(x,-0.5,1.5),color="black",thickness=2,xmin=-1,ymin=-1,xmax=1,ymax=1,aspect_ratio=1,ticks=[[],[]])
           plot8+=line([(0.25,0.5),(0.75,0.5)],color="blue",thickness=2)
@@ -522,8 +534,8 @@
           plot8
         </sageplot>
       </image>
-      <image  xml:id="img-PA-2der2">
-        <sageplot>
+      <image  >
+        <sageplot label="img-PA-2der2">
           var('x,y')
           plot9=plot(-(x-0.5)^2+0.5,(x,-0.5,1.5),color="black",thickness=2,xmin=-1,ymin=-1,xmax=1,ymax=1,aspect_ratio=1,ticks=[[],[]])
           plot9+=line([(0.25,0.5),(0.75,0.5)],color="blue",thickness=2)
@@ -534,8 +546,8 @@
           plot9
         </sageplot>
       </image>
-      <image  xml:id="img-PA-2der3">
-        <sageplot>
+      <!-- <image  >
+        <sageplot label="img-PA-2der3">
           var('x,y')
           plot10=plot((x-0.5)^3+0.5,(x,-0.5,1.5),color="black",thickness=2,xmin=-1,ymin=-1,xmax=1,ymax=1,aspect_ratio=1,ticks=[[],[]])
           plot10+=line([(0.1,0.5),(0.9,0.5)],color="blue",thickness=2)
@@ -545,7 +557,7 @@
           plot10+=text("$\\left(x_0,f(x_0)\\right)$",(0.5,0.65),color="black",fontsize=15)
           plot10
         </sageplot>
-      </image>
+      </image> -->
       </sidebyside>
     </figure>
     <!-- <worksheet>
