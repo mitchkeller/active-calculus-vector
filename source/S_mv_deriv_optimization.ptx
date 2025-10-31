@@ -179,7 +179,7 @@
           scale=3
           @interact
           def maxmin(sb=selector(['Local Minimum','Local Maximum'],label="Surface Options:")):
-            if(sb=='Local Maximum'):
+            if(sb=='Local Minimum'):
               param(s,t)=(s*cos(t),s*sin(t),1/2+s^2)
             else:
               param(s,t)=(s*cos(t),s*sin(t),2.25-s^2)
@@ -298,17 +298,25 @@
           <li>Use your plots of the surfaces <m>z=f(x,y)</m> near your critical point to decide whether each critical point is a local maximum, a local minimum, or not an extreme point. </li>
         </ol>
       </p>
-      <!-- TODO Why does this have both a submit button and an Update button and why do they look different? -->
-      <!-- TODO The plotting of the 5th function here is really bad. Can't tell that it's a saddle point. -->
       <figure xml:id="critvalsact">
         <caption>Plots of <m>z=f(x,y)</m> around each of the critical points</caption>
         <interactive label="interactive-critvalsact" platform="sage" width="100%" aspect="1:1.2">
           <slate surface="sage">
             var('x,y,z')
-            d=0.25
+            fn_options=["part (a)","part (b)","part (c)","part (d)","part (e)"]
             @interact
-            def critvalcheck(p=input_grid(1,2,default=[[0,0]],label="\\( (a,b)= \\)"),func=input_box(default=x-y,label="\\(f(x,y)=\\)"),auto_update=False):
+            def critvalcheck(p=input_grid(1,2,default=[[1/2,-1/2]],label="\\( (a,b)= \\)"),funcs=selector(fn_options,label="Select Function")):
               a=p[0][0];b=p[0][1];
+              if(funcs=="part (a)"):
+                func=2+x^2+y^2; disp_fn="\\text{A plot of }"+LatexExpr("f(x,y)= 2+x^2+y^2")+"\\text{ around the input }"+str((a,b)); ar=(1,1,1); d=0.3
+              elif(funcs=="part (b)"):
+                func=2+x^2-y^2; disp_fn="\\text{A plot of }"+LatexExpr("f(x,y)= 2+x^2-y^2")+"\\text{ around the input }"+str((a,b)); ar=(1,1,0.5); d=0.5
+              elif(funcs=="part (c)"):
+                func=2*x-x^2-1/4*y^2; disp_fn="\\text{A plot of }"+LatexExpr("f(x,y)= 2x-x^2-\\frac{1}{4}y^2")+"\\text{ around the input }"+str((a,b)); ar=(1,1,2); d=0.5
+              elif(funcs=="part (d)"):
+                func=abs(x)+abs(y); disp_fn="\\text{A plot of }"+LatexExpr("f(x,y)= |x| +|y|")+"\\text{ around the input }"+str((a,b)); ar=(1,1,1); d=0.3
+              elif(funcs=="part (e)"):
+                func=2*x*y-4*x+2*y-3; disp_fn="\\text{A plot of }"+LatexExpr("f(x,y)= 2xy-4x+2y-3")+"\\text{ around the input }"+str((a,b)); ar=(1,1,1); d=0.25
               f(x,y)=func
               #plot1=plot3d(f(x,y),(x,a-d,a+d),(y,b-d,b+d),color="blue",opacity=0.6,plot_points=31,mesh=True)
               param(s,t)=(s,t,f(s,t))
@@ -325,7 +333,8 @@
                 tv=b1+i/m*(b2-b1)
                 plot1+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
               plot1+=point3d((a,b,f(x=a,y=b)),size=10,color="black")
-              show(plot1)
+              show(disp_fn)
+              show(plot1,aspect_ratio=ar)
           </slate>
         </interactive>
       </figure>
@@ -378,11 +387,11 @@
           <m>f(x,y) = 2x-x^2-\frac{1}{4}y^2</m>
         </p>
       </statement>
-      <hint>
+      <!-- <hint>
         <p>
           The interactive requires that multiplication be entered explicitly, so you need to enter <c>2*x</c> instead of <m>2x</m>, and you will need to type <c>(1/4)*y^2</c> for the last term.
         </p>
-      </hint>
+      </hint> -->
       <answer>
         <p>
           Here, <m>(1,0)</m> is the only critical point of <m>f</m>. The graph of <m>f</m> is a paraboloid that opens in the negative <m>z</m>-direction, so we should expect only one critical point (at which <m>f</m> has an absolute maximum value).
@@ -404,11 +413,11 @@
           <m>f(x,y) = |x| + |y|</m>
         </p>
       </statement>
-      <hint>
+      <!-- <hint>
         <p>
           To enter the absolute value function in the interactive, use <c>abs(x)</c>.
         </p>
-      </hint>
+      </hint> -->
       <answer>
         <p>
           This function has infinitely many critical points <mdash/> those points of the form <m>(0,y)</m> or <m>(x,0)</m>. The graph of <m>f</m> has sharp folds along the <m>x</m>-axis or <m>y</m>-axis, so we should expect that <m>f</m> is not differentiable at those points. The graph of <m>f</m> also indicates that <m>f</m> has an absolute minimum value at the point <m>(0,0)</m>.
@@ -443,8 +452,7 @@
     </task>        
   </activity>
 </worksheet>     
-
-  </subsection>
+</subsection>
 
 
   <subsection>
@@ -573,11 +581,11 @@
           @interact
           def maxmin(sb=selector(['Local Maximum','Local Minimum','Saddle Point'],label="Surface Options:"),d=slider(0,6.2,0.1,default=0.8,display_value=False,label="direction")):
             plot20=axes(scale,1,color="black",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-            if(sb=='Local Maximum'):
-              param(s,t)=(s*cos(t),s*sin(t),s^2+0.5); h=0.5;
             if(sb=='Local Minimum'):
+              param(s,t)=(s*cos(t),s*sin(t),s^2+0.5); h=0.5;
+            elif(sb=='Local Maximum'):
               param(s,t)=(s*cos(t),s*sin(t),1.25-s^2); h =1.25;
-            if(sb=='Saddle Point'):
+            elif(sb=='Saddle Point'):
               param(s,t)=(s*cos(t),s*sin(t),s^2*cos(2*t)); h =0;
             #param(s,t)=(s,t,f(s,t))
             #set up grid      n is number of steps in s    m is number of steps in t  
