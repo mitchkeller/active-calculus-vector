@@ -41,7 +41,7 @@
   <subsection>
     <title>Introduction</title>
     <p>
-      Recall in <xref ref="S-11-1-Double-Integrals-Rectangles">Section</xref> that we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as
+      Recall in <xref ref="sec-mult_ints-double_ints_rects">Section</xref> that we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as
       <me>
         \iint_R f(x,y) \, dA = \lim_{m,n \to \infty} \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A.
       </me>
@@ -317,7 +317,7 @@
     </p>
 
     <p>
-      As we saw in <xref ref="PA_11_1">Preview Activity</xref>, a function <m>f = f(x,y)</m> may be considered over regions other than rectangular ones, and thus we want to understand how to set up double integrals as iterated integrals over non-rectangular regions. Note that if we can, then the three interpretations of the double integral noted above will naturally extend to solid regions with non-rectangular bases.
+      As we saw in <xref ref="PA-mult_ints-double_ints_rects">Preview Activity</xref>, a function <m>f = f(x,y)</m> may be considered over regions other than rectangular ones, and thus we want to understand how to set up double integrals as iterated integrals over non-rectangular regions. Note that if we can, then the three interpretations of the double integral noted above will naturally extend to solid regions with non-rectangular bases.
     </p>
 
    <!--  <p>
