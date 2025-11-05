@@ -33,7 +33,7 @@
   <subsection>
     <title>Introduction</title>
     <p>
-      In <xref ref="S-11-1-Double-Integrals-Rectangles">Section</xref>, we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as
+      In <xref ref="sec-mult_ints-double_ints_rects">Section</xref>, we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as
       <me>
         \iint_R f(x,y) \, dA = \lim_{m,n \to \infty} \sum_{j=1}^n \sum_{i=1}^m f\left(x_{ij}^*, y_{ij}^*\right) \cdot \Delta A,
       </me>
