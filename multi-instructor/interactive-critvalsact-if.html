@@ -143,10 +143,20 @@ window.MathJax = {
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div style="width:600px; height:720px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">var('x,y,z')
-d=0.25
+fn_options=["part (a)","part (b)","part (c)","part (d)","part (e)"]
 @interact
-def critvalcheck(p=input_grid(1,2,default=[[0,0]],label="\\( (a,b)= \\)"),func=input_box(default=x-y,label="\\(f(x,y)=\\)"),auto_update=False):
+def critvalcheck(p=input_grid(1,2,default=[[1/2,-1/2]],label="\\( (a,b)= \\)"),funcs=selector(fn_options,label="Select Function")):
   a=p[0][0];b=p[0][1];
+  if(funcs=="part (a)"):
+    func=2+x^2+y^2; disp_fn="\\text{A plot of }"+LatexExpr("f(x,y)= 2+x^2+y^2")+"\\text{ around the input }"+str((a,b)); ar=(1,1,1); d=0.3
+  elif(funcs=="part (b)"):
+    func=2+x^2-y^2; disp_fn="\\text{A plot of }"+LatexExpr("f(x,y)= 2+x^2-y^2")+"\\text{ around the input }"+str((a,b)); ar=(1,1,0.5); d=0.5
+  elif(funcs=="part (c)"):
+    func=2*x-x^2-1/4*y^2; disp_fn="\\text{A plot of }"+LatexExpr("f(x,y)= 2x-x^2-\\frac{1}{4}y^2")+"\\text{ around the input }"+str((a,b)); ar=(1,1,2); d=0.5
+  elif(funcs=="part (d)"):
+    func=abs(x)+abs(y); disp_fn="\\text{A plot of }"+LatexExpr("f(x,y)= |x| +|y|")+"\\text{ around the input }"+str((a,b)); ar=(1,1,1); d=0.3
+  elif(funcs=="part (e)"):
+    func=2*x*y-4*x+2*y-3; disp_fn="\\text{A plot of }"+LatexExpr("f(x,y)= 2xy-4x+2y-3")+"\\text{ around the input }"+str((a,b)); ar=(1,1,1); d=0.25
   f(x,y)=func
   #plot1=plot3d(f(x,y),(x,a-d,a+d),(y,b-d,b+d),color="blue",opacity=0.6,plot_points=31,mesh=True)
   param(s,t)=(s,t,f(s,t))
@@ -163,7 +173,8 @@ def critvalcheck(p=input_grid(1,2,default=[[0,0]],label="\\( (a,b)= \\)"),func=i
     tv=b1+i/m*(b2-b1)
     plot1+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
   plot1+=point3d((a,b,f(x=a,y=b)),size=10,color="black")
-  show(plot1)
+  show(disp_fn)
+  show(plot1,aspect_ratio=ar)
 </script></pre></div>
 </body>
 </html>

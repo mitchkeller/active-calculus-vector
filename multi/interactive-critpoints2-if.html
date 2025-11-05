@@ -148,11 +148,11 @@ scale=2
 @interact
 def maxmin(sb=selector(['Local Maximum','Local Minimum','Saddle Point'],label="Surface Options:"),d=slider(0,6.2,0.1,default=0.8,display_value=False,label="direction")):
   plot20=axes(scale,1,color="black",frame=False,aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
-  if(sb=='Local Maximum'):
-    param(s,t)=(s*cos(t),s*sin(t),s^2+0.5); h=0.5;
   if(sb=='Local Minimum'):
+    param(s,t)=(s*cos(t),s*sin(t),s^2+0.5); h=0.5;
+  elif(sb=='Local Maximum'):
     param(s,t)=(s*cos(t),s*sin(t),1.25-s^2); h =1.25;
-  if(sb=='Saddle Point'):
+  elif(sb=='Saddle Point'):
     param(s,t)=(s*cos(t),s*sin(t),s^2*cos(2*t)); h =0;
   #param(s,t)=(s,t,f(s,t))
   #set up grid      n is number of steps in s    m is number of steps in t  

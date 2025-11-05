@@ -147,7 +147,7 @@ var('x,y,z,t,s')
 scale=3
 @interact
 def maxmin(sb=selector(['Local Minimum','Local Maximum'],label="Surface Options:")):
-  if(sb=='Local Maximum'):
+  if(sb=='Local Minimum'):
     param(s,t)=(s*cos(t),s*sin(t),1/2+s^2)
   else:
     param(s,t)=(s*cos(t),s*sin(t),2.25-s^2)
