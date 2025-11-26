@@ -159,7 +159,7 @@
           <p>  
             The volume of the tetrahedron will be given by the double integral 
             <me>\iint_R 1-(x+y) dA</me>
-            where the region of integration will be the triangle at the base of our tetrahedron (in the <m>xy</m>-plane) as shown in <xref ref="tetrahedron_base"/>. We will need to understand how to express this double integral as an iterated integral using our cross sectional ideas from <xref ref="S-11-2-Iterated-Integrals"/>.
+            where the region of integration will be the triangle at the base of our tetrahedron (in the <m>xy</m>-plane) as shown in <xref ref="tetrahedron_base"/>. We will need to understand how to express this double integral as an iterated integral using our cross sectional ideas from <xref ref="sec-mult_int-iterated"/>.
           </p>
           <p>
             We will look at a cross sectional idea along a constant value of <m>x=a</m> which will give an iterated integral of the form
@@ -404,10 +404,10 @@
 </worksheet>
 
     <p>
-      The key idea to calculating double integrals using iterated integrals (as shown in <xref ref="S-11-2-Iterated-Integrals"/> and <xref ref="PA_11_3"/>) is to slice the region of integration along a trace (one of the coordinates held constant) and express the range of the other coordinate in terms of an inequality. In <xref ref="PA_11_3"/>, we saw how the region given in <xref ref="tetrahedron_base"/> can be described by the inequalities <m>0 \leq x \leq 1</m> and <m>0 \leq y \leq 1-x</m>. Notice how for different values of <m>x</m> there is a different range of values for <m>y</m>, which means our region is <em>NOT</em> rectangular. Compare this to the rectangular regions of integration from <xref ref="S-11-2-Iterated-Integrals"/> which were all of the form <m>a \leq x \leq b</m> and <m>c \leq y \leq d</m> (with <m>a,b,c,d</m> constants).
+      The key idea to calculating double integrals using iterated integrals (as shown in <xref ref="sec-mult_int-iterated"/> and <xref ref="PA_11_3"/>) is to slice the region of integration along a trace (one of the coordinates held constant) and express the range of the other coordinate in terms of an inequality. In <xref ref="PA_11_3"/>, we saw how the region given in <xref ref="tetrahedron_base"/> can be described by the inequalities <m>0 \leq x \leq 1</m> and <m>0 \leq y \leq 1-x</m>. Notice how for different values of <m>x</m> there is a different range of values for <m>y</m>, which means our region is <em>NOT</em> rectangular. Compare this to the rectangular regions of integration from <xref ref="sec-mult_int-iterated"/> which were all of the form <m>a \leq x \leq b</m> and <m>c \leq y \leq d</m> (with <m>a,b,c,d</m> constants).
     </p>
     <p>
-      Both of these forms for the inequalities leads to a nice way to write the corresponding double integral as an iterated integral by considering the inner integral to evaluate the cross section area while the outer integral sums up the corresponding cross section volumes as the width of the slices goes to zero (demonstrated in  <xref ref="F_11_2_Cross_section_y_slab_sum"/>).
+      Both of these forms for the inequalities leads to a nice way to write the corresponding double integral as an iterated integral by considering the inner integral to evaluate the cross section area while the outer integral sums up the corresponding cross section volumes as the width of the slices goes to zero.
     </p>
     <p>
       What kind of 2D regions can we express using this geometric slicing/inequality idea? The key here is that we need the same upper and lower bound expressions for each slice.
@@ -832,7 +832,7 @@
           To understand this result geometrically, you should use the slider at the top of <xref ref="dblintproj"/> to change the <m>x</m>-value at which the slice of our region is taken and observe that the area of the cross section increases with <m>x</m>. The graph of <m>\frac{9}{8}x^4</m> is projected on a plane and you should notice that as you used the slider to change the <m>x</m>-value of the slice, the highlighted point on the 2D graph shows the area of slice. The red 2D graph is a plot of the result of the inner integral, which measures the area of cross section at that particular <m>x</m>-value, which is why the red graph goes higher than the surface <m>z</m>-values. In fact the peak of the red graph occurs at <m>\frac{128}{9}</m> where as the highest surface value is <m>12</m>. The scale of <xref ref="dblintproj"/> has been adjusted to make these features easier to see. 
         </p>
         <p>
-          The result of the inner iterated integral is shown by the red graph, so the outer integral will evaluate to be the area under the red graph, which is shown in orange on the 2D graph portion of <xref ref="dblintproj"/>. Again, remember that the outer integral evaluates the Riemann sum corresponding to the cross sectional volumes (like in <xref ref="F_11_2_Cross_section_y_slab_sum"/>).
+          The result of the inner iterated integral is shown by the red graph, so the outer integral will evaluate to be the area under the red graph, which is shown in orange on the 2D graph portion of <xref ref="dblintproj"/>. Again, remember that the outer integral evaluates the Riemann sum corresponding to the cross sectional volumes (like in <xref ref="fig-mult_ints-iterated-wavy_surface2"/>).
         </p>
       </task>
       <task>
