@@ -13,7 +13,7 @@
 <!-- derivatives for profit.  All trademarks are the registered marks of   -->
 <!-- their respective owners.                                              -->
 <!-- **********************************************************************-->
-<section xml:id="S-11-3-Double-Integrals-General" xmlns:xi="http://www.w3.org/2001/XInclude"> 
+<section xml:id="S-mult_ints-general" xmlns:xi="http://www.w3.org/2001/XInclude"> 
   <title>Double Integrals over General Regions</title>
   <objectives>
       <ul>
@@ -24,7 +24,7 @@
         </li>
         <li>
           <p>
-            What general forms do iterated integrals over a non-rectangular region have?
+            What general forms do iterated integrals over non-rectangular regions have?
           </p>
         </li>
       </ul>
@@ -32,19 +32,36 @@
   <introduction component="instructor">
     <title>Notes to the Instructor and Dependencies</title>
     <p>
-      This section builds off of the previous two sections and generalizes the horizontal or vertical slicing of the region of integration and demonstrates how this geometric description exactly matches with the algebraic description given by an iterated integral. There are several important conceptual checks that you should pay attention to: 1) identification of horizontally or vertically simple regions, 2) understanding when double integrals will be positive/negative/zero without any calculations (<xref ref="dbintpmz"/>), and identifying when the algebra of an iterated integral does not make sense as a double integral (<xref ref="simpregions"/>).
+      This section builds off of the previous two sections and generalizes the horizontal or vertical slicing of the region of integration and demonstrates how this geometric description exactly matches with the algebraic description given by an iterated integral. There are several important conceptual checks that you should pay attention to: 
+      <ol marker="1.">
+        <li>
+          <p>
+            identification of horizontally or vertically simple regions,
+          </p>
+        </li>
+        <li>
+          <p>
+            understanding when double integrals will be positive/negative/zero without any calculations (<xref ref="dbintpmz"/>), and 
+          </p>
+        </li>
+        <li>
+          <p>
+            identifying when the algebra of an iterated integral does not make sense as a double integral (<xref ref="simpregions"/>).
+          </p>
+        </li>
+      </ol>
     </p>
     <p>
-      There is a lot for students to practice in this section, so we recommend spending a couple of class periods on this topic. These ideas will be used throughout every section for this chapter and through most of <xref ref="C_Vector"/>, so making sure students understand what is being measured in a double integral and how to set up appropriate iterated integrals is very important. 
+      There is a lot for students to practice in this section, so we recommend spending a couple of class periods on this topic. These ideas will be used throughout every section for this chapter and through most of <xref ref="C_Vector"/>, so making sure students understand what a double integral measures and and how to set up appropriate iterated integrals is critical. 
     </p>
   </introduction>
   <subsection>
     <title>Introduction</title>
     <p>
-      Recall in <xref ref="sec-mult_ints-double_ints_rects">Section</xref> that we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R = [a,b] \times [c,d]</m> as
+      Recall in <xref ref="sec-mult_ints-double_ints_rects">Section</xref> that we defined the double integral of a continuous function <m>f = f(x,y)</m> over a rectangle <m>R</m> with <m>a\leq x\leq b</m> and <m>c\leq y\leq d</m> as
       <me>
-        \iint_R f(x,y) \, dA = \lim_{m,n \to \infty} \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A.
-      </me>
+        \iint_R f(x,y) \, dA = \lim_{m,n \to \infty} \sum_{j=1}^n \sum_{i=1}^m f(x_{ij}^*, y_{ij}^*) \cdot \Delta A
+      </me>.
       Furthermore, we have seen that we can evaluate a double integral <m>\iint_R f(x,y) \, dA</m> over <m>R</m> as an iterated integral of either of the forms
       <me>
         \int_a^b \int_c^d f(x,y) \, dy \, dx \quad \quad \text{ or }  \quad \quad \int_c^d \int_a^b f(x,y) \, dx \, dy.
@@ -52,22 +69,27 @@
     </p>
 
     <p>
-      It is very rare to have applied or theoretical problems that apply to a rectangular region, so we would like to extend the idea of using iterated integrals to evaluate non-rectangular regions; we explore one such example in the following preview activity.
+      Most applied or theoretical problems involve regions that are <em>not</em> rectangles. Therefore, we will extend the idea of using iterated integrals to allow us to evaluate double integrals over nonrectangular regions. We explore one such example in the following preview activity.
     </p>
 
     <worksheet>
   <exploration workspace="1.5in"
- xml:id="PA_11_3">
+ xml:id="PA-mult_ints-general">
       <introduction>
         <p>
-          A tetrahedron is a three-dimensional figure with four faces, each of which is a triangle. A picture of the tetrahedron <m>T</m> with vertices <m>(0,0,0)</m>, <m>(1,0,0)</m>, <m>(0,1,0)</m>, and <m>(0,0,1)</m> is shown at in <xref ref="F_11_3_Tetrahedron_PA">Figure</xref>. If we place one vertex at the origin and let vectors <m>\va</m>, <m>\vb</m>, and <m>\vc</m> be determined by the edges of the tetrahedron that have one end at the origin, then a formula that tells us the volume <m>V</m> of the tetrahedron is
-          <men xml:id="eq_11_3_tetrahedron_volume">
-            V = \frac{1}{6} \lvert \va \cdot (\vb \times \vc) \rvert.
-          </men>
+          A tetrahedron is a three-dimensional figure with four faces, each of which is a triangle. A picture of the tetrahedron <m>T</m> with vertices <m>(0,0,0)</m>, <m>(1,0,0)</m>, <m>(0,1,0)</m>, and <m>(0,0,1)</m> is shown in <xref ref="fig-mult_ints-general-PA-tetrahedron">Figure</xref>. If we place one vertex at the origin and let vectors <m>\va</m>, <m>\vb</m>, and <m>\vc</m> be determined by the edges of the tetrahedron that have initial point at the origin, then a formula that tells us the volume <m>V</m> of the tetrahedron is
+          <md number="yes" xml:id="eq-mult_ints-general-tetrahedron_volume">
+            V = \frac{1}{6} \lvert \va \cdot (\vb \times \vc) \rvert
+          </md>.
         </p>
-        <figure xml:id="F_11_3_Tetrahedron_PA">
+        <figure xml:id="fig-mult_ints-general-PA-tetrahedron">
           <caption>The tetrahedron <m>T</m> with vertices <m>(0,0,0)</m>, <m>(1,0,0)</m>, <m>(0,1,0)</m>, and <m>(0,0,1)</m></caption>
-            <interactive title="interactive-F_11_3_Tetrahedron_PA" platform="sage" width="100%" aspect="1:1">
+            <interactive label="interactive-fig-mult_ints-general-PA-tetrahedron" platform="sage" width="91%" aspect="1:1">
+              <shortdescription>A three-dimensional plot of a tetrahedron</shortdescription>
+              <description>
+                <p>Coordinate axes for <m>xyz</m>-space showing a solid region with vertices <m>(0,0,0)</m>, <m>(1,0,0)</m>, <m>(0,1,0)</m>, and <m>(0,0,1)</m>. Each face of the solid is a triangle.
+                </p>
+              </description>
               <slate surface="sage">
                 var('t,s,x,y,z')
                 from sage.plot.plot3d.plot3d import axes
@@ -98,17 +120,17 @@
         </figure>
       </introduction>
       
-        <!-- <figure xml:id="F_11_3_Tetrahedron_PA">
+        <!-- <figure xml:id="fig-mult_ints-general-PA-tetrahedron">
           <caption>Left: The tetrahedron <m>T</m>. Right: Projecting <m>T</m> onto the <m>xy</m>-plane.</caption>
           <sidebyside widths="50% 50%">
             <image source="images/fig_11_3_tetrahedron"/>
             <image source="images/fig_11_3_tetra_project"/>
             </sidebyside>
         </figure> -->
-      <task>
+      <task xml:id="task-PA-mult_ints-general-tripprod">
         <statement>
           <p>
-            State the vectors <m>\va</m>, <m>\vb</m>, and <m>\vc</m> used for our tetrahedron <m>T</m>. Use these vectors in formula <xref ref="eq_11_3_tetrahedron_volume"/> to find the volume of the tetrahedron <m>T</m>.
+            Find the components of the vectors <m>\va</m>, <m>\vb</m>, and <m>\vc</m> used for the tetrahedron <m>T</m>. Use these vectors in formula <xref ref="eq-mult_ints-general-tetrahedron_volume"/> to find the volume of the tetrahedron <m>T</m>.
           </p>
         </statement>
         <answer>
@@ -141,14 +163,19 @@
           <p>
             Instead of memorizing or looking up the formula for the volume of a tetrahedron, we can use a double integral to calculate the volume of the tetrahedron <m>T</m>. To see how, notice that the top face of the tetrahedron <m>T</m> is the plane whose equation is
             <me>
-              z = 1-(x+y).
-            </me>
-            We will want to evaluate a pair of iterated integrals on on a non-rectangular region to calculate the volume of the region below this plane and in the first octant region. Reminder: the first octant is the part of <m>\mathbb{R}^3</m> that has positive <m>x</m>-, <m>y</m>-, and <m>z</m>-coordinates.
+              z = 1-(x+y)
+            </me>.
+            We will evaluate a pair of iterated integrals on on a non-rectangular region to calculate the volume of the region below this plane and in the first octant. (Recall that the first octant is the part of <m>\mathbb{R}^3</m> that has positive <m>x</m>-, <m>y</m>-, and <m>z</m>-coordinates.)
           </p>
           <figure xml:id="tetrahedron_base">
             <caption>The projection of <m>T</m> onto the <m>xy</m>-plane</caption>
-              <image width="60%" xml:id="img-tetrahedron_base">
-                <sageplot>
+              <image width="60%">
+                <shortdescription>A triangular region</shortdescription>
+                <description>
+                  <p>A right triangular region <m>R</m> in the <m>xy</m>-plane. The vertices of the triangle are at the origin, <m>(0,1)</m>, and <m>(1,0)</m>. There is a vertical line labeled <m>x=a</m> from the <m>x</m>-axis to the hypotenuse about one third of the way along the base.
+                  </p>
+                </description>
+                <sageplot label="img-tetrahedron_base">
                   plot2=polygon([(1,0),(0,1),(0,0),(1,0)],color="lightblue",axes_labels=["$x$","$y$"],edgecolor="black")
                   plot2+=text("$R$",(0.8,0.1),color="black",fontsize=20,ticks=[[0,1],[0,1]])
                   plot2+=line([(0.3,0),(0.3,0.7)],color="red",zorder=10,thickness=2)+text("$x=a$",(0.375,0.75),fontsize=20,color="red")
@@ -157,31 +184,28 @@
               </image>
           </figure>
           <p>  
-            The volume of the tetrahedron will be given by the double integral 
+            The volume of the tetrahedron can be computed using the double integral 
             <me>\iint_R 1-(x+y) dA</me>
-            where the region of integration will be the triangle at the base of our tetrahedron (in the <m>xy</m>-plane) as shown in <xref ref="tetrahedron_base"/>. We will need to understand how to express this double integral as an iterated integral using our cross sectional ideas from <xref ref="sec-mult_int-iterated"/>.
+            where the region of integration is the triangle at the base of the tetrahedron in the <m>xy</m>-plane as shown in <xref ref="tetrahedron_base"/>. We must express this double integral as an iterated integral using the cross-sectional ideas from <xref ref="sec-mult_int-iterated"/>.
           </p>
           <p>
-            We will look at a cross sectional idea along a constant value of <m>x=a</m> which will give an iterated integral of the form
+            Looking at a cross section along a constant value of <m>x=a</m> which gives an iterated integral of the form
             <me>
-              \int_{x=?}^{x=?} \int_{y=?}^{y=?} 1-(x+y) \, dy \, dx.
-            </me>
-            If we look at <m>R</m> along the trace <m>x=a</m>, what will be the upper and lower bounds on the corresponding <m>y</m> coordinates? 
-            <me>\text{If }x=a\text{, then } \underline{\hspace{1.0in}} \leq y \leq \underline{\hspace{1.0in}}</me>
-            The lower bound will not depend on the value of <m>a</m> used but the upper bound will, so the expression for the upper bound should be written in terms of <m>a</m>. You should write a couple of sentences to describe how you came up with your upper and lower bounds.
+              \int_{x=?}^{x=?} \int_{y=?}^{y=?} 1-(x+y) \, dy \, dx
+            </me>.
+            Looking at <m>R</m> along the trace <m>x=a</m>, what are the upper and lower bounds on the corresponding <m>y</m> coordinates? 
+            <me>\text{If }x=a\text{, then } <fillin characters="5" /> \leq y \leq <fillin characters="5"/></me>
+            The lower bound does not depend on the value of <m>a</m>, but the upper bound does. Hence, the expression for the upper bound should be written in terms of <m>a</m>. Write a couple of sentences to describe how you deterined these upper and lower bounds.
           </p> 
         </statement>
         <answer>
           <p>
-            If we take a cross section of the domain for a fixed value of <m>x</m> as shown in <xref ref="F_11_3_Tetrahedron_PA">Figure</xref>,
-            we can see that the <m>y</m> values on the cross section all have a lowest value of 0, but their highest values lie on the line <m>y=1-x</m>.
-            We can construct these cross sections for any value of <m>x</m> between 0 and 1, so this triangular region is described by the inequalities
             <m>0 \leq y \leq 1-x</m> and <m>0 \leq x \leq 1</m>.
           </p>
         </answer>
         <solution>
           <p>
-            If we take a cross section of the domain for a fixed value of <m>x</m> as shown in <xref ref="F_11_3_Tetrahedron_PA">Figure</xref>,
+            If we take a cross section of the domain for a fixed value of <m>x</m> as shown in <xref ref="fig-mult_ints-general-PA-tetrahedron">Figure</xref>,
             we can see that the <m>y</m> values on the cross section all have a lowest value of 0, but their highest values lie on the line <m>y=1-x</m>.
             We can construct these cross sections for any value of <m>x</m> between 0 and 1, so this triangular region is described by the inequalities
             <m>0 \leq y \leq 1-x</m> and <m>0 \leq x \leq 1</m>.
@@ -191,15 +215,20 @@
       <task>
         <statement>
           <p>
-            Explain which part of the iterated integral
+            Write a couple of sentences to explain which part of the iterated integral
             <me>
               \int_{x=0}^{x=1} \int_{y=0}^{y=1-x} 1-(x+y) \, dy \, dx
             </me>
-            will correspond to the blue cross section in <xref ref="PAcross_section"/>.
+            corresponds to the blue cross section in <xref ref="PAcross_section"/>.
           </p>
           <figure xml:id="PAcross_section">
             <caption>The tetrahedron <m>T</m> with cross section along <m>x=a</m> shown</caption>
-              <interactive title="interactive-PAcross_section" platform="sage" width="100%" aspect="1:1">
+              <interactive label="interactive-PAcross_section" platform="sage" width="91%" aspect="1:1">
+                <shortdescription>A tetrahedron with a cross section highlighted</shortdescription>
+                <description>
+                  <p>Coordinate axes for <m>xyz</m>-space showing a solid region with vertices <m>(0,0,0)</m>, <m>(1,0,0)</m>, <m>(0,1,0)</m>, and <m>(0,0,1)</m>. Each face of the solid is a triangle. There is also a triangular cross section highlighted. This cross section is parallel to the <m>yz</m>-plane. It is marked <m>x=a</m>.
+                  </p>
+                </description>
                 <slate surface="sage">
                   var('t,s,x,y,z')
                   from sage.plot.plot3d.plot3d import axes
@@ -253,25 +282,16 @@
       <task>
         <statement>
           <p>
-            Use the Fundamental Theorem of Calculus (twice!) to evaluate the iterated integral
+            Use the Fundamental Theorem of Calculus twice to evaluate the iterated integral
               <me>
                 \int_{x=0}^{x=1} \int_{y=0}^{y=1-x} 1-(x+y) \, dy \, dx
-              </me>
-              and compare to your result from part (a).  (As with iterated integrals over rectangular regions, start with the inner integral.)
+              </me>.
+              As with iterated integrals over rectangular regions, you evaluate this iterated integral by starting with the inner integral. Compare to your result from <xref ref="task-PA-mult_ints-general-tripprod" text="type-local"/>.  
           </p>
         </statement>
         <answer>
           <p>
-            Using basic integration techniques we have
-            <md>
-              <mrow>\int_{0}^{1} \int_{0}^{1-x} 1-(x+y) \, dy \, dx \amp = \int_0^1 \left(y - xy - \frac{y^2}{2} \right)\mid_0^{1-x} \, dx</mrow>
-              <mrow>\amp = \int_0^1 (1-x) - x(1-x) - \frac{1}{2}(1-x)^2 \, dx</mrow>
-              <mrow>\amp = \frac{1}{2} \int_0^1 x^2-2x+1 \, dx</mrow>
-              <mrow>\amp = \frac{1}{2}\left(\frac{x^3}{3} - x^2 + x \right)\mid_0^1</mrow>
-              <mrow>\amp = \frac{1}{2}\left(\frac{1}{3}\right)</mrow>
-              <mrow>\amp = \frac{1}{6}</mrow>
-            </md>.
-            This is the same result we obtained from the formula in part (a).
+            <m>1/6</m>
           </p>
         </answer>
         <solution>
@@ -285,7 +305,7 @@
                 <mrow>\amp = \frac{1}{2}\left(\frac{1}{3}\right)</mrow>
                 <mrow>\amp = \frac{1}{6}</mrow>
               </md>.
-              This is the same result we obtained from the formula in part (a).
+              This is the same result we obtained from the formula in <xref ref="task-PA-mult_ints-general-tripprod" text="type-local"/>.
           </p>
         </solution>
       </task>
@@ -296,28 +316,11 @@
   <subsection>
     <title>Double Integrals over General Regions</title>
     <p>
-      So far, we have learned that a double integral over a rectangular region may be interpreted in one of three ways:
-      <ol>
-        <li>
-          <p>
-            <m>\iint_R f(x,y) \, dA</m> tells us the volume of the solid bounded by the graph of <m>f</m> above and the <m>xy</m>-plane below and over the rectangle <m>R</m> minus the volume of the solids the graph of <m>f</m> bounded below the <m>xy</m>-plane under the rectangle <m>R</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            <m>\frac{1}{A(R)} \iint_R f(x,y) \, dA</m>, where <m>A(R)</m> is the area of <m>R</m> tells us the average value of the function <m>f</m> on <m>R</m>. If <m>f(x, y) \geq  0</m> on <m>R</m>, we can interpret this average value of <m>f</m> on <m>R</m> as the height of the box with base <m>R</m> that has the same volume as the volume of the surface defined by <m>f</m> over <m>R</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            If <m>f(x,y)</m> measure the density (in amount per unit area) of a material in the region <m>R</m>, then <m>\iint_R f(x,y) \, dA</m> will give the total amount of material in <m>R</m>. 
-          </p>
-        </li>
-      </ol>
+      So far, we have learned that a double integral over a rectangular region may be interpreted in three ways detailed in <xref ref="keyidea-double-int-interp"/>: net signed volume, mass, and when divided by the area of the base region, average value.
     </p>
 
     <p>
-      As we saw in <xref ref="PA-mult_ints-double_ints_rects">Preview Activity</xref>, a function <m>f = f(x,y)</m> may be considered over regions other than rectangular ones, and thus we want to understand how to set up double integrals as iterated integrals over non-rectangular regions. Note that if we can, then the three interpretations of the double integral noted above will naturally extend to solid regions with non-rectangular bases.
+      As we saw in <xref ref="PA-mult_ints-double_ints_rects">Preview Activity</xref>, a function <m>f = f(x,y)</m> may be considered over regions other than rectangular ones, and thus we want to understand how to set up double integrals as iterated integrals over non-rectangular regions. Note that if we can, then the three interpretations of the double integral noted above will extend to solid regions with non-rectangular bases.
     </p>
 
    <!--  <p>
@@ -404,7 +407,7 @@
 </worksheet>
 
     <p>
-      The key idea to calculating double integrals using iterated integrals (as shown in <xref ref="sec-mult_int-iterated"/> and <xref ref="PA_11_3"/>) is to slice the region of integration along a trace (one of the coordinates held constant) and express the range of the other coordinate in terms of an inequality. In <xref ref="PA_11_3"/>, we saw how the region given in <xref ref="tetrahedron_base"/> can be described by the inequalities <m>0 \leq x \leq 1</m> and <m>0 \leq y \leq 1-x</m>. Notice how for different values of <m>x</m> there is a different range of values for <m>y</m>, which means our region is <em>NOT</em> rectangular. Compare this to the rectangular regions of integration from <xref ref="sec-mult_int-iterated"/> which were all of the form <m>a \leq x \leq b</m> and <m>c \leq y \leq d</m> (with <m>a,b,c,d</m> constants).
+      The key idea to calculating double integrals using iterated integrals (as shown in <xref ref="sec-mult_int-iterated"/> and <xref ref="PA-mult_ints-general"/>) is to slice the region of integration along a trace (one of the coordinates held constant) and express the range of the other coordinate in terms of an inequality. In <xref ref="PA-mult_ints-general"/>, we saw how the region given in <xref ref="tetrahedron_base"/> can be described by the inequalities <m>0 \leq x \leq 1</m> and <m>0 \leq y \leq 1-x</m>. Notice how for different values of <m>x</m> there is a different range of values for <m>y</m>, which means our region is <em>NOT</em> rectangular. Compare this to the rectangular regions of integration from <xref ref="sec-mult_int-iterated"/> which were all of the form <m>a \leq x \leq b</m> and <m>c \leq y \leq d</m> (with <m>a,b,c,d</m> constants).
     </p>
     <p>
       Both of these forms for the inequalities leads to a nice way to write the corresponding double integral as an iterated integral by considering the inner integral to evaluate the cross section area while the outer integral sums up the corresponding cross section volumes as the width of the slices goes to zero.
@@ -1302,8 +1305,7 @@
 </worksheet>
   </subsection>
 
-  <subsection>
-    <title>Summary</title>
+  <outcomes>
     <ul>
       <li>
         <p>
@@ -1328,7 +1330,7 @@
       </li>
     </ul>
 
-    </subsection>
+  </outcomes>
 
    <xi:include href="exercises/ez-S_multi_ints_double_ints_general.ptx" />
 
