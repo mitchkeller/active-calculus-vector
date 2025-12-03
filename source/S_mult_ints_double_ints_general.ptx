@@ -323,32 +323,6 @@
       As we saw in <xref ref="PA-mult_ints-double_ints_rects">Preview Activity</xref>, a function <m>f = f(x,y)</m> may be considered over regions other than rectangular ones, and thus we want to understand how to set up double integrals as iterated integrals over non-rectangular regions. Note that if we can, then the three interpretations of the double integral noted above will extend to solid regions with non-rectangular bases.
     </p>
 
-   <!--  <p>
-      So, suppose <m>f</m> is a continuous function on a closed, bounded domain <m>D</m>. For example, consider <m>D</m> as the circular domain shown at left in <xref ref="F_11_3_nonrect_domain_1">Figure</xref>.
-    </p>
-    <figure xml:id="F_11_3_nonrect_domain_1">
-      <caption>Left: A non-rectangular domain. Right: Enclosing this domain in a rectangle.</caption>
-      <sidebyside widths="50% 50%">
-        <image source="images/fig_11_3_circular"/>
-        <image source="images/fig_11_3_circular_rect"/>
-        </sidebyside>
-    </figure>
-    <p>
-      We can enclose <m>D</m> in a rectangular domain <m>R</m> as shown at right in <xref ref="F_11_3_nonrect_domain_1">Figure</xref> and extend the function <m>f</m> to be defined over <m>R</m> in order to be able to use the definition of the double integral over a rectangle. We extend <m>f</m> in such a way that its values at the points in <m>R</m> that are not in <m>D</m> contribute 0 to the value of the integral. In other words, define a function <m>F = F(x, y)</m> on <m>R</m> as
-      <me>
-        F(x,y) = \begin{cases}f(x,y), \amp \text{ if }  (x,y) \in D, \\ 0, \amp \text{ if }  (x,y) \not\in D
-        \end{cases} .
-      </me>
-    </p>
-    <p>
-      We then say that the double integral of <m>f</m> over <m>D</m><idx><h>double integral over a general region</h></idx> is the same as the double integral of <m>F</m> over <m>R</m>, and thus
-      <me>
-        \iint_D f(x,y) \, dA = \iint_R F(x,y) \, dA.
-      </me>
-    </p>
-    <p>
-      In practice, we just ignore everything that is in <m>R</m> but not in <m>D</m>, since these regions contribute 0 to the value of the integral.
-    </p> -->
     <p>
       Remember that the double integral over a a region can be thought of as the volume of the solid bounded by the graph of <m>f</m> above and the <m>xy</m>-plane below minus the volume of the solids the graph of <m>f</m> bounded below the <m>xy</m>-plane. As shown in the example <xref ref="fig-mult_ints-double_ints_rects-signed2"/>, the total volume above the <m>xy</m>-plane is greater than the total volume below the <m>xy</m>-plane, so the double integral of <m>f</m> over the region <m>R</m> would be positive. This argument comes from both the heights of the volume (the outputs of <m>f</m>) and the area of the regions where the output of <m>f</m> is positive versus negative. 
     </p>
