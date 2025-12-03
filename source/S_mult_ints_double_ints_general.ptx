@@ -41,7 +41,7 @@
         </li>
         <li>
           <p>
-            understanding when double integrals will be positive/negative/zero without any calculations (<xref ref="dbintpmz"/>), and 
+            understanding when double integrals will be positive/negative/zero without any calculations (<xref ref="act-mult_ints-general-dbintpmz"/>), and 
           </p>
         </li>
         <li>
@@ -324,14 +324,14 @@
     </p>
 
     <p>
-      Remember that the double integral over a a region can be thought of as the volume of the solid bounded by the graph of <m>f</m> above and the <m>xy</m>-plane below minus the volume of the solids the graph of <m>f</m> bounded below the <m>xy</m>-plane. As shown in the example <xref ref="fig-mult_ints-double_ints_rects-signed2"/>, the total volume above the <m>xy</m>-plane is greater than the total volume below the <m>xy</m>-plane, so the double integral of <m>f</m> over the region <m>R</m> would be positive. This argument comes from both the heights of the volume (the outputs of <m>f</m>) and the area of the regions where the output of <m>f</m> is positive versus negative. 
+      Remember that the double integral over a a region can be thought of as the volume of the solid bounded by the graph of <m>f</m> above and the <m>xy</m>-plane below minus the volume of the solids the graph of <m>f</m> bounded below the <m>xy</m>-plane. As shown in the example <xref ref="fig-mult_ints-double_ints_rects-signed2"/>, the total volume above the <m>xy</m>-plane is greater than the total volume below the <m>xy</m>-plane, so the double integral of <m>f</m> over the region <m>R</m> is positive. This argument comes from both the heights of the rectangular prisms used in the Riemann sum (determined by output values of <m>f</m>) and the area of the regions where the output of <m>f</m> is positive versus negative. 
     </p>
     <p>
-      In the next activity, you will be asked to assess and justify your thoughts about whether the double integrals stated will be positive, negative, or zero. Your justifications should consider both the area of different parts of the region of integration, as well as the outputs on these areas. 
+      In the next activity, you are asked to assess and justify your thoughts about whether the double integrals over non-rectangular regions are positive, negative, or zero. Your justifications should consider both the area of different parts of the region of integration, as well as the output values of the function being integrated on these regions. 
     </p>
 
     <worksheet>
-  <activity workspace="1.5in" xml:id="dbintpmz">
+  <activity workspace="1.5in" xml:id="act-mult_ints-general-dbintpmz">
       <introduction>
         <p>
           Let <m>D</m> be the region inside the unit circle centered at the origin, let <m>R</m> be the right half of <m>D</m>, and let <m>B</m> be the bottom half of <m>D</m>. 
@@ -340,16 +340,16 @@
       <task>
         <statement>
           <p>
-            On 3 separate plots, graph and label the regions <m>D</m>, <m>R</m>, and <m>B</m>. 
+            On three separate plots, graph and label the regions <m>D</m>, <m>R</m>, and <m>B</m>. 
           </p>
         </statement>
       </task>
       <task>
         <statement>
           <p>
-            For each double integral below, decide <em>without calculation</em> whether the double integral will be positive, negative, or zero. You should write a couple of sentences to explain your answer for each part.
-            <ol>
-              <li> <m>\iint_D \; dA</m></li>
+            For each double integral below, decide <em>without calculation</em> whether the double integral is positive, negative, or zero. Write a sentence or two to explain your answer for each part.
+            <ol cols = "3">
+              <li> <m>\iint_D \; 1\; dA</m></li>
               <li> <m>\iint_D \; x \; dA</m></li>
               <li> <m>\iint_B \; x \; dA</m></li>
               <li> <m>\iint_R \; x \; dA</m></li>
@@ -381,28 +381,34 @@
 </worksheet>
 
     <p>
-      The key idea to calculating double integrals using iterated integrals (as shown in <xref ref="sec-mult_int-iterated"/> and <xref ref="PA-mult_ints-general"/>) is to slice the region of integration along a trace (one of the coordinates held constant) and express the range of the other coordinate in terms of an inequality. In <xref ref="PA-mult_ints-general"/>, we saw how the region given in <xref ref="tetrahedron_base"/> can be described by the inequalities <m>0 \leq x \leq 1</m> and <m>0 \leq y \leq 1-x</m>. Notice how for different values of <m>x</m> there is a different range of values for <m>y</m>, which means our region is <em>NOT</em> rectangular. Compare this to the rectangular regions of integration from <xref ref="sec-mult_int-iterated"/> which were all of the form <m>a \leq x \leq b</m> and <m>c \leq y \leq d</m> (with <m>a,b,c,d</m> constants).
+      The key idea to calculating double integrals using iterated integrals as shown in <xref ref="sec-mult_int-iterated"/> and <xref ref="PA-mult_ints-general"/> is to slice the region of integration along a trace where one of the coordinates is held constant. We then express the range of the other coordinate in terms of an inequality. In <xref ref="PA-mult_ints-general"/>, we saw how the region given in <xref ref="tetrahedron_base"/> can be described by the inequalities <m>0 \leq x \leq 1</m> and <m>0 \leq y \leq 1-x</m>. Notice how for different values of <m>x</m> there is a different range of values for <m>y</m>, which means our region is <em>not</em> rectangular. Compare this to the rectangular regions of integration from <xref ref="sec-mult_int-iterated"/> which were all of the form <m>a \leq x \leq b</m> and <m>c \leq y \leq d</m> (with <m>a,b,c,d</m> constants).
     </p>
     <p>
-      Both of these forms for the inequalities leads to a nice way to write the corresponding double integral as an iterated integral by considering the inner integral to evaluate the cross section area while the outer integral sums up the corresponding cross section volumes as the width of the slices goes to zero.
+      These forms for the inequalities lead to a nice way to write the corresponding double integral as an iterated integral by considering the inner integral to evaluate the cross section area and the outer integral to sum the corresponding cross section volumes as the thickness of the slabs goes to zero.
     </p>
     <p>
-      What kind of 2D regions can we express using this geometric slicing/inequality idea? The key here is that we need the same upper and lower bound expressions for each slice.
+      Not all two-dimensional regions can be immediately expressed using this idea of converting geometric slices to inequalities. The key characteristic that allows us to do this is a region must have the same upper and lower bound expressions for each slice.
     </p>
-    <proposition xml:id="prop-verticallysimple">
+    <proposition xml:id="keyidea-simple-region">
       <statement>
         <p>
-          A region is called vertically simple if it can be described by a set of inequalities of the form
+          A region is called <term>vertically simple</term> if it can be described by a set of inequalities of the form
           <md>
             <mrow> a \leq x \leq b</mrow>
             <mrow> g_1(x) \leq  y \leq g_2(x)</mrow>
-          </md>
-          which corresponds geometrically to the region in <xref ref="vertsimple"/>
+          </md>.
+          These inequalities correspond geometrically to the region in <xref ref="vertsimple"/>.
+          <idx><h>vertically simple</h></idx>
         </p>
         <figure xml:id="vertsimple">
           <caption>A vertically simple region</caption>
-          <image width="60%" xml:id="img-vertsimple">
-            <sageplot>
+          <image width="60%">
+            <shortdescription>A region sliced vertically</shortdescription>
+            <description>
+              <p>A shaded region in the <m>xy</m>-plane. The region is bounded below by a curve labeled <m>g_1(x)</m> and bounded above by a curve labeled <m>g_2(x)</m>. The left boundary of the region is marked by the vertical line <m>x=a</m> while the right boundary is marked by the vertical line <m>x=b</m>. Dashed vertical lines from the lower curve to the upper curve are drawn at several locations in the region.
+              </p>
+            </description>
+            <sageplot label="img-vertsimple">
               var('x,y,t,s')
               f(x)=(x-2)^2/5+0.5-0.25*sin(4*x); g(x)= 0.25*cos(7*x)+0.2*x+1.5;
               a=0.5; b=1.5; dx=b-a; n=25;
@@ -422,17 +428,23 @@
           </image>
         </figure>
         <p>
-          A region is called vertically simple if it can be described by a set of inequalities of the form
+          A region is called <term>horizontally simple</term> if it can be described by a set of inequalities of the form
           <md>
             <mrow> c \leq y \leq d</mrow>
             <mrow> h_1(y) \leq  x \leq h_2(y)</mrow>
           </md>
-          which corresponds geometrically to the region in <xref ref="horzsimple"/>
+          which corresponds geometrically to the region in <xref ref="horzsimple"/>.
+          <idx><h>horizontally simple</h></idx>
         </p>
         <figure xml:id="horzsimple">
           <caption>A horizontally simple region</caption>
-          <image width="60%" xml:id="img-horzsimple">
-            <sageplot>
+          <image width="60%">
+            <shortdescription>A region sliced horizontally</shortdescription>
+            <description>
+              <p>A shaded region in the <m>xy</m>-plane. The region is bounded on the left by a curve labeled <m>x=h_1(y)</m> and bounded on the right by a curve labeled <m>x=h_2(y)</m>. The lower boundary of the region is marked by the horizontal line <m>y=c</m> while the upper boundary is marked by the horizontal line <m>y=d</m>. Dashed horizontal lines from the left curve to the right curve are drawn at several locations in the region.
+              </p>
+            </description>
+            <sageplot label="img-horzsimple">
               var('x,y,t,s')
               f(x)=(x-1.5)^2/4+0.5-0.15*sin(5*x); g(x)= 0.25*cos(3*x)+0.2*x+1.5;
               a=0.5; b=1.5; dx=b-a; n=25;
@@ -454,17 +466,39 @@
       </statement>
     </proposition>
     <p>
-      A vertically simple region is one that can be split into vertical slices (of the form <m>x=constant</m> for <m>x</m> in the range <m>[a,b]</m>) where every vertical slice has the same upper and lower bound function (<m>g_1(x) \leq y \leq g_2(x)</m>). A horizontally simple region is one that can be split into horizontal slices (of the form <m>y=constant</m> for <m>y</m> in the range <m>[c,d]</m>) where every horizontal slice has the same upper and lower bound functions (<m>h_1(x) \leq y \leq h_2(x)</m>).
+      A vertically simple region is one that can be split into vertical slices of the form <m>x=\text{constant}</m> for <m>x</m> in the interval <m>[a,b]</m> where every vertical slice has the same upper and lower bound function: <m>g_1(x) \leq y \leq g_2(x)</m>. A horizontally simple region is one that can be split into horizontal slices of the form <m>y=\text{constant}</m> for <m>y</m> in the interval <m>[c,d]</m> where every horizontal slice has the same upper (right) and lower (left) bound functions: <m>h_1(x) \leq y \leq h_2(x)</m>.
     </p>
     <example>
       <introduction>
         <p>
-        Let <m>D</m> be the triangular region in the <m>xy</m>-plane with vertices <m>(0,0)</m>, <m>(2,0)</m>, and <m>(2,3)</m>, shown in <xref ref="triang-region"/>. We want to decide if <m>D</m> is horizontally simple, then we will consider if <m>D</m> is vertically simple. For simplicity, we will refer to the three sides as the horizontal side (from <m>(0,0)</m> to <m>(2,0)</m>), the vertical side (from <m>(2,0)</m> to <m>(2,3)</m>), and the diagonal side (from <m>(0,0)</m> to <m>(2,3)</m>).
+        Let <m>D</m> be the triangular region in the <m>xy</m>-plane with vertices <m>(0,0)</m>, <m>(2,0)</m>, and <m>(2,3)</m>, shown in <xref ref="triang-region"/>. We will determine if <m>D</m> is horizontally simple, vertically simple, or both. For simplicity, we refer to the three sides as follows:
+        <ul>
+          <li>
+            <p>
+              the horizontal side from <m>(0,0)</m> to <m>(2,0)</m>,
+            </p>
+          </li>
+          <li>
+            <p>
+              the vertical side from <m>(2,0)</m> to <m>(2,3)</m>, and
+            </p>
+          </li>
+          <li>
+            <p>
+              the diagonal side from <m>(0,0)</m> to <m>(2,3)</m>.
+            </p>
+          </li>
+        </ul>
       </p>
       <figure xml:id="triang-region">
         <caption>The triangular region <m>D</m> with vertices <m>(0,0)</m>, <m>(2,0)</m>, and <m>(2,3)</m></caption>
-        <image width="80%" xml:id="img-triang-region">
-          <sageplot>
+        <image width="60%" >
+          <shortdescription>A right triangular region</shortdescription>
+          <description>
+            <p>A triangular region in the <m>xy</m>-plane. The region is labeled <m>D</m>. The triangle has vertices <m>(0,0)</m>, <m>(2,0)</m>, and <m>(0,3)</m>.
+            </p>
+          </description>
+          <sageplot label="img-triang-region">
             plot6=polygon([(0,0),(2,0),(2,3)],color="lightblue",edgecolor="black",gridlines=True,xmin=0,xmax=3,ymin=0,ymax=3,zorder=5)
             plot6+=text("$D$",(1.8,2.2),color="black",fontsize=20,axes_labels=["$x$","$y$"],zorder=6)
             plot6                
@@ -474,16 +508,21 @@
       </introduction>
       <task>
         <p>
-          Remember that a vertical line will correspond algebraically to <m>x=constant</m>. We want to know if every vertical slice in the region <m>D</m> will have the same upper and lower bounds (which may depend on the value of <m>x</m>). Several vertical slices in the region <m>D</m> are shown in <xref ref="vertsimple-tri"/> where you can see that the lower bound (of the <m>y</m>-variable) for every vertical slice is given by <m>y=0</m>. The upper bound (of the <m>y</m>-variable) for every vertical slice is given by <m>y=\frac{3}{2} x</m>. Algebraically, if you take any constant value, <m>k</m>, in the interval <m>[0,2]</m>, then the following statement describes the vertical strips of the region <m>D</m>:
+          A vertical line has equation <m>x=\text{constant}</m>. We must determine if every vertical slice in the region <m>D</m> has the same upper and lower bounds, which may depend on the value of <m>x</m>. Several vertical slices in the region <m>D</m> are shown in <xref ref="vertsimple-tri"/> where you can see that the lower bound of the <m>y</m>-value for every vertical slice is given by <m>y=0</m>. The upper bound of the <m>y</m>-value for every vertical slice is given by <m>y=\frac{3}{2} x</m>. Algebraically, for any constant value <m>k</m> in the interval <m>[0,2]</m>, the following statement describes the vertical slices of the region <m>D</m>:
           <me>\text{Along }x=k\text{ the }y\text{-coordinates go from }0\text{ to }\frac{3}{2}k</me>
           which corresponds to the inequalities 
           <me> 0\leq x \leq 2 \quad \quad 0 \leq y \leq \frac{3}{2} x</me>
-          as a descriptions for <m>D</m>. Thus, the region <m>D</m> is vertically simple.
+          as a description for <m>D</m>. Thus, the region <m>D</m> is vertically simple.
         </p>
         <figure xml:id="vertsimple-tri">
           <caption>The triangular region <m>D</m> with vertical slices shown</caption>
-          <image width="60%" xml:id="img-vertsimple-tri">
-            <sageplot>
+          <image width="60%" >
+            <shortdescription>Demonstrating D is vertically simple</shortdescription>
+            <description>
+              <p>A triangular region in the <m>xy</m>-plane. The region is labeled <m>D</m>. The triangle has vertices <m>(0,0)</m>, <m>(2,0)</m>, and <m>(0,3)</m>. The lower edge of the region is marked with the line <m>y=0</m>. The upper edge of the region is marked with the line <m>y=\frac{3}{2}x</m>. Dashed vertical lines from the lower edge of the region to the upper edge of the region are shown at several locations inside the region.
+              </p>
+            </description>
+            <sageplot label="img-vertsimple-tri">
               plot7=polygon([(0,0),(2,0),(2,3)],color="lightblue",edgecolor="black",gridlines=True,xmin=0,xmax=3,ymin=0,ymax=3,zorder=5,ticks=[[0,1,2,3],[0,1,2,3]])
               plot7+=text("$D$",(1.8,2.2),color="black",fontsize=20,axes_labels=["$x$","$y$"],zorder=6)
               vals=[2/5,4/5,6/5,8/5]
@@ -499,16 +538,21 @@
       <task>
         <statement>
           <p>
-            Remember that a horizontal line will correspond algebraically to <m>y=constant</m>. We want to know if every horizontal slice in the region <m>D</m> will have the same upper and lower bounds (which may depend on the value of <m>y</m>). Several horizontal slices in the region <m>D</m> are shown in <xref ref="horzsimple-tri"/> where you can see that the lower bound (of the <m>x</m>-variable) for every horizontal slice is given by <m>x=\frac{2}{3} y</m>. The upper bound (of the <m>x</m>-variable) for every horizontal slice is given by <m>x=2</m>. Algebraically, if you take any constant value, <m>k</m>, in the interval <m>[0,3]</m>, then the following statement describes the horizontal strips of the region <m>D</m>:
+            A horizontal line has equation <m>y=\text{constant}</m>. We must determine if every horizontal slice in the region <m>D</m> has the same upper and lower bounds, which may depend on the value of <m>y</m>. Several horizontal slices in the region <m>D</m> are shown in <xref ref="horzsimple-tri"/> where you can see that the lower bound of the <m>x</m>-value for every horizontal slice is given by <m>x=\frac{2}{3} y</m>. The upper bound of the <m>x</m>-value for every horizontal slice is given by <m>x=2</m>. Algebraically, for any constant value <m>k</m> in the interval <m>[0,3]</m>, the following statement describes the horizontal slices of the region <m>D</m>:
             <me>\text{Along }y=k\text{ the }x\text{-coordinates go from }\frac{2}{3} k\text{ to }2</me>
             which corresponds to the inequalities 
             <me> 0\leq y \leq 3 \quad \quad \frac{2}{3} \leq y \leq 2 x</me>
-            as a descriptions for <m>D</m>. Thus, the region <m>D</m> is horizontally simple.
+            as a description for <m>D</m>. Thus, the region <m>D</m> is horizontally simple.
           </p>
           <figure xml:id="horzsimple-tri">
             <caption>The triangular region <m>D</m> with horizontal slices shown</caption>
-            <image width="60%" xml:id="img-horzsimple-tri">
-              <sageplot>
+            <image width="60%">
+              <shortdescription>Demonstrating D is horizontally simple</shortdescription>
+              <description>
+                <p>A triangular region in the <m>xy</m>-plane. The region is labeled <m>D</m>. The triangle has vertices <m>(0,0)</m>, <m>(2,0)</m>, and <m>(0,3)</m>. The left edge of the region is marked with the line <m>x=\frac{2}{3}y</m>. The upper edge of the region is marked with the line <m>y=2</m>. Dashed horizontal lines from the left edge of the region to the right edge of the region are shown at several locations inside the region.
+                </p>
+              </description>
+              <sageplot label="img-horzsimple-tri">
                 plot7=polygon([(0,0),(2,0),(2,3)],color="lightblue",edgecolor="black",gridlines=True,xmin=0,xmax=3,ymin=0,ymax=3,zorder=5,ticks=[[0,1,2,3],[0,1,2,3]])
                 plot7+=text("$D$",(1.8,2.2),color="black",fontsize=20,axes_labels=["$x$","$y$"],zorder=6)
                 vals=[2/3,4/3,6/3,8/3]
@@ -520,18 +564,21 @@
               </sageplot>
             </image>
           </figure>
-          <p>
-            This example shows that just because a region is vertically simple does not mean that it is <em>not</em> horizontally simple as well. In general, a 2D region is 
-            <ul>
-              <li>horizontally simple (but not vertically simple) </li>
-              <li>vertically simple (but not horizontally simple) </li>
-              <li>both horizontally simple and vertically simple </li>
-              <li>neither horizontally simple or vertically simple  </li>
-            </ul>
-            and as you will see later, you may want to switch the description of your region to make the algebra of evaluating an integral easier.
-          </p>
+          
         </statement>
       </task>
+      <conclusion>
+        <p>
+            This example shows that just because a region is vertically simple does not mean that it is <em>not</em> horizontally simple as well. In general, a two-dimensional region can be any of the following 
+            <ul>
+              <li>horizontally simple (but not vertically simple),</li>
+              <li>vertically simple (but not horizontally simple),</li>
+              <li>both horizontally simple and vertically simple, or</li>
+              <li>neither horizontally simple or vertically simple.  </li>
+            </ul>
+            As we will see later, switching the description of a region that is both horizontally simple and vertically simple can make the algebra of evaluating an iterated integral easier.
+          </p>
+      </conclusion>
     </example>
     <example>
       <introduction>
