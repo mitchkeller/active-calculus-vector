@@ -590,6 +590,7 @@
       </p>
       <sidebyside widths="45% 45%">
         <figure xml:id="int1Dx">
+          <caption/>
           <image width="60%" xml:id="img-int1Dx">
             <sageplot>
               var('t,s,x,y')
@@ -604,6 +605,7 @@
           </image>
         </figure>
         <figure xml:id="int1Du">
+          <caption/>
           <image width="60%" xml:id="img-int1Du">
             <sageplot>
               var('t,s,x,y')
