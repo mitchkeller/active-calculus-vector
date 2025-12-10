@@ -157,7 +157,11 @@
     <figure xml:id="fig_Vector_GreensTheorem_circ_cartoon">
       <caption>A region bounded by a curve</caption>
       <image xml:id="img_Vector_GreensTheorem_circ_cartoon" width="80%">
-				<description>A bean-shaped region in the plane that is bounded by a closed curve. The curve is oriented so that when walking along the curve, the region is always on the left. There is a square grid dividing the up the interior of the region.</description>
+				<description>
+					<p>
+						A bean-shaped region in the plane that is bounded by a closed curve. The curve is oriented so that when walking along the curve, the region is always on the left. There is a square grid dividing the up the interior of the region.
+					</p>
+				</description>
 				<latex-image>
 					\begin{tikzpicture}[grid/.style={pattern=MyGrid}]
 					\path[draw,use Hobby shortcut,closed=true,GridSize=9pt,pattern=MyGrid,fill opacity=0.5, orientation arrows]
@@ -610,7 +614,9 @@
 	  <caption>The vector field <m>\vF</m></caption>
 	  <image xml:id="img_Vector_GreensTheorem_ccw_field" width="65%">
 	    <description>
-				A vector field with vectors tangent to circles oriented counterclockwise and centered at the origin as well as the unit circle centered at the origin and oriented counterclockwise. The vectors are longer close to the origin and shorter farther from the origin.
+				<p>
+					A vector field with vectors tangent to circles oriented counterclockwise and centered at the origin as well as the unit circle centered at the origin and oriented counterclockwise. The vectors are longer close to the origin and shorter farther from the origin.
+				</p>
 			</description>
 			<sageplot>
 				var('x,y,t')
