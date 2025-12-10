@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!-- **********************************************************************-->
 <!-- Copyright 2013-2018                                                   -->
 <!-- Steven Schlicker                                                      -->
@@ -85,7 +84,8 @@
 
                 <figure xml:id="F_9_3_preview_1">
                   <caption>For part (d)</caption>
-                  <image width="50%" source="images/fig_9_3_preview_1"/>
+                  <image width="50%" source="images/fig_9_3_preview_1"><description><p>For part (d)</p>
+                  </description></image>
                 </figure>
 
               </p>
@@ -98,7 +98,8 @@
 
                 <figure xml:id="F_9_3_preview_2">
                   <caption>For part (e)</caption>
-                  <image width="50%" source="images/fig_9_3_preview_1"/>
+                  <image width="50%" source="images/fig_9_3_preview_1"><description><p>For part (e)</p>
+                  </description></image>
                 </figure>
 
                For each of the following vectors <m>\vv</m>, plot the vector on <xref ref="F_9_3_preview_2">Figure</xref> and then compute the dot product
@@ -145,7 +146,8 @@
 
                 <figure xml:id="F_9_3_preview_3">
                   <caption>For part (f)</caption>
-                  <image width="100%" source="images/fig_9_3_preview_2"/>
+                  <image width="100%" source="images/fig_9_3_preview_2"><description><p>For part (f)</p>
+                  </description></image>
                 </figure>
 
               </p>
@@ -441,8 +443,10 @@
       <figure xml:id="F_9_3_Angle_between">
       <caption>Left: The angle between <m>\vu</m> and <m>\vv</m>. Right: The triangle formed by <m>\vu</m>, <m>\vv</m>, and <m>\vu-\vv</m>. </caption>
       <sidebyside widths="45% 45%">
-        <image source="images/fig_9_3_angle_1"/>
-        <image source="images/fig_9_3_angle_2"/>
+        <image source="images/fig_9_3_angle_1"><description><p>Left: The angle between <m>\vu</m> and <m>\vv</m>. Right: The triangle formed by <m>\vu</m>, <m>\vv</m>, and <m>\vu-\vv</m>. </p>
+      </description></image>
+        <image source="images/fig_9_3_angle_2"><description><p>Left: The angle between <m>\vu</m> and <m>\vv</m>. Right: The triangle formed by <m>\vu</m>, <m>\vv</m>, and <m>\vu-\vv</m>. </p>
+      </description></image>
         </sidebyside> 
       </figure>
     
@@ -706,7 +710,8 @@
 
     <figure xml:id="F_9_3_Orientations">
       <caption>The orientation of vectors</caption>
-      <image width="100%" source="images/fig_9_3_orientations"/>
+      <image width="100%" source="images/fig_9_3_orientations"><description><p>The orientation of vectors</p>
+      </description></image>
     </figure>
   </subsection>
 
@@ -722,7 +727,8 @@
 
     <figure xml:id="F_9_3_Work">
       <caption>A force <m>\vF</m> displacing an object.</caption>
-      <image width="50%" source="images/fig_9_3_work_1"/>
+      <image width="50%" source="images/fig_9_3_work_1"><description><p>A force <m>\vF</m> displacing an object.</p>
+      </description></image>
     </figure>
 
     <p>
@@ -771,8 +777,10 @@
     <figure xml:id="F_9_3_Projection_a">
       <caption>Left: <m>\proj_{\vv} \vu</m>. Right: <m>\proj_{\vv} \vu</m> when <m>\theta &gt; \frac\pi2</m>.</caption>  
       <sidebyside widths="50% 50%">  
-        <image source="images/fig_9_3_projection_1"/>
-        <image source="images/fig_9_3_projection_2"/>
+        <image source="images/fig_9_3_projection_1"><description><p>Left: <m>\proj_{\vv} \vu</m>. Right: <m>\proj_{\vv} \vu</m> when <m>\theta &gt; \frac\pi2</m>.</p>  
+      </description></image>
+        <image source="images/fig_9_3_projection_2"><description><p>Left: <m>\proj_{\vv} \vu</m>. Right: <m>\proj_{\vv} \vu</m> when <m>\theta &gt; \frac\pi2</m>.</p>  
+      </description></image>
         </sidebyside>
     </figure>
       
@@ -1638,7 +1646,8 @@
 
           <figure xml:id="F-9-3-methane">
           <caption>A methane molecule.</caption>
-          <image width="50%" source="images/fig_9_3_methane"/>
+          <image width="50%" source="images/fig_9_3_methane"><description><p>A methane molecule.</p>
+          </description></image>
           </figure>
           </sidebyside>
 

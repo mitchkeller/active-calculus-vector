@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!-- **********************************************************************-->
 <!-- Copyright 2013-2018                                                   -->
 <!-- Steven Schlicker                                                      -->
@@ -41,7 +40,8 @@
 
     <figure xml:id="F_6_2_Ex1">
       <caption>A solid of revolution.</caption>
-      <image width="50%" source="images/fig_11_2_volume_revolve"/>
+      <image width="50%" source="images/fig_11_2_volume_revolve"><description><p>A solid of revolution.</p>
+      </description></image>
     </figure>
 
     <exploration xml:id="PA_11_2">
@@ -64,8 +64,10 @@
                 <figure xml:id="F_11_2_Cross_section_PA_y">
                   <caption>Left: A cross section with fixed <m>x</m>. Right: A cross section with fixed <m>x</m> and <m>\Delta x</m>.</caption>
                   <sidebyside widths="50% 50%">
-                    <image source="images/fig_11_2_preview_slice"/>
-                    <image source="images/fig_11_2_preview_thick"/>
+                    <image source="images/fig_11_2_preview_slice"><description><p>Left: A cross section with fixed <m>x</m>. Right: A cross section with fixed <m>x</m> and <m>\Delta x</m>.</p>
+                  </description></image>
+                    <image source="images/fig_11_2_preview_thick"><description><p>Left: A cross section with fixed <m>x</m>. Right: A cross section with fixed <m>x</m> and <m>\Delta x</m>.</p>
+                  </description></image>
                     </sidebyside>
                 </figure>
                 
@@ -183,9 +185,12 @@
     <figure xml:id="F_11_2_Cross_section_y_slab_sum">
       <caption>Summing volumes of cross section slices.</caption>
       <sidebyside widths="33% 33% 33%">
-      <image source="images/fig_11_2_preview_animate_0"/>
-      <image source="images/fig_11_2_preview_animate_2"/>
-      <image source="images/fig_11_2_preview_animate_5"/>
+      <image source="images/fig_11_2_preview_animate_0"><description><p>Summing volumes of cross section slices.</p>
+      </description></image>
+      <image source="images/fig_11_2_preview_animate_2"><description><p>Summing volumes of cross section slices.</p>
+      </description></image>
+      <image source="images/fig_11_2_preview_animate_5"><description><p>Summing volumes of cross section slices.</p>
+      </description></image>
       </sidebyside>
     </figure>
 

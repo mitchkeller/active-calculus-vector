@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!-- **********************************************************************-->
 <!-- Copyright 2013-2018                                                   -->
 <!-- Steven Schlicker                                                      -->
@@ -205,7 +204,8 @@
 
         <figure xml:id="F_11_4_Mass_exercise">
           <caption>A half disk lamina.</caption>
-          <image width="50%" source="images/fig_11_4_half_circle"/>
+          <image width="50%" source="images/fig_11_4_half_circle"><description><p>A half disk lamina.</p>
+          </description></image>
         </figure>
       </statement> 
       
@@ -265,7 +265,8 @@
 
                 <figure xml:id="F_11_4_Area_ex_1">
                   <caption>The graphs of <m>y = 1-x^2</m> and <m>y=x-1</m>.</caption>
-                  <image width="50%" source="images/fig_11_4_area"/>
+                  <image width="50%" source="images/fig_11_4_area"><description><p>The graphs of <m>y = 1-x^2</m> and <m>y=x-1</m>.</p>
+                  </description></image>
                 </figure>
                 
               </p>
@@ -374,7 +375,8 @@
 
     <figure xml:id="F_11_4_COM">
       <caption>A center of mass <m>(\overline{x}, \overline{y})</m> of four masses.</caption>
-      <image width="50%" source="images/fig_11_4_masses"/>
+      <image width="50%" source="images/fig_11_4_masses"><description><p>A center of mass <m>(\overline{x}, \overline{y})</m> of four masses.</p>
+      </description></image>
     </figure>
 
     <p>
@@ -488,7 +490,8 @@
 
         <figure xml:id="F_11_4_COM_ex_1">
           <caption>The lamina bounded by the <m>x</m>-axis and the lines <m>x = 1</m> and <m>y = 2x</m> in the first quadrant.</caption>
-          <image width="50%" source="images/fig_11_4_triangle"/>
+          <image width="50%" source="images/fig_11_4_triangle"><description><p>The lamina bounded by the <m>x</m>-axis and the lines <m>x = 1</m> and <m>y = 2x</m> in the first quadrant.</p>
+          </description></image>
         </figure>
 
         <ol marker="a.">

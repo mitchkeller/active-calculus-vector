@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!-- **********************************************************************-->
 <!-- Copyright 2013-2018                                                   -->
 <!-- Steven Schlicker                                                      -->
@@ -165,9 +164,9 @@
               the polar rectangle <m>P</m> would look to us as shown below at left.
               The image <m>P'</m> of the polar rectangle <m>P</m> under the transformations in <xref ref="eq_11_9_pol_to_rect"/> is shown below at right.
           
-              <image width="73%" source="images/fig_11_9_Polar_COV_1"/> 
+              <image width="73%" source="images/fig_11_9_Polar_COV_1"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> 
               
-              <image width="73%" source="images/fig_11_9_Polar_COV_2"/> 
+              <image width="73%" source="images/fig_11_9_Polar_COV_2"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> 
               
               We have seen that the area of the transformed rectangle <m>P'</m> is given by <m>\frac{r_2+r_1}{2} \Delta r \Delta \theta</m>,
               and as <m>\Delta r</m> and
@@ -196,7 +195,8 @@
 
     <figure xml:id="F_11_9_Change_vars1_a">
       <caption>A rectangle <m>P</m> and its image <m>P'</m>.</caption>
-      <image width="100%" source="images/fig_11_9_polar_change"/>
+      <image width="100%" source="images/fig_11_9_polar_change"><description><p>A rectangle <m>P</m> and its image <m>P'</m>.</p>
+      </description></image>
     </figure>
 
     <p>
@@ -295,7 +295,7 @@
           </li>
         </ul>
         <p>
-          <image width="73%" source="images/11_9_Act_1a" />
+          <image width="73%" source="images/11_9_Act_1a"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
         </p>
       </solution>
     </activity>
@@ -310,7 +310,8 @@
 
     <figure xml:id="F_11_9_Change_vars_ex">
       <caption>Approximating an area of an image resulting from a transformation.</caption>
-      <image width="100%" source="images/fig_11_9_general_change"/>
+      <image width="100%" source="images/fig_11_9_general_change"><description><p>Approximating an area of an image resulting from a transformation.</p>
+      </description></image>
     </figure>
 
     <p>
@@ -658,7 +659,7 @@
           </li>
         </ul>
         <p>
-          <image width="73%" source="images/11_9_Act_4"/>
+          <image width="73%" source="images/11_9_Act_4"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
         </p>
       </solution>
       

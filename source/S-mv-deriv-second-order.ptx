@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!-- **********************************************************************-->
 <!-- Copyright 2013-2018                                                   -->
 <!-- Steven Schlicker                                                      -->
@@ -57,8 +56,10 @@
         <figure xml:id="F_10_3_preview">
           <caption>The distance function with traces <m>x=150</m> and <m>y=0.6</m>.</caption>
           <sidebyside widths="50% 50%">
-          <image source="images/fig_10_2_trace_x_a"/>
-          <image source="images/fig_10_2_trace_y_a"/>
+          <image source="images/fig_10_2_trace_x_a"><description><p>The distance function with traces <m>x=150</m> and <m>y=0.6</m>.</p>
+          </description></image>
+          <image source="images/fig_10_2_trace_y_a"><description><p>The distance function with traces <m>x=150</m> and <m>y=0.6</m>.</p>
+          </description></image>
           </sidebyside>
         </figure>
 
@@ -77,7 +78,8 @@
 
                 <figure xml:id="F_10_3_preview_xx">
                   <caption>The trace with <m>y=0.6</m>.</caption>
-                  <image width="50%" source="images/fig_10_3_preview_xx"/>
+                  <image width="50%" source="images/fig_10_3_preview_xx"><description><p>The trace with <m>y=0.6</m>.</p>
+                  </description></image>
                 </figure>
 
               </p>
@@ -89,7 +91,8 @@
 
                 <figure xml:id="F_10_3_preview_y">
                   <caption>More traces of the range function.</caption>
-                  <image width="50%" source="images/fig_10_3_preview_yy"/>
+                  <image width="50%" source="images/fig_10_3_preview_yy"><description><p>More traces of the range function.</p>
+                  </description></image>
                 </figure>
 
               </p>
@@ -544,9 +547,12 @@
     <figure xml:id="F_10_3_fxx">
       <caption>The tangent lines to a trace with increasing <m>x</m>.</caption>
       <sidebyside widths="33% 33% 33%">
-      <image source="images/fig_10_3_fxx_1"/>
-      <image source="images/fig_10_3_fxx_2"/>
-      <image source="images/fig_10_3_fxx_3"/>
+      <image source="images/fig_10_3_fxx_1"><description><p>The tangent lines to a trace with increasing <m>x</m>.</p>
+      </description></image>
+      <image source="images/fig_10_3_fxx_2"><description><p>The tangent lines to a trace with increasing <m>x</m>.</p>
+      </description></image>
+      <image source="images/fig_10_3_fxx_3"><description><p>The tangent lines to a trace with increasing <m>x</m>.</p>
+      </description></image>
       </sidebyside>
     </figure>
 
@@ -589,9 +595,12 @@
                 <figure xml:id="F_10_3_fyy">
                   <caption>The tangent lines to a trace with increasing <m>y</m>.</caption>
                   <sidebyside widths="33% 33% 33%">
-                  <image source="images/fig_10_3_fyy_1"/>
-                  <image source="images/fig_10_3_fyy_2"/>
-                  <image source="images/fig_10_3_fyy_3"/>
+                  <image source="images/fig_10_3_fyy_1"><description><p>The tangent lines to a trace with increasing <m>y</m>.</p>
+                  </description></image>
+                  <image source="images/fig_10_3_fyy_2"><description><p>The tangent lines to a trace with increasing <m>y</m>.</p>
+                  </description></image>
+                  <image source="images/fig_10_3_fyy_3"><description><p>The tangent lines to a trace with increasing <m>y</m>.</p>
+                  </description></image>
                   </sidebyside>
                 </figure>
               </p>
@@ -604,9 +613,12 @@
                 <figure xml:id="F_10_3_fxy">
                   <caption>The trace of <m>z = f(x,y) = \sin(x)e^{-y}</m> with <m>x = 1.75</m>, along with tangent lines in the <m>y</m>-direction at three different points.</caption>
                   <sidebyside widths="33% 33% 33%">
-                  <image source="images/fig_10_3_fxy_1"/>
-                  <image source="images/fig_10_3_fxy_2"/>
-                  <image source="images/fig_10_3_fxy_3"/>
+                  <image source="images/fig_10_3_fxy_1"><description><p>The trace of <m>z = f(x,y) = \sin(x)e^{-y}</m> with <m>x = 1.75</m>, along with tangent lines in the <m>y</m>-direction at three different points.</p>
+                  </description></image>
+                  <image source="images/fig_10_3_fxy_2"><description><p>The trace of <m>z = f(x,y) = \sin(x)e^{-y}</m> with <m>x = 1.75</m>, along with tangent lines in the <m>y</m>-direction at three different points.</p>
+                  </description></image>
+                  <image source="images/fig_10_3_fxy_3"><description><p>The trace of <m>z = f(x,y) = \sin(x)e^{-y}</m> with <m>x = 1.75</m>, along with tangent lines in the <m>y</m>-direction at three different points.</p>
+                  </description></image>
                   </sidebyside>
                 </figure>
 
@@ -690,7 +702,7 @@
               The value of <m>f_{yx}(1.75,-1.5)</m> measures how much the surface
               <q>twists</q>
               in the <m>x</m> direction when <m>x=1.75</m> as we move along the <m>y=-1.5</m> trace.
-              <image width="73%" source="images/fig_10_3_Act_2a_fyx_1.png"/> <nbsp/><image width="73%" source="images/fig_10_3_Act_2a_fyx_2.png"/> <nbsp/><image width="73%" source="images/fig_10_3_Act_2a_fyx_3.png"/>
+              <image width="73%" source="images/fig_10_3_Act_2a_fyx_1.png"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> <nbsp/><image width="73%" source="images/fig_10_3_Act_2a_fyx_2.png"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> <nbsp/><image width="73%" source="images/fig_10_3_Act_2a_fyx_3.png"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
             </p>
           </li>
         </ol>
@@ -747,7 +759,7 @@
               The value of <m>f_{yx}(1.75,-1.5)</m> measures how much the surface
               <q>twists</q>
               in the <m>x</m> direction when <m>x=1.75</m> as we move along the <m>y=-1.5</m> trace.
-              <image width="73%" source="images/fig_10_3_Act_2a_fyx_1.png"/> <nbsp/><image width="73%" source="images/fig_10_3_Act_2a_fyx_2.png"/> <nbsp/><image width="73%" source="images/fig_10_3_Act_2a_fyx_3.png"/>
+              <image width="73%" source="images/fig_10_3_Act_2a_fyx_1.png"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> <nbsp/><image width="73%" source="images/fig_10_3_Act_2a_fyx_2.png"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> <nbsp/><image width="73%" source="images/fig_10_3_Act_2a_fyx_3.png"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
             </p>
           </li>
         </ol>
@@ -1113,7 +1125,8 @@
 
     <figure xml:id="F_10_3_ruled">
       <caption>The graph of <m>f(x,y) = -xy</m>.</caption>
-      <image width="50%" source="images/fig_10_3_ruled"/>
+      <image width="50%" source="images/fig_10_3_ruled"><description><p>The graph of <m>f(x,y) = -xy</m>.</p>
+      </description></image>
     </figure>
   </subsection>
 
@@ -1220,7 +1233,8 @@
 
           <figure xml:id="F_10_3_activity_contour">
             <caption>A contour plot of <m>f(x,y)</m>.</caption>
-            <image width="50%" source="images/fig_10_3_activity_contour"/>
+            <image width="50%" source="images/fig_10_3_activity_contour"><description><p>A contour plot of <m>f(x,y)</m>.</p>
+            </description></image>
           </figure>
 
           <ol marker="a.">
@@ -1266,8 +1280,10 @@
                 <figure xml:id="F_10_3_activity_grad">
                   <caption>Plots for contours of <m>g</m> and <m>h</m>.</caption>
                   <sidebyside widths="50% 50%">
-                  <image source="images/fig_10_2_activity_grad"/>
-                  <image source="images/fig_10_2_activity_grad"/>
+                  <image source="images/fig_10_2_activity_grad"><description><p>Plots for contours of <m>g</m> and <m>h</m>.</p>
+                  </description></image>
+                  <image source="images/fig_10_2_activity_grad"><description><p>Plots for contours of <m>g</m> and <m>h</m>.</p>
+                  </description></image>
                   </sidebyside>
                 </figure>
 

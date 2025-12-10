@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!-- **********************************************************************-->
 <!-- Copyright 2013-2018                                                   -->
 <!-- Steven Schlicker                                                      -->
@@ -651,8 +650,10 @@
     <figure xml:id="F-9-1-left-right-hand">
       <caption>Left: A left hand system. Right: A right hand system</caption>
       <sidebyside widths="50% 50%">
-        <image source="images/fig_9_1_left_hand"/>
-        <image source="images/fig_9_1_right_hand"/>
+        <image source="images/fig_9_1_left_hand"><description><p>Left: A left hand system. Right: A right hand system</p>
+      </description></image>
+        <image source="images/fig_9_1_right_hand"><description><p>Left: A left hand system. Right: A right hand system</p>
+      </description></image>
         </sidebyside>
     </figure>
     
@@ -676,7 +677,8 @@
 
     <figure xml:id="F-9-1-range">
       <caption>The distance surface.</caption>
-      <image width="50%" source="images/fig_9_1_range"/>
+      <image width="50%" source="images/fig_9_1_range"><description><p>The distance surface.</p>
+      </description></image>
     </figure>
 
     <p>
@@ -782,9 +784,12 @@
     <figure xml:id="F-9-1-coordinate-planes">
       <caption>The coordinate planes.</caption>
       <sidebyside widths="33% 33% 33%" margins="0%">
-      <image source="images/fig_9_1_xy_plane"/>
-      <image source="images/fig_9_1_xz_plane"/>
-      <image source="images/fig_9_1_yz_plane"/>
+      <image source="images/fig_9_1_xy_plane"><description><p>The coordinate planes.</p>
+      </description></image>
+      <image source="images/fig_9_1_xz_plane"><description><p>The coordinate planes.</p>
+      </description></image>
+      <image source="images/fig_9_1_yz_plane"><description><p>The coordinate planes.</p>
+      </description></image>
       </sidebyside>
     </figure>
 
@@ -807,7 +812,8 @@
 
           <figure xml:id="F-9-1-Distance-3D">
             <caption>The distance formula in <m>\R^3</m>.</caption>
-            <image width="50%" source="images/fig_9_1_distance"/>
+            <image width="50%" source="images/fig_9_1_distance"><description><p>The distance formula in <m>\R^3</m>.</p>
+            </description></image>
           </figure>
         </sidebyside>
 
@@ -972,8 +978,10 @@
     <figure xml:id="F-9-1-trace1">
       <caption>Left: The trace with <m>y = 0.6</m>. Right: The trace with <m>x = 150</m>. </caption>
       <sidebyside widths="50% 50%" margins="0%">
-        <image source="images/fig_9_1_y_range"/>
-        <image source="images/fig_9_1_x_range"/>
+        <image source="images/fig_9_1_y_range"><description><p>Left: The trace with <m>y = 0.6</m>. Right: The trace with <m>x = 150</m>. </p>
+      </description></image>
+        <image source="images/fig_9_1_x_range"><description><p>Left: The trace with <m>y = 0.6</m>. Right: The trace with <m>x = 150</m>. </p>
+      </description></image>
         </sidebyside>
     </figure>
     
@@ -1016,7 +1024,8 @@
 
                 <figure xml:id="F-9-1-traces-activity-1">
                   <caption>Coordinate axes to sketch traces.</caption>
-                  <image width="50%" source="images/fig_9_1_activity_axes"/>
+                  <image width="50%" source="images/fig_9_1_activity_axes"><description><p>Coordinate axes to sketch traces.</p>
+                  </description></image>
                 </figure>
 
               </p>
@@ -1128,7 +1137,8 @@
 
     <figure xml:id="F-9-1-porcupine">
       <caption>Contour map of the Porcupine Mountains.</caption>
-      <image width="100%" source="images/9_1_porcupine_crop"/>
+      <image width="100%" source="images/9_1_porcupine_crop"><description><p>Contour map of the Porcupine Mountains.</p>
+      </description></image>
     </figure>
 
     <activity xml:id="A-9-1-8">
@@ -1225,8 +1235,10 @@
     <figure xml:id="F-9-1-contours-1">
       <caption>Left: Level curves. Right: Level curves at appropriate heights.</caption> 
       <sidebyside widths="50% 50%">   
-        <image source="images/fig_9_1_contour_1"/>    
-        <image source="images/fig_9_1_contour_2"/>
+        <image source="images/fig_9_1_contour_1"><description><p>Left: Level curves. Right: Level curves at appropriate heights.</p> 
+      </description></image>    
+        <image source="images/fig_9_1_contour_2"><description><p>Left: Level curves. Right: Level curves at appropriate heights.</p> 
+      </description></image>
         </sidebyside>
     </figure>
     
@@ -1241,8 +1253,10 @@
         <figure xml:id="F-9-1-contour-activity">
           <caption>Left: Level curves for <m>f(x,y) = x^2+y^2</m>. Right: Level curves for <m>g(x,y) = \sqrt{x^2+y^2}</m>.</caption>
           <sidebyside widths="50% 50%" margins="0%">
-          <image source="images/fig_9_1_activity_empty_1"/>
-          <image source="images/fig_9_1_activity_empty_2"/>
+          <image source="images/fig_9_1_activity_empty_1"><description><p>Left: Level curves for <m>f(x,y) = x^2+y^2</m>. Right: Level curves for <m>g(x,y) = \sqrt{x^2+y^2}</m>.</p>
+          </description></image>
+          <image source="images/fig_9_1_activity_empty_2"><description><p>Left: Level curves for <m>f(x,y) = x^2+y^2</m>. Right: Level curves for <m>g(x,y) = \sqrt{x^2+y^2}</m>.</p>
+          </description></image>
           </sidebyside>
         </figure>
 
@@ -1338,56 +1352,70 @@
     <figure>
       <caption><m>z=x^2+y^2</m></caption>
       <sidebyside widths="43% 43%" margins="0%">
-      <image source="images/zisr2"/>
-      <image source="images/zisr2_contours"/>
+      <image source="images/zisr2"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=x^2+y^2</m></p>
+      </description></image>
+      <image source="images/zisr2_contours"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=x^2+y^2</m></p>
+      </description></image>
       </sidebyside>
     </figure>
 
     <figure>
       <caption><m>z=4-(x^2+y^2)</m></caption>
       <sidebyside widths="43% 43%" margins="0%">
-      <image source="images/zis4r2"/>
-      <image source="images/zis4r2_contours"/>
+      <image source="images/zis4r2"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=4-(x^2+y^2)</m></p>
+      </description></image>
+      <image source="images/zis4r2_contours"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=4-(x^2+y^2)</m></p>
+      </description></image>
       </sidebyside>
     </figure>
 
     <figure>
       <caption><m>z=\sqrt{x^2+y^2}</m></caption>
       <sidebyside widths="43% 43%" margins="0%">
-      <image source="images/cone"/>
-      <image source="images/cone_contours"/>
+      <image source="images/cone"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=\sqrt{x^2+y^2}</m></p>
+      </description></image>
+      <image source="images/cone_contours"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=\sqrt{x^2+y^2}</m></p>
+      </description></image>
       </sidebyside>
     </figure>
 
     <figure>
       <caption><m>z=x^2-y^2</m></caption>
       <sidebyside widths="43% 43%" margins="0%">
-      <image source="images/saddle"/>
-      <image source="images/saddle_contours"/>
+      <image source="images/saddle"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=x^2-y^2</m></p>
+      </description></image>
+      <image source="images/saddle_contours"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=x^2-y^2</m></p>
+      </description></image>
       </sidebyside>
     </figure>
 
     <figure>
       <caption><m>z=\sin(x)+\sin(y)</m></caption>
       <sidebyside widths="43% 43%" margins="0%">
-      <image source="images/sinxy"/>
-      <image source="images/sinxy_contours"/>
+      <image source="images/sinxy"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=\sin(x)+\sin(y)</m></p>
+      </description></image>
+      <image source="images/sinxy_contours"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=\sin(x)+\sin(y)</m></p>
+      </description></image>
       </sidebyside>
     </figure>
 
     <figure>
       <caption><m>z=y^2 - x^3 + x</m></caption>
       <sidebyside widths="43% 43%" margins="0%">
-      <image source="images/elliptic"/>
-      <image source="images/elliptic_contours"/>
+      <image source="images/elliptic"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=y^2 - x^3 + x</m></p>
+      </description></image>
+      <image source="images/elliptic_contours"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=y^2 - x^3 + x</m></p>
+      </description></image>
       </sidebyside>
     </figure>
 
     <figure>
       <caption><m>z=xye^{-x^2-y^2}</m></caption>
       <sidebyside widths="43% 43%" margins="0%">
-      <image source="images/exp"/>
-      <image source="images/exp_contours"/>
+      <image source="images/exp"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=xye^{-x^2-y^2}</m></p>
+      </description></image>
+      <image source="images/exp_contours"><description><p>ADD ALT TEXT TO THIS IMAGE<m>z=xye^{-x^2-y^2}</m></p>
+      </description></image>
       </sidebyside>
     </figure>
 

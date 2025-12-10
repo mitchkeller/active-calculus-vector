@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!-- **********************************************************************-->
 <!-- Copyright 2013-2018                                                   -->
 <!-- Steven Schlicker                                                      -->
@@ -113,7 +112,8 @@
 
               <figure xml:id="F_10_1_activity_1">
                 <caption>The graph of <m>f(x) = 3-x</m>.</caption>
-                <image width="50%" source="images/fig_10_1_activity_3"/>
+                <image width="50%" source="images/fig_10_1_activity_3"><description><p>The graph of <m>f(x) = 3-x</m>.</p>
+                </description></image>
               </figure>
 
             </p>
@@ -162,7 +162,8 @@
 
               <figure xml:id="F_10_1_activity_2">
                 <caption>The graph of <m>g(x) = \frac{x}{|x|}</m>.</caption>
-                <image width="50%" source="images/fig_10_1_activity_2"/>
+                <image width="50%" source="images/fig_10_1_activity_2"><description><p>The graph of <m>g(x) = \frac{x}{|x|}</m>.</p>
+                </description></image>
               </figure>
 
             </p>
@@ -243,8 +244,10 @@
               <figure xml:id="F_10_1_activity_4">
                 <caption>Left: The graph of <m>f(x,y) = 3 - x - 2y</m>. Right: A contour plot.</caption>
                 <sidebyside widths="50% 50%">
-                <image source="images/fig_10_1_limit_contin"/>
-                <image source="images/fig_10_1_cont_contour"/>
+                <image source="images/fig_10_1_limit_contin"><description><p>Left: The graph of <m>f(x,y) = 3 - x - 2y</m>. Right: A contour plot.</p>
+                </description></image>
+                <image source="images/fig_10_1_cont_contour"><description><p>Left: The graph of <m>f(x,y) = 3 - x - 2y</m>. Right: A contour plot.</p>
+                </description></image>
                 </sidebyside>
               </figure>
 
@@ -327,8 +330,10 @@
               <figure xml:id="F_10_1_activity_5">
                 <caption>Left: The graph of <m>g(x,y) = \frac{2xy}{x^2+y^2}</m>. Right: A contour plot.</caption>
                 <sidebyside widths="50% 50%">
-                <image source="images/fig_10_1_limit_disc"/>
-                <image source="images/fig_10_1_limit_contour"/>
+                <image source="images/fig_10_1_limit_disc"><description><p>Left: The graph of <m>g(x,y) = \frac{2xy}{x^2+y^2}</m>. Right: A contour plot.</p>
+                </description></image>
+                <image source="images/fig_10_1_limit_contour"><description><p>Left: The graph of <m>g(x,y) = \frac{2xy}{x^2+y^2}</m>. Right: A contour plot.</p>
+                </description></image>
                 </sidebyside>
               </figure>
 
@@ -346,7 +351,7 @@
         <ol marker="a.">
           <li>
            
-            <table >
+            <table>
             <title>Values of <m>f(x) = 3-x</m>.</title>
             <tabular halign="center" bottom="minor" top="minor">
               <row bottom="medium">
@@ -382,7 +387,7 @@
           </li>
       
           <li>
-            <table >
+            <table>
               <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
               <tabular halign="center" bottom="minor" top="minor">
               <row bottom="medium">
@@ -422,7 +427,7 @@
       
           <li>
 
-            <table >
+            <table>
               <title>Values of <m>f(x,y) = 3 - x - 2y</m>.</title>
               <tabular halign="right" bottom="minor" top="minor">
                 <row bottom="medium">
@@ -490,7 +495,7 @@
           </li>
       
           <li>
-            <table >
+            <table>
               <title>Values of <m>g(x,y) = \frac{2xy}{x^2+y^2}</m>.</title>
               <tabular halign="center" bottom="minor" top="minor">
               <row bottom="medium">
@@ -569,7 +574,7 @@
         <ol marker="a.">
           <li>
            
-            <table >
+            <table>
             <title>Values of <m>f(x) = 3-x</m>.</title>
             <tabular halign="center" bottom="minor" top="minor">
               <row bottom="medium">
@@ -605,7 +610,7 @@
           </li>
       
           <li>
-            <table >
+            <table>
               <title>Values of <m>g(x) = \frac{x}{|x|}</m>.</title>
               <tabular halign="center" bottom="minor" top="minor">
               <row bottom="medium">
@@ -645,7 +650,7 @@
       
           <li>
 
-            <table >
+            <table>
               <title>Values of <m>f(x,y) = 3 - x - 2y</m>.</title>
               <tabular halign="right" bottom="minor" top="minor">
                 <row bottom="medium">
@@ -713,7 +718,7 @@
           </li>
       
           <li>
-            <table >
+            <table>
               <title>Values of <m>g(x,y) = \frac{2xy}{x^2+y^2}</m>.</title>
               <tabular halign="center" bottom="minor" top="minor">
               <row bottom="medium">
@@ -843,7 +848,8 @@
 
         <figure xml:id="F_10_1_disc_2">
           <caption>The graph of <m>f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m>.</caption>
-          <image width="50%" source="images/fig_10_1_disc_2"/>
+          <image width="50%" source="images/fig_10_1_disc_2"><description><p>The graph of <m>f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m>.</p>
+          </description></image>
         </figure>
 
         <ol marker="a.">
@@ -951,7 +957,8 @@
 
               <figure xml:id="F_10_1_limit_contour_2">
                 <caption>Contour lines of <m>f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m>.</caption>
-                <image width="50%" source="images/fig_10_1_limit_contour_2"/>
+                <image width="50%" source="images/fig_10_1_limit_contour_2"><description><p>Contour lines of <m>f(x,y) = \frac{y}{\sqrt{x^2+y^2}}</m>.</p>
+                </description></image>
               </figure>
 
             </p>
@@ -1098,7 +1105,8 @@
 
     <figure xml:id="F_10_1_one_variable">
       <caption>The graph of <m>g(x) = \frac{x}{|x|}</m>.</caption>
-      <image width="50%" source="images/fig_10_1_activity_2"/>
+      <image width="50%" source="images/fig_10_1_activity_2"><description><p>The graph of <m>g(x) = \frac{x}{|x|}</m>.</p>
+      </description></image>
     </figure>
 
     <p>

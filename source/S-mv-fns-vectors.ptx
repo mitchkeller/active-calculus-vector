@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!-- **********************************************************************-->
 <!-- Copyright 2013-2018                                                   -->
 <!-- Steven Schlicker                                                      -->
@@ -207,8 +206,10 @@
       <figure xml:id="F-9-2-vectors-single">
       <caption>Left: A vector. Right: Representations of the same vector.</caption>
       <sidebyside widths="50% 50%">
-        <image source="images/fig_9_2_single"/>
-        <image source="images/fig_9_2_multiple"/>
+        <image source="images/fig_9_2_single"><description><p>Left: A vector. Right: Representations of the same vector.</p>
+      </description></image>
+        <image source="images/fig_9_2_multiple"><description><p>Left: A vector. Right: Representations of the same vector.</p>
+      </description></image>
         </sidebyside>
       </figure>
     
@@ -226,8 +227,10 @@
       <figure xml:id="F-9-2-vectors-standard">
       <caption>Left: Standard position. Right: A vector between two points.</caption>
       <sidebyside widths="50% 50%">
-        <image source="images/fig_9_2_std_pos"/>
-        <image source="images/fig_9_2_btw_pts"/>
+        <image source="images/fig_9_2_std_pos"><description><p>Left: Standard position. Right: A vector between two points.</p>
+      </description></image>
+        <image source="images/fig_9_2_btw_pts"><description><p>Left: Standard position. Right: A vector between two points.</p>
+      </description></image>
         </sidebyside>
       </figure>
     
@@ -269,7 +272,8 @@
 
     <figure xml:id="F-9-2-vectors4">
       <caption>A point defines a vector</caption>
-      <image width="50%" source="images/fig_9_2_pt_def"/>
+      <image width="50%" source="images/fig_9_2_pt_def"><description><p>A point defines a vector</p>
+      </description></image>
     </figure>
 
     <p>
@@ -696,7 +700,8 @@
 
     <figure xml:id="F-9-2-vector-sum">
       <caption>A vector sum (left), summing displacements (center), the parallelogram law (right).</caption>
-      <image width="100%" source="images/fig_9_2_operations"/>
+      <image width="100%" source="images/fig_9_2_operations"><description><p>A vector sum (left), summing displacements (center), the parallelogram law (right).</p>
+      </description></image>
     </figure>
 
     <p>
@@ -720,8 +725,10 @@
       <figure xml:id="F-9-2-vector-addition">
       <caption>Left: Vector addition. Right: Vector subtraction.</caption> 
       <sidebyside widths="50% 50%">  
-        <image source="images/fig_9_2_addition"/>
-        <image source="images/fig_9_2_subtraction"/>
+        <image source="images/fig_9_2_addition"><description><p>Left: Vector addition. Right: Vector subtraction.</p> 
+      </description></image>
+        <image source="images/fig_9_2_subtraction"><description><p>Left: Vector addition. Right: Vector subtraction.</p> 
+      </description></image>
         </sidebyside>
       </figure>
     
@@ -737,7 +744,8 @@
 
     <figure xml:id="F-9-2-vector-sum7">
       <caption>Scalar multiplication</caption>
-        <image width="50%" source="images/fig_9_2_scalar"/>
+        <image width="50%" source="images/fig_9_2_scalar"><description><p>Scalar multiplication</p>
+        </description></image>
     </figure>
 
     <activity xml:id="A-9-2-5">
@@ -746,8 +754,10 @@
         <figure xml:id="F-9-2-vector-activity1a">
           <caption>Left: Sketch sums. Right: Sketch multiples.</caption>
           <sidebyside widths="50% 50%" margins="0%">
-            <image width="100%" source="images/fig-9-19-activity"/>
-            <image width="100%" source="images/fig-9-19-activity"/>
+            <image width="100%" source="images/fig-9-19-activity"><description><p>Left: Sketch sums. Right: Sketch multiples.</p>
+          </description></image>
+            <image width="100%" source="images/fig-9-19-activity"><description><p>Left: Sketch sums. Right: Sketch multiples.</p>
+          </description></image>
             </sidebyside>
        </figure>
     
@@ -894,8 +904,10 @@
           <figure xml:id="F-9-2-vector-magnitude-a">
            <caption>Left: <m>\overrightarrow{AB}</m>. Right: An arbitrary vector, <m>\vv</m>.</caption>
            <sidebyside widths="50% 50%" margins="0%">
-              <image width="100%" source="images/fig-9-20"/>
-              <image width="100%" source="images/fig-9-21"/>
+              <image width="100%" source="images/fig-9-20"><description><p>Left: <m>\overrightarrow{AB}</m>. Right: An arbitrary vector, <m>\vv</m>.</p>
+           </description></image>
+              <image width="100%" source="images/fig-9-21"><description><p>Left: <m>\overrightarrow{AB}</m>. Right: An arbitrary vector, <m>\vv</m>.</p>
+           </description></image>
               </sidebyside>
             </figure>
       
@@ -1666,7 +1678,8 @@
 
           <figure xml:id="F-9-1-forces">
           <caption>Forces acting on an object.</caption>
-          <image width="50%" source="images/fig_9_2_forces"/>
+          <image width="50%" source="images/fig_9_2_forces"><description><p>Forces acting on an object.</p>
+          </description></image>
           </figure>
           </sidebyside>
 

@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!-- **********************************************************************-->
 <!-- Copyright 2013-2018                                                   -->
 <!-- Steven Schlicker                                                      -->
@@ -51,7 +50,8 @@
 
         <figure xml:id="F_10_6_preview_1">
           <caption>A contour plot of <m>f(x,y) = 30-x^2-\frac12 y^2</m>.</caption>
-          <image width="50%" source="images/fig_10_6_preview_1"/>
+          <image width="50%" source="images/fig_10_6_preview_1"><description><p>A contour plot of <m>f(x,y) = 30-x^2-\frac12 y^2</m>.</p>
+          </description></image>
         </figure>
 
         <ol marker="a.">
@@ -403,7 +403,8 @@
 
         <figure xml:id="F_10_6_activity_1">
           <caption>Contours of <m>f(x,y) = x^2 - y^2</m>.</caption>
-          <image width="50%" source="images/fig_10_6_contours_1"/>
+          <image width="50%" source="images/fig_10_6_contours_1"><description><p>Contours of <m>f(x,y) = x^2 - y^2</m>.</p>
+          </description></image>
         </figure>
 
         <ol marker="a.">
@@ -502,7 +503,7 @@
                 <mrow>\nabla f (0,0) \amp = \langle 0,0 \rangle</mrow>
               </md>.
               A picture of the scaled gradients are shown here.
-              <image width="73%" source="images/fig_10_6_Act_10_contours"/>
+              <image width="73%" source="images/fig_10_6_Act_10_contours"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
             </p>
           </li>
           <li>
@@ -550,7 +551,7 @@
                 <mrow>\nabla f (0,0) \amp = \langle 0,0 \rangle</mrow>
               </md>.
               A picture of the scaled gradients are shown here.
-              <image width="73%" source="images/fig_10_6_Act_10_contours"/>
+              <image width="73%" source="images/fig_10_6_Act_10_contours"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
             </p>
           </li>
           <li>
@@ -606,9 +607,12 @@
     <figure xml:id="F_10_6_gradient_sign">
       <caption>The sign of <m>D_{\vu} f(x_0,y_0)</m> is determined by <m>\theta</m>.</caption>
       <sidebyside widths="33% 33% 33%">
-      <image source="images/fig_10_6_gradient_angle_1"/>
-      <image source="images/fig_10_6_gradient_angle_2"/>
-      <image source="images/fig_10_6_gradient_angle_3"/>
+      <image source="images/fig_10_6_gradient_angle_1"><description><p>The sign of <m>D_{\vu} f(x_0,y_0)</m> is determined by <m>\theta</m>.</p>
+      </description></image>
+      <image source="images/fig_10_6_gradient_angle_2"><description><p>The sign of <m>D_{\vu} f(x_0,y_0)</m> is determined by <m>\theta</m>.</p>
+      </description></image>
+      <image source="images/fig_10_6_gradient_angle_3"><description><p>The sign of <m>D_{\vu} f(x_0,y_0)</m> is determined by <m>\theta</m>.</p>
+      </description></image>
       </sidebyside>
     </figure>
 
@@ -827,7 +831,8 @@
 
                 <figure xml:id="F_10_6_activity_empty">
                   <caption>A plot for the gradient <m>\nabla f(1,2)</m>.</caption>
-                  <image width="50%" source="images/fig_10_6_activity_empty"/>
+                  <image width="50%" source="images/fig_10_6_activity_empty"><description><p>A plot for the gradient <m>\nabla f(1,2)</m>.</p>
+                  </description></image>
                 </figure>
 
               </p>
@@ -921,7 +926,7 @@
               and <m>\nabla f(1,2)</m> is acute,
               so we expect <m>f</m> to be increasing in this direction.
               <m> D_{\vw}f(1,2) = \frac{5}{\sqrt{5}} </m>
-              <image width="73%" source="images/fig_10_6_Act_11_gradient"/>
+              <image width="73%" source="images/fig_10_6_Act_11_gradient"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
             </p>
           </li>
           <li>
@@ -1022,7 +1027,7 @@
               <me>
                 D_{\vw}f(1,2) = \nabla f(1, 2) \dot {\vw} = \langle 3, 1 \rangle \cdot \langle \frac{2}{\sqrt{5}},\frac{-1}{\sqrt{5}} \rangle = \frac{5}{\sqrt{5}}
               </me>.
-              <image width="73%" source="images/fig_10_6_Act_11_gradient"/>
+              <image width="73%" source="images/fig_10_6_Act_11_gradient"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
             </p>
           </li>
           <li>
@@ -1098,7 +1103,7 @@
       missile might work.(This application is borrowed from United
         States Air Force Academy Department of Mathematical Sciences.)
         <!-- Out of date url at
-        <url href="http://www.nku.edu/˜longa/classes/mat320/mathematica/multcalc.htm"><c>http://www.nku.edu/˜longa/classes/mat320/mathematica/multcalc.htm</c></url>.) -->
+        <url href="http://www.nku.edu/&#732;longa/classes/mat320/mathematica/multcalc.htm"><c>http://www.nku.edu/&#732;longa/classes/mat320/mathematica/multcalc.htm</c></url>.) -->
       Suppose that the temperature surrounding a fighter jet can be
       modeled by the function <m>T</m> defined by
       <me>
@@ -1114,8 +1119,10 @@
     <figure xml:id="F_10_6_missile">
       <caption>Contours and gradient for <m>T(x,y)</m> and the missile's path.</caption>
       <sidebyside widths="50% 50%">
-      <image source="images/fig_10_6_missile_grad"/>
-      <image source="images/fig_10_6_missile_path"/>
+      <image source="images/fig_10_6_missile_grad"><description><p>Contours and gradient for <m>T(x,y)</m> and the missile's path.</p>
+      </description></image>
+      <image source="images/fig_10_6_missile_path"><description><p>Contours and gradient for <m>T(x,y)</m> and the missile's path.</p>
+      </description></image>
       </sidebyside>
     </figure>
 
@@ -1638,8 +1645,10 @@
                   <figure xml:id="F_10_6_Grad_ex_1">
                     <caption>Left: Graph of <m>f(x,y) = x^2+3y^2</m>. Right: Contours.</caption>
                     <sidebyside widths="50% 50%">
-                      <image source="images/fig_10_6_exercise_graph"/>
-                      <image source="images/fig_10_6_exercise_contour"/>
+                      <image source="images/fig_10_6_exercise_graph"><description><p>Left: Graph of <m>f(x,y) = x^2+3y^2</m>. Right: Contours.</p>
+                    </description></image>
+                      <image source="images/fig_10_6_exercise_contour"><description><p>Left: Graph of <m>f(x,y) = x^2+3y^2</m>. Right: Contours.</p>
+                    </description></image>
                       </sidebyside>
                   </figure>
                   
@@ -1674,7 +1683,7 @@
                 An illustration of this direction at the point
                 <m>(1,2,f(1,2))</m> is shown in the figure below,
                 with the gradient vector scaled appropriately to make it easier to plot.
-                <image width="73%" source="images/fig_10_6_Ex_surface_gradient"/>
+                <image width="73%" source="images/fig_10_6_Ex_surface_gradient"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
               </p>
             </li>
             <li>
@@ -1683,7 +1692,7 @@
                 The gradient is perpendicular to the level curves,
                 and a picture of the unit vector in the direction of the gradient at <m>(1,2)</m> is shown in the figure below,
                 with the gradient vector scaled appropriately to make it easier to plot.
-                <image width="73%" source="images/fig_10_6_Ex_contour_gradient"/>
+                <image width="73%" source="images/fig_10_6_Ex_contour_gradient"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
               </p>
             </li>
             <li>
@@ -1715,7 +1724,7 @@
                 An illustration of this direction at the point
                 <m>(1,2,f(1,2))</m> is shown in the figure below,
                 with the gradient vector scaled appropriately to make it easier to plot.
-                <image width="73%" source="images/fig_10_6_Ex_surface_gradient"/>
+                <image width="73%" source="images/fig_10_6_Ex_surface_gradient"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
               </p>
             </li>
             <li>
@@ -1724,7 +1733,7 @@
                 The gradient is perpendicular to the level curves,
                 and a picture of the unit vector in the direction of the gradient at <m>(1,2)</m> is shown in the figure below,
                 with the gradient vector scaled appropriately to make it easier to plot.
-                <image width="73%" source="images/fig_10_6_Ex_contour_gradient"/>
+                <image width="73%" source="images/fig_10_6_Ex_contour_gradient"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
               </p>
             </li>
             <li>
@@ -1880,7 +1889,8 @@
 
           <figure xml:id="F_10_6_gradient_field">
             <caption>The gradient <m>\nabla f</m>.</caption>
-            <image width="50%" source="images/fig_10_6_gradient_field"/>
+            <image width="50%" source="images/fig_10_6_gradient_field"><description><p>The gradient <m>\nabla f</m>.</p>
+            </description></image>
           </figure>
 
           <ol marker="a.">
@@ -1907,7 +1917,7 @@
                 Since the gradient at a point is orthogonal to the contour at that point,
                 the contours through the indicated points are drawn orthogonal to the gradients.
                 This is illustrated in the figures below.
-                <image width="73%" source="images/fig_10_6_Ex_4_a_1"/> <image width="73%" source="images/fig_10_6_Ex_4_b_1"/> <image width="73%" source="images/fig_10_6_Ex_4_c_1"/>
+                <image width="73%" source="images/fig_10_6_Ex_4_a_1"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> <image width="73%" source="images/fig_10_6_Ex_4_b_1"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> <image width="73%" source="images/fig_10_6_Ex_4_c_1"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
               </p>
             </li>
             <li>
@@ -1915,7 +1925,7 @@
                 The gradient points in the direction of the greatest increase of the function,
                 so a curve that moves in the direction opposite the gradient is a curve on which <m>f</m> is decreasing.
                 This is illustrated in the figures below.
-                <image width="73%" source="images/fig_10_6_Ex_4_a_2"/> <image width="73%" source="images/fig_10_6_Ex_4_b_2"/> <image width="73%" source="images/fig_10_6_Ex_4_c_2"/>
+                <image width="73%" source="images/fig_10_6_Ex_4_a_2"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> <image width="73%" source="images/fig_10_6_Ex_4_b_2"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> <image width="73%" source="images/fig_10_6_Ex_4_c_2"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
               </p>
             </li>
           </ol>
@@ -1928,7 +1938,7 @@
                 Since the gradient at a point is orthogonal to the contour at that point,
                 the contours through the indicated points are drawn orthogonal to the gradients.
                 This is illustrated in the figures below.
-                <image width="73%" source="images/fig_10_6_Ex_4_a_1"/> <image width="73%" source="images/fig_10_6_Ex_4_b_1"/> <image width="73%" source="images/fig_10_6_Ex_4_c_1"/>
+                <image width="73%" source="images/fig_10_6_Ex_4_a_1"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> <image width="73%" source="images/fig_10_6_Ex_4_b_1"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> <image width="73%" source="images/fig_10_6_Ex_4_c_1"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
               </p>
             </li>
             <li>
@@ -1936,7 +1946,7 @@
                 The gradient points in the direction of the greatest increase of the function,
                 so a curve that moves in the direction opposite the gradient is a curve on which <m>f</m> is decreasing.
                 This is illustrated in the figures below.
-                <image width="73%" source="images/fig_10_6_Ex_4_a_2"/> <image width="73%" source="images/fig_10_6_Ex_4_b_2"/> <image width="73%" source="images/fig_10_6_Ex_4_c_2"/>
+                <image width="73%" source="images/fig_10_6_Ex_4_a_2"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> <image width="73%" source="images/fig_10_6_Ex_4_b_2"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image> <image width="73%" source="images/fig_10_6_Ex_4_c_2"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
               </p>
             </li>
           </ol>

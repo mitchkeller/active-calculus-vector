@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!-- **********************************************************************-->
 <!-- Copyright 2013-2018                                                   -->
 <!-- Steven Schlicker                                                      -->
@@ -52,7 +51,8 @@
 
     <figure xml:id="F_10_7_preview_1">
       <caption>The graph of <m>y=f(x)</m>.</caption>
-      <image width="50%" source="images/fig_10_7_preview_1"/>
+      <image width="50%" source="images/fig_10_7_preview_1"><description><p>The graph of <m>y=f(x)</m>.</p>
+      </description></image>
     </figure>
 
     <p>
@@ -240,8 +240,10 @@
     <figure xml:id="F_10_7_extrema">
       <caption>An absolute maximum and an absolute minimum</caption>
       <sidebyside widths="50% 50%">
-      <image source="images/zis4r2"/>
-      <image source="images/zisr2"/>
+      <image source="images/zis4r2"><description><p>An absolute maximum and an absolute minimum</p>
+      </description></image>
+      <image source="images/zisr2"><description><p>An absolute maximum and an absolute minimum</p>
+      </description></image>
       </sidebyside>
     </figure>
 
@@ -410,7 +412,7 @@
           <li>
             <p>
               Recall that if <m>g(x) = |x|</m>,
-              then <m>g'(x) = \begin{cases}1 \amp \text{ if }  x > 1 \\ -1 \amp \text{ if }  x \lt  1 \end{cases}</m> and <m>g'(0)</m> does not exist.
+              then <m>g'(x) = \begin{cases}1 \amp \text{ if }  x &gt; 1 \\ -1 \amp \text{ if }  x \lt  1 \end{cases}</m> and <m>g'(0)</m> does not exist.
               In this case we will never have <m>\nabla f = \vzero</m>,
               but <m>\nabla f</m> will fail to exist when <m>x=0</m> or <m>y=0</m>.
               This gives us infinitely many critical points <mdash/> all points of the form <m>(0,y)</m> or <m>(x,0)</m>.
@@ -457,8 +459,10 @@
     <figure xml:id="F_10_7_saddle">
       <caption>A saddle point.</caption>
       <sidebyside widths="50% 50%">
-      <image source="images/saddle"/>
-      <image source="images/saddle_contours"/>
+      <image source="images/saddle"><description><p>A saddle point.</p>
+      </description></image>
+      <image source="images/saddle_contours"><description><p>A saddle point.</p>
+      </description></image>
       </sidebyside>
     </figure>
 
@@ -499,9 +503,12 @@
           <figure xml:id="F_10_7_max_min_saddle">
           <caption>Three surfaces.</caption>
           <sidebyside widths="33% 33% 33%">
-          <image source="images/zis4r2"/>
-          <image source="images/zisr2"/>
-          <image source="images/saddle"/>
+          <image source="images/zis4r2"><description><p>Three surfaces.</p>
+          </description></image>
+          <image source="images/zisr2"><description><p>Three surfaces.</p>
+          </description></image>
+          <image source="images/saddle"><description><p>Three surfaces.</p>
+          </description></image>
           </sidebyside>
           </figure>  
 
@@ -874,7 +881,8 @@
 
         <figure xml:id="F_10_7_Optimize1">
           <caption>A revenue function.</caption>
-          <image width="50%" source="images/fig_10_7_revenue"/>
+          <image width="50%" source="images/fig_10_7_revenue"><description><p>A revenue function.</p>
+          </description></image>
         </figure>
 
         <ol marker="a.">
@@ -1048,8 +1056,10 @@
         <figure xml:id="F_10_7_temperature">
           <caption>Domain of the temperature <m>T(x,y) = 2x^2+y^2-y</m> and its graph.</caption>
           <sidebyside widths="50% 50%">
-          <image source="images/fig_10_7_temperature_domain"/>
-          <image source="images/fig_10_7_temperature"/>
+          <image source="images/fig_10_7_temperature_domain"><description><p>Domain of the temperature <m>T(x,y) = 2x^2+y^2-y</m> and its graph.</p>
+          </description></image>
+          <image source="images/fig_10_7_temperature"><description><p>Domain of the temperature <m>T(x,y) = 2x^2+y^2-y</m> and its graph.</p>
+          </description></image>
           </sidebyside>
         </figure>
 
@@ -1207,8 +1217,12 @@
           <caption>The domain of <m>f(x,y) = x^2-3y^2-4x+6y</m> and
                 its graph.</caption>
           <sidebyside widths="50% 50%">
-          <image source="images/fig_10_7_activity_optim_domain"/>
-          <image source="images/fig_10_7_activity_optim"/>
+          <image source="images/fig_10_7_activity_optim_domain"><description><p>The domain of <m>f(x,y) = x^2-3y^2-4x+6y</m> and
+                its graph.</p>
+          </description></image>
+          <image source="images/fig_10_7_activity_optim"><description><p>The domain of <m>f(x,y) = x^2-3y^2-4x+6y</m> and
+                its graph.</p>
+          </description></image>
           </sidebyside>
         </figure>
 
@@ -2969,7 +2983,7 @@
                   <me>
                     S_{mm}(x,y)S_{bb}(x,y) - S_{mb}(x,y)^2 = 2n\left(\sum_{i=1}^n 2x_i^2\right)- \left(\sum_{i=1}^n 2x_i\right)^2 = 2433.44
                   </me>.
-                  Since <m>S_{mm}(m,b) = \sum_{i=1}^n 2x_i^2 > 0</m>,
+                  Since <m>S_{mm}(m,b) = \sum_{i=1}^n 2x_i^2 &gt; 0</m>,
                   it follows that this critical point is a local minimum.
                   Note that the discriminant is a constant, as is <m>S_{mm}(m,b)</m>,
                   so the surface defined by <m>S</m> is always concave up,

@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!-- **********************************************************************-->
 <!-- Copyright 2013-2018                                                   -->
 <!-- Steven Schlicker                                                      -->
@@ -53,7 +52,8 @@
 
             <figure xml:id="F_10_8_preview">
               <caption>Contours of <m>f</m> and the constraint equation <m>g(x,y) = 108</m>.</caption>
-              <image width="50%" source="images/fig_10_8_postal"/>
+              <image width="50%" source="images/fig_10_8_postal"><description><p>Contours of <m>f</m> and the constraint equation <m>g(x,y) = 108</m>.</p>
+              </description></image>
             </figure>
 
           </p>
@@ -157,7 +157,8 @@
 
     <figure xml:id="F_10_8_Lagrange1">
       <caption>Contours of <m>f</m> and the constraint contour.</caption>
-      <image width="50%" source="images/fig_10_8_postal_solution"/>
+      <image width="50%" source="images/fig_10_8_postal_solution"><description><p>Contours of <m>f</m> and the constraint contour.</p>
+      </description></image>
     </figure>
 
     <p>

@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!-- **********************************************************************-->
 <!-- Copyright 2013-2018                                                   -->
 <!-- Steven Schlicker                                                      -->
@@ -108,7 +107,7 @@
             <p>
               The graph of <m>\vr(t)</m> is shown below,
               with the point <m>(-1,0)</m> at <m>t=pi</m> indicated as the solid point on the graph.
-              <image width="73%" source="images/fig_9_7_PA_a"/>
+              <image width="73%" source="images/fig_9_7_PA_a"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
             </p>
           </li>
           <li>
@@ -127,7 +126,7 @@
               This looks like a direction vector for the line tangent to the graph of <m>\vr</m> at the point where <m>t = \pi</m>.
               In other words,
               this vector <m>\vr'(t)</m> is the velocity vector of the object at time <m>t = \pi</m>.
-              <image width="73%" source="images/fig_9_7_PA_b"/>
+              <image width="73%" source="images/fig_9_7_PA_b"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
             </p>
           </li>
         </ol>
@@ -175,7 +174,8 @@
 
       <figure xml:id="F_9_7_VVF_tan_vector">
         <caption>A single difference quotient.</caption>
-        <image width="50%" source="images/fig_9_7_curve_1"/>
+        <image width="50%" source="images/fig_9_7_curve_1"><description><p>A single difference quotient.</p>
+        </description></image>
       </figure>
 
       <ol marker="a.">
@@ -211,9 +211,12 @@
       <figure xml:id="F_9_7_VVF_tan_vector_quotients">
         <caption>Snapshots of several difference quotients.</caption>
         <sidebyside widths="33% 33% 33%" margins="0%">
-        <image source="images/fig_9_7_animate_02"/>
-        <image source="images/fig_9_7_animate_04"/>
-        <image source="images/fig_9_7_animate_06"/>
+        <image source="images/fig_9_7_animate_02"><description><p>Snapshots of several difference quotients.</p>
+        </description></image>
+        <image source="images/fig_9_7_animate_04"><description><p>Snapshots of several difference quotients.</p>
+        </description></image>
+        <image source="images/fig_9_7_animate_06"><description><p>Snapshots of several difference quotients.</p>
+        </description></image>
         </sidebyside>
       </figure>
     </statement>
@@ -492,8 +495,12 @@
         <caption>The curve <m>\vr(t) = \left\langle 2t-\frac12 t^2 + 1,
                 t-1\right\rangle</m> and its speed.</caption>
         <sidebyside widths="50% 50%" margins="0%">
-        <image source="images/fig_9_7_space_curve"/>
-        <image source="images/fig_9_7_speed_graph"/>
+        <image source="images/fig_9_7_space_curve"><description><p>The curve <m>\vr(t) = \left\langle 2t-\frac12 t^2 + 1,
+                t-1\right\rangle</m> and its speed.</p>
+        </description></image>
+        <image source="images/fig_9_7_speed_graph"><description><p>The curve <m>\vr(t) = \left\langle 2t-\frac12 t^2 + 1,
+                t-1\right\rangle</m> and its speed.</p>
+        </description></image>
         </sidebyside>
       </figure>
 
@@ -592,8 +599,8 @@
               </me>.
               The speed of the object is at its least when <m>t=2</m>.
               The speed is increasing on the interval <m>(2,4)</m> and decreasing on the interval <m>(-4,2)</m>.
-              <image width="73%" source="images/9_7_8_a"/>   
-              <image width="73%" source="images/9_7_8_b"/>
+              <image width="73%" source="images/9_7_8_a"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>   
+              <image width="73%" source="images/9_7_8_b"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
             </p>
           </li>
           <li>
@@ -743,7 +750,7 @@
             <p>
               The sketch below shows the curve <m>\vr(t)</m> and a direction vector
               <m>\vr'(\pi)</m> for the tangent line to the curve at <m>t=\pi</m>.
-              <image width="73%" source="images/9_7_Act29_d_sol1"/>
+              <image width="73%" source="images/9_7_Act29_d_sol1"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
             </p>
           </li>
         </ol>
@@ -902,7 +909,8 @@
 
       <figure xml:id="F_9_7_VVD_Example">
         <caption>The position graph for the function in <xref ref="A_9_7_7">Activity</xref>.</caption>
-        <image width="50%" source="images/fig_9_7_activity"/>
+        <image width="50%" source="images/fig_9_7_activity"><description><p>The position graph for the function in <xref ref="A_9_7_7">Activity</xref>.</p>
+        </description></image>
       </figure>
       </statement>
       <solution>
@@ -938,7 +946,7 @@
               The position <m>\vr(1) = (\cos(2)+1) \vi + (2\sin(1)-1) \vj + (1-ln(2)) \vk</m>,
               velocity <m>\vv(1) = (-2\sin(2)) \vi + (2\cos(1)) \vj + \left(\frac{1}{2}\right) \vk</m>,
               and acceleration vector <m>\va(1) = (-4\cos(2)) \vi - (2\sin(1)) \vj + \left(\frac{1}{4}\right) \vk</m> of the object at time <m>t=1</m> are shown below.
-              <image width="73%" source="images/9_7_Act30_c_sol"/>
+              <image width="73%" source="images/9_7_Act30_c_sol"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
             </p>
           </li>
           <li>
@@ -971,7 +979,8 @@
 
     <figure xml:id="F_9_7_Motion">
       <caption>Projectile motion.</caption>
-      <image width="50%" source="images/fig_9_7_projectile"/>
+      <image width="50%" source="images/fig_9_7_projectile"><description><p>Projectile motion.</p>
+      </description></image>
     </figure>
 
     <p>
@@ -1618,7 +1627,8 @@
 
           <figure xml:id="F_9_7_sun">
             <caption>A central force.</caption>
-            <image width="50%" source="images/fig_9_7_sun"/>
+            <image width="50%" source="images/fig_9_7_sun"><description><p>A central force.</p>
+            </description></image>
           </figure>
 
           <ol marker="a.">
