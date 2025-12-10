@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <exercises xmlns:xi="http://www.w3.org/2001/XInclude">
 
       <exercise xml:id="ex-10-5-WW-chain-rule-steps" label="Library__272__setStewart14_5__problem_1.pg">
@@ -309,7 +310,7 @@
               <p>
                 A tree diagram that represents the dependencies among the variables is shown below.
               </p>
-              <image source="images/Ex_13_tree.png"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
+              <image source="images/Ex_13_tree.png"/>
             </li>
             <li>
               <p>
@@ -341,7 +342,7 @@
               <p>
                 A tree diagram that represents the dependencies among the variables is shown below.
               </p>
-              <image source="images/Ex_13_tree.png"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
+              <image source="images/Ex_13_tree.png"/>
             </li>
             <li>
               <p>
@@ -627,8 +628,7 @@
               </ol>
               <figure xml:id="F_10_5_CR_Circuit">
             <caption>Resistors in parallel.</caption>
-              <image width="73%" source="images/fig_10_5_resistors"><description><p>Resistors in parallel.</p>
-              </description></image>
+              <image width="73%" source="images/fig_10_5_resistors"/>
               </figure>
             </sidebyside>
         </statement>

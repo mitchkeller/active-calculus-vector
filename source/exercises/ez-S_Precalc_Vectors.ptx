@@ -1,4 +1,5 @@
-<exercises xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ez_Precalc_Vectors">
+<?xml version="1.0" encoding="UTF-8" ?>
+<exercises xml:id="ez_Precalc_Vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
   <p>
     Note that some of the WebWork problems use the notation of putting vectors in bold font and not using the arrow over the name.
   </p>
@@ -489,8 +490,7 @@
 
         <figure xml:id="F-9-1-forces">
         <caption>Forces acting on an object.</caption>
-        <image width="50%" source="images/fig_9_2_forces"><description><p>Forces acting on an object.</p>
-        </description></image>
+        <image width="50%" source="images/fig_9_2_forces"/>
         </figure>
         </sidebyside>
 

@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <!-- **********************************************************************-->
 <!-- Copyright 2013-2025                                                   -->
 <!-- Nicholas Long, Mitchel Keller, Steven Schlicker                       -->
@@ -12,7 +13,7 @@
 <!-- derivatives for profit.  All trademarks are the registered marks of   -->
 <!-- their respective owners.                                              -->
 <!-- **********************************************************************-->
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="S-11-7-Triple-Integrals">
+<section xml:id="S-11-7-Triple-Integrals" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Triple Integrals</title>
   <objectives>
       <ul>
@@ -53,7 +54,8 @@
     </p>
 
     <worksheet>
-  <exploration workspace="1.5in" xml:id="PA_11_7">
+  <exploration workspace="1.5in"
+ xml:id="PA_11_7">
       <introduction>
         <p>
           Consider a solid piece of granite in the shape of a box <m>B = \{(x,y,z) : 0 \leq x \leq 4, 0 \leq y \leq 6, 0 \leq z \leq 8\}</m>, whose density varies from point to point. Let <m>\delta(x, y, z)</m> represent the mass density of the piece of granite at point <m>(x,y,z)</m> in kilograms per cubic meter (so we are measuring <m>x</m>, <m>y</m>, and <m>z</m> in meters). Our goal is to find the mass of this solid.
@@ -74,8 +76,7 @@
           <figure xml:id="F_11_7_Box_domain">
             <caption>A partitioned three-dimensional domain</caption>
             <interactive title="interactive-F_11_7_Box_domain" platform="sage" width="100%" aspect="1:1">
-              <description><p>A partitioned three-dimensional domain</p>
-            </description><slate surface="sage">
+              <slate surface="sage">
                 var('t,s,x,y,z')
                 from sage.plot.plot3d.shapes import Box
                 xscale=6;yscale=8;zscale=10
@@ -103,13 +104,13 @@
           <p>
             We have <m>x_0=0</m>, <m>x_1=2</m>, and <m>x_2=4</m>; <m>y_0=0</m>, <m>y_1=2</m>, <m>y_2=4</m>, and <m>y_3=6</m>; and <m>z_0=0</m>, <m>z_1=4</m>, and <m>z_2=8</m>. This gives us <m>\Delta x = \frac{4-0}{2} = 2</m>, <m>\Delta y = \frac{6-0}{3} = 2</m>, and <m>\Delta z = \frac{8-0}{2} = 4</m>. These points are labeled in figure below.
           </p>
-          <image width="73%" source="images/fig_11_7_Box_domain_PA_labeled.png"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
+          <image width="73%" source="images/fig_11_7_Box_domain_PA_labeled.png"/>
         </answer>
         <solution>
           <p>
             We have <m>x_0=0</m>, <m>x_1=2</m>, and <m>x_2=4</m>; <m>y_0=0</m>, <m>y_1=2</m>, <m>y_2=4</m>, and <m>y_3=6</m>; and <m>z_0=0</m>, <m>z_1=4</m>, and <m>z_2=8</m>. This gives us <m>\Delta x = \frac{4-0}{2} = 2</m>, <m>\Delta y = \frac{6-0}{3} = 2</m>, and <m>\Delta z = \frac{8-0}{2} = 4</m>. These points are labeled in figure below.
           </p>
-          <image width="73%" source="images/fig_11_7_Box_domain_PA_labeled.png"><description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
+          <image width="73%" source="images/fig_11_7_Box_domain_PA_labeled.png"/>
         </solution>
       </task>
       <task>
@@ -336,8 +337,7 @@
       <figure xml:id="F_11_7_Cone">
         <caption>The region <m>S</m> with a vertical segment highlighted (for fixed <m>x</m> and <m>y</m> values) </caption>
         <interactive title="interactive-F_11_7_Cone" platform="sage" width="100%" aspect="1:1.25">
-          <description><p>The region <m>S</m> with a vertical segment highlighted (for fixed <m>x</m> and <m>y</m> values) </p>
-        </description><slate surface="sage">
+          <slate surface="sage">
           var('t,s,x,y,z')
           @interact
           def tri_int(x0=slider(-3,3,0.1,default=1,label="x="),y0=slider(-3,3,0.1,default=1.5,label="y=")):
@@ -407,8 +407,7 @@
         <figure xml:id="blank44">
           <caption>A grid of <m>[-4,4]\times[-4,4]</m></caption>
           <image width="60%" xml:id="img-blank44">
-            <description><p>A grid of <m>[-4,4]\times[-4,4]</m></p>
-          </description><sageplot>
+            <sageplot>
               plot3=point((0,0),size=3,gridlines=true,xmin=-4,xmax=4,ymin=-4,ymax=4,aspect_ratio=1,axes_labels=["$x$","$y$"])
               plot3                
             </sageplot>
@@ -430,7 +429,7 @@
             plot4=polygon(points,color="lightblue",edgecolor="black",thickness=2,gridlines=true,xmin=-4,xmax=4,ymin=-4,ymax=4,aspect_ratio=1,axes_labels=["$x$","$y$"])
             plot4                
           </sageplot>
-        <description><p>ADD ALT TEXT TO THIS IMAGE</p></description></image>
+        </image>
       </solution>
     </task>
     <task>
@@ -505,8 +504,7 @@
         <figure xml:id="F_11_7_Tetrahedron_ex">
           <caption>The tetrahedron in the first octant bounded by the coordinate planes and the plane <m>x + 2 y + 3 z = 6</m> </caption>
           <interactive title="interactive-F_11_7_Tetrahedron_ex" platform="sage" width="100%" aspect="1:1">
-            <description><p>The tetrahedron in the first octant bounded by the coordinate planes and the plane <m>x + 2 y + 3 z = 6</m> </p>
-          </description><slate surface="sage">
+            <slate surface="sage">
               var('t,s,x,y,z')
               xscale=7;yscale=4;zscale=3
               plot4=arrow((0,0,0),(xscale,0,0),color="black",opacity=0.5,width=2)+text3d("x",(xscale+0.5,0,0),fontsize=30)+text3d("y",(0,yscale+0.5,0),fontsize=30)+text3d("z",(0,0,zscale+0.5),fontsize=30)
@@ -558,8 +556,7 @@
         <figure xml:id="F_11_7_Tetrahedron_ex2">
           <caption>The projection of our tetrahedron to the <m>xy</m>-plane, shown with vertical slices</caption>
           <image width="60%" xml:id="img-F_11_7_Tetrahedron_ex2">
-            <description><p>The projection of our tetrahedron to the <m>xy</m>-plane, shown with vertical slices</p>
-          </description><sageplot>
+            <sageplot>
               plot5=polygon([(0,0),(6,0),(0,3)],color="lightblue",edgecolor="black",thickness=3,ymax=4,ticks=[[0,2,4,6],[0,1,2,3,4]])
               p=[2/3,4/3,2,8/3,10/3,4,14/3,16/3]
               for pv in p:
@@ -707,8 +704,7 @@
         <figure xml:id="F_11_7_COM3D">
           <caption>The solid bounded by the surface <m>z = 2-x^2-y^2</m></caption>
           <interactive title="interactive-F_11_7_COM3D" platform="sage" width="100%" aspect="1:1">
-            <description><p>The solid bounded by the surface <m>z = 2-x^2-y^2</m></p>
-          </description><slate surface="sage">
+            <slate surface="sage">
               var('s,t,x,y,z')
               xscale=2;yscale=2;zscale=2.5
               plot6=arrow((0,0,0),(xscale,0,0),color="black",opacity=0.5,width=1)+text3d("x",(xscale+0.5,0,0),fontsize=30)+text3d("y",(0,yscale+0.5,0),fontsize=30)+text3d("z",(0,0,zscale+0.5),fontsize=30)
@@ -876,5 +872,5 @@
     </ul>
     </subsection>
 
-<xi:include href="exercises/ez-S_multi_ints_triple_ints.ptx"/>
+<xi:include href="exercises/ez-S_multi_ints_triple_ints.ptx" />
 </section>
