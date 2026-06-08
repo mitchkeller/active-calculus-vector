@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__UBC__calculusStewart__lineIntegrals21__pg" assembly-id="Library__UBC__calculusStewart__lineIntegrals21__pg">
+  <static seed="523" source="Library/UBC/calculusStewart/lineIntegrals21.pg">
+    <statement><p>Evaluate the line integral <m>\int_{\mathcal{C}} \mathbf{F} \cdot \,d\ \mathbf{r}</m> where <m>\mathbf{F}=\left\lt  -5 \sin x, -5 \cos y,  xz \right&gt;</m> and <m>\mathcal{C}</m> is the path given by <m>\mathbf{r}(t) = (3 t^3, 3 t^2, -2 t)</m> for <m>0 \le t \le 1</m></p>
+<p><m>\int_{\mathcal{C}} \mathbf{F} \cdot \,d\ \mathbf{r}=</m> <fillin characters="20" name="AnSwEr0001"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>-8.25556</m>
+      </p>
+    </answer>
+    <solution><me>\mathbf{F}(\mathbf{r}(t)) = \left\lt  -5 \sin (3 t^3), -5 \cos (3 t^2), -6 t^4 \right&gt;</me>
+<me>\mathbf{r} '(t) = \left\lt  9 t^2, 6 t, -2 \right &gt;</me>
+<me>\mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r} '(t)
+= \left\lt  -5 \sin (3 t^3), -5 \cos (3 t^2), -6 t^4 \right&gt; \cdot \left\lt  9 t^2, 6 t, -2 \right &gt;</me>
+<me>=-45 t^2 \sin (3 t^3)  - 30 t \cos (3 t^2) + 12 t^4</me>
+
+
+
+The line integral is then:
+<me>\int_{\mathcal{C}} \mathbf{F} \cdot \,d\ \mathbf{r}
+= \int^1_0 \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r} '(t) \ dt
+= \int^1_0 -45 t^2 \sin (3 t^3)  - 30 t \cos (3 t^2) + 12 t^4\ dt</me>
+<me>= \left [ 5 \cos (3 t^3)  - 5 \sin (3 t^2) + \frac{12}{5} t^5 \right ]^1_0</me>
+<me>= 5 \cos (3)  - 5 \sin (3) + \frac{-13}{5}</me>
+
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/UBC/calculusStewart/lineIntegrals21.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/UBC/calculusStewart/lineIntegrals21.pg"/>
+</webwork-reps>

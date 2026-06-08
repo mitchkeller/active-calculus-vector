@@ -1,6 +1,6 @@
-openDate          = 03/04/2026 at 12:00am
-dueDate           = 09/04/2026 at 10:00pm
-answerDate        = 09/04/2026 at 10:00pm
+openDate          = 01/01/2027 at 12:00am
+dueDate           = 12/31/2027 at 10:00pm
+answerDate        = 12/31/2027 at 10:00pm
 paperHeaderFile   = Active_Calculus__Multivariable/header/Active_Calculus__Multivariable_Exercises.pg
 screenHeaderFile  = Active_Calculus__Multivariable/header/Active_Calculus__Multivariable_Exercises.pg
 description       = Active Calculus \- Multivariable
@@ -20,6 +20,46 @@ problem_end
 problem_start
 source_file = Library/UMN/calculusStewartET/s_12_1_10.pg
 problem_id = 4
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors1space3D/UR_VC_1_1.pg
+problem_id = 9
+problem_end
+problem_start
+source_file = Library/272/setStewart12_1/problem_1.pg
+problem_id = 10
+problem_end
+problem_start
+source_file = Library/FortLewis/Calc3/12-1-Two-variable-functions/HGM4-12-1-02-Functions-of-two-variables.pg
+problem_id = 11
+problem_end
+problem_start
+source_file = Library/FortLewis/Calc3/12-1-Two-variable-functions/HGM4-12-1-29-Functions-of-two-variables.pg
+problem_id = 12
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_1_10.pg
+problem_id = 13
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_1_prob01/s_12_1_prob01.pg
+problem_id = 14
+problem_end
+problem_start
+source_file = Library/Michigan/Chap12Sec1/Q11.pg
+problem_id = 15
+problem_end
+problem_start
+source_file = Library/272/setStewart12_1/problem_3a.pg
+problem_id = 16
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors1space3D/UR_VC_1_3.pg
+problem_id = 17
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors1space3D/UR_VC_1_5.pg
+problem_id = 18
 problem_end
 problem_start
 source_file = Library/Michigan/Chap13Sec1/Q11.pg
@@ -70,6 +110,126 @@ source_file = Library/Michigan/Chap13Sec1/Q41.pg
 problem_id = 12
 problem_end
 problem_start
+source_file = Library/UMN/calculusStewartET/s_12_2_prob01/s_12_2_prob01.pg
+problem_id = 17
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/vectors-1.pg
+problem_id = 18
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/vectors-2.pg
+problem_id = 19
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.1_Vectors_in_the_Plane/12.1.23.pg
+problem_id = 20
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.1_Vectors_in_the_Plane/12.1.48.pg
+problem_id = 21
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.2_Vectors_in_Three_Dimensions/12.2.13.pg
+problem_id = 22
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.2_Vectors_in_Three_Dimensions/12.2.19.pg
+problem_id = 23
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.2_Vectors_in_Three_Dimensions/12.2.25.pg
+problem_id = 24
+problem_end
+problem_start
+source_file = Library/272/setStewart12_2/problem_2a.pg
+problem_id = 25
+problem_end
+problem_start
+source_file = Library/272/setStewart12_2/problem_3.pg
+problem_id = 26
+problem_end
+problem_start
+source_file = Library/272/setStewart12_2/problem_3a.pg
+problem_id = 27
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/vectors-5a.pg
+problem_id = 28
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/vectors-5b.pg
+problem_id = 29
+problem_end
+problem_start
+source_file = Contrib/BentleyUniversity/MathematicsOfComputerGraphics/setMoCG-Ch4/4-4-UnitVectorOfIntegers3D.pg
+problem_id = 30
+problem_end
+problem_start
+source_file = Contrib/CCCS/PreCalculus/10.8/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_10_8_39.pg
+problem_id = 31
+problem_end
+problem_start
+source_file = Contrib/CCCS/PreCalculus/10.8/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_10_8_43.pg
+problem_id = 32
+problem_end
+problem_start
+source_file = Contrib/CCCS/PreCalculus/10.8/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_10_8_41.pg
+problem_id = 33
+problem_end
+problem_start
+source_file = Contrib/CCCS/Trigonometry/10.8/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_10_8_39.pg
+problem_id = 34
+problem_end
+problem_start
+source_file = Contrib/CCCS/Trigonometry/10.8/RRCC_CCCS_Openstax_AlgTrig_AT-1-001-AS_10_8_41.pg
+problem_id = 35
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/vectors-3a.pg
+problem_id = 36
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/vectors-3b.pg
+problem_id = 37
+problem_end
+problem_start
+source_file = Library/BentleyUniversity/MathematicsOfComputerGraphics/setMoCG-Ch2/2-17-SameUnitVectorButNotParallel2D.pg
+problem_id = 38
+problem_end
+problem_start
+source_file = Library/FortLewis/Calc3/13-1-Displacement-vectors/HGM4-13-1-21-Displacement-vectors.pg
+problem_id = 39
+problem_end
+problem_start
+source_file = Library/FortLewis/Calc3/13-1-Displacement-vectors/HGM4-13-1-30-Displacement-vectors/HGM4-13-1-30-Displacement-vectors.pg
+problem_id = 40
+problem_end
+problem_start
+source_file = Library/Michigan/Chap13Sec3/Q48.pg
+problem_id = 41
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors1space3D/UR_VC_1_5.pg
+problem_id = 42
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/an12_2_17.pg
+problem_id = 43
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/an12_2_19.pg
+problem_id = 44
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/an12_2_27.pg
+problem_id = 45
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/an12_2_31.pg
+problem_id = 46
+problem_end
+problem_start
 source_file = Library/272/setStewart12_4/problem_6a.pg
 problem_id = 1
 problem_end
@@ -108,6 +268,118 @@ problem_end
 problem_start
 source_file = Library/Dartmouth/setStewartCh13S3/problem_6.pg
 problem_id = 10
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/vectors-6.pg
+problem_id = 18
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_3_8.pg
+problem_id = 19
+problem_end
+problem_start
+source_file = Library/272/setStewart12_3/problem_1.pg
+problem_id = 20
+problem_end
+problem_start
+source_file = Library/272/setStewart12_3/problem_4a.pg
+problem_id = 21
+problem_end
+problem_start
+source_file = Library/AlfredUniv/anton8e/chapter12/12.3/inclined_plane.pg
+problem_id = 22
+problem_end
+problem_start
+source_file = Library/AlfredUniv/anton8e/chapter12/12.3/work2.pg
+problem_id = 23
+problem_end
+problem_start
+source_file = Library/272/setStewart12_3/problem_5a.pg
+problem_id = 24
+problem_end
+problem_start
+source_file = Library/272/setStewart12_3/problem_6.pg
+problem_id = 25
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/vectors-8.pg
+problem_id = 26
+problem_end
+problem_start
+source_file = Library/Michigan/Chap13Sec3/Q05.pg
+problem_id = 27
+problem_end
+problem_start
+source_file = Library/Michigan/Chap13Sec3/Q25.pg
+problem_id = 28
+problem_end
+problem_start
+source_file = Library/Michigan/Chap13Sec3/Q29.pg
+problem_id = 29
+problem_end
+problem_start
+source_file = Library/Michigan/Chap13Sec3/Q31.pg
+problem_id = 30
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_3_16.pg
+problem_id = 31
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_3_20.pg
+problem_id = 32
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_3_22.pg
+problem_id = 33
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_3_24.pg
+problem_id = 34
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_3_36.pg
+problem_id = 35
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_3_38.pg
+problem_id = 36
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/an12_3_22.pg
+problem_id = 37
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/an12_3_23a.pg
+problem_id = 38
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/an12_3_23b.pg
+problem_id = 39
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/an12_3_25/an12_3_25a.pg
+problem_id = 40
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/an12_3_25/an12_3_25b.pg
+problem_id = 41
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/an12_3_25/an12_3_25c.pg
+problem_id = 42
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/vectors-11b.pg
+problem_id = 43
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/vectors-13.pg
+problem_id = 44
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.3_Dot_Product_and_the_Angle_Between_Two_Vectors/12.3.72.pg
+problem_id = 45
 problem_end
 problem_start
 source_file = Library/Rochester/setVectors3CrossProduct/ur_vc_2_3.pg
@@ -150,6 +422,78 @@ source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_7.pg
 problem_id = 10
 problem_end
 problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.4_The_Cross_Product/12.4.23.pg
+problem_id = 17
+problem_end
+problem_start
+source_file = Library/272/setStewart12_4/problem_1.pg
+problem_id = 18
+problem_end
+problem_start
+source_file = Library/272/setStewart12_4/problem_1a.pg
+problem_id = 19
+problem_end
+problem_start
+source_file = Library/272/setStewart12_4/problem_2.pg
+problem_id = 20
+problem_end
+problem_start
+source_file = Library/272/setStewart12_4/problem_4.pg
+problem_id = 21
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_4_2.pg
+problem_id = 22
+problem_end
+problem_start
+source_file = Library/JFreeman/Vectors/Cross_Product2.pg
+problem_id = 23
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_4_4.pg
+problem_id = 24
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_4_23.pg
+problem_id = 25
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_4_24.pg
+problem_id = 26
+problem_end
+problem_start
+source_file = Library/maCalcDB/setVectors4PlanesLines/ur_vc_2_7.pg
+problem_id = 27
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors3CrossProduct/ur_vc_2_1.pg
+problem_id = 28
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors3CrossProduct/ur_vc_2_2.pg
+problem_id = 29
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors3CrossProduct/ur_vc_2_5.pg
+problem_id = 30
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_4_prob01.pg
+problem_id = 31
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.4_The_Cross_Product/12.4.9.pg
+problem_id = 32
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.4_The_Cross_Product/12.4.20.pg
+problem_id = 33
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.4_The_Cross_Product/12.4.5.pg
+problem_id = 34
+problem_end
+problem_start
 source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_10.pg
 problem_id = 1
 problem_end
@@ -166,40 +510,696 @@ source_file = Library/Dartmouth/setStewartCh13S5/problem_14.pg
 problem_id = 4
 problem_end
 problem_start
-source_file = Library/272/setStewart12_5/problem_13.pg
+source_file = Contrib/DouglasCollege/Physics/Statics/OER-Mechanics-S-2-8_ForceVectorDirectedAlongLines/21-S-2-8-AG-054.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_3.pg
+problem_id = 6
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_5.pg
+problem_id = 7
+problem_end
+problem_start
+source_file = Library/AlfredUniv/anton8e/chapter12/12.5/parametriclinewithtimes.pg
+problem_id = 8
+problem_end
+problem_start
+source_file = Library/AlfredUniv/anton8e/chapter12/12.5/prob3fix.pg
+problem_id = 9
+problem_end
+problem_start
+source_file = Library/Michigan/Chap17Sec1/Q41.pg
+problem_id = 10
+problem_end
+problem_start
+source_file = Library/Michigan/Chap17Sec1/Q63.pg
+problem_id = 11
+problem_end
+problem_start
+source_file = Library/OSU/accelerated_calculus_and_analytic_geometry_ii/hmwk7/prob12.pg
+problem_id = 12
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_prob05.pg
+problem_id = 13
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.2_Vectors_in_Three_Dimensions/12.2.53.pg
+problem_id = 14
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.2_Vectors_in_Three_Dimensions/12.2.29.pg
+problem_id = 15
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.2_Vectors_in_Three_Dimensions/12.2.35.pg
+problem_id = 16
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.2_Vectors_in_Three_Dimensions/12.2.37.pg
+problem_id = 17
+problem_end
+problem_start
+source_file = Library/Michigan/Chap17Sec1/Q02.pg
+problem_id = 18
+problem_end
+problem_start
+source_file = Library/Michigan/Chap17Sec1/Q09.pg
+problem_id = 19
+problem_end
+problem_start
+source_file = Library/Michigan/Chap17Sec1/Q57.pg
+problem_id = 20
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_1_9.pg
+problem_id = 21
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_2.pg
+problem_id = 22
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_prob01.pg
+problem_id = 23
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_prob04.pg
+problem_id = 24
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/an12_3_25/an12_3_25c.pg
+problem_id = 25
+problem_end
+problem_start
+source_file = Library/Union/setMVlinesplanes/an12_5_19.pg
+problem_id = 29
+problem_end
+problem_start
+source_file = Library/Union/setMVlinesplanes/lines-3.pg
+problem_id = 30
+problem_end
+problem_start
+source_file = Library/Union/setMVlinesplanes/an12_5_17.pg
+problem_id = 31
+problem_end
+problem_start
+source_file = Library/Union/setMVlinesplanes/an12_5_17a.pg
+problem_id = 32
+problem_end
+problem_start
+source_file = Library/ASU-topics/setCalculus/stef12_5p1.pg
+problem_id = 33
+problem_end
+problem_start
+source_file = Library/AlfredUniv/anton8e/chapter12/12.5/parametricline.pg
+problem_id = 34
+problem_end
+problem_start
+source_file = Library/AlfredUniv/anton8e/chapter12/12.5/prob3.pg
+problem_id = 35
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_4.pg
+problem_id = 36
+problem_end
+problem_start
+source_file = Library/JFreeman/Vectors/Lines1.pg
+problem_id = 37
+problem_end
+problem_start
+source_file = Library/maCalcDB/setParametric1Curves/ur_pa_1_2.pg
+problem_id = 38
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_9a.pg
+problem_id = 39
+problem_end
+problem_start
+source_file = Library/ASU-topics/setCalculus/stef12_5p3.pg
+problem_id = 40
+problem_end
+problem_start
+source_file = Library/Dartmouth/setStewartCh13S5/problem_8.pg
+problem_id = 41
+problem_end
+problem_start
+source_file = Library/Dartmouth/setStewartCh13S5/problem_9.pg
+problem_id = 42
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_14.pg
+problem_id = 43
+problem_end
+problem_start
+source_file = Library/ASU-topics/setCalculus/stef12_5p4.pg
+problem_id = 44
+problem_end
+problem_start
+source_file = Library/Union/setMVlinesplanes/lines-5.pg
+problem_id = 45
+problem_end
+problem_start
+source_file = Library/ASU-topics/setCalculus/stef12_5p2.pg
+problem_id = 46
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_8.pg
+problem_id = 47
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_11.pg
+problem_id = 48
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_42.pg
 problem_id = 1
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_32.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_23.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_24.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_13.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_28.pg
+problem_id = 6
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_3_5.pg
+problem_id = 7
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_26.pg
+problem_id = 8
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_14.pg
+problem_id = 9
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_34.pg
+problem_id = 10
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_12.pg
+problem_id = 14
+problem_end
+problem_start
+source_file = Library/Michigan/Chap12Sec4/Q11.pg
+problem_id = 15
+problem_end
+problem_start
+source_file = Library/Michigan/Chap17Sec1/Q47.pg
+problem_id = 16
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_6.pg
+problem_id = 17
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_12.pg
+problem_id = 18
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_51.pg
+problem_id = 19
 problem_end
 problem_start
 source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_18.pg
+problem_id = 20
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_50.pg
+problem_id = 21
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_prob02.pg
+problem_id = 22
+problem_end
+problem_start
+source_file = Library/Union/setMVlinesplanes/an12_6_3.pg
+problem_id = 24
+problem_end
+problem_start
+source_file = Library/Union/setMVlinesplanes/an12_6_11.pg
+problem_id = 25
+problem_end
+problem_start
+source_file = Library/Michigan/Chap13Sec3/Q17.pg
+problem_id = 26
+problem_end
+problem_start
+source_file = Library/UBC/calculusStewart/surfaceIntegrals28.pg
+problem_id = 27
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/vectors-11a.pg
+problem_id = 28
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_6.pg
+problem_id = 29
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors1space3D/UR_VC_1_2.pg
+problem_id = 30
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_12.pg
+problem_id = 31
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_5_5.pg
+problem_id = 32
+problem_end
+problem_start
+source_file = Library/Union/setMVvectors/vectors-14.pg
+problem_id = 33
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_1.pg
+problem_id = 34
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_10.pg
+problem_id = 35
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_11.pg
+problem_id = 36
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_12.pg
+problem_id = 37
+problem_end
+problem_start
+source_file = Library/Dartmouth/setStewartCh13S5/problem_10.pg
+problem_id = 38
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_14.pg
+problem_id = 39
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_17.pg
+problem_id = 40
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_13.pg
+problem_id = 41
+problem_end
+problem_start
+source_file = Library/Michigan/Chap13Sec3/Q39.pg
+problem_id = 42
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_9.pg
+problem_id = 43
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_15.pg
+problem_id = 44
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_16.pg
+problem_id = 45
+problem_end
+problem_start
+source_file = Library/Dartmouth/setStewartCh13S5/problem_15.pg
+problem_id = 46
+problem_end
+problem_start
+source_file = Library/Union/setMVlinesplanes/an12_6_24.pg
+problem_id = 47
+problem_end
+problem_start
+source_file = Library/maCalcDB/setVectors4PlanesLines/ur_vc_2_12.pg
+problem_id = 48
+problem_end
+problem_start
+source_file = Library/Union/setMVlinesplanes/an12_6_17.pg
+problem_id = 49
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.5_Planes_in_Three-Space/12.5.34.pg
+problem_id = 50
+problem_end
+problem_start
+source_file = Library/272/setStewart12_5/problem_17.pg
+problem_id = 51
+problem_end
+problem_start
+source_file = Library/Union/setMVlinesplanes/an12_6_27.pg
+problem_id = 52
+problem_end
+problem_start
+source_file = Library/Union/setMVlinesplanes/an12_6_15.pg
+problem_id = 53
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_8.pg
+problem_id = 54
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.5_Planes_in_Three-Space/12.5.3.pg
+problem_id = 55
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.5_Planes_in_Three-Space/12.5.13.pg
+problem_id = 56
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.5_Planes_in_Three-Space/12.5.19.pg
+problem_id = 57
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.5_Planes_in_Three-Space/12.5.21.pg
+problem_id = 58
+problem_end
+problem_start
+source_file = Library/FortLewis/Calc3/12-2-Multivariable-graphs/HGM4-12-2-03-Multivariable-functions-graphs.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Contrib/METU-NCC/MAT120/Chap12/5_surfaces.pg
 problem_id = 2
 problem_end
 problem_start
-source_file = Library/Michigan/Chap12Sec4/Q19.pg
+source_file = Library/Hope/Multi2/09-04-Quadric-surfaces/09-04-Quadric-surfaces-01a.pg
 problem_id = 3
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.6_A_Survey_of_Quadric_Surfaces/12.6.17.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/FortLewis/Calc3/12-5-Three-variable-functions/HGM4-12-5-15-Functions-of-three-variables.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/maCalcDB/setVectors4PlanesLines/ur_vc_2_21.pg
+problem_id = 6
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_6_21/s_12_6_21.pg
+problem_id = 7
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_6_25/s_12_6_25.pg
+problem_id = 8
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.6_A_Survey_of_Quadric_Surfaces/12.6.31.pg
+problem_id = 9
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.6_A_Survey_of_Quadric_Surfaces/12.6.33.pg
+problem_id = 10
+problem_end
+problem_start
+source_file = Library/Dartmouth/setStewartCh13S1/problem_3.pg
+problem_id = 11
+problem_end
+problem_start
+source_file = Library/Hope/Multi2/09-04-Quadric-surfaces/09-04-Quadric-surfaces-06.pg
+problem_id = 14
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_1_prob01/s_12_1_prob01.pg
+problem_id = 15
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_6_11.pg
+problem_id = 16
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_6_16.pg
+problem_id = 17
+problem_end
+problem_start
+source_file = Library/UMN/calculusStewartET/s_12_6_29.pg
+problem_id = 18
 problem_end
 problem_start
 source_file = Library/FortLewis/Calc3/12-1-Two-variable-functions/HGM4-12-1-28-Functions-of-two-variables.pg
+problem_id = 19
+problem_end
+problem_start
+source_file = Library/Hope/Multi2/09-04-Quadric-surfaces/09-04-Quadric-surfaces-01b.pg
+problem_id = 21
+problem_end
+problem_start
+source_file = Library/Hope/Multi2/09-04-Quadric-surfaces/09-04-Quadric-surfaces-01c.pg
+problem_id = 22
+problem_end
+problem_start
+source_file = Library/Hope/Multi2/09-04-Quadric-surfaces/09-04-Quadric-surfaces-01d.pg
+problem_id = 23
+problem_end
+problem_start
+source_file = Library/Hope/Multi2/09-04-Quadric-surfaces/09-04-Quadric-surfaces-01e.pg
+problem_id = 24
+problem_end
+problem_start
+source_file = Library/Hope/Multi2/09-04-Quadric-surfaces/09-04-Quadric-surfaces-01f.pg
+problem_id = 25
+problem_end
+problem_start
+source_file = Library/Hope/Multi2/09-04-Quadric-surfaces/09-04-Quadric-surfaces-01g.pg
+problem_id = 26
+problem_end
+problem_start
+source_file = Library/ASU-topics/setCalculus/stef/stef12_6p1/stef12_6p1.pg
+problem_id = 27
+problem_end
+problem_start
+source_file = Library/Hope/Multi2/09-04-Quadric-surfaces/09-04-Quadric-surfaces-05.pg
+problem_id = 28
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_21.pg
+problem_id = 29
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors4PlanesLines/ur_vc_2_21a.pg
+problem_id = 30
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.6_A_Survey_of_Quadric_Surfaces/12.6.1.pg
+problem_id = 31
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.6_A_Survey_of_Quadric_Surfaces/12.6.5.pg
+problem_id = 32
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.6_A_Survey_of_Quadric_Surfaces/12.6.9.pg
+problem_id = 33
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.6_A_Survey_of_Quadric_Surfaces/12.6.13.pg
+problem_id = 34
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.6_A_Survey_of_Quadric_Surfaces/12.6.15.pg
+problem_id = 35
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.6_A_Survey_of_Quadric_Surfaces/12.6.21.pg
+problem_id = 36
+problem_end
+problem_start
+source_file = Library/ma123DB/set9/s10_4_3.pg
 problem_id = 1
 problem_end
 problem_start
-source_file = Library/FortLewis/Calc3/12-2-Multivariable-graphs/HGM4-12-2-11-Multivariable-functions-graphs.pg
+source_file = Library/UCSB/Stewart5_10_3/Stewart5_10_3_6.pg
 problem_id = 2
 problem_end
 problem_start
-source_file = Library/Dartmouth/setMTWCh1S6/urvc_3_1a.pg
-problem_id = 1
-problem_end
-problem_start
-source_file = Library/Rochester/setVectors5Coordinates/urvc_3_4.pg
-problem_id = 2
-problem_end
-problem_start
-source_file = Library/Rochester/setVectors5Coordinates/urvc_3_6.pg
+source_file = Library/UCSB/Stewart5_10_3/Stewart5_10_3_1.pg
 problem_id = 3
 problem_end
 problem_start
-source_file = Library/Michigan/Chap16Sec5/Q03.pg
+source_file = Library/ma123DB/set9/s10_4_1.pg
 problem_id = 4
+problem_end
+problem_start
+source_file = Library/ma123DB/set9/s10_4_16.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/UCSB/Stewart5_10_3/Stewart5_10_3_23.pg
+problem_id = 6
+problem_end
+problem_start
+source_file = Library/ma123DB/set9/s10_4_15.pg
+problem_id = 7
+problem_end
+problem_start
+source_file = Library/Dartmouth/setMTWCh1S6/urvc_3_1a.pg
+problem_id = 8
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors5Coordinates/urvc_3_4.pg
+problem_id = 9
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors5Coordinates/urvc_3_6.pg
+problem_id = 10
+problem_end
+problem_start
+source_file = Library/Michigan/Chap16Sec5/Q03.pg
+problem_id = 11
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.3_Polar_Coordinates/11.3.3.pg
+problem_id = 13
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.3_Polar_Coordinates/11.3.5.pg
+problem_id = 14
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.3_Polar_Coordinates/11.3.8.pg
+problem_id = 15
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.3_Polar_Coordinates/11.3.10.pg
+problem_id = 16
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.3_Polar_Coordinates/11.3.12.pg
+problem_id = 17
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.7_Cylindrical_and_Spherical_Coordinates/12.7.2.pg
+problem_id = 18
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.7_Cylindrical_and_Spherical_Coordinates/12.7.7.pg
+problem_id = 19
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.7_Cylindrical_and_Spherical_Coordinates/12.7.32.pg
+problem_id = 20
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.7_Cylindrical_and_Spherical_Coordinates/12.7.38.pg
+problem_id = 21
+problem_end
+problem_start
+source_file = Library/Utah/Calculus_II/set12_Conics_and_Polar_Coordinates/set12_pr7.pg
+problem_id = 22
+problem_end
+problem_start
+source_file = Library/Michigan/Chap16Sec5/Q05.pg
+problem_id = 23
+problem_end
+problem_start
+source_file = Library/Rochester/setPolarCoord1Points/evaSet4_3new.pg
+problem_id = 24
+problem_end
+problem_start
+source_file = Library/Rochester/setPolarCoord1Points/nsAP_G1_1.pg
+problem_id = 25
+problem_end
+problem_start
+source_file = Library/Rochester/setPolarCoord1Points/nsAP_G1_4.pg
+problem_id = 26
+problem_end
+problem_start
+source_file = Library/maCalcDB/setPolarCoord2Curves/ur_pc_2_3.pg
+problem_id = 27
+problem_end
+problem_start
+source_file = Library/maCalcDB/setPolarCoord2Curves/ur_pc_2_8.pg
+problem_id = 28
+problem_end
+problem_start
+source_file = Library/FortLewis/Calc2/8-3-Polar/HGM5-08-03-17.pg
+problem_id = 29
+problem_end
+problem_start
+source_file = Library/FortLewis/Calc2/8-3-Polar/HGM5-08-03-19.pg
+problem_id = 30
+problem_end
+problem_start
+source_file = Library/FortLewis/Calc2/8-3-Polar/polar-regions.pg
+problem_id = 31
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors5Coordinates/urvc_3_5.pg
+problem_id = 32
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors5Coordinates/urvc_3_2.pg
+problem_id = 33
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors5Coordinates/urvc_3_3.pg
+problem_id = 34
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors5Coordinates/urvc_3_1.pg
+problem_id = 35
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors5Coordinates/urvc_3_1a.pg
+problem_id = 36
+problem_end
+problem_start
+source_file = Library/maCalcDB/setVectors5Coordinates/urvc_3_7.pg
+problem_id = 37
+problem_end
+problem_start
+source_file = Library/Michigan/Chap17Sec5/Q29.pg
+problem_id = 38
+problem_end
+problem_start
+source_file = Contrib/UBC/MECH/MECH2/set220SelfTest-Coordinates/Coordinates1.pg
+problem_id = 39
+problem_end
+problem_start
+source_file = Contrib/UBC/MECH/MECH2/set220SelfTest-Coordinates/Coordinates2.pg
+problem_id = 40
+problem_end
+problem_start
+source_file = Contrib/UBC/MECH/MECH2/set220SelfTest-Coordinates/Coordinates3.pg
+problem_id = 41
+problem_end
+problem_start
+source_file = Library/272/setStewart12_7/problem_3.pg
+problem_id = 42
+problem_end
+problem_start
+source_file = Library/272/setStewart12_7/problem_4.pg
+problem_id = 43
+problem_end
+problem_start
+source_file = Library/ASU-topics/setCalculus/stef12_7p1.pg
+problem_id = 44
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/12_Vector_Geometry/12.7_Cylindrical_and_Spherical_Coordinates/12.7.71.pg
+problem_id = 45
+problem_end
+problem_start
+source_file = Library/Rochester/setVectors5Coordinates/urvc_3_7.pg
+problem_id = 46
 problem_end
 problem_start
 source_file = Library/Dartmouth/setStewartCh14S1/problem_1.pg
@@ -350,28 +1350,40 @@ source_file = Library/272/setStewart12_1/problem_3.pg
 problem_id = 5
 problem_end
 problem_start
-source_file = Library/FortLewis/Calc3/12-1-Two-variable-functions/HGM4-12-1-22-Functions-of-two-variables.pg
+source_file = Library/FortLewis/Calc3/12-2-Multivariable-graphs/HGM4-12-2-11-Multivariable-functions-graphs.pg
 problem_id = 6
 problem_end
 problem_start
-source_file = Library/Michigan/Chap12Sec4/Q15.pg
+source_file = Library/FortLewis/Calc3/12-2-Multivariable-graphs/HGM4-12-2-22-Multivariable-functions-graphs.pg
 problem_id = 7
 problem_end
 problem_start
-source_file = Library/FortLewis/Calc3/12-2-Multivariable-graphs/HGM4-12-2-16-Multivariable-functions-graphs.pg
+source_file = Library/Michigan/Chap12Sec2/Q05.pg
 problem_id = 8
 problem_end
 problem_start
-source_file = Library/FortLewis/Calc3/12-3-Contour-diagrams/HGM4-12-3-24-Contour-diagrams.pg
+source_file = Library/FortLewis/Calc3/12-1-Two-variable-functions/HGM4-12-1-22-Functions-of-two-variables.pg
 problem_id = 9
 problem_end
 problem_start
-source_file = Library/Michigan/Chap12Sec2/Q12.pg
+source_file = Library/Michigan/Chap12Sec4/Q15.pg
 problem_id = 10
 problem_end
 problem_start
-source_file = Library/Michigan/Chap12Sec2/Q23.pg
+source_file = Library/FortLewis/Calc3/12-2-Multivariable-graphs/HGM4-12-2-16-Multivariable-functions-graphs.pg
 problem_id = 11
+problem_end
+problem_start
+source_file = Library/FortLewis/Calc3/12-3-Contour-diagrams/HGM4-12-3-24-Contour-diagrams.pg
+problem_id = 12
+problem_end
+problem_start
+source_file = Library/Michigan/Chap12Sec2/Q12.pg
+problem_id = 13
+problem_end
+problem_start
+source_file = Library/Michigan/Chap12Sec2/Q23.pg
+problem_id = 14
 problem_end
 problem_start
 source_file = Library/272/setStewart14_2/UR_VC_5_4.pg
@@ -502,7 +1514,7 @@ source_file = Library/maCalcDB/setVmultivariable4Linearization/ur_vc_6_2.pg
 problem_id = 2
 problem_end
 problem_start
-source_file = Active_Calculus__Multivariable/11_5_6_3.pg
+source_file = Active_Calculus__Multivariable/11_5_5_3.pg
 problem_id = 3
 problem_end
 problem_start
@@ -514,20 +1526,24 @@ source_file = Library/Michigan/Chap12Sec4/Q13.pg
 problem_id = 5
 problem_end
 problem_start
-source_file = Library/272/setStewart14_4/problem_5.pg
+source_file = Library/Michigan/Chap12Sec4/Q19.pg
 problem_id = 6
 problem_end
 problem_start
-source_file = Library/maCalcDB/setVmultivariable4Linearization/ur_vc_6_5.pg
+source_file = Library/272/setStewart14_4/problem_5.pg
 problem_id = 7
 problem_end
 problem_start
-source_file = Library/FortLewis/Calc3/14-3-Local-linearity/HGM4-14-3-24-Local-linearity-differential.pg
+source_file = Library/maCalcDB/setVmultivariable4Linearization/ur_vc_6_5.pg
 problem_id = 8
 problem_end
 problem_start
-source_file = Library/FortLewis/Calc3/14-3-Local-linearity/HGM4-14-3-18-Local-linearity-differential.pg
+source_file = Library/FortLewis/Calc3/14-3-Local-linearity/HGM4-14-3-24-Local-linearity-differential.pg
 problem_id = 9
+problem_end
+problem_start
+source_file = Library/FortLewis/Calc3/14-3-Local-linearity/HGM4-14-3-18-Local-linearity-differential.pg
+problem_id = 10
 problem_end
 problem_start
 source_file = Library/272/setStewart14_5/problem_1.pg
@@ -570,44 +1586,24 @@ source_file = Library/maCalcDB/setVmultivariable5ChainRule/ur_vc_6_8.pg
 problem_id = 10
 problem_end
 problem_start
-source_file = Library/272/setStewart14_6/problem_4.pg
+source_file = Library/maCalcDB/setVmultivariable6Gradient/ur_vc_6_11.pg
 problem_id = 1
 problem_end
 problem_start
-source_file = Library/maCalcDB/setVmultivariable6Gradient/ur_vc_6_11.pg
+source_file = Library/FortLewis/Calc3/14-4-Gradients-in-plane/HGM4-14-4-66-Gradients-etc.pg
 problem_id = 2
 problem_end
 problem_start
-source_file = Library/FortLewis/Calc3/14-5-Gradients-in-space/HGM4-14-5-16-Gradients-etc.pg
+source_file = Library/FortLewis/Calc3/14-4-Gradients-in-plane/HGM4-14-4-67-Gradients-etc.pg
 problem_id = 3
 problem_end
 problem_start
-source_file = Library/FortLewis/Calc3/14-4-Gradients-in-plane/HGM4-14-4-66-Gradients-etc.pg
+source_file = Library/Dartmouth/setStewartCh15S6/problem_11.pg
 problem_id = 4
 problem_end
 problem_start
-source_file = Library/Dartmouth/setStewartCh15S6/problem_10.pg
-problem_id = 5
-problem_end
-problem_start
-source_file = Library/FortLewis/Calc3/14-5-Gradients-in-space/HGM4-14-5-09-Gradients-etc.pg
-problem_id = 6
-problem_end
-problem_start
-source_file = Library/Michigan/Chap14Sec5/Q53.pg
-problem_id = 7
-problem_end
-problem_start
-source_file = Library/FortLewis/Calc3/14-4-Gradients-in-plane/HGM4-14-4-67-Gradients-etc.pg
-problem_id = 8
-problem_end
-problem_start
-source_file = Library/Dartmouth/setStewartCh15S6/problem_11.pg
-problem_id = 9
-problem_end
-problem_start
 source_file = Library/FortLewis/Calc3/14-5-Gradients-in-space/HGM4-14-CYU-01-Gradients-etc.pg
-problem_id = 10
+problem_id = 5
 problem_end
 problem_start
 source_file = Library/maCalcDB/setVmultivariable3ParDer/UR_VC_5_11.pg
@@ -616,6 +1612,26 @@ problem_end
 problem_start
 source_file = Library/Michigan/Chap14Sec1/Q05.pg
 problem_id = 2
+problem_end
+problem_start
+source_file = Library/Michigan/Chap14Sec5/Q53.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/FortLewis/Calc3/14-5-Gradients-in-space/HGM4-14-5-09-Gradients-etc.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/272/setStewart14_6/problem_4.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/FortLewis/Calc3/14-5-Gradients-in-space/HGM4-14-5-16-Gradients-etc.pg
+problem_id = 6
+problem_end
+problem_start
+source_file = Library/Dartmouth/setStewartCh15S6/problem_10.pg
+problem_id = 7
 problem_end
 problem_start
 source_file = Library/Michigan/Chap15Sec1/Q05.pg
@@ -878,68 +1894,40 @@ source_file = Library/Michigan/Chap16Sec6/Q15.pg
 problem_id = 10
 problem_end
 problem_start
-source_file = Library/ma123DB/set9/s10_4_3.pg
+source_file = Library/Michigan/Chap16Sec4/Q21.pg
 problem_id = 1
 problem_end
 problem_start
-source_file = Library/UCSB/Stewart5_10_3/Stewart5_10_3_6.pg
+source_file = Library/Michigan/Chap16Sec4/Q07.pg
 problem_id = 2
 problem_end
 problem_start
-source_file = Library/UCSB/Stewart5_10_3/Stewart5_10_3_1.pg
+source_file = Library/272/setStewart15_4/problem_1.pg
 problem_id = 3
 problem_end
 problem_start
-source_file = Library/ma123DB/set9/s10_4_1.pg
+source_file = Library/Rochester/setVMultIntegrals2Polar/UR_VC_9_2.pg
 problem_id = 4
 problem_end
 problem_start
-source_file = Library/ma123DB/set9/s10_4_16.pg
+source_file = Library/Michigan/Chap16Sec4/Q33.pg
 problem_id = 5
 problem_end
 problem_start
-source_file = Library/UCSB/Stewart5_10_3/Stewart5_10_3_23.pg
+source_file = Library/maCalcDB/setVMultIntegrals2Polar/UR_VC_9_1.pg
 problem_id = 6
 problem_end
 problem_start
-source_file = Library/272/setStewart15_4/problem_1.pg
+source_file = Library/FortLewis/Calc3/16-4-Polar-integrals/HGM5-16-4-14-Double-integrals-polar.pg
 problem_id = 7
 problem_end
 problem_start
-source_file = Library/Michigan/Chap16Sec4/Q21.pg
+source_file = Library/maCalcDB/setVMultIntegrals2Polar/UR_VC_9_3.pg
 problem_id = 8
 problem_end
 problem_start
-source_file = Library/Michigan/Chap16Sec4/Q07.pg
-problem_id = 9
-problem_end
-problem_start
-source_file = Library/ma123DB/set9/s10_4_15.pg
-problem_id = 10
-problem_end
-problem_start
-source_file = Library/Rochester/setVMultIntegrals2Polar/UR_VC_9_2.pg
-problem_id = 11
-problem_end
-problem_start
-source_file = Library/Michigan/Chap16Sec4/Q33.pg
-problem_id = 12
-problem_end
-problem_start
-source_file = Library/maCalcDB/setVMultIntegrals2Polar/UR_VC_9_1.pg
-problem_id = 13
-problem_end
-problem_start
-source_file = Library/FortLewis/Calc3/16-4-Polar-integrals/HGM5-16-4-14-Double-integrals-polar.pg
-problem_id = 14
-problem_end
-problem_start
-source_file = Library/maCalcDB/setVMultIntegrals2Polar/UR_VC_9_3.pg
-problem_id = 15
-problem_end
-problem_start
 source_file = Library/FortLewis/Calc3/16-4-Polar-integrals/HGM5-16-4-27-Double-integrals-polar.pg
-problem_id = 16
+problem_id = 9
 problem_end
 problem_start
 source_file = Library/FortLewis/Calc3/16-3-Triple-integrals/HGM5-16-3-04-Triple-integrals.pg
@@ -1252,4 +2240,52 @@ problem_end
 problem_start
 source_file = Library/Michigan/Chap20Sec2/Q03.pg
 problem_id = 3
+problem_end
+problem_start
+source_file = Library/Utah/Calculus_II/set11_Conics_and_Polar_Coordinates/set11_pr14.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.5_Conic_Sections/11.5.1.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.5_Conic_Sections/11.5.3.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.5_Conic_Sections/11.5.5.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.5_Conic_Sections/11.5.7.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.5_Conic_Sections/11.5.11.pg
+problem_id = 6
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.5_Conic_Sections/11.5.15.pg
+problem_id = 7
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.5_Conic_Sections/11.5.20.pg
+problem_id = 8
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.5_Conic_Sections/11.5.22.pg
+problem_id = 9
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.5_Conic_Sections/11.5.25.pg
+problem_id = 10
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.5_Conic_Sections/11.5.27.pg
+problem_id = 11
+problem_end
+problem_start
+source_file = Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.5_Conic_Sections/11.5.29.pg
+problem_id = 12
 problem_end
