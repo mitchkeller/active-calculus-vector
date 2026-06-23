@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__272__setStewart13_2__problem_8__pg" assembly-id="Library__272__setStewart13_2__problem_8__pg">
-  <static seed="334" source="Library/272/setStewart13_2/problem_8.pg">
+  <static seed="413" source="Library/272/setStewart13_2/problem_8.pg">
     <statement><p>Consider the vector function</p>
-<p><m>\mathbf r(t) = \langle t, t^{9}, t^{9}\rangle</m></p>
+<p><m>\mathbf r(t) = \langle t, t^{7}, t^{6}\rangle</m></p>
 <p>Compute</p>
 <p><m>\mathbf r'(t) = \langle</m>
 <fillin characters="20" name="AnSwEr0001"/>,
@@ -28,27 +28,27 @@
     </answer>
     <answer>
       <p>
-        <m>9t^{8}</m>
+        <m>7t^{6}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>9t^{8}</m>
+        <m>6t^{5}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>0.0783260449987957</m>
+        <m>0.107832773203438</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>0.704934404989162</m>
+        <m>0.754829412424069</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>0.704934404989162</m>
+        <m>0.64699663922063</m>
       </p>
     </answer>
     <answer>
@@ -58,27 +58,27 @@
     </answer>
     <answer>
       <p>
-        <m>72t^{7}</m>
+        <m>42t^{5}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>72t^{7}</m>
+        <m>30t^{4}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>0t^{15}</m>
+        <m>-42t^{10}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>-72t^{7}</m>
+        <m>-30t^{4}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>72t^{7}</m>
+        <m>42t^{5}</m>
       </p>
     </answer>
   </static>

@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap20Sec5__Q08__pg" assembly-id="Library__Michigan__Chap20Sec5__Q08__pg">
-  <static seed="562" source="Library/Michigan/Chap20Sec5/Q08.pg">
+  <static seed="659" source="Library/Michigan/Chap20Sec5/Q08.pg">
     <statement><p>For each of the following vector fields,
 determine whether a vector potential exists. If so, find one.</p>
 <p><em>For this problem, enter your vectors with angle-bracket
 notation: <m>\lt a, b, c&gt;</m>, not in <m>ijk</m>-notation.</em></p>
 <p><alert>(a)</alert>
-<m>\vec F = 2x\,\mathit{\vec i}+\left(6y-z^{2}\right)\,\mathit{\vec j}+\left(x-8z\right)\,\mathit{\vec k}</m></p>
+<m>\vec F = 8x\,\mathit{\vec i}+\left(y-z^{2}\right)\,\mathit{\vec j}+\left(4x+9z\right)\,\mathit{\vec k}</m></p>
 <p><m>\vec F</m> <ul form="popup" name="AnSwEr0001"><li>
 <p>?</p>
 </li><li>
@@ -19,7 +19,7 @@ notation: <m>\lt a, b, c&gt;</m>, not in <m>ijk</m>-notation.</em></p>
 <p><em>(If there is no potential function, enter <alert>none</alert>
 for the function.)</em></p>
 <p><alert>(b)</alert>
-<m>\vec F = 2x\,\mathit{\vec i}+\left(6y-z^{2}\right)\,\mathit{\vec j}+\left(x+8z\right)\,\mathit{\vec k}</m></p>
+<m>\vec F = 8x\,\mathit{\vec i}+\left(y-z^{2}\right)\,\mathit{\vec j}+\left(4x-9z\right)\,\mathit{\vec k}</m></p>
 <p><m>\vec F</m> <ul form="popup" name="AnSwEr0003"><li>
 <p>?</p>
 </li><li>
@@ -33,16 +33,6 @@ for the function.)</em></p>
 </statement>
     <answer>
       <p>
-        <m>\text{has a vector potential}</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>\left(-1xy+8yz\right)\,\mathit{\vec i}+\left(2xy+xz^{2}\right)\,\mathit{\vec k}</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
         <m>\text{does not have a vector potential}</m>
       </p>
     </answer>
@@ -51,18 +41,28 @@ for the function.)</em></p>
         <m>\text{none}</m>
       </p>
     </answer>
+    <answer>
+      <p>
+        <m>\text{has a vector potential}</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>\left(-4xy+9yz\right)\,\mathit{\vec i}+\left(8xy+xz^{2}\right)\,\mathit{\vec k}</m>
+      </p>
+    </answer>
     <solution><alert>(a)</alert>
 Since
-<m>\mbox{div }\vec F = 0</m>, we know that
-<m>\vec F</m> has a vector potential.  One such is the vector field <m>\vec H = \left(-1xy+8yz\right)\,\mathit{\vec i}+\left(2xy+xz^{2}\right)\,\mathit{\vec k}</m>, but there are many others.
+<m>\mbox{div }\vec F = 18</m>, we know that
+<m>\vec F</m> does not have a vector potential.  
 
 
 
 
 <alert>(b)</alert>
 Since
-<m>\mbox{div }\vec F = 16</m>, we know that
-<m>\vec F</m> does not have a vector potential.  
+<m>\mbox{div }\vec F = 0</m>, we know that
+<m>\vec F</m> has a vector potential.  One such is the vector field <m>\vec H = \left(-4xy+9yz\right)\,\mathit{\vec i}+\left(8xy+xz^{2}\right)\,\mathit{\vec k}</m>, but there are many others.
 
 
 

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Dartmouth__setStewartCh15S8__problem_9__pg" assembly-id="Library__Dartmouth__setStewartCh15S8__problem_9__pg">
-  <static seed="438" source="Library/Dartmouth/setStewartCh15S8/problem_9.pg">
+  <static seed="535" source="Library/Dartmouth/setStewartCh15S8/problem_9.pg">
     <statement><p>Find the maximum and minimum volumes of a rectangular box whose
-surface area equals 6000 square cm and whose edge length (sum of
-lengths of all edges) is 400 cm.</p>
+surface area equals 4000 square cm and whose edge length (sum of
+lengths of all edges) is 320 cm.</p>
 <p>Hint: It can be deduced that the box is not a cube, so if x, y, and z
 are the lengths of the sides, you may want to let x represent a side
 with <m>x \ne y</m> and <m>x \ne z</m>.</p>
@@ -16,42 +16,42 @@ with <m>x \ne y</m> and <m>x \ne z</m>.</p>
 </statement>
     <answer>
       <p>
-        <m>28268.3538223469</m>
+        <m>16000</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>54.4151844011225</m>
+        <m>40</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>22.7924077994387</m>
+        <m>20</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>22.7924077994387</m>
+        <m>20</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>23583.4980295049</m>
+        <m>14814.8148148148</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>12.2514822655441</m>
+        <m>13.3333333333333</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>43.8742588672279</m>
+        <m>33.3333333333333</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>43.8742588672279</m>
+        <m>33.3333333333333</m>
       </p>
     </answer>
   </static>

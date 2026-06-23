@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Hope__Multi2__12-01-Vector-fields__Vector-fields-01a" assembly-id="Library__Hope__Multi2__12-01-Vector-fields__Vector-fields-01a">
-  <static seed="518" source="Library/Hope/Multi2/12-01-Vector-fields/Vector-fields-01a.pg">
-    <statement><p>Suppose <m>\vec{F} = \left\lt 3y,-3x\right&gt;</m>.  Complete the following table of values of <m>\vec{F}</m>.</p>
+  <static seed="615" source="Library/Hope/Multi2/12-01-Vector-fields/Vector-fields-01a.pg">
+    <statement><p>Suppose <m>\vec{F} = \left\lt 2y,-2x\right&gt;</m>.  Complete the following table of values of <m>\vec{F}</m>.</p>
 <p>Values of <m>\vec{F}</m></p>
 <tabular bottom="none" left="none" right="none" top="none">
 <row halign="left" valign="middle">
@@ -33,7 +33,7 @@
 </statement>
     <answer>
       <p>
-        <m>\begin{array}{rrr} \left&lt;3,3\right&gt; &amp; \left&lt;3,0\right&gt; &amp; \left&lt;3,-3\right&gt; \\ \left&lt;0,3\right&gt; &amp; \left&lt;0,0\right&gt; &amp; \left&lt;0,-3\right&gt; \\ \left&lt;-3,3\right&gt; &amp; \left&lt;-3,0\right&gt; &amp; \left&lt;-3,-3\right&gt; \end{array}</m>
+        <m>\begin{array}{rrr} \left&lt;2,2\right&gt; &amp; \left&lt;2,0\right&gt; &amp; \left&lt;2,-2\right&gt; \\ \left&lt;0,2\right&gt; &amp; \left&lt;0,0\right&gt; &amp; \left&lt;0,-2\right&gt; \\ \left&lt;-2,2\right&gt; &amp; \left&lt;-2,0\right&gt; &amp; \left&lt;-2,-2\right&gt; \end{array}</m>
       </p>
     </answer>
   </static>

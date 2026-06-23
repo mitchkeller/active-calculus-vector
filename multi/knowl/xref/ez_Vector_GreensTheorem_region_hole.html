@@ -73,6 +73,69 @@
 </div>
 <div class="autopermalink" data-description="Hint 13.8.6.7.1"><a href="#ez_Vector_GreensTheorem_region_hole-2" title="Copy heading and permalink for Hint 13.8.6.7.1" aria-label="Copy heading and permalink for Hint 13.8.6.7.1">🔗</a></div>
 </div></details>
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<ol class="lower-alpha lower-alpha-level-1" id="ez_Vector_GreensTheorem_region_hole-4-1-1">
+<li>
+<div class="para">A simple closed curve lying in the region <span class="process-math">\(R\)</span> that encloses the curve <span class="process-math">\(C_2\)</span> cannot be contracted to a point while remaining in the region <span class="process-math">\(R\text{,}\)</span> so this region is not simply connected.<div class="autopermalink" data-description="Paragraph"><a href="#ez_Vector_GreensTheorem_region_hole-4-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 13.8.6.7.a"><a href="#ez_Vector_GreensTheorem_region_hole-4-1-1-1" title="Copy heading and permalink for Item 13.8.6.7.a" aria-label="Copy heading and permalink for Item 13.8.6.7.a">🔗</a></div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">Assume that <span class="process-math">\(C_3\)</span> and <span class="process-math">\(C_4\)</span> are oriented from bottom to top. Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn_ez_Vector_GreensTheorem_region_hole_add.html ./knowl/xref/thm_Green.html">
+\begin{equation}
+C = C_1 + C_2 = (C_{1,2}-C_4+C_{2,2}-C_3) +
+(C_{1,1} + C_3 + C_{2,1} + C_4)\text{.}\tag{13.8.1}
+\end{equation}
+</div>
+<div class="para">The curve in the first set of parentheses in <a href="S_Vector_GreensTheorem.html#eqn_ez_Vector_GreensTheorem_region_hole_add" class="xref" data-knowl="./knowl/xref/eqn_ez_Vector_GreensTheorem_region_hole_add.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 13.8.1">(13.8.1)</a> bounds the region <span class="process-math">\(R_1\text{,}\)</span> and the curve in the second set of parentheses bounds the region <span class="process-math">\(R_2\text{.}\)</span> Since <span class="process-math">\(\vF = \langle F_1,F_2\rangle\)</span> is smooth on <span class="process-math">\(R\)</span> and <span class="process-math">\(C\text{,}\)</span> <a href="S_Vector_GreensTheorem.html#thm_Green" class="xref" data-knowl="./knowl/xref/thm_Green.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.8.3: Green’s Theorem">Green’s Theorem</a> applies and we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn_ez_Vector_GreensTheorem_region_hole_add.html ./knowl/xref/thm_Green.html">
+\begin{align*}
+\oint_C\vF\cdot d\vr &amp;= \iint_{R_1}
+\left(\frac{\partial F_2}{\partial x}
+- \frac{\partial F_1}{\partial y}\right)\, dA +
+\iint_{R_2}
+\left(\frac{\partial F_2}{\partial x}
+- \frac{\partial F_1}{\partial y}\right)\, dA\\
+&amp;= \iint_{R} \left(\frac{\partial
+F_2}{\partial x} - \frac{\partial F_1}{\partial
+y}\right)\, dA\text{.}
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ez_Vector_GreensTheorem_region_hole-4-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 13.8.6.7.b"><a href="#ez_Vector_GreensTheorem_region_hole-4-1-1-2" title="Copy heading and permalink for Item 13.8.6.7.b" aria-label="Copy heading and permalink for Item 13.8.6.7.b">🔗</a></div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(C_2\)</span> be the circle of radius <span class="process-math">\(a&gt;0\text{,}\)</span> centered at the origin and oriented <em class="emphasis">clockwise</em>, with <span class="process-math">\(a\)</span> chosen to be small enough that <span class="process-math">\(C_2\)</span> lies entirely within <span class="process-math">\(C\text{.}\)</span> Then <span class="process-math">\(C+C_2\)</span> is exactly the type of curve considered in the previous part, as <span class="process-math">\(\vF\)</span> is smooth on the curves and the region they bound. Here <span class="process-math">\(\frac{\partial F_2}{\partial x}
+- \frac{\partial F_1}{\partial y} = 0\)</span> for all points in <span class="process-math">\(R_1\)</span> and <span class="process-math">\(R_2\text{,}\)</span> so the double integrals from <a href="S_Vector_GreensTheorem.html#thm_Green" class="xref" data-knowl="./knowl/xref/thm_Green.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 13.8.3: Green’s Theorem">Green’s Theorem</a> are <span class="process-math">\(0\text{.}\)</span> Thus, we have that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_Green.html">
+\begin{equation*}
+\oint_C\vF\cdot d\vr + \oint_{C_2}\vF\cdot d\vr =
+0\Leftrightarrow \oint_C\vF\cdot d\vr =
+\oint_{-C_2}\vF\cdot d\vr\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\vF\)</span> is tangent to <span class="process-math">\(-C_2\)</span> everywhere, we know that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm_Green.html">
+\begin{equation*}
+\oint_{-C_2}\vF\cdot d\vr = \vecmag{\vF}\cdot
+(\text{Length of }-C_2) = \frac{1}{a} (2\pi a) = 2\pi\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ez_Vector_GreensTheorem_region_hole-4-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 13.8.6.7.c"><a href="#ez_Vector_GreensTheorem_region_hole-4-1-1-3" title="Copy heading and permalink for Item 13.8.6.7.c" aria-label="Copy heading and permalink for Item 13.8.6.7.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#ez_Vector_GreensTheorem_region_hole-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 13.8.6.7.1"><a href="#ez_Vector_GreensTheorem_region_hole-4" title="Copy heading and permalink for Solution 13.8.6.7.1" aria-label="Copy heading and permalink for Solution 13.8.6.7.1">🔗</a></div>
+</div></details>
 </div>
 <div class="autopermalink" data-description="Exercise 13.8.6.7"><a href="#ez_Vector_GreensTheorem_region_hole" title="Copy heading and permalink for Exercise 13.8.6.7" aria-label="Copy heading and permalink for Exercise 13.8.6.7">🔗</a></div>
 </article><span class="incontext"><a class="internal" href="S_Vector_GreensTheorem.html#ez_Vector_GreensTheorem_region_hole">In Context</a></span>

@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap16Sec7__Q25__pg" assembly-id="Library__Michigan__Chap16Sec7__Q25__pg">
-  <static seed="514" source="Library/Michigan/Chap16Sec7/Q25.pg">
+  <static seed="611" source="Library/Michigan/Chap16Sec7/Q25.pg">
     <statement><p>Use the change of variables <m>s=xy</m>, <m>t=xy^2</m> to compute
 <m>\int_R xy^2\,dA</m>, where <m>R</m> is the region bounded by 
- <m>xy=4,\ xy=7,\ xy^2=4,\ xy^2=7</m>.</p>
+ <m>xy=3,\ xy=7,\ xy^2=3,\ xy^2=7</m>.</p>
 <p><m>\int_R xy^2\,dA =</m> <fillin characters="35" name="AnSwEr0001"/></p>
 </statement>
     <answer>
       <p>
-        <m>3\cdot 3</m>
+        <m>4\cdot 4</m>
       </p>
     </answer>
     <solution><me>\begin{array}{ccc}s\amp =\amp xy\\t\amp =\amp xy^2,\end{array}.</me>
@@ -28,8 +28,8 @@ Since  <me>\frac{\partial(s,t)}{\partial(x,y)}\cdot
 So
 <me>\int_R xy^2\,dA=\int_{T}t\left|\frac{\partial(x,y)}{\partial(s,t)}\right|\,ds\,dt=
 \int_{T}t\,(\frac 1t)\,ds\,dt=\int_{T}\,ds\,dt,</me>
-where <m>T</m> is the region bounded by <m>s=4</m>, <m>s=7</m>, <m>t=4</m>, <m>t=7</m>.
-Then <me>\int_Rxy^2\,dA=\int_4^{7}\,ds\int_4^{7}\,dt=9.</me>
+where <m>T</m> is the region bounded by <m>s=3</m>, <m>s=7</m>, <m>t=3</m>, <m>t=7</m>.
+Then <me>\int_Rxy^2\,dA=\int_3^{7}\,ds\int_3^{7}\,dt=16.</me>
 
 
 
