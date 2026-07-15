@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__16_Line_and_Surface_Integrals__16_2_Line_Integrals__16_2_41_pg" assembly-id="Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__16_Line_and_Surface_Integrals__16_2_Line_Integrals__16_2_41_pg">
+  <static seed="282" source="webwork-open-problem-library/OpenProblemLibrary/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/16_Line_and_Surface_Integrals/16.2_Line_Integrals/16.2.41.pg">
+    <statement><p>The three figures below show three vector fields. In
+each case,</p>
+<p>determine whether the line integral around the circle
+(oriented counterclockwise) is positive, negative, or zero.</p>
+<p>Note: Use "0" for zero, "P" for positive, and "N" for negative.</p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__16_Line_and_Surface_Integrals__16_2_Line_Integrals__16_2_41_pg-image-1.png" width="27%"/>
+<p><alert> (A)</alert> <fillin characters="2" name="AnSwEr0001"/></p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__16_Line_and_Surface_Integrals__16_2_Line_Integrals__16_2_41_pg-image-2.png" width="27%"/>
+<p><alert> (B) </alert><fillin characters="2" name="AnSwEr0002"/></p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__16_Line_and_Surface_Integrals__16_2_Line_Integrals__16_2_41_pg-image-3.png" width="27%"/>
+<p><alert> (C) </alert><fillin characters="2" name="AnSwEr0003"/></p>
+</statement>
+    <answer>
+      <p>0</p>
+    </answer>
+    <answer>
+      <p>0</p>
+    </answer>
+    <answer>
+      <p>0</p>
+    </answer>
+    <solution><p>The vector line integral of <m>F</m> is the integral of the tangential component of <m>F</m> along the curve.  The positive direction of a curve is counterclockwise.</p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__16_Line_and_Surface_Integrals__16_2_Line_Integrals__16_2_41_pg-image-4.png" width="29%"/>
+<p>For the vector field below, the line integral around the circle is zero because the contribution of the negative tangential components from the upper part of the circle is the same as the contribution of the positive tangential components from the lower part.</p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__16_Line_and_Surface_Integrals__16_2_Line_Integrals__16_2_41_pg-image-1.png" width="27%"/>
+<p>The vector field below appears to take the form <m>f(x) i + g(y) j</m> 
+for some continuous functions <m>f(x)</m> and <m>g(y)</m>.  
+As such, it is the gradiant of a function, and any integral around 
+a closed loop is zero.</p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__16_Line_and_Surface_Integrals__16_2_Line_Integrals__16_2_41_pg-image-2.png" width="27%"/>
+<p>In the vector field below, the vector field is orthogonal to the unit tangent vector at each point, hence the line integral is zero.</p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__16_Line_and_Surface_Integrals__16_2_Line_Integrals__16_2_41_pg-image-3.png" width="27%"/>
+</solution>
+  </static>
+  <rendering-data sourceFilePath="webwork-open-problem-library/OpenProblemLibrary/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/16_Line_and_Surface_Integrals/16.2_Line_Integrals/16.2.41.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="webwork-open-problem-library/OpenProblemLibrary/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/16_Line_and_Surface_Integrals/16.2_Line_Integrals/16.2.41.pg"/>
+</webwork-reps>

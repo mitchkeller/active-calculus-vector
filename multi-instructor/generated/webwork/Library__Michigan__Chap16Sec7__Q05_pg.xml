@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap16Sec7__Q05_pg" assembly-id="Library__Michigan__Chap16Sec7__Q05_pg">
+  <static seed="271" source="Library/Michigan/Chap16Sec7/Q05.pg">
+    <statement><p>Find the Jacobian.
+<m>\frac{\partial (x,y,z)}{\partial (s,t,u)}</m>,
+where <m>x = 4t-5s+3u, y = u-\left(5s+t\right), z = 5t-4s-4u</m>.</p>
+<p><m>\frac{\partial (x,y,z)}{\partial (s,t,u)} =</m>
+<fillin characters="35" name="AnSwEr0001"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>-5\cdot \left(-1\cdot \left(-4\right)-1\cdot 5\right)-4\cdot \left(-5\cdot \left(-4\right)-1\cdot \left(-4\right)\right)+3\cdot \left(-5\cdot 5--1\cdot \left(-4\right)\right)</m>
+      </p>
+    </answer>
+    <solution><me>\left|\frac{\partial (x,y,z)}{\partial (s,t,u)}\right| =
+  \left|\begin{array}{ccc}
+  x_s \amp  x_t \amp  x_u\\
+  y_s \amp  y_t \amp  y_u\\
+  z_s \amp  z_t \amp  z_u
+  \end{array}\right|
+  =\left|\begin{array}{ccc}
+  -5 \amp  4 \amp  3\\
+  -5 \amp  -1 \amp  1\\
+  -4 \amp  5 \amp  -4
+\end{array}\right|.</me>
+This <m>3 \times 3</m> determinant is computed the same way as for the
+cross product, with the entries <m>-5,4,3</m> in the first row playing the
+same role as <m>\vec i,\vec j,\vec k</m>.  We get
+<me>\frac{\partial (x,y,z)}{\partial (s,t,u)}= 
+((-1)(-4)-(1)(5))-5 + ((1)(-4)-(-5)(-4))4 + ((-5)(5)-(-1)(-4))3 = -178.</me>
+
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/Michigan/Chap16Sec7/Q05.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Michigan/Chap16Sec7/Q05.pg"/>
+</webwork-reps>

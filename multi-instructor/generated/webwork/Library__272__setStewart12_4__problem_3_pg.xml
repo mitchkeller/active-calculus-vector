@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__272__setStewart12_4__problem_3_pg" assembly-id="Library__272__setStewart12_4__problem_3_pg">
+  <static seed="48" source="Library/272/setStewart12_4/problem_3.pg">
+    <statement><p>Find two unit vectors orthogonal to 
+<m>\mathbf a = \langle -2, -1, 3\rangle</m> and 
+<m>\mathbf b = \langle 4, -2, 3\rangle</m></p>
+<p>Enter your answer so that the first non-zero coordinate of
+the first vector is positive.</p>
+<p>First Vector: <m>\langle</m><fillin characters="17" name="AnSwEr0001"/>, <fillin characters="17" name="AnSwEr0002"/>, <fillin characters="17" name="AnSwEr0003"/><m>\rangle</m></p>
+<p>Second Vector: <m>\langle</m><fillin characters="17" name="AnSwEr0004"/>, <fillin characters="17" name="AnSwEr0005"/>,
+ <fillin characters="17" name="AnSwEr0006"/><m>\rangle</m></p>
+</statement>
+    <answer>
+      <p>
+        <m>0.150565683968549</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>0.903394103811292</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>0.401508490582796</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-0.150565683968549</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-0.903394103811292</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-0.401508490582796</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/272/setStewart12_4/problem_3.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/272/setStewart12_4/problem_3.pg"/>
+</webwork-reps>

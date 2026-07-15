@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap17Sec2__Q13_pg" assembly-id="Library__Michigan__Chap17Sec2__Q13_pg">
+  <static seed="83" source="Library/Michigan/Chap17Sec2/Q13.pg">
+    <statement><p>Find the length of the curve
+<me>x = -\left(3+3t\right),\quad y = -\left(1+4t\right), z = 4-4t,</me>
+for <m>4 \le t \le 5</m>.</p>
+<p>length = <fillin characters="35" name="AnSwEr0001"/></p>
+<p><em>(Think of second way that you could calculate this length, too,
+and see that you get the same result.)</em></p>
+</statement>
+    <answer>
+      <p>
+        <m>\sqrt{-3\cdot \left(-3\right)+-4\cdot \left(-4\right)+-4\cdot \left(-4\right)}\mathopen{}\left(5-4\right)</m>
+      </p>
+    </answer>
+    <solution><me>\hbox{Length} = \int_4^5
+    \sqrt{(x'(t))^2 + (y'(t))^2 + (z'(t))^2}\,dt =
+  \int_{4}^{5} \sqrt{(-3)^2+(-4)^2+(-4)^2}\,dt = \sqrt{41}.</me>
+This is the length of a straight line from the point <m>(-15,-17,-12)</m> to
+<m>(-18,-21,-16)</m>.
+
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/Michigan/Chap17Sec2/Q13.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Michigan/Chap17Sec2/Q13.pg"/>
+</webwork-reps>

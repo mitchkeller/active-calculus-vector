@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__FortLewis__Calc3__18-4-Greens-theorem__HGM4-18-4-17-Greens-theorem_pg" assembly-id="Library__FortLewis__Calc3__18-4-Greens-theorem__HGM4-18-4-17-Greens-theorem_pg">
+  <static seed="305" source="webwork-open-problem-library/OpenProblemLibrary/FortLewis/Calc3/18-4-Greens-theorem/HGM4-18-4-17-Greens-theorem.pg">
+    <statement><p>Suppose <me>\vec{F}(x,y) = (4 x - 2 y) \vec{i} + 5 x \vec{j}</me> and <m>C</m> is the 
+counter-clockwise oriented sector of a circle centered
+at the origin with radius <m>3</m> and central angle
+<m>\pi / 3</m>.
+Use Green's theorem to calculate the 
+circulation of <m>\vec{F}</m> around <m>C</m>.</p>
+<p>Circulation = 
+<fillin characters="40" name="AnSwEr0001"/></p>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__FortLewis__Calc3__18-4-Greens-theorem__HGM4-18-4-17-Greens-theorem_pg-image-1.png" width="66%"/>
+<p>(Click on graph to enlarge)</p>
+</statement>
+    <answer>
+      <p>
+        <m>\frac{\left(2+5\right)\pi \cdot 9}{6}</m>
+      </p>
+    </answer>
+    <solution><p>SOLUTION</p>
+<p>Let <m>D</m> be the region enclosed by the curve <m>C</m>.</p>
+<p>First note that the curve has a positive orientation. We will use Green's Theorem.
+We have <m>P = 4 x - 2 y, \; Q = 5 x</m>, therefore
+<me>\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} =5+ 2 = 7 .</me>
+Hence, Green's Theorem implies</p>
+<p><m>\begin{array}{lcl} \int_{C} \vec{F} \cdot  d\vec{r}\amp  = \amp  
+\iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA
+\\ \amp =\amp  \iint_D 7 dA  
+\\ \amp  = \amp  7 \int_0^{\pi/3} \int_0^{3} r \, dr \, d\theta \quad \text{[Using polar coordinates]}
+\\\amp  = \amp  7 \left(\frac{\pi}{3}\right) \left(\frac{ 3^2}{2}\right)
+\\\amp =\amp  {\frac{21}{2}} \pi
+\end{array}</m></p>
+</solution>
+  </static>
+  <rendering-data sourceFilePath="webwork-open-problem-library/OpenProblemLibrary/FortLewis/Calc3/18-4-Greens-theorem/HGM4-18-4-17-Greens-theorem.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="webwork-open-problem-library/OpenProblemLibrary/FortLewis/Calc3/18-4-Greens-theorem/HGM4-18-4-17-Greens-theorem.pg"/>
+</webwork-reps>

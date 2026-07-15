@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__272__setStewart16_6__problem_2_pg" assembly-id="Library__272__setStewart16_6__problem_2_pg">
+  <static seed="240" source="Library/272/setStewart16_6/problem_2.pg">
+    <statement><p>Find the surface area of that
+part of the plane
+<m>7 x + 8 y + z = 8</m> that lies inside the elliptic cylinder 
+<m>\frac{x^2}{81} + \frac{y^2}{64} =1</m></p>
+<p>Surface Area = <fillin characters="40" name="AnSwEr0001"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>2415.09820308371</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/272/setStewart16_6/problem_2.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/272/setStewart16_6/problem_2.pg"/>
+</webwork-reps>
