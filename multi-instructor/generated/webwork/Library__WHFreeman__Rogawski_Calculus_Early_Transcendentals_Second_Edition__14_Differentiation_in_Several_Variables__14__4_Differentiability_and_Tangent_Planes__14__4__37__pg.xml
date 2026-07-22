@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__14_Differentiation_in_Several_Variables__14__4_Differentiability_and_Tangent_Planes__14__4__37__pg" assembly-id="Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__14_Differentiation_in_Several_Variables__14__4_Differentiability_and_Tangent_Planes__14__4__37__pg">
+  <static seed="628" source="Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/14_Differentiation_in_Several_Variables/14.4_Differentiability_and_Tangent_Planes/14.4.37.pg">
+    <statement><p>The monthly payment for a home loan is given by a function <m>f(P,r,N)</m> where <m>P</m> is the principal (the initial size of the loan), <m>r</m> the interest rate, and <m>N</m> the length of the loan in months. Interest rates are expressed as a decimal: A  % interest rate is denoted by <m>r=0.06</m>. If <m>P=400000, r=0.06</m>, and <m>N=288</m>(a 24-year loan), then the monthly payment is <m>f(400000,0.06,288)=1524</m>. Furthermore, with these values we have
+<me>\frac{\partial{f}}{\partial{P}}=0.0059, \quad \frac{\partial{f}}{\partial{r}}=8006, \quad \frac{\partial{f}}{\partial{N}}=-1.5326</me>
+Estimate:</p>
+<p>(a) The change in monthly payment per <m>1000</m> increase in loan principal:</p>
+<p><m>\Delta f \approx</m><fillin characters="20" name="AnSwEr0001"/> dollars</p>
+<p>(b) The change in monthly payment if the interest rate changes from <m>r=0.06</m> to <m>r=0.07</m>:</p>
+<p><m>\Delta f \approx</m><fillin characters="20" name="AnSwEr0002"/> dollars</p>
+<p>(c) The change in monthly payment if the length of the loan changes from <m>24</m> to <m>21</m> years:</p>
+<p><m>\Delta f \approx</m><fillin characters="20" name="AnSwEr0003"/> dollars</p>
+</statement>
+    <answer>
+      <p>
+        <m>5.9</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>80.06</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>55.1736</m>
+      </p>
+    </answer>
+    <solution><m>f(P,r,N)</m> is
+<me>\Delta f \approx \frac{\partial{f}}{\partial{P}}\Delta P +\frac{\partial{f}}{\partial{r}}\Delta r
++\frac{\partial{f}}{\partial{N}}\Delta N</me>
+By the given data and assuming that <m>\Delta P=1000, \Delta r=0</m> and <m>\Delta N=0</m>, we get
+<me>\Delta f\approx 0.0059\cdot 1000=5.9</me>
+The change in monthly payment per 1000 dollar increase in loan principal is <m>5.9</m> dollars.
+
+
+
+(b) By the given data, we have
+<me>\Delta f\approx 0.0059 \Delta P + 8006 \Delta r  - 1.5326 \Delta N</me>
+Substituting <m>\Delta r=0.01, \Delta P=0</m> and <m>\Delta N=0</m> gives:
+<me>\Delta f \approx 8006 \cdot 0.01 =\2461898 80.06</me>
+
+(c) We substitute <m>\Delta N=(21-24)\cdot 12=-36</m> months, and <m>\Delta r=\Delta P=0</m> to obtain
+<me>\Delta f\approx -1.5326 \cdot -36=55.1736</me>
+
+
+
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/14_Differentiation_in_Several_Variables/14.4_Differentiability_and_Tangent_Planes/14.4.37.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/14_Differentiation_in_Several_Variables/14.4_Differentiability_and_Tangent_Planes/14.4.37.pg"/>
+</webwork-reps>

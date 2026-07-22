@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__14_Differentiation_in_Several_Variables__14__5_The_Gradient_and_Directional_Derivatives__14__5__23__pg" assembly-id="Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__14_Differentiation_in_Several_Variables__14__5_The_Gradient_and_Directional_Derivatives__14__5__23__pg">
+  <static seed="702" source="Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/14_Differentiation_in_Several_Variables/14.5_The_Gradient_and_Directional_Derivatives/14.5.23.pg">
+    <statement><p>Calculate the directional derivative of <m>f(x,y)=x^{2}y^{2}</m> in the direction <m>u</m> of <m>\mathbf{v}=2 \mathbf{i}+3\mathbf{j}</m> at the point <m>P=(1,-2)</m>. Remember to normalize the direction vector.</p>
+<p><m>D_uf(1,-2)=</m> <fillin characters="20" name="AnSwEr0001"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>1.1094</m>
+      </p>
+    </answer>
+    <solution><m>\mathbf{v}</m> to obtain a unit vector <m>\mathbf{u}</m> in the direction of <m>\mathbf{v}</m>:
+<me>\mathbf{u}=\frac{\mathbf{v}}{||\mathbf{v}||}=\frac{1}{\sqrt{13}}(2\mathbf{i} +3 \mathbf{j})</me>
+We compute the gradient of <m>f(x,y)=x^{2}y^{2}</m> at the point <m>P</m>:
+<me>\nabla f=\left\lt  \frac{\partial{f}}{\partial{x}}, \frac{\partial{f}}{\partial{y}} \right&gt;=\left\lt 2xy^{2},2x^{2}y\right&gt;\quad \Rightarrow \quad \nabla f(1,-2)=\left\lt 8, -4\right&gt;</me>
+The directional derivative in the direction <m>\mathbf{v}</m> is thus
+<me>D_uf(1,-2)=\nabla f(1,-2) \cdot \mathbf{u}=\left\lt  8, -4 \right&gt; \cdot \frac{1}{\sqrt{13}} \left\lt 2, 3\right&gt;=\frac{4}{\sqrt{13}}\approx 1.1094</me>
+
+
+
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/14_Differentiation_in_Several_Variables/14.5_The_Gradient_and_Directional_Derivatives/14.5.23.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/14_Differentiation_in_Several_Variables/14.5_The_Gradient_and_Directional_Derivatives/14.5.23.pg"/>
+</webwork-reps>

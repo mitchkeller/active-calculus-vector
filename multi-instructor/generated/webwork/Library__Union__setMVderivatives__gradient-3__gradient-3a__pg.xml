@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Union__setMVderivatives__gradient-3__gradient-3a__pg" assembly-id="Library__Union__setMVderivatives__gradient-3__gradient-3a__pg">
+  <static seed="697" source="Library/Union/setMVderivatives/gradient-3/gradient-3a.pg">
+    <statement><tabular valign="middle">
+<row>
+<cell>For each surface shown below, select the image on the right
+that represents the gradient vector field for that surface.
+<SMALL>
+Drag a surface in order to rotate it.
+Click on a gradient vector field to get a more detailed version of the image.
+</SMALL>
+<tabular bottom="none" left="none" right="none" top="none">
+<row halign="center" valign="middle">
+<cell><div class="live-graphics-3d-container" data-options="{&quot;archive&quot;:&quot;\/webwork2_files\/tmp\/anonymous\/html\/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___d1758e33-a892-3d7f-b9c5-2125c9255281.html&quot;,&quot;file&quot;:&quot;graph1.m&quot;,&quot;height&quot;:198,&quot;input&quot;:&quot;&quot;,&quot;maxTicks&quot;:6,&quot;vars&quot;:{},&quot;width&quot;:198}" style="width:200px;height:200px;border:1px solid black;"/></cell>
+<cell><div class="live-graphics-3d-container" data-options="{&quot;archive&quot;:&quot;\/webwork2_files\/tmp\/anonymous\/html\/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___6941ea6b-b502-32eb-a18f-a1347a69e950.html&quot;,&quot;file&quot;:&quot;graph2.m&quot;,&quot;height&quot;:198,&quot;input&quot;:&quot;&quot;,&quot;maxTicks&quot;:6,&quot;vars&quot;:{},&quot;width&quot;:198}" style="width:200px;height:200px;border:1px solid black;"/></cell>
+</row>
+<row halign="center" valign="middle">
+<cell><B>1. </B><fillin characters="4" name="AnSwEr0001"/></cell>
+<cell><B>2. </B><fillin characters="4" name="AnSwEr0002"/></cell>
+</row>
+<row halign="center" valign="middle">
+<cell><div class="live-graphics-3d-container" data-options="{&quot;archive&quot;:&quot;\/webwork2_files\/tmp\/anonymous\/html\/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___d3223565-7bbc-3c06-9b1a-a41a41826eb8.html&quot;,&quot;file&quot;:&quot;graph8.m&quot;,&quot;height&quot;:198,&quot;input&quot;:&quot;&quot;,&quot;maxTicks&quot;:6,&quot;vars&quot;:{},&quot;width&quot;:198}" style="width:200px;height:200px;border:1px solid black;"/></cell>
+<cell><div class="live-graphics-3d-container" data-options="{&quot;archive&quot;:&quot;\/webwork2_files\/tmp\/anonymous\/html\/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___6b451cf0-cb0d-3039-95a1-b4296227c235.html&quot;,&quot;file&quot;:&quot;graph7.m&quot;,&quot;height&quot;:198,&quot;input&quot;:&quot;&quot;,&quot;maxTicks&quot;:6,&quot;vars&quot;:{},&quot;width&quot;:198}" style="width:200px;height:200px;border:1px solid black;"/></cell>
+</row>
+<row halign="center" valign="middle">
+<cell><B>3. </B><fillin characters="4" name="AnSwEr0003"/></cell>
+<cell><B>4. </B><fillin characters="4" name="AnSwEr0004"/></cell>
+</row>
+</tabular>
+<p/></cell>
+<cell>
+<tabular bottom="none" left="none" right="none" top="none">
+<row halign="left" valign="middle">
+<cell><A HREF="/webwork2_files/tmp/anonymous/images/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___a7e5a13d-e453-39d9-9e90-f5edd00dc489.gif"><IMG ALIGN="BOTTOM" BORDER="0" HEIGHT="200" SRC="/webwork2_files/tmp/anonymous/images/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___0c41c317-9ef1-34f5-9920-70a7c6418530.gif" WIDTH="200"/></A></cell>
+<cell><A HREF="/webwork2_files/tmp/anonymous/images/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___62c8112a-d70b-3411-a0a5-f4540a27b570.gif"><IMG ALIGN="BOTTOM" BORDER="0" HEIGHT="200" SRC="/webwork2_files/tmp/anonymous/images/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___c45dde9b-1c7c-3908-ac8a-c3de48b1e60a.gif" WIDTH="200"/></A></cell>
+</row>
+<row halign="left" valign="middle">
+<cell><CENTER><B>A</B></CENTER></cell>
+<cell><CENTER><B>B</B></CENTER></cell>
+</row>
+<row halign="left" valign="middle">
+<cell><A HREF="/webwork2_files/tmp/anonymous/images/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___7f51a497-0093-3ba5-bae6-32d27e963eae.gif"><IMG ALIGN="BOTTOM" BORDER="0" HEIGHT="200" SRC="/webwork2_files/tmp/anonymous/images/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___2ee0c2ea-86e6-3357-99e7-962f529b2424.gif" WIDTH="200"/></A></cell>
+<cell><A HREF="/webwork2_files/tmp/anonymous/images/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___a160b03c-21e3-3987-9d4a-7db6e4c939be.gif"><IMG ALIGN="BOTTOM" BORDER="0" HEIGHT="200" SRC="/webwork2_files/tmp/anonymous/images/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___7ec9444f-8c90-3b66-b36c-f8e706508a99.gif" WIDTH="200"/></A></cell>
+</row>
+<row halign="left" valign="middle">
+<cell><CENTER><B>C</B></CENTER></cell>
+<cell><CENTER><B>D</B></CENTER></cell>
+</row>
+<row halign="left" valign="middle">
+<cell><A HREF="/webwork2_files/tmp/anonymous/images/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___2f27ac6b-b5fb-3e61-8f20-d76941c83f6f.gif"><IMG ALIGN="BOTTOM" BORDER="0" HEIGHT="200" SRC="/webwork2_files/tmp/anonymous/images/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___86fff1eb-350f-3f6a-b32b-c561c003e08d.gif" WIDTH="200"/></A></cell>
+<cell><A HREF="/webwork2_files/tmp/anonymous/images/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___3f4f31c7-5a88-34cf-b339-ab0021f1cb67.gif"><IMG ALIGN="BOTTOM" BORDER="0" HEIGHT="200" SRC="/webwork2_files/tmp/anonymous/images/f75c2cfb-1f96-325b-a5a7-d46ef7e13401___fe352ada-1d04-3d56-a7aa-4160ea41d77b.gif" WIDTH="200"/></A></cell>
+</row>
+<row halign="left" valign="middle">
+<cell><CENTER><B>E</B></CENTER></cell>
+<cell><CENTER><B>F</B></CENTER></cell>
+</row>
+</tabular>
+<p/></cell>
+</row>
+</tabular>
+</statement>
+    <answer>
+      <p>
+        <m>\text{C}</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>\text{A}</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>\text{E}</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>\text{D}</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/Union/setMVderivatives/gradient-3/gradient-3a.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Union/setMVderivatives/gradient-3/gradient-3a.pg"/>
+</webwork-reps>

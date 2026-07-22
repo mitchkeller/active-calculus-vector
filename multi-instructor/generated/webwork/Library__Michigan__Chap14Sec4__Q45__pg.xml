@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap14Sec4__Q45__pg" assembly-id="Library__Michigan__Chap14Sec4__Q45__pg">
+  <static seed="668" source="Library/Michigan/Chap14Sec4/Q45.pg">
+    <statement><p><alert>(a)</alert>
+Find the point <m>Q</m> that is a distance 0.1 from the point
+<m>P = (3, 2)</m> in the direction of <m>\mathbf{v} = \left\lt 3,-3\right&gt;</m>.
+Give five decimal places in your answer.</p>
+<p><m>Q =</m> ( <fillin characters="15" name="AnSwEr0001"/>, <fillin characters="15" name="AnSwEr0002"/> )</p>
+<p><alert>(b)</alert>
+Use  <m>P</m> and <m>Q</m> to approximate the directional
+derivative of <m>f(x,y) = \sqrt{x+y}</m> at <m>P</m>, in the direction
+of  <m>\mathbf{v}</m>.</p>
+<p><m>f_{v} \approx</m> <fillin characters="35" name="AnSwEr0003"/></p>
+<p><alert>(c)</alert>
+Give the exact value for the directional derivative you
+estimated in part (b).</p>
+<p><m>f_{v} =</m> <fillin characters="35" name="AnSwEr0004"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>3+0.1\cdot \frac{3}{4.24264}</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>2+0.1\cdot \frac{-3}{4.24264}</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>\frac{2.23607-2.23607}{0.1}</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>\frac{\frac{1}{2\sqrt{3+1\cdot 2}}\cdot 3}{4.24264}+\frac{\frac{1}{2\sqrt{3+1\cdot 2}}\mathopen{}\left(-3\right)}{4.24264}</m>
+      </p>
+    </answer>
+    <solution><alert>(a)</alert>
+The unit vector <m>\mathbf{u}</m> in the same direction as <m>\mathbf{v}</m>
+is
+<me>\mathbf{u} = \frac{1}{\Vert \mathbf{v}\Vert} \mathbf{v}  =
+    \frac{1}{\sqrt{18}} \mathbf{v} = \langle \frac{3}{\sqrt{18}},
+    \frac{-3}{\sqrt{18}} \rangle
+\approx \left\lt 0.707107,-0.707107\right&gt;.</me>
+
+The vector <m>\mathbf{w}</m> of length 0.1 in the direction of
+<m>\mathbf{v}</m> is
+<me>\vec w = 0.1\vec u = \left\lt 0.0707107,-0.0707107\right&gt;</me>
+The displacement vector from <m>P</m> to <m>Q</m> is <m>\mathbf{w}</m>.  Hence
+<me>Q = (3,2) + (0.0707107, -0.0707107) = (3.07071, 1.92929).</me>
+
+
+
+
+<alert>(b)</alert>
+Since the distance from <m>P</m> to <m>Q</m> is 0.1, the directional
+derivative of <m>f</m> at <m>P</m> in the direction of <m>Q</m>  is approximately
+<me>f_{u} \approx \frac{f(Q)-f(P)}{0.1} = \frac{2.23607 - 2.23607}{0.1} = 0.</me>
+
+
+
+
+<alert>(c)</alert>
+We have
+<me>f_x = \frac{1}{2\sqrt{x+1y}}\quad\mbox{and}\quad f_y = \frac{1}{2\sqrt{x+1y}},</me>
+so
+<me>\nabla f(3,2) = \left\lt 0.223607,0.223607\right&gt;.</me>
+
+The directional derivative at <m>P=(3, 2)</m> in the direction of
+<m>\mathbf{u}</m> is
+<me>f_u(3,2) = \nabla f(3,2)\cdot \mathbf{u} =
+    0.</me>
+
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/Michigan/Chap14Sec4/Q45.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Michigan/Chap14Sec4/Q45.pg"/>
+</webwork-reps>

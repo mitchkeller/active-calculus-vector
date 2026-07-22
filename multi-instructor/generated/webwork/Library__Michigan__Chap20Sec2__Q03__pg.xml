@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap20Sec2__Q03__pg" assembly-id="Library__Michigan__Chap20Sec2__Q03__pg">
-  <static seed="662" source="Library/Michigan/Chap20Sec2/Q03.pg">
+  <static seed="926" source="Library/Michigan/Chap20Sec2/Q03.pg">
     <statement><p>Compute the flux
 integral <m>\int_S\vec F\cdot d\vec A</m> in
 two ways, directly and using the Divergence Theorem.
 <m>S</m> is the surface of the box with faces
-<m>x=1,x=4,y=0,y=3,z=0,z=3</m>,
+<m>x=2,x=3,y=0,y=3,z=0,z=2</m>,
 closed and oriented outward, and
-<m>\vec{F}=2x^{2}\vec i + y^{2}\vec j + 2z^{2}\vec k</m>.</p>
+<m>\vec{F}=5x^{2}\vec i + 2y^{2}\vec j + 4z^{2}\vec k</m>.</p>
 <p>Using the Divergence Theorem,</p>
 <p><m>\int_S\vec F\cdot d\vec A = \int_a^b\int_c^d\int_p^q\,</m>
 <fillin characters="20" name="AnSwEr0001"/><m>\,dz\,dy\,dx =</m> <fillin characters="25" name="AnSwEr0002"/>,</p>
@@ -17,12 +17,12 @@ closed and oriented outward, and
 <m>\int_S\vec F\cdot d\vec A =</m> (the sum of the flux through each of the
 six faces of the box).  Calculating the flux through each face separately,
 we have:</p>
-<p>On <m>x = 4</m>,
+<p>On <m>x = 3</m>,
 <m>\int_S\vec F\cdot d\vec A = \int_a^b\int_c^d</m> <fillin characters="15" name="AnSwEr0009"/> <m>dz\,dy</m>
 = <fillin characters="15" name="AnSwEr0010"/></p>
 <p>where <m>a =</m><fillin characters="5" name="AnSwEr0011"/>, <m>b =</m><fillin characters="5" name="AnSwEr0012"/>,
 <m>c =</m><fillin characters="5" name="AnSwEr0013"/> and <m>d =</m><fillin characters="5" name="AnSwEr0014"/>.</p>
-<p>On <m>x = 1</m>,
+<p>On <m>x = 2</m>,
 <m>\int_S\vec F\cdot d\vec A = \int_a^b\int_c^d</m> <fillin characters="15" name="AnSwEr0015"/> <m>dz\,dy</m>
 = <fillin characters="15" name="AnSwEr0016"/></p>
 <p>where <m>a =</m><fillin characters="5" name="AnSwEr0017"/>, <m>b =</m><fillin characters="5" name="AnSwEr0018"/>,
@@ -37,7 +37,7 @@ we have:</p>
 = <fillin characters="15" name="AnSwEr0028"/></p>
 <p>where <m>a =</m><fillin characters="5" name="AnSwEr0029"/>, <m>b =</m><fillin characters="5" name="AnSwEr0030"/>,
 <m>c =</m><fillin characters="5" name="AnSwEr0031"/> and <m>d =</m><fillin characters="5" name="AnSwEr0032"/>.</p>
-<p>On <m>z = 3</m>,
+<p>On <m>z = 2</m>,
 <m>\int_S\vec F\cdot d\vec A = \int_a^b\int_c^d</m> <fillin characters="15" name="AnSwEr0033"/> <m>dy\,dx</m>
 = <fillin characters="15" name="AnSwEr0034"/></p>
 <p>where <m>a =</m><fillin characters="5" name="AnSwEr0035"/>, <m>b =</m><fillin characters="5" name="AnSwEr0036"/>,
@@ -51,27 +51,17 @@ we have:</p>
 </statement>
     <answer>
       <p>
-        <m>2\cdot 2x+2\cdot 1y+2\cdot 2z</m>
+        <m>2\cdot 5x+2\cdot 2y+2\cdot 4z</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>\left(4-1\right)\mathopen{}\left(3-0\right)\mathopen{}\left(3-0\right)\mathopen{}\left(2\cdot \left(4+1\right)+1\cdot \left(3+0\right)+2\cdot \left(3+0\right)\right)</m>
+        <m>\left(3-2\right)\mathopen{}\left(3-0\right)\mathopen{}\left(2-0\right)\mathopen{}\left(5\cdot \left(3+2\right)+2\cdot \left(3+0\right)+4\cdot \left(2+0\right)\right)</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>1</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>4</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>0</m>
+        <m>2</m>
       </p>
     </answer>
     <answer>
@@ -91,12 +81,22 @@ we have:</p>
     </answer>
     <answer>
       <p>
-        <m>32</m>
+        <m>0</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>2\cdot 4\cdot 4\cdot \left(3-0\right)\mathopen{}\left(3-0\right)</m>
+        <m>2</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>45</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>5\cdot 3\cdot 3\cdot \left(3-0\right)\mathopen{}\left(2-0\right)</m>
       </p>
     </answer>
     <answer>
@@ -116,57 +116,17 @@ we have:</p>
     </answer>
     <answer>
       <p>
-        <m>3</m>
+        <m>2</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>-2</m>
+        <m>-20</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>-2\cdot 1\cdot 1\cdot \left(3-0\right)\mathopen{}\left(3-0\right)</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>0</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>3</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>0</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>3</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>9</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>1\cdot 3\cdot 3\cdot \left(4-1\right)\mathopen{}\left(3-0\right)</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>1</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>4</m>
+        <m>-5\cdot 2\cdot 2\cdot \left(3-0\right)\mathopen{}\left(2-0\right)</m>
       </p>
     </answer>
     <answer>
@@ -186,27 +146,7 @@ we have:</p>
     </answer>
     <answer>
       <p>
-        <m>-1\cdot 0\cdot 0\cdot \left(4-1\right)\mathopen{}\left(3-0\right)</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>1</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>4</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>0</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>3</m>
+        <m>2</m>
       </p>
     </answer>
     <answer>
@@ -216,17 +156,77 @@ we have:</p>
     </answer>
     <answer>
       <p>
-        <m>2\cdot 3\cdot 3\cdot \left(4-1\right)\mathopen{}\left(3-0\right)</m>
+        <m>2\cdot 3\cdot 3\cdot \left(3-2\right)\mathopen{}\left(2-0\right)</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>1</m>
+        <m>2</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>4</m>
+        <m>3</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>0</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>2</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>0</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-2\cdot 0\cdot 0\cdot \left(3-2\right)\mathopen{}\left(2-0\right)</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>2</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>3</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>0</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>2</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>16</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>4\cdot 2\cdot 2\cdot \left(3-2\right)\mathopen{}\left(3-0\right)</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>2</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>3</m>
       </p>
     </answer>
     <answer>
@@ -246,17 +246,17 @@ we have:</p>
     </answer>
     <answer>
       <p>
-        <m>-2\cdot 0\cdot 0\cdot \left(4-1\right)\mathopen{}\left(3-0\right)</m>
+        <m>-4\cdot 0\cdot 0\cdot \left(3-2\right)\mathopen{}\left(3-0\right)</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>1</m>
+        <m>2</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>4</m>
+        <m>3</m>
       </p>
     </answer>
     <answer>
@@ -271,65 +271,65 @@ we have:</p>
     </answer>
     <answer>
       <p>
-        <m>\left(4-1\right)\mathopen{}\left(3-0\right)\mathopen{}\left(3-0\right)\mathopen{}\left(2\cdot \left(4+1\right)+1\cdot \left(3+0\right)+2\cdot \left(3+0\right)\right)</m>
+        <m>\left(3-2\right)\mathopen{}\left(3-0\right)\mathopen{}\left(2-0\right)\mathopen{}\left(5\cdot \left(3+2\right)+2\cdot \left(3+0\right)+4\cdot \left(2+0\right)\right)</m>
       </p>
     </answer>
-    <solution><me>\mbox{div}\,{\vec{F}} = 4x + 2y + 4z.</me>
+    <solution><me>\mbox{div}\,{\vec{F}} = 10x + 4y + 8z.</me>
 So, if <m>W</m> is the interior of the box, we have
-<me>\int_{S}\vec{F} \cdot d\vec{A} = \int_{W}(4x + 2y + 4z)dV
-= \int_{1}^{4}\int_{0}^{3}\int_{0}^{3}(4x + 2y + 4z)dz\,dy\,dx.</me>
+<me>\int_{S}\vec{F} \cdot d\vec{A} = \int_{W}(10x + 4y + 8z)dV
+= \int_{2}^{3}\int_{0}^{3}\int_{0}^{2}(10x + 4y + 8z)dz\,dy\,dx.</me>
 Integrating through each of the integrals in turn, we have
 <me>\int_{S}\vec{F} \cdot d\vec{A} =
-\int_{1}^{4}\int_{0}^{3} 4x\,z + 2y\,z + 2z^{2}\bigg|_{z=0}^{z=3}\,
+\int_{2}^{3}\int_{0}^{3} 10x\,z + 4y\,z + 4z^{2}\bigg|_{z=0}^{z=2}\,
 dy\,dx</me>
-<me>= \int_{1}^{4}\int_{0}^{3} 12 x + 6 y + 18\,dy\,dx</me>
-<me>= \int_{1}^{4} 12 x y + 3 y^2 + 18 y\bigg|_{y=0}^{y=3}\,dx</me>
-<me>= \int_{1}^{4} 36 x + 27 + 54\, dx</me>
-<me>= 18 x^2 + 27 x + 54 x\bigg|_{x=1}^{x=4}</me>
-<me>= 513.</me>
+<me>= \int_{2}^{3}\int_{0}^{3} 20 x + 8 y + 16\,dy\,dx</me>
+<me>= \int_{2}^{3} 20 x y + 4 y^2 + 16 y\bigg|_{y=0}^{y=3}\,dx</me>
+<me>= \int_{2}^{3} 60 x + 36 + 48\, dx</me>
+<me>= 30 x^2 + 36 x + 48 x\bigg|_{x=2}^{x=3}</me>
+<me>= 234.</me>
 
 
 
 
-Finding flux directly, note that on the faces <m>x=4</m> and <m>x=1</m> the
+Finding flux directly, note that on the faces <m>x=3</m> and <m>x=2</m> the
 normal vectors to the surfaces are <m>\vec i</m> and <m>-\vec i</m> respectively,
-so that <m>\vec F\cdot d\vec A = \pm 2x^{2}\,dy\,dz</m> (where <m>x</m> is evaluated
-at 4 or 1), and similarly on
-<m>y = 3</m> and <m>y = 0</m>, and <m>z = 3</m> and <m>z = 0</m>,
-<m>\vec F\cdot d\vec A = \pm y^{2}\,dx\,dz</m> and
-<m>\vec F\cdot d\vec A = \pm 2z^{2}\,dx\,dy</m>, respectively.  Thus on
+so that <m>\vec F\cdot d\vec A = \pm 5x^{2}\,dy\,dz</m> (where <m>x</m> is evaluated
+at 3 or 2), and similarly on
+<m>y = 3</m> and <m>y = 0</m>, and <m>z = 2</m> and <m>z = 0</m>,
+<m>\vec F\cdot d\vec A = \pm 2y^{2}\,dx\,dz</m> and
+<m>\vec F\cdot d\vec A = \pm 4z^{2}\,dx\,dy</m>, respectively.  Thus on
 <m>y = 0</m> and <m>z = 0</m> the flux is zero.  On the remaining faces,
 we have
 
 
 
-(1) On <m>x = 4</m>,
+(1) On <m>x = 3</m>,
 <m>\vec F\cdot d\vec A =
-\int_{0}^{3}\int_{0}^{3}\,32\,dz\,dy =
-288</m>;
+\int_{0}^{3}\int_{0}^{2}\,45\,dz\,dy =
+270</m>;
 
 
 
-(2) On <m>x = 1</m>,
+(2) On <m>x = 2</m>,
 <m>\vec F\cdot d\vec A =
-\int_{0}^{3}\int_{0}^{3}\,2\,dz\,dy =
--18</m>;
+\int_{0}^{3}\int_{0}^{2}\,20\,dz\,dy =
+-120</m>;
 
 
 
 (3) On <m>y = 3</m>,
 <m>\vec F\cdot d\vec A =
-\int_{1}^{4}\int_{0}^{3}\,9\,dz\,dx =
-81</m>; and
+\int_{2}^{3}\int_{0}^{2}\,18\,dz\,dx =
+36</m>; and
 
 
 
-(4) On <m>z = 3</m>,
+(4) On <m>z = 2</m>,
 <m>\vec F\cdot d\vec A =
-\int_{1}^{4}\int_{0}^{3}\,18\,dy\,dx =
-162</m>.
+\int_{2}^{3}\int_{0}^{3}\,16\,dy\,dx =
+48</m>.
 Thus the total flux is the sum of these,
-<m>\vec F\cdot d\vec A = 513</m>.
+<m>\vec F\cdot d\vec A = 234</m>.
 
 
 

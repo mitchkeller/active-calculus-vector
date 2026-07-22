@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap14Sec6__Q06__pg" assembly-id="Library__Michigan__Chap14Sec6__Q06__pg">
+  <static seed="649" source="Library/Michigan/Chap14Sec6/Q06.pg">
+    <statement><p>If
+<me>z = \cos\mathopen{}\left(\frac{y}{x}\right),\qquad x = 5t,\qquad y = 3-t^{2},</me>
+find <m>dz/dt</m> using the chain rule. Assume the variables are
+restricted to domains on which the functions are defined.</p>
+<p><m>\frac{dz}{dt} =</m> <fillin characters="65" name="AnSwEr0001"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>5\frac{\left(3-t^{2}\right)\sin\mathopen{}\left(\frac{3-t^{2}}{5t}\right)}{\left(5t\right)^{2}}+\frac{\sin\mathopen{}\left(\frac{3-t^{2}}{5t}\right)}{5t}\cdot 2t</m>
+      </p>
+    </answer>
+    <solution><me>\frac{dz}{dt} = \frac{\partial z}{\partial x}\frac{dx}{dt} +
+\frac{\partial z}{\partial y}\frac{dy}{dt}</me>
+<me>= (\frac{y\sin\mathopen{}\left(\frac{y}{x}\right)}{x^{2}})(5) + (\frac{-\sin\mathopen{}\left(\frac{y}{x}\right)}{x})(-2t)</me>
+<me>= 5\frac{\left(3-t^{2}\right)\sin\mathopen{}\left(\frac{3-t^{2}}{5t}\right)}{\left(5t\right)^{2}}+\frac{\sin\mathopen{}\left(\frac{3-t^{2}}{5t}\right)}{5t}\cdot 2t.</me>
+
+
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/Michigan/Chap14Sec6/Q06.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Michigan/Chap14Sec6/Q06.pg"/>
+</webwork-reps>

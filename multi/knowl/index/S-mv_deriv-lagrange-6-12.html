@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: ice-fire                     *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h2 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span>
+</h2>
+<div class="para logical">
+<div class="para">The Cobb-Douglas production function  is used in economics to model production levels based on labor and equipment. Suppose we have a specific Cobb-Douglas function of the form</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x, y) = 50 x^{0.4}y^{0.6},
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(x\)</span> is the dollar amount spent on labor and <span class="process-math">\(y\)</span> the dollar amount spent on equipment. Use the method of Lagrange multipliers to determine how much should be spent on labor and how much on equipment to maximize productivity if we have a total of 1.5 million dollars to invest in labor and equipment.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#S-mv_deriv-lagrange-6-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">To find the values of <span class="process-math">\(\lambda\)</span> that satisfy <span class="process-math">\(\nabla f = \lambda \nabla g\)</span> for our Cobb-Douglas function, we calculate both <span class="process-math">\(\nabla f\)</span> and <span class="process-math">\(\nabla g\text{.}\)</span> Now</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f = \frac{20y^{0.6}}{x^{0.6}} \vi + \frac{30x^{0.4}}{y^{0.4}} \vj \ \ \ \ \text{ and }  \ \ \ \ \nabla g = \vi + \vj\text{,}
+\end{equation*}
+</div>
+<div class="para">so we need a value of <span class="process-math">\(\lambda\)</span> so that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{20y^{0.6}}{x^{0.6}} \vi + \frac{30x^{0.4}}{y^{0.4}} \vj = \lambda(\vi + \vj)\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#S-mv_deriv-lagrange-6-12-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Equating components and the original constraint give us the three equations</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn_mv_deriv-lagrange_lag_ex1.html ./knowl/xref/eqn_mv_deriv-lagrange_lag_ex2.html">
+\begin{align}
+20y^{0.6} \amp = \lambda x^{0.6}\tag{11.10.10}\\
+30x^{0.4} \amp = \lambda y^{0.4}\tag{11.10.11}\\
+x+y \amp = 1.5\tag{11.10.12}
+\end{align}
+</div>
+<div class="para">in the three unknowns <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(y\text{,}\)</span> and <span class="process-math">\(\lambda\text{.}\)</span> Dividing both sides of <a href="S-mv_deriv-lagrange.html#S-mv_deriv-lagrange-6-12-3-2-1" class="xref" data-knowl="./knowl/xref/eqn_mv_deriv-lagrange_lag_ex1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.10.10">(11.10.10)</a> by the corresponding sides of <a href="S-mv_deriv-lagrange.html#S-mv_deriv-lagrange-6-12-3-2-1" class="xref" data-knowl="./knowl/xref/eqn_mv_deriv-lagrange_lag_ex2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.10.11">(11.10.11)</a> yields</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn_mv_deriv-lagrange_lag_ex1.html ./knowl/xref/eqn_mv_deriv-lagrange_lag_ex2.html">
+\begin{align}
+\frac{2}{3} \frac{y^{0.6}}{x^{0.4}} \amp = \frac{x^{0.6}}{y^{0.4}}\notag\\
+\frac{2}{3} y \amp = x\tag{11.10.13}
+\end{align}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#S-mv_deriv-lagrange-6-12-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Substituting into <a href="S-mv_deriv-lagrange.html#S-mv_deriv-lagrange-6-12-3-2-1" class="xref" data-knowl="./knowl/xref/eqn_mv_deriv-lagrange_lag_ex3.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 11.10.12">(11.10.12)</a> gives us</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn_mv_deriv-lagrange_lag_ex3.html">
+\begin{equation*}
+\frac{2}{3}y + y = 1.5
+\end{equation*}
+</div>
+<div class="para">or</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eqn_mv_deriv-lagrange_lag_ex3.html">
+\begin{equation*}
+y = \frac{9}{10}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#S-mv_deriv-lagrange-6-12-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Then <span class="process-math">\(x = \frac{3}{5}\)</span> and <span class="process-math">\(\lambda \approx 25.51\text{.}\)</span> Therefore we maximize our output when we spend $0.6 million on labor and $0.9 million on equipment.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#S-mv_deriv-lagrange-6-12-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 11.10.3.12.1"><a tabindex="-1" href="#S-mv_deriv-lagrange-6-12-3" title="Copy heading and permalink for Solution 11.10.3.12.1" aria-label="Copy heading and permalink for Solution 11.10.3.12.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 11.10.3.12"><a tabindex="-1" href="#S-mv_deriv-lagrange-6-12" title="Copy heading and permalink for Exercise 11.10.3.12" aria-label="Copy heading and permalink for Exercise 11.10.3.12">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="S-mv_deriv-lagrange.html#S-mv_deriv-lagrange-6-12">In Context</a></span>
+</body>
+</html>

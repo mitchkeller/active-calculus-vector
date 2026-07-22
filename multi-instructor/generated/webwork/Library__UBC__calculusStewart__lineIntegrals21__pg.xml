@@ -1,28 +1,28 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__UBC__calculusStewart__lineIntegrals21__pg" assembly-id="Library__UBC__calculusStewart__lineIntegrals21__pg">
-  <static seed="620" source="Library/UBC/calculusStewart/lineIntegrals21.pg">
-    <statement><p>Evaluate the line integral <m>\int_{\mathcal{C}} \mathbf{F} \cdot \,d\ \mathbf{r}</m> where <m>\mathbf{F}=\left\lt  4 \sin x, -2 \cos y, 10 xz \right&gt;</m> and <m>\mathcal{C}</m> is the path given by <m>\mathbf{r}(t) = ( t^3, -2 t^2, -2 t)</m> for <m>0 \le t \le 1</m></p>
+  <static seed="884" source="Library/UBC/calculusStewart/lineIntegrals21.pg">
+    <statement><p>Evaluate the line integral <m>\int_{\mathcal{C}} \mathbf{F} \cdot \,d\ \mathbf{r}</m> where <m>\mathbf{F}=\left\lt  5 \sin x, -2 \cos y, 5 xz \right&gt;</m> and <m>\mathcal{C}</m> is the path given by <m>\mathbf{r}(t) = (-2 t^3, -2 t^2, 3 t)</m> for <m>0 \le t \le 1</m></p>
 <p><m>\int_{\mathcal{C}} \mathbf{F} \cdot \,d\ \mathbf{r}=</m> <fillin characters="20" name="AnSwEr0001"/></p>
 </statement>
     <answer>
       <p>
-        <m>11.6574</m>
+        <m>-9.10067</m>
       </p>
     </answer>
-    <solution><me>\mathbf{F}(\mathbf{r}(t)) = \left\lt  4 \sin ( t^3), -2 \cos (-2 t^2), -20 t^4 \right&gt;</me>
-<me>\mathbf{r} '(t) = \left\lt  3 t^2, -4 t, -2 \right &gt;</me>
+    <solution><me>\mathbf{F}(\mathbf{r}(t)) = \left\lt  5 \sin (-2 t^3), -2 \cos (-2 t^2), -30 t^4 \right&gt;</me>
+<me>\mathbf{r} '(t) = \left\lt  -6 t^2, -4 t, 3 \right &gt;</me>
 <me>\mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r} '(t)
-= \left\lt  4 \sin ( t^3), -2 \cos (-2 t^2), -20 t^4 \right&gt; \cdot \left\lt  3 t^2, -4 t, -2 \right &gt;</me>
-<me>=12 t^2 \sin ( t^3) + 8 t \cos (-2 t^2) + 40 t^4</me>
+= \left\lt  5 \sin (-2 t^3), -2 \cos (-2 t^2), -30 t^4 \right&gt; \cdot \left\lt  -6 t^2, -4 t, 3 \right &gt;</me>
+<me>=-30 t^2 \sin (-2 t^3) + 8 t \cos (-2 t^2)  - 90 t^4</me>
 
 
 
 The line integral is then:
 <me>\int_{\mathcal{C}} \mathbf{F} \cdot \,d\ \mathbf{r}
 = \int^1_0 \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r} '(t) \ dt
-= \int^1_0 12 t^2 \sin ( t^3) + 8 t \cos (-2 t^2) + 40 t^4\ dt</me>
-<me>= \left [ -4 \cos ( t^3)  - 2 \sin (-2 t^2) + 8 t^5 \right ]^1_0</me>
-<me>= -4 \cos (1)  - 2 \sin (-2) + 12</me>
+= \int^1_0 -30 t^2 \sin (-2 t^3) + 8 t \cos (-2 t^2)  - 90 t^4\ dt</me>
+<me>= \left [ -5 \cos (-2 t^3)  - 2 \sin (-2 t^2)  - 18 t^5 \right ]^1_0</me>
+<me>= -5 \cos (-2)  - 2 \sin (-2)  - 13</me>
 
 
 

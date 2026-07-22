@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__maCalcDB__setVmultivariable4Linearization__ur_vc_6_2__pg" assembly-id="Library__maCalcDB__setVmultivariable4Linearization__ur_vc_6_2__pg">
-  <static seed="480" source="Library/maCalcDB/setVmultivariable4Linearization/ur_vc_6_2.pg">
-    <statement><p>Find the equation of the tangent plane to the surface <m>z = e^{-3 x/17} \ln \left(
-1 y \right)</m> at the point <m>(3,1,       0)</m>.</p>
+  <static seed="590" source="Library/maCalcDB/setVmultivariable4Linearization/ur_vc_6_2.pg">
+    <statement><p>Find the equation of the tangent plane to the surface <m>z = e^{-2 x/17} \ln \left(
+4 y \right)</m> at the point <m>(2,3,   1.964)</m>.</p>
 <p>z = <fillin characters="70" name="AnSwEr0001"/></p>
 <p>Note: Your answer should be an expression of x and y; e.g. <lq/>5x + 2y - 3<rq/></p>
 </statement>
     <answer>
       <p>
-        <m>0x+0.588951y+\left(-0.588951\right)</m>
+        <m>-0.231049x+0.263446y+1.63568</m>
       </p>
     </answer>
   </static>

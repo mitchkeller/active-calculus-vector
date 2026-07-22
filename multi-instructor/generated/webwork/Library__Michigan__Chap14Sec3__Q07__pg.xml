@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap14Sec3__Q07__pg" assembly-id="Library__Michigan__Chap14Sec3__Q07__pg">
+  <static seed="613" source="Library/Michigan/Chap14Sec3/Q07.pg">
+    <statement><p>Find the equation of the tangent plane to the surface determined
+by
+ <me>x^4 y^4 + z - 30 = 0</me>
+at <m>x=2</m>, <m>y=5</m>.</p>
+<p><m>z =</m> <fillin characters="45" name="AnSwEr0001"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>-\left(9970+20000\mathopen{}\left(x-2\right)+8000\mathopen{}\left(y-5\right)\right)</m>
+      </p>
+    </answer>
+    <solution><me>z = f(x,y) = 30-x^{4}y^{4},</me>
+and <m>f(2,5) = -9970</m>.  We have
+<me>f_x(x,y) = -\left(4x^{3}y^{4}\right),\quad \hbox{ so}\quad f_x(2,5) = -20000,</me>
+and
+<me>f_y(x,y) = -\left(x^{4}\cdot 4y^{3}\right),\quad \hbox{ so}\quad f_y(2,5) = -8000.</me>
+ Thus, the tangent plane is
+<me>z = f(2,5) + f_x(2,5)(x - 2) + f_y(2,5)(y - 5),</me>
+or
+<me>z = -9970  - 20000 (x - 2)  - 8000 (y - 5) = -\left(9970+20000\mathopen{}\left(x-2\right)+8000\mathopen{}\left(y-5\right)\right).</me>
+
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/Michigan/Chap14Sec3/Q07.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Michigan/Chap14Sec3/Q07.pg"/>
+</webwork-reps>

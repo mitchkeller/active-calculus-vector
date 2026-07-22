@@ -1,25 +1,25 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__272__setStewart14_3__problem_3__pg" assembly-id="Library__272__setStewart14_3__problem_3__pg">
-  <static seed="461" source="Library/272/setStewart14_3/problem_3.pg">
+  <static seed="524" source="Library/272/setStewart14_3/problem_3.pg">
     <statement><p>Find the partial derivatives of the function
-<me>w = \sqrt{1 r^2 + 8 s^2 + 9 t^2}</me></p>
+<me>w = \sqrt{1 r^2 + 9 s^2 + 2 t^2}</me></p>
 <p><m>\frac{\partial w}{\partial r} =</m> <fillin characters="60" name="AnSwEr0001"/></p>
 <p><m>\frac{\partial w}{\partial s} =</m> <fillin characters="60" name="AnSwEr0002"/></p>
 <p><m>\frac{\partial w}{\partial t} =</m> <fillin characters="60" name="AnSwEr0003"/></p>
 </statement>
     <answer>
       <p>
-        <m>\frac{1r}{\sqrt{1r^{2}+8s^{2}+9t^{2}}}</m>
+        <m>\frac{1r}{\sqrt{1r^{2}+9s^{2}+2t^{2}}}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>\frac{8s}{\sqrt{1r^{2}+8s^{2}+9t^{2}}}</m>
+        <m>\frac{9s}{\sqrt{1r^{2}+9s^{2}+2t^{2}}}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>\frac{9t}{\sqrt{1r^{2}+8s^{2}+9t^{2}}}</m>
+        <m>\frac{2t}{\sqrt{1r^{2}+9s^{2}+2t^{2}}}</m>
       </p>
     </answer>
   </static>

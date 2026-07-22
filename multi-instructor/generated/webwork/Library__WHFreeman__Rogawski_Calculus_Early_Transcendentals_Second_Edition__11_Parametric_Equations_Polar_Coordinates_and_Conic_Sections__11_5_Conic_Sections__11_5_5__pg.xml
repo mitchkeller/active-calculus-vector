@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections__11_5_Conic_Sections__11_5_5__pg" assembly-id="Library__WHFreeman__Rogawski_Calculus_Early_Transcendentals_Second_Edition__11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections__11_5_Conic_Sections__11_5_5__pg">
-  <static seed="666" source="Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.5_Conic_Sections/11.5.5.pg">
-    <statement><p>Find the vertices and foci of the conic section <m>\left(\frac{x - 4}{7}\right)^2 - \left(\frac{y+2}{6}\right)^2 = 1</m></p>
+  <static seed="930" source="Library/WHFreeman/Rogawski_Calculus_Early_Transcendentals_Second_Edition/11_Parametric_Equations_Polar_Coordinates_and_Conic_Sections/11.5_Conic_Sections/11.5.5.pg">
+    <statement><p>Find the vertices and foci of the conic section <m>\left(\frac{x - 5}{8}\right)^2 - \left(\frac{y+5}{8}\right)^2 = 1</m></p>
 <p>The foci are at <m>F_1=</m> (<fillin characters="10" name="AnSwEr0001"/>,<fillin characters="10" name="AnSwEr0002"/>) (left) and <m>F_2=</m>(<fillin characters="10" name="AnSwEr0003"/>,<fillin characters="10" name="AnSwEr0004"/>) (right)</p>
 <p>The vertices are :</p>
 <p>(<fillin characters="10" name="AnSwEr0005"/>,<fillin characters="10" name="AnSwEr0006"/>) and
@@ -10,22 +10,22 @@
 </statement>
     <answer>
       <p>
-        <m>-5.21954</m>
+        <m>-6.3137</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>-2</m>
+        <m>-5</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>13.2195</m>
+        <m>16.3137</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>-2</m>
+        <m>-5</m>
       </p>
     </answer>
     <answer>
@@ -35,43 +35,43 @@
     </answer>
     <answer>
       <p>
-        <m>-2</m>
+        <m>-5</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>11</m>
+        <m>13</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>-2</m>
+        <m>-5</m>
       </p>
     </answer>
-    <solution><m>{\left(\frac{x}{7}\right)}^{2}-{\left(\frac{y}{6}\right)}^{2}=1</m>. For this hyperbola,
-<m>a=7</m>, <m>b=6</m> and
-<m>c=\sqrt{{7}^{2}+{6}^{2}}\approx 9.220</m>.
+    <solution><m>{\left(\frac{x}{8}\right)}^{2}-{\left(\frac{y}{8}\right)}^{2}=1</m>. For this hyperbola,
+<m>a=8</m>, <m>b=8</m> and
+<m>c=\sqrt{{8}^{2}+{8}^{2}}\approx 11.314</m>.
 
 
  Hence,  the foci are at
-<m>\left(9.220, 0\right)</m> and
-<m>\left(-9.220, 0\right)</m>
+<m>\left(11.314, 0\right)</m> and
+<m>\left(-11.314, 0\right)</m>
 
  and the vertices are at
-<m>\left(7, 0\right)</m> and
-<m>\left(-7, 0\right)</m>. 
+<m>\left(8, 0\right)</m> and
+<m>\left(-8, 0\right)</m>. 
 
  Since the given hyperbola is obtained by translating the center of the hyperbola
-<m>{\left(\frac{x}{7}\right)}^{2}-{\left(\frac{y}{6}\right)}^{2}=1</m>  to the point
-<m>\left( + 4, -2\right)</m>, 
+<m>{\left(\frac{x}{8}\right)}^{2}-{\left(\frac{y}{8}\right)}^{2}=1</m>  to the point
+<m>\left( + 5, -5\right)</m>, 
 
  the foci are at
-<m>{F}_{1}=\left(9.220 + 4, 0-2\right)=\left(13.220, -2\right)</m> and
-<m>{F}_{2}=\left(-9.220 + 4, 0-2\right)=\left(-5.220, -2\right)</m> 
+<m>{F}_{1}=\left(11.314 + 5, 0-5\right)=\left(16.314, -5\right)</m> and
+<m>{F}_{2}=\left(-11.314 + 5, 0-5\right)=\left(-6.314, -5\right)</m> 
 
  and the vertices are
-<m>A=(7 + 4, 0-2)=(11, -2)</m> and
-<m>{A}^{\prime }=(-7 + 4, 0-2)=(-3, -2)</m>.
+<m>A=(8 + 5, 0-5)=(13, -5)</m> and
+<m>{A}^{\prime }=(-8 + 5, 0-5)=(-3, -5)</m>.
 
 
 

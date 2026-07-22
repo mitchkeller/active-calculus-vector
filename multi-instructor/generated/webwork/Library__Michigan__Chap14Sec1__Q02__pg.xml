@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap14Sec1__Q02__pg" assembly-id="Library__Michigan__Chap14Sec1__Q02__pg">
+  <static seed="560" source="Library/Michigan/Chap14Sec1/Q02.pg">
+    <statement><p>Use difference quotients with <m>\Delta x = 0.1</m> and
+<m>\Delta y = 0.1</m> to estimate <m>f_x(1,2)</m> and
+<m>f_y(1,2)</m> where
+<me>f(x,y) = e^{-x}\sin\mathopen{}\left(y\right).</me></p>
+<p><m>f_x(1,2) \approx</m> <fillin characters="25" name="AnSwEr0001"/></p>
+<p><m>f_y(1,2) \approx</m> <fillin characters="25" name="AnSwEr0002"/></p>
+<p>Then give better estimates by using <m>\Delta x = 0.01</m> and
+<m>\Delta y = 0.01</m>.</p>
+<p><m>f_x(1,2) \approx</m> <fillin characters="25" name="AnSwEr0003"/></p>
+<p><m>f_y(1,2) \approx</m> <fillin characters="25" name="AnSwEr0004"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>-0.31833</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-0.169548</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-0.332845</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-0.154762</m>
+      </p>
+    </answer>
+    <solution><m>\Delta x=0.1</m> and <m>\Delta y =0.1</m>, we have the estimates:
+<me>f_x(1,2) \approx \frac{f(1.1,2) - f(1,2)}{0.1}
+         = \frac{e^{-1.1}\,\sin(2) - e^{-1}\,\sin(2)}{0.1}
+         \approx \frac{0.302679 - 0.334512}{0.1} = -0.31833.</me>
+and
+<me>f_y(1,2) \approx \frac{f(1,2.1) - f(1,2)}{0.1}
+	= \frac{e^{-1}\,\sin(2.1) - e^{-1}\,\sin(2)}{0.1}
+        \approx \frac{0.317557 - 0.334512}{0.1} = -0.169548.</me>
+Now, using <m>\Delta x=0.01</m> and <m>\Delta y=0.01</m>, we have the estimates:
+<me>f_x(1,2) \approx \frac{f(1.01,2) - f(1,2)}{0.01}
+        = \frac{e^{-1.01}\,\sin(2) - e^{-1}\,\sin(2)}{0.01}
+        \approx \frac{0.331183 - 0.334512}{0.01} = -0.332845</me>
+and
+<me>f_x(1,2) \approx \frac{f(1,2.01) - f(1,2)}{0.01}
+        = \frac{e^{-1}\,\sin(2.01) - e^{-1}\,\sin(2)}{0.01}
+        \approx \frac{0.332964 - 0.334512}{0.01} = -0.154762.</me>
+
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/Michigan/Chap14Sec1/Q02.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Michigan/Chap14Sec1/Q02.pg"/>
+</webwork-reps>

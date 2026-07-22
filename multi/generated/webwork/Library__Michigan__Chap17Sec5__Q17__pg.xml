@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap17Sec5__Q17__pg" assembly-id="Library__Michigan__Chap17Sec5__Q17__pg">
-  <static seed="641" source="Library/Michigan/Chap17Sec5/Q17.pg">
+  <static seed="905" source="Library/Michigan/Chap17Sec5/Q17.pg">
     <statement><p>Parameterize the plane through the point
-<m>(5, -3, 5)</m> with the normal vector
-<m>\left\lt 1,1,1\right&gt;</m></p>
+<m>(-3, -5, -1)</m> with the normal vector
+<m>\left\lt -4,4,4\right&gt;</m></p>
 <p><m>\vec r(s,t) =</m> <fillin characters="55" name="AnSwEr0001"/></p>
 <p><em>(Use <m>s</m> and <m>t</m> for the parameters in your
 parameterization, and <alert>enter your vector as a single vector,
@@ -12,12 +12,12 @@ with angle brackets</alert>: e.g., as
 </statement>
     <answer>
       <p>
-        <m>\left&lt;5-s-t,s-3,5+t\right&gt;</m>
+        <m>\left&lt;-\left(3+4s+4t\right),-\left(5+4s\right),-\left(1+4t\right)\right&gt;</m>
       </p>
     </answer>
     <solution><m>\vec v_1</m> and <m>\vec v_2</m> that are parallel to the plane.  Such
 vectors are perpendicular to the normal  vector to the plane,
-<m>\vec n = \left\lt 1,1,1\right&gt;</m>.   We can choose any vectors <m>\vec v_1</m> and
+<m>\vec n = \left\lt -4,4,4\right&gt;</m>.   We can choose any vectors <m>\vec v_1</m> and
 <m>\vec v_2</m> such that
 <m>\vec v_1\cdot \vec n = \vec v_2\cdot \vec n = 0</m>.
 
@@ -25,16 +25,16 @@ vectors are perpendicular to the normal  vector to the plane,
 
 
 One choice is
-<me>\vec v_1 = \left\lt -1,1,0\right&gt;, \qquad \vec v_2 = \left\lt -1,0,1\right&gt;.</me>
+<me>\vec v_1 = \left\lt -4,-4,0\right&gt;, \qquad \vec v_2 = \left\lt -4,0,-4\right&gt;.</me>
 
 
 
 
 Letting
-<m>\vec r_0 = \left\lt 5,-3,5\right&gt;</m>, we have
+<m>\vec r_0 = \left\lt -3,-5,-1\right&gt;</m>, we have
 the parameterization
 <me>\vec r(s, t) = \vec r_0+ s\vec v_1+t\vec v_2 =
-\left\lt 5-s-t,s-3,5+t\right&gt;.</me>
+\left\lt -\left(3+4s+4t\right),-\left(5+4s\right),-\left(1+4t\right)\right&gt;.</me>
 
 
 

@@ -1,27 +1,27 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap16Sec1__Q07__pg" assembly-id="Library__Michigan__Chap16Sec1__Q07__pg">
-  <static seed="540" source="Library/Michigan/Chap16Sec1/Q07.pg">
+  <static seed="804" source="Library/Michigan/Chap16Sec1/Q07.pg">
     <statement><p>Using Riemann sums with four subdivisions in each direction,
 find upper and lower bounds
 for the volume under the graph of
 <m>f(x,y) = 8+2xy</m> above the rectangle <m>R</m>
-with <m>0\le x\le 4,\quad 0\le y \le 3</m>.</p>
+with <m>0\le x\le 1,\quad 0\le y \le 4</m>.</p>
 <p>upper bound = <fillin characters="55" name="AnSwEr0001"/></p>
 <p>lower bound = <fillin characters="55" name="AnSwEr0002"/></p>
 </statement>
     <answer>
       <p>
-        <m>1\cdot 0.75\cdot 278</m>
+        <m>0.25\cdot 1\cdot 178</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>1\cdot 0.75\cdot 182</m>
+        <m>0.25\cdot 1\cdot 146</m>
       </p>
     </answer>
-    <solution><m>R</m> into subrectangles with the lines <m>x=0</m>, <m>x=1</m>,
-<m>x=2</m>, <m>x=3</m>, and <m>x=4</m> and the lines <m>y=0</m>,
-<m>y=0.75</m>, <m>y=1.5</m>, <m>y=2.25</m>, and <m>y=3</m>. Then we have 16
+    <solution><m>R</m> into subrectangles with the lines <m>x=0</m>, <m>x=0.25</m>,
+<m>x=0.5</m>, <m>x=0.75</m>, and <m>x=1</m> and the lines <m>y=0</m>,
+<m>y=1</m>, <m>y=2</m>, <m>y=3</m>, and <m>y=4</m>. Then we have 16
 subrectangles, each of which we denote <m>R_{(a,b)}</m>, where <m>(a,b)</m> is
 the location of the lower-left corner of the subrectangle.
 
@@ -30,9 +30,9 @@ the location of the lower-left corner of the subrectangle.
 
 We want to find a lower bound and an upper bound for the volume above
 each subrectangle.  The lower bound for the volume of <m>R_{(a,b)}</m> is
-<me>0.75 ( \mbox{Min of } f \mbox{ on } R_{(a,b)})</me>
+<me>0.25 ( \mbox{Min of } f \mbox{ on } R_{(a,b)})</me>
 because the area of <m>R_{(a,b)}</m> is
-<m>1\cdot 0.75=0.75</m>.  The function <m>f(x,y) = 8+2xy</m>
+<m>0.25\cdot 1=0.25</m>.  The function <m>f(x,y) = 8+2xy</m>
 increases with both <m>x</m> and <m>y</m> over the whole region <m>R</m>.
 Thus,
 <me>\mbox{Min of } f \mbox{ on } R_{(a,b)} = f(a,b) = 8+2ab,</me>
@@ -44,22 +44,22 @@ the origin.
 
 Similarly,
 <me>\mbox{Max of } f \mbox{ on } R_{(a,b)} =
-    f(a+1,b+0.75) = 8 + 2(a+1)(b+0.75).</me>
+    f(a+0.25,b+1) = 8 + 2(a+0.25)(b+1).</me>
 So we have
-<me>\mbox{Lower sum } = \sum_{(a,b)} 0.75(8+2ab) = 0.75 \sum_{(a,b)} 8+2ab
-  = 96 + 0.75\sum_{(a,b)}2 ab</me>
-Since <m>a=0, 1, 2, 3</m> and <m>b= 0, 0.75, 1.5, 2.25</m>,
+<me>\mbox{Lower sum } = \sum_{(a,b)} 0.25(8+2ab) = 0.25 \sum_{(a,b)} 8+2ab
+  = 32 + 0.25\sum_{(a,b)}2 ab</me>
+Since <m>a=0, 0.25, 0.5, 0.75</m> and <m>b= 0, 1, 2, 3</m>,
 expanding this sum gives
-<me>\mbox{Lower} = 96 + 0.75 (0 + 0 + 0 + 0 + 0 + 1.5 + 3 + 4.5 + 0 + 3 + 6</me>
-<me>+ 9 + 0 + 4.5 + 9 + 13.5) = 136.5.</me>
+<me>\mbox{Lower} = 32 + 0.25 (0 + 0 + 0 + 0 + 0 + 0.5 + 1 + 1.5 + 0 + 1 + 2</me>
+<me>+ 3 + 0 + 1.5 + 3 + 4.5) = 36.5.</me>
 
 
 
 
 Similarly, we can compute the upper sum:
-<me>\mbox{Upper sum }= \sum_{(a,b)}0.75(8+2(a+1)(b+0.75))
-    = 0.75\sum_{(a,b)}(8+2(a+1)(b+0.75))</me>
-<me>= 96 + 0.75\sum_{(a,b)}(a+1)(b+0.75) = 208.5.</me>
+<me>\mbox{Upper sum }= \sum_{(a,b)}0.25(8+2(a+0.25)(b+1))
+    = 0.25\sum_{(a,b)}(8+2(a+0.25)(b+1))</me>
+<me>= 32 + 0.25\sum_{(a,b)}(a+0.25)(b+1) = 44.5.</me>
 
 
 

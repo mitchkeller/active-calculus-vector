@@ -77,7 +77,7 @@ htmlPresentation: false,
 \definecolor{fillinmathshade}{gray}{0.9}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
-<div style="aspect-ratio: 1;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">  var('t,s')
+<div style="aspect-ratio: 1;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">                var('t,s')
 plot23 = parametric_plot3d((t,s,t),(t,-2,2),(s,-2,2),color='gray',opacity=.3,axes_labels=["$x$","$y$","$z$"],axes_frame=False)
 plot23 += parametric_plot3d((cos(t),sin(t),cos(t)),(t,-pi/4,3*pi/4),color='red')
 plot23 += point3d((-sqrt(2)/2,sqrt(2)/2,-sqrt(2)/2),color="black",size=10)

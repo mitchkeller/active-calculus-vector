@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Rochester__setIntegrals24Centroid__ur_in_24_2__pg" assembly-id="Library__Rochester__setIntegrals24Centroid__ur_in_24_2__pg">
-  <static seed="567" source="Library/Rochester/setIntegrals24Centroid/ur_in_24_2.pg">
-    <statement><p>Find the centroid <m>(\bar x,\bar y)</m> of the triangle with vertices at <m>(0,0)</m>, <m>(9,0)</m>, and <m>(0,8)</m>.</p>
+  <static seed="831" source="Library/Rochester/setIntegrals24Centroid/ur_in_24_2.pg">
+    <statement><p>Find the centroid <m>(\bar x,\bar y)</m> of the triangle with vertices at <m>(0,0)</m>, <m>(2,0)</m>, and <m>(0,1)</m>.</p>
 <p><m>\bar x</m>= <fillin characters="30" name="AnSwEr0001"/></p>
 <p><m>\bar y</m>= <fillin characters="30" name="AnSwEr0002"/></p>
 </statement>
     <answer>
       <p>
-        <m>3</m>
+        <m>0.666666666666667</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>2.66666666666667</m>
+        <m>0.333333333333333</m>
       </p>
     </answer>
   </static>

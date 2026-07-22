@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap16Sec7__Q05__pg" assembly-id="Library__Michigan__Chap16Sec7__Q05__pg">
-  <static seed="607" source="Library/Michigan/Chap16Sec7/Q05.pg">
+  <static seed="871" source="Library/Michigan/Chap16Sec7/Q05.pg">
     <statement><p>Find the Jacobian.
 <m>\frac{\partial (x,y,z)}{\partial (s,t,u)}</m>,
-where <m>x = 4u-\left(3s+5t\right), y = 5s+5t+2u, z = -\left(5s+4t+4u\right)</m>.</p>
+where <m>x = 4u-\left(s+2t\right), y = 4s+t+5u, z = 3u-\left(2s+2t\right)</m>.</p>
 <p><m>\frac{\partial (x,y,z)}{\partial (s,t,u)} =</m>
 <fillin characters="35" name="AnSwEr0001"/></p>
 </statement>
     <answer>
       <p>
-        <m>-3\cdot \left(5\cdot \left(-4\right)-2\cdot \left(-4\right)\right)--5\cdot \left(5\cdot \left(-4\right)-2\cdot \left(-5\right)\right)+4\cdot \left(5\cdot \left(-4\right)-5\cdot \left(-5\right)\right)</m>
+        <m>-1\cdot \left(1\cdot 3-5\cdot \left(-2\right)\right)--2\cdot \left(4\cdot 3-5\cdot \left(-2\right)\right)+4\cdot \left(4\cdot \left(-2\right)-1\cdot \left(-2\right)\right)</m>
       </p>
     </answer>
     <solution><me>\left|\frac{\partial (x,y,z)}{\partial (s,t,u)}\right| =
@@ -19,15 +19,15 @@ where <m>x = 4u-\left(3s+5t\right), y = 5s+5t+2u, z = -\left(5s+4t+4u\right)</m>
   z_s \amp  z_t \amp  z_u
   \end{array}\right|
   =\left|\begin{array}{ccc}
-  -3 \amp  -5 \amp  4\\
-  5 \amp  5 \amp  2\\
-  -5 \amp  -4 \amp  -4
+  -1 \amp  -2 \amp  4\\
+  4 \amp  1 \amp  5\\
+  -2 \amp  -2 \amp  3
 \end{array}\right|.</me>
 This <m>3 \times 3</m> determinant is computed the same way as for the
-cross product, with the entries <m>-3,-5,4</m> in the first row playing the
+cross product, with the entries <m>-1,-2,4</m> in the first row playing the
 same role as <m>\vec i,\vec j,\vec k</m>.  We get
 <me>\frac{\partial (x,y,z)}{\partial (s,t,u)}= 
-((5)(-4)-(2)(-4))-3 + ((2)(-5)-(5)(-4))-5 + ((5)(-4)-(5)(-5))4 = 6.</me>
+((1)(3)-(5)(-2))-1 + ((5)(-2)-(4)(3))-2 + ((4)(-2)-(1)(-2))4 = 7.</me>
 
 
 

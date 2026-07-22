@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Dartmouth__setStewartCh15S5__problem_5__pg" assembly-id="Library__Dartmouth__setStewartCh15S5__problem_5__pg">
-  <static seed="495" source="Library/Dartmouth/setStewartCh15S5/problem_5.pg">
+  <static seed="639" source="Library/Dartmouth/setStewartCh15S5/problem_5.pg">
     <statement><p>Let <m>W(s,t) = F(u(s,t), v(s,t))</m> where
-<me>u(1,0) = 6, u_s(1,0) = -9, u_t(1,0) = -7</me>
-<me>v(1,0) = -9, v_s(1,0) = -1, v_t(1,0) = 9</me>
-<me>F_u(6, -9) = -2, F_v(6, -9) = 1</me></p>
+<me>u(1,0) = 5, u_s(1,0) = 9, u_t(1,0) = -6</me>
+<me>v(1,0) = -7, v_s(1,0) = 1, v_t(1,0) = 2</me>
+<me>F_u(5, -7) = -5, F_v(5, -7) = -8</me></p>
 <p><m>W_s(1,0) =</m> <fillin characters="20" name="AnSwEr0001"/>
 <m>W_t(1,0) =</m> <fillin characters="20" name="AnSwEr0002"/></p>
 </statement>
     <answer>
       <p>
-        <m>17</m>
+        <m>-53</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>23</m>
+        <m>14</m>
       </p>
     </answer>
   </static>
