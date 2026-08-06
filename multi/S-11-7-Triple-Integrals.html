@@ -1548,5 +1548,27 @@ T(x,y,z) = \frac{80}{1 + \frac{x^2}{1000} + \frac{y^2}{1000} + \frac{z^2}{1000}}
   gtag('js', new Date());
   gtag('config', 'G-QJKN634F7R');
 </script><!--End: Google Global Site Tag code-->
+<script data-pretext-tools-frame-bridge="true">
+(function () {
+  if (window.__ptxFrameBridge) { return; }
+  window.__ptxFrameBridge = true;
+  function report() {
+    try {
+      parent.postMessage({
+        command: 'ptxFramePath',
+        path: location.pathname + location.search + location.hash
+      }, '*');
+    } catch (e) { /* not framed */ }
+  }
+  report();
+  window.addEventListener('hashchange', report);
+  window.addEventListener('pageshow', report);
+  window.addEventListener('message', function (event) {
+    if (event.data && event.data.command === 'ptxFrameReload') {
+      location.reload();
+    }
+  });
+})();
+</script>
 </body>
 </html>

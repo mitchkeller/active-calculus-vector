@@ -106,5 +106,27 @@ for i in range(21):
 plot6+=arrow((2,-1,0),(1.75,0.5,0),color="red")
 show(plot6,aspect_ratio=(1,1,1),viewpoint=[[0.0825,-0.4149,-0.9061],200.43],camera_position=[-2.6268,6.2541,5.6841])
 </script></pre></div>
+<script data-pretext-tools-frame-bridge="true">
+(function () {
+  if (window.__ptxFrameBridge) { return; }
+  window.__ptxFrameBridge = true;
+  function report() {
+    try {
+      parent.postMessage({
+        command: 'ptxFramePath',
+        path: location.pathname + location.search + location.hash
+      }, '*');
+    } catch (e) { /* not framed */ }
+  }
+  report();
+  window.addEventListener('hashchange', report);
+  window.addEventListener('pageshow', report);
+  window.addEventListener('message', function (event) {
+    if (event.data && event.data.command === 'ptxFrameReload') {
+      location.reload();
+    }
+  });
+})();
+</script>
 </body>
 </html>

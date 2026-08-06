@@ -89,5 +89,27 @@ plot1 += point3d((sqrt(2)/2,-sqrt(2)/2,sqrt(2)/2),color="black",size=10)
 plot1 += parametric_plot3d((t,0,0),(t,-2,2),color="black")+parametric_plot3d((0,t,0),(t,-2,2),color="black")+parametric_plot3d((0,0,t),(t,-2,2),color="black")
 plot1
 </script></pre></div>
+<script data-pretext-tools-frame-bridge="true">
+(function () {
+  if (window.__ptxFrameBridge) { return; }
+  window.__ptxFrameBridge = true;
+  function report() {
+    try {
+      parent.postMessage({
+        command: 'ptxFramePath',
+        path: location.pathname + location.search + location.hash
+      }, '*');
+    } catch (e) { /* not framed */ }
+  }
+  report();
+  window.addEventListener('hashchange', report);
+  window.addEventListener('pageshow', report);
+  window.addEventListener('message', function (event) {
+    if (event.data && event.data.command === 'ptxFrameReload') {
+      location.reload();
+    }
+  });
+})();
+</script>
 </body>
 </html>

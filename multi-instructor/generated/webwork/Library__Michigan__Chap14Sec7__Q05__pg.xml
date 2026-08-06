@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap14Sec7__Q05__pg" assembly-id="Library__Michigan__Chap14Sec7__Q05__pg">
-  <static seed="571" source="Library/Michigan/Chap14Sec7/Q05.pg">
+  <static seed="349" source="Library/Michigan/Chap14Sec7/Q05.pg">
     <statement><p>Calculate all
 four second-order partial derivatives and check that <m>f_{xy}=f_{yx}</m>.
 Assume the variables are restricted to a domain on which the function
 is defined.
-<me>f(x,y) = e^{2xy}</me></p>
+<me>f(x,y) = e^{4xy}</me></p>
 <p><m>f_{xx} =</m> <fillin characters="55" name="AnSwEr0001"/></p>
 <p><m>f_{yy} =</m> <fillin characters="55" name="AnSwEr0002"/></p>
 <p><m>f_{xy} =</m> <fillin characters="55" name="AnSwEr0003"/></p>
@@ -13,33 +13,33 @@ is defined.
 </statement>
     <answer>
       <p>
-        <m>4y^{2}e^{2xy}</m>
+        <m>16y^{2}e^{4xy}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>4x^{2}e^{2xy}</m>
+        <m>16x^{2}e^{4xy}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>2e^{2xy}+4xye^{2xy}</m>
+        <m>4e^{4xy}+16xye^{4xy}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>2e^{2xy}+4xye^{2xy}</m>
+        <m>4e^{4xy}+16xye^{4xy}</m>
       </p>
     </answer>
-    <solution><m>f_x = 2ye^{2xy}</m> and <m>f_y = 2xe^{2xy}</m>, so
-<me>f_{xx} = 4y^{2}e^{2xy}, f_{yy} = 4x^{2}e^{2xy},</me>
+    <solution><m>f_x = 4ye^{4xy}</m> and <m>f_y = 4xe^{4xy}</m>, so
+<me>f_{xx} = 16y^{2}e^{4xy}, f_{yy} = 16x^{2}e^{4xy},</me>
 and
-<me>f_{xy} = 2e^{2xy}+4xye^{2xy} = f_{yx} = 2e^{2xy}+4xye^{2xy}.</me>
+<me>f_{xy} = 4e^{4xy}+16xye^{4xy} = f_{yx} = 4e^{4xy}+16xye^{4xy}.</me>
 
 
 
 </solution>
   </static>
-  <rendering-data sourceFilePath="Library/Michigan/Chap14Sec7/Q05.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/Michigan/Chap14Sec7/Q05.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/Michigan/Chap14Sec7/Q05.pg"/>
 </webwork-reps>

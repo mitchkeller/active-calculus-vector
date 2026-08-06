@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__FortLewis__Calc3__18-4-Greens-theorem__HGM4-18-4-17-Greens-theorem__pg" assembly-id="Library__FortLewis__Calc3__18-4-Greens-theorem__HGM4-18-4-17-Greens-theorem__pg">
-  <static seed="902">
-    <statement><p>Suppose <me>\vec{F}(x,y) = (4 x - 3 y) \vec{i} + 5 x \vec{j}</me> and <m>C</m> is the 
+  <static seed="750">
+    <statement><p>Suppose <me>\vec{F}(x,y) = (2 x - 2 y) \vec{i} + 3 x \vec{j}</me> and <m>C</m> is the 
 counter-clockwise oriented sector of a circle centered
-at the origin with radius <m>2</m> and central angle
+at the origin with radius <m>4</m> and central angle
 <m>\pi / 6</m>.
 Use Green's theorem to calculate the 
 circulation of <m>\vec{F}</m> around <m>C</m>.</p>
@@ -14,25 +14,25 @@ circulation of <m>\vec{F}</m> around <m>C</m>.</p>
 </statement>
     <answer>
       <p>
-        <m>\frac{\left(3+5\right)\pi \cdot 4}{12}</m>
+        <m>\frac{\left(2+3\right)\pi \cdot 16}{12}</m>
       </p>
     </answer>
     <solution><p>SOLUTION</p>
 <p>Let <m>D</m> be the region enclosed by the curve <m>C</m>.</p>
 <p>First note that the curve has a positive orientation. We will use Green's Theorem.
-We have <m>P = 4 x - 3 y, \; Q = 5 x</m>, therefore
-<me>\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} =5+ 3 = 8 .</me>
+We have <m>P = 2 x - 2 y, \; Q = 3 x</m>, therefore
+<me>\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} =3+ 2 = 5 .</me>
 Hence, Green's Theorem implies</p>
 <p><m>\begin{array}{lcl} \int_{C} \vec{F} \cdot  d\vec{r}\amp  = \amp  
 \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA
-\\ \amp =\amp  \iint_D 8 dA  
-\\ \amp  = \amp  8 \int_0^{\pi/6} \int_0^{2} r \, dr \, d\theta \quad \text{[Using polar coordinates]}
-\\\amp  = \amp  8 \left(\frac{\pi}{6}\right) \left(\frac{ 2^2}{2}\right)
-\\\amp =\amp  {\frac{8}{3}} \pi
+\\ \amp =\amp  \iint_D 5 dA  
+\\ \amp  = \amp  5 \int_0^{\pi/6} \int_0^{4} r \, dr \, d\theta \quad \text{[Using polar coordinates]}
+\\\amp  = \amp  5 \left(\frac{\pi}{6}\right) \left(\frac{ 4^2}{2}\right)
+\\\amp =\amp  {\frac{20}{3}} \pi
 \end{array}</m></p>
 </solution>
   </static>
-  <rendering-data problemSource="Active_Calculus__Multivariable/13_8_6_3.pg" origin="generated" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data problemSource="Active_Calculus__Multivariable/13_8_5_3.pg" origin="generated" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg><![CDATA[
 ##DESCRIPTION
 ##  Green's theorem, path-dependent vector fields, non-conservative vector fields

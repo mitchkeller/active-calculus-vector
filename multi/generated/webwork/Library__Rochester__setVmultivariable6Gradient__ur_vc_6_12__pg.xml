@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Rochester__setVmultivariable6Gradient__ur_vc_6_12__pg" assembly-id="Library__Rochester__setVmultivariable6Gradient__ur_vc_6_12__pg">
-  <static seed="679" source="Library/Rochester/setVmultivariable6Gradient/ur_vc_6_12.pg">
-    <statement><p>Suppose <m>f \left( x, y \right) = -2 x^{2}  - 3 xy + 2 y^{2}</m>, <m>P = \left( -3, -3
-\right)</m>, and <m>\mathbf{u} = \left( \frac{-12}{20},
-\frac{16}{20} \right)</m>.</p>
+  <static seed="396" source="Library/Rochester/setVmultivariable6Gradient/ur_vc_6_12.pg">
+    <statement><p>Suppose <m>f \left( x, y \right) = 2 x^{2} + 2 xy + 2 y^{2}</m>, <m>P = \left( 2, 1
+\right)</m>, and <m>\mathbf{u} = \left( \frac{3}{5},
+\frac{4}{5} \right)</m>.</p>
 <p>A. Compute the gradient of f.</p>
 <p><m>\nabla f =</m> <fillin characters="20" name="AnSwEr0001"/> <m>\mathbf{i} +</m> <fillin characters="20" name="AnSwEr0002"/> <m>\mathbf{j}</m></p>
 <p>Note: Your answers should be expressions of x and y; e.g. <lq/>3x - 4y<rq/></p>
 <p>B. Evaluate the gradient at the point P.</p>
-<p><m>\left( \nabla f \right) \left( -3, -3 \right) =</m> <fillin characters="20" name="AnSwEr0003"/> <m>\mathbf{i} +</m> <fillin characters="20" name="AnSwEr0004"/> <m>\mathbf{j}</m></p>
+<p><m>\left( \nabla f \right) \left( 2, 1 \right) =</m> <fillin characters="20" name="AnSwEr0003"/> <m>\mathbf{i} +</m> <fillin characters="20" name="AnSwEr0004"/> <m>\mathbf{j}</m></p>
 <p>Note: Your answers should be numbers</p>
 <p>C. Compute the directional derivative of f at P in the direction <alert> u </alert>.</p>
 <p><m>\left( D_{\mathbf{u}} f \right) \left( P \right) =</m> <fillin characters="30" name="AnSwEr0005"/></p>
@@ -16,30 +16,30 @@
 </statement>
     <answer>
       <p>
-        <m>-4x+\left(-3\right)y</m>
+        <m>4x+2y</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>-3x+4y</m>
+        <m>2x+4y</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>21</m>
+        <m>10</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>-3</m>
+        <m>8</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>-15</m>
+        <m>12.4</m>
       </p>
     </answer>
   </static>
-  <rendering-data sourceFilePath="Library/Rochester/setVmultivariable6Gradient/ur_vc_6_12.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/Rochester/setVmultivariable6Gradient/ur_vc_6_12.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/Rochester/setVmultivariable6Gradient/ur_vc_6_12.pg"/>
 </webwork-reps>

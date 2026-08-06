@@ -86,5 +86,27 @@ plot1+=parametric_plot3d((sin(s)*cos(t),sin(s)*sin(t),cos(s)),(t,0,2*pi),(s,0,pi
 plot1+=parametric_plot3d((sin(s)*cos(t),sin(s)*sin(t),0),(t,0,2*pi),(s,0,pi/2),color="gray")
 plot1
 </script></pre></div>
+<script data-pretext-tools-frame-bridge="true">
+(function () {
+  if (window.__ptxFrameBridge) { return; }
+  window.__ptxFrameBridge = true;
+  function report() {
+    try {
+      parent.postMessage({
+        command: 'ptxFramePath',
+        path: location.pathname + location.search + location.hash
+      }, '*');
+    } catch (e) { /* not framed */ }
+  }
+  report();
+  window.addEventListener('hashchange', report);
+  window.addEventListener('pageshow', report);
+  window.addEventListener('message', function (event) {
+    if (event.data && event.data.command === 'ptxFrameReload') {
+      location.reload();
+    }
+  });
+})();
+</script>
 </body>
 </html>

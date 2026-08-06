@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap16Sec2__Q41__pg" assembly-id="Library__Michigan__Chap16Sec2__Q41__pg">
-  <static seed="824" source="Library/Michigan/Chap16Sec2/Q41.pg">
+  <static seed="541" source="Library/Michigan/Chap16Sec2/Q41.pg">
     <statement><p>The region <m>W</m> lies below the surface
 <m>f(x,y) = 4 e^{-(x-1)^2-y^2}</m> and
-above the disk <m>x^2+y^2\le 16</m> in the <m>xy</m>-plane.</p>
+above the disk <m>x^2+y^2\le 4</m> in the <m>xy</m>-plane.</p>
 <p><alert>(a)</alert>
 Think about what the contours of <m>f</m> look like.  You may want to
 using <m>f(x,y)=1</m> as an example.  Sketch a rough contour diagram on
@@ -34,12 +34,12 @@ of the inside integral.</p>
     </answer>
     <answer>
       <p>
-        <m>-3.87298</m>
+        <m>-1.73205</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>3.87298</m>
+        <m>1.73205</m>
       </p>
     </answer>
     <answer>
@@ -59,22 +59,22 @@ of the inside integral.</p>
     </answer>
     <answer>
       <p>
-        <m>-4</m>
+        <m>-2</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>4</m>
+        <m>2</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>-\sqrt{16-x^{2}}</m>
+        <m>-\sqrt{4-x^{2}}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>\sqrt{16-x^{2}}</m>
+        <m>\sqrt{4-x^{2}}</m>
       </p>
     </answer>
     <solution><alert>(a)</alert>
@@ -95,9 +95,9 @@ circles
 
 <alert>(b)</alert>
 The cross-section has equation <m>z=f(1,y)=4 e^{-y^2}</m>.  If <m>x=1</m>, the
-base region in the <m>xy</m>-plane extends from <m>y=-\sqrt{15}</m> to
-<m>y=\sqrt{15}</m>.  Thus the area is
-<me>\hbox{Area } = \int_{-\sqrt{15}}^{\sqrt{15}}4 e^{-y^2}\,dy.</me>
+base region in the <m>xy</m>-plane extends from <m>y=-\sqrt{3}</m> to
+<m>y=\sqrt{3}</m>.  Thus the area is
+<me>\hbox{Area } = \int_{-\sqrt{3}}^{\sqrt{3}}4 e^{-y^2}\,dy.</me>
 
 
 
@@ -105,13 +105,13 @@ base region in the <m>xy</m>-plane extends from <m>y=-\sqrt{15}</m> to
 <alert>(c)</alert>
 Using this idea and slicing parallel to the <m>y</m>-axis, we get
 <me>\hbox{Volume } =
-\int_{-4}^{4}\int_{-\sqrt{16-x^2}}^{\sqrt{16-x^2}}
+\int_{-2}^{2}\int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}
   4 e^{-(x-1)^2-y^2}\,dy\,dx.</me>
 
 
 
 </solution>
   </static>
-  <rendering-data sourceFilePath="Library/Michigan/Chap16Sec2/Q41.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/Michigan/Chap16Sec2/Q41.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/Michigan/Chap16Sec2/Q41.pg"/>
 </webwork-reps>

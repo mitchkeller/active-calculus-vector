@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap12Sec4__Q02__pg" assembly-id="Library__Michigan__Chap12Sec4__Q02__pg">
-  <static seed="621" source="Library/Michigan/Chap12Sec4/Q02.pg">
+  <static seed="373" source="Library/Michigan/Chap12Sec4/Q02.pg">
     <statement><p>The table below gives a partial table of values for a
 linear function. Fill in the blanks.</p>
 <tabular bottom="medium" left="medium" right="medium" top="medium">
@@ -12,31 +12,31 @@ linear function. Fill in the blanks.</p>
 </row>
 <row>
 <cell><m>2.0</m></cell>
-<cell>15</cell>
+<cell>8</cell>
 <cell><fillin characters="5" name="AnSwEr0001"/></cell>
 <cell><fillin characters="5" name="AnSwEr0002"/></cell>
 </row>
 <row>
 <cell><m>3.0</m></cell>
 <cell><fillin characters="5" name="AnSwEr0003"/></cell>
-<cell>18</cell>
-<cell>17</cell>
+<cell>9</cell>
+<cell>8</cell>
 </row>
 </tabular>
 </statement>
     <answer>
       <p>
-        <m>14</m>
+        <m>7</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>13</m>
+        <m>6</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>19</m>
+        <m>10</m>
       </p>
     </answer>
     <solution><tabular bottom="medium" left="medium" right="medium" top="medium">
@@ -50,16 +50,16 @@ linear function. Fill in the blanks.</p>
 
 <row>
 <cell><m>2.0</m></cell>
-<cell><m>15</m></cell>
-<cell><m>14</m></cell>
-<cell><m>13</m></cell>
+<cell><m>8</m></cell>
+<cell><m>7</m></cell>
+<cell><m>6</m></cell>
 </row>
 
 <row>
 <cell><m>3.0</m></cell>
-<cell><m>19</m></cell>
-<cell><m>18</m></cell>
-<cell><m>17</m></cell>
+<cell><m>10</m></cell>
+<cell><m>9</m></cell>
+<cell><m>8</m></cell>
 </row>
 
 
@@ -71,6 +71,6 @@ linear function. Fill in the blanks.</p>
 
 </solution>
   </static>
-  <rendering-data sourceFilePath="Library/Michigan/Chap12Sec4/Q02.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/Michigan/Chap12Sec4/Q02.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/Michigan/Chap12Sec4/Q02.pg"/>
 </webwork-reps>

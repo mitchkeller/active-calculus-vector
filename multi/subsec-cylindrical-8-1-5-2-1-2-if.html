@@ -87,5 +87,27 @@ plot1+=parametric_plot3d((s*cos(t),s*sin(t),s^2),(s,0,2),(t,0,pi),color="red",op
 plot1+=parametric_plot3d((t,0,s*t^2),(s,0,1),(t,-2,2),color="gray",opacity=.4)
 plot1
 </script></pre></div>
+<script data-pretext-tools-frame-bridge="true">
+(function () {
+  if (window.__ptxFrameBridge) { return; }
+  window.__ptxFrameBridge = true;
+  function report() {
+    try {
+      parent.postMessage({
+        command: 'ptxFramePath',
+        path: location.pathname + location.search + location.hash
+      }, '*');
+    } catch (e) { /* not framed */ }
+  }
+  report();
+  window.addEventListener('hashchange', report);
+  window.addEventListener('pageshow', report);
+  window.addEventListener('message', function (event) {
+    if (event.data && event.data.command === 'ptxFrameReload') {
+      location.reload();
+    }
+  });
+})();
+</script>
 </body>
 </html>

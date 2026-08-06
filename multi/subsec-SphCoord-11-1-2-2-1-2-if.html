@@ -85,5 +85,27 @@ plot1+=text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0.5,0.5,scale+0.5),fo
 plot1+=parametric_plot3d((0,0,t),(0,4.5),color="blue",thickness=3)
 plot1
 </script></pre></div>
+<script data-pretext-tools-frame-bridge="true">
+(function () {
+  if (window.__ptxFrameBridge) { return; }
+  window.__ptxFrameBridge = true;
+  function report() {
+    try {
+      parent.postMessage({
+        command: 'ptxFramePath',
+        path: location.pathname + location.search + location.hash
+      }, '*');
+    } catch (e) { /* not framed */ }
+  }
+  report();
+  window.addEventListener('hashchange', report);
+  window.addEventListener('pageshow', report);
+  window.addEventListener('message', function (event) {
+    if (event.data && event.data.command === 'ptxFrameReload') {
+      location.reload();
+    }
+  });
+})();
+</script>
 </body>
 </html>

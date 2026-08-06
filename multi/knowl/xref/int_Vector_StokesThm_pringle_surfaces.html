@@ -9,8 +9,8 @@
 <!--******************************************-->
 <!--*  Authored with PreTeXt                 *-->
 <!--*  pretextbook.org                       *-->
-<!--*  Theme: default-modern                 *-->
-<!--*  Palette:                              *-->
+<!--*  Theme: salem                          *-->
+<!--*  Palette: ice-fire                     *-->
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,6 +26,7 @@ hasWebworkReps: true,
 hasSage: true,
 isReact: false,
 htmlPresentation: false,
+lang: "en-US",
 });
 </script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,10 +34,10 @@ htmlPresentation: false,
 <meta name="twitter:title" content="Active Calculus - Multivariable">
 <meta property="og:title" content="Active Calculus - Multivariable">
 <meta property="book:title" content="Active Calculus - Multivariable">
-<meta name="twitter:description" content="Active Calculus - Multivariable supports an active learning approach to a course involving multivariable and vector calculus. Every section of Active Calculus - Multivariable offers preview activities designed around preparing users for new topics; multiple activities in each section that can be used either in- or out-of-classtime; interactive WeBWorK exercises; other exercises and tasks that foster students' practice of skills and deeper investigation of conceptual material; opportunities for students to refine their effective communication of geometric and algebraic perspectives. This text is free and open-source, available in HTML, PDF, and print (Chapters 911 only) formats. Ancillary materials for instructors are also available.">
-<meta property="og:description" content="Active Calculus - Multivariable supports an active learning approach to a course involving multivariable and vector calculus. Every section of Active Calculus - Multivariable offers preview activities designed around preparing users for new topics; multiple activities in each section that can be used either in- or out-of-classtime; interactive WeBWorK exercises; other exercises and tasks that foster students' practice of skills and deeper investigation of conceptual material; opportunities for students to refine their effective communication of geometric and algebraic perspectives. This text is free and open-source, available in HTML, PDF, and print (Chapters 911 only) formats. Ancillary materials for instructors are also available.">
+<meta name="twitter:description" content="Active Calculus - Multivariable supports an active learning approach to a course involving multivariable and vector calculus. Every section of Active Calculus - Multivariable offers preview activities designed around preparing users for new topics; multiple activities in each section that can be used either in- or out-of-classtime; interactive WeBWorK exercises; other exercises and tasks that foster students' practice of skills and deeper investigation of conceptual material; opportunities for students to refine their effective communication of geometric and algebraic perspectives. The text makes frequent use of interactive three-dimensional graphics embedded in the text to help students with visualizing. This text is free and open-source, available in HTML, PDF, and print formats (2nd edition will be available by January 2028). Ancillary materials for instructors are also available.">
+<meta property="og:description" content="Active Calculus - Multivariable supports an active learning approach to a course involving multivariable and vector calculus. Every section of Active Calculus - Multivariable offers preview activities designed around preparing users for new topics; multiple activities in each section that can be used either in- or out-of-classtime; interactive WeBWorK exercises; other exercises and tasks that foster students' practice of skills and deeper investigation of conceptual material; opportunities for students to refine their effective communication of geometric and algebraic perspectives. The text makes frequent use of interactive three-dimensional graphics embedded in the text to help students with visualizing. This text is free and open-source, available in HTML, PDF, and print formats (2nd edition will be available by January 2028). Ancillary materials for instructors are also available.">
 <meta name="twitter:card" content="summary">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.43"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.47"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.47"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -58,54 +59,57 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.7';
+eBookConfig.runestone_version = '8.2.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.917dfc3cfe0bb764.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.39f982db166f319d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
+<script src="_static/prefix-runtime.ed2cce180827a7ad.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.18fa7ea1d9f376c1.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
 <script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body id="acmulti" class="pretext book ignore-math standalone-page">
 <a class="assistive" href="#ptx-content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb{R}}
-\newcommand{\va}{\mathbf{a}}
-\newcommand{\vb}{\mathbf{b}}
-\newcommand{\vc}{\mathbf{c}}
-\newcommand{\vC}{\mathbf{C}}
-\newcommand{\vd}{\mathbf{d}}
-\newcommand{\ve}{\mathbf{e}}
-\newcommand{\vi}{\mathbf{i}}
-\newcommand{\vj}{\mathbf{j}}
-\newcommand{\vk}{\mathbf{k}}
-\newcommand{\vn}{\mathbf{n}}
-\newcommand{\vm}{\mathbf{m}}
-\newcommand{\vr}{\mathbf{r}}
-\newcommand{\vs}{\mathbf{s}}
-\newcommand{\vu}{\mathbf{u}}
-\newcommand{\vv}{\mathbf{v}}
-\newcommand{\vw}{\mathbf{w}}
-\newcommand{\vx}{\mathbf{x}}
-\newcommand{\vy}{\mathbf{y}}
-\newcommand{\vz}{\mathbf{z}}
-\newcommand{\vzero}{\mathbf{0}}
-\newcommand{\vF}{\mathbf{F}}
-\newcommand{\vG}{\mathbf{G}}
-\newcommand{\vH}{\mathbf{H}}
-\newcommand{\vR}{\mathbf{R}}
-\newcommand{\vT}{\mathbf{T}}
-\newcommand{\vN}{\mathbf{N}}
-\newcommand{\vL}{\mathbf{L}}
-\newcommand{\vB}{\mathbf{B}}
-\newcommand{\vS}{\mathbf{S}}
+\newcommand{\va}{\vec{a}}
+\newcommand{\vb}{\vec{b}}
+\newcommand{\vc}{\vec{c}}
+\newcommand{\vC}{\vec{C}}
+\newcommand{\vd}{\vec{d}}
+\newcommand{\ve}{\vec{e}}
+\newcommand{\cursedihat}{\hat{\dot{i}}}
+\newcommand{\vi}{\hat{\imath}}
+\newcommand{\vj}{\hat{\jmath}}
+\newcommand{\vk}{\hat{k}}
+\newcommand{\vn}{\vec{n}}
+\newcommand{\vm}{\vec{m}}
+\newcommand{\vr}{\vec{r}}
+\newcommand{\vs}{\vec{s}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\vw}{\vec{w}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\newcommand{\vz}{\vec{z}}
+\newcommand{\vzero}{\vec{0}}
+\newcommand{\vF}{\vec{F}}
+\newcommand{\vG}{\vec{G}}
+\newcommand{\vH}{\vec{H}}
+\newcommand{\vR}{\vec{R}}
+\newcommand{\vT}{\vec{T}}
+\newcommand{\vN}{\vec{N}}
+\newcommand{\vL}{\vec{L}}
+\newcommand{\vA}{\vec{A}}
+\newcommand{\vB}{\vec{B}}
+\newcommand{\vS}{\vec{S}}
 \newcommand{\proj}{\text{proj}}
 \newcommand{\comp}{\text{comp}}
 \newcommand{\nin}{}
-\newcommand{\vecmag}[1]{|#1|}
+\newcommand{\vecmag}[1]{\left\lVert #1\right\rVert}
 \newcommand{\grad}{\nabla}
+\newcommand\restrict[2]{\raise-.5ex\hbox{$\Big|_{#1}^{#2}$}}
 \DeclareMathOperator{\curl}{curl}
 \DeclareMathOperator{\divg}{div}
 \newcommand{\lt}{&lt;}
@@ -114,12 +118,12 @@ eBookConfig.enable_chatcodes =  false;
 \definecolor{fillinmathshade}{gray}{0.9}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
-<header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="root-1-2.html"><span class="title">Active Calculus - Multivariable</span></a></h1>
-<p class="byline">Steve Schlicker, Mitchel T. Keller, Nicholas Long</p>
+<header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Active Calculus - Multivariable</span></a></div>
+<p class="byline">Nicholas Long, Mitchel T. Keller</p>
 </div></div></header><div class="ptx-page"><main class="ptx-main"><div id="ptx-content"><div class="interactive-iframe-container">
 <iframe id="int_Vector_StokesThm_pringle_surfaces" style="width:600px; height:650px; display: block; " src="int_Vector_StokesThm_pringle_surfaces-if.html" title="described in detail following the image" aria-describedby="int_Vector_StokesThm_pringle_surfaces-description"></iframe><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span></summary><div id="int_Vector_StokesThm_pringle_surfaces-description">
-<div class="para" id="int_Vector_StokesThm_pringle_surfaces-1-1">Surfaces containing a common simple closed curve<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#int_Vector_StokesThm_pringle_surfaces-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="int_Vector_StokesThm_pringle_surfaces-1-1">An interactive three dimensional plot with a circular curve that reaches peaks and valleys twice each time around is shown in red. A dropdown box at the top of the figure allows the user to select between three different gray surfaces that go through the red curve.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#int_Vector_StokesThm_pringle_surfaces-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div></details>
 </div></div></main></div>

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Union__setMVderivatives__an14_3_80__pg" assembly-id="Library__Union__setMVderivatives__an14_3_80__pg">
-  <static seed="573" source="Library/Union/setMVderivatives/an14_3_80.pg">
-    <statement><p>Let <m>f(x,y) = \left(-\left(x+y\right)\right)^{9}</m>.  Then</p>
+  <static seed="351" source="Library/Union/setMVderivatives/an14_3_80.pg">
+    <statement><p>Let <m>f(x,y) = \left(4x-y\right)^{5}</m>.  Then</p>
 <tabular>
 <row>
 <cell><m>\frac{\partial^2\!f}{\partial x\partial y}</m></cell>
@@ -22,20 +22,20 @@
 </statement>
     <answer>
       <p>
-        <m>72\mathopen{}\left(-\left(x+y\right)\right)^{7}</m>
+        <m>-80\mathopen{}\left(4x-y\right)^{3}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>-504\mathopen{}\left(-\left(x+y\right)\right)^{6}</m>
+        <m>-960\mathopen{}\left(4x-y\right)^{2}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>-504\mathopen{}\left(-\left(x+y\right)\right)^{6}</m>
+        <m>-960\mathopen{}\left(4x-y\right)^{2}</m>
       </p>
     </answer>
   </static>
-  <rendering-data sourceFilePath="Library/Union/setMVderivatives/an14_3_80.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/Union/setMVderivatives/an14_3_80.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/Union/setMVderivatives/an14_3_80.pg"/>
 </webwork-reps>

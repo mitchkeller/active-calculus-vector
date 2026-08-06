@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap20Sec3__Q13__pg" assembly-id="Library__Michigan__Chap20Sec3__Q13__pg">
-  <static seed="896" source="Library/Michigan/Chap20Sec3/Q13.pg">
+  <static seed="734" source="Library/Michigan/Chap20Sec3/Q13.pg">
     <statement><p>For each of the vector fields below, decide if they have a
 nonzero or zero curl at the origin.  Each vector field is shown in the
 <m>xy</m>-plane; they have no <m>z</m>-component and are independent of <m>z</m>.
@@ -71,23 +71,23 @@ at the origin.</p>
     </answer>
     <answer>
       <p>
-        <m>\text{nonzero}</m>
+        <m>\text{zero}</m>
       </p>
     </answer>
     <answer>
       <p>
-        <m>\text{zero}</m>
+        <m>\text{nonzero}</m>
       </p>
     </answer>
     <solution><alert>(a)</alert> has zero curl
 at the origin. 
 
 
-Vector field <alert>(b)</alert> has nonzero curl
+Vector field <alert>(b)</alert> has zero curl
 at the origin. 
 
 
-Vector field <alert>(c)</alert> has zero curl
+Vector field <alert>(c)</alert> has nonzero curl
 at the origin.
 
 

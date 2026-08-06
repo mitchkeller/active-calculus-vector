@@ -84,5 +84,27 @@ plot1=axes(scale,2,color="black",frame=False)+text3d("x",(scale+0.5,0,0),fontsiz
 plot1+=parametric_plot((3*cos(t),2*sin(t),x),(t,0,2*pi),(x,-2,2),color="lightblue",opacity=0.5,mesh=True)
 plot1
 </script></pre></div>
+<script data-pretext-tools-frame-bridge="true">
+(function () {
+  if (window.__ptxFrameBridge) { return; }
+  window.__ptxFrameBridge = true;
+  function report() {
+    try {
+      parent.postMessage({
+        command: 'ptxFramePath',
+        path: location.pathname + location.search + location.hash
+      }, '*');
+    } catch (e) { /* not framed */ }
+  }
+  report();
+  window.addEventListener('hashchange', report);
+  window.addEventListener('pageshow', report);
+  window.addEventListener('message', function (event) {
+    if (event.data && event.data.command === 'ptxFrameReload') {
+      location.reload();
+    }
+  });
+})();
+</script>
 </body>
 </html>
