@@ -17,6 +17,6 @@ with angle brackets, for example,  <m>\displaystyle{\langle 1 + s + t, s - t, 3 
 <p>The displacement vectors<m>\displaystyle{\overrightarrow{PQ} = Q-P = {\left\lt -6,-3,-10\right&gt;} }</m> and<m>\displaystyle{\overrightarrow{PR} = R-P = {\left\lt 1,38,6\right&gt;} }</m> are parallel to the given plane so <m>\displaystyle{\vec{r}(s,t) = {\left\lt 4,-3,4\right&gt;}+s{\left\lt -6,-3,-10\right&gt;}+t{\left\lt 1,38,6\right&gt;} = {\left\lt 4-6s+t,38t-\left(3+3s\right),4-10s+6t\right&gt;}}</m> is one way to parametrize the plane.  There are many other ways, of course.</p>
 </solution>
   </static>
-  <rendering-data sourceFilePath="Library/Michigan/Chap17Sec5/Q15.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/Michigan/Chap17Sec5/Q15.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/Michigan/Chap17Sec5/Q15.pg"/>
 </webwork-reps>

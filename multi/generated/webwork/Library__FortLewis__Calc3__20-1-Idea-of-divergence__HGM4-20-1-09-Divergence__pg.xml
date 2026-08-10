@@ -23,10 +23,10 @@ point <m>P</m> (in blue) is positive, negative, or zero.</p>
 Zero
 </li>
 <li>
-?
+Negative
 </li>
 <li>
-Negative
+?
 </li>
 <li>
 Positive
@@ -34,8 +34,19 @@ Positive
 </var></cell>
 <cell><var form="popup">
 <li>
+Zero
+</li>
+<li>
+Negative
+</li>
+<li>
+?
+</li>
+<li>
 Positive
 </li>
+</var></cell>
+<cell><var form="popup">
 <li>
 Zero
 </li>
@@ -45,19 +56,8 @@ Zero
 <li>
 Negative
 </li>
-</var></cell>
-<cell><var form="popup">
 <li>
-Positive
-</li>
-<li>
-?
-</li>
-<li>
-Negative
-</li>
-<li>
-<p>Zero
+<p>Positive
 </p></li>
 </var></cell>
 </row>
@@ -74,6 +74,6 @@ equals  the flow rate in. Thus the divergence is zero. The vector field is incom
 is smaller than the flow rate in (the vectors exiting the circle are shorter than the vectors entering the circle). Thus the divergence is negative.</p>
 </solution>
   </static>
-  <rendering-data sourceFilePath="Library/FortLewis/Calc3/20-1-Idea-of-divergence/HGM4-20-1-09-Divergence.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/FortLewis/Calc3/20-1-Idea-of-divergence/HGM4-20-1-09-Divergence.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/FortLewis/Calc3/20-1-Idea-of-divergence/HGM4-20-1-09-Divergence.pg"/>
 </webwork-reps>

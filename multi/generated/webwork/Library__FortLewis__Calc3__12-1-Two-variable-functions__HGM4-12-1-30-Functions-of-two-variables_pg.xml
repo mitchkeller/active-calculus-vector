@@ -9,22 +9,22 @@ yz-plane
  
 <var form="popup">
 <li>
-<p>in a line</p>
+<p>in a circle</p>
 </li>
 <li>
-<p>at two points</p>
-</li>
-<li>
-<p>at zero points</p>
+<p>?</p>
 </li>
 <li>
 <p>at one point</p>
 </li>
 <li>
-<p>in a circle</p>
+<p>at zero points</p>
 </li>
 <li>
-<p>?</p>
+<p>at two points</p>
+</li>
+<li>
+<p>in a line</p>
 </li>
 </var></p>
 <p>The sphere intersects the 
@@ -32,22 +32,22 @@ xy-plane
  
 <var form="popup">
 <li>
-<p>at zero points</p>
-</li>
-<li>
-<p>in a line</p>
-</li>
-<li>
-<p>at two points</p>
+<p>?</p>
 </li>
 <li>
 <p>in a circle</p>
 </li>
 <li>
-<p>?</p>
+<p>at one point</p>
 </li>
 <li>
-<p>at one point</p>
+<p>at zero points</p>
+</li>
+<li>
+<p>at two points</p>
+</li>
+<li>
+<p>in a line</p>
 </li>
 </var></p>
 <p>The sphere intersects the 
@@ -55,22 +55,22 @@ xz-plane
  
 <var form="popup">
 <li>
-<p>at one point</p>
-</li>
-<li>
-<p>?</p>
-</li>
-<li>
-<p>in a circle</p>
+<p>at two points</p>
 </li>
 <li>
 <p>in a line</p>
 </li>
 <li>
-<p>at two points</p>
+<p>at zero points</p>
 </li>
 <li>
-<p>at zero points</p>
+<p>at one point</p>
+</li>
+<li>
+<p>in a circle</p>
+</li>
+<li>
+<p>?</p>
 </li>
 </var></p>
 <p>(b) Does the sphere intersect each of the following coordinate axes at zero points,
@@ -80,19 +80,19 @@ z-axis
  
 <var form="popup">
 <li>
-<p>at two points</p>
-</li>
-<li>
-<p>in a line</p>
-</li>
-<li>
-<p>at zero points</p>
+<p>?</p>
 </li>
 <li>
 <p>at one point</p>
 </li>
 <li>
-<p>?</p>
+<p>at zero points</p>
+</li>
+<li>
+<p>in a line</p>
+</li>
+<li>
+<p>at two points</p>
 </li>
 </var></p>
 <p>The sphere intersects the 
@@ -100,6 +100,12 @@ x-axis
  
 <var form="popup">
 <li>
+<p>?</p>
+</li>
+<li>
+<p>at one point</p>
+</li>
+<li>
 <p>at zero points</p>
 </li>
 <li>
@@ -107,12 +113,6 @@ x-axis
 </li>
 <li>
 <p>at two points</p>
-</li>
-<li>
-<p>?</p>
-</li>
-<li>
-<p>at one point</p>
 </li>
 </var></p>
 <p>The sphere intersects the 
@@ -120,12 +120,6 @@ y-axis
  
 <var form="popup">
 <li>
-<p>?</p>
-</li>
-<li>
-<p>at one point</p>
-</li>
-<li>
 <p>at zero points</p>
 </li>
 <li>
@@ -134,9 +128,15 @@ y-axis
 <li>
 <p>at two points</p>
 </li>
+<li>
+<p>?</p>
+</li>
+<li>
+<p>at one point</p>
+</li>
 </var></p>
 </statement>
   </static>
-  <rendering-data sourceFilePath="Library/FortLewis/Calc3/12-1-Two-variable-functions/HGM4-12-1-30-Functions-of-two-variables.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="mitchkeller-dev" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/FortLewis/Calc3/12-1-Two-variable-functions/HGM4-12-1-30-Functions-of-two-variables.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/FortLewis/Calc3/12-1-Two-variable-functions/HGM4-12-1-30-Functions-of-two-variables.pg"/>
 </webwork-reps>
