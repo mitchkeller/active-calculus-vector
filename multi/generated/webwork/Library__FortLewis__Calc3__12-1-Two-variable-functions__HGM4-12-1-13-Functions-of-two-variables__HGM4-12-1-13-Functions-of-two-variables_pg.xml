@@ -9,50 +9,53 @@ z-axis is the temperature.  For negative x within a few hundred
 miles of the origin, the sign of <m>T'(x)</m> is 
 <var form="popup">
 <li>
-<p>?</p>
-</li>
-<li>
-<p>Negative</p>
+<p>Positive</p>
 </li>
 <li>
 <p>Zero</p>
 </li>
 <li>
-<p>Positive</p>
+<p>?</p>
+</li>
+<li>
+<p>Negative</p>
 </li>
 </var>, 
 while for positive x a few hundred miles from the origin, 
 the sign of <m>T'(x)</m> is
 <var form="popup">
 <li>
-<p>Zero</p>
-</li>
-<li>
-<p>?</p>
+<p>Positive</p>
 </li>
 <li>
 <p>Negative</p>
 </li>
 <li>
-<p>Positive</p>
+<p>?</p>
+</li>
+<li>
+<p>Zero</p>
 </li>
 </var>.  
 We estimate that <m>T(0) =</m>
 <var form="popup">
 <li>
-<p>53</p>
+<p>55</p>
 </li>
 <li>
-<p>52</p>
+<p>56</p>
 </li>
 <li>
-<p>?</p>
+<p>60</p>
 </li>
 <li>
-<p>51</p>
+<p>54</p>
 </li>
 <li>
 <p>57</p>
+</li>
+<li>
+<p>51</p>
 </li>
 <li>
 <p>58</p>
@@ -64,16 +67,13 @@ We estimate that <m>T(0) =</m>
 <p>50</p>
 </li>
 <li>
-<p>54</p>
+<p>52</p>
 </li>
 <li>
-<p>60</p>
+<p>?</p>
 </li>
 <li>
-<p>55</p>
-</li>
-<li>
-<p>56</p>
+<p>53</p>
 </li>
 </var>
 degrees Fahrenheit.</p>
@@ -84,16 +84,16 @@ z-axis is the temperature.  For negative y within a few hundred
 miles of the origin, the sign of <m>T'(y)</m> is 
 <var form="popup">
 <li>
-<p>?</p>
-</li>
-<li>
 <p>Zero</p>
 </li>
 <li>
-<p>Negative</p>
+<p>?</p>
 </li>
 <li>
 <p>Positive</p>
+</li>
+<li>
+<p>Negative</p>
 </li>
 </var>, 
 while for positive y a few hundred miles from the origin, 
@@ -115,19 +115,13 @@ the sign of <m>T'(y)</m> is
 We estimate that <m>T(0) =</m>
 <var form="popup">
 <li>
+<p>53</p>
+</li>
+<li>
 <p>52</p>
 </li>
 <li>
 <p>?</p>
-</li>
-<li>
-<p>53</p>
-</li>
-<li>
-<p>57</p>
-</li>
-<li>
-<p>51</p>
 </li>
 <li>
 <p>58</p>
@@ -139,16 +133,22 @@ We estimate that <m>T(0) =</m>
 <p>50</p>
 </li>
 <li>
+<p>51</p>
+</li>
+<li>
+<p>57</p>
+</li>
+<li>
 <p>54</p>
+</li>
+<li>
+<p>60</p>
 </li>
 <li>
 <p>55</p>
 </li>
 <li>
 <p>56</p>
-</li>
-<li>
-<p>60</p>
 </li>
 </var>
 degrees Fahrenheit.</p>

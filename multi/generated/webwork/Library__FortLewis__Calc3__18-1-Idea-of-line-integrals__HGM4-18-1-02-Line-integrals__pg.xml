@@ -23,13 +23,13 @@ oriented path (in red) is positive, negative, or zero.</p>
 Positive
 </li>
 <li>
-Zero
+?
 </li>
 <li>
 Negative
 </li>
 <li>
-?
+Zero
 </li>
 </var></cell>
 <cell><var form="popup">
@@ -37,13 +37,13 @@ Negative
 Positive
 </li>
 <li>
-Zero
+Negative
 </li>
 <li>
 ?
 </li>
 <li>
-Negative
+Zero
 </li>
 </var></cell>
 <cell><var form="popup">
@@ -51,13 +51,13 @@ Negative
 Positive
 </li>
 <li>
-Zero
+Negative
 </li>
 <li>
 ?
 </li>
 <li>
-Negative
+Zero
 </li>
 </var></cell>
 </row>
@@ -75,13 +75,27 @@ Negative
 <row halign="center" valign="middle">
 <cell><var form="popup">
 <li>
+?
+</li>
+<li>
+Negative
+</li>
+<li>
 Zero
 </li>
+<li>
+Positive
+</li>
+</var></cell>
+<cell><var form="popup">
 <li>
 ?
 </li>
 <li>
 Negative
+</li>
+<li>
+Zero
 </li>
 <li>
 Positive
@@ -98,21 +112,7 @@ Positive
 Negative
 </li>
 <li>
-Zero
-</li>
-</var></cell>
-<cell><var form="popup">
-<li>
-Zero
-</li>
-<li>
-Negative
-</li>
-<li>
-?
-</li>
-<li>
-<p>Positive
+<p>Zero
 </p></li>
 </var></cell>
 </row>
