@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="452.183077pt" height="313.995385pt" viewBox="0 0 452.183077 313.995385" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="456.323077pt" height="321.495385pt" viewBox="0 0 456.323077 321.495385" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-13T20:58:22.575518</dc:date>
+    <dc:date>2026-08-11T19:30:38.566126</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -21,36 +21,36 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 313.995385 
-L 452.183077 313.995385 
-L 452.183077 0 
+   <path d="M 0 321.495385 
+L 456.323077 321.495385 
+L 456.323077 0 
 L 0 0 
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 7.2 306.795385 
-L 431.843077 306.795385 
-L 431.843077 23.7 
-L 7.2 23.7 
+    <path d="M 7.2 314.295385 
+L 431.843077 314.295385 
+L 431.843077 31.2 
+L 7.2 31.2 
 z
 " style="fill: #ffffff"/>
    </g>
    <g id="line2d_1">
-    <path d="M 355.625089 233.299467 
-L 355.625089 97.195917 
-" clip-path="url(#pcef85dd331)" style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #808080; stroke-width: 2"/>
+    <path d="M 355.625089 240.799467 
+L 355.625089 104.695917 
+" clip-path="url(#pe27e6c606c)" style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #808080; stroke-width: 2"/>
    </g>
    <g id="line2d_2">
-    <path d="M 83.417988 97.195917 
-L 355.625089 97.195917 
-" clip-path="url(#pcef85dd331)" style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #808080; stroke-width: 2"/>
+    <path d="M 83.417988 104.695917 
+L 355.625089 104.695917 
+" clip-path="url(#pe27e6c606c)" style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #808080; stroke-width: 2"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="text_1">
      <!-- $x$ -->
-     <g transform="translate(439.843077 233.299467) scale(0.16 -0.16)">
+     <g transform="translate(439.843077 240.799467) scale(0.16 -0.16)">
       <defs>
        <path id="Cmmi10-3f" d="M 500 184 
 Q 613 97 819 97 
@@ -122,7 +122,7 @@ z
    <g id="matplotlib.axis_2">
     <g id="text_2">
      <!-- $y$ -->
-     <g transform="translate(79.417988 11.85625) scale(0.16 -0.16)">
+     <g transform="translate(79.417988 19.35625) scale(0.16 -0.16)">
       <defs>
        <path id="Cmmi10-72" d="M 538 -916 
 Q 672 -1147 1006 -1147 
@@ -185,48 +185,48 @@ z
     </g>
    </g>
    <g id="line2d_3">
-    <path d="M 355.625089 97.195917 
-L 83.417988 233.299467 
-" clip-path="url(#pcef85dd331)" style="fill: none; stroke: #ff0000; stroke-width: 3; stroke-linecap: square"/>
+    <path d="M 355.625089 104.695917 
+L 83.417988 240.799467 
+" clip-path="url(#pe27e6c606c)" style="fill: none; stroke: #ff0000; stroke-width: 3; stroke-linecap: square"/>
    </g>
    <g id="line2d_4">
-    <path d="M 185.495651 233.299467 
-L 185.378889 228.418496 
-L 185.029231 223.552443 
-L 184.470476 218.868805 
-L 183.685271 214.159946 
-L 182.705431 209.59603 
-L 181.454909 204.863374 
-L 180.00442 200.270534 
-L 178.363479 195.813431 
-L 176.559173 191.53143 
-L 174.719025 187.648949 
-L 174.719025 187.648949 
-" clip-path="url(#pcef85dd331)" style="fill: none; stroke: #0000ff; stroke-width: 2; stroke-linecap: square"/>
+    <path d="M 185.495651 240.799467 
+L 185.380441 235.95102 
+L 185.042069 231.187217 
+L 184.489047 226.499454 
+L 183.731553 221.904018 
+L 182.721752 217.164501 
+L 181.52141 212.593656 
+L 180.11326 208.090545 
+L 178.498671 203.657672 
+L 176.62795 199.185141 
+L 174.719025 195.148949 
+L 174.719025 195.148949 
+" clip-path="url(#pe27e6c606c)" style="fill: none; stroke: #0000ff; stroke-width: 2; stroke-linecap: square"/>
    </g>
    <g id="patch_3">
-    <path d="M 178.820348 196.991906 
-Q 176.769686 192.320427 175.617817 189.696429 
-" clip-path="url(#pcef85dd331)" style="fill: none; stroke: #0000ff; stroke-width: 2; stroke-linecap: round"/>
-    <path d="M 175.059033 200.862796 
-L 175.617817 189.696429 
-L 184.215641 196.843276 
+    <path d="M 178.820348 204.491906 
+Q 176.769686 199.820427 175.617817 197.196429 
+" clip-path="url(#pe27e6c606c)" style="fill: none; stroke: #0000ff; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 175.059033 208.362796 
+L 175.617817 197.196429 
+L 184.215641 204.343276 
 z
-" clip-path="url(#pcef85dd331)" style="fill: #0000ff; stroke: #0000ff; stroke-width: 2; stroke-linecap: round"/>
+" clip-path="url(#pe27e6c606c)" style="fill: #0000ff; stroke: #0000ff; stroke-width: 2; stroke-linecap: round"/>
    </g>
    <g id="patch_4">
-    <path d="M 83.417988 306.795385 
-L 83.417988 23.7 
+    <path d="M 83.417988 314.295385 
+L 83.417988 31.2 
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_5">
-    <path d="M 7.2 233.299467 
-L 431.843077 233.299467 
+    <path d="M 7.2 240.799467 
+L 431.843077 240.799467 
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_3">
     <!-- $r$ -->
-    <g style="fill: #ff0000" transform="translate(213.771538 154.728889) scale(0.25 -0.25)">
+    <g style="fill: #ff0000" transform="translate(213.771538 162.228889) scale(0.25 -0.25)">
      <defs>
       <path id="Cmmi10-84" d="M 494 109 
 Q 494 147 500 166 
@@ -271,7 +271,7 @@ z
    </g>
    <g id="text_4">
     <!-- $\theta$ -->
-    <g style="fill: #0000ff" transform="translate(196.633595 205.767721) scale(0.25 -0.25)">
+    <g style="fill: #0000ff" transform="translate(196.633595 213.267721) scale(0.25 -0.25)">
      <defs>
       <path id="Cmmi10-12" d="M 1031 -72 
 Q 741 -72 566 140 
@@ -324,7 +324,7 @@ z
    </g>
    <g id="text_5">
     <!-- $P=(r,\theta)$ -->
-    <g transform="translate(339.650976 83.152455) scale(0.25 -0.25)">
+    <g transform="translate(339.650976 90.652455) scale(0.25 -0.25)">
      <defs>
       <path id="Cmmi10-68" d="M 313 0 
 Q 250 0 250 84 
@@ -476,34 +476,34 @@ z
    </g>
    <g id="text_6">
     <!-- $x$ -->
-    <g style="fill: #808080" transform="translate(213.721538 85.378286) scale(0.2 -0.2)">
+    <g style="fill: #808080" transform="translate(213.721538 92.878286) scale(0.2 -0.2)">
      <use xlink:href="#Cmmi10-3f" transform="translate(0 0.8125)"/>
     </g>
    </g>
    <g id="text_7">
     <!-- $y$ -->
-    <g style="fill: #808080" transform="translate(367.638033 170.443005) scale(0.2 -0.2)">
+    <g style="fill: #808080" transform="translate(367.638033 177.943005) scale(0.2 -0.2)">
      <use xlink:href="#Cmmi10-72" transform="translate(0 0.8125)"/>
     </g>
    </g>
    <g id="PathCollection_1">
-    <path d="M 355.625089 100.731451 
-C 356.562723 100.731451 357.462081 100.358925 358.125089 99.695917 
-C 358.788097 99.032909 359.160623 98.133552 359.160623 97.195917 
-C 359.160623 96.258283 358.788097 95.358925 358.125089 94.695917 
-C 357.462081 94.032909 356.562723 93.660383 355.625089 93.660383 
-C 354.687454 93.660383 353.788097 94.032909 353.125089 94.695917 
-C 352.462081 95.358925 352.089555 96.258283 352.089555 97.195917 
-C 352.089555 98.133552 352.462081 99.032909 353.125089 99.695917 
-C 353.788097 100.358925 354.687454 100.731451 355.625089 100.731451 
+    <path d="M 355.625089 108.231451 
+C 356.562723 108.231451 357.462081 107.858925 358.125089 107.195917 
+C 358.788097 106.532909 359.160623 105.633552 359.160623 104.695917 
+C 359.160623 103.758283 358.788097 102.858925 358.125089 102.195917 
+C 357.462081 101.532909 356.562723 101.160383 355.625089 101.160383 
+C 354.687454 101.160383 353.788097 101.532909 353.125089 102.195917 
+C 352.462081 102.858925 352.089555 103.758283 352.089555 104.695917 
+C 352.089555 105.633552 352.462081 106.532909 353.125089 107.195917 
+C 353.788097 107.858925 354.687454 108.231451 355.625089 108.231451 
 z
-" clip-path="url(#pcef85dd331)"/>
+" clip-path="url(#pe27e6c606c)"/>
    </g>
   </g>
  </g>
  <defs>
-  <clipPath id="pcef85dd331">
-   <rect x="7.2" y="23.7" width="424.643077" height="283.095385"/>
+  <clipPath id="pe27e6c606c">
+   <rect x="7.2" y="31.2" width="424.643077" height="283.095385"/>
   </clipPath>
  </defs>
 </svg>
