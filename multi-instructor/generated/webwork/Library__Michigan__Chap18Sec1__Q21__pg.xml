@@ -3,12 +3,7 @@
   <static seed="656" source="Library/Michigan/Chap18Sec1/Q21.pg">
     <statement><p>Consider the vector field <m>\vec{F}</m> shown in the figure below
 together with the paths <m>C_1</m>, <m>C_2</m>, and <m>C_3</m>.</p>
-<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__Michigan__Chap18Sec1__Q21__pg-image-1.png" width="41%">
-<shortdescription>A horizontal vector field with three linear segment paths</shortdescription>
-<description>
-<p>Graph of a constant vector field pointing horizontally to the right.  Curve C1 is a vertical line extending from a point to the right side of the graph upwards 1.5 units.  The vector field points with constant length horizontally to the left Curve C2 is a horizontal line segment with a length 1.5, extending along the bottom of the graph from right to left.  The vector field points with constant length horizontally to the left Curve C3 is a diagonal line with a length 1.67 extending from the top center of the graph down to the left, moving down about 1.5 units and to the left 0.75 units.  The vector field points with constant length horizontally to the left</p>
-</description>
-</image>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__Michigan__Chap18Sec1__Q21__pg-image-1.png" width="41%"/>
 <p><em>(<alert>Note:</alert> For the vector field, vectors are shown with a
 dot at the <alert>tail</alert> of the vector.)</em></p>
 <p>Arrange the line integrals <m>\int_{C_1} \vec{F} \cdot d\vec{r}</m>,
@@ -76,6 +71,6 @@ Applying this logic to each of the curves, we find that
 
 </solution>
   </static>
-  <rendering-data sourceFilePath="Library/Michigan/Chap18Sec1/Q21.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/Michigan/Chap18Sec1/Q21.pg" origin="webwork2" domain="https://webwork.runestone.academy" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/Michigan/Chap18Sec1/Q21.pg"/>
 </webwork-reps>

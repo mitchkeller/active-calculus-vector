@@ -3,12 +3,7 @@
   <static seed="744" source="Library/Michigan/Chap17Sec5/Q25.pg">
     <statement><p>A decorative oak post is 48 inches long and is turned on a lathe so
 that its profile is sinusoidal as shown in the figure below.</p>
-<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__Michigan__Chap17Sec5__Q25__pg-image-1.png" width="28%">
-<shortdescription>A column that has a sinusoidal radius</shortdescription>
-<description>
-<p>figure of a column with a vertically varying outside radius.  the maximum radius is r0 inches, the vertical distance between maximum radii is a0 inches, and the difference between the minimum and maximum radii is 2 inches.</p>
-</description>
-</image>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__Michigan__Chap17Sec5__Q25__pg-image-1.png" width="28%"/>
 <p>In this figure, <m>r_0 = 4</m> inches and <m>a_0 = 8</m> inches.</p>
 <p><alert>(a)</alert>
 Describe the surface of the post parametrically using
@@ -112,6 +107,6 @@ Integrating over <m>z</m>, we get
 
 </solution>
   </static>
-  <rendering-data sourceFilePath="Library/Michigan/Chap17Sec5/Q25.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/Michigan/Chap17Sec5/Q25.pg" origin="webwork2" domain="https://webwork.runestone.academy" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/Michigan/Chap17Sec5/Q25.pg"/>
 </webwork-reps>

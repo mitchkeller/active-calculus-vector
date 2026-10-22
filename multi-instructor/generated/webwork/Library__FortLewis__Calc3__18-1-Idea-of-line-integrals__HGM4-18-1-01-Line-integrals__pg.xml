@@ -20,6 +20,20 @@ oriented path (in red) is positive, negative, or zero.</p>
 <row halign="center" valign="middle">
 <cell><var form="popup">
 <li>
+Choose
+</li>
+<li>
+Zero
+</li>
+<li>
+Negative
+</li>
+<li>
+Positive
+</li>
+</var></cell>
+<cell><var form="popup">
+<li>
 Negative
 </li>
 <li>
@@ -37,24 +51,10 @@ Choose
 Choose
 </li>
 <li>
-Positive
-</li>
-<li>
-Zero
-</li>
-<li>
-Negative
-</li>
-</var></cell>
-<cell><var form="popup">
-<li>
-Zero
-</li>
-<li>
 Negative
 </li>
 <li>
-Choose
+Zero
 </li>
 <li>
 Positive
@@ -75,10 +75,24 @@ Positive
 <row halign="center" valign="middle">
 <cell><var form="popup">
 <li>
-Positive
+Choose
 </li>
 <li>
+Negative
+</li>
+<li>
+Zero
+</li>
+<li>
+Positive
+</li>
+</var></cell>
+<cell><var form="popup">
+<li>
 Choose
+</li>
+<li>
+Positive
 </li>
 <li>
 Zero
@@ -92,27 +106,13 @@ Negative
 Positive
 </li>
 <li>
-Choose
-</li>
-<li>
 Negative
 </li>
 <li>
 Zero
 </li>
-</var></cell>
-<cell><var form="popup">
 <li>
-Zero
-</li>
-<li>
-Negative
-</li>
-<li>
-Choose
-</li>
-<li>
-<p>Positive
+<p>Choose
 </p></li>
 </var></cell>
 </row>
@@ -131,6 +131,6 @@ Thus the line integral along the semicircle is zero.</p>
 Thus the line integral along the semicircle is zero.</p>
 </solution>
   </static>
-  <rendering-data sourceFilePath="Library/FortLewis/Calc3/18-1-Idea-of-line-integrals/HGM4-18-1-01-Line-integrals.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/FortLewis/Calc3/18-1-Idea-of-line-integrals/HGM4-18-1-01-Line-integrals.pg" origin="webwork2" domain="https://webwork.runestone.academy" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/FortLewis/Calc3/18-1-Idea-of-line-integrals/HGM4-18-1-01-Line-integrals.pg"/>
 </webwork-reps>
