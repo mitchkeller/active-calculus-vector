@@ -322,7 +322,8 @@
   </p>  
   </subsection>
   <subsection xml:id="subsec-effcalcofN">
-    <title>Efficient Calculations for the Splitting of <m>\va</m></title>
+    <title>Efficient Calculations for the Splitting of <m>\vec{a}</m></title>
+    <!-- <shorttitle>Efficient Calculations for the Splitting of a</shorttitle> -->
 
   <p>
     You saw in <xref ref="difficult-calcN"/> that calculating <m>\vN</m> for even a curve with a very <q>nice</q> parameterization algebraically using the definition requires extensive algebraic manipulation. Before going into an exampmle of the computations involved in splitting the acceleration vector, we will identify a relationship of the vectors involved in splitting the acceleration vector that yields another way of approaching <m>\vN</m>. To do this, we consider the right triangle of vectors in <xref ref="RTsplita"/>. If we apply the Pythagorean Theorem to this right triangle, we can then use that the unit tangent vector and unit normal vector both have length one to conclude that <m> \vecmag{ \va }^2 =(a_{\vT})^2+(a_{\vN})^2</m>.
