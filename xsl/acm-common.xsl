@@ -31,9 +31,9 @@
     <xsl:text>\usepackage[T1]{fontenc}&#xa;</xsl:text>
     <xsl:text>\renewcommand{\rmdefault}{zpltlf} %Roman font for use in math mode&#xa;</xsl:text>
     <xsl:text>\usepackage[scaled=.85]{beramono}% used only by \mathtt&#xa;</xsl:text>
-    <xsl:text>%\usepackage[type1]{cabin}%used only by \mathsf&#xa;</xsl:text>
-    <xsl:text>%\usepackage{amsmath,amssymb}%load before newpxmath&#xa;</xsl:text>
-    <xsl:text>%\usepackage[varg,cmintegrals,bigdelims,varbb]{newpxmath}&#xa;</xsl:text>
+    <xsl:text>\usepackage[type1]{cabin}%used only by \mathsf&#xa;</xsl:text>
+    <xsl:text>\usepackage{amsmath,amssymb}%load before newpxmath&#xa;</xsl:text>
+    <xsl:text>\usepackage[varg,cmintegrals,bigdelims,varbb]{newpxmath}&#xa;</xsl:text>
     <xsl:text>\usepackage[scr=rsfso]{mathalfa}&#xa;</xsl:text>
     <xsl:text>\usepackage{bm} %load after all math to give access to bold math&#xa;</xsl:text>
     <xsl:text>% Now load the otf text fonts using fontspec--wont affect math&#xa;</xsl:text>
