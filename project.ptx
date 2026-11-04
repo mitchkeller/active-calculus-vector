@@ -24,6 +24,7 @@
             source="main.ptx" 
             output-dir="latex"
             output-filename="acm.tex"
+            xsl="acm-latex.xsl"
             publication="publication_print.ptx" />
     <target name="pdf" 
             format="pdf" 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- **********************************************************************-->
-<!-- Copyright 2023                                                        -->
+<!-- Copyright 2023-2026                                                   -->
 <!-- Mitchel T. Keller and Nicholas Long                                   -->
 <!--                                                                       -->
 <!-- This file is part of Active Calculus - Multivariable.                 -->
