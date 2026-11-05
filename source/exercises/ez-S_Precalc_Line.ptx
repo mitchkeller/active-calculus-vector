@@ -126,7 +126,7 @@
   <task>
     <statement>
       <p>
-        Do the lines given by <m>\overrightarrow{r}_1(t)=\langle 0,1,1 \rangle + t\langle 1,2,2 \rangle </m> and <m>\overrightarrow{r}_2(t)=\langle 2,0,3 \rangle + t\langle 1,4,4 \rangle </m> intersect? If so, state at what point(s) they intersect.
+        Do the lines given by <m>\vr_1(t)=\langle 0,1,1 \rangle + t\langle 1,2,2 \rangle </m> and <m>\vr_2(t)=\langle 2,0,3 \rangle + t\langle 1,4,4 \rangle </m> intersect? If so, state at what point(s) they intersect.
       </p>
     </statement>
     <solution>
@@ -201,7 +201,7 @@
       </answer>
       <solution>
         <p>
-          From activity 9.5.2, <m>\overrightarrow{P_0P_1} = \langle -3, -1, -1 \rangle</m>. The vector form of the line through <m>P_1</m> and <m>P_2</m> is <m>\vr(t) = \langle 1, 2, -1\rangle + t * \langle-3, -1, -1\rangle</m>. Using parametric equations, this is equal to <m>x(t) = 1 - 3t, y(t) = 2 - t, z(t) = -1 - t</m>.
+          From activity 9.5.2, <m>\vv{P_0P_1} = \langle -3, -1, -1 \rangle</m>. The vector form of the line through <m>P_1</m> and <m>P_2</m> is <m>\vr(t) = \langle 1, 2, -1\rangle + t * \langle-3, -1, -1\rangle</m>. Using parametric equations, this is equal to <m>x(t) = 1 - 3t, y(t) = 2 - t, z(t) = -1 - t</m>.
         </p>
 
         <p>
@@ -259,7 +259,7 @@
       </answer>
       <solution>
         <p>
-          <m>\overrightarrow{QR} = \langle 15, -6, -20 \rangle</m>. We need to find a scalar (direction) vector in the direction of <m>\langle 15, -6, -20 \rangle</m>. If point <m>Q</m> is the initial point, then <m>\vr(t) = \langle -11, 4, 27 \rangle + t * \langle 15v, -6v, -20v \rangle</m>. When <m>t = 2, \langle 4, -2, 7 \rangle = \langle -11, 4, 27 \rangle + (2) * \langle 15v, -6v, -20v \rangle</m>. Solve for <m>v</m> to get <m>v = \frac{1}{2}</m>.
+          <m>\vv{QR} = \langle 15, -6, -20 \rangle</m>. We need to find a scalar (direction) vector in the direction of <m>\langle 15, -6, -20 \rangle</m>. If point <m>Q</m> is the initial point, then <m>\vr(t) = \langle -11, 4, 27 \rangle + t * \langle 15v, -6v, -20v \rangle</m>. When <m>t = 2, \langle 4, -2, 7 \rangle = \langle -11, 4, 27 \rangle + (2) * \langle 15v, -6v, -20v \rangle</m>. Solve for <m>v</m> to get <m>v = \frac{1}{2}</m>.
         </p>
         <p>
           Therefore, <m>\vr(t) = \langle -11, 4, 27 \rangle + t * \langle 15 * \frac{1}{2} , -6 * \frac{1}{2}, -20 * \frac{1}{2} \rangle</m>. This cooresponds to parametric equations <m>x(t) = -11 + \frac{15}{2}t, y(t) = 4 - 3t, z(t) = 27 -10t</m>.

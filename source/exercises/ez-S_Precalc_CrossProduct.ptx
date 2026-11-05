@@ -275,24 +275,24 @@
   <task>
     <statement>
       <p>
-        Find <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{PR}</m>.
+        Find <m>\vv{PQ}</m> and <m>\vv{PR}</m>.
       </p>
     </statement>
     <answer>
       <p>
-        <m>\overrightarrow{PQ} = \langle -2, -4, 5 \rangle</m> and <m>\overrightarrow{PR} = \langle 1, 2, 1 \rangle</m>.
+        <m>\vv{PQ} = \langle -2, -4, 5 \rangle</m> and <m>\vv{PR} = \langle 1, 2, 1 \rangle</m>.
       </p>
     </answer>
     <solution>
       <p>
-        <m>\overrightarrow{PQ} = \langle (1 - 3), (2 - (-2)), (-1 - 4) \rangle = \langle -2, -4, 5 \rangle</m> and <m>\overrightarrow{PR} = \langle (4 - 3), (4 - 2), (0 - (-1)) = \langle 1, 2, 1 \rangle</m>.
+        <m>\vv{PQ} = \langle (1 - 3), (2 - (-2)), (-1 - 4) \rangle = \langle -2, -4, 5 \rangle</m> and <m>\vv{PR} = \langle (4 - 3), (4 - 2), (0 - (-1)) = \langle 1, 2, 1 \rangle</m>.
       </p>
     </solution>
   </task>
   <task>
     <statement>
       <p>
-        Observe that the area of <m>\triangle PQR</m> is half of the area of the parallelogram formed by <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{PR}</m>.  Hence find the area of <m>\triangle PQR</m>.
+        Observe that the area of <m>\triangle PQR</m> is half of the area of the parallelogram formed by <m>\vv{PQ}</m> and <m>\vv{PR}</m>.  Hence find the area of <m>\triangle PQR</m>.
       </p>
     </statement>
     <answer>
@@ -302,7 +302,7 @@
     </answer>
     <solution>
       <p>
-        The area of the parallelogram formed by <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{PR}</m> is the magnitude of the cross product <m>\Vert\overrightarrow{PQ} \times \overrightarrow{PR}\Vert = \Vert((-4)(1) - (2)(5))\vi - ((-2)(1) - (5)(1))\vj + ((-2)(2) - (-4)(1))\vk\Vert = \Vert-14\vi + 7\vj + 0\vk\Vert = \sqrt{(-14)^2 + (7)^2} = \sqrt{245}</m>. The area of <m>\triangle PQR = \frac{\sqrt{245}}{2}</m>.
+        The area of the parallelogram formed by <m>\vv{PQ}</m> and <m>\vv{PR}</m> is the magnitude of the cross product <m>\Vert\vv{PQ} \times \vv{PR}\Vert = \Vert((-4)(1) - (2)(5))\vi - ((-2)(1) - (5)(1))\vj + ((-2)(2) - (-4)(1))\vk\Vert = \Vert-14\vi + 7\vj + 0\vk\Vert = \sqrt{(-14)^2 + (7)^2} = \sqrt{245}</m>. The area of <m>\triangle PQR = \frac{\sqrt{245}}{2}</m>.
       </p>
     </solution>
   </task>
@@ -336,13 +336,13 @@
     </answer>
     <solution>
       <p>
-        <m>\overrightarrow{QP} = \langle 2, 4, -5 \rangle</m> and <m>\overrightarrow{QR} = \langle 3, 6, -4 \rangle</m>.
+        <m>\vv{QP} = \langle 2, 4, -5 \rangle</m> and <m>\vv{QR} = \langle 3, 6, -4 \rangle</m>.
       </p>
       <p>
-        <m>\Vert\overrightarrow{QP}\Vert = \sqrt{(2)^2 + (4)^2 + (-5)^2} = \sqrt{45} </m> and <m>\Vert\overrightarrow{QR}\Vert = \sqrt{(3)^2 + (6)^2 + (-4)^2} = \sqrt{61}</m>.
+        <m>\Vert\vv{QP}\Vert = \sqrt{(2)^2 + (4)^2 + (-5)^2} = \sqrt{45} </m> and <m>\Vert\vv{QR}\Vert = \sqrt{(3)^2 + (6)^2 + (-4)^2} = \sqrt{61}</m>.
       </p>
       <p>
-        <m>\theta = \cos^{-1}(\frac{\overrightarrow{QP} \cdot \overrightarrow{QR}}{\Vert\overrightarrow{QP}\Vert\Vert\overrightarrow{QR}\Vert}) = \cos^{-1}(\frac{(2)(3) + (4)(6) + (-5)(-4)}{\sqrt{45}\sqrt{61}}) = 17.38^{\circ}</m>.
+        <m>\theta = \cos^{-1}(\frac{\vv{QP} \cdot \vv{QR}}{\Vert\vv{QP}\Vert\Vert\vv{QR}\Vert}) = \cos^{-1}(\frac{(2)(3) + (4)(6) + (-5)(-4)}{\sqrt{45}\sqrt{61}}) = 17.38^{\circ}</m>.
       </p>
     </solution>
   </task>      

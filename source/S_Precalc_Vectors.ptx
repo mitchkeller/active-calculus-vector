@@ -127,30 +127,30 @@
       <task>
         <statement>
           <p>
-            Suppose we want to draw the triangle with vertices <m>A=(2,3)</m>, <m>B=(-3,1)</m>, and <m>C=(4,-2)</m>. As a shorthand notation, we will denote the vector from the point <m>A</m> to the point <m>B</m> as <m>\overrightarrow{AB}</m>. Determine the vectors <m>\overrightarrow{AB}</m>, <m>\overrightarrow{BC}</m>, and <m>\overrightarrow{AC}</m>.
+            Suppose we want to draw the triangle with vertices <m>A=(2,3)</m>, <m>B=(-3,1)</m>, and <m>C=(4,-2)</m>. As a shorthand notation, we will denote the vector from the point <m>A</m> to the point <m>B</m> as <m>\vv{AB}</m>. Determine the vectors <m>\vv{AB}</m>, <m>\vv{BC}</m>, and <m>\vv{AC}</m>.
           </p>
         </statement>
         <answer>
           <p>
-            <m>\overrightarrow{AB} = \langle -5 , -2 \rangle</m>, <m>\overrightarrow{BC} = \langle 7 , -3 \rangle</m>, and <m>\overrightarrow{AC} = \langle 2 , -5 \rangle</m>
+            <m>\vv{AB} = \langle -5 , -2 \rangle</m>, <m>\vv{BC} = \langle 7 , -3 \rangle</m>, and <m>\vv{AC} = \langle 2 , -5 \rangle</m>
           </p>
         </answer>
         <solution>
           <p>
-            <m>\overrightarrow{AB} = \langle (-3 - (2)) , (1 - 3) \rangle = \langle -5 , -2 \rangle</m>, <m>\overrightarrow{BC} = \langle (4 - (-3)) , ((-2) - 1) \rangle = \langle 7 , -3 \rangle</m>, and <m>\overrightarrow{AC} = \langle (4 - 2) , ((-2) - 3) \rangle = \langle 2 , -5 \rangle</m>.
+            <m>\vv{AB} = \langle (-3 - (2)) , (1 - 3) \rangle = \langle -5 , -2 \rangle</m>, <m>\vv{BC} = \langle (4 - (-3)) , ((-2) - 1) \rangle = \langle 7 , -3 \rangle</m>, and <m>\vv{AC} = \langle (4 - 2) , ((-2) - 3) \rangle = \langle 2 , -5 \rangle</m>.
           </p>
         </solution>
       </task>    
       <task>
         <statement>
           <p>
-            How are the horizontal displacements of <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> related to the horizontal displacement of <m>\overrightarrow{AC}</m>? Does the same relationship follow for the vertical displacements? Write a couple of sentences to explain your reasoning in the context of this problem.
-            <!-- What relationship do you see among the vectors <m>\overrightarrow{AB}</m>, <m>\overrightarrow{BC}</m>, and <m>\overrightarrow{AC}</m>? Explain why this relationship should hold.  -->
+            How are the horizontal displacements of <m>\vv{AB}</m> and <m>\vv{BC}</m> related to the horizontal displacement of <m>\vv{AC}</m>? Does the same relationship follow for the vertical displacements? Write a couple of sentences to explain your reasoning in the context of this problem.
+            <!-- What relationship do you see among the vectors <m>\vv{AB}</m>, <m>\vv{BC}</m>, and <m>\vv{AC}</m>? Explain why this relationship should hold.  -->
           </p>
         </statement>
         <answer>
           <p>
-            The sum of the horizontal displacements of <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> is the horizontal displacement of <m>\overrightarrow{AC}</m>. Similarly, the sum of the vertical displacements of <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> is the vertical displacement of <m>\overrightarrow{AC}</m>. You can think of the sum of  <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> as going from A to C with B as an intermediate point. Since the displacement only cares about the net change, the result of going straight from A to C versus going through the point B is the same. 
+            The sum of the horizontal displacements of <m>\vv{AB}</m> and <m>\vv{BC}</m> is the horizontal displacement of <m>\vv{AC}</m>. Similarly, the sum of the vertical displacements of <m>\vv{AB}</m> and <m>\vv{BC}</m> is the vertical displacement of <m>\vv{AC}</m>. You can think of the sum of  <m>\vv{AB}</m> and <m>\vv{BC}</m> as going from A to C with B as an intermediate point. Since the displacement only cares about the net change, the result of going straight from A to C versus going through the point B is the same. 
           </p>
           <p>
             <m>\langle -5 , -2 \rangle + \langle 7 , -3 \rangle = \langle 2 , -5 \rangle</m>.
@@ -158,7 +158,7 @@
         </answer>
         <solution>
           <p>
-            The sum of the horizontal displacements of <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> is the horizontal displacement of <m>\overrightarrow{AC}</m>. Similarly, the sum of the vertical displacements of <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> is the vertical displacement of <m>\overrightarrow{AC}</m>. You can think of the sum of  <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m> as going from A to C with B as an intermediate point. Since the displacement only cares about the net change, the result of going straight from A to C versus going through the point B is the same. 
+            The sum of the horizontal displacements of <m>\vv{AB}</m> and <m>\vv{BC}</m> is the horizontal displacement of <m>\vv{AC}</m>. Similarly, the sum of the vertical displacements of <m>\vv{AB}</m> and <m>\vv{BC}</m> is the vertical displacement of <m>\vv{AC}</m>. You can think of the sum of  <m>\vv{AB}</m> and <m>\vv{BC}</m> as going from A to C with B as an intermediate point. Since the displacement only cares about the net change, the result of going straight from A to C versus going through the point B is the same. 
           </p>
           <p>
             <m>\langle -5 , -2 \rangle + \langle 7 , -3 \rangle = \langle 2 , -5 \rangle</m>.
@@ -214,7 +214,7 @@
     </p>
 
     <p>
-      Vectors do not have a particular starting or ending point. However, it will be useful to use directed line segments like <m>\overrightarrow{AB}</m> as a specific representative of a vector. For instance, suppose that we would like to draw the vector <m>\langle 3, 4\rangle</m>, which represents a horizontal change of (positive) three units and a vertical change of (positive) four units. We may place the <term>tail</term><idx><h>vector</h><h>tail</h></idx> of the vector (the point from which the vector originates) at the origin and the <term>tip</term><idx><h>vector</h><h>tail</h></idx> (the terminal point of the vector) at <m>(3,4)</m>, as illustrated in <xref ref="F-Precalc-vectors-standard-origin">Figure</xref>. A vector with its tail at the origin is said to be in <term>standard position</term><idx><h>vector</h><h>standard position of</h></idx><idx><h>standard position (of vector)</h></idx>.
+      Vectors do not have a particular starting or ending point. However, it will be useful to use directed line segments like <m>\vv{AB}</m> as a specific representative of a vector. For instance, suppose that we would like to draw the vector <m>\langle 3, 4\rangle</m>, which represents a horizontal change of (positive) three units and a vertical change of (positive) four units. We may place the <term>tail</term><idx><h>vector</h><h>tail</h></idx> of the vector (the point from which the vector originates) at the origin and the <term>tip</term><idx><h>vector</h><h>tail</h></idx> (the terminal point of the vector) at <m>(3,4)</m>, as illustrated in <xref ref="F-Precalc-vectors-standard-origin">Figure</xref>. A vector with its tail at the origin is said to be in <term>standard position</term><idx><h>vector</h><h>standard position of</h></idx><idx><h>standard position (of vector)</h></idx>.
     </p>
     <aside>
       <p>
@@ -255,10 +255,10 @@
     </p>
 
     <p>
-      In this example, the vector was represented by the directed line segment from <m>Q</m> to <m>R</m>, which we denote as <m>\overrightarrow{QR}</m>. We may also turn the situation around: given the two points <m>Q</m> and <m>R</m>, we obtain the vector <m>\langle 3,4\rangle</m> because we move horizontally three units and vertically four units to get from <m>Q</m> to <m>R</m>. In other
-      words, <m>\overrightarrow{QR} = \langle 3,4\rangle</m>. In general, the vector <m>\overrightarrow{QR}</m> from the point <m>Q = (q_1, q_2)</m> to <m>R = (r_1, r_2)</m> is found by taking the difference of coordinates, so that
+      In this example, the vector was represented by the directed line segment from <m>Q</m> to <m>R</m>, which we denote as <m>\vv{QR}</m>. We may also turn the situation around: given the two points <m>Q</m> and <m>R</m>, we obtain the vector <m>\langle 3,4\rangle</m> because we move horizontally three units and vertically four units to get from <m>Q</m> to <m>R</m>. In other
+      words, <m>\vv{QR} = \langle 3,4\rangle</m>. In general, the vector <m>\vv{QR}</m> from the point <m>Q = (q_1, q_2)</m> to <m>R = (r_1, r_2)</m> is found by taking the difference of coordinates, so that
       <md>
-        \overrightarrow{QR} = \langle r_1-q_1, r_2-q_2 \rangle.
+        \vv{QR} = \langle r_1-q_1, r_2-q_2 \rangle.
       </md>
     </p>
 
@@ -266,7 +266,7 @@
       We will use arrows over the name/letters to represent vectors, such as <m>\vecv = \langle 3, 4 \rangle</m>, to distinguish them from scalars. The entries of a vector are called its <term>components</term>; in the vector <m>\langle 3, 4 \rangle</m>, the <m>x</m>-component is <m>3</m> and the <m>y</m>-component is <m>4</m>. We use pointed brackets <m>\langle\, ,\, \rangle</m> and the term <em>components</em> to distinguish a vector from a point <m>(\, ,\, )</m> and its <em>coordinates</em>. 
     </p>
     <p>  
-      There is, however, a close connection between vectors and points. Given a point <m>P</m>, we will frequently consider the vector <m>\overrightarrow{OP}</m> from the origin <m>O</m> to <m>P</m>. For instance, if <m>P=(3,4)</m>, then <m>\overrightarrow{OP}=\langle 3,4\rangle</m> as in <xref ref="F-Precalc-vectors4"/>. In this way, we think of a point <m>P</m> as defining a vector <m>\overrightarrow{OP}</m> whose components agree with the coordinates of <m>P</m>. The vector <m>\overrightarrow{OP}</m> is called the <term>position vector</term><idx><h>position vector</h></idx><idx><h>vector</h><h>position</h></idx> of <m>P</m>. 
+      There is, however, a close connection between vectors and points. Given a point <m>P</m>, we will frequently consider the vector <m>\vv{OP}</m> from the origin <m>O</m> to <m>P</m>. For instance, if <m>P=(3,4)</m>, then <m>\vv{OP}=\langle 3,4\rangle</m> as in <xref ref="F-Precalc-vectors4"/>. In this way, we think of a point <m>P</m> as defining a vector <m>\vv{OP}</m> whose components agree with the coordinates of <m>P</m>. The vector <m>\vv{OP}</m> is called the <term>position vector</term><idx><h>position vector</h></idx><idx><h>vector</h><h>position</h></idx> of <m>P</m>. 
     </p>
     <figure xml:id="F-Precalc-vectors4">
       <caption>A point defines a vector in standard position</caption>
@@ -305,68 +305,68 @@
       </introduction>
       <task>
         <statement>
-          <p><m>\overrightarrow{OA}= \langle\, ,\, ,\, \rangle </m></p>
+          <p><m>\vv{OA}= \langle\, ,\, ,\, \rangle </m></p>
         </statement>
         <answer>
-          <p><m>\overrightarrow{OA}= \langle 9  , -6 , -2.5 \rangle </m></p>
+          <p><m>\vv{OA}= \langle 9  , -6 , -2.5 \rangle </m></p>
         </answer>
         <solution>
-          <p><m>\overrightarrow{OA}= \langle 9  , -6 , -2.5 \rangle </m></p>
+          <p><m>\vv{OA}= \langle 9  , -6 , -2.5 \rangle </m></p>
         </solution>
       </task>
       <task>
         <statement>
-          <p><m>\overrightarrow{OB}= \langle\, ,\, ,\, \rangle</m></p>
+          <p><m>\vv{OB}= \langle\, ,\, ,\, \rangle</m></p>
         </statement>
         <answer>
-          <p><m>\overrightarrow{OB}= \langle 0,1,3 \rangle</m></p>
+          <p><m>\vv{OB}= \langle 0,1,3 \rangle</m></p>
         </answer>
         <solution>
-          <p><m>\overrightarrow{OB}= \langle 0,1,3 \rangle</m></p>
+          <p><m>\vv{OB}= \langle 0,1,3 \rangle</m></p>
         </solution>
       </task>
       <task>
         <statement>
-          <p><m>\overrightarrow{OC}= \langle\, ,\, ,\, \rangle</m></p>
+          <p><m>\vv{OC}= \langle\, ,\, ,\, \rangle</m></p>
         </statement>
         <answer>
-          <p><m>\overrightarrow{OC}= \langle -2,20,-5 \rangle</m></p>  
+          <p><m>\vv{OC}= \langle -2,20,-5 \rangle</m></p>  
         </answer>
         <solution>
-          <p><m>\overrightarrow{OC}= \langle -2,20,-5 \rangle</m></p> 
+          <p><m>\vv{OC}= \langle -2,20,-5 \rangle</m></p> 
         </solution>
       </task>
       <task>
         <statement>
-          <p><m>\overrightarrow{AB}= \langle\, ,\, ,\, \rangle</m></p>
+          <p><m>\vv{AB}= \langle\, ,\, ,\, \rangle</m></p>
         </statement>
         <answer>
-          <p><m>\overrightarrow{AB}= \langle -9,7,5.5 \rangle</m></p>
+          <p><m>\vv{AB}= \langle -9,7,5.5 \rangle</m></p>
         </answer>
         <solution>
-          <p><m>\overrightarrow{AB}= \langle -9,7,5.5 \rangle</m></p>
+          <p><m>\vv{AB}= \langle -9,7,5.5 \rangle</m></p>
         </solution>
       </task>
       <task>
         <statement>
-          <p><m>\overrightarrow{AC}= \langle\, ,\, ,\, \rangle</m></p>
+          <p><m>\vv{AC}= \langle\, ,\, ,\, \rangle</m></p>
         </statement>
         <answer>
-          <p><m>\overrightarrow{AC}= \langle -11,26,-2.5 \rangle</m></p>
+          <p><m>\vv{AC}= \langle -11,26,-2.5 \rangle</m></p>
         </answer>
         <solution>
-          <p><m>\overrightarrow{AC}= \langle -11,26,-2.5 \rangle</m></p>
+          <p><m>\vv{AC}= \langle -11,26,-2.5 \rangle</m></p>
         </solution>
       </task>
       <task>
         <statement>
-          <p><m>\overrightarrow{BC}= \langle\, ,\, ,\, \rangle</m></p>
+          <p><m>\vv{BC}= \langle\, ,\, ,\, \rangle</m></p>
         </statement>
         <answer>
-          <p><m>\overrightarrow{BC}= \langle -2,19,-8 \rangle</m></p>  
+          <p><m>\vv{BC}= \langle -2,19,-8 \rangle</m></p>  
         </answer>
         <solution>
-          <p><m>\overrightarrow{BC}= \langle -2,19,-8 \rangle</m></p> 
+          <p><m>\vv{BC}= \langle -2,19,-8 \rangle</m></p> 
         </solution>
       </task>
   </activity>
@@ -457,18 +457,18 @@
         <p>
           Using your picture from the previous task, give the components of the following vectors:
           <ol>
-            <li><m>\overrightarrow{CA}</m></li>
-            <li><m>\overrightarrow{CS}</m></li>
-            <li><m>\overrightarrow{AS}</m></li>
+            <li><m>\vv{CA}</m></li>
+            <li><m>\vv{CS}</m></li>
+            <li><m>\vv{AS}</m></li>
           </ol> 
         </p>
       </statement>
       <solution>
         <p>
           <ol>
-            <li><m>\overrightarrow{CA}=\langle 3,4 \rangle</m></li>
-            <li><m>\overrightarrow{CS}=\langle 1,5 \rangle</m></li>
-            <li><m>\overrightarrow{AS}=\langle -2,1 \rangle</m></li>
+            <li><m>\vv{CA}=\langle 3,4 \rangle</m></li>
+            <li><m>\vv{CS}=\langle 1,5 \rangle</m></li>
+            <li><m>\vv{AS}=\langle -2,1 \rangle</m></li>
           </ol>
         </p>
       </solution>
@@ -476,7 +476,7 @@
     <task>
       <statement>
         <p>
-          In the context of this problem, explain why you can add the horizontal components of <m>\overrightarrow{CA}</m> and <m>\overrightarrow{AS}</m> to get the horizontal component of <m>\overrightarrow{CS}</m>. Write a sentence or two about why this argument should work for the vertical components as well. 
+          In the context of this problem, explain why you can add the horizontal components of <m>\vv{CA}</m> and <m>\vv{AS}</m> to get the horizontal component of <m>\vv{CS}</m>. Write a sentence or two about why this argument should work for the vertical components as well. 
         </p>
       </statement>
       <solution>
@@ -492,37 +492,37 @@
         </p>
         <p>
           In order to avoid confusion or any other mistakes, you want to compute the vector from your car to the drone's suggested location, which we will call <m>D</m>.
-           What are the components of <m>\overrightarrow{CD}</m>? Write a sentence or two to compare this vector to <m>\overrightarrow{CA}</m>.
+           What are the components of <m>\vv{CD}</m>? Write a sentence or two to compare this vector to <m>\vv{CA}</m>.
         </p>
       </statement>
       <solution>
         <p>
-          Because <m>D</m> is in the same direction from <m>C</m> toward <m>A</m>, but three times farther, we can go in the direction given by <m>\overrightarrow{CA}</m> three times. In other words, we can go three km east and four km north, then go three km east and 4 km north, then go three km east and 4 km north again. In other words, we want to do three times <m>\overrightarrow{CA}</m> to get <m>\overrightarrow{CD}=\langle 9,12 \rangle </m>.
+          Because <m>D</m> is in the same direction from <m>C</m> toward <m>A</m>, but three times farther, we can go in the direction given by <m>\vv{CA}</m> three times. In other words, we can go three km east and four km north, then go three km east and 4 km north, then go three km east and 4 km north again. In other words, we want to do three times <m>\vv{CA}</m> to get <m>\vv{CD}=\langle 9,12 \rangle </m>.
         </p>
       </solution>
     </task>
     <task xml:id="Act-nav-sub">
       <statement>
         <p>
-          So we need to get from point <m>S</m> to point <m>D</m>. Explain how to use the components of <m>\overrightarrow{CS}</m> and <m>\overrightarrow{CD}</m> to find the components of <m>\overrightarrow{SD}</m>.
+          So we need to get from point <m>S</m> to point <m>D</m>. Explain how to use the components of <m>\vv{CS}</m> and <m>\vv{CD}</m> to find the components of <m>\vv{SD}</m>.
         </p>
       </statement>
       <solution>
         <p>
-          Because <m>\overrightarrow{CS}</m> and <m>\overrightarrow{CD}</m> describe the displacement from the same location to <m>S</m> and <m>D</m>, we can look at the componentwise difference between these vectors to get the displacement from <m>S</m> to <m>D</m>. The displacement in the East/West direction from <m>S</m> to <m>D</m> will be the difference in the first components of the vectors <m>\overrightarrow{CS}</m> and <m>\overrightarrow{CD}</m> and similarly for the second components to be used to find the North/South displacement. So,  to find the components of 
-          <md>\overrightarrow{SD}= \overrightarrow{CD}-\overrightarrow{CS}=\langle 9,12 \rangle -\langle 1,5 \rangle = \langle 8,7 \rangle</md>
+          Because <m>\vv{CS}</m> and <m>\vv{CD}</m> describe the displacement from the same location to <m>S</m> and <m>D</m>, we can look at the componentwise difference between these vectors to get the displacement from <m>S</m> to <m>D</m>. The displacement in the East/West direction from <m>S</m> to <m>D</m> will be the difference in the first components of the vectors <m>\vv{CS}</m> and <m>\vv{CD}</m> and similarly for the second components to be used to find the North/South displacement. So,  to find the components of 
+          <md>\vv{SD}= \vv{CD}-\vv{CS}=\langle 9,12 \rangle -\langle 1,5 \rangle = \langle 8,7 \rangle</md>
         </p>
       </solution>
     </task>
     <task>
       <statement>
         <p>
-          You find your friend at point <m>D</m> and want to take them back to your car to go home. Explain how you can use the components of <m>\overrightarrow{CD}</m> to give directions from point <m>D</m> back to your car. 
+          You find your friend at point <m>D</m> and want to take them back to your car to go home. Explain how you can use the components of <m>\vv{CD}</m> to give directions from point <m>D</m> back to your car. 
         </p>
       </statement>
       <solution>
         <p>
-          Since <m>\overrightarrow{CD}=langle 9,12\rangle</m>, this means we can travel the same components in reverse to get from point <m>D</m> back to our car. Algebraically, this means that <m>-\overrightarrow{CD}=langle -9,-12\rangle</m>, or we travel 9 km west and 12 km south to get back to our car. 
+          Since <m>\vv{CD}=langle 9,12\rangle</m>, this means we can travel the same components in reverse to get from point <m>D</m> back to our car. Algebraically, this means that <m>-\vv{CD}=langle -9,-12\rangle</m>, or we travel 9 km west and 12 km south to get back to our car. 
         </p>
       </solution>
     </task>
@@ -1137,9 +1137,9 @@
 
     <example>
       <p>
-        The magnitude of a vector is measured as  the length of the directed line segments that represent the vector. For example, the directed line segment <m>\overrightarrow{AB}</m> in <xref ref="F-9-2-vector-magnitude-AB"/> will represent a vector with components of <m>2</m> and <m>4</m>, which represent the horizontal and vertical changes from <m>A</m> to <m>B</m>. Notice that when we apply the distance formula to find the length of the segment from <m>A</m> to <m>B</m>, we compute <m>(x_B-x_A)</m> and <m>(y_B-y_A)</m>, which are the components of the vector we are finding the magnitude of. 
+        The magnitude of a vector is measured as  the length of the directed line segments that represent the vector. For example, the directed line segment <m>\vv{AB}</m> in <xref ref="F-9-2-vector-magnitude-AB"/> will represent a vector with components of <m>2</m> and <m>4</m>, which represent the horizontal and vertical changes from <m>A</m> to <m>B</m>. Notice that when we apply the distance formula to find the length of the segment from <m>A</m> to <m>B</m>, we compute <m>(x_B-x_A)</m> and <m>(y_B-y_A)</m>, which are the components of the vector we are finding the magnitude of. 
         <md>
-          <mrow>\vecmag{\overrightarrow{AB}} \amp= \sqrt{(x_B-x_A)^2+(y_B-y_A)^2} \amp \amp= \sqrt{(2)^2+(4)^2}</mrow>  
+          <mrow>\vecmag{\vv{AB}} \amp= \sqrt{(x_B-x_A)^2+(y_B-y_A)^2} \amp \amp= \sqrt{(2)^2+(4)^2}</mrow>  
           <mrow>  \amp= \sqrt{(v_1)^2+(v_2)^2} \amp \amp= \sqrt{20}</mrow> 
         </md>
       </p>  
@@ -1147,7 +1147,7 @@
         <caption/>
         <sidebyside widths="50% 50%" margins="0%">
           <figure xml:id="F-9-2-vector-magnitude-AB">
-            <caption><m>\overrightarrow{AB}</m></caption>
+            <caption><m>\vv{AB}</m></caption>
             <image>
               <description><p>A two dimensional plot with horizontal axis labeled <m>x</m> and vertical axis label <m>y</m> also shows a black arrow moving up and right. The starting point of the black arrow is labeled <m>A</m> and the end point is labeled <m>B</m>. The horizontal axis is labeled 2 at the location of the point <m>A</m> and 4 at the location of point <m>B</m>. The vertical axis is labeled 3 at the location of the point <m>A</m> and 7 at the location of point <m>B</m>. </p></description>
             <sageplot>
@@ -1179,7 +1179,7 @@
        </sidebyside>
       </figure>
       <p>
-        Because the distance formula in <m>\R^n</m> uses the sum of the squares of the change in each coordinate, we can see that given a vector <m>\vecv=\langle v_1, v_2, \ldots, v_n \rangle \in \R^n</m> will have magnitude <m>\vecmag{\vecv} = \sqrt{v_1^2+v_2^2+\ldots+v_n^2}</m>. Vectors of length one will be useful for describing directions without a focus on the magnitude. A <term>unit vector</term> <idx><h>vector</h><h>unit</h></idx> is a vector whose magnitude is 1. Scalar multiplication gives us a very useful tool for describing a unit vector in a particular direction because we will need to stretch/shrink a given vector to length 1. Our vector given by <m>\overrightarrow{AB}=\langle 2,4\rangle</m> will have magnitude <m>\sqrt{20}</m>, so the vector <m>\frac{1}{\sqrt{20}}\langle2,4\rangle</m> will have length 1 and will be in the same direction as <m>\overrightarrow{AB}</m>.
+        Because the distance formula in <m>\R^n</m> uses the sum of the squares of the change in each coordinate, we can see that given a vector <m>\vecv=\langle v_1, v_2, \ldots, v_n \rangle \in \R^n</m> will have magnitude <m>\vecmag{\vecv} = \sqrt{v_1^2+v_2^2+\ldots+v_n^2}</m>. Vectors of length one will be useful for describing directions without a focus on the magnitude. A <term>unit vector</term> <idx><h>vector</h><h>unit</h></idx> is a vector whose magnitude is 1. Scalar multiplication gives us a very useful tool for describing a unit vector in a particular direction because we will need to stretch/shrink a given vector to length 1. Our vector given by <m>\vv{AB}=\langle 2,4\rangle</m> will have magnitude <m>\sqrt{20}</m>, so the vector <m>\frac{1}{\sqrt{20}}\langle2,4\rangle</m> will have length 1 and will be in the same direction as <m>\vv{AB}</m>.
         <md>\vecmag{\left\langle \frac{2}{\sqrt{20}},\frac{4}{\sqrt{20}}\right\rangle}=\sqrt{\left(\frac{2}{\sqrt{20}}\right)^2+\left(\frac{4}{\sqrt{20}}\right)^2}=\sqrt{\frac{4}{20}+\frac{16}{20}}=1</md>
       </p>
     </example>
@@ -1188,17 +1188,17 @@
       <!-- <task>
         <statement>
           <p>
-            Let <m>A = (2,3)</m> and <m>B = (4,7)</m>, as shown at left in <xref ref="F-9-2-vector-magnitude-a" />. Compute <m>\Vert\overrightarrow{AB}\Vert</m> by finding the distance from <m>A</m> to <m>B</m>.
+            Let <m>A = (2,3)</m> and <m>B = (4,7)</m>, as shown at left in <xref ref="F-9-2-vector-magnitude-a" />. Compute <m>\Vert\vv{AB}\Vert</m> by finding the distance from <m>A</m> to <m>B</m>.
           </p>
         </statement>
         <answer>
           <p>
-            <m>\Vert\overrightarrow{AB}\Vert = \sqrt{20}</m>
+            <m>\Vert\vv{AB}\Vert = \sqrt{20}</m>
           </p>
         </answer>
         <solution>
           <p>
-            <m>\Vert\overrightarrow{AB}\Vert = \sqrt{20}</m>
+            <m>\Vert\vv{AB}\Vert = \sqrt{20}</m>
           </p>
         </solution>
       </task>  
@@ -1210,12 +1210,12 @@
         </statement>
         <answer>
           <p>
-            <m>\Vert\overrightarrow{v}\Vert = \sqrt{(v_1)^2 + (v_2)^2}</m>
+            <m>\Vert\vv{v}\Vert = \sqrt{(v_1)^2 + (v_2)^2}</m>
           </p>
         </answer>
         <solution>
           <p>
-            <m>\Vert\overrightarrow{v}\Vert = \sqrt{(v_1)^2 + (v_2)^2}</m>
+            <m>\Vert\vv{v}\Vert = \sqrt{(v_1)^2 + (v_2)^2}</m>
           </p>
         </solution>
       </task>
@@ -1227,12 +1227,12 @@
         </statement>
         <answer>
           <p>
-            <m>\Vert\overrightarrow{v}\Vert = \sqrt{(v_1)^2 + (v_2)^2 + (v_3)^2}</m>
+            <m>\Vert\vv{v}\Vert = \sqrt{(v_1)^2 + (v_2)^2 + (v_3)^2}</m>
           </p>
         </answer>
         <solution>
           <p>
-            <m>\Vert\overrightarrow{v}\Vert = \sqrt{(v_1)^2 + (v_2)^2 + (v_3)^2}</m>
+            <m>\Vert\vv{v}\Vert = \sqrt{(v_1)^2 + (v_2)^2 + (v_3)^2}</m>
           </p>
         </solution>
       </task> -->

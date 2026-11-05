@@ -326,17 +326,17 @@
     <p>
       The vector <m>\vecv</m> in <xref ref="D_LineInSpace"/> is called a <term>direction vector</term><idx><h>line</h><h>direction vector</h></idx> for the line. As we saw in <xref ref="PA_9_5">Preview Activity</xref>, any vector parallel to <m>\vecv</m> will have the form <m>t \vecv</m> for some scalar <m>t</m>. As a result, any vector emanating from the point <m>P</m> in a direction parallel to the vector <m>\vecv</m> will be of the form
       <md number="yes" xml:id="eq_9_5_lines_1">
-        \overrightarrow{OP} + \vecv t
+        \vv{OP} + \vecv t
       </md>
       for some scalar <m>t</m>. (Here we use <m>O</m> to denote the origin.)
     </p>
     <p>
-      <xref ref="Lineplot3">Figure</xref> shows the plot of a line in two-space. The vector <m>\overrightarrow{OP}</m> is illustrated in blue and points from the origin to our starting point <m>P</m>. The direction vector <m>t \vecv</m> as in Equation <xref ref="eq_9_5_lines_1"/> is shown in red with its initial point at point <m>P</m>. The line is traced out by the terminal points of the green vector <m>\overrightarrow{OP}+t\vecv</m>. In other words, the tips (terminal points) of the green vectors trace out the line as <m>t</m> changes. You can use the slider to change the value of <m>t</m> for this example line. You should pay attention to how <m> \overrightarrow{OP} + \vecv t</m> changes as you vary <m>t</m>. Be sure to see what happens with <m>t=0</m> as well as for some negative values of <m>t</m>.
+      <xref ref="Lineplot3">Figure</xref> shows the plot of a line in two-space. The vector <m>\vv{OP}</m> is illustrated in blue and points from the origin to our starting point <m>P</m>. The direction vector <m>t \vecv</m> as in Equation <xref ref="eq_9_5_lines_1"/> is shown in red with its initial point at point <m>P</m>. The line is traced out by the terminal points of the green vector <m>\vv{OP}+t\vecv</m>. In other words, the tips (terminal points) of the green vectors trace out the line as <m>t</m> changes. You can use the slider to change the value of <m>t</m> for this example line. You should pay attention to how <m> \vv{OP} + \vecv t</m> changes as you vary <m>t</m>. Be sure to see what happens with <m>t=0</m> as well as for some negative values of <m>t</m>.
     </p>
     <figure xml:id="Lineplot3">
       <caption>A line in 2-space with vector definition</caption>
       <interactive label="interactive-Lineplot3" platform="sage" width="100%" aspect="1:1">
-        <description><p>An interactive plot with two-dimensional axes showing a line with positive slope and three vectors shown in different colors. The first vector is shown in blue from the origin to the point <m>(1,1.5)</m>. The second vector is shown along the line in red and its length is changed by a slider at the top of the figure. The red vector is labeled <m>t\vecv</m> and starts at the point on the line given by <m>(1,1.5)</m>. The last vector is shown in green and goes from the origin to the end of the red vector. The green vector is labeled <m>\overrightarrow{OP} + t \vecv</m>.</p></description>
+        <description><p>An interactive plot with two-dimensional axes showing a line with positive slope and three vectors shown in different colors. The first vector is shown in blue from the origin to the point <m>(1,1.5)</m>. The second vector is shown along the line in red and its length is changed by a slider at the top of the figure. The red vector is labeled <m>t\vecv</m> and starts at the point on the line given by <m>(1,1.5)</m>. The last vector is shown in green and goes from the origin to the end of the red vector. The green vector is labeled <m>\vv{OP} + t \vecv</m>.</p></description>
       <slate surface="sage">
           @interact
           def vecline(t=slider(-3,3,0.1,default=1,label="t=")):
@@ -370,7 +370,7 @@
         <md number="yes" xml:id="eq_9_5_line_vect">
           \vr(t) = \vr_0 + t\vecv,
         </md>
-        where <m>\vr_0</m> is the position vector <m>\overrightarrow{OP}</m> from the origin to the point <m>P</m>.
+        where <m>\vr_0</m> is the position vector <m>\vv{OP}</m> from the origin to the point <m>P</m>.
       </p>
     </assemblage>
     <example>

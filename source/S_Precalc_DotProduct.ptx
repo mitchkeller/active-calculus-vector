@@ -1471,7 +1471,7 @@
 <subsection>
     <title>Work, Force, and Displacement</title>
     <p>
-      In physics, work is a measure of the energy required to apply a force to an object through a displacement. In <xref ref="workex"/>, we can see a diagram showing the force applied to a refrigerator (in orange) that is used to move the refrigerator from point <m>A</m> to point <m>B</m>. The change in location, <m>\overrightarrow{AB}</m>, is called the <term>displacement</term>. Notice that not all of the force is in the direction of the displacement. The work done on the refrigerator only depends on the amount of force that is in the direction of <m>\overrightarrow{AB}</m>.
+      In physics, work is a measure of the energy required to apply a force to an object through a displacement. In <xref ref="workex"/>, we can see a diagram showing the force applied to a refrigerator (in orange) that is used to move the refrigerator from point <m>A</m> to point <m>B</m>. The change in location, <m>\vv{AB}</m>, is called the <term>displacement</term>. Notice that not all of the force is in the direction of the displacement. The work done on the refrigerator only depends on the amount of force that is in the direction of <m>\vv{AB}</m>.
     </p>
 
     <figure xml:id="workex">
@@ -1495,7 +1495,7 @@
     <p>
       The work required to move the refrigerator is
       <md>
-        W = \vF\cdot\overrightarrow{AB} = \vecmag{\vF} \vecmag{\overrightarrow{AB}} \cos(\theta)
+        W = \vF\cdot\vv{AB} = \vecmag{\vF} \vecmag{\vv{AB}} \cos(\theta)
       </md>.
     </p>
 
