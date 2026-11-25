@@ -44,7 +44,8 @@ lang: "en-US",
 </script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
 <body class="ptx-content ignore-math" id="acmulti">
-<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb{R}}
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\vv}{\overrightarrow}
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\va}{\vec{a}}
 \newcommand{\vb}{\vec{b}}
 \newcommand{\vc}{\vec{c}}
@@ -60,7 +61,7 @@ lang: "en-US",
 \newcommand{\vr}{\vec{r}}
 \newcommand{\vs}{\vec{s}}
 \newcommand{\vu}{\vec{u}}
-\newcommand{\vv}{\vec{v}}
+\newcommand{\vecv}{\vec{v}}
 \newcommand{\vw}{\vec{w}}
 \newcommand{\vx}{\vec{x}}
 \newcommand{\vy}{\vec{y}}
@@ -90,13 +91,11 @@ lang: "en-US",
 \definecolor{fillinmathshade}{gray}{0.9}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
-<div style="aspect-ratio: 1;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">var('t,x')
-@interact
-def secline3d(h=slider(0.1,1.6,0.1,default=1.5,label="Step Size",display_value=False)):
+<div style="aspect-ratio: 1;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">def secline3d(h):
   from sage.plot.plot3d.plot3d import axes
   r(t)=(cos(t),sin(t),t/(2*pi))
   scale=1.5
-  a=1.5
+  a=1
   plot5=axes(scale,1,color="black",opacity=0.15)+text3d("x",(scale+0.5,0,0),fontsize=30)
   plot5+=text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30,frame=False)
   plot5+=parametric_plot3d(r(t),(t,0,2*pi),color="black",thickness=2)
@@ -106,8 +105,11 @@ def secline3d(h=slider(0.1,1.6,0.1,default=1.5,label="Step Size",display_value=F
   plot5+=arrow3d((0,0,0),r(a+h),color="green",opacity=0.5)
   plot5+=text3d("r(t+h)",1.5*r(a+h),color="green",fontsize=20)
   plot5+=arrow3d(r(a),2*(r(a+h)-r(a))/h+r(a),color="red",opacity=0.5)
-  plot5+=text3d("(r(t+h)-r(t))/h",2*(r(a+h/2)),color="red",fontsize=20)
-  show(plot5,viewpoint=[[-0.4807,-0.5193,-0.7066],113.63],camera_position=[3.6816,0.7685,1.3301])
+  plot5+=text3d("(r(t+h)-r(t))/h",2*(r(a+h/2)),color="red",fontsize=20,viewpoint=[[-0.4453,-0.5469,-0.7089],120.02])
+  return plot5
+frames1=[secline3d(2-hval/25) for hval in range(0,50)]
+plot123 = animate(frames1).interactive(delay=20,auto_play=False,animation_controls=True)
+plot123
 </script></pre></div>
 </body>
 </html>

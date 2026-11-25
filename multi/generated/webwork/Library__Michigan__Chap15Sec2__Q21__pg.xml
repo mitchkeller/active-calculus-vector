@@ -2,75 +2,62 @@
 <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-Library__Michigan__Chap15Sec2__Q21__pg" assembly-id="Library__Michigan__Chap15Sec2__Q21__pg">
   <static seed="478" source="Library/Michigan/Chap15Sec2/Q21.pg">
     <statement><p>Design a rectangular milk carton box of width <m>w</m>, length <m>l</m>, and
-height <m>h</m> which holds <m>544 \text{ cm}^3</m> of milk. The sides of the
-box cost <m>3 \ \text{cents/cm}^2</m> and the top and bottom cost
-<m>4\ \text{cents/cm}^2</m>. Find the dimensions of the box that
+height <m>h</m> which holds <m>544 \mbox{ cm}^3</m> of milk. The sides of the
+box cost <m>3 \ \mbox{cent}/\mbox{cm}^2</m> and the top and bottom cost
+<m>4\ \mbox{cent}/\mbox{cm}^2</m>. Find the dimensions of the box that
 minimize the total cost of materials used.</p>
-<p>width = <fillin characters="10" name="AnSwEr0001"/>, length = <fillin characters="10" name="AnSwEr0002"/>, height = <fillin characters="10" name="AnSwEr0003"/></p>
-<p><em>(Include units in your answers.)</em> ( )</p>
+<p>dimensions = <fillin characters="35" name="AnSwEr0001"/></p>
+<p><em>(Enter your answer as a comma separated list of lengths.)</em></p>
 </statement>
     <answer>
       <p>
-        <m>\left(\frac{544\cdot 3}{4}\right)^{\frac{1}{3}} {\rm cm}</m>
+        <m>9.88915, 7.41686, 7.41686</m>
       </p>
     </answer>
-    <answer>
-      <p>
-        <m>\frac{544}{9.88915\cdot 7.41686} {\rm cm}</m>
-      </p>
-    </answer>
-    <answer>
-      <p>
-        <m>\frac{7.41686\cdot 4}{3} {\rm cm}</m>
-      </p>
-    </answer>
-    <solution><p>The total cost of the four sides is <m>(2hl+2wh)(3)</m> cents.  The cost of top and
-bottom is <m>(2wl)(4)</m> cents.  Thus the total cost <m>C</m> (in cents) of
+    <solution><m>=(2hl+2wh)(3)</m> cents.  The cost of top and
+bottom <m>=(2wl)(4)</m> cents.  Thus the total cost <m>C</m> (in cents) of
 the box is
-<me>C = (2)(3)(h)(l+w) + (2)(4) wl.</me>
-The volume in <m>\text{cm}^3</m> is <m>wlh = 544</m>, so <m>w</m>,<m>l</m>,<m>h</m> are nonzero and we may divide and obtain
-<me>l = \frac{544}{wh}.</me>
-Plug this into the equation for <m>C</m> to obtain
-<me>\begin{aligned} C \amp = (2)(3)h\left(\frac{544}{wh} + w\right) + (2)(4)(w)\frac{(544)}{wh}\\
-  \amp =\frac{(2)(3)(544)}{w} + (2)(3)hw + \frac{(2)(4)(544)}{h} 
-\end{aligned}</me>
-as a function of <m>h</m> and <m>w</m>.  To minimize <m>C</m>, find the critical points of <m>C</m> by solving
-<me>0=C_h = (2)(3) w - \frac{(2)(4)(544)}{h^2}</me> 
-hence
-<me>3 wh^2 = (4)(544),</me> 
-and 
-<me>0=C_w = \frac{(-2)(3)(544)}{w^2}+(2)(3)h</me>
-so
-<me>w^2h = 544.</me>
-The quotient of these two results is 
-<me>\frac{3 wh^2}{w^2h} = \frac{(4)(544)}{544}</me>
-so <m>3 h/w = 4</m> and
-<me>h =  \frac{4}{3} w .</me></p>
-<p>Plug that into the equation <m>w^2h = 544</m> to obtain
-<me>4 w^3 / 3 = 544</me>
-so
-<me>w^3 = \frac{(3)(544)}{4},</me>
-<me>h^3 = \left(\frac{4}{3}\right)^3 w^3 = \frac{(4^2)(544)}{3^2}</me> 
-and, 
-<me>l^3 = \frac{547}{w^3 h^3} = \frac{(3)(544)}{4} = w^3.</me>
-Hence
-<me>w = l = \left(\frac{(3)(544)}{4}\right)^{1/3}\approx {7.41686},</me>
-and 
-<me>h = \frac{4}{3} w \approx {9.88915},</me>
-centimeters.</p>
-<p>Next we check that these dimensions minimize the cost <m>C</m>.  At the critical point we find that
-<me>C_{hh} = \frac{(6)(4)(544)}{h^3} = \frac{(6)(3^2)}{4}</me> 
-<me>C_{ww} = \frac{(6)(3)(544)}{w^3} = (6)(4)</me>
-<me>C_{hw} = (2)(3)</me></p>
-<p>so</p>
-<p><me>D=C_{hh}C_{ww}-C^2_{hw} = 
-    (6^2)(3^2)-(2^2)(3^2) &gt; 0.</me>
-So, at the critical point, <m>D &gt; 0</m> and <m>C_{hh} &gt; 0</m> hence <m>C</m> has a local minimum.   Since <m>C</m> has no other critical points, and <m>C</m> increases without
-bound as <m>(w,h)\to (0,0)</m> and as <m>(w,h)\to(\infty,\infty)</m>, this local minimum must be a global minimum.</p>
-<p>Therefore, the dimensions of the box that minimize the cost are
-<m>w=l \approx {7.41686}\ cm</m> and <m>h \approx {9.88915}\  cm</m>.</p>
+<me>C = 6(hl+wh) + 8 wl.</me>
+But the volume <m>= wlh = 544</m>, so <m>l = 544/(wh)</m>, thus
+<me>C = \frac{3264}{w} + 6 wh + \frac{4352}{h}.</me>
+To minimize <m>C</m>, we find the critical points of <m>C</m> by solving
+<me>C_h = 6 w - \frac{4352}{h^2} = 0,</me>
+and
+<me>C_w = 6 h - \frac{3264}{w^2} = 0.</me>
+We get
+<me>6 w h^2 = 4352, \quad\mbox{and}\quad 6 h w^2 = 3264,</me>
+Since <m>w</m>, <m>h \ne 0</m>, we can divide the first equation by the second,
+giving
+<me>\frac{6 w h^2}{6 h w^2} = \frac{4352}{3264},</me>
+so 
+<me>\frac{h}{w} = \frac{4}{3},</me>
+thus 
+<me>h = \frac{4}{3} w.</me>
+Substituting this into <m>C_w = 0</m>, we obtain <m>w^3 = \frac{544}{3}</m>, so
+<m>w = 7.41686</m> and <m>h = 9.88915</m> cm.  Then 
+<m>l = 544/(wh) = 7.41686</m> cm.
+
+
+
+Next we can check that these dimensions minimize the cost C.  We find that
+<me>D=C_{hh}C_{ww}-C^2_{hw} = 
+    (\frac{8704}{h^3})(\frac{6528}{w^3}) - 6^2,</me>
+So that at the critical point, <m>D &gt; 0</m> and <m>C_{hh} &gt; 0</m>, and
+thus <m>C</m> has a local minimum at <m>h=9.88915</m> and <m>w=7.41686</m>.
+Since <m>C</m> increases without
+bound as <m>w,h\to 0</m> or <m>\infty</m>, this local minimum must be a global
+minimum.
+
+
+
+
+Therefore, the dimensions of the box that minimize the cost are
+<m>w=7.41686</m> cm, <m>l=7.41686</m> cm and <m>h=9.88915</m> cm.
+
+
+
 </solution>
   </static>
-  <rendering-data sourceFilePath="Library/Michigan/Chap15Sec2/Q21.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/Michigan/Chap15Sec2/Q21.pg" origin="webwork2" domain="https://webwork.runestone.academy" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/Michigan/Chap15Sec2/Q21.pg"/>
 </webwork-reps>

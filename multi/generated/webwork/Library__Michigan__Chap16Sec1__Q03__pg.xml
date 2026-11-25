@@ -3,12 +3,7 @@
   <static seed="505" source="Library/Michigan/Chap16Sec1/Q03.pg">
     <statement><p>The figure below shows contours of <m>g(x,y)</m> on the region
 <m>R</m>, with <m>9 \le x\le 15</m> and <m>4 \le y\le 10</m>.</p>
-<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__Michigan__Chap16Sec1__Q03__pg-image-1.png" width="50%">
-<shortdescription>A contour plot of the function g</shortdescription>
-<description>
-<p>A contour plot with horizontal range from 5 yo 11 and vertical range from 2 to 8. There are five contours labeled 2, 3, 4, 5, and 6 that are hyperbolas with the labels increasing across the graphs being further up and to the right.</p>
-</description>
-</image>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__Michigan__Chap16Sec1__Q03__pg-image-1.png" width="50%"/>
 <p>Using <m>\Delta x = \Delta y =2</m>, find an overestimate and an
 underestimate for <m>\int_R g(x,y)\, dA</m>.</p>
 <p>Overestimate = <fillin characters="55" name="AnSwEr0001"/></p>
@@ -36,6 +31,6 @@ and similarly, for an underestimate,
 
 </solution>
   </static>
-  <rendering-data sourceFilePath="Library/Michigan/Chap16Sec1/Q03.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/Michigan/Chap16Sec1/Q03.pg" origin="webwork2" domain="https://webwork.runestone.academy" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/Michigan/Chap16Sec1/Q03.pg"/>
 </webwork-reps>

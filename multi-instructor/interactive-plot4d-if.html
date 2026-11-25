@@ -44,7 +44,8 @@ lang: "en-US",
 </script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
 <body class="ptx-content ignore-math" id="acmulti">
-<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb{R}}
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\vv}{\overrightarrow}
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\va}{\vec{a}}
 \newcommand{\vb}{\vec{b}}
 \newcommand{\vc}{\vec{c}}
@@ -60,7 +61,7 @@ lang: "en-US",
 \newcommand{\vr}{\vec{r}}
 \newcommand{\vs}{\vec{s}}
 \newcommand{\vu}{\vec{u}}
-\newcommand{\vv}{\vec{v}}
+\newcommand{\vecv}{\vec{v}}
 \newcommand{\vw}{\vec{w}}
 \newcommand{\vx}{\vec{x}}
 \newcommand{\vy}{\vec{y}}
@@ -90,10 +91,9 @@ lang: "en-US",
 \definecolor{fillinmathshade}{gray}{0.9}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
-<div style="aspect-ratio: 0.909090909090909;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">            from sage.plot.plot3d.plot3d import axes
+<div style="aspect-ratio: ;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
 var('x,y,z,t,s')
 scale=3;
-@interact
 def impplot(k=slider(-4,4,0.25,default=-4,label="k=")):
     plot1=axes(scale,1,color="black",aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
     if(sign(k)==-1):
@@ -138,7 +138,10 @@ def impplot(k=slider(-4,4,0.25,default=-4,label="k=")):
             tv=b1+i/m*(b2-b1)
             plot99+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
         plot1+=plot99
-    show(plot1)
+    return plot1
+frames1=[impplot(k/5) for k in range(-20,20)]
+plot123=animate(frames1).interactive(delay=20,auto_play=False)
+show(plot123)
 </script></pre></div>
 </body>
 </html>

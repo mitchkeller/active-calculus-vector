@@ -44,7 +44,8 @@ lang: "en-US",
 </script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
 <body class="ptx-content ignore-math" id="acmulti">
-<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb{R}}
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\vv}{\overrightarrow}
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\va}{\vec{a}}
 \newcommand{\vb}{\vec{b}}
 \newcommand{\vc}{\vec{c}}
@@ -60,7 +61,7 @@ lang: "en-US",
 \newcommand{\vr}{\vec{r}}
 \newcommand{\vs}{\vec{s}}
 \newcommand{\vu}{\vec{u}}
-\newcommand{\vv}{\vec{v}}
+\newcommand{\vecv}{\vec{v}}
 \newcommand{\vw}{\vec{w}}
 \newcommand{\vx}{\vec{x}}
 \newcommand{\vy}{\vec{y}}
@@ -90,19 +91,20 @@ lang: "en-US",
 \definecolor{fillinmathshade}{gray}{0.9}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
-<div style="aspect-ratio: 0.833333333333333;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
+<div style="aspect-ratio: ;"><pre class="ptx-sagecell sage-interact"><script type="text/x-sage">from sage.plot.plot3d.plot3d import axes
 var('x,y,z,t,s')
 scale=5;
-@interact
-def hypconegrad(k=slider(-6,6,0.5,default=2,label="level surface value, k="),g=checkbox(default=False,label="Show Gradient Vectors")):
+def makehyp(k):
   n=5;m=6;d=4;
-  plot3=axes(scale,1,color="black",aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30)
+  plot3=axes(scale,1,color="black",aspect_ratio=1)+text3d("x",(scale+0.5,0,0),fontsize=30)+text3d("y",(0,scale+0.5,0),fontsize=30)+text3d("z",(0,0,scale+0.5),fontsize=30,viewpoint=[[-0.2556,-0.5906,-0.7655],143.35],camera_position=[22.801,21.411,8.8665])
   if(sign(k)==-1):
     param(s,t)=(s*cos(t),s*sin(t),-sqrt(s^2-k))
     param2(s,t)=(s*cos(t),s*sin(t),sqrt(s^2-k))
     grad(s,t)=(2*s*cos(t),2*s*sin(t),2*sqrt(s^2-k))
     grad2(s,t)=(2*s*cos(t),2*s*sin(t),-2*sqrt(s^2-k))
-    n=20;m=20;a1=-d;a2=d;b1=0;b2=2*pi; 
+    #plot3+=parametric_plot3d(param(s,t),(t,0,2*pi),(s,-d,d),color="lightblue",opacity=0.5)
+    #plot3+=parametric_plot3d(param2(s,t),(t,0,2*pi),(s,-d,d),color="lightblue",opacity=0.5)
+    n=8;m=8;a1=-d;a2=d;b1=0;b2=2*pi; 
     #c1 is surface color     o1 is surface opacity
     #c2 and o2 are for constant t value traces
     #c3 and o3 are for constant s value traces
@@ -120,7 +122,8 @@ def hypconegrad(k=slider(-6,6,0.5,default=2,label="level surface value, k="),g=c
   else:
     param(s,t)=(sqrt(k+s^2)*cos(t),sqrt(k+s^2)*sin(t),s)
     grad(s,t)=(2*sqrt(k+s^2)*cos(t),2*sqrt(k+s^2)*sin(t),-2*s)
-    n=20;m=20;a1=-d;a2=d;b1=0;b2=2*pi; 
+    #plot3+=parametric_plot3d(param(s,t),(t,0,2*pi),(s,-d,d),color="lightblue",opacity=0.5,mesh=True)
+    n=8;m=8;a1=-d;a2=d;b1=0;b2=2*pi; 
     #c1 is surface color     o1 is surface opacity
     #c2 and o2 are for constant t value traces
     #c3 and o3 are for constant s value traces
@@ -132,17 +135,20 @@ def hypconegrad(k=slider(-6,6,0.5,default=2,label="level surface value, k="),g=c
     for i in range(m+1):
       tv=b1+i/m*(b2-b1)
       plot3+=parametric_plot3d(param(s,tv),(s,a1,a2),color=c3,opacity=o3)
-  m=7
-  if(g):
-    for i in range(n+1):
-      sv=-d+i*2*d/n;
-      for j in range(m):
-        tv=j*2*pi/m;
-        plot3+=arrow(param(sv,tv),param(sv,tv)+grad(sv,tv)/4,color="red",opacity=0.5,width=3)
-        if(sign(k)==-1):
-          tv=j*2*pi/m+pi/m
-          plot3+=arrow(param2(sv,tv),param2(sv,tv)+grad2(sv,tv)/4,color="red",opacity=0.5,width=3)
-  show(plot3,viewpoint=[[-0.2556,-0.5906,-0.7655],143.35],camera_position=[22.801,21.411,8.8665])
+  #plot3+=parametric_plot3d(param(s,t),(s,0,pi),(t,0,2*pi),color="blue",mesh=True,opacity=0.4,plot_points=21)
+  n=3;m=3;
+  for i in range(n+1):
+    sv=-d+i*2*d/n;
+    for j in range(m+1):
+      tv=j*2*pi/m;
+      plot3+=arrow(param(sv,tv),param(sv,tv)+grad(sv,tv)/4,color="red",opacity=0.5,width=3)
+      if(sign(k)==-1):
+        tv=j*2*pi/m+pi/m
+        plot3+=arrow(param2(sv,tv),param2(sv,tv)+grad2(sv,tv)/4,color="red",opacity=0.5,width=3)
+  return plot3
+frames1=[makehyp(k) for k in range(-6,7)]
+plot123=animate(frames1).interactive(delay=30,auto_play=False)
+show(plot123)
 </script></pre></div>
 </body>
 </html>

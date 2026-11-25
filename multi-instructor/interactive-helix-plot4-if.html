@@ -44,7 +44,8 @@ lang: "en-US",
 </script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
 <body class="ptx-content ignore-math" id="acmulti">
-<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb{R}}
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\vv}{\overrightarrow}
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\va}{\vec{a}}
 \newcommand{\vb}{\vec{b}}
 \newcommand{\vc}{\vec{c}}
@@ -60,7 +61,7 @@ lang: "en-US",
 \newcommand{\vr}{\vec{r}}
 \newcommand{\vs}{\vec{s}}
 \newcommand{\vu}{\vec{u}}
-\newcommand{\vv}{\vec{v}}
+\newcommand{\vecv}{\vec{v}}
 \newcommand{\vw}{\vec{w}}
 \newcommand{\vx}{\vec{x}}
 \newcommand{\vy}{\vec{y}}
@@ -94,29 +95,31 @@ lang: "en-US",
 r2(t)=(cos(t),sin(t),t/pi)
 rescale=1/3
 offset=0.15
-@interact
-def TNBhelix(tval=slider(-3,9,default=1,label="t value")):
-    pos=r2(tval)
-    plot11=parametric_plot(r2(t),(t,-pi,3*pi),aspect_ratio=1,color="black",thickness=2,axes=False)
-    plot11+=point(pos,color="black",size=25)
-    v2(t)=diff(r2,t)
-    a2(t)=diff(v2,t)
-    vt=v2(tval)
-    at=a2(tval)
-    T=vt/norm(vt)
-    aTT=(at*T)*T
-    aN=sqrt(norm(at)^2-(at*T)^2)
-    aNN=at-aTT
-    N=(1/aN)*aNN
-    B(t)=(1/(sqrt(1+pi^2))*sin(t),-1/(sqrt(1+pi^2))*cos(t),pi/(sqrt(1+pi^2)))
-    Bt=B(tval)
-    plot11+=arrow(pos,pos+T,color="red",thickness=2)
-    plot11+=text3d("T",pos+T-2*offset*N,color="red",fontsize=20)
-    plot11+=arrow(pos,pos+N,color="blue",thickness=2)
-    plot11+=text3d("N",pos+N-offset*T,color="blue",fontsize=20)
-    plot11+=arrow(pos,pos+Bt,color="green")
-    plot11+=text3d("B",pos+1.1*Bt,color="green",fontsize=20)
-    show(plot11,viewpoint=[[-0.3294,-0.5101,-0.7946],125.68],camera_position=[5.6019,2.835,3.815])
+def TNBhelix(tval):
+  pos=r2(tval)
+  plot11=parametric_plot(r2(t),(t,-pi,3*pi),aspect_ratio=1,color="black",thickness=2,axes=False)
+  plot11+=point(pos,color="black",size=25)
+  v2(t)=diff(r2,t)
+  a2(t)=diff(v2,t)
+  vt=v2(tval)
+  at=a2(tval)
+  T=vt/norm(vt)
+  aTT=(at*T)*T
+  aN=sqrt(norm(at)^2-(at*T)^2)
+  aNN=at-aTT
+  N=(1/aN)*aNN
+  B(t)=(1/(sqrt(1+pi^2))*sin(t),-1/(sqrt(1+pi^2))*cos(t),pi/(sqrt(1+pi^2)))
+  Bt=B(tval)
+  plot11+=arrow(pos,pos+T,color="red",thickness=2)
+  plot11+=text3d("T",pos+T-2*offset*N,color="red",fontsize=20)
+  plot11+=arrow(pos,pos+N,color="blue",thickness=2)
+  plot11+=text3d("N",pos+N-offset*T,color="blue",fontsize=20)
+  plot11+=arrow(pos,pos+Bt,color="green")
+  plot11+=text3d("B",pos+1.1*Bt,color="green",fontsize=20,viewpoint=[[-0.3294,-0.5101,-0.7946],125.68],camera_position=[5.6019,2.835,3.815])
+  return plot11
+frames1=[TNBhelix(tval*pi/30) for tval in range(0,60)]
+plot123=animate(frames1).interactive(delay=20,auto_play=False,animation_controls=True)
+plot123
 </script></pre></div>
 </body>
 </html>

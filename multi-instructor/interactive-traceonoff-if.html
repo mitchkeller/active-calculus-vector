@@ -44,7 +44,8 @@ lang: "en-US",
 </script><link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
 </head>
 <body class="ptx-content ignore-math" id="acmulti">
-<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb{R}}
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\vv}{\overrightarrow}
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\va}{\vec{a}}
 \newcommand{\vb}{\vec{b}}
 \newcommand{\vc}{\vec{c}}
@@ -60,7 +61,7 @@ lang: "en-US",
 \newcommand{\vr}{\vec{r}}
 \newcommand{\vs}{\vec{s}}
 \newcommand{\vu}{\vec{u}}
-\newcommand{\vv}{\vec{v}}
+\newcommand{\vecv}{\vec{v}}
 \newcommand{\vw}{\vec{w}}
 \newcommand{\vx}{\vec{x}}
 \newcommand{\vy}{\vec{y}}
@@ -94,8 +95,8 @@ lang: "en-US",
 g(x,y)=x^2*sin(2*y)/32
 @interact
 def traceplot(s=checkbox(False,label="Show traces")):
-    plot16=plot3d(g,(x,0,200),(y,0,pi/2),color="gray",plot_points=21,mesh=s,opacity=0.8)
-    show(plot16,aspect_ratio=[1,100,0.15],viewpoint=[[-0.792,0.3576,0.4949],84.75],camera_position=[-200.2301,-189.6884,234.3567])
+  plot16=plot3d(g,(x,0,200),(y,0,pi/2),color="gray",plot_points=21,mesh=s,opacity=0.8)
+  show(plot16,aspect_ratio=[1,100,0.15],viewpoint=[[-0.792,0.3576,0.4949],84.75],camera_position=[-200.2301,-189.6884,234.3567])
 </script></pre></div>
 </body>
 </html>

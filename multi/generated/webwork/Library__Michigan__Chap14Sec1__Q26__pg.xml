@@ -9,12 +9,7 @@ calories per cubic meter of fog) as a function of the temperature
 per cubic meter of fog).  Note that this figure is not a contour
 diagram, but shows cross-sections of <m>H</m> with <m>w</m> fixed at
 <m>0.1</m>, <m>0.2</m>, <m>0.3</m>, and <m>0.4</m>.</p>
-<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__Michigan__Chap14Sec1__Q26__pg-image-1.png" width="58%">
-<shortdescription>A contour map with four level curves</shortdescription>
-<description>
-<p>A graph showing <m>H(T,0.1), H(T,0.2), H(T,0.3), H(T,0.4)</m>, which are decreasing functions of <m>T</m>, each at a higher value of <m>H</m>. As <m>H</m> increases, the associated level curve is more concave up.</p>
-</description>
-</image>
+<image xmlns:pi="http://pretextbook.org/2020/pretext/internal" pi:generated="webwork/images/Library__Michigan__Chap14Sec1__Q26__pg-image-1.png" width="58%"/>
 <p><alert>(a)</alert>
 Estimate <m>H_T(10, 0.2)</m>:</p>
 <p><m>H_T(10,0.2) \approx</m> <fillin characters="35" name="AnSwEr0001"/></p>
@@ -194,6 +189,6 @@ Similarly, we have:
 
 </solution>
   </static>
-  <rendering-data sourceFilePath="Library/Michigan/Chap14Sec1/Q26.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <rendering-data sourceFilePath="Library/Michigan/Chap14Sec1/Q26.pg" origin="webwork2" domain="https://webwork.runestone.academy" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg source="Library/Michigan/Chap14Sec1/Q26.pg"/>
 </webwork-reps>

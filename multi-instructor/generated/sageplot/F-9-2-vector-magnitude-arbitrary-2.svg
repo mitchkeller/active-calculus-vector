@@ -6,11 +6,11 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-20T20:17:17.111851</dc:date>
+    <dc:date>2026-11-25T15:30:25.031717</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -48,7 +48,7 @@ C 198.388815 103.776717 198.035405 104.629923 198.035405 105.519441
 C 198.035405 106.408959 198.388815 107.262165 199.017799 107.891149 
 C 199.646783 108.520134 200.499989 108.873543 201.389507 108.873543 
 z
-" clip-path="url(#pf774070b48)"/>
+" clip-path="url(#pab7b55a84a)"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="text_1">
@@ -190,24 +190,24 @@ z
    <g id="patch_3">
     <path d="M 30.146556 311.010983 
 Q 115.768031 208.265212 199.242263 108.096134 
-" clip-path="url(#pf774070b48)" style="fill: none; stroke: #000000; stroke-width: 3; stroke-linecap: round"/>
+" clip-path="url(#pab7b55a84a)" style="fill: none; stroke: #000000; stroke-width: 3; stroke-linecap: round"/>
     <path d="M 188.999313 112.577424 
 L 199.242263 108.096134 
 L 196.681526 118.979268 
 z
-" clip-path="url(#pf774070b48)" style="stroke: #000000; stroke-width: 3; stroke-linecap: round"/>
+" clip-path="url(#pab7b55a84a)" style="stroke: #000000; stroke-width: 3; stroke-linecap: round"/>
    </g>
    <g id="line2d_1">
     <path d="M 184.265212 311.010983 
 L 184.265212 293.886688 
 L 201.389507 293.886688 
-" clip-path="url(#pf774070b48)" style="fill: none; stroke: #000000; stroke-width: 2; stroke-linecap: square"/>
+" clip-path="url(#pab7b55a84a)" style="fill: none; stroke: #000000; stroke-width: 2; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
     <path d="M 30.146556 311.010983 
 L 201.389507 311.010983 
 L 201.389507 105.519441 
-" clip-path="url(#pf774070b48)" style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #808080; stroke-width: 2"/>
+" clip-path="url(#pab7b55a84a)" style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #808080; stroke-width: 2"/>
    </g>
    <g id="patch_4">
     <path d="M 30.146556 333.957538 
@@ -444,7 +444,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pf774070b48">
+  <clipPath id="pab7b55a84a">
    <rect x="7.2" y="31.2" width="302.757538" height="302.757538"/>
   </clipPath>
  </defs>
